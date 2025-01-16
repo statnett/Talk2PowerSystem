@@ -1,0 +1,46 @@
+= Talk to the Power System
+:toc:
+:toc-title: Table of Contents
+:icons: font
+
+== Introduction
+The power industry must transform to accommodate the **green transition**, adopting innovative tools and methods to revolutionize how we perform power system analyses. Extracting data from power system models modeled according to the **Common Information Model (CIM)** standards (IEC 61970, 61968, 62325) is an integral part of this analytical work.
+
+However, crafting the required **graph queries** often exceeds the capabilities of many power system engineers due to their complexity. Inspired by advancements in AI, such as Chat-GPT, we envision a future where power system engineers can receive **trustworthy and explainable answers** through **natural language queries**.
+
+== Vision
+Our vision is to create a system that allows power system engineers to:
+* **Query complex models in natural language**: Eliminate the need for specialized query language expertise.
+* **Receive trustworthy answers**: Ensure results are reliable, transparent, and align with established industry standards.
+* **Accelerate decision-making**: Streamline workflows to support the **green energy transition**.
+
+== Purpose
+This repository supports R&D efforts to accelerate progress toward this vision. Specifically, it focuses on:
+* Enabling natural language interfaces for querying **CIM-based power system models**.
+* Ensuring queries and results are explainable, traceable, and compliant with standards.
+* Bridging the gap between power system engineering and advanced AI methodologies.
+
+== Key Standards and Technologies
+This work leverages the following key standards and technologies:
+* **Common Information Model (CIM)**: Standards IEC 61970, IEC 61968, and IEC 62325.
+* **Graph Databases and Queries**: Supporting the querying of CIM models stored as graphs.
+* **AI and Natural Language Processing (NLP)**: Inspired by large language models like Chat-GPT.
+
+== Contributing
+Contributions to this project are welcome. Please follow these steps to get started:
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m "Description of feature"`).
+4. Push your branch (`git push origin feature-name`).
+5. Open a pull request for review.
+
+== License
+This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+== Contact
+For more information or questions, please contact us at:
+* **Email**: [info@poweranalysis.ai](mailto:info@poweranalysis.ai)
+* **GitHub Issues**: Use the Issues tab for bug reports or feature requests.
+

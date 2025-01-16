@@ -1,0 +1,39 @@
+= Use Case: Model Deployment Pipeline
+
+[Use Case ID]
+== UC-01
+
+[Name]
+== Deploy Model to Production via CI/CD Pipeline
+
+.Description:
+* Automate the deployment of machine learning models to a Kubernetes cluster using a CI/CD pipeline.
+
+.Actors:
+* Primary: Data Scientist
+* Secondary: DevOps Engineer, CI/CD System
+
+.Preconditions:
+* The model is registered and validated in the Model Registry.
+* The CI/CD pipeline is configured with access to Kubernetes.
+
+.Main Flow:
+1. Data Scientist pushes model code to the repository.
+2. CI/CD pipeline is triggered automatically.
+3. System runs tests (unit tests, integration tests, and model validation).
+4. If tests pass, the model is packaged as a Docker container.
+5. Docker container is deployed to the Kubernetes cluster.
+6. Notifications are sent about deployment success.
+
+.Alternate Flow(s):
+* If tests fail, the system halts deployment and sends a failure notification.
+
+.Postconditions:
+* The model is successfully deployed and available for inference.
+
+.Triggers:
+* A push event to the model repository branch configured for deployment.
+
+.Exceptions:
+* Missing Kubernetes credentials.
+* CI/CD pipeline configuration errors.
