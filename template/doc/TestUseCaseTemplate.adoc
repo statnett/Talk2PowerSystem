@@ -1,0 +1,46 @@
+[Header]
+:TestUseCaseID: [Unique identifier, e.g., TUC-01]
+:TestUseCaseName: [Short name describing the Test-Use-Case]
+:version-label: 1.0.0
+:docdate: date (ISO)
+:TypeOfTest: [Structure/unstructured]
+
+= {TestUseCaseID} : {TestUseCaseName}
+
+[Related UseCaseID]
+Related User-Case and requirement:
+
+* [Reference to the User-Case]
+
+.Objective:
+* Purpose of this test case.
+
+.Test configuration:
+* Reference the test configuration that is prepared for the test.
+
+.Preconditions:
+* Specific setup or data required before testing.
+
+.Test Steps:
+[cols="1,4,3,3,3,1,1,4", options="header"]
+|===
+| No | Description | Assessment Criteria | Expected Outcome | Actual Outcome | Status | Severity | Comments 
+
+| 1 
+| Step 1 Action
+| How will the step be evaluated step 1
+| What is the expected outcome of the test step 1. Describing the desired application behavior. 
+| What was the actual outcome of the test step 1. Record what actually happened (filled during testing).
+| [Pass/Fail/In Progress]
+| [Critical/High/Medium/Low]
+| Any notes or additional context.
+
+| 2
+| Step 2 Action
+| How will the step be evaluated step 2
+| What is the expected outcome of the test step 2. Describing the desired application behavior. 
+| What was the actual outcome of the test step 2. Record what actually happened (filled during testing).
+| [Pass /Fail /In Progress] (filled during testing).
+| [Critical /High /Medium /Low] (filled during testing).
+| Any notes or additional context. (filled during testing).
+|===

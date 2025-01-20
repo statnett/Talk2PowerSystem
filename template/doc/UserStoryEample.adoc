@@ -1,7 +1,12 @@
-= User Story: Model Deployment Pipeline Optimization
+[Header]
+:UseStoryID: US-01
+:UseStoryName: Model Deployment Pipeline Optimization
 
-.Title:
-As a ModelOps Release Manager, I want an automated deployment pipeline of as-build model of the power system, so that I can push validated models to read-only repositories to make it available for all relevant application.
+= {UseStoryID} : {UseStoryName}
+
+
+.Definition:
+As a ModelOps Release Manager, I want an automated deployment pipeline of as-built model of the power system, so that I can push validated models to read-only repositories to make it available for all relevant application.
 
 .Description:
 * Automate the process of validating, packaging, and deploying models in a CI/CD based pipeline.
@@ -9,7 +14,7 @@ As a ModelOps Release Manager, I want an automated deployment pipeline of as-bui
 .Acceptance Criteria:
 * The pipeline supports deployment to read-only repository.
 * The system sends notifications for failed pipeline stages.
-* Only models that pass validation are deployed to the repository.
+* Only models that pass validation are deployed to the read-only repository.
 
 .Priority:
 High
@@ -20,4 +25,4 @@ High
 * Read-only repository.
 
 .Notes:
-* can we use existing e.g., Jenkins, GitHub Actions or do we need to build a dedicated
+* can we use existing e.g., Jenkins, GitHub Actions or do we need to build a dedicated CI/CD solution

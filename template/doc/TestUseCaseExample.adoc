@@ -1,0 +1,75 @@
+[Header]
+:TestUseCaseID: TUC-01
+:TestUseCaseName: Verify Successful Deployment of a Model to Kubernetes
+:version-label: 1.0.0
+:docdate: date (ISO)
+:TypeOfTest: Structure
+
+= {TestUseCaseID} : {TestUseCaseName}
+
+[Related UseCaseID]
+Related User-Case:
+
+* link:https://github.com/statnett/Talk2PowerSystem/blob/3e28370b631c184c0e6ed194d9b960aef60d1f76/template/doc/UseCaseExample.adoc[UC-01]
+
+.Objective:
+* Ensure the CI/CD pipeline deploys the model to Kubernetes without errors.
+
+.Test configuration:
+* Nordic44
+
+.Preconditions:
+* A validated model is present in the Model Registry.
+* CI/CD pipeline is configured with required access and credentials.
+
+.Test Steps:
+[cols="1,4,3,3,3,1,1,4", options="header"]
+|===
+| No | Description | Assessment Criteria | Expected Outcome | Actual Outcome | Status | Severity | Comments 
+
+| 1 
+| Push the model code to the designated repository branch.
+| How user friendly is the notification.
+| Confirmation is provided to the user that the process has started.
+| Status message provided information that the process has started.
+| [Pass]
+| 
+| 
+
+| 2
+| Verify the CI/CD pipeline triggers automatically.
+| 
+| No user interventions is needed.
+| Needs to restart the CI/CD for each run.
+| [In Progress]
+| [Medium]
+| The expectation that network policies is not allowing access to the deployed service.
+
+| 3
+| Monitor the pipeline to ensure all tests pass.
+| 
+| 
+| 
+| 
+| 
+| 
+
+| 4
+| Check the Kubernetes cluster for the deployment of the model container.
+| 
+| 
+| 
+| 
+| 
+| 
+
+| 5
+| Perform a health check on the deployed service.
+| 
+| 
+| 
+| 
+| 
+| 
+
+|===

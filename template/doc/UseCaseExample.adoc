@@ -1,24 +1,27 @@
-= Use Case: Model Deployment Pipeline
+[Header]
+:UseCaseID: UC-01
+:UseCaseName: Deploy Model to Production via CI/CD Pipeline
 
-[Use Case ID]
-== UC-01
+= {UseCaseID} : {UseCaseName}
 
-[Name]
-== Deploy Model to Production via CI/CD Pipeline
+[Related UseStoryID]
+Related User-Story:
+
+* https://github.com/statnett/Talk2PowerSystem/blob/3e28370b631c184c0e6ed194d9b960aef60d1f76/template/doc/UserStoryEample.adoc[US-01]
 
 .Description:
 * Automate the deployment of machine learning models to a Kubernetes cluster using a CI/CD pipeline.
 
 .Actors:
-* Primary: Data Scientist
-* Secondary: DevOps Engineer, CI/CD System
+* Primary: ModelOps Release Manager
+* Secondary: CI/CD System, Data Scientist
 
 .Preconditions:
 * The model is registered and validated in the Model Registry.
 * The CI/CD pipeline is configured with access to Kubernetes.
 
 .Main Flow:
-1. Data Scientist pushes model code to the repository.
+1. ModelOps Release Manager pushes model code to the repository.
 2. CI/CD pipeline is triggered automatically.
 3. System runs tests (unit tests, integration tests, and model validation).
 4. If tests pass, the model is packaged as a Docker container.
