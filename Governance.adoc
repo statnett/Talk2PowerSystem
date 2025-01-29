@@ -1,0 +1,114 @@
+= Branching and Release Strategy
+
+The following page describes our branching and release strategy.
+
+== Protected branches
+
+Some branches are protected in our repositories.
+
+Points below detail the policy that determines in our repositories which branches are protected.
+
+=== Main branch
+
+The default branch is named `main` and is protected. Commits can be merged only via pull requests passing different checks:
+- At least one reviewer, different from the pull request's author, must have approved the pull request.
+- Each commits must be signed correctly by its author.
+- The ENTSO-E ICT Committee must approve the publication of the release.
+- ENTSO-E security scan must be performed. 
+
+=== Release branches
+
+Release branches, which pattern is  `release-v*.*.0`, are created from the corresponding tag `v*.*.0` each time a corrective release is needed.
+Only [maintainers](MAINTAINERS.md) can create or force-push into these branches.
+Other members must create a pull request to do push into these branches and pass the same checks as the `main` branch.
+These branches are always up to the most recent patch of the release.
+
+== Releasing a repository: a guide
+
+=== Prerequisites
+
+In order to release a ENTSO-E repository, you must first:
+- be a maintainer of the repository you wish to release
+
+=== Generating a release tag
+
+For the sake of the demonstration, the repository to be released will be called `entsoe-repo` below.
+
+Start by being up-to-date to your `main` branch:
+```shell
+$ cd entsoe-repo
+$ git checkout main
+$ git pull
+```
+
+Create your temporary branch preparing to the release X.Y.0 and add commits bumping to your release version then your next snapshot version.
+You can then push this branch.
+```shell
+$ git checkout -b tmp_prepare_release
+$ mvn versions:set -DnewVersion=X.Y.0
+$ git commit -s -a -S -m "Bump to vX.Y.0"
+$ mvn versions:set -DnewVersion=X.Y+1.0-SNAPSHOT
+$ git commit -s -a -m "Bump to vX.Y+1.0-SNAPSHOT"
+$ git push -u origin tmp_prepare_release
+```
+
+Create a pull request from your temporary branch into the `main` branch and tag another maintainer as a reviewer so they can approve it.
+Once it is approved, locally merge it by following these steps:
+```shell
+$ git checkout main
+$ git pull
+$ git merge --ff tmp_prepare_release
+$ git push
+```
+After that, create your tag:
+```shell
+$ git tag -s vX.Y.0 <hash of the corresponding commit (bumping to vX.Y.0)>
+$ git push origin vX.Y.0
+```
+NB: the tag must respect the pattern `vX.Y.0`.
+
+You can then publish a Release note pointing to your newly created tag. 
+
+Please make sure that your release note is comprehensive to all new features and bug fixes of the release and that additional documentation has been updated if necessary.
+
+=== Differences for a patch release
+
+Please note that there are some differences in the process when you're publishing a patch release or a correction, which version respects the pattern `vX.Y.Z` with Z different from 0.
+
+First checkout to the previous `vX.Y.*` release or if a patch has already been released, on the `release-vX.Y.0` branch instead of the `main` branch.
+```shell
+$ git checkout tags/vX.Y.0
+$ git checkout -b release-vX.Y.0
+```
+or (if a patch has already been released)
+```shell
+$ git checkout release-vX.Y.0
+```
+
+Next, open the new release:
+```shell
+$ git commit -s -a -m "Bump to vX.Y.Z-SNAPSHOT"
+```
+
+You can then cherry-pick the commits of your patch:
+```shell
+$ git cherry-pick -x <commit1_hash>
+$ git cherry-pick -x <commit2_hash>
+...
+```
+And bump to the patched version:
+```shell
+$ git commit -s -a -S -m "Bump to vX.Y.Z"
+$ git push -u origin release-vX.Y.0
+```
+
+After that, create your tag:
+```shell
+$ git tag -s vX.Y.Z <hash of the corresponding commit (bumping to vX.Y.Z)>
+$ git push origin vX.Y.Z
+```
+NB: the tag must respect the pattern `vX.Y.Z`.
+
+You can then publish a Release note pointing to your newly created tag.
+
+Please make sure that your release note is comprehensive to all bug fixes of the corrective release.
