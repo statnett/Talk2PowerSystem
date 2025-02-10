@@ -1,0 +1,59 @@
+= Project Governance
+
+This document outlines the governance model for the project, defining roles, responsibilities, and branch management strategy.
+
+== Roles and Permissions
+The project follows a structured role-based access control model. The roles are defined as follows:
+
+=== Read
+- Can view repository contents and discussions.
+- Can submit issues and comment on existing ones.
+- No write access.
+
+=== Triage
+- Can label, categorize, and prioritize issues.
+- Can assist in reviewing and managing issue reports.
+- Cannot merge pull requests or modify the repository.
+
+=== Write
+- Can create and push branches.
+- Can submit and review pull requests.
+- Can update documentation and contribute code.
+- Cannot modify project settings or manage permissions.
+
+=== Maintain
+- Can approve and merge pull requests.
+- Responsible for reviewing and enforcing coding standards.
+- Can manage project workflows and CI/CD configurations.
+- Cannot delete the repository or change administrative settings.
+
+=== Admin
+- Full control over repository settings and permissions.
+- Can manage roles and access levels.
+- Can enforce security policies and branch protections.
+- Responsible for repository governance and compliance.
+
+== Branch Management Strategy
+
+=== Default Branch
+- The default working branch for active development is **`development`**.
+- All new features and bug fixes must be merged into the **`development`** branch before being included in a release.
+
+=== Historical Branches
+- Versioning follows **Semantic Versioning** (MAJOR.MINOR.PATCH).
+- Major and minor releases are archived as historical branches following the format:
+  - `vX.Y` (e.g., `v1.0`, `v1.1`, `v2.0`)
+- Patch releases are handled within the latest minor release branch.
+
+=== Branch Protection Rules
+- The **`development`** branch is protected and requires pull request reviews before merging.
+- Historical branches are read-only to preserve past versions.
+- Direct pushes to protected branches are restricted to **Maintain** and **Admin** roles.
+
+== Decision-Making Process
+- Governance decisions are made by the **Admin** role in consultation with **Maintain** members.
+- Feature discussions, roadmaps, and major changes are discussed through issue tracking and proposal discussions.
+- Voting or consensus-based decision-making is used for impactful changes.
+
+== Amendments
+This governance document may be updated as needed. Changes must be reviewed and approved by **Admin** before adoption.
