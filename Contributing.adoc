@@ -1,85 +1,67 @@
 = Contributing to the project
 
-First off, thanks for taking the time to contribute! 
-
-Before you start, we highly recommend that you read the following. IT will give you a set of guidelines for your contributions.
-
+Thank you for your interest in contributing to this project! We value your contributions and strive to create an open and welcoming environment. This document outlines the guidelines for participating and ensuring a smooth collaboration process.
 
 == Code of conduct
-This project applies the [ENTSO-E GitHub Code of Conduct](https://github.com/entsoe-tso/NetworkCodeProfiles/blob/main/.github/CODE_OF_CONDUCT.asciidoc). By participating, you are expected to uphold this code. Please report unacceptable behavior to the project's maintainers [cim@entsoe.eu](mailto:cim@entsoe.eu).
+All contributors are expected to adhere to our project's Code of Conduct. Please read it before contributing:
 
+- **[Code of Conduct](CODE_OF_CONDUCT.adoc)**
 
-== English convention
-The documentation produced and conversations held within the project will use British English. A list of spelling differences between British and American English can be found [here](https://www.britishcouncilfoundation.id/en/english/articles/british-and-american-english).
+== Contribution Guidelines
+
+=== General Guidelines
+- Follow our coding standards and best practices.
+- Ensure that your changes align with the [project’s goals](ReadMe.adoc) and [roadmap](Roadmap.adoc).
+- Open an issue before starting significant work to gather feedback.
+- All code must be reviewed before merging.
+
+=== British English Convention
+- Use **British English** for all comments, documentation, and discussions. A list of spelling differences between British and American English can be found [here](https://www.britishcouncilfoundation.id/en/english/articles/british-and-american-english).
+- Maintain clear and concise documentation.
+
+== Developer Certificate of Origin (DCO)
+Before contributing, you must agree to the Developer Certificate of Origin (DCO). This ensures that all contributions are properly licensed and attributable:
+
+- **[Developer Certificate of Origin](DCO)**
 
 == License
-The project artifacts are an open source framework licensed under the [Apache v2.0](http://www.apache.org/licenses/) and more concretely, the Test Data is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. This is described in the [LICENSE](https://github.com/entsoe-tso/NetworkCodeProfiles/blob/main/.github/LICENSE.md) and [LICENSE_TestData](https://github.com/entsoe-tso/NetworkCodeProfiles/blob/main/.github/LICENSE_TestData.md) respectively.
+By contributing to this project, you agree that your contributions will be licensed under the project's license:
 
-By contributing to the project, you accept and agree to the terms and conditions for your present and future contributions submitted to the project.
+- **[Project License](LICENSE)**
 
+== Governance
+The project follows a structured governance model. Refer to the governance document for more details on roles, responsibilities, and decision-making processes:
 
-== Reporting Bugs and Enhancements
-If you encounter a problem with the project artifacts, the first places to ask for help is the [maintainers' email list cim@entsoe.eu](mailto:cim@entsoe.eu).
+- **[Governance](GOVERNANCE.adoc)**
 
-If, after having asked for help, you suspect that you have found a bug in the project artifacts, you should report it by opening an issue in the appropriate [GitHub repository](https://github.com/entsoe-tso/NetworkCodeProfiles/). Before creating a bug report, please look for similar issues to see if the problem has already been reported. It is preferable to add a comment to an existing issue rather than opening a new one. This avoids duplication of effort and makes it easier to triage issues.
+== Roadmap
+To align contributions with the project's vision and future direction, please review our roadmap:
 
-If there is no already existing issue for your problem, feel free to create a new issue. Please provide as many details as you can on your problem filling, and don't forget to indicate which version of your software tool (if applicable) you are running.
+- **[Project Roadmap](ROADMAP.adoc)**
 
-== Contributing to the code or the documentation
-Before contributing to the project, please be sure to have read and understood the [ENTSO-E GitHub Code of Conduct](https://github.com/entsoe-tso/NetworkCodeProfiles/blob/main/.github/CODE_OF_CONDUCT.asciidoc) and the [license](#license) paragraph. 
+== Security
+If you discover a security vulnerability, please follow the responsible disclosure process outlined in our security policy:
 
-Please also make sure that you fully understand the [DCO mechanism](#dco) and the [contributing process](#contributing-process) described below.
+- **[Security Policy](SECURITY.adoc)**
 
-=== DCO
+== Support
+For questions, issues, or general discussions, refer to the support guidelines:
 
-The project uses a mechanism known as a [Developer Certificate of Origin (DCO)](https://developercertificate.org/) to manage the process of ensuring that we are legally allowed to distribute all the artifacts and documentation for the project. A DCO is a legally binding statement that asserts that you are the author of your contribution, and that you wish to allow ENTSO-E to use your work.
+- **[Support Guidelines](SUPPORT.adoc)**
 
-Such mechanism applies to all contributors.
+== Submitting Changes
 
-When using a git command line, contributors sign off on these requirements by adding a `Signed-off-by` line to commit messages. All commits from all repositories of the project have to be signed-off in this way:
+1. **Fork the Repository**
+2. **Create a New Branch** for your feature or bug fix.
+3. **Commit Your Changes** following conventional commit messages.
+4. **Run Tests** to ensure your changes do not introduce issues.
+5. **Open a Pull Request** and link to the related issue.
+6. **Engage in Review** by addressing feedback and suggestions.
 
-```
-This is my commit message.
+== Issues and Feature Requests
+- Before opening a new issue, check existing issues to avoid duplicates.
+- Clearly describe the issue or feature request with relevant details.
+- Label the issue appropriately for better tracking.
 
-Signed-off-by: John Doe <john.doe@server.com>
-```
+== Thank You!
 
-You can write it manually, but Git even has a -s command line option to automatically append it to your commit message:
-
-```
-$ git commit -s -m 'This is my commit message'
-```
-
-Please make sure to configure your .gitconfig file beforehand with your name and email address:
-
-[user]
-	name = John Doe
-	email = john.doe@server.com 
-
-Most IDEs can also be configured in order to automatically add a `Signed-off-by` line at the end of the commit message.
-
-Please, note that the email address is linked to the GitHub account you are using whether it is a personal or corporate address.
-
-Note that, during continuous integration, a check is performed to see if all commits in a pull request contain a valid `Signed-off-by' line.
-
-== Contributing process
-
-Before you start contributing, you have to agree with the [maintainers](MAINTAINERS.md) of the repository about the technical solution you will implement, to make sure it will be aligned with the project guidelines. 
-
-If you are not part of the development team, please contact us to join the [maintainers' email list cim@entsoe.eu](mailto:cim@entsoe.eu) and we will grant you write rights in the repository.
-
-Once you do, you will receive an invitation to the project's repository. Accept it and you will be able to clone the repository, create your own branch and commit your changes!
-
-Once the development is done, you have to create a [pull request](https://help.github.com/en/articles/about-pull-requests):
-- Make sure you have updated the documentation: no Pull Request shall be merged without the associated documentation;
-- Fill all the relevant sections of the template to give context to the reviewer;
-- Assign one or more reviewers, as described in the [maintainers](MAINTAINERS.md) document. The reviewers will assign a maintainer for a record review;
-- Add the `PR: waiting-for-review` label and all other relevant labels;
-- Verify that all [status checks](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks) are OK.
-
-The reviewer will review your proposal and:
-- Approves your changes: your contribution fits the project guidelines and will be merged;
-- Comments: the reviewer suggests to make some improvements;
-- Requests a change: your proposal cannot be merged as such. You need to fix it with respect to the different comments made by the reviewer.
-
-**Please note that, after a first review has been done, no force-push should be done on the Pull Request.** A force-push makes it more difficult for reviewers to follow the changes following their reviews.
