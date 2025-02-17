@@ -1,0 +1,20 @@
+[Header]
+:UseCaseID: UC-01
+:UseCaseName: Get Quick Overview of Resource Types in Model
+:UserStoryID: US-01
+:UserStoryLink: xref:US-01_Overview.adoc[{UserStoryID}]
+
+= {UseCaseID} : {UseCaseName}
+
+Related User-Story: {UserStoryLink}
+
+.Description:
+* Provide a quick overview of the resource types present in the model to help the Power System Engineer assess the model's suitability for their analysis.
+
+.Actors:
+* Primary Actor(s): Power System Engineer
+* Secondary Actor(s): Other model users (e.g., Data Analysts, Software Developers)
+
+.Preconditions:
+* The model is available and accessible.
+* The user has the necessary permissions to view the model.

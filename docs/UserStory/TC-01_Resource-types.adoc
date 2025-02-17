@@ -1,0 +1,35 @@
+[Header]
+:TestUseCaseID: TC-01
+:TestUseCaseName: Resource Types Overview
+:TypeOfTest: TBD
+:UseCaseID: UC-01
+:UseCaseLink: xref:UC-01_Resource-types.adoc[{UseCaseID}]
+
+= {TestUseCaseID} : {TestUseCaseName}
+
+Related Use cases: {UseCaseLink}
+
+.Objective:
+* See {UseCaseLink}
+
+.Test configuration:
+* Nordic44 as CIM17
+
+.Preconditions:
+* See {UseCaseLink}
+
+.Example questions
+
+* What resource types are present in the model?
+* How many ACLineSegments are in the model?
+* How many instances of GeneratingUnit subclasses are in the model?
+
+.Expected answer
+A table like this:
+[cols="2,1", options="header"]
+|===
+| Type | Count
+| ACLineSegment | 42
+| Breaker | 12
+| Busbar | 16
+|===

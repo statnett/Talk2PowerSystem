@@ -1,0 +1,29 @@
+:UserStoryID: US-01
+:UserStoryName: Get component lists
+
+= {UserStoryID} : {UserStoryName}
+
+.Definition:
+As a Power System Engineer,
+I need to ask questions to locate components in the model,
+so that I can identify the right components for subsequent analysis work.
+
+.Description:
+As a Power System Engineer, I want to retrieve lists of specific types of equipment or component within defined areas (geography, bidding zone, market definitions, substations, etc).
+I will need to see both names, identifiers (mRID), and some key properties, so that I can ensure all relevant components are included in my analysis.
+In order to know what to ask for, I may need to ask for a list of all resource types present in the model, possibly with some filtering to reduce noise.
+
+.Acceptance Criteria:
+* The system provides a quick overview of the resource types present in the model in response to questions.
+* The system allows the user to get a list of equipment of a specified type.
+* The system allows the user to get a list of component of a specified resource type that belong to an area.
+* The system supports basic filtering of the results.
+
+.Priority:
+High
+
+.Dependencies:
+* Model data must be available and up-to-date.
+
+.Notes:
+* The feature should support filtering by resource type and area definition.

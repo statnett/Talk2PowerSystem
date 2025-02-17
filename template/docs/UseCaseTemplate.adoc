@@ -1,13 +1,12 @@
 [Header]
 :UseCaseID: [Unique identifier, e.g., UC-01]
 :UseCaseName: [Short name describing the Use-Case]
+:UserStoryID: [Reference to the related User-Story]
+:UserStoryLink: xref:US-01_Overview.adoc[{UserStoryID}]
 
 = {UseCaseID} : {UseCaseName}
 
-[Related UseStoryID]
-Related User-Story:
-
-* [Reference to the User-Story ]
+Related User-Story: {UserStoryLink}
 
 .Description:
 * Detailed explanation of what the use case entails.
