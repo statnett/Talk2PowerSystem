@@ -1,0 +1,35 @@
+[Header]
+:TestUseCaseID: TC-02
+:TestUseCaseName: Component properties
+:TypeOfTest: Unstructured
+:UseCaseID: TODO
+:UseCaseLink: xref:TODO.adoc[{UseCaseID}]
+
+= {TestUseCaseID} : {TestUseCaseName}
+
+Related Use cases: {UseCaseLink}
+
+.Objective:
+* See {UseCaseLink}
+
+.Test configuration:
+* All models
+
+.Preconditions:
+* See {UseCaseLink}
+
+_Note: testing details will be filled out and refined later_
+
+.Example questions
+
+[cols="1,1", options="header"]
+|===
+| Question | Notes
+
+| What are the properties of X? | Here we expect the answer to contain relevant properties (like `r`, `r0` and `x`) depending on the component type and model. For asset-oriented models, we expect the system to pull datasheet values when relevant (PowerSystemResource -> Asset -> AssetDatasheet).
+| Who owns X? | Important to differentiate between owner and operator, also note this is represented differently depending on CIM version and model source system.
+| What are the analogue and digital measurements associated with X? | System should answer with a list of Measurement objects, along with a description of each to help the user understand what's being measured. Important to return identifiers.
+| Which time series contains the voltage measurements of X? |
+| Which time series contains the voltage measurements of the high winding at station X? | Assume station X only contains a single power transformer.
+|===
+NOTE: In the example questions, replace "X" with a component name, mRID or a reasonably unambiguous description.
