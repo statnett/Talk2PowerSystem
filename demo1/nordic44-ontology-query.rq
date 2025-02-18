@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+SELECT * FROM onto:explicit {
+    {
+        SELECT DISTINCT ?x {
+            {
+                [] ?x []
+            } UNION {
+                [] a ?x
+            }
+        }
+    } UNION {
+        ?x rdfs:isDefinedBy cimex:
+    }
+    ?x ?p ?o
+} ORDER BY ?x

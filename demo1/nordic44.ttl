@@ -1,0 +1,2219 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix onto: <http://www.ontotext.com/> .
+@prefix cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject.Diagram> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram.DiagramElements>;
+  rdfs:comment "A diagram object is part of a diagram."^^rdf:XMLLiteral;
+  rdfs:label "Diagram"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram.DiagramElements> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram.orientation> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OrientationKind>;
+  rdfs:comment "Coordinate system orientation of the diagram."^^rdf:XMLLiteral;
+  rdfs:label "orientation"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint.DiagramObject> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject.DiagramObjectPoints>;
+  rdfs:comment "The diagram object with which the points are associated."^^rdf:XMLLiteral;
+  rdfs:label "DiagramObject"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject.DiagramObjectPoints> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject.IdentifiedObject> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.DiagramObjects>;
+  rdfs:comment "The diagram objects that are associated with the domain object."^^rdf:XMLLiteral;
+  rdfs:label "IdentifiedObject"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.DiagramObjects> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject.rotation> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject>;
+  rdfs:comment "Sets the angle of rotation of the diagram object.  Zero degrees is pointing to the top of the diagram.  Rotation is clockwise."^^rdf:XMLLiteral;
+  rdfs:label "rotation"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint.DiagramObjectGluePoint>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectGluePoint>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectGluePoint.DiagramObjectPoints>;
+  rdfs:comment "A diagram object glue point is associated with 2 or more object points that are considered to be 'glued' together."^^rdf:XMLLiteral;
+  rdfs:label "DiagramObjectGluePoint"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectGluePoint.DiagramObjectPoints> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint.sequenceNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint>;
+  rdfs:comment "The sequence position of the point, used for defining the order of points for diagram objects acting as a polyline or polygon with more than one point."^^rdf:XMLLiteral;
+  rdfs:label "sequenceNumber"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint.xPosition> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint>;
+  rdfs:comment "The X coordinate of this point."^^rdf:XMLLiteral;
+  rdfs:label "xPosition"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint.yPosition> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint>;
+  rdfs:comment "The Y coordinate of this point."^^rdf:XMLLiteral;
+  rdfs:label "yPosition"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.name> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "The name is any free human readable and possibly non unique text naming the object."^^rdf:XMLLiteral;
+  rdfs:label "name"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>,
+    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TextDiagramObject.text> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TextDiagramObject>;
+  rdfs:comment "The text that is displayed by this text diagram object."^^rdf:XMLLiteral;
+  rdfs:label "text"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.description> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."^^rdf:XMLLiteral;
+  rdfs:label "description"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>,
+    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConductingEquipment> a rdf:Property;
+  rdfs:subPropertyOf cimex:Terminal.Equipment;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.Terminals>;
+  rdfs:comment "The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes."^^rdf:XMLLiteral;
+  rdfs:label "ConductingEquipment"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.Terminals> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.nominalVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:comment "The power system resource's base voltage."^^rdf:XMLLiteral;
+  rdfs:label "nominalVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Line.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Line>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Lines>;
+  rdfs:comment "The lines within the sub-geographical region."^^rdf:XMLLiteral, "The sub-geographical region of the line."^^rdf:XMLLiteral;
+  rdfs:label "Region"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Lines> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.ConnectivityNodeContainer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.ConnectivityNodes>;
+  rdfs:comment "Container of this connectivity node."^^rdf:XMLLiteral;
+  rdfs:label "ConnectivityNodeContainer"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.ConnectivityNodes> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion.Regions>;
+  rdfs:comment "The geographical region to which this sub-geographical region is within."^^rdf:XMLLiteral;
+  rdfs:label "Region"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>,
+    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion.Regions> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.EquipmentContainer> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer.Equipments>;
+  rdfs:comment "Container of this equipment."^^rdf:XMLLiteral;
+  rdfs:label "EquipmentContainer"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer.Equipments> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.OperationalLimitSet>;
+  rdfs:label "Terminal"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.OperationalLimitSet> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.sequenceNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:comment "The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the \"starting point\" for a two terminal branch."^^rdf:XMLLiteral;
+  rdfs:label "sequenceNumber"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.bch> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:comment "Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line."^^rdf:XMLLiteral;
+  rdfs:label "bch"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:comment "Positive sequence series resistance of the entire line section."^^rdf:XMLLiteral;
+  rdfs:label "r"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.x> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:comment "Positive sequence series reactance of the entire line section."^^rdf:XMLLiteral;
+  rdfs:label "x"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePowerLimit.value> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePowerLimit>;
+  rdfs:comment "Value of active power limit."^^rdf:XMLLiteral;
+  rdfs:label "value"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#AnalogValue.Analog> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#AnalogValue>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Analog>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Analog.AnalogValues>;
+  rdfs:comment "The values connected to this measurement."^^rdf:XMLLiteral;
+  rdfs:label "Analog"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Analog.AnalogValues> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#AnalogValue.value> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#AnalogValue>;
+  rdfs:comment "The value to supervise."^^rdf:XMLLiteral;
+  rdfs:label "value"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.ConductingEquipment>;
+  rdfs:comment "All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."^^rdf:XMLLiteral;
+  rdfs:label "BaseVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.ConductingEquipment> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TransformerEnds>;
+  rdfs:comment "Base voltage of the transformer end.  This is essential for PU calculation."^^rdf:XMLLiteral;
+  rdfs:label "BaseVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TransformerEnds> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.VoltageLevel>;
+  rdfs:comment "The base voltage used for all equipment within the voltage level."^^rdf:XMLLiteral;
+  rdfs:label "BaseVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.VoltageLevel> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Bay.VoltageLevel> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Bay>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Bays>;
+  rdfs:comment "The voltage level containing this bay."^^rdf:XMLLiteral;
+  rdfs:label "VoltageLevel"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Bays> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor.length> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor>;
+  rdfs:comment "Segment length for calculating line section capabilities"^^rdf:XMLLiteral;
+  rdfs:label "length"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Length> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad.LoadGroup> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup.EnergyConsumers>;
+  rdfs:comment "Group of this ConformLoad."^^rdf:XMLLiteral;
+  rdfs:label "LoadGroup"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup.EnergyConsumers> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConnectivityNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.Terminals>;
+  rdfs:comment "Terminals interconnected with zero impedance at a this connectivity node. "^^rdf:XMLLiteral;
+  rdfs:label "ConnectivityNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.Terminals> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.ControlArea> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.ControlAreaGeneratingUnit>;
+  rdfs:comment "The parent control area for the generating unit specifications."^^rdf:XMLLiteral;
+  rdfs:label "ControlArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.ControlAreaGeneratingUnit> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.EnergyArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea.ControlArea>;
+  rdfs:comment "The energy area that is forecast from this control area specification."^^rdf:XMLLiteral;
+  rdfs:label "EnergyArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> "Operation";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea.ControlArea> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaTypeKind>;
+  rdfs:comment "The primary type of control area definition used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.   A control area specified with primary type of automatic generation control could still be forecast and used as an interchange area in power flow analysis."^^rdf:XMLLiteral;
+  rdfs:label "type"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.GeneratingUnit>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ControlAreaGeneratingUnit>;
+  rdfs:comment "The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once."^^rdf:XMLLiteral;
+  rdfs:label "GeneratingUnit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ControlAreaGeneratingUnit> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit.value> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit>;
+  rdfs:comment "Limit on current flow."^^rdf:XMLLiteral;
+  rdfs:label "value"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentFlow> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.LoadResponse> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.EnergyConsumer>;
+  rdfs:comment "The load response characteristic of this load.  If missing, this load is assumed to be constant power."^^rdf:XMLLiteral;
+  rdfs:label "LoadResponse"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.EnergyConsumer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.pfixed> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment "Active power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."^^rdf:XMLLiteral;
+  rdfs:label "pfixed"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "Operation";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.qfixed> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment "Reactive power of the load that is a fixed quantity. Load sign convention is used, i.e. positive sign means flow out from a node."^^rdf:XMLLiteral;
+  rdfs:label "qfixed"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "Operation";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.Equipment> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.OperationalLimitSet>;
+  rdfs:comment "The equipment to which the limit set applies."^^rdf:XMLLiteral;
+  rdfs:label "Equipment"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.OperationalLimitSet> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.aggregate> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:comment "The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be power transformers or synchronous machines operating in parallel modeled as a single aggregate power transformer or aggregate synchronous machine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program.  "^^rdf:XMLLiteral;
+  rdfs:label "aggregate"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.GeneratingUnit> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.RotatingMachine>;
+  rdfs:comment "A synchronous machine may operate as a generator and as such becomes a member of a generating unit."^^rdf:XMLLiteral;
+  rdfs:label "GeneratingUnit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.RotatingMachine> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.initialP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "Default initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration."^^rdf:XMLLiteral;
+  rdfs:label "initialP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.maxOperatingP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "This is the maximum operating active power limit the dispatcher can enter for this unit."^^rdf:XMLLiteral;
+  rdfs:label "maxOperatingP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.minOperatingP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "This is the minimum operating active power limit the dispatcher can enter for this unit."^^rdf:XMLLiteral;
+  rdfs:label "minOperatingP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.nominalP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment """The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).
+The attribute shall be a positive value equal or less than RotatingMachine.ratedS."""^^rdf:XMLLiteral;
+  rdfs:label "nominalP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ratedGrossMaxP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "The unit's gross rated maximum capacity (book value)."^^rdf:XMLLiteral;
+  rdfs:label "ratedGrossMaxP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ratedNetMaxP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity."^^rdf:XMLLiteral;
+  rdfs:label "ratedNetMaxP"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.bPerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:comment "Positive sequence shunt (charging) susceptance per section"^^rdf:XMLLiteral;
+  rdfs:label "bPerSection"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.gPerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:comment "Positive sequence shunt (charging) conductance per section"^^rdf:XMLLiteral;
+  rdfs:label "gPerSection"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea.SubLoadAreas>;
+  rdfs:comment "The LoadArea where the SubLoadArea belongs."^^rdf:XMLLiteral;
+  rdfs:label "LoadArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea.SubLoadAreas> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup.SubLoadArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadGroups>;
+  rdfs:comment "The SubLoadArea where the Loadgroup belongs."^^rdf:XMLLiteral;
+  rdfs:label "SubLoadArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadGroups> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.exponentModel>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment """Indicates the exponential voltage dependency model is to be used.   If false, the coefficient model is to be used.
+The exponential voltage dependency model consist of the attributes
+- pVoltageExponent
+- qVoltageExponent.
+The coefficient model consist of the attributes
+- pConstantImpedance
+- pConstantCurrent
+- pConstantPower
+- qConstantImpedance
+- qConstantCurrent
+- qConstantPower.
+The sum of pConstantImpedance, pConstantCurrent and pConstantPower shall equal 1.
+The sum of qConstantImpedance, qConstantCurrent and qConstantPower shall equal 1."""^^rdf:XMLLiteral;
+  rdfs:label "exponentModel"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantCurrent>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of active power load modeled as constant current."^^rdf:XMLLiteral;
+  rdfs:label "pConstantCurrent"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantImpedance>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of active power load modeled as constant impedance."^^rdf:XMLLiteral;
+  rdfs:label "pConstantImpedance"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantPower>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of active power load modeled as constant power."^^rdf:XMLLiteral;
+  rdfs:label "pConstantPower"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantCurrent>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of reactive power load modeled as constant current."^^rdf:XMLLiteral;
+  rdfs:label "qConstantCurrent"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantImpedance>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of reactive power load modeled as constant impedance."^^rdf:XMLLiteral;
+  rdfs:label "qConstantImpedance"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantPower>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:comment "Portion of reactive power load modeled as constant power."^^rdf:XMLLiteral;
+  rdfs:label "qConstantPower"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement.PowerSystemResource> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource.Measurements>;
+  rdfs:comment "The measurements associated with this power system resource."^^rdf:XMLLiteral;
+  rdfs:label "PowerSystemResource"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource.Measurements> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement.measurementType> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement>;
+  rdfs:comment "Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc."^^rdf:XMLLiteral;
+  rdfs:label "measurementType"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement.unitMultiplier> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier>;
+  rdfs:comment "The unit multiplier of the measured quantity."^^rdf:XMLLiteral;
+  rdfs:label "unitMultiplier"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement.unitSymbol> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol>;
+  rdfs:comment "The unit of measure of the measured quantity."^^rdf:XMLLiteral;
+  rdfs:label "unitSymbol"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValue.MeasurementValueSource>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValue>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValueSource>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValueSource.MeasurementValues>;
+  rdfs:comment "The MeasurementValues updated by the source."^^rdf:XMLLiteral;
+  rdfs:label "MeasurementValueSource"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValueSource.MeasurementValues> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad.LoadGroup> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup.EnergyConsumers>;
+  rdfs:comment "Conform loads assigned to this ConformLoadGroup."^^rdf:XMLLiteral;
+  rdfs:label "LoadGroup"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup.EnergyConsumers> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitSet> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.OperationalLimitValue>;
+  rdfs:comment "Values of equipment limits."^^rdf:XMLLiteral;
+  rdfs:label "OperationalLimitSet"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.OperationalLimitValue> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitType> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.OperationalLimit>;
+  rdfs:comment "The limit type associated with this limit."^^rdf:XMLLiteral;
+  rdfs:label "OperationalLimitType"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.OperationalLimit> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.acceptableDuration>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:comment "The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed."^^rdf:XMLLiteral;
+  rdfs:label "acceptableDuration"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.direction> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind>;
+  rdfs:comment "The direction of the limit."^^rdf:XMLLiteral;
+  rdfs:label "direction"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.PowerTransformer> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer.PowerTransformerEnd>;
+  rdfs:comment "The ends of this power transformer."^^rdf:XMLLiteral;
+  rdfs:label "PowerTransformer"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer.PowerTransformerEnd> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.b> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment "Magnetizing branch susceptance (B mag).  The value can be positive or negative."^^rdf:XMLLiteral;
+  rdfs:label "b"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.connectionKind> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection>;
+  rdfs:comment "Kind of connection."^^rdf:XMLLiteral;
+  rdfs:label "connectionKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.g> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment "Magnetizing branch conductance."^^rdf:XMLLiteral;
+  rdfs:label "g"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment """Resistance (star-model) of the transformer end.
+The attribute shall be equal or greater than zero for non-equivalent transformers."""^^rdf:XMLLiteral;
+  rdfs:label "r"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.ratedS> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment """Normal apparent power rating.
+The attribute shall be a positive value. For a two-winding transformer the values for the high and low voltage sides shall be identical. """^^rdf:XMLLiteral;
+  rdfs:label "ratedS"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ApparentPower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.ratedU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment """Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.
+A high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater or equal than ratedU for the lower voltage sides."""^^rdf:XMLLiteral;
+  rdfs:label "ratedU"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.x> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment "Positive sequence series reactance (star-model) of the transformer end."^^rdf:XMLLiteral;
+  rdfs:label "x"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.TransformerEnd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.RatioTapChanger>;
+  rdfs:comment "Ratio tap changer associated with this transformer end."^^rdf:XMLLiteral;
+  rdfs:label "TransformerEnd"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.RatioTapChanger> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.stepVoltageIncrement> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:comment "Tap step increment, in per cent of nominal voltage, per step position."^^rdf:XMLLiteral;
+  rdfs:label "stepVoltageIncrement"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#PerCent> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.tculControlMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode>;
+  rdfs:comment "Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger."^^rdf:XMLLiteral;
+  rdfs:label "tculControlMode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.RegulatingControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.RegulatingCondEq>;
+  rdfs:comment "The regulating control scheme in which this equipment participates."^^rdf:XMLLiteral;
+  rdfs:label "RegulatingControl"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.RegulatingCondEq> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.RegulatingControl>;
+  rdfs:comment "The controls regulating this terminal."^^rdf:XMLLiteral;
+  rdfs:label "Terminal"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.RegulatingControl> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.mode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind>;
+  rdfs:comment "The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule."^^rdf:XMLLiteral;
+  rdfs:label "mode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.ratedS> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:comment """Nameplate apparent power rating for the unit.
+The attribute shall have a positive value."""^^rdf:XMLLiteral;
+  rdfs:label "ratedS"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ApparentPower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.aVRDelay> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment "Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR)."^^rdf:XMLLiteral;
+  rdfs:label "aVRDelay"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.maximumSections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment "The maximum number of sections that may be switched in. "^^rdf:XMLLiteral;
+  rdfs:label "maximumSections"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.nomU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment "The voltage at which the nominal reactive power may be calculated. This should normally be within 10% of the voltage at which the capacitor is connected to the network."^^rdf:XMLLiteral;
+  rdfs:label "nomU"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.normalSections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment "The normal number of sections switched in."^^rdf:XMLLiteral;
+  rdfs:label "normalSections"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Substations>;
+  rdfs:comment "The SubGeographicalRegion containing the substation."^^rdf:XMLLiteral;
+  rdfs:label "Region"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Substations> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Substation> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.VoltageLevels>;
+  rdfs:comment "The substation of the voltage level."^^rdf:XMLLiteral;
+  rdfs:label "Substation"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.VoltageLevels> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.normalOpen> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:comment "The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen."^^rdf:XMLLiteral;
+  rdfs:label "normalOpen"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.retained> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:comment "Branch is retained in a bus branch model.  The flow through retained switches will normally be calculated in power flow."^^rdf:XMLLiteral;
+  rdfs:label "retained"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.maxQ> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:comment "Maximum reactive power limit. This is the maximum (nameplate) limit for the unit."^^rdf:XMLLiteral;
+  rdfs:label "maxQ"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.minQ> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:comment "Minimum reactive power limit for the unit."^^rdf:XMLLiteral;
+  rdfs:label "minQ"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.qPercent> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:comment "Percent of the coordinated reactive control that comes from this machine."^^rdf:XMLLiteral;
+  rdfs:label "qPercent"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#PerCent> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind>;
+  rdfs:comment "Modes that this synchronous machine can operate in."^^rdf:XMLLiteral;
+  rdfs:label "type"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.TapChangerControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl.TapChanger>;
+  rdfs:comment "The tap changers that participates in this regulating tap control scheme."^^rdf:XMLLiteral;
+  rdfs:label "TapChangerControl"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl.TapChanger> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.highStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment """Highest possible tap step position, advance from neutral.
+The attribute shall be greater than lowStep."""^^rdf:XMLLiteral;
+  rdfs:label "highStep"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.lowStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment "Lowest possible tap step position, retard from neutral"^^rdf:XMLLiteral;
+  rdfs:label "lowStep"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.ltcFlag> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment "Specifies whether or not a TapChanger has load tap changing capabilities."^^rdf:XMLLiteral;
+  rdfs:label "ltcFlag"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.neutralStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment """The neutral tap step position for this winding.
+The attribute shall be equal or greater than lowStep and equal or less than highStep."""^^rdf:XMLLiteral;
+  rdfs:label "neutralStep"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.neutralU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment "Voltage at which the winding operates at the neutral tap setting."^^rdf:XMLLiteral;
+  rdfs:label "neutralU"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.normalStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment """The tap step position used in \"normal\" network operation for this winding. For a \"Fixed\" tap changer indicates the current physical tap setting.
+The attribute shall be equal or greater than lowStep and equal or less than highStep."""^^rdf:XMLLiteral;
+  rdfs:label "normalStep"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TransformerEnd>;
+  rdfs:comment "Terminal of the power transformer to which this transformer end belongs."^^rdf:XMLLiteral;
+  rdfs:label "Terminal"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TransformerEnd> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.endNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:comment "Number for this transformer end, corresponding to the end's order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number."^^rdf:XMLLiteral;
+  rdfs:label "endNumber"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLimit.value> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLimit>;
+  rdfs:comment "Limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type."^^rdf:XMLLiteral;
+  rdfs:label "value"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://entsoe.eu/CIM/SchemaExtension/3/1#OperationalLimitType.limitType> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:range <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind>;
+  rdfs:comment "Types of limits defined in the ENTSO-E Operational Handbook Policy 3."^^rdf:XMLLiteral;
+  rdfs:label "limitType"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "Entsoe";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.phaseAngleClock> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:comment "Terminal voltage phase angle displacement where 360 degrees are represented with clock hours. The valid values are 0 to 11. For example, for the secondary side end of a transformer with vector group code of 'Dyn11', specify the connection kind as wye with neutral and specify the phase angle of the clock as 11.  The clock value of the transformer end number specified as 1, is assumed to be zero.  Note the transformer end number is not assumed to be the same as the terminal sequence number."^^rdf:XMLLiteral;
+  rdfs:label "phaseAngleClock"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "ShortCircuit";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.grounded> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:comment "(for Yn and Zn connections) True if the neutral is solidly grounded."^^rdf:XMLLiteral;
+  rdfs:label "grounded"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "ShortCircuit";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:comment "Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909"^^rdf:XMLLiteral;
+  rdfs:label "r"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>,
+    "ShortCircuit";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint.xPosition> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint>;
+  rdfs:comment "X axis position."^^rdf:XMLLiteral;
+  rdfs:label "xPosition"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint.sequenceNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint>;
+  rdfs:comment "Zero-relative sequence number of this point within a series of points."^^rdf:XMLLiteral;
+  rdfs:label "sequenceNumber"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint.yPosition> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint>;
+  rdfs:comment "Y axis position."^^rdf:XMLLiteral;
+  rdfs:label "yPosition"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Location.CoordinateSystem> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Location>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem.Location>;
+  rdfs:comment "Coordinate system used to describe position points of this location."^^rdf:XMLLiteral;
+  rdfs:label "CoordinateSystem"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem.Location> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem.crsUrn> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem>;
+  rdfs:comment """A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.
+An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:uom:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:uom:EPSG::4236.
+A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties."""^^rdf:XMLLiteral;
+  rdfs:label "crsUrn"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#String> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint.Location> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Location>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Location.PositionPoints>;
+  rdfs:comment "Location described by this position point."^^rdf:XMLLiteral;
+  rdfs:label "Location"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Location.PositionPoints> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Location.PowerSystemResources> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Location>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource.Location>;
+  rdfs:comment "All power system resources at this location."^^rdf:XMLLiteral;
+  rdfs:label "PowerSystemResources"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource.Location> .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.DependentOn> a owl:ObjectProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel> .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.created> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:dateTime .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.description> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:string .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.modelingAuthoritySet> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:string .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.profile> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:string .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.scenarioTime> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:dateTime .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#Model.version> a owl:DatatypeProperty;
+  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel>;
+  rdfs:range xsd:string .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.SvVoltage>;
+  rdfs:comment "The state voltage associated with the topological node."^^rdf:XMLLiteral;
+  rdfs:label "TopologicalNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.SvVoltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvTapStep.TapChanger> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvTapStep>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.SvTapStep>;
+  rdfs:comment "The tap changer associated with the tap step state."^^rdf:XMLLiteral;
+  rdfs:label "TapChanger"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.SvTapStep> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvTapStep.position> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvTapStep>;
+  rdfs:comment "The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions."^^rdf:XMLLiteral;
+  rdfs:label "position"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.SvPowerFlow>;
+  rdfs:comment "The terminal associated with the power flow state variable."^^rdf:XMLLiteral;
+  rdfs:label "Terminal"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.SvPowerFlow> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow>;
+  rdfs:comment "The reactive power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment."^^rdf:XMLLiteral;
+  rdfs:label "q"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage.angle> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage>;
+  rdfs:comment "The voltage angle of the topological node complex voltage with respect to system reference."^^rdf:XMLLiteral;
+  rdfs:label "angle"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus.inService> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus>;
+  rdfs:comment "The in service status as a result of topology processing."^^rdf:XMLLiteral;
+  rdfs:label "inService"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.AngleRefTopologicalNode>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.AngleRefTopologicalIsland>;
+  rdfs:comment "The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional."^^rdf:XMLLiteral;
+  rdfs:label "AngleRefTopologicalNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.AngleRefTopologicalIsland> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.TopologicalNodes> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.TopologicalIsland>;
+  rdfs:comment "A topological node belongs to a topological island."^^rdf:XMLLiteral;
+  rdfs:label "TopologicalNodes"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..n>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.TopologicalIsland> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvShuntCompensatorSections.ShuntCompensator>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvShuntCompensatorSections>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.SvShuntCompensatorSections>;
+  rdfs:comment "The shunt compensator for which the state applies."^^rdf:XMLLiteral;
+  rdfs:label "ShuntCompensator"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.SvShuntCompensatorSections> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow>;
+  rdfs:comment "The active power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment."^^rdf:XMLLiteral;
+  rdfs:label "p"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus.ConductingEquipment> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.SvStatus>;
+  rdfs:comment "The conducting equipment associated with the status state variable."^^rdf:XMLLiteral;
+  rdfs:label "ConductingEquipment"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.SvStatus> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage.v> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage>;
+  rdfs:comment "The voltage magnitude of the topological node."^^rdf:XMLLiteral;
+  rdfs:label "v"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvShuntCompensatorSections.sections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SvShuntCompensatorSections>;
+  rdfs:comment "The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection."^^rdf:XMLLiteral;
+  rdfs:label "sections"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.connected> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:comment """The connected status is related to a bus-branch model and the topological node to terminal relation.  True implies the terminal is connected to the related topological node and false implies it is not. 
+In a bus-branch model, the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the topological node to terminal relation. A valid case is that conducting equipment can be connected in one end and open in the other. In particular for an AC line segment, where the reactive line charging can be significant, this is a relevant case."""^^rdf:XMLLiteral;
+  rdfs:label "connected"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.netInterchange> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:comment "The specified positive net interchange into the control area, i.e. positive sign means flow in to the area."^^rdf:XMLLiteral;
+  rdfs:label "netInterchange"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.pTolerance> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:comment "Active power net interchange tolerance"^^rdf:XMLLiteral;
+  rdfs:label "pTolerance"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment """Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
+For voltage dependent loads the value is at rated voltage.
+Starting value for a steady state solution."""^^rdf:XMLLiteral;
+  rdfs:label "p"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment """Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
+For voltage dependent loads the value is at rated voltage.
+Starting value for a steady state solution."""^^rdf:XMLLiteral;
+  rdfs:label "q"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.normalPF> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:comment "Generating unit economic participation factor."^^rdf:XMLLiteral;
+  rdfs:label "normalPF"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.controlEnabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:comment "Specifies the regulation status of the equipment.  True is regulating, false is not regulating."^^rdf:XMLLiteral;
+  rdfs:label "controlEnabled"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.discrete> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:comment "The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators."^^rdf:XMLLiteral;
+  rdfs:label "discrete"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.enabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:comment "The flag tells if regulation is enabled."^^rdf:XMLLiteral;
+  rdfs:label "enabled"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetDeadband> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:comment """This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.
+The units of those appropriate for the mode."""^^rdf:XMLLiteral;
+  rdfs:label "targetDeadband"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetValue> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:comment "The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute."^^rdf:XMLLiteral;
+  rdfs:label "targetValue"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetValueUnitMultiplier>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier>;
+  rdfs:comment "Specify the multiplier for used for the targetValue."^^rdf:XMLLiteral;
+  rdfs:label "targetValueUnitMultiplier"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:comment """Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution."""^^rdf:XMLLiteral;
+  rdfs:label "p"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:comment """Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution."""^^rdf:XMLLiteral;
+  rdfs:label "q"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.sections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment """Shunt compensator sections in use.
+Starting value for steady state solution. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input."""^^rdf:XMLLiteral;
+  rdfs:label "sections"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.open> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:comment "The attribute tells if the switch is considered open when used as input to topology processing."^^rdf:XMLLiteral;
+  rdfs:label "open"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.operatingMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineOperatingMode>;
+  rdfs:comment "Current mode of operation."^^rdf:XMLLiteral;
+  rdfs:label "operatingMode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.referencePriority> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:comment "Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on."^^rdf:XMLLiteral;
+  rdfs:label "referencePriority"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.controlEnabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment "Specifies the regulation status of the equipment.  True is regulating, false is not regulating."^^rdf:XMLLiteral;
+  rdfs:label "controlEnabled"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.step> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment """Tap changer position.
+Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changers has yet been designed, a solutions where a narrow voltage band force the tap step to oscillate or accommodate for a continuous solution as input.
+The attribute shall be equal or greater than lowStep and equal or less than highStep."""^^rdf:XMLLiteral;
+  rdfs:label "step"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#attribute>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#dataType> <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodeContainer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.TopologicalNode>;
+  rdfs:comment "The connectivity node container to which the toplogical node belongs."^^rdf:XMLLiteral;
+  rdfs:label "ConnectivityNodeContainer"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.TopologicalNode> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TopologicalNode>;
+  rdfs:comment "The base voltage of the topologocial node."^^rdf:XMLLiteral;
+  rdfs:label "BaseVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1>,
+    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TopologicalNode> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodes>;
+  rdfs:comment "The topological node to which this connectivity node is assigned.  May depend on the current state of switches in the network."^^rdf:XMLLiteral,
+    "The connectivity nodes combine together to form this topological node.  May depend on the current state of switches in the network."^^rdf:XMLLiteral;
+  rdfs:label "TopologicalNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodes> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  owl:inverseOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.Terminal>;
+  rdfs:comment "The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connectivity nodes in some cases.   Note that if connectivity nodes are in the model, this association would probably not be used as an input specification."^^rdf:XMLLiteral;
+  rdfs:label "TopologicalNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#multiplicity> <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#AssociationUsed> "Yes";
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#inverseRoleName> <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.Terminal> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OrientationKind> a rdfs:Class;
+  rdfs:comment "The orientation of the coordinate system with respect to top, left, and the coordinate number system."^^rdf:XMLLiteral;
+  rdfs:label "OrientationKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DomainProfile>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier> a rdfs:Class;
+  rdfs:comment "The unit multipliers defined for the CIM."^^rdf:XMLLiteral;
+  rdfs:label "UnitMultiplier"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DomainProfile>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol> a rdfs:Class;
+  rdfs:comment "The units defined for usage in the CIM."^^rdf:XMLLiteral;
+  rdfs:label "UnitSymbol"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DomainProfile>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DroopSignalFeedbackKind> a rdfs:Class;
+  rdfs:comment "Governor droop signal feedback source."^^rdf:XMLLiteral;
+  rdfs:label "DroopSignalFeedbackKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_TurbineGovernorDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RemoteSignalKind> a rdfs:Class;
+  rdfs:comment "Type of input signal coming from remote bus."^^rdf:XMLLiteral;
+  rdfs:label "RemoteSignalKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StandardInterconnections>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST7BOELselectorKind> a rdfs:Class;
+  rdfs:comment "Type of connection for the OEL input used for static excitation systems type 7B."^^rdf:XMLLiteral;
+  rdfs:label "ExcST7BOELselectorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ExcitationSystemDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind> a rdfs:Class;
+  rdfs:comment "Input signal type.  In Dynamics modelling, commonly represented by j parameter."^^rdf:XMLLiteral;
+  rdfs:label "InputSignalKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_PowerSystemStabilizerDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GenericNonLinearLoadModelKind> a rdfs:Class;
+  rdfs:comment "Type of generic non-linear load model."^^rdf:XMLLiteral;
+  rdfs:label "GenericNonLinearLoadModelKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindLookupTableFunctionKind> a rdfs:Class;
+  rdfs:comment "Function of the lookup table."^^rdf:XMLLiteral;
+  rdfs:label "WindLookupTableFunctionKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_WindDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST7BUELselectorKind> a rdfs:Class;
+  rdfs:comment "Type of connection for the UEL input used for static excitation systems type 7B."^^rdf:XMLLiteral;
+  rdfs:label "ExcST7BUELselectorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ExcitationSystemDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST1AUELselectorKind> a rdfs:Class;
+  rdfs:comment "Type of connection for the UEL input used in ExcIEEEST1A."^^rdf:XMLLiteral;
+  rdfs:label "ExcIEEEST1AUELselectorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ExcitationSystemDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind> a rdfs:Class;
+  rdfs:comment "Type of rotor on physical machine."^^rdf:XMLLiteral;
+  rdfs:label "RotorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_SynchronousMachineDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindQcontrolModesKind> a rdfs:Class;
+  rdfs:comment "General wind turbine Q control modes <i>M</i><sub>qG</sub>."^^rdf:XMLLiteral;
+  rdfs:label "WindQcontrolModesKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_WindDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind> a rdfs:Class;
+  rdfs:comment "Type of synchronous machine model used in Dynamic simulation applications."^^rdf:XMLLiteral;
+  rdfs:label "SynchronousMachineModelKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_SynchronousMachineDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#FrancisGovernorControlKind> a rdfs:Class;
+  rdfs:comment "Governor control flag for Francis hydro model."^^rdf:XMLLiteral;
+  rdfs:label "FrancisGovernorControlKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_TurbineGovernorDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST6BOELselectorKind> a rdfs:Class;
+  rdfs:comment "Type of connection for the OEL input used for static excitation systems type 6B."^^rdf:XMLLiteral;
+  rdfs:label "ExcST6BOELselectorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ExcitationSystemDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindLVRTQcontrolModesKind> a rdfs:Class;
+  rdfs:comment "LVRT Q control modes <i>M</i><sub>qLVRT</sub>."^^rdf:XMLLiteral;
+  rdfs:label "WindLVRTQcontrolModesKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_WindDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcREXSFeedbackSignalKind> a rdfs:Class;
+  rdfs:comment "Type of rate feedback signals. "^^rdf:XMLLiteral;
+  rdfs:label "ExcREXSFeedbackSignalKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ExcitationSystemDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#StaticLoadModelKind> a rdfs:Class;
+  rdfs:comment "Type of static load model."^^rdf:XMLLiteral;
+  rdfs:label "StaticLoadModelKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IfdBaseKind> a rdfs:Class;
+  rdfs:comment "Excitation base system mode."^^rdf:XMLLiteral;
+  rdfs:label "IfdBaseKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_SynchronousMachineDynamics>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaTypeKind> a rdfs:Class;
+  rdfs:comment "The type of control area."^^rdf:XMLLiteral;
+  rdfs:label "ControlAreaTypeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ControlArea>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Currency> a rdfs:Class;
+  rdfs:comment "Monetary currencies. Apologies for this list not being exhaustive."^^rdf:XMLLiteral;
+  rdfs:label "Currency"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DomainProfile>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurveStyle> a rdfs:Class;
+  rdfs:comment "Style or shape of curve."^^rdf:XMLLiteral;
+  rdfs:label "CurveStyle"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterOperatingModeKind> a rdfs:Class;
+  rdfs:comment "The operating mode of an HVDC bipole."^^rdf:XMLLiteral;
+  rdfs:label "DCConverterOperatingModeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCPolarityKind> a rdfs:Class;
+  rdfs:comment "Polarity for DC circuits."^^rdf:XMLLiteral;
+  rdfs:label "DCPolarityKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#FuelType> a rdfs:Class;
+  rdfs:comment "Type of fuel."^^rdf:XMLLiteral;
+  rdfs:label "FuelType"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratorControlSource> a rdfs:Class;
+  rdfs:comment "The source of controls for a generating unit."^^rdf:XMLLiteral;
+  rdfs:label "GeneratorControlSource"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#HydroEnergyConversionKind> a rdfs:Class;
+  rdfs:comment "Specifies the capability of the hydro generating unit to convert energy as a generator or pump."^^rdf:XMLLiteral;
+  rdfs:label "HydroEnergyConversionKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#HydroPlantStorageKind> a rdfs:Class;
+  rdfs:comment "The type of hydro power plant."^^rdf:XMLLiteral;
+  rdfs:label "HydroPlantStorageKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind> a rdfs:Class;
+  rdfs:comment "The direction attribute describes the side of  a limit that is a violation."^^rdf:XMLLiteral;
+  rdfs:label "OperationalLimitDirectionKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PetersenCoilModeKind> a rdfs:Class;
+  rdfs:comment "The mode of operation for a Petersen coil."^^rdf:XMLLiteral;
+  rdfs:label "PetersenCoilModeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode> a rdfs:Class;
+  rdfs:comment """Enumeration of phase identifiers. Allows designation of phases for both transmission and distribution equipment, circuits and loads.
+Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N."""^^rdf:XMLLiteral;
+  rdfs:label "PhaseCode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind> a rdfs:Class;
+  rdfs:comment "The kind of regulation model.   For example regulating voltage, reactive power, active power, etc."^^rdf:XMLLiteral;
+  rdfs:label "RegulatingControlModeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SVCControlMode> a rdfs:Class;
+  rdfs:comment "Static VAr Compensator control mode."^^rdf:XMLLiteral;
+  rdfs:label "SVCControlMode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShortCircuitRotorKind> a rdfs:Class;
+  rdfs:comment "Type of rotor, used by short circuit applications."^^rdf:XMLLiteral;
+  rdfs:label "ShortCircuitRotorKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Source> a rdfs:Class;
+  rdfs:comment "Source gives information related to the origin of a value."^^rdf:XMLLiteral;
+  rdfs:label "Source"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Meas>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind> a rdfs:Class;
+  rdfs:comment "Synchronous machine type."^^rdf:XMLLiteral;
+  rdfs:label "SynchronousMachineKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode> a rdfs:Class;
+  rdfs:comment "Control modes for a transformer."^^rdf:XMLLiteral;
+  rdfs:label "TransformerControlMode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Validity> a rdfs:Class;
+  rdfs:comment "Validity for MeasurementValue."^^rdf:XMLLiteral;
+  rdfs:label "Validity"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Meas>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindGenUnitKind> a rdfs:Class;
+  rdfs:comment "Kind of wind generating unit."^^rdf:XMLLiteral;
+  rdfs:label "WindGenUnitKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection> a rdfs:Class;
+  rdfs:comment "Winding connection type."^^rdf:XMLLiteral;
+  rdfs:label "WindingConnection"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind> a rdfs:Class;
+  rdfs:comment "The enumeration defines the kinds of the limit types."^^rdf:XMLLiteral;
+  rdfs:label "LimitTypeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration>,
+    "Entsoe" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#AsynchronousMachineKind> a rdfs:Class;
+  rdfs:comment "Kind of Asynchronous Machine."^^rdf:XMLLiteral;
+  rdfs:label "AsynchronousMachineKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsOperatingModeKind> a rdfs:Class;
+  rdfs:comment "Operating mode for HVDC line operating as Current Source Converter."^^rdf:XMLLiteral;
+  rdfs:label "CsOperatingModeKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsPpccControlKind> a rdfs:Class;
+  rdfs:comment "Active power control modes for HVDC line operating as Current Source Converter."^^rdf:XMLLiteral;
+  rdfs:label "CsPpccControlKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineOperatingMode> a rdfs:Class;
+  rdfs:comment "Synchronous machine operating mode."^^rdf:XMLLiteral;
+  rdfs:label "SynchronousMachineOperatingMode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VsPpccControlKind> a rdfs:Class;
+  rdfs:comment "Types applicable to the control of real power and/or DC voltage by voltage source converter."^^rdf:XMLLiteral;
+  rdfs:label "VsPpccControlKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VsQpccControlKind> a rdfs:Class;
+  rdfs:label "VsQpccControlKind"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DC>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#enumeration> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:comment "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."^^rdf:XMLLiteral;
+  rdfs:label "Terminal"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "abstract", "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment "ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load."^^rdf:XMLLiteral;
+  rdfs:label "ConformLoad"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:comment "An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."^^rdf:XMLLiteral;
+  rdfs:label "SynchronousMachine"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "abstract", "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:comment "A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set."^^rdf:XMLLiteral;
+  rdfs:label "GeneratingUnit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Production>,
+    <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Generation>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Disconnector> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:comment "A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made. "^^rdf:XMLLiteral;
+  rdfs:label "Disconnector"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Breaker> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ProtectedSwitch>;
+  rdfs:comment "A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit."^^rdf:XMLLiteral;
+  rdfs:label "Breaker"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:comment "A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer."^^rdf:XMLLiteral;
+  rdfs:label "RatioTapChanger"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:comment "Describes behavior specific to tap changers, e.g. how the voltage at the end of a line varies with the load level and compensation of the voltage drop by tap adjustment."^^rdf:XMLLiteral;
+  rdfs:label "TapChangerControl"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:comment """Specifies a set of equipment that works together to control a power system quantity such as voltage or flow. 
+Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.
+In case multiple equipment, possibly of different types, control same terminal there must be only one RegulatingControl at that terminal. The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.
+For flow control  load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment."""^^rdf:XMLLiteral;
+  rdfs:label "RegulatingControl"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:comment "NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern."^^rdf:XMLLiteral;
+  rdfs:label "NonConformLoad"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePowerLimit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:comment "Limit on active power flow."^^rdf:XMLLiteral;
+  rdfs:label "ActivePowerLimit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:comment "A control area<b> </b>is a grouping of generating units and/or loads and a cutset of tie lines (as terminals) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model."^^rdf:XMLLiteral;
+  rdfs:label "ControlArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ControlArea>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:comment "A linear shunt compensator has banks or sections with equal admittance values."^^rdf:XMLLiteral;
+  rdfs:label "LinearShuntCompensator"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description" .
+
+<http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel> a rdfs:Class .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TextDiagramObject> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject>;
+  rdfs:comment "A diagram object for placing free-text or text derived from an associated domain object."^^rdf:XMLLiteral;
+  rdfs:label "TextDiagramObject"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DiagramLayout>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Diagram> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "The diagram being exchanged.  The coordinate system is a standard Cartesian coordinate system and the orientation attribute defines the orientation."^^rdf:XMLLiteral;
+  rdfs:label "Diagram"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DiagramLayout>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObject> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "An object that defines one or more points in a given space. This object can be associated with anything that specializes IdentifiedObject. For single line diagrams such objects typically include such items as analog values, breakers, disconnectors, power transformers, and transmission lines."^^rdf:XMLLiteral;
+  rdfs:label "DiagramObject"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DiagramLayout>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectPoint> a rdfs:Class;
+  rdfs:comment "A point in a given space defined by 3 coordinates and associated to a diagram object.  The coordinates may be positive or negative as the origin does not have to be in the corner of a diagram.  "^^rdf:XMLLiteral;
+  rdfs:label "DiagramObjectPoint"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DiagramLayout>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DiagramObjectGluePoint> a rdfs:Class;
+  rdfs:comment "This is used for grouping diagram object points from different diagram objects that are considered to be glued together in a diagram even if they are not at the exact same coordinates."^^rdf:XMLLiteral;
+  rdfs:label "DiagramObjectGluePoint"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_DiagramLayout>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:comment "A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics. "^^rdf:XMLLiteral;
+  rdfs:label "Substation"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance."^^rdf:XMLLiteral;
+  rdfs:label "ConnectivityNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Description", "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor>;
+  rdfs:comment """A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
+For symmetrical, transposed 3ph lines, it is sufficient to use  attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.
+The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines  may have slightly different BaseVoltage.nominalVoltages and  variation is allowed. Larger voltage difference in general requires use of an equivalent branch."""^^rdf:XMLLiteral;
+  rdfs:label "ACLineSegment"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:comment """An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
+A power transformer may be composed of separate transformer tanks that need not be identical.
+A power transformer can be modeled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.
+The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead."""^^rdf:XMLLiteral;
+  rdfs:label "PowerTransformer"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PositionPoint> a rdfs:Class;
+  rdfs:comment "Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to desribe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values)."^^rdf:XMLLiteral;
+  rdfs:label "PositionPoint"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Common>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Location> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more postition points (coordinates) in a given coordinate system."^^rdf:XMLLiteral;
+  rdfs:label "Location"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Common>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CoordinateSystem> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "Coordinate reference system."^^rdf:XMLLiteral;
+  rdfs:label "CoordinateSystem"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Common>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvVoltage> a rdfs:Class;
+  rdfs:comment "State variable for voltage."^^rdf:XMLLiteral;
+  rdfs:label "SvVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StateVariables>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment """For a detailed substation model a topological node is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes change as the current network state changes (i.e., switches, breakers, etc. change state).
+For a planning model, switch statuses are not used to form topological nodes. Instead they are manually created or deleted in a model builder tool. Topological nodes maintained this way are also called \"busses\"."""^^rdf:XMLLiteral;
+  rdfs:label "TopologicalNode"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Topology>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow> a rdfs:Class;
+  rdfs:comment "State variable for power flow. Load convention is used for flow direction. This means flow out from the TopologicalNode into the equipment is positive."^^rdf:XMLLiteral;
+  rdfs:label "SvPowerFlow"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StateVariables>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus> a rdfs:Class;
+  rdfs:comment "State variable for status."^^rdf:XMLLiteral;
+  rdfs:label "SvStatus"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StateVariables>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvTapStep> a rdfs:Class;
+  rdfs:comment "State variable for transformer tap step.     This class is to be used for taps of LTC (load tap changing) transformers, not fixed tap transformers."^^rdf:XMLLiteral;
+  rdfs:label "SvTapStep"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StateVariables>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SvShuntCompensatorSections> a rdfs:Class;
+  rdfs:comment "State variable for the number of sections in service for a shunt compensator."^^rdf:XMLLiteral;
+  rdfs:label "SvShuntCompensatorSections"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_StateVariables>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment """An electrically connected subset of the network. Topological islands can change as the current network state changes: e.g. due to 
+- disconnect switches or breakers change state in a SCADA/EMS
+- manual creation, change or deletion of topological nodes in a planning tool."""^^rdf:XMLLiteral;
+  rdfs:label "TopologicalIsland"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Topology>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "Defines a system base voltage which is referenced. "^^rdf:XMLLiteral;
+  rdfs:label "BaseVoltage"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:comment "A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these."^^rdf:XMLLiteral;
+  rdfs:label "VoltageLevel"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "A set of limits associated with equipment.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain different severities of limit levels that would apply to the same equipment. The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set."^^rdf:XMLLiteral;
+  rdfs:label "OperationalLimitSet"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Bay> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:comment "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment."^^rdf:XMLLiteral;
+  rdfs:label "Bay"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Line> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:comment "Contains equipment beyond a substation belonging to a power transmission line. "^^rdf:XMLLiteral;
+  rdfs:label "Line"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "A subset of a geographical region of a power system network model."^^rdf:XMLLiteral;
+  rdfs:label "SubGeographicalRegion"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#AnalogValue> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValue>;
+  rdfs:comment "AnalogValue represents an analog MeasurementValue."^^rdf:XMLLiteral;
+  rdfs:label "AnalogValue"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Meas>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Analog> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Measurement>;
+  rdfs:comment "Analog represents an analog Measurement."^^rdf:XMLLiteral;
+  rdfs:label "Analog"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Meas>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MeasurementValueSource> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970-301."^^rdf:XMLLiteral;
+  rdfs:label "MeasurementValueSource"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Meas>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:comment "Operational limit on current. "^^rdf:XMLLiteral;
+  rdfs:label "CurrentLimit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "The operational meaning of a category of limits."^^rdf:XMLLiteral;
+  rdfs:label "OperationalLimitType"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLimit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:comment "Operational limit applied to voltage."^^rdf:XMLLiteral;
+  rdfs:label "VoltageLimit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_OperationalLimits>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Connector>;
+  rdfs:comment """A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. 
+Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal."""^^rdf:XMLLiteral;
+  rdfs:label "BusbarSection"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:comment "The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling."^^rdf:XMLLiteral;
+  rdfs:label "SubLoadArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:comment "The class is the root or first level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling."^^rdf:XMLLiteral;
+  rdfs:label "LoadArea"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete>,
+    "Operation" .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:comment "A group of loads conforming to an allocation pattern. "^^rdf:XMLLiteral;
+  rdfs:label "ConformLoadGroup"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:comment "Loads that do not follow a daily and seasonal load variation pattern."^^rdf:XMLLiteral;
+  rdfs:label "NonConformLoadGroup"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:comment """A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.
+The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalent as follows
+1) for a two Terminal PowerTransformer the high voltage PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage PowerTransformerEnd has zero values for r, r0, x, and x0.
+2) for a three Terminal PowerTransformer the three PowerTransformerEnds represents a star equivalent with each leg in the star represented by r, r0, x, and x0 values.
+3) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers."""^^rdf:XMLLiteral;
+  rdfs:label "PowerTransformerEnd"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Wires>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "A geographical region of a power system network model."^^rdf:XMLLiteral;
+  rdfs:label "GeographicalRegion"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_Core>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment """Models the characteristic response of the load demand due to changes in system conditions such as voltage and frequency. This is not related to demand response.
+
+If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:
+
+Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent
+
+Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent
+
+Where  * means \"multiply\" and ** is \"raised to power of\"."""^^rdf:XMLLiteral;
+  rdfs:label "LoadResponseCharacteristic"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_LoadModel>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:comment "A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit."^^rdf:XMLLiteral;
+  rdfs:label "ControlAreaGeneratingUnit"@en;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#belongsToCategory> <http://iec.ch/TC57/2013/CIM-schema-cim16#Package_ControlArea>;
+  <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#stereotype> <http://iec.ch/TC57/NonStandard/UML#concrete> .
+
+cimex:hasPart a owl:ObjectProperty;
+  rdfs:subPropertyOf cimex:hasPartTransitive;
+  owl:inverseOf cimex:isPart;
+  rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
+  rdfs:label "has part";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  <http://www.w3.org/2004/02/skos/core#example> <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer.Equipments>,
+    <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Bays>, <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.VoltageLevels> .
+
+cimex:isPart a owl:ObjectProperty;
+  owl:inverseOf cimex:hasPart;
+  rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
+  rdfs:label "is part";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  <http://www.w3.org/2004/02/skos/core#example> <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.EquipmentContainer>,
+    <http://iec.ch/TC57/2013/CIM-schema-cim16#Bay.VoltageLevel>, <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Substation> .
+
+cimex:hasPartTransitive a owl:TransitiveProperty, owl:ObjectProperty;
+  owl:inverseOf cimex:isPartTransitive;
+  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart";
+  rdfs:label "has part transitive";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+
+cimex:isPartTransitive a owl:ObjectProperty;
+  owl:inverseOf cimex:hasPartTransitive;
+  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimex:isPart";
+  rdfs:label "is part transitive";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+
+cimex:Terminal.Equipment a owl:ObjectProperty;
+  owl:inverseOf cimex:Equipment.Terminals;
+  rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
+  rdfs:label "equipment";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  <http://www.w3.org/2004/02/skos/core#example> <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConductingEquipment>,
+    <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.AuxiliaryEquipment> .
+
+cimex:Equipment.Terminals a owl:ObjectProperty;
+  owl:inverseOf cimex:Terminal.Equipment;
+  rdfs:comment "Terminals of the equipment";
+  rdfs:label "terminals";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+
+cimex:connectedTo a owl:SymmetricProperty, owl:ObjectProperty;
+  rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode";
+  rdfs:label "connected to";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  owl:propertyChainAxiom _:node39, _:node45 .
+
+cimex:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
+  rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode";
+  rdfs:label "connected through part";
+  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  owl:propertyChainAxiom _:node34, _:node49 .
