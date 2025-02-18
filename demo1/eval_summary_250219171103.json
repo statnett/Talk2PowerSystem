@@ -1,10 +1,16 @@
 {
     "llm_model": "gpt-4o-2024-11-20",
-    "questions_count": 40,
-    "questions_overlap": 20,
-    "questions_queried": 40,
-    "questions_results": 20,
+    "questions_count": 43,
+    "questions_overlap": 23,
+    "questions_queried": 43,
+    "questions_results": 33,
     "templates": {
+        "give_me_measurements_in_congestion_zone_ZONE": {
+            "questions_count": 3,
+            "questions_overlap": 3,
+            "questions_queried": 3,
+            "questions_results": 3
+        },
         "list_all_ac_lines_that_traverse_bidding_zones_REGION1_and_REGION2": {
             "questions_count": 10,
             "questions_overlap": 0,
@@ -15,7 +21,7 @@
             "questions_count": 10,
             "questions_overlap": 0,
             "questions_queried": 10,
-            "questions_results": 0
+            "questions_results": 10
         },
         "list_all_substations_within_bidding_zone_REGION": {
             "questions_count": 10,
@@ -30,10 +36,10 @@
             "questions_results": 10
         }
     },
-    "time_finished": "25-02-18T13:03:33",
+    "time_finished": "25-02-19T17:11:03",
     "tokens": {
-        "completion": 12355,
-        "prompt": 8331391,
-        "total": 8343746
+        "completion": 17843,
+        "prompt": 7337175,
+        "total": 7355018
     }
 }

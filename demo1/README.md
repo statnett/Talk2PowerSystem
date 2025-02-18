@@ -2,13 +2,14 @@ This is a demo of NLQ over 5 competency questions, before the project kickoff (2
 - TODO link to wiki
 - TODO list issues
 
-`templates.yaml` contains 4 out of the 5 competency questions templates.
-From these templates we automatically generate a gold standard corpus `CQAGC-Candidates-10_Answers--1.yaml`,
+In `templates.yaml` we have the competency questions templates created manually by humans.
+From the templates we automatically generate a gold standard corpus `CQAGC-Candidates-10_Answers--1.yaml`,
 where we sample up to 10 questions from each template.
 
 `nordic44-ontology-query.rq` is the SPARQL query to collect the ontology schema.
-The results of the execution are in the file `nordic44.ttl`.
+The results of the execution are in the file `nordic44-ontology.ttl`.
 
 `nordic44.config` contains the LLM configuration.
 
-The evaluation results are attached in the two json files.
+The evaluation results are attached in the two json files and are produced automatically.
+The log file can be used to review the actual LLM responses.
