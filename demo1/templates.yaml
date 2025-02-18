@@ -1,0 +1,66 @@
+- id: list_all_transformers_within_Substation_SUBSTATION
+  output: ?transformer ?transformerName
+  params:
+    - ?substation a cim:Substation; cim:IdentifiedObject.name ?substationName
+  question:
+    - 'List all transformers within Substation [substation]'
+  sparql: |
+    PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+    SELECT ?transformer ?transformerName {
+        ?transformer a cim:PowerTransformer ;
+          cim:Equipment.EquipmentContainer ?substation ;
+          cim:IdentifiedObject.name ?transformerName .
+    }
+- id: list_all_substations_within_bidding_zone_REGION
+  output: ?substation ?substationName
+  params:
+    - ?region a cim:SubGeographicalRegion; cim:IdentifiedObject.name ?regionName
+  question:
+    - 'List all substations within bidding zone [region]'
+  sparql: |
+    PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+    SELECT ?substation ?substationName {
+        ?substation a cim:Substation ;
+          cim:Substation.Region ?region ;
+          cim:IdentifiedObject.name ?substationName .
+    }
+- id: list_all_substations_that_are_connected_via_an_ac_line_or_a_dc_line_to_substation_named_SUBSTATION
+  output: ?line ?lineName ?substation2 ?substation2Name
+  params:
+    - ?substation a cim:Substation; cim:IdentifiedObject.name ?substationName
+  question:
+    - 'List all substations that are connected via an AC-line or a DC line to substation named [substation]'
+  sparql: |
+    PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+    PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+    SELECT ?line ?lineName ?substation2 ?substation2Name {
+        ?substation a cim:Substation ;
+          cimex:connectedThroughPart ?line .
+        ?line a cim:Line ;
+          cim:IdentifiedObject.name ?lineName .
+        ?substation2 a cim:Substation ;
+          cimex:connectedThroughPart ?line ;
+          cim:IdentifiedObject.name ?substation2Name .
+        FILTER (?substation != ?substation2)
+    }
+- id: list_all_ac_lines_that_traverse_bidding_zones_REGION1_and_REGION2
+  output: ?substation1 ?substation1Name ?line ?lineName ?substation2 ?substation2Name
+  params:
+    - ?region1 a cim:SubGeographicalRegion; cim:IdentifiedObject.name ?region1Name
+    - ?region2 a cim:SubGeographicalRegion; cim:IdentifiedObject.name ?region2Name
+  question:
+    - 'List all AC-lines that traverse bidding zones [region1] and [region2]'
+  sparql: |
+    PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+    PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+    SELECT ?substation1 ?substation1Name ?line ?lineName ?substation2 ?substation2Name { 
+      ?substation1 a cim:Substation ;
+        cim:Substation.Region ?region1 ;
+        cim:IdentifiedObject.name ?substation1Name .
+      ?substation2 a cim:Substation ;
+        cim:Substation.Region ?region2 ;
+        cim:IdentifiedObject.name ?substation2Name .
+      ?line a cim:Line ;
+        cimex:connectedThroughPart ?substation1, ?substation2;
+        cim:IdentifiedObject.name ?lineName .
+    }

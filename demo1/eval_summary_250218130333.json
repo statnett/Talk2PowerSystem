@@ -1,0 +1,39 @@
+{
+    "llm_model": "gpt-4o-2024-11-20",
+    "questions_count": 40,
+    "questions_overlap": 20,
+    "questions_queried": 40,
+    "questions_results": 20,
+    "templates": {
+        "list_all_ac_lines_that_traverse_bidding_zones_REGION1_and_REGION2": {
+            "questions_count": 10,
+            "questions_overlap": 0,
+            "questions_queried": 10,
+            "questions_results": 0
+        },
+        "list_all_substations_that_are_connected_via_an_ac_line_or_a_dc_line_to_substation_named_SUBSTATION": {
+            "questions_count": 10,
+            "questions_overlap": 0,
+            "questions_queried": 10,
+            "questions_results": 0
+        },
+        "list_all_substations_within_bidding_zone_REGION": {
+            "questions_count": 10,
+            "questions_overlap": 10,
+            "questions_queried": 10,
+            "questions_results": 10
+        },
+        "list_all_transformers_within_Substation_SUBSTATION": {
+            "questions_count": 10,
+            "questions_overlap": 10,
+            "questions_queried": 10,
+            "questions_results": 10
+        }
+    },
+    "time_finished": "25-02-18T13:03:33",
+    "tokens": {
+        "completion": 12355,
+        "prompt": 8331391,
+        "total": 8343746
+    }
+}
