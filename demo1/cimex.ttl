@@ -36,22 +36,25 @@ cimex:hasPart a owl:ObjectProperty;
   rdfs:label "has part";
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
   owl:inverseOf cimex:isPart;
-  skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays.
+  skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays;
+  rdfs:isDefinedBy cimex: .
 
 cim:EquipmentContainer.Equipments rdfs:subPropertyOf cimex:hasPart.
 cim:Substation.VoltageLevels      rdfs:subPropertyOf cimex:hasPart.
 cim:VoltageLevel.Bays             rdfs:subPropertyOf cimex:hasPart.
 
-cimex:isPartOf a owl:ObjectProperty;
+cimex:isPart a owl:ObjectProperty;
   rdfs:label "is part";
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
   owl:inverseOf cimex:hasPart;
-  skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel.
+  skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel;
+  rdfs:isDefinedBy cimex: .
 
 cimex:hasPartTransitive a owl:ObjectProperty, owl:TransitiveProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart";
-  owl:inverseOf cimex:isPartTransitive.
+  owl:inverseOf cimex:isPartTransitive;
+  rdfs:isDefinedBy cimex: .
 
 cimex:hasPart rdfs:subPropertyOf cimex:hasPartTransitive.
 # TODO: this is more efficient than owl:TransitiveProperty but not part of owl2-rl-optimized:
@@ -60,13 +63,15 @@ cimex:hasPart rdfs:subPropertyOf cimex:hasPartTransitive.
 cimex:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
   rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimex:isPart";
-  owl:inverseOf cimex:hasPartTransitive.
+  owl:inverseOf cimex:hasPartTransitive;
+  rdfs:isDefinedBy cimex: .
 
 cimex:Terminal.Equipment a owl:ObjectProperty;
   rdfs:label "equipment";
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
   owl:inverseOf cimex:Equipment.Terminals;
-  skos:example cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment.
+  skos:example cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment;
+  rdfs:isDefinedBy cimex: .
 
 cim:Terminal.ConductingEquipment rdfs:subPropertyOf cimex:Terminal.Equipment.
 cim:Terminal.AuxiliaryEquipment  rdfs:subPropertyOf cimex:Terminal.Equipment.
@@ -74,18 +79,21 @@ cim:Terminal.AuxiliaryEquipment  rdfs:subPropertyOf cimex:Terminal.Equipment.
 cimex:Equipment.Terminals a owl:ObjectProperty;
   rdfs:label "terminals";
   rdfs:comment "Terminals of the equipment";
-  owl:inverseOf cimex:Terminal.Equipment.
+  owl:inverseOf cimex:Terminal.Equipment;
+  rdfs:isDefinedBy cimex: .
 
 cimex:connectedTo a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected to";
-  rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode".
+  rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode";
+  rdfs:isDefinedBy cimex: .
 
 cimex:connectedTo owl:propertyChainAxiom
   (cimex:Equipment.Terminals cim:Terminal.ConnectivityNode cim:ConnectivityNode.Terminals cimex:Terminal.Equipment).
 
 cimex:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected through part";
-  rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode".
+  rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode";
+  rdfs:isDefinedBy cimex: .
 
 cimex:connectedThroughPart owl:propertyChainAxiom
   (cimex:hasPartTransitive cimex:connectedTo cimex:isPartTransitive).
