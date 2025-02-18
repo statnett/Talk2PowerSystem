@@ -1,6 +1,4 @@
-This is a demo of NLQ over 5 competency questions, before the project kickoff (2025-02-20).
-- TODO link to wiki
-- TODO list issues
+See [Demo1](https://github.com/statnett/Talk2PowerSystem/wiki/Demo1) in the wiki for a description.
 
 `templates.yaml` contains 4 out of the 5 competency questions templates.
 From these templates we automatically generate a gold standard corpus `CQAGC-Candidates-10_Answers--1.yaml`,
