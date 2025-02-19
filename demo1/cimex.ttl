@@ -97,3 +97,32 @@ cimex:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
 
 cimex:connectedThroughPart owl:propertyChainAxiom
   (cimex:hasPartTransitive cimex:connectedTo cimex:isPartTransitive).
+
+#### Patch to add some entsoe2 terms
+
+entsoe2:EnergyCongestionZone a rdfs:Class;
+  rdfs:label "EnergyCongestionZone"@en;
+  rdfs:comment "Energy congestion zone"@en;
+  rdfs:subClassOf cim:PowerSystemResource;
+  rdfs:isDefinedBy crmex: .
+
+entsoe2:EnergyCongestionZone.netDCInterchange a rdf:Property;
+  rdfs:label "netDCInterchange"@en;
+  rdfs:comment "Net DC interchange"@en;
+  rdfs:domain entsoe2:EnergyCongestionZone;
+  cims:dataType cim:Float;
+  rdfs:isDefinedBy crmex: .
+
+entsoe2:EnergyCongestionZone.netACInterchangeTolerance a rdf:Property;
+  rdfs:label "netDCInterchangeTolerance"@en;
+  rdfs:comment "Net DC interchange tolerance"@en;
+  rdfs:domain entsoe2:EnergyCongestionZone;
+  cims:dataType cim:Float;
+  rdfs:isDefinedBy crmex: .
+
+entsoe2:EnergyCongestionZone.netACInterchange a rdf:Property;
+  rdfs:label "netACInterchange"@en;
+  rdfs:comment "Net AC interchange"@en;
+  rdfs:domain entsoe2:EnergyCongestionZone;
+  cims:dataType cim:Float;
+  rdfs:isDefinedBy crmex: .
