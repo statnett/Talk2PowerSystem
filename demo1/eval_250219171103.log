@@ -1,0 +1,1948 @@
+(nordic44) neli@aura:~/workspace/openai-assistant(SN-28)$ python chat_evaluator.py  --config nordic44.config --file_gc /home/neli/workspace/openai-assistant/nordic44/qa_population/output/CQAGC-Candidates-10_Answers--1.yaml --results_dir nordic44/evaluation-results
+length of instructions (including ontology) is 156,404 characters
+AgentManager created assistant and thread.
+
+Asking question: List all transformers within Substation OSLO
+>>> I'm calling function autocomplete_search()
+    query
+        OSLO
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (107 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f Name: OSLO Rank: 0.00629
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (201 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dd6-9aeb-11e5-91da-b8763fd99c5f>	OSLO    T1
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769de8-9aeb-11e5-91da-b8763fd99c5f>	OSLO    T2
+
+The transformers within the Substation OSLO are:
+
+1. **OSLO T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dd6-9aeb-11e5-91da-b8763fd99c5f>`
+2. **OSLO T2** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769de8-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_J4zNpIc6twdGDViJxaFg4dmk in call call_rV8IIZv5Oaxgbiy5aJpHzFol
+Got a score of 2 for question List all transformers within Substation OSLO
+
+Asking question: List all transformers within Substation STAVANGER
+>>> I'm calling function autocomplete_search()
+    query
+        STAVANGER
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (112 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f Name: STAVANGER Rank: 0.00627
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e0c-9aeb-11e5-91da-b8763fd99c5f>	STAVANGET1
+
+The transformer within the Substation STAVANGER is:
+
+1. **STAVANGET1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e0c-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_yfhqEXfu9kwArlKDqu1xv4r1 in call call_DaaUHQhKS4Ok1nhqddYPYpiU
+Got a score of 1 for question List all transformers within Substation STAVANGER
+
+Asking question: List all transformers within Substation HALDEN
+>>> I'm calling function autocomplete_search()
+    query
+        HALDEN
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (109 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f Name: HALDEN Rank: 0.00413
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769db2-9aeb-11e5-91da-b8763fd99c5f>	HALDEN  T1
+
+The transformer within the Substation HALDEN is:
+
+1. **HALDEN T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769db2-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_Aj4YHT4J3bT7R205q6knN19W in call call_s2caUKob3n8VExohKtyRWZRb
+Got a score of 1 for question List all transformers within Substation HALDEN
+
+Asking question: List all transformers within Substation ASKER
+>>> I'm calling function autocomplete_search()
+    query
+        ASKER
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (108 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f Name: ASKER Rank: 0.00671
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dfa-9aeb-11e5-91da-b8763fd99c5f>	ASKER   T1
+
+The transformer within the Substation ASKER is:
+
+1. **ASKER T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dfa-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_c853ueFfIFqS2iI9u7HnTAEQ in call call_zcC1V2JyjvBgWrUFB6dP22VA
+Got a score of 1 for question List all transformers within Substation ASKER
+
+Asking question: List all transformers within Substation MO
+>>> I'm calling function autocomplete_search()
+    query
+        MO
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (105 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f Name: MO Rank: 0.00561
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e42-9aeb-11e5-91da-b8763fd99c5f>	MO      T1
+
+The transformer within the Substation MO is:
+
+1. **MO T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e42-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_JrIH30ut8o61GpogmmK1TxdK in call call_NwVoNl1eodvLzCEQHLUaEbWf
+Got a score of 1 for question List all transformers within Substation MO
+
+Asking question: List all transformers within Substation ARENDAL
+>>> I'm calling function autocomplete_search()
+    query
+        ARENDAL
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f Name: ARENDAL Rank: 0.00698
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e1e-9aeb-11e5-91da-b8763fd99c5f>	ARENDAL T1
+
+The transformer within the Substation ARENDAL is:
+
+1. **ARENDAL T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e1e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_6mdM3VzB15iJ4Adt50x2Wfl1 in call call_4rVKFLSSuMNVQDZjDuOJ1QH1
+Got a score of 1 for question List all transformers within Substation ARENDAL
+
+Asking question: List all transformers within Substation KVILLDAL
+>>> I'm calling function autocomplete_search()
+    query
+        KVILLDAL
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (111 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f Name: KVILLDAL Rank: 0.00739
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e30-9aeb-11e5-91da-b8763fd99c5f>	KVILLDALT1
+
+The transformer within the Substation KVILLDAL is:
+
+1. **KVILLDALT1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769e30-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_J69JcCSicmJxWJ3KmHtYrl1I in call call_vEsmK4Hptnw45J9FJPkrRzKP
+Got a score of 1 for question List all transformers within Substation KVILLDAL
+
+Asking question: List all transformers within Substation SIMA
+>>> I'm calling function autocomplete_search()
+    query
+        SIMA
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (107 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f Name: SIMA Rank: 0.00585
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dc4-9aeb-11e5-91da-b8763fd99c5f>	SIMA    T1
+
+The transformer within the Substation SIMA is:
+
+1. **SIMA T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769dc4-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_G88f85bSU8zo8bAvl3qA8L4C in call call_GsUWBuHHAbYIBr6DHbrztcTT
+Got a score of 1 for question List all transformers within Substation SIMA
+
+Asking question: List all transformers within Substation AJAURE
+>>> I'm calling function autocomplete_search()
+    query
+        AJAURE
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (109 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f Name: AJAURE Rank: 0.00422
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769d8e-9aeb-11e5-91da-b8763fd99c5f>	AJAURE  T1
+
+The transformer within the Substation AJAURE is:
+
+1. **AJAURE T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769d8e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_utICqsuQh34sxoukhmghaKeh in call call_qHXBtAVbdZdOU4wk46OPlPDQ
+Got a score of 1 for question List all transformers within Substation AJAURE
+
+Asking question: List all transformers within Substation HOGASEN
+>>> I'm calling function autocomplete_search()
+    query
+        HOGASEN
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f Name: HOGASEN Rank: 0.00422
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?transformer ?name WHERE {
+          ?transformer a cim:PowerTransformer ;
+                       cim:IdentifiedObject.name ?name ;
+                       cimex:isPartTransitive <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    ?transformer	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769d7c-9aeb-11e5-91da-b8763fd99c5f>	HOGASEN T1
+
+The transformer within the Substation HOGASEN is:
+
+1. **HOGASEN T1** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769d7c-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_B7wDQLXHnBLWKDsaHT802507 in call call_su1bX4uTrkAoc8WuNlTVcRSj
+Got a score of 1 for question List all transformers within Substation HOGASEN
+
+Asking question: List all substations within bidding zone NO2 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f Name: NO2 SGR Rank: 0.01167
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (741 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>	SANDEFJORD
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769676-9aeb-11e5-91da-b8763fd99c5f>	KRISTIA_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176967c-9aeb-11e5-91da-b8763fd99c5f>	FEDA_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>	KRISTIANSAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f>	ARENDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>	BLAFALLI
+
+The substations within the bidding zone NO2 SGR are:
+
+1. **SANDEFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>`
+2. **KRISTIA_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769676-9aeb-11e5-91da-b8763fd99c5f>`
+3. **FEDA_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176967c-9aeb-11e5-91da-b8763fd99c5f>`
+4. **KRISTIANSAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>`
+5. **ARENDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f>`
+6. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+7. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+8. **BLAFALLI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_C7muUWywWcpV82fm0UEb5ZT9 in call call_bs10HGeBGb7NdjyoD7nbCPLO
+Got a score of 8 for question List all substations within bidding zone NO2 SGR
+
+Asking question: List all substations within bidding zone NO1 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f Name: NO1 SGR Rank: 0.01495
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (714 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>	HALDEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>	SYSLE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176961e-9aeb-11e5-91da-b8763fd99c5f>	KONGSBERG
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>	ASKER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>	SKIEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>	TRETTEN
+
+The substations within the bidding zone NO1 SGR are:
+
+1. **HALDEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SYSLE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>`
+3. **KONGSBERG** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176961e-9aeb-11e5-91da-b8763fd99c5f>`
+4. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+5. **ASKER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SKIEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>`
+7. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+8. **TRETTEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_XMc1oXgOaeeXLB5kBUDmzERa in call call_TwxPGT8bAgbc28uXOZIUakVT
+Got a score of 8 for question List all substations within bidding zone NO1 SGR
+
+Asking question: List all substations within bidding zone NO5 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO5 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f Name: NO5 SGR Rank: 0.01164
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (542 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>	AURLAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>	DAGALI
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>	EIDFJORD
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>	GEILO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>	SIMA
+
+The substations within the bidding zone NO5 SGR are:
+
+1. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+2. **AURLAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>`
+3. **DAGALI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>`
+4. **EIDFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>`
+5. **GEILO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SIMA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_8DIIsgvDiCSli4s1jg7Infy6 in call call_NuijnH3ELyftEnwdx7TdGhMB
+Got a score of 6 for question List all substations within bidding zone NO5 SGR
+
+Asking question: List all substations within bidding zone SE3 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE3 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f Name: SE3 SGR Rank: 0.01472
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (560 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695b8-9aeb-11e5-91da-b8763fd99c5f>	DANNEBO_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695aa-9aeb-11e5-91da-b8763fd99c5f>	FORSMARK
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695eb-9aeb-11e5-91da-b8763fd99c5f>	OSKARSHAMN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f1-9aeb-11e5-91da-b8763fd99c5f>	RINGHALS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f7-9aeb-11e5-91da-b8763fd99c5f>	STENKU_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d2-9aeb-11e5-91da-b8763fd99c5f>	TENHULT
+
+The substations within the bidding zone SE3 SGR are:
+
+1. **DANNEBO_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695b8-9aeb-11e5-91da-b8763fd99c5f>`
+2. **FORSMARK** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695aa-9aeb-11e5-91da-b8763fd99c5f>`
+3. **OSKARSHAMN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695eb-9aeb-11e5-91da-b8763fd99c5f>`
+4. **RINGHALS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f1-9aeb-11e5-91da-b8763fd99c5f>`
+5. **STENKU_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f7-9aeb-11e5-91da-b8763fd99c5f>`
+6. **TENHULT** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d2-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_s0t17aZ7JJw6lw3uAB39fnKY in call call_TUHl1l9rBMQmJg9eZJz5X6Md
+Got a score of 6 for question List all substations within bidding zone SE3 SGR
+
+Asking question: List all substations within bidding zone SE2 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f Name: SE2 SGR Rank: 0.01017
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (463 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f>	AJAURE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695e5-9aeb-11e5-91da-b8763fd99c5f>	GRUNDFORS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695be-9aeb-11e5-91da-b8763fd99c5f>	HJALTA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f>	HOGASEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695df-9aeb-11e5-91da-b8763fd99c5f>	JARPSTROMMEN
+
+The substations within the bidding zone SE2 SGR are:
+
+1. **AJAURE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f>`
+2. **GRUNDFORS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695e5-9aeb-11e5-91da-b8763fd99c5f>`
+3. **HJALTA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695be-9aeb-11e5-91da-b8763fd99c5f>`
+4. **HOGASEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f>`
+5. **JARPSTROMMEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695df-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_YTItx5IKZM6TyGbqORqtElxI in call call_OO8dl4v2liXqpbt34uG7VMNN
+Got a score of 5 for question List all substations within bidding zone SE2 SGR
+
+Asking question: List all substations within bidding zone FI1 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        FI1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17696b3-9aeb-11e5-91da-b8763fd99c5f Name: FI1 SGR Rank: 0.00677
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696b3-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (377 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696be-9aeb-11e5-91da-b8763fd99c5f>	ESTLINK_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696ae-9aeb-11e5-91da-b8763fd99c5f>	HELSINKI
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696c4-9aeb-11e5-91da-b8763fd99c5f>	OULU
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696b8-9aeb-11e5-91da-b8763fd99c5f>	VYBORG_HVDC
+
+The substations within the bidding zone FI1 SGR are:
+
+1. **ESTLINK_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696be-9aeb-11e5-91da-b8763fd99c5f>`
+2. **HELSINKI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696ae-9aeb-11e5-91da-b8763fd99c5f>`
+3. **OULU** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696c4-9aeb-11e5-91da-b8763fd99c5f>`
+4. **VYBORG_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696b8-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_y8GYF8NrGLQespg7WtPV1yFD in call call_TZyw0pER1Jgty1ixDrBrKBgY
+Got a score of 4 for question List all substations within bidding zone FI1 SGR
+
+Asking question: List all substations within bidding zone SE4 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE4 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17696cf-9aeb-11e5-91da-b8763fd99c5f Name: SE4 SGR Rank: 0.00418
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696cf-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (287 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696d4-9aeb-11e5-91da-b8763fd99c5f>	ARRIE_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696da-9aeb-11e5-91da-b8763fd99c5f>	KARLSH_HVDC
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696ca-9aeb-11e5-91da-b8763fd99c5f>	MALMO
+
+The substations within the bidding zone SE4 SGR are:
+
+1. **ARRIE_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696d4-9aeb-11e5-91da-b8763fd99c5f>`
+2. **KARLSH_HVDC** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696da-9aeb-11e5-91da-b8763fd99c5f>`
+3. **MALMO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696ca-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_H5APWU3WOXHDo8yCpGcwV9uJ in call call_9pSAE9Tx4eQ3dRdBGdR1UYpg
+Got a score of 3 for question List all substations within bidding zone SE4 SGR
+
+Asking question: List all substations within bidding zone NO4 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO4 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a3-9aeb-11e5-91da-b8763fd99c5f Name: NO4 SGR Rank: 0.00210
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a3-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (188 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a8-9aeb-11e5-91da-b8763fd99c5f>	NARVIK
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f>	MO
+
+The substations within the bidding zone NO4 SGR are:
+
+1. **NARVIK** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a8-9aeb-11e5-91da-b8763fd99c5f>`
+2. **MO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_WqH6cwsXY87JXS5zhsmAmmON in call call_Mfj4SJICPNmH1gdXKrhUmIFR
+Got a score of 2 for question List all substations within bidding zone NO4 SGR
+
+Asking question: List all substations within bidding zone NO3 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO3 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769699-9aeb-11e5-91da-b8763fd99c5f Name: NO3 SGR Rank: 0.00282
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769699-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (108 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769694-9aeb-11e5-91da-b8763fd99c5f>	TRONDHEIM
+
+The substation within the bidding zone NO3 SGR is:
+
+1. **TRONDHEIM** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769694-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_9Th8gIG6XgrpWS94PEfb5G9W in call call_8ZfqIIFS4CnptVEwpFPIIDkQ
+Got a score of 1 for question List all substations within bidding zone NO3 SGR
+
+Asking question: List all substations within bidding zone SE1 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695cd-9aeb-11e5-91da-b8763fd99c5f Name: SE1 SGR Rank: 0.00418
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?substation ?name WHERE {
+          ?substation a cim:Substation ;
+                      cim:IdentifiedObject.name ?name ;
+                      cim:Substation.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695cd-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (105 characters):
+    ?substation	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c8-9aeb-11e5-91da-b8763fd99c5f>	PORJUS
+
+The substation within the bidding zone SE1 SGR is:
+
+1. **PORJUS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c8-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_i2bE8Z5RCwkuDL9yVqxGNjns in call call_4dTarjlIGjAThaqVg63spGN3
+Got a score of 1 for question List all substations within bidding zone SE1 SGR
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named KVILLDAL
+>>> I'm calling function autocomplete_search()
+    query
+        KVILLDAL
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (111 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f Name: KVILLDAL Rank: 0.00739
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (903 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>	AURLAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>	SIMA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>	KRISTIANSAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>	BLAFALLI
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>	SYSLE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>	DAGALI
+
+The substations connected via an AC or DC line to the substation KVILLDAL are:
+
+1. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+3. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+4. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+5. **AURLAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SIMA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>`
+7. **KRISTIANSAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>`
+8. **BLAFALLI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>`
+9. **SYSLE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>`
+10. **DAGALI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_F0omQNlN5n0RpmA6vmHLf9xz in call call_SJuBDRBLprwLvwFp5R8lcQ7x
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named KVILLDAL
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named STAVANGER
+>>> I'm calling function autocomplete_search()
+    query
+        STAVANGER
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (112 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f Name: STAVANGER Rank: 0.00627
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (813 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>	AURLAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>	SIMA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>	KRISTIANSAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>	SYSLE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>	DAGALI
+
+The substations connected via an AC or DC line to the substation STAVANGER are:
+
+1. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+3. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+4. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+5. **AURLAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SIMA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>`
+7. **KRISTIANSAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176965a-9aeb-11e5-91da-b8763fd99c5f>`
+8. **SYSLE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>`
+9. **DAGALI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_GoTAEQCmpz32cyc0EMivPsj8 in call call_LYQIFD1DPUIRsgO6nH3uC1Nm
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named STAVANGER
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named OSLO
+>>> I'm calling function autocomplete_search()
+    query
+        OSLO
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (107 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f Name: OSLO Rank: 0.00629
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (728 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>	ASKER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>	SKIEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>	SANDEFJORD
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>	SYSLE
+
+The substations connected via an AC or DC line to the substation OSLO are:
+
+1. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+3. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+4. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+5. **ASKER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SKIEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>`
+7. **SANDEFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>`
+8. **SYSLE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_sNq4YZWIYlPPi6J7NzAGMYxb in call call_BbI1Yx75honEvzL2FQUMGeu4
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named OSLO
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named HAGAFOSS
+>>> I'm calling function autocomplete_search()
+    query
+        HAGAFOSS
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (111 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f Name: HAGAFOSS Rank: 0.00473
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (721 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>	AURLAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>	SIMA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>	SYSLE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>	DAGALI
+
+The substations connected via an AC or DC line to the substation HAGAFOSS are:
+
+1. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+3. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+4. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+5. **AURLAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SIMA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>`
+7. **SYSLE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769648-9aeb-11e5-91da-b8763fd99c5f>`
+8. **DAGALI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_QOO8NaIpjcNWAOgrJDt8GAJC in call call_2CmtkvC0A7JwR5w0rSHx3GRr
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named HAGAFOSS
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named HALDEN
+>>> I'm calling function autocomplete_search()
+    query
+        HALDEN
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (109 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f Name: HALDEN Rank: 0.00413
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (639 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f1-9aeb-11e5-91da-b8763fd99c5f>	RINGHALS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>	DAGALI
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>	TRETTEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769694-9aeb-11e5-91da-b8763fd99c5f>	TRONDHEIM
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>	ASKER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>	SKIEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176961e-9aeb-11e5-91da-b8763fd99c5f>	KONGSBERG
+
+The substations connected via an AC or DC line to the substation HALDEN are:
+
+1. **RINGHALS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695f1-9aeb-11e5-91da-b8763fd99c5f>`
+2. **DAGALI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769614-9aeb-11e5-91da-b8763fd99c5f>`
+3. **TRETTEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>`
+4. **TRONDHEIM** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769694-9aeb-11e5-91da-b8763fd99c5f>`
+5. **ASKER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SKIEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>`
+7. **KONGSBERG** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176961e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_P4TVEWvpEWpBYquO3BXtBBML in call call_ZfvJWGg6BSjfJmWhdc0TrP73
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named HALDEN
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named SYLLING
+>>> I'm calling function autocomplete_search()
+    query
+        SYLLING
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f Name: SYLLING Rank: 0.00365
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (639 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>	ASKER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>	SKIEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>	SANDEFJORD
+
+The substations connected via an AC or DC line to the substation SYLLING are:
+
+1. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+2. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+3. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+4. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+5. **ASKER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>`
+6. **SKIEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>`
+7. **SANDEFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176966a-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_dX2Z9i1iorwHtU5jphoHfjby in call call_ACoRS4BrGkGA3am6jhJw8zMv
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named SYLLING
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named ASKER
+>>> I'm calling function autocomplete_search()
+    query
+        ASKER
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (108 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f Name: ASKER Rank: 0.00671
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f176964e-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (545 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>	OSLO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f>	ARENDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>	SKIEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>	SYLLING
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>	HALDEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>	TRETTEN
+
+The substations connected via an AC or DC line to the substation ASKER are:
+
+1. **OSLO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176963c-9aeb-11e5-91da-b8763fd99c5f>`
+2. **ARENDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769670-9aeb-11e5-91da-b8763fd99c5f>`
+3. **SKIEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769654-9aeb-11e5-91da-b8763fd99c5f>`
+4. **SYLLING** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769642-9aeb-11e5-91da-b8763fd99c5f>`
+5. **HALDEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176960e-9aeb-11e5-91da-b8763fd99c5f>`
+6. **TRETTEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769604-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_7wzL9j0TpeBAWTjraX7EOI8Q in call call_sC0FYXFWh0ezYob8p9QBLgux
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named ASKER
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named SIMA
+>>> I'm calling function autocomplete_search()
+    query
+        SIMA
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (107 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f Name: SIMA Rank: 0.00585
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (643 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>	AURLAND
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>	GEILO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>	BLAFALLI
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>	EIDFJORD
+
+The substations connected via an AC or DC line to the substation SIMA are:
+
+1. **AURLAND** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>`
+2. **GEILO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>`
+3. **BLAFALLI** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176968e-9aeb-11e5-91da-b8763fd99c5f>`
+4. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+5. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+6. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+7. **EIDFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_GabfytK003kr8aMuXz3mK6Gs in call call_1vEc4jkLoHM1aI2mwx99aT52
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named SIMA
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named PORJUS
+>>> I'm calling function autocomplete_search()
+    query
+        PORJUS
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (109 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c8-9aeb-11e5-91da-b8763fd99c5f Name: PORJUS Rank: 0.00525
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c8-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c8-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (812 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f>	HOGASEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695df-9aeb-11e5-91da-b8763fd99c5f>	JARPSTROMMEN
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695aa-9aeb-11e5-91da-b8763fd99c5f>	FORSMARK
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f>	AJAURE
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695e5-9aeb-11e5-91da-b8763fd99c5f>	GRUNDFORS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696c4-9aeb-11e5-91da-b8763fd99c5f>	OULU
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695be-9aeb-11e5-91da-b8763fd99c5f>	HJALTA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a8-9aeb-11e5-91da-b8763fd99c5f>	NARVIK
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f>	MO
+
+The substations connected via an AC or DC line to the substation PORJUS are:
+
+1. **HOGASEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695d8-9aeb-11e5-91da-b8763fd99c5f>`
+2. **JARPSTROMMEN** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695df-9aeb-11e5-91da-b8763fd99c5f>`
+3. **FORSMARK** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695aa-9aeb-11e5-91da-b8763fd99c5f>`
+4. **AJAURE** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695fe-9aeb-11e5-91da-b8763fd99c5f>`
+5. **GRUNDFORS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695e5-9aeb-11e5-91da-b8763fd99c5f>`
+6. **OULU** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696c4-9aeb-11e5-91da-b8763fd99c5f>`
+7. **HJALTA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17695be-9aeb-11e5-91da-b8763fd99c5f>`
+8. **NARVIK** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f17696a8-9aeb-11e5-91da-b8763fd99c5f>`
+9. **MO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f176969e-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_umfLXYwNmviiWOKDoLijrvxk in call call_Fx9omR00btBN1YEp1LCjY7SF
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named PORJUS
+
+Asking question: List all substations that are connected via an AC-line or a DC line to substation named AURLAND
+>>> I'm calling function autocomplete_search()
+    query
+        AURLAND
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#Substation
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f Name: AURLAND Rank: 0.00372
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+        PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+
+        SELECT DISTINCT ?substation2 ?sub2Name WHERE {
+          ?substation2 a cim:Substation ;
+                       cim:IdentifiedObject.name ?sub2Name .
+          ?line a cim:Line ;
+                cimex:connectedThroughPart <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>, ?substation2 .
+          FILTER (?substation2 != <http://www.Statnett.no/IGM/Nordic44_CGM#_f176962a-9aeb-11e5-91da-b8763fd99c5f>)
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (551 characters):
+    ?substation2	?sub2Name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>	GEILO
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>	SIMA
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>	STAVANGER
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>	KVILLDAL
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>	HAGAFOSS
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>	EIDFJORD
+
+The substations connected via an AC or DC line to the substation AURLAND are:
+
+1. **GEILO** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769630-9aeb-11e5-91da-b8763fd99c5f>`
+2. **SIMA** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769624-9aeb-11e5-91da-b8763fd99c5f>`
+3. **STAVANGER** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769664-9aeb-11e5-91da-b8763fd99c5f>`
+4. **KVILLDAL** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769682-9aeb-11e5-91da-b8763fd99c5f>`
+5. **HAGAFOSS** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769688-9aeb-11e5-91da-b8763fd99c5f>`
+6. **EIDFJORD** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_f1769636-9aeb-11e5-91da-b8763fd99c5f>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_f9gQjBgRFyL8GBaYXDuFCduX in call call_r2rBu5XFNy4W64sACXwbFW56
+Encountered mismatch in number of columns of 2 and 4
+Got a score of 0 for question List all substations that are connected via an AC-line or a DC line to substation named AURLAND
+
+Asking question: List all AC-lines that traverse bidding zones NO2 SGR and NO5 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f Name: NO2 SGR Rank: 0.01167
+>>> I'm calling function autocomplete_search()
+    query
+        NO5 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f Name: NO5 SGR Rank: 0.01164
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO2 SGR and NO5 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_sHqnHt7wEd7q62TxSGWQ7ROc in call call_TPyJ4ShDpP2sro3zDwFFLQjf
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO2 SGR and NO5 SGR
+
+Asking question: List all AC-lines that traverse bidding zones NO5 SGR and NO2 SGR
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO5 SGR and NO2 SGR.
+...
+
+Checking call made to the sparql_query function.
+Found latest GDB response for run run_z9qNlLylB8Qi2cApkmhp1DH6 in call call_2XC1gTCi8wU06qLI75Lffpgx
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO5 SGR and NO2 SGR
+
+Asking question: List all AC-lines that traverse bidding zones NO2 SGR and NO1 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f Name: NO2 SGR Rank: 0.01167
+>>> I'm calling function autocomplete_search()
+    query
+        NO1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f Name: NO1 SGR Rank: 0.01495
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO2 SGR and NO1 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_7rBpLDkXhEGuyEBew2xoJ2jg in call call_jeS1haNmmSmo8HCPwfeHBkQD
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO2 SGR and NO1 SGR
+
+Asking question: List all AC-lines that traverse bidding zones NO1 SGR and NO2 SGR
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f176965f-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO1 SGR and NO2 SGR.
+...
+
+Checking call made to the sparql_query function.
+Found latest GDB response for run run_D3KQR9vXxKsSUCp0doMfGoFw in call call_u8Mv8f6gNfqioRKIXB5gcONj
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO1 SGR and NO2 SGR
+
+Asking question: List all AC-lines that traverse bidding zones SE2 SGR and SE3 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f Name: SE2 SGR Rank: 0.01017
+>>> I'm calling function autocomplete_search()
+    query
+        SE3 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f Name: SE3 SGR Rank: 0.01472
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones SE2 SGR and SE3 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_JBKISHQPTgFPlihLY9sY3RDL in call call_FqmC0gDUDfgDwkMUKiCKcAzy
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones SE2 SGR and SE3 SGR
+
+Asking question: List all AC-lines that traverse bidding zones SE3 SGR and SE2 SGR
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones SE3 SGR and SE2 SGR.
+...
+
+Checking call made to the sparql_query function.
+Found latest GDB response for run run_IuYVWjUQ0E5yhzwMwEyMVviO in call call_wUyPx5FUFpkggBoyLWQdKvVW
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones SE3 SGR and SE2 SGR
+
+Asking question: List all AC-lines that traverse bidding zones NO1 SGR and NO5 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        NO1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f Name: NO1 SGR Rank: 0.01495
+>>> I'm calling function autocomplete_search()
+    query
+        NO5 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f Name: NO5 SGR Rank: 0.01164
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO1 SGR and NO5 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_geHbIec4gqIJ6wLeIH8Shf0d in call call_viTo4B74hx816sM57GE9Kasf
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO1 SGR and NO5 SGR
+
+Asking question: List all AC-lines that traverse bidding zones NO5 SGR and NO1 SGR
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769619-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f1769609-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones NO5 SGR and NO1 SGR.
+...
+
+Checking call made to the sparql_query function.
+Found latest GDB response for run run_azM960EiluGovwMVyPLAIWTs in call call_qCPwxu8tOsHY6a9wM9M3xo34
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones NO5 SGR and NO1 SGR
+
+Asking question: List all AC-lines that traverse bidding zones SE4 SGR and SE3 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE4 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17696cf-9aeb-11e5-91da-b8763fd99c5f Name: SE4 SGR Rank: 0.00418
+>>> I'm calling function autocomplete_search()
+    query
+        SE3 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f Name: SE3 SGR Rank: 0.01472
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17696cf-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695af-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones SE4 SGR and SE3 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_zFbfE9JWmn9cLdOgiHnSG4mn in call call_5CRP9NuPidg2mlpn2pnKoMFI
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones SE4 SGR and SE3 SGR
+
+Asking question: List all AC-lines that traverse bidding zones SE1 SGR and SE2 SGR
+>>> I'm calling function autocomplete_search()
+    query
+        SE1 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695cd-9aeb-11e5-91da-b8763fd99c5f Name: SE1 SGR Rank: 0.00418
+>>> I'm calling function autocomplete_search()
+    query
+        SE2 SGR
+    resultClass
+        http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (110 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f Name: SE2 SGR Rank: 0.01017
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?line ?name WHERE {
+          ?line a cim:Line ;
+                cim:IdentifiedObject.name ?name ;
+                cim:Line.Region <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695cd-9aeb-11e5-91da-b8763fd99c5f>, <http://www.Statnett.no/IGM/Nordic44_CGM#_f17695c3-9aeb-11e5-91da-b8763fd99c5f> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (12 characters):
+    ?line	?name
+
+There are no AC-lines that traverse both bidding zones SE1 SGR and SE2 SGR.
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_lgoapdl7VSzDKEaUEWPf12Dd in call call_C4id2lhMZabr6rBpf4ahkvTn
+Encountered mismatch in number of columns of 2 and 6
+Got a score of 0 for question List all AC-lines that traverse bidding zones SE1 SGR and SE2 SGR
+
+Asking question: Give me measurements in congestion zone NO-ELSP-1
+>>> I'm calling function autocomplete_search()
+    query
+        NO-ELSP-1
+    resultClass
+        http://entsoe.eu/CIM/SchemaExtension/3/2#EnergyCongestionZone
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (112 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_99f992d3-5c94-4f18-bbba-d986cafea9e1 Name: NO-ELSP-1 Rank: 0.01670
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?measurement ?name WHERE {
+          ?measurement a cim:Measurement ;
+                       cim:IdentifiedObject.name ?name ;
+                       cim:Measurement.PowerSystemResource <http://www.Statnett.no/IGM/Nordic44_CGM#_99f992d3-5c94-4f18-bbba-d986cafea9e1> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (2,491 characters):
+    ?measurement	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_40af803a-e127-ba4c-8366-a19451841b93>	NO-BZ-1 RCF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_687792ee-e9a2-5d4b-bac2-6ec451287c6d>	NO-BZ-1 LF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_0aa5e8dd-7ee5-e04c-a5f4-400089570f6c>	NO-BZ-1 IHYRC P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_e46afcb9-f3a4-4a4b-9c28-2d51b3708ae1>	NO-BZ-1 PUMAF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_8e5494f2-1d0b-8d42-9ae6-3a0d8cf8d25d>	NO-BZ-1 NUCF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_9ad8e518-0b29-4d46-872a-105321bbcce1>	NO-BZ-1 RORF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_e86c1491-955c-4946-82de-b63a6192277a>	NO-BZ-1 HYDF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_5d9cc592-1b36-9740-af4d-06e3696f829e>	NO-BZ-1 HYRAF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_7183e6f1-4ba0-854b-918f-ac180ca2aa78>	NO-BZ-1 OTHF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_7ae1d616-8796-ad43-95f7-f3510b413e81>	NO-BZ-1 PROF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_7e629e54-eef1-2d44-bcbe-6450c51e6603>	NO-BZ-1 WINF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_1aae61d1-6b75-d84e-8b08-f8cf5ff69b78>	NO-BZ-1 NUCA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_22c86021-5e62-824d-9965-38826dc07a4c>	NO-BZ-1 RORA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_4b4f37c6-c90d-2749-b77f-d53ece79c4e7>	NO-BZ-1 THRF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_b6200d77-995a-ee46-967a-fa8bc92a582a>	NO-BZ-1 WINA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_ede27694-434e-5a42-9bdc-272dd750a9c0>	NO-BZ-1 IGENC P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_a68067c8-8456-7143-9f20-216a1a88d213>	NO-BZ-1 NEXF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_fa062dad-5adb-a945-807d-862f080f5d23>	NO-BZ-1 IWINC P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_ad3782e5-a8fb-e44e-9366-38a7c8827368>	NO-BZ-1 HYDA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_9f954584-6132-af41-8015-80fd7c0e22f8>	NO-BZ-1 OTHA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_74306ce2-bf32-9e40-a14f-9303f3101274>	NO-BZ-1 LA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_addc4858-76ce-8240-a702-d6e96126b946>	NO-BZ-1 THRA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_c7111857-b4fa-9945-b840-c5bab849144a>	NO-BZ-1 NEXA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_b07d2149-2fca-9c4b-a4ab-909fe501e1b6>	NO-BZ-1 IHYPC P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_efd83f4d-ff51-9441-b2d3-7087abb9c2ba>	NO-BZ-1 IRORC P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_cedb649b-78f5-d042-b399-1efeb080029e>	NO-BZ-1 PROA P
+
+The measurements in the congestion zone NO-ELSP-1 are:
+
+1. **NO-BZ-1 RCF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_40af803a-e127-ba4c-8366-a19451841b93>`
+2. **NO-BZ-1 LF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_687792ee-e9a2-5d4b-bac2-6ec451287c6d>`
+3. **NO-BZ-1 IHYRC P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_0aa5e8dd-7ee5-e04c-a5f4-400089570f6c>`
+4. **NO-BZ-1 PUMAF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_e46afcb9-f3a4-4a4b-9c28-2d51b3708ae1>`
+5. **NO-BZ-1 NUCF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_8e5494f2-1d0b-8d42-9ae6-3a0d8cf8d25d>`
+6. **NO-BZ-1 RORF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_9ad8e518-0b29-4d46-872a-105321bbcce1>`
+7. **NO-BZ-1 HYDF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_e86c1491-955c-4946-82de-b63a6192277a>`
+8. **NO-BZ-1 HYRAF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_5d9cc592-1b36-9740-af4d-06e3696f829e>`
+9. **NO-BZ-1 OTHF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_7183e6f1-4ba0-854b-918f-ac180ca2aa78>`
+10. **NO-BZ-1 PROF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_7ae1d616-8796-ad43-95f7-f3510b413e81>`
+11. **NO-BZ-1 WINF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_7e629e54-eef1-2d44-bcbe-6450c51e6603>`
+12. **NO-BZ-1 NUCA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_1aae61d1-6b75-d84e-8b08-f8cf5ff69b78>`
+13. **NO-BZ-1 RORA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_22c86021-5e62-824d-9965-38826dc07a4c>`
+14. **NO-BZ-1 THRF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_4b4f37c6-c90d-2749-b77f-d53ece79c4e7>`
+15. **NO-BZ-1 WINA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_b6200d77-995a-ee46-967a-fa8bc92a582a>`
+16. **NO-BZ-1 IGENC P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_ede27694-434e-5a42-9bdc-272dd750a9c0>`
+17. **NO-BZ-1 NEXF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_a68067c8-8456-7143-9f20-216a1a88d213>`
+18. **NO-BZ-1 IWINC P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_fa062dad-5adb-a945-807d-862f080f5d23>`
+19. **NO-BZ-1 HYDA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_ad3782e5-a8fb-e44e-9366-38a7c8827368>`
+20. **NO-BZ-1 OTHA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_9f954584-6132-af41-8015-80fd7c0e22f8>`
+21. **NO-BZ-1 LA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_74306ce2-bf32-9e40-a14f-9303f3101274>`
+22. **NO-BZ-1 THRA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_addc4858-76ce-8240-a702-d6e96126b946>`
+23. **NO-BZ-1 NEXA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_c7111857-b4fa-9945-b840-c5bab849144a>`
+24. **NO-BZ-1 IHYPC P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_b07d2149-2fca-9c4b-a4ab-909fe501e1b6>`
+25. **NO-BZ-1 IRORC P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_efd83f4d-ff51-9441-b2d3-7087abb9c2ba>`
+26. **NO-BZ-1 PROA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_cedb649b-78f5-d042-b399-1efeb080029e>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_mnq5YFZNpMPVQTdVLhBTwvTO in call call_Jr5z5SnabtC4Sl9Rne6ZNDKM
+Got a score of 26 for question Give me measurements in congestion zone NO-ELSP-1
+
+Asking question: Give me measurements in congestion zone NO-ELSP-3
+>>> I'm calling function autocomplete_search()
+    query
+        NO-ELSP-3
+    resultClass
+        http://entsoe.eu/CIM/SchemaExtension/3/2#EnergyCongestionZone
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (112 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_4b27e12c-d9d4-4452-8ce4-6ebc9fee2bdc Name: NO-ELSP-3 Rank: 0.00267
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?measurement ?name WHERE {
+          ?measurement a cim:Measurement ;
+                       cim:IdentifiedObject.name ?name ;
+                       cim:Measurement.PowerSystemResource <http://www.Statnett.no/IGM/Nordic44_CGM#_4b27e12c-d9d4-4452-8ce4-6ebc9fee2bdc> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (205 characters):
+    ?measurement	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_35ef9ce3-5fc6-9546-a056-067807c3b30a>	NO-BZ-3 LA P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_8b1b936a-7395-e644-8b0a-63113ed9f23c>	NO-BZ-3 LF P
+
+The measurements in the congestion zone NO-ELSP-3 are:
+
+1. **NO-BZ-3 LA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_35ef9ce3-5fc6-9546-a056-067807c3b30a>`
+2. **NO-BZ-3 LF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_8b1b936a-7395-e644-8b0a-63113ed9f23c>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_cCKruG71k7dD9uYcRNVksItW in call call_pEBAnxj59pXfVDfFyLiWVycx
+Got a score of 2 for question Give me measurements in congestion zone NO-ELSP-3
+
+Asking question: Give me measurements in congestion zone NO-ELSP-2
+>>> I'm calling function autocomplete_search()
+    query
+        NO-ELSP-2
+    resultClass
+        http://entsoe.eu/CIM/SchemaExtension/3/2#EnergyCongestionZone
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (112 characters):
+    URI: http://www.Statnett.no/IGM/Nordic44_CGM#_4d642344-9775-4222-b7b8-44ce1142de37 Name: NO-ELSP-2 Rank: 0.00333
+>>> I'm calling function sparql_query()
+    query
+        PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+
+        SELECT DISTINCT ?measurement ?name WHERE {
+          ?measurement a cim:Measurement ;
+                       cim:IdentifiedObject.name ?name ;
+                       cim:Measurement.PowerSystemResource <http://www.Statnett.no/IGM/Nordic44_CGM#_4d642344-9775-4222-b7b8-44ce1142de37> .
+        }
+    gdb_repo
+        https://cim.ontotext.com/graphdb/repositories/CIM
+    gdb_user
+        None
+>>>>>> Result (205 characters):
+    ?measurement	?name
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_58a1fd1d-c187-8143-82f9-cd57a421888e>	NO-BZ-2 LF P
+    <http://www.Statnett.no/IGM/Nordic44_CGM#_fd33f771-db4e-1d44-bec5-e7691cf2a54b>	NO-BZ-2 LA P
+
+The measurements in the congestion zone NO-ELSP-2 are:
+
+1. **NO-BZ-2 LF P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_58a1fd1d-c187-8143-82f9-cd57a421888e>`
+2. **NO-BZ-2 LA P** - IRI: `<http://www.Statnett.no/IGM/Nordic44_CGM#_fd33f771-db4e-1d44-bec5-e7691cf2a54b>`
+...
+
+Checking call made to the autocomplete_search function.
+Found latest GDB response for run run_XBZV9H5HJuekUES9MRnArAcN in call call_Fk3G1NXuReSuoO5DTmFH6bo0
+Got a score of 2 for question Give me measurements in congestion zone NO-ELSP-2
+AgentManager destructor deleted assistant and thread.

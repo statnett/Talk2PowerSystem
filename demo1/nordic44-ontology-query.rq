@@ -1,7 +1,12 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX onto: <http://www.ontotext.com/>
 PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
-SELECT * FROM onto:explicit {
+PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+PREFIX entose2: <http://entsoe.eu/CIM/SchemaExtension/3/2#>
+CONSTRUCT {
+    ?x ?p ?o
+} FROM onto:explicit WHERE
+{
     {
         SELECT DISTINCT ?x {
             {
@@ -14,4 +19,4 @@ SELECT * FROM onto:explicit {
         ?x rdfs:isDefinedBy cimex:
     }
     ?x ?p ?o
-} ORDER BY ?x
+}

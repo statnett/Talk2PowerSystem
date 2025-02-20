@@ -60,7 +60,22 @@
       ?substation2 a cim:Substation ;
         cim:Substation.Region ?region2 ;
         cim:IdentifiedObject.name ?substation2Name .
+      FILTER (?substation1 != ?substation2)
+      FILTER (?region1 != ?region2)
       ?line a cim:Line ;
         cimex:connectedThroughPart ?substation1, ?substation2;
         cim:IdentifiedObject.name ?lineName .
+    }
+- id: give_me_measurements_in_congestion_zone_ZONE
+  output: ?measurement ?measurementName
+  params:
+    - ?powerSystemResource a <http://entsoe.eu/CIM/SchemaExtension/3/2#EnergyCongestionZone>; cim:IdentifiedObject.name ?powerSystemResourceName
+  question:
+    - 'Give me measurements in congestion zone [powerSystemResource]'
+  sparql: |
+    PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+    SELECT ?measurement ?measurementName {
+        ?measurement a cim:Analog;
+                     cim:IdentifiedObject.name ?measurementName;
+                     cim:Measurement.PowerSystemResource ?powerSystemResource.
     }
