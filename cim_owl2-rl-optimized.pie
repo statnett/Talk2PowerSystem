@@ -1,0 +1,1009 @@
+Prefices
+{
+	rdf : http://www.w3.org/1999/02/22-rdf-syntax-ns#
+	rdfs : http://www.w3.org/2000/01/rdf-schema#
+	owl : http://www.w3.org/2002/07/owl#
+	onto : http://www.ontotext.com/
+	xsd : http://www.w3.org/2001/XMLSchema#
+	psys : http://proton.semanticweb.org/protonsys#
+}
+
+Axioms
+{
+	<rdf:type> <rdf:type> <rdf:Property>
+	<rdf:subject> <rdf:type> <rdf:Property>
+	<rdf:predicate> <rdf:type> <rdf:Property>
+	<rdf:object> <rdf:type> <rdf:Property>
+	<rdf:first> <rdf:type> <rdf:Property>
+	<rdf:rest> <rdf:type> <rdf:Property>
+	<rdf:value> <rdf:type> <rdf:Property>
+	<rdf:_1> <rdf:type> <rdf:Property>
+	<rdf:nil> <rdf:type> <rdf:List>
+	<rdfs:subClassOf> <rdfs:domain> <rdfs:Class>
+	<rdf:Statement> <rdf:type> <rdfs:Class>
+	<rdf:subject> <rdfs:domain> <rdf:Statement>
+	<rdf:predicate> <rdfs:domain> <rdf:Statement>
+	<rdf:object> <rdfs:domain> <rdf:Statement>
+	<rdf:first> <rdfs:domain> <rdf:List>
+	<rdf:rest> <rdfs:domain> <rdf:List>
+	<rdfs:domain> <rdfs:range> <rdfs:Class>
+	<rdfs:range> <rdfs:range> <rdfs:Class>
+	<rdfs:subClassOf> <rdfs:range> <rdfs:Class>
+	<rdf:rest> <rdfs:range> <rdf:List>
+	<rdfs:comment> <rdfs:range> <rdfs:Literal>
+	<rdfs:label> <rdfs:range> <rdfs:Literal>
+	<rdf:Alt> <rdfs:subClassOf> <rdfs:Container>
+	<rdf:Bag> <rdfs:subClassOf> <rdfs:Container>
+	<rdf:Seq> <rdfs:subClassOf> <rdfs:Container>
+	<rdfs:ContainerMembershipProperty> <rdfs:subClassOf> <rdf:Property>
+	<rdfs:isDefinedBy> <rdfs:subPropertyOf> <rdfs:seeAlso>
+	<rdf:XMLLiteral> <rdf:type> <rdfs:Datatype>
+	<rdf:XMLLiteral> <rdfs:subClassOf> <rdfs:Literal>
+	<rdfs:Datatype> <rdfs:subClassOf> <rdfs:Class>
+	<rdf:_1> <rdf:type> <rdfs:ContainerMembershipProperty>
+	<owl:AllDifferent> <rdf:type> <rdfs:Class>
+	<owl:AllDifferent> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:AllDisjointClasses> <rdf:type> <rdfs:Class>
+	<owl:AllDisjointClasses> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:AllDisjointProperties> <rdf:type> <rdfs:Class>
+	<owl:AllDisjointProperties> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:Annotation> <rdf:type> <rdfs:Class>
+	<owl:Annotation> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:AnnotationProperty> <rdf:type> <rdfs:Class>
+	<owl:AnnotationProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:AsymmetricProperty> <rdf:type> <rdfs:Class>
+	<owl:AsymmetricProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:Axiom> <rdf:type> <rdfs:Class>
+	<owl:Axiom> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:Class> <rdf:type> <rdfs:Class>
+	<owl:Class> <rdfs:subClassOf> <rdfs:Class>
+	<owl:DataRange> <rdf:type> <rdfs:Class>
+	<owl:DataRange> <rdfs:subClassOf> <rdfs:Datatype>
+	<owl:DatatypeProperty> <rdf:type> <rdfs:Class>
+	<owl:DatatypeProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:DeprecatedClass> <rdf:type> <rdfs:Class>
+	<owl:DeprecatedClass> <rdfs:subClassOf> <rdfs:Class>
+	<owl:DeprecatedProperty> <rdf:type> <rdfs:Class>
+	<owl:DeprecatedProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:FunctionalProperty> <rdf:type> <rdfs:Class>
+	<owl:FunctionalProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:InverseFunctionalProperty> <rdf:type> <rdfs:Class>
+	<owl:InverseFunctionalProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:IrreflexiveProperty> <rdf:type> <rdfs:Class>
+	<owl:IrreflexiveProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:NamedIndividual> <rdf:type> <rdfs:Class>
+	<owl:NamedIndividual> <rdfs:subClassOf> <owl:Thing>
+	<owl:NegativePropertyAssertion> <rdf:type> <rdfs:Class>
+	<owl:NegativePropertyAssertion> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:Nothing> <rdf:type> <owl:Class>
+	<owl:Nothing> <rdfs:subClassOf> <owl:Thing>
+	<owl:ObjectProperty> <rdf:type> <rdfs:Class>
+	<owl:ObjectProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:Ontology> <rdf:type> <rdfs:Class>
+	<owl:Ontology> <rdfs:subClassOf> <rdfs:Resource>
+	<owl:OntologyProperty> <rdf:type> <rdfs:Class>
+	<owl:OntologyProperty> <rdfs:subClassOf> <rdf:Property>
+	<owl:ReflexiveProperty> <rdf:type> <rdfs:Class>
+	<owl:ReflexiveProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:Restriction> <rdf:type> <rdfs:Class>
+	<owl:Restriction> <rdfs:subClassOf> <owl:Class>
+	<owl:SymmetricProperty> <rdf:type> <rdfs:Class>
+	<owl:SymmetricProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:Thing> <rdf:type> <owl:Class>
+	<owl:TransitiveProperty> <rdf:type> <rdfs:Class>
+	<owl:TransitiveProperty> <rdfs:subClassOf> <owl:ObjectProperty>
+	<owl:allValuesFrom> <rdf:type> <rdf:Property>
+	<owl:allValuesFrom> <rdfs:domain> <owl:Restriction>
+	<owl:allValuesFrom> <rdfs:range> <rdfs:Class>
+	<owl:annotatedProperty> <rdf:type> <rdf:Property>
+	<owl:annotatedSource> <rdf:type> <rdf:Property>
+	<owl:annotatedTarget> <rdf:type> <rdf:Property>
+	<owl:assertionProperty> <rdf:type> <rdf:Property>
+	<owl:assertionProperty> <rdfs:domain> <owl:NegativePropertyAssertion>
+	<owl:backwardCompatibleWith> <rdf:type> <owl:AnnotationProperty>
+	<owl:backwardCompatibleWith> <rdf:type> <owl:OntologyProperty>
+	<owl:backwardCompatibleWith> <rdfs:domain> <owl:Ontology>
+	<owl:backwardCompatibleWith> <rdfs:range> <owl:Ontology>
+	<owl:bottomDataProperty> <rdf:type> <owl:DatatypeProperty>
+	<owl:bottomDataProperty> <rdfs:domain> <owl:Thing>
+	<owl:bottomDataProperty> <rdfs:range> <rdfs:Literal>
+	<owl:bottomObjectProperty> <rdf:type> <owl:ObjectProperty>
+	<owl:bottomObjectProperty> <rdfs:domain> <owl:Thing>
+	<owl:bottomObjectProperty> <rdfs:range> <owl:Thing>
+	<owl:cardinality> <rdf:type> <rdf:Property>
+	<owl:cardinality> <rdfs:domain> <owl:Restriction>
+	<owl:cardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:complementOf> <rdf:type> <rdf:Property>
+	<owl:complementOf> <rdfs:domain> <owl:Class>
+	<owl:complementOf> <rdfs:range> <owl:Class>
+	<owl:datatypeComplementOf> <rdf:type> <rdf:Property>
+	<owl:datatypeComplementOf> <rdfs:domain> <rdfs:Datatype>
+	<owl:datatypeComplementOf> <rdfs:range> <rdfs:Datatype>
+	<owl:deprecated> <rdf:type> <owl:AnnotationProperty>
+	<owl:differentFrom> <rdf:type> <rdf:Property>
+	<owl:differentFrom> <rdfs:domain> <owl:Thing>
+	<owl:differentFrom> <rdfs:range> <owl:Thing>
+	<owl:disjointUnionOf> <rdf:type> <rdf:Property>
+	<owl:disjointUnionOf> <rdfs:domain> <owl:Class>
+	<owl:disjointUnionOf> <rdfs:range> <rdf:List>
+	<owl:disjointWith> <rdf:type> <rdf:Property>
+	<owl:disjointWith> <rdfs:domain> <owl:Class>
+	<owl:disjointWith> <rdfs:range> <owl:Class>
+	<owl:distinctMembers> <rdf:type> <rdf:Property>
+	<owl:distinctMembers> <rdfs:domain> <owl:AllDifferent>
+	<owl:distinctMembers> <rdfs:range> <rdf:List>
+	<owl:equivalentClass> <rdf:type> <rdf:Property>
+	<owl:equivalentClass> <rdfs:domain> <rdfs:Class>
+	<owl:equivalentClass> <rdfs:range> <rdfs:Class>
+	<owl:equivalentProperty> <rdf:type> <rdf:Property>
+	<owl:hasKey> <rdf:type> <rdf:Property>
+	<owl:hasKey> <rdfs:domain> <owl:Class>
+	<owl:hasKey> <rdfs:range> <rdf:List>
+	<owl:hasSelf> <rdf:type> <rdf:Property>
+	<owl:hasSelf> <rdfs:domain> <owl:Restriction>
+	<owl:hasValue> <rdf:type> <rdf:Property>
+	<owl:hasValue> <rdfs:domain> <owl:Restriction>
+	<owl:imports> <rdf:type> <owl:OntologyProperty>
+	<owl:imports> <rdfs:domain> <owl:Ontology>
+	<owl:imports> <rdfs:range> <owl:Ontology>
+	<owl:incompatibleWith> <rdf:type> <owl:AnnotationProperty>
+	<owl:incompatibleWith> <rdf:type> <owl:OntologyProperty>
+	<owl:incompatibleWith> <rdfs:domain> <owl:Ontology>
+	<owl:incompatibleWith> <rdfs:range> <owl:Ontology>
+	<owl:intersectionOf> <rdf:type> <rdf:Property>
+	<owl:intersectionOf> <rdfs:domain> <rdfs:Class>
+	<owl:intersectionOf> <rdfs:range> <rdf:List>
+	<owl:inverseOf> <rdf:type> <rdf:Property>
+	<owl:inverseOf> <rdfs:domain> <owl:ObjectProperty>
+	<owl:inverseOf> <rdfs:range> <owl:ObjectProperty>
+	<owl:maxCardinality> <rdf:type> <rdf:Property>
+	<owl:maxCardinality> <rdfs:domain> <owl:Restriction>
+	<owl:maxCardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:maxQualifiedCardinality> <rdf:type> <rdf:Property>
+	<owl:maxQualifiedCardinality> <rdfs:domain> <owl:Restriction>
+	<owl:maxQualifiedCardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:members> <rdf:type> <rdf:Property>
+	<owl:members> <rdfs:range> <rdf:List>
+	<owl:minCardinality> <rdf:type> <rdf:Property>
+	<owl:minCardinality> <rdfs:domain> <owl:Restriction>
+	<owl:minCardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:minQualifiedCardinality> <rdf:type> <rdf:Property>
+	<owl:minQualifiedCardinality> <rdfs:domain> <owl:Restriction>
+	<owl:minQualifiedCardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:onClass> <rdf:type> <rdf:Property>
+	<owl:onClass> <rdfs:domain> <owl:Restriction>
+	<owl:onClass> <rdfs:range> <owl:Class>
+	<owl:onDataRange> <rdf:type> <rdf:Property>
+	<owl:onDataRange> <rdfs:domain> <owl:Restriction>
+	<owl:onDataRange> <rdfs:range> <rdfs:Datatype>
+	<owl:onDatatype> <rdf:type> <rdf:Property>
+	<owl:onDatatype> <rdfs:domain> <rdfs:Datatype>
+	<owl:onDatatype> <rdfs:range> <rdfs:Datatype>
+	<owl:oneOf> <rdf:type> <rdf:Property>
+	<owl:oneOf> <rdfs:domain> <rdfs:Class>
+	<owl:oneOf> <rdfs:range> <rdf:List>
+	<owl:onProperty> <rdf:type> <rdf:Property>
+	<owl:onProperty> <rdfs:domain> <owl:Restriction>
+	<owl:onProperties> <rdf:type> <rdf:Property>
+	<owl:onProperties> <rdfs:domain> <owl:Restriction>
+	<owl:onProperties> <rdfs:range> <rdf:List>
+	<owl:priorVersion> <rdf:type> <owl:AnnotationProperty>
+	<owl:priorVersion> <rdf:type> <owl:OntologyProperty>
+	<owl:priorVersion> <rdfs:domain> <owl:Ontology>
+	<owl:priorVersion> <rdfs:range> <owl:Ontology>
+	<owl:propertyChainAxiom> <rdf:type> <rdf:Property>
+	<owl:propertyChainAxiom> <rdfs:domain> <owl:ObjectProperty>
+	<owl:propertyChainAxiom> <rdfs:range> <rdf:List>
+	<owl:propertyDisjointWith> <rdf:type> <rdf:Property>
+	<owl:qualifiedCardinality> <rdf:type> <rdf:Property>
+	<owl:qualifiedCardinality> <rdfs:domain> <owl:Restriction>
+	<owl:qualifiedCardinality> <rdfs:range> <xsd:nonNegativeInteger>
+	<owl:sameAs> <rdf:type> <rdf:Property>
+	<owl:sameAs> <rdfs:domain> <owl:Thing>
+	<owl:sameAs> <rdfs:range> <owl:Thing>
+	<owl:someValuesFrom> <rdf:type> <rdf:Property>
+	<owl:someValuesFrom> <rdfs:domain> <owl:Restriction>
+	<owl:someValuesFrom> <rdfs:range> <rdfs:Class>
+	<owl:sourceIndividual> <rdf:type> <rdf:Property>
+	<owl:sourceIndividual> <rdfs:domain> <owl:NegativePropertyAssertion>
+	<owl:sourceIndividual> <rdfs:range> <owl:Thing>
+	<owl:targetIndividual> <rdf:type> <rdf:Property>
+	<owl:targetIndividual> <rdfs:domain> <owl:NegativePropertyAssertion>
+	<owl:targetIndividual> <rdfs:range> <owl:Thing>
+	<owl:targetValue> <rdf:type> <rdf:Property>
+	<owl:targetValue> <rdfs:domain> <owl:NegativePropertyAssertion>
+	<owl:targetValue> <rdfs:range> <rdfs:Literal>
+	<owl:topDataProperty> <rdf:type> <owl:DatatypeProperty>
+	<owl:topDataProperty> <rdfs:domain> <owl:Thing>
+	<owl:topDataProperty> <rdfs:range> <rdfs:Literal>
+	<owl:topObjectProperty> <rdf:type> <rdf:ObjectProperty>
+	<owl:topObjectProperty> <rdfs:domain> <owl:Thing>
+	<owl:topObjectProperty> <rdfs:range> <owl:Thing>
+	<owl:unionOf> <rdf:type> <rdf:Property>
+	<owl:unionOf> <rdfs:domain> <rdfs:Class>
+	<owl:unionOf> <rdfs:range> <rdf:List>
+	<owl:versionInfo> <rdf:type> <owl:AnnotationProperty>
+	<owl:versionIRI> <rdf:type> <owl:OntologyProperty>
+	<owl:versionIRI> <rdfs:domain> <owl:Ontology>
+	<owl:versionIRI> <rdfs:range> <owl:Ontology>
+	<owl:withRestrictions> <rdf:type> <rdf:Property>
+	<owl:withRestrictions> <rdfs:domain> <rdfs:Datatype>
+	<owl:withRestrictions> <rdfs:range> <rdf:List>
+	<xsd:anyURI> <rdf:type> <rdfs:Datatype>
+	<xsd:anyURI> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:base64Binary> <rdf:type> <rdfs:Datatype>
+	<xsd:base64Binary> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:boolean> <rdf:type> <rdfs:Datatype>
+	<xsd:boolean> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:byte> <rdf:type> <rdfs:Datatype>
+	<xsd:byte> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:dateTime> <rdf:type> <rdfs:Datatype>
+	<xsd:dateTime> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:dateTimeStamp> <rdf:type> <rdfs:Datatype>
+	<xsd:dateTimeStamp> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:decimal> <rdf:type> <rdfs:Datatype>
+	<xsd:decimal> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:double> <rdf:type> <rdfs:Datatype>
+	<xsd:double> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:float> <rdf:type> <rdfs:Datatype>
+	<xsd:float> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:hexBinary> <rdf:type> <rdfs:Datatype>
+	<xsd:hexBinary> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:int> <rdf:type> <rdfs:Datatype>
+	<xsd:int> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:integer> <rdf:type> <rdfs:Datatype>
+	<xsd:integer> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:language> <rdf:type> <rdfs:Datatype>
+	<xsd:language> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:long> <rdf:type> <rdfs:Datatype>
+	<xsd:long> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:Name> <rdf:type> <rdfs:Datatype>
+	<xsd:Name> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:NCName> <rdf:type> <rdfs:Datatype>
+	<xsd:NCName> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:negativeInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:negativeInteger> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:NMTOKEN> <rdf:type> <rdfs:Datatype>
+	<xsd:NMTOKEN> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:nonNegativeInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:nonNegativeInteger> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:nonPositiveInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:nonPositiveInteger> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:normalizedString> <rdf:type> <rdfs:Datatype>
+	<xsd:normalizedString> <rdfs:subClassOf> <rdfs:Literal>
+	<rdf:PlainLiteral> <rdf:type> <rdfs:Datatype>
+	<rdf:PlainLiteral> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:positiveInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:positiveInteger> <rdfs:subClassOf> <rdfs:Literal>
+	<owl:rational> <rdf:type> <rdfs:Datatype>
+	<owl:rational> <rdfs:subClassOf> <rdfs:Literal>
+	<owl:real> <rdf:type> <rdfs:Datatype>
+	<owl:real> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:short> <rdf:type> <rdfs:Datatype>
+	<xsd:short> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:string> <rdf:type> <rdfs:Datatype>
+	<xsd:string> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:token> <rdf:type> <rdfs:Datatype>
+	<xsd:token> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:unsignedByte> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedByte> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:unsignedInt> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedInt> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:unsignedLong> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedLong> <rdfs:subClassOf> <rdfs:Literal>
+	<xsd:unsignedShort> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedShort> <rdfs:subClassOf> <rdfs:Literal>
+	<rdf:XMLLiteral> <rdf:type> <rdfs:Datatype>
+	<rdf:XMLLiteral> <rdfs:subClassOf> <rdfs:Literal>
+	<rdf:langRange> <rdf:type> <owl:DatatypeProperty>
+	<rdf:langRange> <rdfs:range> <rdfs:Literal>
+	<xsd:length> <rdf:type> <owl:DatatypeProperty>
+	<xsd:length> <rdfs:range> <rdfs:Literal>
+	<xsd:maxExclusive> <rdf:type> <owl:DatatypeProperty>
+	<xsd:maxExclusive> <rdfs:range> <rdfs:Literal>
+	<xsd:maxInclusive> <rdf:type> <owl:DatatypeProperty>
+	<xsd:maxInclusive> <rdfs:range> <rdfs:Literal>
+	<xsd:maxLength> <rdf:type> <owl:DatatypeProperty>
+	<xsd:maxLength> <rdfs:range> <rdfs:Literal>
+	<xsd:minExclusive> <rdf:type> <owl:DatatypeProperty>
+	<xsd:minExclusive> <rdfs:range> <rdfs:Literal>
+	<xsd:minInclusive> <rdf:type> <owl:DatatypeProperty>
+	<xsd:minInclusive> <rdfs:range> <rdfs:Literal>
+	<xsd:minLength> <rdf:type> <owl:DatatypeProperty>
+	<xsd:minLength> <rdfs:range> <rdfs:Literal>
+	<xsd:pattern> <rdf:type> <owl:DatatypeProperty>
+	<xsd:pattern> <rdfs:range> <rdfs:Literal>
+	<rdfs:comment> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:comment> <rdfs:range> <rdfs:Literal>
+	<rdfs:isDefinedBy> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:label> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:label> <rdfs:range> <rdfs:Literal>
+	<rdfs:Literal> <rdf:type> <rdfs:Datatype>
+	<rdfs:seeAlso> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:label> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:comment> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:seeAlso> <rdf:type> <owl:AnnotationProperty>
+	<rdfs:isDefinedBy> <rdf:type> <owl:AnnotationProperty>
+	<owl:deprecated> <rdf:type> <owl:AnnotationProperty>
+	<owl:versionInfo> <rdf:type> <owl:AnnotationProperty>
+	<owl:priorVersion> <rdf:type> <owl:AnnotationProperty>
+	<owl:backwardCompatibleWith> <rdf:type> <owl:AnnotationProperty>
+	<owl:incompatibleWith> <rdf:type> <owl:AnnotationProperty>
+	<owl:Thing> <rdf:type> <owl:Class>
+	<owl:Nothing> <rdf:type> <owl:Class>
+	<rdf:PlainLiteral> <rdf:type> <rdfs:Datatype>
+	<rdf:XMLLiteral> <rdf:type> <rdfs:Datatype>
+	<rdfs:Literal> <rdf:type> <rdfs:Datatype>
+	<xsd:decimal> <rdf:type> <rdfs:Datatype>
+	<xsd:integer> <rdf:type> <rdfs:Datatype>
+	<xsd:nonNegativeInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:nonPositiveInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:positiveInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:negativeInteger> <rdf:type> <rdfs:Datatype>
+	<xsd:long> <rdf:type> <rdfs:Datatype>
+	<xsd:int> <rdf:type> <rdfs:Datatype>
+	<xsd:short> <rdf:type> <rdfs:Datatype>
+	<xsd:byte> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedLong> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedInt> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedShort> <rdf:type> <rdfs:Datatype>
+	<xsd:unsignedByte> <rdf:type> <rdfs:Datatype>
+	<xsd:float> <rdf:type> <rdfs:Datatype>
+	<xsd:double> <rdf:type> <rdfs:Datatype>
+	<xsd:string> <rdf:type> <rdfs:Datatype>
+	<xsd:normalizedString> <rdf:type> <rdfs:Datatype>
+	<xsd:token> <rdf:type> <rdfs:Datatype>
+	<xsd:language> <rdf:type> <rdfs:Datatype>
+	<xsd:Name> <rdf:type> <rdfs:Datatype>
+	<xsd:NCName> <rdf:type> <rdfs:Datatype>
+	<xsd:NMTOKEN> <rdf:type> <rdfs:Datatype>
+	<xsd:boolean> <rdf:type> <rdfs:Datatype>
+	<xsd:hexBinary> <rdf:type> <rdfs:Datatype>
+	<xsd:base64Binary> <rdf:type> <rdfs:Datatype>
+	<xsd:anyURI> <rdf:type> <rdfs:Datatype>
+	<xsd:dateTime> <rdf:type> <rdfs:Datatype>
+	<xsd:dateTimeStamp> <rdf:type> <rdfs:Datatype>
+}
+
+Rules
+{
+
+	Id: psys_transitiveOver
+	  p <psys:transitiveOver> q
+	  x p y
+	  y q z
+	  ---------------
+	  x p z
+
+	
+	Consistency: eq_diff1
+
+	  a <owl:sameAs> b
+	  a <owl:differentFrom> b
+	------------------------------------
+
+
+	Id: owl_allDiff1
+
+	  a <rdf:type> <owl:AllDifferent>
+	  a <owl:members> b
+	------------------------------------
+	  a <onto:_distinct> b [Context <onto:_allDiff>]
+
+
+	Id: owl_allDiff2
+
+	  a <rdf:type> <owl:AllDifferent>
+	  a <owl:distinctmembers> b
+	------------------------------------
+	  a <onto:_distinct> b [Context <onto:_allDiff>]
+
+
+	Id: owl_allDiff3
+
+	  a <onto:_distinct> b [Context <onto:_allDiff>]
+	  b <rdf:rest> c [Constraint c != <rdf:nil>]
+	------------------------------------
+	  a <onto:_distinct> c [Context <onto:_allDiff>]
+
+
+	Consistency: owl_allDiff
+
+	  a <onto:_distinct> b [Context <onto:_allDiff>]
+	  b <rdf:first> d
+	  d <owl:sameAs> e
+	  c <rdf:first> e
+	  a <onto:_distinct> c [Context <onto:_allDiff>]
+	------------------------------------
+
+
+	Id: prp_dom
+
+	  a <rdfs:domain> b
+	  c a d
+	------------------------------------
+	  c <rdf:type> b
+
+
+	Id: prp_rng
+
+	  a <rdfs:range> b
+	  c a d
+	------------------------------------
+	  d <rdf:type> b
+
+
+	Id: prp_fp
+
+	  a <rdf:type> <owl:FunctionalProperty>
+	  b a c
+	  b a d [Constraint c != d] [Cut]
+	------------------------------------
+	  c <owl:sameAs> d
+
+
+	Id: prp_ifp
+
+	  a <rdf:type> <owl:InverseFunctionalProperty>
+	  b a c
+	  d a c [Constraint b != d] [Cut]
+	------------------------------------
+	  b <owl:sameAs> d
+
+
+	Consistency: prp_irp
+
+	  a <rdf:type> <owl:IrreflexiveProperty>
+	  b a b
+	------------------------------------
+
+
+	Id: prp_symp
+
+	  a <rdf:type> <owl:SymmetricProperty>
+	  b a c
+	------------------------------------
+	  c a b
+
+
+	Consistency: prp_asyp
+
+	  a <rdf:type> <owl:AsymmetricProperty>
+	  b a c
+	  c a b [Cut]
+	------------------------------------
+
+
+	Id: prp_spo1
+
+	  a <rdfs:subPropertyOf> b
+	  c a d
+	------------------------------------
+	  c b d
+
+
+	Id: prp_spo2_1
+
+	  a <owl:propertyChainAxiom> b
+	  c b d [Context <onto:_checkChain>]
+	------------------------------------
+	  c a d
+
+
+	Id: prp_spo2_2
+
+	  a <rdf:first> b
+	  a <rdf:rest> c [Constraint c != <rdf:nil>]
+	  d b e
+	  e c f [Context <onto:_checkChain>]
+	------------------------------------
+	  d a f [Context <onto:_checkChain>]
+
+
+	Id: prp_spo2_3
+
+	  a <rdf:first> b
+	  a <rdf:rest> <rdf:nil>
+	  c b d
+	------------------------------------
+	  c a d [Context <onto:_checkChain>]
+
+
+	Id: prp_eqp1
+
+	  a <owl:equivalentProperty> b
+	  c a d
+	------------------------------------
+	  c b d
+
+
+	Id: prp_eqp2
+
+	  a <owl:equivalentProperty> b
+	  c b d
+	------------------------------------
+	  c a d
+
+
+	Consistency: prp_pdw
+
+	  a <owl:propertyDisjointWith> b
+	  c a d
+	  c b d
+	------------------------------------
+
+
+	Id: owl_allDisjProp1
+
+	  a <rdf:type> <owl:AllDisjointProperties>
+	  a <owl:members> b
+	------------------------------------
+	  a <onto:_AllDisjointProperties> b [Context <onto:_owl_allDisjProp>]
+
+
+	Id: owl_allDisjProp2
+
+	  a <onto:_AllDisjointProperties> b [Context <onto:_owl_allDisjProp>]
+	  b <rdf:rest> c [Constraint c != <rdf:nil>]
+	------------------------------------
+	  a <onto:_AllDisjointProperties> c [Context <onto:_owl_allDisjProp>]
+
+
+	Id: owl_allDisjProp3
+
+	  a <onto:_AllDisjointProperties> b [Context <onto:_owl_allDisjProp>]
+	  a <onto:_AllDisjointProperties> c [Context <onto:_owl_allDisjProp>]
+	  b <rdf:first> d
+	  c <rdf:first> e [Constraint e != d]
+	------------------------------------
+	  d <owl:propertyDisjointWith> e
+
+
+	Id: prp_inv1
+
+	  a <owl:inverseOf> b
+	  c a d
+	------------------------------------
+	  d b c
+
+
+	Id: prp_inv2
+
+	  a <owl:inverseOf> b
+	  c b d
+	------------------------------------
+	  d a c
+
+
+	Id: prp_key_1
+
+	  a <owl:hasKey> b
+	  c b d [Context <onto:_sameKey>]
+	------------------------------------
+	  c <owl:sameAs> d
+
+
+	Id: prp_key_2
+
+	  a <rdf:first> b
+	  a <rdf:rest> c
+	  d c e [Context <onto:_sameKey>] [Constraint d != e]
+	  d b f
+	  e b f [Cut]
+	------------------------------------
+	  d a e [Context <onto:_sameKey>]
+
+
+	Id: prp_key_3_bottom
+
+	  a <owl:hasKey> b
+	  c <rdf:type> a
+	  d <rdf:type> a [Constraint c != d] [Cut]
+	  e <rdf:first> f
+	  e <rdf:rest> <rdf:nil>
+	  c f g
+	  d f g [Cut]
+	------------------------------------
+	  c e d [Context <onto:_sameKey>]
+
+
+	Consistency: prp_npa1
+
+	  a <owl:sourceIndividual> b
+	  a <owl:assertionProperty> c
+	  a <owl:targetIndividual> d
+	  b c d
+	------------------------------------
+
+
+	Consistency: prp_npa2
+
+	  a <owl:sourceIndividual> b
+	  a <owl:assertionProperty> c
+	  a <owl:targetValue> d
+	  b c d
+	------------------------------------
+
+
+	Consistency: cls_nothing2
+
+	  a <rdf:type> <owl:Nothing>
+	------------------------------------
+
+
+	Id: owl_typeByIntersect_1
+
+	  a <onto:_allTypes> b [Context <onto:_typeByInt>]
+	  c <owl:intersectionOf> b
+	------------------------------------
+	  a <rdf:type> c
+
+
+	Id: owl_typeByIntersect_2
+
+	  a <rdf:first> b
+	  a <rdf:rest> <rdf:nil>
+	  c <rdf:type> b
+	------------------------------------
+	  c <onto:_allTypes> a [Context <onto:_typeByInt>]
+
+
+	Id: owl_typeByIntersect_3
+
+	  a <rdf:first> b
+	  a <rdf:rest> c
+	  d <onto:_allTypes> c [Context <onto:_typeByInt>]
+	  d <rdf:type> b
+	------------------------------------
+	  d <onto:_allTypes> a [Context <onto:_typeByInt>]
+
+
+	Consistency: cls_com
+
+	  a <owl:complementOf> b
+	  c <rdf:type> a
+	  c <rdf:type> b
+	------------------------------------
+
+
+	Id: cls_svf1
+
+	  a <owl:someValuesFrom> b
+	  a <owl:onProperty> c
+	  e <rdf:type> b
+	  d c e
+	------------------------------------
+	  d <rdf:type> a
+
+
+	Id: cls_svf2
+
+	  a <owl:someValuesFrom> <owl:Thing>
+	  a <owl:onProperty> b
+	  c b d
+	------------------------------------
+	  c <rdf:type> a
+
+
+	Id: cls_avf
+
+	  a <owl:allValuesFrom> b
+	  a <owl:onProperty> c
+	  d <rdf:type> a
+	  d c e
+	------------------------------------
+	  e <rdf:type> b
+
+
+	Id: cls_hv1
+
+	  a <owl:hasValue> b
+	  a <owl:onProperty> c
+	  d <rdf:type> a
+	------------------------------------
+	  d c b
+
+
+	Id: cls_hv2
+
+	  a <owl:hasValue> b
+	  a <owl:onProperty> c
+	  d c b
+	------------------------------------
+	  d <rdf:type> a
+
+
+	Consistency: cls_maxc1
+
+	  a <owl:maxCardinality> "0"^^xsd:nonNegativeInteger
+	  a <owl:onProperty> b
+	  c <rdf:type> a
+	  c b d
+	------------------------------------
+
+
+	Id: cls_maxc2
+
+	  a <owl:maxCardinality> "1"^^xsd:nonNegativeInteger
+	  a <owl:onProperty> b
+	  c <rdf:type> a
+	  c b d
+	  c b e
+	------------------------------------
+	  d <owl:sameAs> e
+
+
+	Consistency: cls_maxqc1
+
+	  a <owl:maxQualifiedCardinality> "0"^^xsd:nonNegativeInteger
+	  a <owl:onProperty> b
+	  a <owl:onClass> c
+	  d <rdf:type> a
+	  d b e
+	  e <rdf:type> c
+	------------------------------------
+
+
+	Consistency: cls_maxqc2
+
+	  a <owl:maxQualifiedCardinality> "0"^^xsd:nonNegativeInteger
+	  a <owl:onClass> <owl:Thing>
+	  a <owl:onProperty> b
+	  c <rdf:type> a
+	  c b d
+	------------------------------------
+
+
+	Id: cls_maxqc3
+
+	  a <owl:maxQualifiedCardinality> "1"^^xsd:nonNegativeInteger
+	  a <owl:onProperty> b
+	  a <owl:onClass> c
+	  d <rdf:type> a
+	  d b e
+	  e <rdf:type> c
+	  d b f [Cut]
+	  f <rdf:type> c [Cut]
+	------------------------------------
+	  e <owl:sameAs> f [Constraint e != f]
+
+
+	Id: cls_maxqc4
+
+	  a <owl:maxQualifiedCardinality> "1"^^xsd:nonNegativeInteger
+	  a <owl:onClass> <owl:Thing>
+	  a <owl:onProperty> b
+	  c <rdf:type> a
+	  c b d [Cut]
+	  c b e [Constraint d != e]
+	------------------------------------
+	  d <owl:sameAs> e
+
+
+	Id: cls_oo_1
+
+	  a <owl:oneOf> b
+	------------------------------------
+	  a <onto:_oneOf> b [Context <onto:_cls_oo>]
+
+
+	Id: cls_oo_2
+
+	  a <onto:_oneOf> b [Context <onto:_cls_oo>]
+	  b <rdf:first> c
+	  b <rdf:rest> d
+	------------------------------------
+	  c <rdf:type> a
+	  a <onto:_oneOf> d [Context <onto:_cls_oo>] [Constraint d != <rdf:nil>]
+
+
+	Id: cax_sco
+
+	  a <rdfs:subClassOf> b [Constraint a != b]
+	  c <rdf:type> a
+	------------------------------------
+	  c <rdf:type> b
+
+
+	Id: cax_eqc1
+
+	  a <owl:equivalentClass> b [Constraint a != b]
+	  c <rdf:type> a
+	------------------------------------
+	  c <rdf:type> b
+
+
+	Id: cax_eqc2
+
+	  a <owl:equivalentClass> b [Constraint a != b]
+	  c <rdf:type> b
+	------------------------------------
+	  c <rdf:type> a
+
+
+	Consistency: cax_dw
+
+	  a <owl:disjointWith> b
+	  c <rdf:type> a
+	  c <rdf:type> b
+	------------------------------------
+
+
+	Id: owl_allDisjClasses1
+
+	  a <rdf:type> <owl:AllDisjointClasses>
+	  a <owl:members> b
+	------------------------------------
+	  a <onto:_AllDisjointClasses> b [Context <onto:_owl_allDisjClasses>]
+
+
+	Id: owl_allDisjClasses2
+
+	  a <onto:_AllDisjointClasses> b [Context <onto:_owl_allDisjClasses>]
+	  b <rdf:rest> c [Constraint c != <rdf:nil>]
+	------------------------------------
+	  a <onto:_AllDisjointClasses> c [Context <onto:_owl_allDisjClasses>]
+
+
+	Id: owl_allDisjClasses3
+
+	  a <onto:_AllDisjointClasses> b [Context <onto:_owl_allDisjClasses>]
+	  a <onto:_AllDisjointClasses> c [Context <onto:_owl_allDisjClasses>]
+	  b <rdf:first> d
+	  c <rdf:first> e [Constraint e != d]
+	------------------------------------
+	  d <owl:disjointWith> e
+
+
+	Id: scm_sco
+
+	  a <rdfs:subClassOf> b
+	  b <rdfs:subClassOf> c
+	------------------------------------
+	  a <rdfs:subClassOf> c
+
+
+	Id: scm_eqc1
+
+	  a <owl:equivalentClass> b [Constraint a != b]
+	------------------------------------
+	  a <rdfs:subClassOf> b
+	  b <rdfs:subClassOf> a
+
+
+	Id: scm_eqc2
+
+	  a <rdfs:subClassOf> b [Constraint a != b]
+	  b <rdfs:subClassOf> a
+	------------------------------------
+	  a <owl:equivalentClass> b
+
+
+	Id: scm_spo
+
+	  a <rdfs:subPropertyOf> b
+	  b <rdfs:subPropertyOf> c
+	------------------------------------
+	  a <rdfs:subPropertyOf> c
+
+
+	Id: scm_dom1
+
+	  a <rdfs:domain> b
+	  b <rdfs:subClassOf> c
+	------------------------------------
+	  a <rdfs:domain> c
+
+
+	Id: scm_dom2
+
+	  a <rdfs:domain> b
+	  c <rdfs:subPropertyOf> a
+	------------------------------------
+	  c <rdfs:domain> b
+
+
+	Id: scm_rng1
+
+	  a <rdfs:range> b
+	  b <rdfs:subClassOf> c
+	------------------------------------
+	  a <rdfs:range> c
+
+
+	Id: scm_rng2
+
+	  a <rdfs:range> b
+	  c <rdfs:subPropertyOf> a
+	------------------------------------
+	  c <rdfs:range> b
+
+
+	Id: scm_hv
+
+	  a <owl:hasValue> b
+	  a <owl:onProperty> c
+	  d <owl:onProperty> e [Constraint c != e]
+	  c <rdfs:subPropertyOf> e
+	  d <owl:hasValue> b
+	------------------------------------
+	  a <rdfs:subClassOf> d [Constraint a != d]
+
+
+	Id: scm_svf1
+
+	  a <owl:someValuesFrom> b
+	  a <owl:onProperty> c
+	  d <owl:onProperty> c
+	  d <owl:someValuesFrom> e [Constraint b != e]
+	  b <rdfs:subClassOf> e
+	------------------------------------
+	  a <rdfs:subClassOf> d [Constraint a != d]
+
+
+	Id: scm_svf2
+
+	  a <owl:someValuesFrom> b
+	  a <owl:onProperty> c
+	  d <owl:onProperty> e [Constraint c != e]
+	  c <rdfs:subPropertyOf> e
+	  d <owl:someValuesFrom> b
+	------------------------------------
+	  a <rdfs:subClassOf> d [Constraint a != d]
+
+
+	Id: scm_avf1
+
+	  a <owl:allValuesFrom> b
+	  a <owl:onProperty> c
+	  d <owl:onProperty> c
+	  d <owl:allValuesFrom> e [Constraint b != e]
+	  b <rdfs:subClassOf> e
+	------------------------------------
+	  a <rdfs:subClassOf> d [Constraint a != d]
+
+
+	Id: scm_avf2
+
+	  a <owl:allValuesFrom> b
+	  a <owl:onProperty> c
+	  d <owl:onProperty> e [Constraint c != e]
+	  c <rdfs:subPropertyOf> e
+	  d <owl:allValuesFrom> b
+	------------------------------------
+	  d <rdfs:subClassOf> a [Constraint a != d]
+
+
+	Id: scm_int_1
+
+	  a <owl:intersectionOf> b
+	------------------------------------
+	  a <onto:_interOf> b [Context <onto:scm_int>]
+
+
+	Id: scm_int_2
+
+	  a <onto:_interOf> b [Context <onto:scm_int>]
+	  b <rdf:first> c
+	  b <rdf:rest> d
+	------------------------------------
+	  a <rdfs:subClassOf> c
+	  a <onto:_interOf> d [Context <onto:scm_int>]
+
+
+	Id: scm_uni_1
+
+	  a <onto:_unionOf> b [Context <onto:_scm_uni>]
+	  b <rdf:first> c
+	  b <rdf:rest> d
+	------------------------------------
+	  c <rdfs:subClassOf> a
+	  a <onto:_unionOf> d [Context <onto:_scm_uni>]
+
+
+	Id: scm_uni_2
+
+	  a <owl:unionOf> b
+	------------------------------------
+	  a <onto:_unionOf> b [Context <onto:_scm_uni>]
+}

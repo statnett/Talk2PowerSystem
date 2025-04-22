@@ -21,9 +21,9 @@ cimex: a owl:Ontology;
   dct:creator "Vladimir Alexiev" ;
   dct:publisher <https://graphwise.ai>;
   dct:issued   "2025-02-14"^^xsd:date ;
-  dct:modified "2025-02-14"^^xsd:date ;
+  dct:modified "2025-04-22"^^xsd:date ;
   dct:publisher "ENTSO-E" ;
-  owl:versionInfo "1.0";
+  owl:versionInfo "1.1";
   rdfs:seeAlso <https://github.com/statnett/Talk2PowerSystem/issues/16>;
   dcat:keyword "CIM", "CGMES", "reasoning", "inference", "derived relations", "connectivity", "containment";
   skos:note """
@@ -40,6 +40,7 @@ cimex:hasPart a owl:ObjectProperty;
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
   owl:inverseOf cimex:isPart;
   skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays;
+  rdfs:subPropertyOf cimex:hasPartTransitive ;
   rdfs:isDefinedBy cimex: .
 
 cim:EquipmentContainer.Equipments rdfs:subPropertyOf cimex:hasPart.
@@ -53,15 +54,12 @@ cimex:isPart a owl:ObjectProperty;
   skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel;
   rdfs:isDefinedBy cimex: .
 
-cimex:hasPartTransitive a owl:ObjectProperty, owl:TransitiveProperty;
+cimex:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart";
   owl:inverseOf cimex:isPartTransitive;
+  psys:transitiveOver cimex:hasPart ;
   rdfs:isDefinedBy cimex: .
-
-cimex:hasPart rdfs:subPropertyOf cimex:hasPartTransitive.
-# TODO: this is more efficient than owl:TransitiveProperty but not part of owl2-rl-optimized:
-# cimex:hasPartTransitive psys:transitiveOver cimex:hasPart.
 
 cimex:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
