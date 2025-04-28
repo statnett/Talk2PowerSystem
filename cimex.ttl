@@ -99,6 +99,11 @@ cimex:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
 cimex:connectedThroughPart owl:propertyChainAxiom
   (cimex:hasPartTransitive cimex:connectedTo cimex:isPartTransitive).
 
+cimex:mridSignificantPart a owl:DatatypeProperty ;
+   rdfs:label "MRID significant part";
+   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
+   rdfs:isDefinedBy cimex: .
+
 #### Patch to add some entsoe2 terms
 
 entsoe2:EnergyCongestionZone a rdfs:Class;
