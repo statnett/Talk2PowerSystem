@@ -1,6 +1,6 @@
 ﻿@prefix cimex:   <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
 @prefix entsoe2: <http://entsoe.eu/CIM/SchemaExtension/3/2#> .
-@prefix cim:     <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix cim:     <https://cim.ucaiug.io/ns#> .
 @prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -106,29 +106,29 @@ cimex:mridSignificantPart a owl:DatatypeProperty ;
 
 #### Patch to add some entsoe2 terms
 
-entsoe2:EnergyCongestionZone a rdfs:Class;
-  rdfs:label "EnergyCongestionZone"@en;
-  rdfs:comment "Energy congestion zone"@en;
-  rdfs:subClassOf cim:PowerSystemResource;
-  rdfs:isDefinedBy cimex: .
-
-entsoe2:EnergyCongestionZone.netDCInterchange a rdf:Property;
-  rdfs:label "netDCInterchange"@en;
-  rdfs:comment "Net DC interchange"@en;
-  rdfs:domain entsoe2:EnergyCongestionZone;
-  cims:dataType cim:Float;
-  rdfs:isDefinedBy cimex: .
-
-entsoe2:EnergyCongestionZone.netACInterchangeTolerance a rdf:Property;
-  rdfs:label "netDCInterchangeTolerance"@en;
-  rdfs:comment "Net DC interchange tolerance"@en;
-  rdfs:domain entsoe2:EnergyCongestionZone;
-  cims:dataType cim:Float;
-  rdfs:isDefinedBy cimex: .
-
-entsoe2:EnergyCongestionZone.netACInterchange a rdf:Property;
-  rdfs:label "netACInterchange"@en;
-  rdfs:comment "Net AC interchange"@en;
-  rdfs:domain entsoe2:EnergyCongestionZone;
-  cims:dataType cim:Float;
-  rdfs:isDefinedBy cimex: .
+#entsoe2:EnergyCongestionZone a rdfs:Class;
+#  rdfs:label "EnergyCongestionZone"@en;
+#  rdfs:comment "Energy congestion zone"@en;
+#  rdfs:subClassOf cim:PowerSystemResource;
+#  rdfs:isDefinedBy cimex: .
+#
+#entsoe2:EnergyCongestionZone.netDCInterchange a rdf:Property;
+#  rdfs:label "netDCInterchange"@en;
+#  rdfs:comment "Net DC interchange"@en;
+#  rdfs:domain entsoe2:EnergyCongestionZone;
+#  cims:dataType cim:Float;
+#  rdfs:isDefinedBy cimex: .
+#
+#entsoe2:EnergyCongestionZone.netACInterchangeTolerance a rdf:Property;
+#  rdfs:label "netDCInterchangeTolerance"@en;
+#  rdfs:comment "Net DC interchange tolerance"@en;
+#  rdfs:domain entsoe2:EnergyCongestionZone;
+#  cims:dataType cim:Float;
+#  rdfs:isDefinedBy cimex: .
+#
+#entsoe2:EnergyCongestionZone.netACInterchange a rdf:Property;
+#  rdfs:label "netACInterchange"@en;
+#  rdfs:comment "Net AC interchange"@en;
+#  rdfs:domain entsoe2:EnergyCongestionZone;
+#  cims:dataType cim:Float;
+#  rdfs:isDefinedBy cimex: .
