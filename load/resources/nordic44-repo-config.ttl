@@ -24,7 +24,7 @@
 
             # Indexing
             graphdb:entity-id-size "32" ;
-            graphdb:enable-context-index "false" ;
+            graphdb:enable-context-index "true" ;
             graphdb:enablePredicateList "true" ;
             graphdb:enable-fts-index "false" ;
             graphdb:fts-indexes ("default" "iri") ;
@@ -32,7 +32,7 @@
             graphdb:fts-iris-index "none" ;
 
             # Queries and Updates
-            graphdb:query-timeout "0" ;
+            graphdb:query-timeout "60" ;
             graphdb:throw-QueryEvaluationException-on-timeout "false" ;
             graphdb:query-limit-results "0" ;
 
