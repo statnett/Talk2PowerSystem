@@ -23,7 +23,6 @@ class GraphDBLoader:
         graphdb_url: str = "http://localhost:7200",
         repository_name: str = "nordic44",
         config_file: str = "resources/nordic44-repo-config.ttl",
-        ontology_file: str = "resources/cimex.ttl",
         ontology_graph: str = "https://cim.ucaiug.io/ns#graph",
         ontologies_list: str = "ontologies.txt",
         instances_list: str = "instances.txt",
@@ -34,7 +33,6 @@ class GraphDBLoader:
         self.graphdb_url = graphdb_url
         self.repository_name = repository_name
         self.config_file = config_file
-        self.ontology_file = ontology_file
         self.ontology_graph = ontology_graph
         self.ontologies_list = ontologies_list
         self.instances_list = instances_list
@@ -118,7 +116,6 @@ class GraphDBLoader:
         """Validate that all required files exist."""
         required_files = [
             self.config_file,
-            self.ontology_file,
             self.ontologies_list,
             self.instances_list
         ]
@@ -294,8 +291,6 @@ def main():
                       help='Repository name')
     parser.add_argument('-c', '--config', default='resources/nordic44-repo-config.ttl',
                       help='Repository configuration file')
-    parser.add_argument('-f', '--file', default='resources/cimex.ttl',
-                      help='Ontology file to load')
     parser.add_argument('-g', '--graph', default='https://cim.ucaiug.io/ns#graph',
                       help='Named graph URI')
     parser.add_argument('-l', '--list', default='ontologies.txt',
@@ -315,7 +310,6 @@ def main():
         graphdb_url=args.url,
         repository_name=args.repository,
         config_file=args.config,
-        ontology_file=args.file,
         ontology_graph=args.graph,
         ontologies_list=args.list,
         instances_list=args.instances,
