@@ -28,7 +28,8 @@ class GraphDBLoader:
         instances_list: str = "instances.txt",
         username: Optional[str] = None,
         password: Optional[str] = None,
-        force: bool = False
+        force: bool = False,
+        no_auth: bool = False
     ):
         self.graphdb_url = graphdb_url
         self.repository_name = repository_name
@@ -39,12 +40,16 @@ class GraphDBLoader:
         self.force = force
         
         # Get credentials from args or environment variables
-        if username is None or password is None:
-            env_username, env_password = get_credentials_from_env()
-            username = username or env_username
-            password = password or env_password
+        if not no_auth:
+            if username is None or password is None:
+                env_username, env_password = get_credentials_from_env()
+                username = username or env_username
+                password = password or env_password
+                
+            self.auth = (username, password) if username and password else None
+        else:
+            self.auth = None
             
-        self.auth = (username, password) if username and password else None
         self.temp_dir = Path(tempfile.mkdtemp())
 
     def print_response(self, response: requests.Response, operation: str):
@@ -303,6 +308,8 @@ def main():
                       help='Password for authentication (overrides CIMPASSWORD env var)')
     parser.add_argument('--force', action='store_true',
                       help='Force recreation of repository by deleting it if it exists')
+    parser.add_argument('--no-auth', action='store_true',
+                      help='Force execution without authentication, even if credentials are available')
 
     args = parser.parse_args()
 
@@ -315,7 +322,8 @@ def main():
         instances_list=args.instances,
         username=args.username,
         password=args.password,
-        force=args.force
+        force=args.force,
+        no_auth=args.no_auth
     )
 
     loader.run()

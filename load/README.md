@@ -55,10 +55,16 @@ Available options:
 - `-U, --username`: Username for authentication (overrides CIMUSER env var)
 - `-P, --password`: Password for authentication (overrides CIMPASSWORD env var)
 - `--force`: Force recreation of repository by deleting it if it exists
+- `--no-auth`: Force execution without authentication, even if credentials are available
 
 Example with custom parameters:
 ```bash
 python load.py --url http://graphdb:7200 --repository my_repo --force
+```
+
+Example without authentication:
+```bash
+python load.py --no-auth
 ```
 
 ## File Structure
@@ -70,7 +76,7 @@ python load.py --url http://graphdb:7200 --repository my_repo --force
   - `cim_owl2-rl-optimized.pie`: Custom inference rules
   - `queries/`: Directory containing SPARQL update queries
     - `01-add-inference.ru`: Sets up inference rules and triggers reinference
-    - `02-add-mridSignificantPart.ru`: Adds mRID significant part annotations
+    - `02-add-mridSignificantPart.ru`: Adds significant part annotations
     - `03-add-missing-mrid.ru`: Adds missing mRID identifiers
 
 ## Remaining to do
