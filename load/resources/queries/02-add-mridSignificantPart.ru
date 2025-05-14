@@ -6,7 +6,7 @@ insert {
     }
 } where {
   ?x a cim:IdentifiedObject
-  bind (strafter(str(?x),"#_") as ?id)
+  bind (strafter(str(?x),"urn:uuid:") as ?id)
   bind(replace(?id,"-.*","") as ?part)
   filter(?part!="")
 }
