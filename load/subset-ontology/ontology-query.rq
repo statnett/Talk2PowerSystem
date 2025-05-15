@@ -1,0 +1,36 @@
+PREFIX nc: <https://cim4.eu/ns/nc#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
+PREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>
+
+CONSTRUCT {
+    ?x ?p ?o .
+}
+WHERE {
+    {
+        SELECT DISTINCT ?x {
+            {
+                [] ?x []
+            } UNION {
+                [] a ?x
+            }
+        }
+    }
+    UNION {
+        ?x rdfs:isDefinedBy cimex:
+    }
+    UNION {
+        ?x a ?enum.
+        ?enum cims:stereotype uml:enumeration
+        FILTER EXISTS {
+            ?thing a cim:IdentifiedObject;
+            ?prop ?x
+        }
+    }
+    ?x ?p ?o .
+}
