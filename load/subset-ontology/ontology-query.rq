@@ -7,6 +7,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cim: <https://cim.ucaiug.io/ns#>
 PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
 PREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
 
 CONSTRUCT {
     ?x ?p ?o .
