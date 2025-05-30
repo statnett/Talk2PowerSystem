@@ -14,31 +14,42 @@ PREFIX onto: <http://www.ontotext.com/>
 CONSTRUCT {
     ?x ?p ?o .
 }
-FROM onto:explicit
+# extracting only explicit statements for the ontology subset
+FROM onto:explicit 
 WHERE {
     {
-        SELECT DISTINCT ?x {
+        # using federation to self to gather classes and properties 
+        # used in both explict and inferred statements
+        SERVICE <repository:nordic44> {           
+        	SELECT 
+            DISTINCT ?x 
             {
-                [] ?x []
-            } UNION {
-                [] a ?x
-            }
+                {
+                    [] ?x []
+                } UNION {
+                    [] a ?x
+                }
+        	}
         }
     }
     UNION {
         ?x rdfs:isDefinedBy cimex:
     }
     UNION {
-        ?x a ?enum.
-        ?enum cims:stereotype uml:enumeration
-        FILTER EXISTS {
-            ?thing a cim:IdentifiedObject;
-            ?prop ?x
+        # using federation to self to gather enumerated values 
+        # from both explicit and inferred statements
+        SERVICE <repository:nordic44> {
+            SELECT * {
+                ?x a ?enum.
+                ?enum cims:stereotype uml:enumeration
+                FILTER EXISTS {
+                    ?thing a cim:IdentifiedObject;
+                    ?prop ?x
+                }
+            }
         }
     }
     ?x ?p ?o .
     filter(?p not in (cims:belongsToCategory))
-    filter(?x not in (cims:belongsToCategory))
-    filter(!constr(?x) not in (cims:belongsToCategory))
-
+    filter(?x not in (cims:belongsToCategory))  
 }

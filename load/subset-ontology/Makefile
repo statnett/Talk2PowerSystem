@@ -13,4 +13,4 @@ cim-subset.ttl: ontology-query.rq
 # Format the TTL file using owl-toolkit
 cim-subset-pretty.ttl: cim-subset.ttl
 	echo "formatting using owl write" ;
-	owl write cim-subset.ttl > cim-subset-pretty.ttl
+	owl write cim-subset.ttl cim-subset-pretty.ttl
