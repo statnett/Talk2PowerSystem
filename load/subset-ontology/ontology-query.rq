@@ -9,10 +9,12 @@ PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
 PREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX eu: <https://cim.ucaiug.io/ns/eu#>
+PREFIX onto: <http://www.ontotext.com/>
 
 CONSTRUCT {
     ?x ?p ?o .
 }
+FROM onto:explicit
 WHERE {
     {
         SELECT DISTINCT ?x {
@@ -35,4 +37,8 @@ WHERE {
         }
     }
     ?x ?p ?o .
+    filter(?p not in (cims:belongsToCategory))
+    filter(?x not in (cims:belongsToCategory))
+    filter(!constr(?x) not in (cims:belongsToCategory))
+
 }
