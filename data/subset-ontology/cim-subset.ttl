@@ -2,7 +2,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+@prefix cimr: <https://cim.ucaiug.io/rules#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
 @prefix uml: <http://iec.ch/TC57/NonStandard/UML#> .
@@ -280,7 +280,7 @@ cim:ConductingEquipment.Terminals a owl:ObjectProperty, owl:InverseFunctionalPro
   owl:inverseOf cim:Terminal.ConductingEquipment .
 
 cim:Terminal.ConductingEquipment a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:subPropertyOf cimex:Terminal.Equipment;
+  rdfs:subPropertyOf cimr:Terminal.Equipment;
   rdfs:domain cim:Terminal;
   rdfs:range cim:ConductingEquipment;
   rdfs:label "ConductingEquipment";
@@ -371,7 +371,7 @@ cim:Bay.VoltageLevel a owl:ObjectProperty, owl:FunctionalProperty;
   owl:inverseOf cim:VoltageLevel.Bays .
 
 cim:VoltageLevel.Bays a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:subPropertyOf cimex:hasPart;
+  rdfs:subPropertyOf cimr:hasPart;
   rdfs:domain cim:VoltageLevel;
   rdfs:range cim:Bay;
   rdfs:label "Bays";
@@ -542,7 +542,7 @@ cim:Equipment.EquipmentContainer a owl:ObjectProperty, owl:FunctionalProperty;
   owl:inverseOf cim:EquipmentContainer.Equipments .
 
 cim:EquipmentContainer.Equipments a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:subPropertyOf cimex:hasPart;
+  rdfs:subPropertyOf cimr:hasPart;
   rdfs:domain cim:EquipmentContainer;
   rdfs:range cim:Equipment;
   rdfs:label "Equipments";
@@ -814,7 +814,7 @@ cim:Substation.Region a owl:ObjectProperty, owl:FunctionalProperty;
   owl:inverseOf cim:SubGeographicalRegion.Substations .
 
 cim:Substation.VoltageLevels a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:subPropertyOf cimex:hasPart;
+  rdfs:subPropertyOf cimr:hasPart;
   rdfs:domain cim:Substation;
   rdfs:range cim:VoltageLevel;
   rdfs:label "VoltageLevels";
@@ -3355,65 +3355,60 @@ nc:StageTrigger.inService a owl:FunctionalProperty, owl:DatatypeProperty;
   cims:stereotype "NC", uml:attribute;
   cims:multiplicity cims:M:1..1 .
 
-cimex:hasPart a owl:ObjectProperty;
-  rdfs:subPropertyOf cimex:hasPartTransitive;
+cimr:hasPart a owl:ObjectProperty;
+  rdfs:subPropertyOf cimr:hasPartTransitive;
   rdfs:label "has part";
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:isPart;
+  owl:inverseOf cimr:isPart;
   <http://www.w3.org/2004/02/skos/core#example> cim:VoltageLevel.Bays, cim:EquipmentContainer.Equipments,
     cim:Substation.VoltageLevels;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:isPart a owl:ObjectProperty;
+cimr:isPart a owl:ObjectProperty;
   rdfs:label "is part";
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:hasPart;
+  owl:inverseOf cimr:hasPart;
   <http://www.w3.org/2004/02/skos/core#example> cim:Bay.VoltageLevel, cim:Equipment.EquipmentContainer,
     cim:VoltageLevel.Substation;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:hasPartTransitive a owl:ObjectProperty;
+cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
-  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart";
-  owl:inverseOf cimex:isPartTransitive;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
-  <http://proton.semanticweb.org/protonsys#transitiveOver> cimex:hasPart .
+  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
+  owl:inverseOf cimr:isPartTransitive;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
+  <http://proton.semanticweb.org/protonsys#transitiveOver> cimr:hasPart .
 
-cimex:isPartTransitive a owl:ObjectProperty;
+cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
-  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimex:isPart";
-  owl:inverseOf cimex:hasPartTransitive;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart";
+  owl:inverseOf cimr:hasPartTransitive;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:Terminal.Equipment a owl:ObjectProperty;
+cimr:Terminal.Equipment a owl:ObjectProperty;
   rdfs:label "equipment";
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:Equipment.Terminals;
+  owl:inverseOf cimr:Equipment.Terminals;
   <http://www.w3.org/2004/02/skos/core#example> cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:Equipment.Terminals a owl:ObjectProperty;
+cimr:Equipment.Terminals a owl:ObjectProperty;
   rdfs:label "terminals";
   rdfs:comment "Terminals of the equipment";
-  owl:inverseOf cimex:Terminal.Equipment;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  owl:inverseOf cimr:Terminal.Equipment;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:connectedTo a owl:SymmetricProperty, owl:ObjectProperty;
+cimr:connectedTo a owl:SymmetricProperty, owl:ObjectProperty;
   rdfs:label "connected to";
   rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
   owl:propertyChainAxiom _:node1 .
 
-cimex:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
+cimr:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
   rdfs:label "connected through part";
   rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
   owl:propertyChainAxiom _:node5 .
-
-cimex:mridSignificantPart a owl:DatatypeProperty;
-  rdfs:label "MRID significant part";
-  rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
 
 <http://iec.ch/TC57/61970-552/ModelDescription/1#Model> a owl:Class;
   rdfs:label "Model";
@@ -4795,65 +4790,65 @@ nc:PinEquipmentTripping a owl:Class;
   rdfs:comment "Input pin associated with an Equipment. It is used to determine if the equipment is tripped between two consecutive stages, i.e. the equipment is in service at pre-fault stage and it is out of service at post-fault stage."@en;
   cims:stereotype "NC", uml:concrete .
 
-cimex:hasPart a owl:ObjectProperty;
-  rdfs:subPropertyOf cimex:hasPartTransitive;
+cimr:hasPart a owl:ObjectProperty;
+  rdfs:subPropertyOf cimr:hasPartTransitive;
   rdfs:label "has part";
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:isPart;
+  owl:inverseOf cimr:isPart;
   <http://www.w3.org/2004/02/skos/core#example> cim:VoltageLevel.Bays, cim:EquipmentContainer.Equipments,
     cim:Substation.VoltageLevels;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:isPart a owl:ObjectProperty;
+cimr:isPart a owl:ObjectProperty;
   rdfs:label "is part";
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:hasPart;
+  owl:inverseOf cimr:hasPart;
   <http://www.w3.org/2004/02/skos/core#example> cim:Bay.VoltageLevel, cim:Equipment.EquipmentContainer,
     cim:VoltageLevel.Substation;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:hasPartTransitive a owl:ObjectProperty;
+cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
-  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart";
-  owl:inverseOf cimex:isPartTransitive;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
-  <http://proton.semanticweb.org/protonsys#transitiveOver> cimex:hasPart .
+  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
+  owl:inverseOf cimr:isPartTransitive;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
+  <http://proton.semanticweb.org/protonsys#transitiveOver> cimr:hasPart .
 
-cimex:isPartTransitive a owl:ObjectProperty;
+cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
-  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimex:isPart";
-  owl:inverseOf cimex:hasPartTransitive;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart";
+  owl:inverseOf cimr:hasPartTransitive;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:Terminal.Equipment a owl:ObjectProperty;
+cimr:Terminal.Equipment a owl:ObjectProperty;
   rdfs:label "equipment";
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
-  owl:inverseOf cimex:Equipment.Terminals;
+  owl:inverseOf cimr:Equipment.Terminals;
   <http://www.w3.org/2004/02/skos/core#example> cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:Equipment.Terminals a owl:ObjectProperty;
+cimr:Equipment.Terminals a owl:ObjectProperty;
   rdfs:label "terminals";
   rdfs:comment "Terminals of the equipment";
-  owl:inverseOf cimex:Terminal.Equipment;
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  owl:inverseOf cimr:Terminal.Equipment;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
-cimex:connectedTo a owl:SymmetricProperty, owl:ObjectProperty;
+cimr:connectedTo a owl:SymmetricProperty, owl:ObjectProperty;
   rdfs:label "connected to";
   rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
   owl:propertyChainAxiom _:node1 .
 
-cimex:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
+cimr:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
   rdfs:label "connected through part";
   rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/>;
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#>;
   owl:propertyChainAxiom _:node5 .
 
-cimex:mridSignificantPart a owl:DatatypeProperty;
+cimr:mridSignificantPart a owl:DatatypeProperty;
   rdfs:label "MRID significant part";
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
-  rdfs:isDefinedBy <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+  rdfs:isDefinedBy <https://cim.ucaiug.io/rules#> .
 
 cim:UnitMultiplier.M a cim:UnitMultiplier;
   rdfs:label "M";
