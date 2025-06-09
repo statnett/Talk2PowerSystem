@@ -1,55 +1,50 @@
-PREFIX nc: <https://cim4.eu/ns/nc#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX cimr: <https://cim.ucaiug.io/rules#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX cim: <https://cim.ucaiug.io/ns#>
-PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
 PREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>
-PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX eu: <https://cim.ucaiug.io/ns/eu#>
+PREFIX nc: <https://cim4.eu/ns/nc#>
 PREFIX onto: <http://www.ontotext.com/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
+
 
 CONSTRUCT {
     ?x ?p ?o .
 }
-# extracting only explicit statements for the ontology subset
+# describing the terms using only explicit statements
 FROM onto:explicit 
 WHERE {
     {
-        # using federation to self to gather classes and properties 
+        # using federation to be able to use inference
+        # to find all classes, props and enums
         # used in both explict and inferred statements
-        SERVICE <repository:nordic44> {           
-        	SELECT 
-            DISTINCT ?x 
+        SERVICE <repository:nordic44> {
+            SELECT DISTINCT ?x
             {
-                {
+                {         # properties
                     [] ?x []
-                } UNION {
+                } UNION { # classes
                     [] a ?x
+                } UNION { # enumeration values
+                    ?x a ?enum.
+                    ?enum cims:stereotype uml:enumeration
+                    FILTER EXISTS {
+                        ?thing a cim:IdentifiedObject; ?prop ?x
+                    }
                 }
-        	}
+            }
         }
     }
     UNION {
         ?x rdfs:isDefinedBy cimr:
     }
-    UNION {
-        # using federation to self to gather enumerated values 
-        # from both explicit and inferred statements
-        SERVICE <repository:nordic44> {
-            SELECT * {
-                ?x a ?enum.
-                ?enum cims:stereotype uml:enumeration
-                FILTER EXISTS {
-                    ?thing a cim:IdentifiedObject;
-                    ?prop ?x
-                }
-            }
-        }
-    }
     ?x ?p ?o .
-    filter(?p not in (cims:belongsToCategory))
+    filter(?p not in (cims:belongsToCategory,owl:propertyChainAxiom,cims:stereotype,cims:AssociationUsed,cims:multiplicity,rdfs:isDefinedBy))
     filter(?x not in (cims:belongsToCategory))  
 }
