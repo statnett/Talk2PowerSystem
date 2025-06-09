@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
-@prefix cimex: <https://rawgit2.com/statnett/Talk2PowerSystem/main/demo1/cimex/> .
+@prefix cimr: <https://cim.ucaiug.io/rules#> .
 @prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -1886,7 +1886,7 @@ cim:EquipmentContainer.Equipments a owl:ObjectProperty, owl:InverseFunctionalPro
   owl:inverseOf cim:Equipment.EquipmentContainer ;
   rdfs:domain cim:EquipmentContainer ;
   rdfs:range cim:Equipment ;
-  rdfs:subPropertyOf cimex:hasPart .
+  rdfs:subPropertyOf cimr:hasPart .
 
 cim:GeneratingUnit.ControlAreaGeneratingUnit a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "ControlAreaGeneratingUnit" ;
@@ -2309,7 +2309,7 @@ cim:Substation.VoltageLevels a owl:ObjectProperty, owl:InverseFunctionalProperty
   owl:inverseOf cim:VoltageLevel.Substation ;
   rdfs:domain cim:Substation ;
   rdfs:range cim:VoltageLevel ;
-  rdfs:subPropertyOf cimex:hasPart .
+  rdfs:subPropertyOf cimr:hasPart .
 
 cim:SvPowerFlow.Terminal a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
   rdfs:label "Terminal" ;
@@ -2425,7 +2425,7 @@ cim:Terminal.ConductingEquipment a owl:ObjectProperty, owl:FunctionalProperty ;
   owl:inverseOf cim:ConductingEquipment.Terminals ;
   rdfs:domain cim:Terminal ;
   rdfs:range cim:ConductingEquipment ;
-  rdfs:subPropertyOf cimex:Terminal.Equipment .
+  rdfs:subPropertyOf cimr:Terminal.Equipment .
 
 cim:Terminal.ConnectivityNode a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "ConnectivityNode" ;
@@ -2597,7 +2597,7 @@ cim:VoltageLevel.Bays a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   owl:inverseOf cim:Bay.VoltageLevel ;
   rdfs:domain cim:VoltageLevel ;
   rdfs:range cim:Bay ;
-  rdfs:subPropertyOf cimex:hasPart .
+  rdfs:subPropertyOf cimr:hasPart .
 
 cim:VoltageLevel.Substation a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "Substation" ;
@@ -2608,63 +2608,63 @@ cim:VoltageLevel.Substation a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLevel ;
   rdfs:range cim:Substation .
 
-cimex:Equipment.Terminals a owl:ObjectProperty ;
+cimr:Equipment.Terminals a owl:ObjectProperty ;
   rdfs:label "terminals" ;
   rdfs:comment "Terminals of the equipment" ;
-  owl:inverseOf cimex:Terminal.Equipment ;
-  rdfs:isDefinedBy cimex: .
+  owl:inverseOf cimr:Terminal.Equipment ;
+  rdfs:isDefinedBy cimr: .
 
-cimex:Terminal.Equipment a owl:ObjectProperty ;
+cimr:Terminal.Equipment a owl:ObjectProperty ;
   rdfs:label "equipment" ;
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example" ;
   <http://www.w3.org/2004/02/skos/core#example> cim:Terminal.AuxiliaryEquipment ;
   <http://www.w3.org/2004/02/skos/core#example> cim:Terminal.ConductingEquipment ;
-  owl:inverseOf cimex:Equipment.Terminals ;
-  rdfs:isDefinedBy cimex: .
+  owl:inverseOf cimr:Equipment.Terminals ;
+  rdfs:isDefinedBy cimr: .
 
-cimex:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty ;
+cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty ;
   rdfs:label "connected through part" ;
   rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode" ;
   owl:propertyChainAxiom [];
-  rdfs:isDefinedBy cimex: .
+  rdfs:isDefinedBy cimr: .
 
-cimex:connectedTo a owl:ObjectProperty, owl:SymmetricProperty ;
+cimr:connectedTo a owl:ObjectProperty, owl:SymmetricProperty ;
   rdfs:label "connected to" ;
   rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode" ;
   owl:propertyChainAxiom [];
-  rdfs:isDefinedBy cimex: .
+  rdfs:isDefinedBy cimr: .
 
-cimex:hasPart a owl:ObjectProperty ;
+cimr:hasPart a owl:ObjectProperty ;
   rdfs:label "has part" ;
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example" ;
   <http://www.w3.org/2004/02/skos/core#example> cim:EquipmentContainer.Equipments ;
   <http://www.w3.org/2004/02/skos/core#example> cim:Substation.VoltageLevels ;
   <http://www.w3.org/2004/02/skos/core#example> cim:VoltageLevel.Bays ;
-  owl:inverseOf cimex:isPart ;
-  rdfs:isDefinedBy cimex: ;
-  rdfs:subPropertyOf cimex:hasPartTransitive .
+  owl:inverseOf cimr:isPart ;
+  rdfs:isDefinedBy cimr: ;
+  rdfs:subPropertyOf cimr:hasPartTransitive .
 
-cimex:hasPartTransitive a owl:ObjectProperty ;
+cimr:hasPartTransitive a owl:ObjectProperty ;
   rdfs:label "has part transitive" ;
-  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimex:hasPart" ;
-  <http://proton.semanticweb.org/protonsys#transitiveOver> cimex:hasPart ;
-  owl:inverseOf cimex:isPartTransitive ;
-  rdfs:isDefinedBy cimex: .
+  rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart" ;
+  <http://proton.semanticweb.org/protonsys#transitiveOver> cimr:hasPart ;
+  owl:inverseOf cimr:isPartTransitive ;
+  rdfs:isDefinedBy cimr: .
 
-cimex:isPart a owl:ObjectProperty ;
+cimr:isPart a owl:ObjectProperty ;
   rdfs:label "is part" ;
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example" ;
   <http://www.w3.org/2004/02/skos/core#example> cim:Bay.VoltageLevel ;
   <http://www.w3.org/2004/02/skos/core#example> cim:Equipment.EquipmentContainer ;
   <http://www.w3.org/2004/02/skos/core#example> cim:VoltageLevel.Substation ;
-  owl:inverseOf cimex:hasPart ;
-  rdfs:isDefinedBy cimex: .
+  owl:inverseOf cimr:hasPart ;
+  rdfs:isDefinedBy cimr: .
 
-cimex:isPartTransitive a owl:ObjectProperty ;
+cimr:isPartTransitive a owl:ObjectProperty ;
   rdfs:label "is part transitive" ;
-  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimex:isPart" ;
-  owl:inverseOf cimex:hasPartTransitive ;
-  rdfs:isDefinedBy cimex: .
+  rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart" ;
+  owl:inverseOf cimr:hasPartTransitive ;
+  rdfs:isDefinedBy cimr: .
 
 dcat:hasVersion a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "hasVersion" ;
@@ -4537,10 +4537,10 @@ cim:VoltageLimit.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLimit ;
   rdfs:range xsd:float .
 
-cimex:mridSignificantPart a owl:DatatypeProperty ;
+cimr:mridSignificantPart a owl:DatatypeProperty ;
   rdfs:label "MRID significant part" ;
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing" ;
-  rdfs:isDefinedBy cimex: .
+  rdfs:isDefinedBy cimr: .
 
 dcat:endDate a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "endDate" ;
