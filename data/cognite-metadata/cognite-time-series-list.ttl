@@ -16,6 +16,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO3_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO3 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:9bb00faf-0f2f-831a-e040-1e828c94e833> a cim:Analog;
@@ -23,11 +24,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:697bcbb6-d367-4c5c-be7b-13a91cf36d53>;
   cim:IdentifiedObject.mRID "9bb00faf-0f2f-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO3-NO4 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn true;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:26f9ac44-045b-451f-ab21-6e8e78b2b15b> a cim:Analog;
@@ -37,6 +37,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DK1";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DK1";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:2c11a8e3-659f-4439-8c6f-aff3bbb7573a> a cim:Analog;
@@ -46,6 +47,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO4_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO4 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:9bb00fb1-7bc7-831a-e040-1e828c94e833> a cim:Analog;
@@ -53,11 +55,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:8a2653a0-7f76-4f64-a346-9ae318f219dc>;
   cim:IdentifiedObject.mRID "9bb00fb1-7bc7-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO2-NO5 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:b4e3cb44-dd09-4c06-b7bc-21411872bca4> a cim:Analog;
@@ -67,6 +68,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE3";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE3";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:e7cee390-5553-4304-8447-17ed8a64459d> a cim:Analog;
@@ -76,6 +78,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE3_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE3 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:7d90224c-ab77-4786-8e08-7f9b275c46da> a cim:Analog;
@@ -85,6 +88,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO1";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO1";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:ad501964-f082-47d5-8861-bb75e48c00df> a cim:Analog;
@@ -94,6 +98,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO2_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO2 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:9bb00fb1-4e7f-831a-e040-1e828c94e833> a cim:Analog;
@@ -101,11 +106,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:852b95c0-4c49-4ded-85b2-a8f2b610db30>;
   cim:IdentifiedObject.mRID "9bb00fb1-4e7f-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO3 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn true;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:b27b8d6b-832c-4a33-bbd5-4f2da41760d9> a cim:Analog;
@@ -115,6 +119,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO3";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO3";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:08c62b56-b4e5-48bc-9560-9d484b39bc14> a cim:Analog;
@@ -124,6 +129,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE1_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE1 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:9bb00fae-11ed-831a-e040-1e828c94e833> a cim:Analog;
@@ -131,11 +137,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:2e7b7ea0-39a6-46ed-80a1-e887ce4c45cd>;
   cim:IdentifiedObject.mRID "9bb00fae-11ed-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO2 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn true;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:a23cb70a-86f7-47f4-a73e-37dff6ceab62> a cim:Analog;
@@ -145,6 +150,7 @@
   cim:IdentifiedObject.name "Kraftpriser_EE_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde EE (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:b3463067-1513-4014-88e8-c49f672b0f40> a cim:Analog;
@@ -154,6 +160,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE4";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE4";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:1d9d34e6-a31f-4b95-9e67-ce127dd26c84> a cim:Analog;
@@ -163,6 +170,7 @@
   cim:IdentifiedObject.name "Kraftpriser_EE";
   cim:IdentifiedObject.description "Kraftpriser for prisområde EE";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:9bb00fb1-7bb9-831a-e040-1e828c94e833> a cim:Analog;
@@ -170,11 +178,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:fdc34686-71ab-4fc4-8975-271a1bbe0acb>;
   cim:IdentifiedObject.mRID "9bb00fb1-7bb9-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO5 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:cca9abf0-819a-4ea1-8c25-7bbd58b5ed49> a cim:Analog;
@@ -184,6 +191,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DE";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DE";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:badff250-1f7c-4804-a902-51e6fcf52d41> a cim:Analog;
@@ -191,11 +199,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:9ed72c3e-5849-4ff6-aea0-e9fbe9ee9bbf>;
   cim:IdentifiedObject.mRID "badff250-1f7c-4804-a902-51e6fcf52d41";
   cim:IdentifiedObject.name "Elspot NO3-SE2 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:a9f7cbe8-42ed-4d7e-93c1-9246229456e5> a cim:Analog;
@@ -205,6 +212,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE4_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE4 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:ce05c086-fdc2-4de2-a24b-067ef7509b32> a cim:Analog;
@@ -214,6 +222,7 @@
   cim:IdentifiedObject.name "Kraftpriser_FI_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde FI (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:2865e33b-a405-4a77-ac8e-d29235f622d7> a cim:Analog;
@@ -223,6 +232,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO5_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO5 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:aa44db41-319d-4420-a382-38540257062d> a cim:Analog;
@@ -232,14 +242,16 @@
   cim:IdentifiedObject.name "Kraftpriser_NO5";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO5";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:1a236f7c-a9c8-4f55-aa89-94cad08578d5> a cim:Analog;
   cim:Measurement.isInCognite true;
   cim:IdentifiedObject.mRID "1a236f7c-a9c8-4f55-aa89-94cad08578d5";
   cim:IdentifiedObject.name "Valutakurs_EUR_DKK";
-  cim:IdentifiedObject.description "Valutakurs for EUR DKK";
-  cim:Measurement.measurementType "CurrencyExchange-Actual" .
+  cim:IdentifiedObject.description "Valutakurs for EUR DKKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
+  cim:Measurement.measurementType "CurrencyExchange-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.DKKperEUR .
 
 <urn:uuid:de509a35-5427-4ae1-8e2b-9c6925d17999> a cim:Analog;
   cim:Measurement.isInCognite true;
@@ -248,14 +260,16 @@
   cim:IdentifiedObject.name "Kraftpriser_SE2";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE2";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:b6e55917-e9cf-4559-ad8f-548efea41588> a cim:Analog;
   cim:Measurement.isInCognite true;
   cim:IdentifiedObject.mRID "b6e55917-e9cf-4559-ad8f-548efea41588";
   cim:IdentifiedObject.name "Valutakurs_EUR_SEK";
-  cim:IdentifiedObject.description "Valutakurs for EUR SEK";
-  cim:Measurement.measurementType "CurrencyExchange-Actual" .
+  cim:IdentifiedObject.description "Valutakurs for EUR SEKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
+  cim:Measurement.measurementType "CurrencyExchange-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.SEKperEUR .
 
 <urn:uuid:4812f003-3e17-4da1-8ff8-d74c7711f23b> a cim:Analog;
   cim:Measurement.isInCognite true;
@@ -264,6 +278,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DK1_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DK1 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:a6437ea1-25cb-4958-867d-3a62f189034b> a cim:Analog;
@@ -273,6 +288,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE1";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE1";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:dc8a3fe9-536f-481c-83d8-fc9189ede7bf> a cim:Analog;
@@ -282,6 +298,7 @@
   cim:IdentifiedObject.name "Kraftpriser_SE2_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde SE2 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:292350c3-1edf-8b57-e050-1e828c94898c> a cim:Analog;
@@ -289,19 +306,19 @@
   cim:Measurement.PowerSystemResource <urn:uuid:3f43657a-d46a-4247-85d8-55027c0adaf7>;
   cim:IdentifiedObject.mRID "292350c3-1edf-8b57-e050-1e828c94898c";
   cim:IdentifiedObject.name "Elspot NO3-NO5 MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:8e19dea8-c2fe-46f1-92c6-3136cfe253f6> a cim:Analog;
   cim:Measurement.isInCognite true;
   cim:IdentifiedObject.mRID "8e19dea8-c2fe-46f1-92c6-3136cfe253f6";
   cim:IdentifiedObject.name "Valutakurs_EUR_NOK";
-  cim:IdentifiedObject.description "Valutakurs for EUR NOK";
-  cim:Measurement.measurementType "CurrencyExchange-Actual" .
+  cim:IdentifiedObject.description "Valutakurs for EUR NOKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
+  cim:Measurement.measurementType "CurrencyExchange-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperEUR .
 
 <urn:uuid:4486436e-0200-466f-bf6c-91110db82ddd> a cim:Analog;
   cim:Measurement.isInCognite true;
@@ -310,6 +327,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DE_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DE (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:62cef574-c2e3-428e-9cf7-469e572d524e> a cim:Analog;
@@ -317,11 +335,10 @@
   cim:Measurement.PowerSystemResource <urn:uuid:b56a8421-25e2-47c2-bf0d-58432c58bfcc>;
   cim:IdentifiedObject.mRID "62cef574-c2e3-428e-9cf7-469e572d524e";
   cim:IdentifiedObject.name "Elspot NO4-FIN MW_estimated_value";
-  cim:IdentifiedObject.description "ThreePhaseActivePower";
+  cim:IdentifiedObject.description "topic: observations_grid_power_no_ems_analog_active_power_res_1s_avro_v1";
   cim:Analog.positiveFlowIn true;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
   qudt:hasUnit unit:MegaW .
 
 <urn:uuid:cb6a8e67-0cd8-4f01-8ae7-a77e09678592> a cim:Analog;
@@ -331,6 +348,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DK2_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DK2 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:2627bdd8-8248-4c9e-9a53-109221142ea3> a cim:Analog;
@@ -340,6 +358,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO1_NOK";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO1 (NOK)";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperMWh;
   qudt:hasUnit unit:CCY_NOK-PER-MegaW-HR .
 
 <urn:uuid:00cc6a04-2dab-4bfe-b2e7-50d4da1198e2> a cim:Analog;
@@ -349,6 +368,7 @@
   cim:IdentifiedObject.name "Kraftpriser_FI";
   cim:IdentifiedObject.description "Kraftpriser for prisområde FI";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:057de70f-c679-4a76-bf64-c36adf45ede3> a cim:Analog;
@@ -358,6 +378,7 @@
   cim:IdentifiedObject.name "Kraftpriser_NO4";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO4";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:c6e21885-4b36-458d-a8e5-1cb94e3a0f19> a cim:Analog;
@@ -367,6 +388,7 @@
   cim:IdentifiedObject.name "Kraftpriser_DK2";
   cim:IdentifiedObject.description "Kraftpriser for prisområde DK2";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
 
 <urn:uuid:31a8b14b-e41f-4c0b-b21b-0be308770228> a cim:Analog;
@@ -376,4 +398,5 @@
   cim:IdentifiedObject.name "Kraftpriser_NO2";
   cim:IdentifiedObject.description "Kraftpriser for prisområde NO2";
   cim:Measurement.measurementType "Price-Actual";
+  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
   qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .

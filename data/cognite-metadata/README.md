@@ -3,6 +3,7 @@
 Tasks: [#105](https://github.com/statnett/Talk2PowerSystem_PM/issues/105) and
 [#112](https://github.com/statnett/Talk2PowerSystem_PM/issues/112)
 
+Added to graph [cim:Measurement.isInCognite.graph](https://cim.ontotext.com/graphdb/resource?uri=https:%2F%2Fcim.ucaiug.io%2Fns%23Measurement.isInCognite.graph&role=context)
 
 # Example data 
 

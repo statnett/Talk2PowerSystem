@@ -14,8 +14,8 @@ CONSTRUCT {
       cim:Measurement.PowerSystemResource ?PowerSystemResource ;
       cim:Analog.positiveFlowIn ?positiveFlowIn ;
       cim:Measurement.measurementType ?metadata_measurementType ;
-      cim:Measurement.unitSymbol ?metadata_unit_symbol ;
-      cim:Measurement.unitMultiplier ?metadata_unit_multiplier ;
+      cim:Measurement.unitSymbol ?unit ;
+      cim:Measurement.unitMultiplier ?unit_multiplier ;
       qudt:hasUnit ?qudt_hasUnit ;
     .
 }
@@ -24,8 +24,6 @@ WHERE {
   BIND( uri(concat("urn:uuid:",?c_mrid)) AS ?MRID ) .
   BIND( ?c_name AS ?name ) .
   BIND( ?c_is_string AS ?is_string ) .
-  BIND( ?c_unit AS ?unit ) .
-  BIND( ?c_unitMultiplier AS ?unitMultiplier ) .
   BIND( uri(concat(str(unit:),?c_qudt_hasUnit)) AS ?qudt_hasUnit ) .
   BIND( ?c_asset_id AS ?asset_id ) .
   BIND( ?c_is_step AS ?is_step ) .
@@ -46,8 +44,8 @@ WHERE {
   BIND( ?c_metadata_topic AS ?metadata_topic ) .
   BIND( ?c_metadata_measurement_type AS ?metadata_measurement_type ) .
   BIND( ?c_metadata_timeseries_type AS ?metadata_timeseries_type ) .
-  BIND( uri(concat(str(cim:),"UnitMultiplier.",?c_metadata_unit_multiplier)) AS ?metadata_unit_multiplier ) .
-  BIND( uri(concat(str(cim:),"UnitSymbol.",?c_metadata_unit_symbol)) AS ?metadata_unit_symbol ) .
+  BIND( uri(concat(str(cim:),"UnitMultiplier.",?c_unit_multiplier)) AS ?unit_multiplier ) .
+  BIND( uri(concat(str(cim:),"UnitSymbol.",?c_unit)) AS ?unit ) .
   BIND( ?c_metadata_mrid AS ?metadata_mrid ) .
   BIND( ?c_metadata_unit AS ?metadata_unit ) .
   BIND( ?c_metadata_substation AS ?metadata_substation ) .
