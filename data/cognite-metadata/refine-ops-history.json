@@ -1,0 +1,973 @@
+[
+  {
+    "op": "core/column-addition-by-fetching-urls",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "_ - external_id",
+    "urlExpression": "grel:\"https://www.uuidtools.com/api/generate/v4?null=\"+value",
+    "onError": "set-to-blank",
+    "newColumnName": "mrid",
+    "columnInsertIndex": 1,
+    "delay": 500,
+    "cacheResponses": true,
+    "httpHeadersJson": [
+      {
+        "name": "authorization",
+        "value": ""
+      },
+      {
+        "name": "user-agent",
+        "value": "OpenRefine  [1]"
+      },
+      {
+        "name": "accept",
+        "value": "*/*"
+      }
+    ],
+    "description": "Create column mrid at index 1 by fetching URLs based on column _ - external_id using expression grel:\"https://www.uuidtools.com/api/generate/v4?null=\"+value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "mrid",
+    "expression": "grel:value.substring(2,38)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column mrid using expression grel:value.substring(2,38)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - external_id",
+    "newColumnName": "external_id",
+    "description": "Rename column _ - external_id to external_id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - name",
+    "newColumnName": "name",
+    "description": "Rename column _ - name to name"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - is_string",
+    "newColumnName": "is_string",
+    "description": "Rename column _ - is_string to is_string"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - unit",
+    "newColumnName": "unit",
+    "description": "Rename column _ - unit to unit"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - asset_id",
+    "newColumnName": "asset_id",
+    "description": "Rename column _ - asset_id to asset_id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - is_step",
+    "newColumnName": "is_step",
+    "description": "Rename column _ - is_step to is_step"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - description",
+    "newColumnName": "description",
+    "description": "Rename column _ - description to description"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - data_set_id",
+    "newColumnName": "data_set_id",
+    "description": "Rename column _ - data_set_id to data_set_id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - id",
+    "newColumnName": "id",
+    "description": "Rename column _ - id to id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - created_time",
+    "newColumnName": "created_time",
+    "description": "Rename column _ - created_time to created_time"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - last_updated_time",
+    "newColumnName": "last_updated_time",
+    "description": "Rename column _ - last_updated_time to last_updated_time"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - measurementType",
+    "newColumnName": "metadata - measurementType",
+    "description": "Rename column _ - metadata - measurementType to metadata - measurementType"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - timeseriesType",
+    "newColumnName": "metadata - timeseriesType",
+    "description": "Rename column _ - metadata - timeseriesType to metadata - timeseriesType"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - table",
+    "newColumnName": "metadata - table",
+    "description": "Rename column _ - metadata - table to metadata - table"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - PRIS_VALUTA",
+    "newColumnName": "metadata - PRIS_VALUTA",
+    "description": "Rename column _ - metadata - PRIS_VALUTA to metadata - PRIS_VALUTA"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - PRIS_TYPE",
+    "newColumnName": "metadata - PRIS_TYPE",
+    "description": "Rename column _ - metadata - PRIS_TYPE to metadata - PRIS_TYPE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - PRIS_OMRAADE_TYPE",
+    "newColumnName": "metadata - PRIS_OMRAADE_TYPE",
+    "description": "Rename column _ - metadata - PRIS_OMRAADE_TYPE to metadata - PRIS_OMRAADE_TYPE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - PRIS_OMRAADE",
+    "newColumnName": "metadata - PRIS_OMRAADE",
+    "description": "Rename column _ - metadata - PRIS_OMRAADE to metadata - PRIS_OMRAADE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - source",
+    "newColumnName": "metadata - source",
+    "description": "Rename column _ - metadata - source to metadata - source"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - topic",
+    "newColumnName": "metadata - topic",
+    "description": "Rename column _ - metadata - topic to metadata - topic"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - measurement_type",
+    "newColumnName": "metadata - measurement_type",
+    "description": "Rename column _ - metadata - measurement_type to metadata - measurement_type"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - timeseries_type",
+    "newColumnName": "metadata - timeseries_type",
+    "description": "Rename column _ - metadata - timeseries_type to metadata - timeseries_type"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - unit_multiplier",
+    "newColumnName": "metadata - unit_multiplier",
+    "description": "Rename column _ - metadata - unit_multiplier to metadata - unit_multiplier"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - unit_symbol",
+    "newColumnName": "metadata - unit_symbol",
+    "description": "Rename column _ - metadata - unit_symbol to metadata - unit_symbol"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - mrid",
+    "newColumnName": "metadata - mrid",
+    "description": "Rename column _ - metadata - mrid to metadata - mrid"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - unit",
+    "newColumnName": "metadata - unit",
+    "description": "Rename column _ - metadata - unit to metadata - unit"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - substation",
+    "newColumnName": "metadata - substation",
+    "description": "Rename column _ - metadata - substation to metadata - substation"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - end_time",
+    "newColumnName": "metadata - end_time",
+    "description": "Rename column _ - metadata - end_time to metadata - end_time"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - subscription",
+    "newColumnName": "metadata - subscription",
+    "description": "Rename column _ - metadata - subscription to metadata - subscription"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - device",
+    "newColumnName": "metadata - device",
+    "description": "Rename column _ - metadata - device to metadata - device"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - kafka_stream",
+    "newColumnName": "metadata - kafka_stream",
+    "description": "Rename column _ - metadata - kafka_stream to metadata - kafka_stream"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - ENDRET_AV",
+    "newColumnName": "metadata - ENDRET_AV",
+    "description": "Rename column _ - metadata - ENDRET_AV to metadata - ENDRET_AV"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - metadata - BASIS_VALUTA",
+    "newColumnName": "metadata - BASIS_VALUTA",
+    "description": "Rename column _ - metadata - BASIS_VALUTA to metadata - BASIS_VALUTA"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - measurementType",
+    "newColumnName": "metadata_measurementType",
+    "description": "Rename column metadata - measurementType to metadata_measurementType"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - timeseriesType",
+    "newColumnName": "metadata_timeseriesType",
+    "description": "Rename column metadata - timeseriesType to metadata_timeseriesType"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - table",
+    "newColumnName": "metadata_table",
+    "description": "Rename column metadata - table to metadata_table"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - PRIS_VALUTA",
+    "newColumnName": "metadata_PRIS_VALUTA",
+    "description": "Rename column metadata - PRIS_VALUTA to metadata_PRIS_VALUTA"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - PRIS_TYPE",
+    "newColumnName": "metadata_PRIS_TYPE",
+    "description": "Rename column metadata - PRIS_TYPE to metadata_PRIS_TYPE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - PRIS_OMRAADE_TYPE",
+    "newColumnName": "metadata_PRIS_OMRAADE_TYPE",
+    "description": "Rename column metadata - PRIS_OMRAADE_TYPE to metadata_PRIS_OMRAADE_TYPE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - PRIS_OMRAADE",
+    "newColumnName": "metadata_PRIS_OMRAADE",
+    "description": "Rename column metadata - PRIS_OMRAADE to metadata_PRIS_OMRAADE"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - source",
+    "newColumnName": "metadata_source",
+    "description": "Rename column metadata - source to metadata_source"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - topic",
+    "newColumnName": "metadata_topic",
+    "description": "Rename column metadata - topic to metadata_topic"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - measurement_type",
+    "newColumnName": "metadata_measurement_type",
+    "description": "Rename column metadata - measurement_type to metadata_measurement_type"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - timeseries_type",
+    "newColumnName": "metadata_timeseries_type",
+    "description": "Rename column metadata - timeseries_type to metadata_timeseries_type"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - unit_multiplier",
+    "newColumnName": "metadata_unit_multiplier",
+    "description": "Rename column metadata - unit_multiplier to metadata_unit_multiplier"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - unit_symbol",
+    "newColumnName": "metadata_unit_symbol",
+    "description": "Rename column metadata - unit_symbol to metadata_unit_symbol"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - mrid",
+    "newColumnName": "metadata_mrid",
+    "description": "Rename column metadata - mrid to metadata_mrid"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - unit",
+    "newColumnName": "metadata_unit",
+    "description": "Rename column metadata - unit to metadata_unit"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - substation",
+    "newColumnName": "metadata_substation",
+    "description": "Rename column metadata - substation to metadata_substation"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - end_time",
+    "newColumnName": "metadata_end_time",
+    "description": "Rename column metadata - end_time to metadata_end_time"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - subscription",
+    "newColumnName": "metadata_subscription",
+    "description": "Rename column metadata - subscription to metadata_subscription"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - device",
+    "newColumnName": "metadata_device",
+    "description": "Rename column metadata - device to metadata_device"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "metadata - kafka_stream",
+    "newColumnName": "metadata_kafka_stream",
+    "description": "Rename column metadata - kafka_stream to metadata_kafka_stream"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_measurement_type",
+          "expression": "value",
+          "columnName": "metadata_measurement_type",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "ThreePhaseActivePower",
+                "l": "ThreePhaseActivePower"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "metadata_measurementType",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "ThreePhaseActivePower"
+      }
+    ],
+    "description": "Mass edit cells in column metadata_measurementType"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NOK per MWh",
+                "l": "NOK per MWh"
+              }
+            },
+            {
+              "v": {
+                "v": "EUR per MWh",
+                "l": "EUR per MWh"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "metadata_measurementType",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Price"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Price-Actual"
+      }
+    ],
+    "description": "Mass edit cells in column metadata_measurementType"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "[NOK/EUR]",
+                "l": "[NOK/EUR]"
+              }
+            },
+            {
+              "v": {
+                "v": "[DKK/EUR]",
+                "l": "[DKK/EUR]"
+              }
+            },
+            {
+              "v": {
+                "v": "[SEK/EUR]",
+                "l": "[SEK/EUR]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "metadata_measurementType",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Price"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CurrencyExchange-Actual"
+      }
+    ],
+    "description": "Mass edit cells in column metadata_measurementType"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "metadata_measurementType",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ThreePhaseActivePower"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ThreePhaseActivePower-Flow-Estimated"
+      }
+    ],
+    "description": "Mass edit cells in column metadata_measurementType"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_measurementType",
+          "expression": "value",
+          "columnName": "metadata_measurementType",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Price-Actual",
+                "l": "Price-Actual"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "EUR per MWh",
+                "l": "EUR per MWh"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "unit",
+    "expression": "grel:\"CCY_EUR-PER-MegaW-HR\"",
+    "onError": "set-to-blank",
+    "newColumnName": "qudt.hasUnit",
+    "columnInsertIndex": 5,
+    "description": "Create column qudt.hasUnit at index 5 based on column unit using expression grel:\"CCY_EUR-PER-MegaW-HR\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_measurementType",
+          "expression": "value",
+          "columnName": "metadata_measurementType",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Price-Actual",
+                "l": "Price-Actual"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NOK per MWh",
+                "l": "NOK per MWh"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "qudt.hasUnit",
+    "expression": "grel:\"CCY_NOK-PER-MegaW-HR\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column qudt.hasUnit using expression grel:\"CCY_NOK-PER-MegaW-HR\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "MW",
+                "l": "MW"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "qudt.hasUnit",
+    "expression": "grel:\"MegaW\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column qudt.hasUnit using expression grel:\"MegaW\""
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NOK per MWh"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NOKperMWh"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "EUR per MWh"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "EURperMWh"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MW"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "W"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[DKK/EUR]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "DKKperEUR"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[SEK/EUR]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SEKperEUR"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unit",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[NOK/EUR]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NOKperEUR"
+      }
+    ],
+    "description": "Mass edit cells in column unit"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "unit",
+          "expression": "value",
+          "columnName": "unit",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "W",
+                "l": "W"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "unit",
+    "expression": "grel:\"M\"",
+    "onError": "set-to-blank",
+    "newColumnName": "unitMultiplier",
+    "columnInsertIndex": 5,
+    "description": "Create column unitMultiplier at index 5 based on column unit using expression grel:\"M\""
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_measurementType",
+          "expression": "value",
+          "columnName": "metadata_measurementType",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Price-Actual",
+                "l": "Price-Actual"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "metadata_PRIS_OMRAADE",
+    "expression": "grel:cell.cross(\"bidding zones\",\"name\")[0].cells[\"uri\"].value",
+    "onError": "set-to-blank",
+    "newColumnName": "PowerSystemResource",
+    "columnInsertIndex": 21,
+    "description": "Create column PowerSystemResource at index 21 based on column metadata_PRIS_OMRAADE using expression grel:cell.cross(\"bidding zones\",\"name\")[0].cells[\"uri\"].value"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_measurementType",
+          "expression": "value",
+          "columnName": "metadata_measurementType",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Price-Actual",
+                "l": "Price-Actual"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "PowerSystemResource",
+          "expression": "value",
+          "columnName": "PowerSystemResource",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [],
+          "selectBlank": true,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "PowerSystemResource",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          ""
+        ],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6"
+      }
+    ],
+    "description": "Mass edit cells in column PowerSystemResource"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "qudt.hasUnit",
+    "newColumnName": "qudt–hasUnit",
+    "description": "Rename column qudt.hasUnit to qudt–hasUnit"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "qudt–hasUnit",
+    "newColumnName": "qudt_hasUnit",
+    "description": "Rename column qudt–hasUnit to qudt_hasUnit"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_mrid",
+          "expression": "isBlank(value)",
+          "columnName": "metadata_mrid",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "mrid",
+    "expression": "grel:cells.metadata_mrid.value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column mrid using expression grel:cells.metadata_mrid.value"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "metadata_mrid",
+          "expression": "isBlank(value)",
+          "columnName": "metadata_mrid",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": false,
+                "l": "false"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "PowerSystemResource",
+    "expression": "grel:true",
+    "onError": "set-to-blank",
+    "newColumnName": "positiveFlowIn",
+    "columnInsertIndex": 22,
+    "description": "Create column positiveFlowIn at index 22 based on column PowerSystemResource using expression grel:true"
+  }
+]
