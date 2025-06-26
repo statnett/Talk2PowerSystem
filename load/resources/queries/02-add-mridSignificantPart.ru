@@ -1,7 +1,7 @@
 PREFIX cimr: <https://cim.ucaiug.io/rules#>
 PREFIX cim: <https://cim.ucaiug.io/ns#>
 insert {
-    graph cimr:mridSignificantPart {
+    graph cimr:mridSignificantPart\/graph {
     	?x cimr:mridSignificantPart ?part .
     }
 } where {
