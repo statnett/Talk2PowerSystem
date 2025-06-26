@@ -7,9 +7,11 @@
 @prefix dct:  <http://purl.org/dc/terms/> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix psys: <http://proton.semanticweb.org/protonsys#> .
+@prefix pti: <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#>.
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
@@ -115,10 +117,10 @@ cimr:Measurement.isInCognite a owl:DatatypeProperty ;
 ### Pragmatics
 
 cims:pragmatics a owl:DatatypeProperty ;
-                rdfs:label "LLM Pragmatics";
-                rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties.";
-                rdfs:range xsd:string  ;
-                rdfs:isDefinedBy cimr: .
+  rdfs:label "LLM Pragmatics";
+  rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties.";
+  rdfs:range xsd:string  ;
+  rdfs:isDefinedBy cimr: .
 
 sesame:directType cims:pragmatics "Use this to find leaf-level (concrete) type of a resource".
 
