@@ -7,9 +7,11 @@
 @prefix dct:  <http://purl.org/dc/terms/> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix psys: <http://proton.semanticweb.org/protonsys#> .
+@prefix pti: <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#>.
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
@@ -109,8 +111,37 @@ cimr:Measurement.isInCognite a owl:DatatypeProperty ;
    rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries";
    rdfs:domain cim:Analog ;
    rdfs:range xsd:boolean ;
-   cimr:pragmatics """Use the mRID of this measurement to query a timeseries in the Cognite API by "external_id" """;
+   cims:pragmatics """Use the mRID of this measurement to query a timeseries in the Cognite API by "external_id" """;
    rdfs:isDefinedBy cimr: .
+
+### Pragmatics
+
+cims:pragmatics a owl:DatatypeProperty ;
+  rdfs:label "LLM Pragmatics";
+  rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties.";
+  rdfs:range xsd:string  ;
+  rdfs:isDefinedBy cimr: .
+
+sesame:directType cims:pragmatics "Use this to find leaf-level (concrete) type of a resource".
+
+cim:Line cims:pragmatics "This means only AC Line (not DC)".
+
+cim:ConductingEquipment cims:pragmatics  "This means only AC Conducting Equipment (not DC)".
+
+cim:Measurement.measurementType
+  skos:example "CurrencyExchange-Actual", "Price-Actual", "ThreePhaseActivePower", "ThreePhaseActivePower-Flow-Estimated";
+  cims:pragmatics "Possible values: CurrencyExchange-Actual, Price-Actual, ThreePhaseActivePower, ThreePhaseActivePower-Flow-Estimated".
+
+cim:Analog.positiveFlowIn cims:pragmatics """For BiddingZoneBorder,
+"true" means the flow is from BiddingZoneOne to BiddingZoneTwo.
+"false" means the flow is in the opposite direction""".
+
+pti:Measurement.uncefactUnitCode cims:pragmatics "Uses UNCEFACT Rec21 unit codes".
+
+pti:Diagram.type
+  skos:example "Worldview", "Substation";
+  cims:pragmatics "Possible values: Worldview, Substation".
+
 
 #### Patch to add some entsoe2 terms
 
