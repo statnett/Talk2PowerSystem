@@ -104,6 +104,14 @@ cimr:mridSignificantPart a owl:DatatypeProperty ;
    rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
    rdfs:isDefinedBy cimr: .
 
+cimr:Measurement.isInCognite a owl:DatatypeProperty ;
+   rdfs:label "Measurement is in Cognite";
+   rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries";
+   rdfs:domain cim:Analog ;
+   rdfs:range xsd:boolean ;
+   cimr:pragmatics """Use the mRID of this measurement to query a timeseries in the Cognite API by "external_id" """;
+   rdfs:isDefinedBy cimr: .
+
 #### Patch to add some entsoe2 terms
 
 #entsoe2:EnergyCongestionZone a rdfs:Class;

@@ -1,12 +1,13 @@
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 BASE <http://example.com/>
 PREFIX cim:     <https://cim.ucaiug.io/ns#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX unit: <http://qudt.org/vocab/unit/>
 
 CONSTRUCT {
 	?MRID a cim:Analog ;
-      cim:Measurement.isInCognite true;
+      cimr:Measurement.isInCognite true;
    	  cim:Measurement.PowerSystemResource ?PowerSystemResource ;
       cim:IdentifiedObject.mRID ?c_mrid	;
       cim:IdentifiedObject.name ?name ;
@@ -15,7 +16,7 @@ CONSTRUCT {
       cim:Analog.positiveFlowIn ?positiveFlowIn ;
       cim:Measurement.measurementType ?metadata_measurementType ;
       cim:Measurement.unitSymbol ?unit ;
-      cim:Measurement.unitMultiplier ?unit_multiplier ;
+      cim:Measurement.unitMultiplier ?unitMultiplier ;
       qudt:hasUnit ?qudt_hasUnit ;
     .
 }
@@ -44,7 +45,7 @@ WHERE {
   BIND( ?c_metadata_topic AS ?metadata_topic ) .
   BIND( ?c_metadata_measurement_type AS ?metadata_measurement_type ) .
   BIND( ?c_metadata_timeseries_type AS ?metadata_timeseries_type ) .
-  BIND( uri(concat(str(cim:),"UnitMultiplier.",?c_unit_multiplier)) AS ?unit_multiplier ) .
+  BIND( uri(concat(str(cim:),"UnitMultiplier.",?c_unitMultiplier)) AS ?unitMultiplier ) .
   BIND( uri(concat(str(cim:),"UnitSymbol.",?c_unit)) AS ?unit ) .
   BIND( ?c_metadata_mrid AS ?metadata_mrid ) .
   BIND( ?c_metadata_unit AS ?metadata_unit ) .
