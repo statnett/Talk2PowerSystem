@@ -20,18 +20,18 @@ cimr: a owl:Ontology;
   rdfs:comment "Inferred properties for electrical CIM/CGMES";
   vann:preferredNamespacePrefix "cimr";
   vann:preferredNamespaceUri "https://cim.ucaiug.io/rules#"^^xsd:anyURI ;
-  dct:creator "Vladimir Alexiev" ;
+  dct:creator "Vladimir Alexiev", "Nikola Tulechki" ;
   dct:publisher <https://graphwise.ai>;
-  dct:issued   "2025-02-14"^^xsd:date ;
-  dct:modified "2025-04-22"^^xsd:date ;
+  dct:created  "2025-02-14"^^xsd:date ;
+  dct:modified "2025-06-27"^^xsd:date ;
   dct:publisher "ENTSO-E" ;
   owl:versionInfo "1.1";
   rdfs:seeAlso <https://github.com/statnett/Talk2PowerSystem/issues/16>, <https://github.com/statnett/Talk2PowerSystem/issues/31>;
   dcat:keyword "CIM", "CGMES", "reasoning", "inference", "derived relations", "connectivity", "containment";
-  skos:note """
+  skos:note """Additional Reasoning (counts given about the Nordic44 sample dataset):
 The basic CIM ontologies use RDFS subclass, OWL inverse; CIM requires subclass but not inverse; but we used both.
 - triples: 63.5k explicit, 17.6k inferred, 81.2k total: 1.28x expansion
-The cimex ontology uses RDFS subclass and subproperty, OWL inverse, transitive, propertyChainAxiom (requires owl-rl2-optimized reasoning).
+The cimr ontology uses RDFS subclass and subproperty, OWL inverse, transitive, propertyChainAxiom (requires owl-rl2-optimized reasoning).
 - triples: 63.5k explicit, 60.4k inferred, 124k  total: 1.95x expansion
 """.
 
