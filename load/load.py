@@ -215,6 +215,56 @@ class GraphDBLoader:
             print(f"Error: Failed to load {filename}. Status code: {response.status_code}")
             return False
 
+    def update_autocomplete_labels(self, labels_file: str = "autocomplete-labels.txt"):
+        """Update autocomplete labels from a file."""
+        print(f"Updating autocomplete labels from {labels_file}...")
+
+        response = requests.delete(
+            f"{self.graphdb_url}/rest/autocomplete/labels",
+            json={"labelIri":"http://www.w3.org/2000/01/rdf-schema#label","languages":""},
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+
+        if not os.path.exists(labels_file):
+            print(f"Warning: Labels file '{labels_file}' not found.")
+            return
+
+        with open(labels_file, 'r') as f:
+            for line in f:
+                label_iri = line.strip()
+                if not label_iri:
+                    continue
+
+                payload = {
+                    "labelIri": label_iri,
+                    "languages": ""
+                }
+
+                response = requests.put(
+                    f"{self.graphdb_url}/rest/autocomplete/labels",
+                    json=payload,
+                    headers={"x-graphdb-repository": self.repository_name},
+                    auth=self.auth
+                )
+
+                self.print_response(response, f"Update Autocomplete Label: {label_iri}")
+
+                if response.status_code not in [200, 204, 201]:
+                    print(f"Error: Failed to update autocomplete label '{label_iri}'. Status code: {response.status_code}")
+        
+        response = requests.post(
+            f"{self.graphdb_url}/rest/autocomplete/enabled?enabled=true",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+        
+        response = requests.post(
+            f"{self.graphdb_url}/rest/rdfrank/compute",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+
     def process_files(self):
         """Process all ontology and instance files."""
         # Load ontologies
@@ -285,6 +335,7 @@ class GraphDBLoader:
             if self.create_repository():
                 self.process_files()
                 self.execute_all_queries()
+                self.update_autocomplete_labels()
         finally:
             self.cleanup()
 
