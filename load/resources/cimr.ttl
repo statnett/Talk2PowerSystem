@@ -122,7 +122,7 @@ cims:pragmatics a owl:DatatypeProperty ;
   rdfs:range xsd:string  ;
   rdfs:isDefinedBy cimr: .
 
-sesame:directType cims:pragmatics "Use this to find leaf-level (concrete) type of a resource".
+# sesame:directType cims:pragmatics "Use this to find leaf-level (concrete) type of a resource".
 
 cim:Line cims:pragmatics "This means only AC Line (not DC)".
 
