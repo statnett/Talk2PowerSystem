@@ -6,12 +6,17 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eu: <https://cim.ucaiug.io/ns/eu#> .
 @prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix md: <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
 @prefix onto: <http://www.ontotext.com/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix psys: <http://proton.semanticweb.org/protonsys#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix uml: <http://iec.ch/TC57/NonStandard/UML#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
 @prefix sesame: <http://www.openrdf.org/schema/sesame#> .
@@ -19,7 +24,7 @@
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
 dct:description a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "description";
   rdfs:comment """A free-text account of the resource.
@@ -27,7 +32,7 @@ Description may include but is not limited to: an abstract, a table of contents,
     "A free-text account of the item."@en .
 
 dcat:keyword a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "keyword";
   rdfs:comment """A keyword or tag describing a resource.
@@ -36,8 +41,8 @@ The intended content type of the model, usually the profile keyword. Used to ide
 For instance, as the equipment profile can be used for both boundary data and equipment not related to boundary, the keyword is different to indicate that boundary data is exchanged. In order to avoid ambiguity the property is not exchanged in cases where the document contains multiple profiles referenced by dct:conformsTo.]."""@en .
 
 dct:conformsTo a owl:ObjectProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "conformsTo";
   rdfs:comment """An established standard to which the described resource conforms.
 [CIM context:
@@ -46,7 +51,7 @@ A document would normally conform to profile definitions, the constraints that r
   owl:inverseOf dct:Resource2 .
 
 dct:identifier a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "identifier";
   rdfs:comment """A unique identifier of the resource being described or cataloged.
@@ -61,8 +66,8 @@ A unique identifier of the model which is serialised in the document where the h
 If a model is serialized as complete (full) model or as difference model exchange the identifier shall be the same. The identifier shall not be used as an identifier of the document which can be different for a given version of a model.]."""@en .
 
 dct:license a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "license";
   rdfs:comment """A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.
 [CIM context:
@@ -70,8 +75,8 @@ Reference to the license under which the data is made available. If no license h
   owl:inverseOf dct:Resource3 .
 
 dct:publisher a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>;
+  rdfs:domain md:Model;
+  rdfs:range md:Model;
   rdfs:label "publisher";
   rdfs:comment """An entity responsible for making the resource available.
 [CIM context: 
@@ -79,7 +84,7 @@ The agent that is publishing the dataset on the given platform.]"""@en;
   owl:inverseOf dct:Resource11 .
 
 dct:rightsHolder a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "rightsHolder";
   rdfs:comment """Information about rights held in and over the resource.
@@ -87,7 +92,7 @@ Typically, rights information includes a statement about various property rights
     "Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en .
 
 dct:title a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "title";
   rdfs:comment """A name given to the resource.
@@ -118,7 +123,7 @@ cim:IdentifiedObject.name a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The name is any free human readable and possibly non unique text naming the object."@en .
 
 dct:issued a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:dateTime;
   rdfs:label "issued";
   rdfs:comment """Date of formal issuance of the resource.
@@ -130,7 +135,7 @@ Reference to the date that the complete data set was made valid/available.]."""@
 Reference to the date that the complete data set was made valid/available.]."""@en .
 
 dct:rights a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "rights";
   rdfs:comment "A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements."@en .
@@ -192,7 +197,7 @@ DiagramObject.rotation=90 has the following meaning: The connection point of an 
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.deg;
   qudt:hasQuantityKind cim:AngleDegrees;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG> .
+  qudt:hasUnit unit:DEG .
 
 cim:DiagramObjectPoint.sequenceNumber a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:DiagramObjectPoint;
@@ -708,7 +713,7 @@ cim:ACLineSegment.bch a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.S;
   qudt:hasQuantityKind cim:Susceptance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/S> .
+  qudt:hasUnit unit:S .
 
 cim:ACLineSegment.r a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ACLineSegment;
@@ -718,7 +723,7 @@ cim:ACLineSegment.r a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.ohm;
   qudt:hasQuantityKind cim:Resistance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/OHM> .
+  qudt:hasUnit unit:OHM .
 
 cim:ACLineSegment.x a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ACLineSegment;
@@ -728,7 +733,7 @@ cim:ACLineSegment.x a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.ohm;
   qudt:hasQuantityKind cim:Reactance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/OHM> .
+  qudt:hasUnit unit:OHM .
 
 cim:ActivePowerLimit.normalValue a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ActivePowerLimit;
@@ -738,7 +743,7 @@ cim:ActivePowerLimit.normalValue a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:BaseVoltage.nominalVoltage a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:BaseVoltage;
@@ -748,7 +753,7 @@ cim:BaseVoltage.nominalVoltage a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:Conductor.length a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:Conductor;
@@ -758,7 +763,7 @@ cim:Conductor.length a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.m;
   qudt:hasQuantityKind cim:Length;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloM> .
+  qudt:hasUnit unit:KiloM .
 
 cim:CurrentLimit.normalValue a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:CurrentLimit;
@@ -768,7 +773,7 @@ cim:CurrentLimit.normalValue a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.A;
   qudt:hasQuantityKind cim:CurrentFlow;
-  qudt:hasUnit <http://qudt.org/vocab/unit/A> .
+  qudt:hasUnit unit:A .
 
 cim:EnergyConsumer.pfixed a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:EnergyConsumer;
@@ -778,7 +783,7 @@ cim:EnergyConsumer.pfixed a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:EnergyConsumer.qfixed a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:EnergyConsumer;
@@ -788,7 +793,7 @@ cim:EnergyConsumer.qfixed a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:Equipment.aggregate a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:Equipment;
@@ -811,7 +816,7 @@ cim:GeneratingUnit.maxOperatingP a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:GeneratingUnit.minOperatingP a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:GeneratingUnit;
@@ -821,7 +826,7 @@ cim:GeneratingUnit.minOperatingP a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:GeneratingUnit.nominalP a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:GeneratingUnit;
@@ -832,7 +837,7 @@ The attribute shall be a positive value equal to or less than RotatingMachine.ra
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:GeneratingUnit.ratedGrossMaxP a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:GeneratingUnit;
@@ -843,7 +848,7 @@ The attribute shall be a positive value."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:GeneratingUnit.ratedNetMaxP a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:GeneratingUnit;
@@ -854,7 +859,7 @@ The attribute shall be a positive value."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:LinearShuntCompensator.bPerSection a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:LinearShuntCompensator;
@@ -864,7 +869,7 @@ cim:LinearShuntCompensator.bPerSection a owl:FunctionalProperty, owl:DatatypePro
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.S;
   qudt:hasQuantityKind cim:Susceptance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/S> .
+  qudt:hasUnit unit:S .
 
 cim:LinearShuntCompensator.gPerSection a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:LinearShuntCompensator;
@@ -874,7 +879,7 @@ cim:LinearShuntCompensator.gPerSection a owl:FunctionalProperty, owl:DatatypePro
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.S;
   qudt:hasQuantityKind cim:Conductance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/S> .
+  qudt:hasUnit unit:S .
 
 cim:LoadResponseCharacteristic.exponentModel a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:LoadResponseCharacteristic;
@@ -940,7 +945,7 @@ cim:OperationalLimitType.acceptableDuration a owl:FunctionalProperty, owl:Dataty
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.s;
   qudt:hasQuantityKind cim:Seconds;
-  qudt:hasUnit <http://qudt.org/vocab/unit/SEC> .
+  qudt:hasUnit unit:SEC .
 
 cim:OperationalLimitType.isInfiniteDuration a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:OperationalLimitType;
@@ -956,7 +961,7 @@ cim:PowerTransformerEnd.b a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.S;
   qudt:hasQuantityKind cim:Susceptance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/S> .
+  qudt:hasUnit unit:S .
 
 cim:PowerTransformerEnd.g a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:PowerTransformerEnd;
@@ -966,7 +971,7 @@ cim:PowerTransformerEnd.g a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.S;
   qudt:hasQuantityKind cim:Conductance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/S> .
+  qudt:hasUnit unit:S .
 
 cim:PowerTransformerEnd.r a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:PowerTransformerEnd;
@@ -977,7 +982,7 @@ The attribute shall be equal to or greater than zero for non-equivalent transfor
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.ohm;
   qudt:hasQuantityKind cim:Resistance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/OHM> .
+  qudt:hasUnit unit:OHM .
 
 cim:PowerTransformerEnd.ratedS a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:PowerTransformerEnd;
@@ -988,7 +993,7 @@ The attribute shall be a positive value. For a two-winding transformer the value
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VA;
   qudt:hasQuantityKind cim:ApparentPower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A> .
+  qudt:hasUnit unit:MegaV-A .
 
 cim:PowerTransformerEnd.ratedU a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:PowerTransformerEnd;
@@ -1000,7 +1005,7 @@ The attribute shall be a positive value."""@en;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:PowerTransformerEnd.x a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:PowerTransformerEnd;
@@ -1010,7 +1015,7 @@ cim:PowerTransformerEnd.x a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.ohm;
   qudt:hasQuantityKind cim:Reactance;
-  qudt:hasUnit <http://qudt.org/vocab/unit/OHM> .
+  qudt:hasUnit unit:OHM .
 
 cim:RatioTapChanger.stepVoltageIncrement a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:RatioTapChanger;
@@ -1021,7 +1026,7 @@ When the increment is negative, the voltage decreases when the tap step increase
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 cim:RotatingMachine.ratedS a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:RotatingMachine;
@@ -1032,7 +1037,7 @@ The attribute shall have a positive value."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VA;
   qudt:hasQuantityKind cim:ApparentPower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A> .
+  qudt:hasUnit unit:MegaV-A .
 
 cim:ShuntCompensator.aVRDelay a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ShuntCompensator;
@@ -1042,7 +1047,7 @@ cim:ShuntCompensator.aVRDelay a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.s;
   qudt:hasQuantityKind cim:Seconds;
-  qudt:hasUnit <http://qudt.org/vocab/unit/SEC> .
+  qudt:hasUnit unit:SEC .
 
 cim:ShuntCompensator.maximumSections a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ShuntCompensator;
@@ -1058,7 +1063,7 @@ cim:ShuntCompensator.nomU a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:ShuntCompensator.normalSections a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ShuntCompensator;
@@ -1086,7 +1091,7 @@ cim:SynchronousMachine.maxQ a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:SynchronousMachine.minQ a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:SynchronousMachine;
@@ -1096,7 +1101,7 @@ cim:SynchronousMachine.minQ a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:SynchronousMachine.qPercent a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:SynchronousMachine;
@@ -1106,7 +1111,7 @@ cim:SynchronousMachine.qPercent a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 cim:TapChanger.highStep a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:TapChanger;
@@ -1144,7 +1149,7 @@ This attribute is not relevant for PhaseTapChangerAsymmetrical, PhaseTapChangerS
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:TapChanger.normalStep a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:TapChanger;
@@ -1167,7 +1172,7 @@ cim:VoltageLimit.normalValue a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 eu:IdentifiedObject.energyIdentCodeEic a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:IdentifiedObject;
@@ -1447,7 +1452,7 @@ cim:SvPowerFlow.p a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:SvPowerFlow.q a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:SvPowerFlow;
@@ -1457,7 +1462,7 @@ cim:SvPowerFlow.q a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:SvShuntCompensatorSections.sections a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:SvShuntCompensatorSections;
@@ -1491,7 +1496,7 @@ cim:SvVoltage.angle a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.deg;
   qudt:hasQuantityKind cim:AngleDegrees;
-  qudt:hasUnit <http://qudt.org/vocab/unit/DEG> .
+  qudt:hasUnit unit:DEG .
 
 cim:SvVoltage.v a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:SvVoltage;
@@ -1501,7 +1506,7 @@ cim:SvVoltage.v a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:RegulatingControl.targetValueUnitMultiplier a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:domain cim:RegulatingControl;
@@ -1530,7 +1535,7 @@ cim:ActivePowerLimit.value a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:ControlArea.netInterchange a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ControlArea;
@@ -1540,7 +1545,7 @@ cim:ControlArea.netInterchange a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:ControlArea.pTolerance a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ControlArea;
@@ -1550,7 +1555,7 @@ cim:ControlArea.pTolerance a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:CurrentLimit.value a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:CurrentLimit;
@@ -1560,7 +1565,7 @@ cim:CurrentLimit.value a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.A;
   qudt:hasQuantityKind cim:CurrentFlow;
-  qudt:hasUnit <http://qudt.org/vocab/unit/A> .
+  qudt:hasUnit unit:A .
 
 cim:EnergyConsumer.p a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:EnergyConsumer;
@@ -1572,7 +1577,7 @@ Starting value for a steady state solution."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:EnergyConsumer.q a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:EnergyConsumer;
@@ -1584,7 +1589,7 @@ Starting value for a steady state solution."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:Equipment.inService a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:Equipment;
@@ -1638,7 +1643,7 @@ Starting value for a steady state solution."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.W;
   qudt:hasQuantityKind cim:ActivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaW> .
+  qudt:hasUnit unit:MegaW .
 
 cim:RotatingMachine.q a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:RotatingMachine;
@@ -1649,7 +1654,7 @@ Starting value for a steady state solution."""@en;
   cim:unitMultiplier cim:UnitMultiplier.M;
   cim:unitSymbol cim:UnitSymbol.VAr;
   qudt:hasQuantityKind cim:ReactivePower;
-  qudt:hasUnit <http://qudt.org/vocab/unit/MegaV-A_Reactive> .
+  qudt:hasUnit unit:MegaV-A_Reactive .
 
 cim:ShuntCompensator.sections a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:ShuntCompensator;
@@ -1704,7 +1709,7 @@ cim:VoltageLimit.value a owl:FunctionalProperty, owl:DatatypeProperty;
   cim:unitMultiplier cim:UnitMultiplier.k;
   cim:unitSymbol cim:UnitSymbol.V;
   qudt:hasQuantityKind cim:Voltage;
-  qudt:hasUnit <http://qudt.org/vocab/unit/KiloV> .
+  qudt:hasUnit unit:KiloV .
 
 cim:BaseVoltage.TopologicalNode a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:domain cim:BaseVoltage;
@@ -1825,11 +1830,11 @@ The allowed value range is [0,100]."""@en;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 dcat:hasVersion a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "hasVersion";
   rdfs:comment """This resource is a version of a non-versioned or abstract resource.
 This property is intended for relating a versioned resource to a non-versioned or abstract resource.
@@ -1838,8 +1843,8 @@ The notion of version used by this property is limited to versions resulting fro
   owl:inverseOf dcat:isVersionOf .
 
 dcat:isVersionOf a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "isVersionOf";
   rdfs:comment """This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.
 
@@ -1847,15 +1852,15 @@ The notion of version used by this property is limited to versions resulting fro
   owl:inverseOf dcat:hasVersion .
 
 dct:Resource1 a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource1";
   rdfs:comment "The resource that has these access rights."@en;
   owl:inverseOf dct:accessRights .
 
 dct:accessRights a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "accessRights";
   rdfs:comment """Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.
 [CIM context:
@@ -1863,15 +1868,15 @@ Reference to the confidentiality level that shall be applied when handling this 
   owl:inverseOf dct:Resource1 .
 
 dct:Resource10 a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource10";
   rdfs:comment "The resource that has this spatial location."@en;
   owl:inverseOf dct:spatial .
 
 dct:spatial a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "spatial";
   rdfs:comment """The geographical area covered by the dataset.
 [CIM context: 
@@ -1879,64 +1884,64 @@ The responsibility area that multiple model can describe, also referred to frame
   owl:inverseOf dct:Resource10 .
 
 dct:Resource11 a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource11";
   rdfs:comment "The resource that is made available."@en;
   owl:inverseOf dct:publisher .
 
 dct:Resource2 a owl:ObjectProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource2";
   rdfs:comment "The resource that conforms to."@en;
   owl:inverseOf dct:conformsTo .
 
 dct:Resource3 a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource3";
   rdfs:comment "The resource that has this license."@en;
   owl:inverseOf dct:license .
 
 dct:Resource4 a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Resource4";
   rdfs:comment "The resource that has this type."@en;
   owl:inverseOf dct:type .
 
 dct:type a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "type";
   rdfs:comment "The nature or genre of the resource. Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format."@en;
   owl:inverseOf dct:Resource4 .
 
-<http://www.w3.org/ns/prov#Entity> a owl:ObjectProperty, owl:InverseFunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+prov:Entity a owl:ObjectProperty, owl:InverseFunctionalProperty;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "Entity";
   rdfs:comment "The entity that generated by this activity."@en;
-  owl:inverseOf <http://www.w3.org/ns/prov#wasGeneratedBy> .
+  owl:inverseOf prov:wasGeneratedBy .
 
-<http://www.w3.org/ns/prov#wasGeneratedBy> a owl:ObjectProperty, owl:FunctionalProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
-  rdfs:range <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+prov:wasGeneratedBy a owl:ObjectProperty, owl:FunctionalProperty;
+  rdfs:domain md:Model, dcat:Dataset;
+  rdfs:range md:Model, dcat:Dataset;
   rdfs:label "wasGeneratedBy";
   rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
 [CIM context:
 Reference to an activity or the exact business nature (process, configuration) which produced or uses the model.]."""@en;
-  owl:inverseOf <http://www.w3.org/ns/prov#Entity> .
+  owl:inverseOf prov:Entity .
 
-<http://www.w3.org/ns/adms#versionNotes> a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+adms:versionNotes a owl:FunctionalProperty, owl:DatatypeProperty;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "versionNotes";
   rdfs:comment "A description of changes between this version and the previous version of the resource."@en .
 
 dcat:endDate a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:dateTimeStamp;
   rdfs:label "endDate";
   rdfs:comment """This property contains the end of the period.
@@ -1944,7 +1949,7 @@ dcat:endDate a owl:FunctionalProperty, owl:DatatypeProperty;
 The end date and time of the validity period of the model that it is serialized in the document where the header is located. It is only used in relation to the startDate property which indicates the beginning of the validity period of the model.]."""@en .
 
 dcat:startDate a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:dateTimeStamp;
   rdfs:label "startDate";
   rdfs:comment """This property contains the start of the period.
@@ -1956,7 +1961,7 @@ period.
 The date and time that this model represents, i.e. for which the model is (or was) valid. It indicates the beginning of the validity period. It is indicating either an instant (in cases where the model is only valid for a point in time) or the start time of a period. If not provided the model is considered valid for any time stamp. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]."""@en .
 
 dcat:temporalResolution a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:duration;
   rdfs:label "temporalResolution";
   rdfs:comment """Minimum time period resolvable in a dataset.
@@ -1968,13 +1973,13 @@ Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en,
 Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en .
 
 dcat:version a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "version";
   rdfs:comment "The version indicator (name or identifier) of a resource."@en, "The version number of a resource."@en .
 
-<http://www.w3.org/ns/prov#generatedAtTime> a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:domain <http://iec.ch/TC57/61970-552/ModelDescription/1#Model>, dcat:Dataset;
+prov:generatedAtTime a owl:FunctionalProperty, owl:DatatypeProperty;
+  rdfs:domain md:Model, dcat:Dataset;
   rdfs:range xsd:dateTime;
   rdfs:label "generatedAtTime";
   rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
@@ -2168,7 +2173,7 @@ The allowed value range is [0,100]."""@en;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 nc:GateInputPin.negate a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain nc:GateInputPin;
@@ -2185,7 +2190,7 @@ The allowed value range is [0,100]."""@en;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 nc:GateInputPin.thresholdValue a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain nc:GateInputPin;
@@ -2215,7 +2220,7 @@ nc:SynchronousArea.nominalFrequency a owl:FunctionalProperty, owl:DatatypeProper
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.Hz;
   qudt:hasQuantityKind cim:Frequency;
-  qudt:hasUnit <http://qudt.org/vocab/unit/HZ> .
+  qudt:hasUnit unit:HZ .
 
 nc:EnergyConsumer.LoadAction a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:domain cim:EnergyConsumer;
@@ -2546,7 +2551,7 @@ The allowed value range is [0,100]."""@en;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 nc:Contingency.probability a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:Contingency;
@@ -2557,7 +2562,7 @@ The allowed value range is [0,100]."""@en;
   cim:unitMultiplier cim:UnitMultiplier.none;
   cim:unitSymbol cim:UnitSymbol.none;
   qudt:hasQuantityKind cim:PerCent;
-  qudt:hasUnit <http://qudt.org/vocab/unit/PERCENT> .
+  qudt:hasUnit unit:PERCENT .
 
 nc:GridStateAlteration.enabled a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain nc:GridStateAlteration;
@@ -2628,7 +2633,7 @@ cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
   owl:inverseOf cimr:isPartTransitive;
-  <http://proton.semanticweb.org/protonsys#transitiveOver> cimr:hasPart .
+  psys:transitiveOver cimr:hasPart .
 
 cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
@@ -2670,7 +2675,7 @@ cims:pragmatics a owl:DatatypeProperty;
   rdfs:label "LLM Pragmatics";
   rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties." .
 
-<http://iec.ch/TC57/61970-552/ModelDescription/1#Model> a owl:Class;
+md:Model a owl:Class;
   rdfs:label "Model";
   rdfs:comment """A Model is a collection of data describing instances, objects or entities, real or computed. In the context of CIM the semantics of the data is defined by profiles. Hence a model can contain equipment data, power flow initial values, power flow results etc.
 The Model class describes the header content that is the same for the FullModel and the DifferenceModel. A Model is identified by an rdf:about attribute. The rdf:about attribute uniquely describe the model data and not the CIMXML document. A new rdf:about identification is generated for created documents only when the model data has changed. A repeated creation of documents from unchanged model data shall have the same rdf:about identification as previous document generated from the same model data."""@en,
@@ -3852,13 +3857,13 @@ cim:UnitSymbol.none a cim:UnitSymbol;
 cim:UnitSymbol.W a cim:UnitSymbol;
   rdfs:label "W";
   rdfs:comment "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."@en;
-  skos:exactMatch <http://qudt.org/vocab/unit/W> .
+  skos:exactMatch unit:W .
 
 cim:UnitSymbol.degC a cim:UnitSymbol;
   rdfs:label "degC";
   rdfs:comment """Relative temperature in degrees Celsius.
 In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."""@en;
-  skos:exactMatch <http://qudt.org/vocab/unit/DEG_C> .
+  skos:exactMatch unit:DEG_C .
 
 cim:OrientationKind.negative a cim:OrientationKind;
   rdfs:label "negative";
@@ -3977,7 +3982,7 @@ cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
   owl:inverseOf cimr:isPartTransitive;
-  <http://proton.semanticweb.org/protonsys#transitiveOver> cimr:hasPart .
+  psys:transitiveOver cimr:hasPart .
 
 cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
