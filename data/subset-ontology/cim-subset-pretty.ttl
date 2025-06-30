@@ -4,6 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
 @prefix cimr: <https://cim.ucaiug.io/rules#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eu: <https://cim.ucaiug.io/ns/eu#> .
@@ -70,6 +71,7 @@ Voltage measurements are typically obtained from voltage transformers that are c
 cim:ConductingEquipment a owl:Class ;
   rdfs:label "ConductingEquipment" ;
   rdfs:comment "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."@en ;
+  cims:pragmatics "This means only AC Conducting Equipment (not DC)" ;
   rdfs:subClassOf cim:Equipment .
 
 cim:Conductor a owl:Class ;
@@ -313,6 +315,7 @@ cim:InputSignalKind a owl:Class ;
 cim:Line a owl:Class ;
   rdfs:label "Line" ;
   rdfs:comment "Contains equipment beyond a substation belonging to a power transmission line."@en ;
+  cims:pragmatics "This means only AC Line (not DC)" ;
   rdfs:subClassOf cim:EquipmentContainer .
 
 cim:LinearShuntCompensator a owl:Class ;
@@ -2731,6 +2734,15 @@ cim:ActivePowerLimit.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:ActivePowerLimit ;
   rdfs:range xsd:float .
 
+cim:Analog.positiveFlowIn a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "positiveFlowIn" ;
+  rdfs:comment "If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource."@en ;
+  cims:pragmatics """For BiddingZoneBorder,
+"true" means the flow is from BiddingZoneOne to BiddingZoneTwo.
+"false" means the flow is in the opposite direction""" ;
+  rdfs:domain cim:Analog ;
+  rdfs:range xsd:boolean .
+
 cim:BaseVoltage.nominalVoltage a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "nominalVoltage" ;
   rdfs:comment "The power system resource's base voltage.  Shall be a positive value and not zero."@en ;
@@ -3055,8 +3067,13 @@ cim:Measurement.measurementType a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "measurementType" ;
   rdfs:comment """Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
 When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement."""@en ;
+  cims:pragmatics "Possible values: CurrencyExchange-Actual, Price-Actual, ThreePhaseActivePower, ThreePhaseActivePower-Flow-Estimated" ;
   rdfs:domain cim:Measurement ;
-  rdfs:range xsd:string .
+  rdfs:range xsd:string ;
+  skos:example "CurrencyExchange-Actual" ;
+  skos:example "Price-Actual" ;
+  skos:example "ThreePhaseActivePower" ;
+  skos:example "ThreePhaseActivePower-Flow-Estimated" .
 
 cim:OperationalLimitType.acceptableDuration a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "acceptableDuration" ;
@@ -3491,9 +3508,21 @@ cim:VoltageLimit.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLimit ;
   rdfs:range xsd:float .
 
+cimr:Measurement.isInCognite a owl:DatatypeProperty ;
+  rdfs:label "Measurement is in Cognite" ;
+  rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries" ;
+  cims:pragmatics "Use the mRID of this measurement to query a timeseries in the Cognite API by \"external_id\" " ;
+  rdfs:domain cim:Analog ;
+  rdfs:range xsd:boolean .
+
 cimr:mridSignificantPart a owl:DatatypeProperty ;
   rdfs:label "MRID significant part" ;
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing" .
+
+cims:pragmatics a owl:DatatypeProperty ;
+  rdfs:label "LLM Pragmatics" ;
+  rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties." ;
+  rdfs:range xsd:string .
 
 dcat:endDate a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "endDate" ;

@@ -1300,12 +1300,24 @@ cim:MeasurementValueSource.MeasurementValues a owl:ObjectProperty, owl:InverseFu
   rdfs:comment "The MeasurementValues updated by the source."@en;
   owl:inverseOf cim:MeasurementValue.MeasurementValueSource .
 
+cim:Analog.positiveFlowIn a owl:FunctionalProperty, owl:DatatypeProperty;
+  rdfs:domain cim:Analog;
+  rdfs:range xsd:boolean;
+  rdfs:label "positiveFlowIn";
+  rdfs:comment "If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource."@en;
+  cims:pragmatics """For BiddingZoneBorder,
+\"true\" means the flow is from BiddingZoneOne to BiddingZoneTwo.
+\"false\" means the flow is in the opposite direction""" .
+
 cim:Measurement.measurementType a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain cim:Measurement;
   rdfs:range xsd:string;
   rdfs:label "measurementType";
   rdfs:comment """Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
-When the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement."""@en .
+When the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement."""@en;
+  skos:example "ThreePhaseActivePower", "Price-Actual", "ThreePhaseActivePower-Flow-Estimated",
+    "CurrencyExchange-Actual";
+  cims:pragmatics "Possible values: CurrencyExchange-Actual, Price-Actual, ThreePhaseActivePower, ThreePhaseActivePower-Flow-Estimated" .
 
 cim:ConductingEquipment.SvStatus a owl:ObjectProperty, owl:InverseFunctionalProperty,
     owl:FunctionalProperty;
@@ -2646,6 +2658,18 @@ cimr:mridSignificantPart a owl:DatatypeProperty;
   rdfs:label "MRID significant part";
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing" .
 
+cimr:Measurement.isInCognite a owl:DatatypeProperty;
+  rdfs:domain cim:Analog;
+  rdfs:range xsd:boolean;
+  rdfs:label "Measurement is in Cognite";
+  rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries";
+  cims:pragmatics "Use the mRID of this measurement to query a timeseries in the Cognite API by \"external_id\" " .
+
+cims:pragmatics a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "LLM Pragmatics";
+  rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties." .
+
 <http://iec.ch/TC57/61970-552/ModelDescription/1#Model> a owl:Class;
   rdfs:label "Model";
   rdfs:comment """A Model is a collection of data describing instances, objects or entities, real or computed. In the context of CIM the semantics of the data is defined by profiles. Hence a model can contain equipment data, power flow initial values, power flow results etc.
@@ -3149,7 +3173,8 @@ cim:Organisation a owl:Class;
 cim:ConductingEquipment a owl:Class;
   rdfs:subClassOf cim:Equipment;
   rdfs:label "ConductingEquipment";
-  rdfs:comment "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."@en .
+  rdfs:comment "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."@en;
+  cims:pragmatics "This means only AC Conducting Equipment (not DC)" .
 
 cim:Equipment a owl:Class;
   rdfs:subClassOf cim:PowerSystemResource;
@@ -3538,7 +3563,8 @@ Where:
 cim:Line a owl:Class;
   rdfs:subClassOf cim:EquipmentContainer;
   rdfs:label "Line";
-  rdfs:comment "Contains equipment beyond a substation belonging to a power transmission line."@en .
+  rdfs:comment "Contains equipment beyond a substation belonging to a power transmission line."@en;
+  cims:pragmatics "This means only AC Line (not DC)" .
 
 cim:SubGeographicalRegion a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
@@ -3980,3 +4006,15 @@ cimr:connectedThroughPart a owl:SymmetricProperty, owl:ObjectProperty;
 cimr:mridSignificantPart a owl:DatatypeProperty;
   rdfs:label "MRID significant part";
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing" .
+
+cimr:Measurement.isInCognite a owl:DatatypeProperty;
+  rdfs:domain cim:Analog;
+  rdfs:range xsd:boolean;
+  rdfs:label "Measurement is in Cognite";
+  rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries";
+  cims:pragmatics "Use the mRID of this measurement to query a timeseries in the Cognite API by \"external_id\" " .
+
+cims:pragmatics a owl:DatatypeProperty;
+  rdfs:range xsd:string;
+  rdfs:label "LLM Pragmatics";
+  rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties." .
