@@ -6,7 +6,7 @@ import requests
 import tempfile
 import shutil
 import json
-import glob
+import gzip
 import time
 from pathlib import Path
 from typing import Optional
@@ -51,6 +51,13 @@ class GraphDBLoader:
             self.auth = None
             
         self.temp_dir = Path(tempfile.mkdtemp())
+
+    def file_chunker(self,file_obj, chunk_size=1024 * 256):  # 1 MB default chunks
+        while True:
+            data = file_obj.read(chunk_size)
+            if not data:
+                break
+            yield data
 
     def print_response(self, response: requests.Response, operation: str):
         """Print response details from GraphDB REST API."""
@@ -166,11 +173,12 @@ class GraphDBLoader:
 
         print(f"Loading {filename} into named graph '{self.ontology_graph}'...")
         with open(local_file, 'rb') as f:
+            compressed_data = gzip.compress(f.read())
             response = requests.post(
                 f"{self.graphdb_url}/repositories/{self.repository_name}/rdf-graphs/service",
                 params={'graph': self.ontology_graph},
-                data=f,
-                headers={'Content-Type': 'application/x-turtle'},
+                data=compressed_data,
+                headers={'Content-Type': 'application/x-turtle','Content-Encoding': 'gzip'},
                 auth=self.auth
             )
 
@@ -199,10 +207,11 @@ class GraphDBLoader:
 
         print(f"Loading {filename}...")
         with open(local_file, 'rb') as f:
+            compressed_data = gzip.compress(f.read())
             response = requests.post(
                 f"{self.graphdb_url}/repositories/{self.repository_name}/statements",
-                data=f,
-                headers={'Content-Type': 'application/trig'},
+                data=compressed_data,
+                headers={'Content-Type': 'application/trig', 'Content-Encoding': 'gzip'},
                 auth=self.auth
             )
 
@@ -255,6 +264,12 @@ class GraphDBLoader:
         
         response = requests.post(
             f"{self.graphdb_url}/rest/autocomplete/enabled?enabled=true",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+
+        response = requests.post(
+            f"{self.graphdb_url}/rest/autocomplete/reindex",
             headers={"x-graphdb-repository": self.repository_name},
             auth=self.auth
         )
