@@ -6,7 +6,7 @@ import requests
 import tempfile
 import shutil
 import json
-import glob
+import gzip
 import time
 from pathlib import Path
 from typing import Optional
@@ -51,6 +51,13 @@ class GraphDBLoader:
             self.auth = None
             
         self.temp_dir = Path(tempfile.mkdtemp())
+
+    def file_chunker(self,file_obj, chunk_size=1024 * 256):  # 1 MB default chunks
+        while True:
+            data = file_obj.read(chunk_size)
+            if not data:
+                break
+            yield data
 
     def print_response(self, response: requests.Response, operation: str):
         """Print response details from GraphDB REST API."""
@@ -166,11 +173,12 @@ class GraphDBLoader:
 
         print(f"Loading {filename} into named graph '{self.ontology_graph}'...")
         with open(local_file, 'rb') as f:
+            compressed_data = gzip.compress(f.read())
             response = requests.post(
                 f"{self.graphdb_url}/repositories/{self.repository_name}/rdf-graphs/service",
                 params={'graph': self.ontology_graph},
-                data=f,
-                headers={'Content-Type': 'application/x-turtle'},
+                data=compressed_data,
+                headers={'Content-Type': 'application/x-turtle','Content-Encoding': 'gzip'},
                 auth=self.auth
             )
 
@@ -199,10 +207,11 @@ class GraphDBLoader:
 
         print(f"Loading {filename}...")
         with open(local_file, 'rb') as f:
+            compressed_data = gzip.compress(f.read())
             response = requests.post(
                 f"{self.graphdb_url}/repositories/{self.repository_name}/statements",
-                data=f,
-                headers={'Content-Type': 'application/trig'},
+                data=compressed_data,
+                headers={'Content-Type': 'application/trig', 'Content-Encoding': 'gzip'},
                 auth=self.auth
             )
 
@@ -214,6 +223,62 @@ class GraphDBLoader:
         else:
             print(f"Error: Failed to load {filename}. Status code: {response.status_code}")
             return False
+
+    def update_autocomplete_labels(self, labels_file: str = "autocomplete-labels.txt"):
+        """Update autocomplete labels from a file."""
+        print(f"Updating autocomplete labels from {labels_file}...")
+
+        response = requests.delete(
+            f"{self.graphdb_url}/rest/autocomplete/labels",
+            json={"labelIri":"http://www.w3.org/2000/01/rdf-schema#label","languages":""},
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+
+        if not os.path.exists(labels_file):
+            print(f"Warning: Labels file '{labels_file}' not found.")
+            return
+
+        with open(labels_file, 'r') as f:
+            for line in f:
+                label_iri = line.strip()
+                if not label_iri:
+                    continue
+
+                payload = {
+                    "labelIri": label_iri,
+                    "languages": ""
+                }
+
+                response = requests.put(
+                    f"{self.graphdb_url}/rest/autocomplete/labels",
+                    json=payload,
+                    headers={"x-graphdb-repository": self.repository_name},
+                    auth=self.auth
+                )
+
+                self.print_response(response, f"Update Autocomplete Label: {label_iri}")
+
+                if response.status_code not in [200, 204, 201]:
+                    print(f"Error: Failed to update autocomplete label '{label_iri}'. Status code: {response.status_code}")
+        
+        response = requests.post(
+            f"{self.graphdb_url}/rest/autocomplete/enabled?enabled=true",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+
+        response = requests.post(
+            f"{self.graphdb_url}/rest/autocomplete/reindex",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
+        
+        response = requests.post(
+            f"{self.graphdb_url}/rest/rdfrank/compute",
+            headers={"x-graphdb-repository": self.repository_name},
+            auth=self.auth
+        )
 
     def process_files(self):
         """Process all ontology and instance files."""
@@ -285,6 +350,7 @@ class GraphDBLoader:
             if self.create_repository():
                 self.process_files()
                 self.execute_all_queries()
+                self.update_autocomplete_labels()
         finally:
             self.cleanup()
 
