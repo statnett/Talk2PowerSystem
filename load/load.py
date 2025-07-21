@@ -21,8 +21,8 @@ class GraphDBLoader:
     def __init__(
         self,
         graphdb_url: str = "http://localhost:7200",
-        repository_name: str = "nordic44",
-        config_file: str = "resources/nordic44-repo-config.ttl",
+        repository_name: str = "cim",
+        config_file: str = "resources/repo-config.ttl",
         ontology_graph: str = "https://cim.ucaiug.io/ns#graph",
         ontologies_list: str = "ontologies.txt",
         instances_list: str = "instances.txt",
@@ -358,9 +358,9 @@ def main():
     parser = argparse.ArgumentParser(description='Load ontologies and instances into GraphDB')
     parser.add_argument('-u', '--url', default='http://localhost:7200',
                       help='GraphDB server URL')
-    parser.add_argument('-r', '--repository', default='nordic44',
+    parser.add_argument('-r', '--repository', default='cim',
                       help='Repository name')
-    parser.add_argument('-c', '--config', default='resources/nordic44-repo-config.ttl',
+    parser.add_argument('-c', '--config', default='resources/repo-config.ttl',
                       help='Repository configuration file')
     parser.add_argument('-g', '--graph', default='https://cim.ucaiug.io/ns#graph',
                       help='Named graph URI')
