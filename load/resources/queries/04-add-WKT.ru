@@ -9,7 +9,7 @@ insert {
 }
 where
 {
-    select ?psr ?loc ?g (strdt(concat(?type,"(",group_concat(concat(?x," ",?y); separator=", "),")"),geo:wktLiteral) as ?wkt)  where {
+    select ?psr ?loc ?g (strdt(concat(?type,"(",group_concat(concat(str(?x)," ",str(?y)); separator=", "),")"),geo:wktLiteral) as ?wkt)  where {
         graph ?g {?point cim:PositionPoint.Location ?loc .}
         ?point cim:PositionPoint.Location ?loc .
         ?loc cim:Location.PowerSystemResources ?psr .
