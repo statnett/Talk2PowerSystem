@@ -17,29 +17,33 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX uml: <http://iec.ch/TC57/NonStandard/UML#>
 PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX adms: <http://www.w3.org/ns/adms#>
-
 CONSTRUCT {
-    ?x ?p ?o .
+    ?x ?p ?o ;
+    rdfs:comment ?new .
 }
 # describing the terms using only explicit statements
-FROM onto:explicit 
+FROM onto:explicit
 WHERE {
     {
         # using federation to be able to use inference
         # to find all classes, props and enums
         # used in both explict and inferred statements
-        SERVICE <repository:nordic44> {
+        SERVICE <repository:cim> {
             SELECT DISTINCT ?x
             {
-                {         # properties
+                {
+                    # properties
                     [] ?x []
-                } UNION { # classes
+                } UNION {
+                    # classes
                     [] a ?x
-                } UNION { # enumeration values
+                } UNION {
+                    # enumeration values
                     ?x a ?enum.
                     ?enum cims:stereotype uml:enumeration
                     FILTER EXISTS {
-                        ?thing a cim:IdentifiedObject; ?prop ?x
+                        ?thing a cim:IdentifiedObject;
+                        ?prop ?x
                     }
                 }
             }
@@ -49,6 +53,10 @@ WHERE {
         ?x rdfs:isDefinedBy cimr:
     }
     ?x ?p ?o .
-    filter(?p not in (cims:belongsToCategory,owl:propertyChainAxiom,cims:stereotype,cims:AssociationUsed,cims:multiplicity,rdfs:isDefinedBy))
-    filter(?x not in (cims:belongsToCategory))  
+    filter(?p not in (cims:belongsToCategory,owl:propertyChainAxiom,cims:stereotype,cims:AssociationUsed,cims:multiplicity,rdfs:isDefinedBy,rdfs:comment))
+    filter(?x not in (cims:belongsToCategory))
+
+    #shortening long term descriptions
+    ?x rdfs:comment ?old .
+    bind(if(strlen(?old)>500,replace(replace(?old,"\n"," "),"(.{500}.*?) .*","$1"),?old) as ?new)
 }

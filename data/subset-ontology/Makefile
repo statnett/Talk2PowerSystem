@@ -7,7 +7,7 @@ cim-subset.ttl: ontology-query.rq
 		-H "Content-Type: application/sparql-query" \
 		-H "Accept: application/x-turtle" \
 		--data-binary @ontology-query.rq \
-		"https://cim.ontotext.com/graphdb/repositories/nordic44" \
+		"https://cim.ontotext.com/graphdb/repositories/cim" \
 		> cim-subset.ttl
 
 # Format the TTL file using owl-toolkit
