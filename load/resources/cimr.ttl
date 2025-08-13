@@ -1,20 +1,21 @@
-﻿@prefix cimr: <https://cim.ucaiug.io/rules#> .
-@prefix cim:     <https://cim.ucaiug.io/ns#> .
-@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+﻿@prefix cimr:     <https://cim.ucaiug.io/rules#> .
+@prefix cim:      <https://cim.ucaiug.io/ns#> .
+@prefix cims:     <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 #@prefix entsoe2: <http://entsoe.eu/CIM/SchemaExtension/3/2#> .
 
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix psys: <http://proton.semanticweb.org/protonsys#> .
-@prefix pti: <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix sesame: <http://www.openrdf.org/schema/sesame#>.
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix geo:      <http://www.opengis.net/ont/geosparql#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix psys:     <http://proton.semanticweb.org/protonsys#> .
+@prefix pti:      <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix sesame:   <http://www.openrdf.org/schema/sesame#>.
+@prefix schema:   <http://schema.org/> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 
 cimr: a owl:Ontology;
   rdfs:label "CIM Inferred Extension Ontology" ;
@@ -36,11 +37,13 @@ The cimr ontology uses RDFS subclass and subproperty, OWL inverse, transitive, p
 - triples: 63.5k explicit, 60.4k inferred, 124k  total: 1.95x expansion
 """.
 
-# TODO: add domain/range?
+# Added domain/range
 
 cimr:hasPart a owl:ObjectProperty;
   rdfs:label "has part";
   rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
+  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
+  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
   owl:inverseOf cimr:isPart;
   skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays;
   rdfs:subPropertyOf cimr:hasPartTransitive ;
@@ -53,6 +56,8 @@ cim:VoltageLevel.Bays             rdfs:subPropertyOf cimr:hasPart.
 cimr:isPart a owl:ObjectProperty;
   rdfs:label "is part";
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
+  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
+  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
   owl:inverseOf cimr:hasPart;
   skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel;
   rdfs:isDefinedBy cimr: .
@@ -60,6 +65,8 @@ cimr:isPart a owl:ObjectProperty;
 cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
+  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
+  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
   owl:inverseOf cimr:isPartTransitive;
   psys:transitiveOver cimr:hasPart ;
   rdfs:isDefinedBy cimr: .
@@ -67,12 +74,16 @@ cimr:hasPartTransitive a owl:ObjectProperty;
 cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
   rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart";
+  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
+  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
   owl:inverseOf cimr:hasPartTransitive;
   rdfs:isDefinedBy cimr: .
 
 cimr:Terminal.Equipment a owl:ObjectProperty;
   rdfs:label "equipment";
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
+  schema:domainIncludes cim:Terminal;
+  schema:rangeIncludes  cim:ConductingEquipment, cim:AuxiliaryEquipment;
   owl:inverseOf cimr:Equipment.Terminals;
   skos:example cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment;
   rdfs:isDefinedBy cimr: .
@@ -83,12 +94,16 @@ cim:Terminal.AuxiliaryEquipment  rdfs:subPropertyOf cimr:Terminal.Equipment.
 cimr:Equipment.Terminals a owl:ObjectProperty;
   rdfs:label "terminals";
   rdfs:comment "Terminals of the equipment";
+  schema:domainIncludes cim:ConductingEquipment, cim:AuxiliaryEquipment;
+  rdfs:range            cim:Terminal;
   owl:inverseOf cimr:Terminal.Equipment;
   rdfs:isDefinedBy cimr: .
 
 cimr:connectedTo a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected to";
   rdfs:comment "Equipment is connected to Equipment through some of their terminals and a common ConnectivityNode";
+  rdfs:domain cim:Equipment;
+  rdfs:range  cim:Equipment;
   rdfs:isDefinedBy cimr: .
 
 cimr:connectedTo owl:propertyChainAxiom
@@ -96,7 +111,9 @@ cimr:connectedTo owl:propertyChainAxiom
 
 cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected through part";
-  rdfs:comment "Equipment is connected to Equipment through some of its transitive parts, and their terminals and a common ConnectivityNode";
+  rdfs:comment "Equipment or EquipmentContainer is connected to Equipment or EquipmentContainer through some of its transitive parts, and their terminals and a common ConnectivityNode";
+  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
+  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
   rdfs:isDefinedBy cimr: .
 
 cimr:connectedThroughPart owl:propertyChainAxiom
@@ -105,6 +122,8 @@ cimr:connectedThroughPart owl:propertyChainAxiom
 cimr:mridSignificantPart a owl:DatatypeProperty ;
    rdfs:label "MRID significant part";
    rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
+   rdfs:domain cim:IdentifiedObject;
+   rdfs:range xsd:string;
    rdfs:isDefinedBy cimr: .
 
 cimr:Measurement.isInCognite a owl:DatatypeProperty ;
