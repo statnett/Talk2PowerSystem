@@ -13,7 +13,6 @@
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix sesame:   <http://www.openrdf.org/schema/sesame#>.
-@prefix schema:   <http://schema.org/> .
 @prefix vann:     <http://purl.org/vocab/vann/> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 
@@ -22,10 +21,10 @@ cimr: a owl:Ontology;
   rdfs:comment "Inferred properties for electrical CIM/CGMES";
   vann:preferredNamespacePrefix "cimr";
   vann:preferredNamespaceUri "https://cim.ucaiug.io/rules#"^^xsd:anyURI ;
-  dct:creator "Vladimir Alexiev", "Nikola Tulechki" ;
+  dct:creator "Graphwise.ai" ;
   dct:publisher <https://graphwise.ai>;
   dct:created  "2025-02-14"^^xsd:date ;
-  dct:modified "2025-06-27"^^xsd:date ;
+  dct:modified "2025-08-13"^^xsd:date ;
   dct:publisher "ENTSO-E" ;
   owl:versionInfo "1.1";
   rdfs:seeAlso <https://github.com/statnett/Talk2PowerSystem/issues/16>, <https://github.com/statnett/Talk2PowerSystem/issues/31>;
@@ -39,11 +38,19 @@ The cimr ontology uses RDFS subclass and subproperty, OWL inverse, transitive, p
 
 # Added domain/range
 
+cimr:EquipmentOrContainer a owl:Class;
+  rdfs:label "Equipment or Container";
+  rdfs:comment "Union (superclass) of Equipment and ConnectivityNodeContainer";
+  rdfs:subClassOf cim:PowerSystemResource;
+  rdfs:isDefinedBy cimr: .
+cim:Equipment                 rdfs:subClassOf cimr:EquipmentOrContainer.
+cim:ConnectivityNodeContainer rdfs:subClassOf cimr:EquipmentOrContainer.
+
 cimr:hasPart a owl:ObjectProperty;
   rdfs:label "has part";
-  rdfs:comment "EquipmentContainer (or Equipment) has part. Disjunction of the props listed in skos:example";
-  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
-  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
+  rdfs:comment "Equipment or Container has part. Disjunction of the props listed in skos:example";
+  rdfs:domain cimr:EquipmentOrContainer;
+  rdfs:range  cimr:EquipmentOrContainer;
   owl:inverseOf cimr:isPart;
   skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays;
   rdfs:subPropertyOf cimr:hasPartTransitive ;
@@ -56,8 +63,8 @@ cim:VoltageLevel.Bays             rdfs:subPropertyOf cimr:hasPart.
 cimr:isPart a owl:ObjectProperty;
   rdfs:label "is part";
   rdfs:comment "Equipment is part of EquipmentContainer. Disjunction of the props listed in skos:example";
-  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
-  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
+  rdfs:domain cimr:EquipmentOrContainer;
+  rdfs:range  cimr:EquipmentOrContainer;
   owl:inverseOf cimr:hasPart;
   skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel;
   rdfs:isDefinedBy cimr: .
@@ -65,8 +72,8 @@ cimr:isPart a owl:ObjectProperty;
 cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:label "has part transitive";
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
-  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
-  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
+  rdfs:domain cimr:EquipmentOrContainer;
+  rdfs:range  cimr:EquipmentOrContainer;
   owl:inverseOf cimr:isPartTransitive;
   psys:transitiveOver cimr:hasPart ;
   rdfs:isDefinedBy cimr: .
@@ -74,16 +81,16 @@ cimr:hasPartTransitive a owl:ObjectProperty;
 cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
   rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart";
-  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
-  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
+  rdfs:domain cimr:EquipmentOrContainer;
+  rdfs:range  cimr:EquipmentOrContainer;
   owl:inverseOf cimr:hasPartTransitive;
   rdfs:isDefinedBy cimr: .
 
 cimr:Terminal.Equipment a owl:ObjectProperty;
   rdfs:label "equipment";
   rdfs:comment "The equipment of the terminal. Disjunction of the props listed in skos:example";
-  schema:domainIncludes cim:Terminal;
-  schema:rangeIncludes  cim:ConductingEquipment, cim:AuxiliaryEquipment;
+  rdfs:domain cim:Terminal;
+  rdfs:range  cim:Equipment;
   owl:inverseOf cimr:Equipment.Terminals;
   skos:example cim:Terminal.ConductingEquipment, cim:Terminal.AuxiliaryEquipment;
   rdfs:isDefinedBy cimr: .
@@ -94,8 +101,8 @@ cim:Terminal.AuxiliaryEquipment  rdfs:subPropertyOf cimr:Terminal.Equipment.
 cimr:Equipment.Terminals a owl:ObjectProperty;
   rdfs:label "terminals";
   rdfs:comment "Terminals of the equipment";
-  schema:domainIncludes cim:ConductingEquipment, cim:AuxiliaryEquipment;
-  rdfs:range            cim:Terminal;
+  rdfs:domain  cim:Equipment;
+  rdfs:range   cim:Terminal;
   owl:inverseOf cimr:Terminal.Equipment;
   rdfs:isDefinedBy cimr: .
 
@@ -112,8 +119,8 @@ cimr:connectedTo owl:propertyChainAxiom
 cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected through part";
   rdfs:comment "Equipment or EquipmentContainer is connected to Equipment or EquipmentContainer through some of its transitive parts, and their terminals and a common ConnectivityNode";
-  schema:domainIncludes cim:Equipment, cim:EquipmentContainer;
-  schema:rangeIncludes  cim:Equipment, cim:EquipmentContainer;
+  rdfs:domain cimr:EquipmentOrContainer;
+  rdfs:range  cimr:EquipmentOrContainer;
   rdfs:isDefinedBy cimr: .
 
 cimr:connectedThroughPart owl:propertyChainAxiom

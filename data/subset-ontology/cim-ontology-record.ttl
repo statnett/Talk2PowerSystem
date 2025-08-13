@@ -1,0 +1,21 @@
+﻿@prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cim: a owl:Ontology;
+  rdfs:label "Common Information Model";
+  rdfs:comment "Created by merging CIM and NC ontologies, adding CIM Rules (cimr), then subsetting them to terms used in the Nordic44 and Telemark120 datasets. Part of the Talk2PowerSystem project";
+  vann:preferredNamespacePrefix "cim";
+  vann:preferredNamespaceUri "https://cim.ucaiug.io/ns#"^^xsd:anyURI;
+  dct:created "2025-06-26"^^xsd:date;
+  dct:creator "Graphwise AI";
+  rdfs:seeAlso
+    <https://github.com/statnett/Talk2PowerSystem_PM/issues/96>,
+    <https://github.com/Sveino/Inst4CIM-KG/blob/develop/rdfs-improved/>,
+    <https://github.com/statnett/Talk2PowerSystem/blob/main/load/resources/cimr.ttl>,
+    <https://github.com/statnett/Nordic44>,
+    <https://github.com/3lbits/CIM4NoUtility/tree/develop/Telemark-120>.
+
