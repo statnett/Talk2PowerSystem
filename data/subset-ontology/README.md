@@ -27,7 +27,9 @@ See also [Blog Ontology Simplification for LLM](https://github.com/statnett/Talk
 * TODO: add info about `ontology-record`
 * We use [ontology-query.rq](ontology-query.rq) to generate a `ttl` file, 
   which is then prettified using [owl atextor tools: owl-cli and turtle-formatter](https://github.com/Sveino/Inst4CIM-KG/tree/develop/rdfs-improved#atextor-tools-owl-cli-and-turtle-formatter)
-* For terms that are used but not defined in the base ontologies, we emit `a cims:MISSING`
+* For terms that are used but not defined in the base ontologies, we emit `a cims:MISSING`.
+  * Then we can find them easily with `grep MISSING cim-subset-with-MISSING.ttl> terms-MISSING.txt`
+  * Result: [terms-MISSING.txt](terms-MISSING.txt)
 * See [Makefile](Makefile) 
 * For `make` to work, `owl` should invoke `owl-cli-snapshot.jar` with the args
   
