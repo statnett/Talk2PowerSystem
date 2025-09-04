@@ -1,16 +1,35 @@
+# Ontology Subsetting and GraphQL Schema Generation
 
-Issue: [#96](https://github.com/statnett/Talk2PowerSystem_PM/issues/96)
 
-# Ontology Subsetting
+## Ontology Subsetting
+Issues:
+- [Ontology subsetting and presentation to LLM #96](https://github.com/statnett/Talk2PowerSystem_PM/issues/96).
+- [keep cims:multiplicity in ontology subsetting #173](https://github.com/statnett/Talk2PowerSystem_PM/issues/173)
+- [exclude `Model, dct:resource11` from subset #175](https://github.com/statnett/Talk2PowerSystem_PM/issues/175)
+- [ontology subset is missing enum values #181](https://github.com/statnett/Talk2PowerSystem_PM/issues/181)
+- [collect and display component information #197](https://github.com/statnett/Talk2PowerSystem_PM/issues/197)
+- [ProdData: extract ontology subset #202](https://github.com/statnett/Talk2PowerSystem_PM/issues/202)
+- [Prod Data: find classes and properties missing in ontologies #203](https://github.com/statnett/Talk2PowerSystem_PM/issues/203)
+- [consider removing external terms from subset (dct, dcat, etc) #205](https://github.com/statnett/Talk2PowerSystem_PM/issues/205)
+- [add a cims:MISSING to terms used but not defined #206](https://github.com/statnett/Talk2PowerSystem_PM/issues/206)
 
-Subsetting of the ontology for the purpose of informing the LLM.
 
-* The input is CIM and NC ontologies from https://github.com/Sveino/Inst4CIM-KG/blob/develop/rdfs-improved/
-* Result is in [cim-subset-pretty.ttl](cim-subset-pretty.ttl)
+The complete set of CIM, CGMES and NC ontologies have 900 classes and 5500 properties.
+(Many of these terms are defined up to 20 times across the different CIM profiles, but luckily the definitions are consistent, so they don't result in duplicate terms).
+This is a huge amount of info, so the LLM gets confused if we present all of it.
+
+The purpose of Ontology Subsetting is to make it easier for the LLM to understand it.
+See also [Blog Ontology Simplification for LLM](https://github.com/statnett/Talk2PowerSystem/wiki/Blog-Ontology-Simplification-for-LLM)
+* TODO: copy all details from #96 into the description below.
+* The input consists of CIM and NC ontologies from [Inst4CIM-KG/rdfs-improved](https://github.com/Sveino/Inst4CIM-KG/blob/develop/rdfs-improved/)
+* TODO: add info about `owl:imports` (#197)
+* The result is in [cim-subset-pretty.ttl](cim-subset-pretty.ttl). 
+* TODO: add info about `ontology-record`
 * We use [ontology-query.rq](ontology-query.rq) to generate a `ttl` file, 
   which is then prettified using [owl atextor tools: owl-cli and turtle-formatter](https://github.com/Sveino/Inst4CIM-KG/tree/develop/rdfs-improved#atextor-tools-owl-cli-and-turtle-formatter)
+* For terms that are used but not defined in the base ontologies, we emit `a cims:MISSING`
 * See [Makefile](Makefile) 
-* For `make` to work `owl` should invoke `owl-cli-snapshot.jar` with the args
+* For `make` to work, `owl` should invoke `owl-cli-snapshot.jar` with the args
   
 # GraphQL Schema Generation
 We use [owl2soml](https://github.com/VladimirAlexiev/soml/tree/master/owl2soml) to generate a SOML schema for GraphQL querying.
