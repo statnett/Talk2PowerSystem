@@ -114,7 +114,7 @@ class GraphDBLoader:
             return
 
         print("\nExecuting SPARQL queries...")
-        query_files = list(query_dir.glob("*.ru"))
+        query_files = sorted(query_dir.glob("*.ru"), key=lambda f: f.name)
         
         if not query_files:
             print("No .ru files found in resources/queries directory")
