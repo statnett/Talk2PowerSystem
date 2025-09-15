@@ -1,7 +1,8 @@
 @prefix unit:         <http://qudt.org/vocab/unit/> .
 @prefix qudt:         <http://qudt.org/schema/qudt/> .
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
-@prefix sou:           <http://qudt.org/vocab/sou/> .
+@prefix qkdv:         <http://qudt.org/vocab/dimensionvector/> .
+@prefix sou:          <http://qudt.org/vocab/sou/> .
 @prefix cim:          <https://cim.ucaiug.io/ns#> .
 @prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
@@ -9,24 +10,12 @@
 @prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl:          <http://www.w3.org/2002/07/owl#> .
 
-
-<https://cim.ucaiug.io/qudt> a owl:Ontology ;
-    rdfs:label "CIM QUDT units ";
-    rdfs:comment "Units in CIM missing from QUDT";
-    dct:created "2025-09-12"^^xsd:date;
-    dct:creator "Graphwise AI";
-    rdfs:seeAlso
-    <https://github.com/statnett/Talk2PowerSystem_PM/issues/213>,
-    <https://github.com/qudt/qudt-public-repo/issues/970>,
-    <https://github.com/Sveino/Inst4CIM-KG/tree/develop/rdfs-improved#mapping-quantitykinds-and-units>
-.
-
 unit:CCY_NOK-PER-MegaW-HR
     a qudt:Unit ;
     qudt:applicableSystem sou:SI ;
-    #  qudt:conversionMultiplier 0.0000002777777777777777777777777777777778 ;
-    #  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-7 ;
-    #  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
+    qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
+    qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10 ;
+    qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
     qudt:hasFactorUnit [
           qudt:exponent -1 ;
           qudt:hasUnit unit:HR ;
@@ -42,9 +31,9 @@ unit:CCY_NOK-PER-MegaW-HR
     qudt:hasQuantityKind quantitykind:CostPerEnergy ;
     qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
     qudt:symbol "NOK/(MW·h)" ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt> ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
     rdfs:label "Norwegian Krone per Megawatt Hour" ;
-    rdfs:label "Norwegian Krone Megawatt Hour"@en ;
+    rdfs:label "Norwegian Krone per Megawatt Hour"@en ;
 .
 quantitykind:CostPerEnergy qudt:applicableUnit unit:CCY_NOK-PER-MegaW-HR .
 
@@ -52,9 +41,9 @@ quantitykind:CostPerEnergy qudt:applicableUnit unit:CCY_NOK-PER-MegaW-HR .
 unit:CCY_EUR-PER-MegaW-HR
     a qudt:Unit ;
     qudt:applicableSystem sou:SI ;
-    #  qudt:conversionMultiplier 0.0000002777777777777777777777777777777778 ;
-    #  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-7 ;
-    #  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
+    qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
+    qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10 ;
+    qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
     qudt:hasFactorUnit [
         qudt:exponent -1 ;
         qudt:hasUnit unit:HR ;
@@ -70,7 +59,7 @@ unit:CCY_EUR-PER-MegaW-HR
     qudt:hasQuantityKind quantitykind:CostPerEnergy ;
     qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
     qudt:symbol "€/(MW·h)" ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt> ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
     rdfs:label "Euro per Megawatt Hour" ;
     rdfs:label "Euro per Megawatt Hour"@en ;
 .
@@ -78,10 +67,9 @@ quantitykind:CostPerEnergy qudt:applicableUnit unit:CCY_EUR-PER-MegaW-HR .
 
 ## exchange rate
 
-
-unit:CCY_DKK-PER-EUR
+unit:CCY_DKK-PER-CCY_EUR
     a qudt:Unit ;
-    qudt:hasQuantityKind quantitykind:CurrencyExchangeRate ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
     qudt:hasFactorUnit [
         qudt:hasUnit unit:CCY_DKK;
         qudt:exponent 1
@@ -93,12 +81,12 @@ unit:CCY_DKK-PER-EUR
     rdfs:label "Danish Krone per Euro" ;
     qudt:symbol "DKK/EUR" ;
     qudt:plainTextDescription "Exchange rate of Danish Krone to Euros" ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt> ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
 .
 
-unit:CCY_NOK-PER-EUR
+unit:CCY_NOK-PER-CCY_EUR
     a qudt:Unit ;
-    qudt:hasQuantityKind quantitykind:CurrencyExchangeRate ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
     qudt:hasFactorUnit [
         qudt:hasUnit unit:CCY_NOK;
         qudt:exponent 1
@@ -110,12 +98,12 @@ unit:CCY_NOK-PER-EUR
     rdfs:label "Norwegian Krone per Euro" ;
     qudt:symbol "NOK/EUR" ;
     qudt:plainTextDescription "Exchange rate of Norwegian Krone to Euros" ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt> ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
 .
 
-unit:CCY_SEK-PER-EUR
+unit:CCY_SEK-PER-CCY_EUR
     a qudt:Unit ;
-    qudt:hasQuantityKind quantitykind:CurrencyExchangeRate ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
     qudt:hasFactorUnit [
         qudt:hasUnit unit:CCY_SEK;
         qudt:exponent 1
@@ -127,15 +115,20 @@ unit:CCY_SEK-PER-EUR
     rdfs:label "Swedish Krona per Euro" ;
     qudt:symbol "SEK/EUR" ;
     qudt:plainTextDescription "Exchange rate of Swedish Krona to Euros" ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt> ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
 .
 
-quantitykind:CurrencyExchangeRate
+quantitykind:ExchangeRate
     a qudt:QuantityKind ;
-    rdfs:label "Currency Exchange Rate" ;
-    qudt:applicableUnit unit:CCY_SEC-PER-EUR, unit:CCY_NOK-PER-EUR,unit:DKK_NOK-PER-EUR ;
-    rdfs:isDefinedBy <https://cim.ucaiug.io/qudt>
-.
+    qudt:applicableUnit unit:CCY_NOK-PER-CCY_EUR ;
+    qudt:applicableUnit unit:CCY_SEK-PER-CCY_EUR ;
+    qudt:applicableUnit unit:CCY_DKK-PER-CCY_EUR ;
+    qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ; ## or D1 ?
+    qudt:informativeReference "https://en.wikipedia.org/wiki/Exchange_rate"^^xsd:anyURI ;
+    qudt:plainTextDescription "Rate at which one currency will be exchanged for another currency" ;
+    rdfs:comment "Applicable units are fractions of two qudt:CurrencyUnit" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/quantitykind> ;
+    rdfs:label "Exchange rate"@en .
 
 # TODO more terms in need of definition
 
@@ -147,14 +140,4 @@ quantitykind:CurrencyExchangeRate
 #unit:W-PER-A
 #unit:W-PER-SEC
 #unit:W-PER-HZ
-
-
-# missing mappings to QUDT.
-
-cim:UnitSymbol.NOKperMWh skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
-cim:UnitSymbol.EURperMWh skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
-cim:UnitSymbol.DKKperEUR skos:exactMatch unit:CCY_DKK-PER-EUR .
-cim:UnitSymbol.NOKperEUR skos:exactMatch unit:CCY_NOK-PER-EUR .
-cim:UnitSymbol.SEKperEUR skos:exactMatch unit:CCY_SEK-PER-EUR .
-cim:UnitSymbol.H skos:exactMatch unit:H .
 
