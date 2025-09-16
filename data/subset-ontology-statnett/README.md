@@ -1,6 +1,15 @@
 ﻿# Ontology Subsets from Statnett Production Data
 
 Task: https://github.com/statnett/Talk2PowerSystem_PM/issues/202
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Ontology Subsets from Statnett Production Data](#ontology-subsets-from-statnett-production-data)
+    - [Input and Problems](#input-and-problems)
+    - [Ontology Observations](#ontology-observations)
+    - [Missing Terms](#missing-terms)
+
+<!-- markdown-toc end -->
 
 ## Input and Problems
 
@@ -138,3 +147,31 @@ cim16:ACDCConverter.numberOfValves a rdf:Property ;
   rdfs:label "numberOfValves"@en ;
   cims:dataType cim16:Integer ;
 ```
+- `kam` uses a non-existing prop `skos:prefSymbol` (there is `skos:prefLabel`)
+
+## Missing Terms
+
+[statnett-terms-MISSING.txt](statnett-terms-MISSING.txt) is a list of the terms for which we have no definition.
+
+Here is a breakdown per namespace
+(TODO: redo after adding enum values):
+```
+cut -d: -f1 statnett-terms-MISSING.txt|uniq -c
+```
+|  c | prefix     | comment                                                      |
+|----|------------|--------------------------------------------------------------|
+|  4 | alstom     | Alstom extension                                             |
+|  8 | cim15      | CIM terms missing from `ems`                                 |
+|  9 | cims       | CIMS, not used on instance data                              |
+|  1 | dct        | External (dct:title), TODO add it                            |
+|  1 | entsoe_sch | ENTSOE Schema extension (OperationalLimitType.limitType)     |
+|  1 | form       | FORM extension (form:PetersenCoilStepPoint.PetersenCoilInfo) |
+| 44 | form_ann   | FORM annotation props, TODO decide which to ignore           |
+|  9 | md         | Model (old format), TODO add it                              |
+|  1 | nek        | NEK extension (nek:WireEarthInfo.WirePhaseInfo)              |
+|  1 | psys       | GW's psys:transitiveOver, ignore                             |
+| 52 | pti        | PTI extension                                                |
+|  3 | skos       | External, TODO add it                                        |
+|  1 | statnett   | Statnett extension (statnett:PetersenCoil.mode)              |
+|  8 | uml1       | UML, not used on instance data                               |
+"TODO" is something that Graphwise can fix, the rest are for Statnett
