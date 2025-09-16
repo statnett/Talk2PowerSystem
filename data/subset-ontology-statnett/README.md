@@ -49,7 +49,7 @@ But that's ok since there should be the opposite link: `<value> rdf:type <enumCl
 @prefix cim17:       <http://iec.ch/TC57/CIM100#> .
 @prefix entsoe_prof: <http://entsoe.eu/Secretariat/ProfileExtension/1#> .
 @prefix entsoe_sch:  <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
-@prefix eu1:         <http://iec.ch/TC57/CIM100-EuropeanExtension/1/0#> .
+@prefix eu1:         <http://iec.ch/TC57/CIM100-European#> .
 @prefix eu_ext:      <http://iec.ch/TC57/CIM100-EuropeanExtension/1/0#> .
 @prefix form:        <https://form.statnett.no/voc/form-ksd-extensions#> .
 @prefix form_ann:    <https://form.statnett.no/schema/annotation#> .
@@ -125,7 +125,7 @@ cim16:TopologicalNode.BaseVoltage cims:multiplicity cims:M:1, cims:M:1..1
   `cims:inverseRoleName` with annotation `owl:sameAs owl:inverseOf`
 - Cardinality is expressed in a variety of ways:
   - `sa` uses `cims:multiplicity` that is a custom prop and expresses the cardinality precisely
-  - `ems, kam` use `owl:FunctionalProperty, InverseFunctionalProperty` 
+  - `ems, kam` use `owl:FunctionalProperty, InverseFunctionalProperty`
     that are standard but only express single-valuedness in the forward/inverse direction
     (don't express requiredness, nor a precise upper bound)
   - The best practice is to use both ways of expressing cardinality
@@ -140,7 +140,7 @@ cim15:StaticVarCompensator.inductiveRating a owl:DatatypeProperty, owl:Functiona
 cim17:ACLineSegment.b0ch a owl:DatatypeProperty, owl:FunctionalProperty, rdf:Property ;
   rdfs:range cim17:Susceptance ;
 ```
-  - `sa` doesn't declare props as DatatypeProperty 
+  - `sa` doesn't declare props as DatatypeProperty
      and uses `cims:dataType` instead of `rdfs:range` and XSD datatypes:
 ```ttl
 cim16:ACDCConverter.numberOfValves a rdf:Property ;
