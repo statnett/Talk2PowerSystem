@@ -1,0 +1,3648 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cim16: <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix entsoe_sch: <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
+@prefix form_ann: <https://form.statnett.no/schema/annotation#> .
+@prefix md: <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix psys: <http://proton.semanticweb.org/protonsys#> .
+@prefix pti: <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+cim16:ACDCConverter a rdfs:Class ;
+  rdfs:label "ACDCConverter"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "12"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:ACDCConverterDCTerminal a rdfs:Class ;
+  rdfs:label "ACDCConverterDCTerminal"@en ;
+  rdfs:subClassOf cim16:DCBaseTerminal .
+
+cim16:ACDCTerminal a rdfs:Class ;
+  rdfs:label "ACDCTerminal"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:ACLineSegment a rdfs:Class ;
+  rdfs:label "ACLineSegment"@en ;
+  form_ann:idmap_mapped "1427"^^xsd:int ;
+  form_ann:idmap_total "1718"^^xsd:int ;
+  rdfs:subClassOf cim16:Conductor .
+
+cim16:AsynchronousMachineKind a rdfs:Class ;
+  rdfs:label "AsynchronousMachineKind"@en .
+
+cim16:BaseVoltage a rdfs:Class ;
+  rdfs:label "BaseVoltage"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:BusNameMarker a rdfs:Class ;
+  rdfs:label "BusNameMarker"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:BusbarSection a rdfs:Class ;
+  rdfs:label "BusbarSection"@en ;
+  form_ann:idmap_mapped "2336"^^xsd:int ;
+  form_ann:idmap_total "3120"^^xsd:int ;
+  rdfs:subClassOf cim16:Connector .
+
+cim16:ConductingEquipment a rdfs:Class ;
+  rdfs:label "ConductingEquipment"@en, "Strømførende komponent"@nb ;
+  form_ann:idmap_mapped "5977"^^xsd:int ;
+  form_ann:idmap_total "8872"^^xsd:int ;
+  rdfs:subClassOf cim16:Equipment .
+
+cim16:Conductor a rdfs:Class ;
+  rdfs:label "Conductor"@en ;
+  form_ann:idmap_mapped "1427"^^xsd:int ;
+  form_ann:idmap_total "1718"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:ConformLoad a rdfs:Class ;
+  rdfs:label "ConformLoad"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "715"^^xsd:int ;
+  rdfs:subClassOf cim16:EnergyConsumer .
+
+cim16:ConformLoadGroup a rdfs:Class ;
+  rdfs:label "ConformLoadGroup"@en ;
+  rdfs:subClassOf cim16:LoadGroup .
+
+cim16:ConnectivityNode a rdfs:Class ;
+  rdfs:label "ConnectivityNode"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:ConnectivityNodeContainer a rdfs:Class ;
+  rdfs:label "ConnectivityNodeContainer"@en ;
+  form_ann:idmap_mapped "3159"^^xsd:int ;
+  form_ann:idmap_total "4551"^^xsd:int ;
+  rdfs:subClassOf cim16:PowerSystemResource .
+
+cim16:Connector a rdfs:Class ;
+  rdfs:label "Connector"@en ;
+  form_ann:idmap_mapped "2336"^^xsd:int ;
+  form_ann:idmap_total "3120"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:ControlArea a rdfs:Class ;
+  rdfs:label "ControlArea"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "23"^^xsd:int ;
+  rdfs:subClassOf cim16:PowerSystemResource .
+
+cim16:ControlAreaGeneratingUnit a rdfs:Class ;
+  rdfs:label "ControlAreaGeneratingUnit"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:ControlAreaTypeKind a rdfs:Class ;
+  rdfs:label "ControlAreaTypeKind"@en .
+
+cim16:CsConverter a rdfs:Class ;
+  rdfs:label "CsConverter"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "12"^^xsd:int ;
+  rdfs:subClassOf cim16:ACDCConverter .
+
+cim16:CsOperatingModeKind a rdfs:Class ;
+  rdfs:label "CsOperatingModeKind"@en .
+
+cim16:CsPpccControlKind a rdfs:Class ;
+  rdfs:label "CsPpccControlKind"@en .
+
+cim16:Currency a rdfs:Class ;
+  rdfs:label "Currency"@en .
+
+cim16:CurrentLimit a rdfs:Class ;
+  rdfs:label "CurrentLimit"@en, "Strømgrense"@nb ;
+  rdfs:subClassOf cim16:OperationalLimit .
+
+cim16:CurveStyle a rdfs:Class ;
+  rdfs:label "CurveStyle"@en .
+
+cim16:DCBaseTerminal a rdfs:Class ;
+  rdfs:label "DCBaseTerminal"@en ;
+  rdfs:subClassOf cim16:ACDCTerminal .
+
+cim16:DCConductingEquipment a rdfs:Class ;
+  rdfs:label "DCConductingEquipment"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "6"^^xsd:int ;
+  rdfs:subClassOf cim16:Equipment .
+
+cim16:DCConverterOperatingModeKind a rdfs:Class ;
+  rdfs:label "DCConverterOperatingModeKind"@en .
+
+cim16:DCConverterUnit a rdfs:Class ;
+  rdfs:label "DCConverterUnit"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "12"^^xsd:int ;
+  rdfs:subClassOf cim16:DCEquipmentContainer .
+
+cim16:DCEquipmentContainer a rdfs:Class ;
+  rdfs:label "DCEquipmentContainer"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "18"^^xsd:int ;
+  rdfs:subClassOf cim16:EquipmentContainer .
+
+cim16:DCLine a rdfs:Class ;
+  rdfs:label "DCLine"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "6"^^xsd:int ;
+  rdfs:subClassOf cim16:DCEquipmentContainer .
+
+cim16:DCLineSegment a rdfs:Class ;
+  rdfs:label "DCLineSegment"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "6"^^xsd:int ;
+  rdfs:subClassOf cim16:DCConductingEquipment .
+
+cim16:DCNode a rdfs:Class ;
+  rdfs:label "DCNode"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:DCPolarityKind a rdfs:Class ;
+  rdfs:label "DCPolarityKind"@en .
+
+cim16:DCTerminal a rdfs:Class ;
+  rdfs:label "DCTerminal"@en, "Likestrømsterminal"@nb ;
+  rdfs:subClassOf cim16:DCBaseTerminal .
+
+cim16:DCTopologicalNode a rdfs:Class ;
+  rdfs:label "DCTopologicalNode"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:Disconnector a rdfs:Class ;
+  rdfs:label "Disconnector"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "1"^^xsd:int ;
+  rdfs:subClassOf cim16:Switch .
+
+cim16:DroopSignalFeedbackKind a rdfs:Class ;
+  rdfs:label "DroopSignalFeedbackKind"@en .
+
+cim16:DynamicsFunctionBlock a rdfs:Class ;
+  rdfs:label "DynamicsFunctionBlock"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:EnergyArea a rdfs:Class ;
+  rdfs:label "EnergyArea"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:EnergyConsumer a rdfs:Class ;
+  rdfs:label "EnergyConsumer"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "825"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:Equipment a rdfs:Class ;
+  rdfs:label "Equipment"@en ;
+  form_ann:idmap_mapped "6399"^^xsd:int ;
+  form_ann:idmap_total "9793"^^xsd:int ;
+  rdfs:subClassOf cim16:PowerSystemResource .
+
+cim16:EquipmentContainer a rdfs:Class ;
+  rdfs:label "EquipmentContainer"@en ;
+  form_ann:idmap_mapped "3159"^^xsd:int ;
+  form_ann:idmap_total "4551"^^xsd:int ;
+  rdfs:subClassOf cim16:ConnectivityNodeContainer .
+
+cim16:ExcIEEEAC1A a rdfs:Class ;
+  rdfs:label "ExcIEEEAC1A"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcIEEEAC7B a rdfs:Class ;
+  rdfs:label "ExcIEEEAC7B"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcIEEEAC8B a rdfs:Class ;
+  rdfs:label "ExcIEEEAC8B"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcIEEEST1AUELselectorKind a rdfs:Class ;
+  rdfs:label "ExcIEEEST1AUELselectorKind"@en .
+
+cim16:ExcIEEEST4B a rdfs:Class ;
+  rdfs:label "ExcIEEEST4B"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcIEEEST6B a rdfs:Class ;
+  rdfs:label "ExcIEEEST6B"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcREXSFeedbackSignalKind a rdfs:Class ;
+  rdfs:label "ExcREXSFeedbackSignalKind"@en .
+
+cim16:ExcSCRX a rdfs:Class ;
+  rdfs:label "ExcSCRX"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcSEXS a rdfs:Class ;
+  rdfs:label "ExcSEXS"@en ;
+  rdfs:subClassOf cim16:ExcitationSystemDynamics .
+
+cim16:ExcST6BOELselectorKind a rdfs:Class ;
+  rdfs:label "ExcST6BOELselectorKind"@en .
+
+cim16:ExcST7BOELselectorKind a rdfs:Class ;
+  rdfs:label "ExcST7BOELselectorKind"@en .
+
+cim16:ExcST7BUELselectorKind a rdfs:Class ;
+  rdfs:label "ExcST7BUELselectorKind"@en .
+
+cim16:ExcitationSystemDynamics a rdfs:Class ;
+  rdfs:label "ExcitationSystemDynamics"@en ;
+  rdfs:subClassOf cim16:DynamicsFunctionBlock .
+
+cim16:FrancisGovernorControlKind a rdfs:Class ;
+  rdfs:label "FrancisGovernorControlKind"@en .
+
+cim16:FuelType a rdfs:Class ;
+  rdfs:label "FuelType"@en .
+
+cim16:GeneratingUnit a rdfs:Class ;
+  rdfs:label "GeneratingUnit"@en ;
+  form_ann:idmap_mapped "422"^^xsd:int ;
+  form_ann:idmap_total "915"^^xsd:int ;
+  rdfs:subClassOf cim16:Equipment .
+
+cim16:GeneratorControlSource a rdfs:Class ;
+  rdfs:label "GeneratorControlSource"@en .
+
+cim16:GenericNonLinearLoadModelKind a rdfs:Class ;
+  rdfs:label "GenericNonLinearLoadModelKind"@en .
+
+cim16:GeographicalRegion a rdfs:Class ;
+  rdfs:label "GeographicalRegion"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "18"^^xsd:int ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:GovGAST a rdfs:Class ;
+  rdfs:label "GovGAST"@en ;
+  rdfs:subClassOf cim16:TurbineGovernorDynamics .
+
+cim16:GovGAST2 a rdfs:Class ;
+  rdfs:label "GovGAST2"@en ;
+  rdfs:subClassOf cim16:TurbineGovernorDynamics .
+
+cim16:GovHydro1 a rdfs:Class ;
+  rdfs:label "GovHydro1"@en ;
+  rdfs:subClassOf cim16:TurbineGovernorDynamics .
+
+cim16:GovSteam0 a rdfs:Class ;
+  rdfs:label "GovSteam0"@en ;
+  rdfs:subClassOf cim16:TurbineGovernorDynamics .
+
+cim16:HydroEnergyConversionKind a rdfs:Class ;
+  rdfs:label "HydroEnergyConversionKind"@en .
+
+cim16:HydroPlantStorageKind a rdfs:Class ;
+  rdfs:label "HydroPlantStorageKind"@en .
+
+cim16:IdentifiedObject a rdfs:Class ;
+  rdfs:label "IdentifiedObject"@en .
+
+cim16:IfdBaseKind a rdfs:Class ;
+  rdfs:label "IfdBaseKind"@en .
+
+cim16:InputSignalKind a rdfs:Class ;
+  rdfs:label "InputSignalKind"@en .
+
+cim16:LimitTypeKind a rdfs:Class ;
+  rdfs:label "LimitTypeKind"@en .
+
+cim16:Line a rdfs:Class ;
+  rdfs:label "Line"@en, "Overføring"@nb ;
+  form_ann:idmap_mapped "58"^^xsd:int ;
+  form_ann:idmap_total "74"^^xsd:int ;
+  rdfs:subClassOf cim16:EquipmentContainer .
+
+cim16:LinearShuntCompensator a rdfs:Class ;
+  rdfs:label "LinearShuntCompensator"@en ;
+  form_ann:idmap_mapped "112"^^xsd:int ;
+  form_ann:idmap_total "528"^^xsd:int ;
+  rdfs:subClassOf cim16:ShuntCompensator .
+
+cim16:LoadArea a rdfs:Class ;
+  rdfs:label "LoadArea"@en ;
+  rdfs:subClassOf cim16:EnergyArea .
+
+cim16:LoadGroup a rdfs:Class ;
+  rdfs:label "LoadGroup"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:LoadResponseCharacteristic a rdfs:Class ;
+  rdfs:label "LoadResponseCharacteristic"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:MutualCoupling a rdfs:Class ;
+  rdfs:label "MutualCoupling"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:NonConformLoad a rdfs:Class ;
+  rdfs:label "NonConformLoad"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "110"^^xsd:int ;
+  rdfs:subClassOf cim16:EnergyConsumer .
+
+cim16:NonConformLoadGroup a rdfs:Class ;
+  rdfs:label "NonConformLoadGroup"@en ;
+  rdfs:subClassOf cim16:LoadGroup .
+
+cim16:OperationalLimit a rdfs:Class ;
+  rdfs:label "OperationalLimit"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:OperationalLimitDirectionKind a rdfs:Class ;
+  rdfs:label "OperationalLimitDirectionKind"@en .
+
+cim16:OperationalLimitSet a rdfs:Class ;
+  rdfs:label "OperationalLimitSet"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:OperationalLimitType a rdfs:Class ;
+  rdfs:label "OperationalLimitType"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:OrientationKind a rdfs:Class ;
+  rdfs:label "OrientationKind"@en .
+
+cim16:PetersenCoilModeKind a rdfs:Class ;
+  rdfs:label "PetersenCoilModeKind"@en .
+
+cim16:PhaseCode a rdfs:Class ;
+  rdfs:label "PhaseCode"@en .
+
+cim16:PowerSystemResource a rdfs:Class ;
+  rdfs:label "PowerSystemResource"@en ;
+  form_ann:idmap_mapped "9560"^^xsd:int ;
+  form_ann:idmap_total "18524"^^xsd:int ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:PowerSystemStabilizerDynamics a rdfs:Class ;
+  rdfs:label "PowerSystemStabilizerDynamics"@en ;
+  rdfs:subClassOf cim16:DynamicsFunctionBlock .
+
+cim16:PowerTransformer a rdfs:Class ;
+  rdfs:label "PowerTransformer"@en ;
+  form_ann:idmap_mapped "1683"^^xsd:int ;
+  form_ann:idmap_total "1753"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:PowerTransformerEnd a rdfs:Class ;
+  rdfs:label "PowerTransformerEnd"@en ;
+  form_ann:idmap_mapped "3393"^^xsd:int ;
+  form_ann:idmap_total "3869"^^xsd:int ;
+  rdfs:subClassOf cim16:TransformerEnd .
+
+cim16:ProprietaryParameterDynamics a rdfs:Class ;
+  rdfs:label "ProprietaryParameterDynamics"@en .
+
+cim16:PssIEEE2B a rdfs:Class ;
+  rdfs:label "PssIEEE2B"@en ;
+  rdfs:subClassOf cim16:PowerSystemStabilizerDynamics .
+
+cim16:RatioTapChanger a rdfs:Class ;
+  rdfs:label "RatioTapChanger"@en ;
+  form_ann:idmap_mapped "2"^^xsd:int ;
+  form_ann:idmap_total "2049"^^xsd:int ;
+  rdfs:subClassOf cim16:TapChanger .
+
+cim16:RegulatingCondEq a rdfs:Class ;
+  rdfs:label "RegulatingCondEq"@en ;
+  form_ann:idmap_mapped "531"^^xsd:int ;
+  form_ann:idmap_total "1443"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:RegulatingControl a rdfs:Class ;
+  rdfs:label "RegulatingControl"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "2108"^^xsd:int ;
+  rdfs:subClassOf cim16:PowerSystemResource .
+
+cim16:RegulatingControlModeKind a rdfs:Class ;
+  rdfs:label "RegulatingControlModeKind"@en .
+
+cim16:RemoteSignalKind a rdfs:Class ;
+  rdfs:label "RemoteSignalKind"@en .
+
+cim16:RotatingMachine a rdfs:Class ;
+  rdfs:label "RotatingMachine"@en ;
+  form_ann:idmap_mapped "419"^^xsd:int ;
+  form_ann:idmap_total "915"^^xsd:int ;
+  rdfs:subClassOf cim16:RegulatingCondEq .
+
+cim16:RotatingMachineDynamics a rdfs:Class ;
+  rdfs:label "RotatingMachineDynamics"@en ;
+  rdfs:subClassOf cim16:DynamicsFunctionBlock .
+
+cim16:RotorKind a rdfs:Class ;
+  rdfs:label "RotorKind"@en, "Rotortype"@nb .
+
+cim16:SVCControlMode a rdfs:Class ;
+  rdfs:label "SVCControlMode"@en .
+
+cim16:ShortCircuitRotorKind a rdfs:Class ;
+  rdfs:label "ShortCircuitRotorKind"@en .
+
+cim16:ShuntCompensator a rdfs:Class ;
+  rdfs:label "ShuntCompensator"@en ;
+  form_ann:idmap_mapped "112"^^xsd:int ;
+  form_ann:idmap_total "528"^^xsd:int ;
+  rdfs:subClassOf cim16:RegulatingCondEq .
+
+cim16:Source a rdfs:Class ;
+  rdfs:label "Source"@en .
+
+cim16:StaticLoadModelKind a rdfs:Class ;
+  rdfs:label "StaticLoadModelKind"@en .
+
+cim16:SubGeographicalRegion a rdfs:Class ;
+  rdfs:label "Sub-geografisk region"@nb, "SubGeographicalRegion"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "28"^^xsd:int ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:SubLoadArea a rdfs:Class ;
+  rdfs:label "SubLoadArea"@en ;
+  rdfs:subClassOf cim16:EnergyArea .
+
+cim16:Substation a rdfs:Class ;
+  rdfs:label "Stasjon"@nb, "Substation"@en ;
+  form_ann:idmap_mapped "1013"^^xsd:int ;
+  form_ann:idmap_total "1340"^^xsd:int ;
+  rdfs:subClassOf cim16:EquipmentContainer ;
+  skos:definition "Notat: oversatt fra engelsk \"Substation\". I den opprinnelige engelske definisjonen er \"substation\" strengt tatt definert som \"alle stasjoner som ikke driver hverken forbruk eller produksjon\". Men i praksis brukes \"substation\"-begrepet likt som det norske begrepet \"stasjon\", altså inkludert produksjon og forbruk."@nb .
+
+cim16:Switch a rdfs:Class ;
+  rdfs:label "Switch"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "1"^^xsd:int ;
+  rdfs:subClassOf cim16:ConductingEquipment .
+
+cim16:SynchronousMachine a rdfs:Class ;
+  rdfs:label "SynchronousMachine"@en ;
+  form_ann:idmap_mapped "419"^^xsd:int ;
+  form_ann:idmap_total "915"^^xsd:int ;
+  rdfs:subClassOf cim16:RotatingMachine .
+
+cim16:SynchronousMachineDetailed a rdfs:Class ;
+  rdfs:label "SynchronousMachineDetailed"@en ;
+  rdfs:subClassOf cim16:SynchronousMachineDynamics .
+
+cim16:SynchronousMachineDynamics a rdfs:Class ;
+  rdfs:label "SynchronousMachineDynamics"@en ;
+  rdfs:subClassOf cim16:RotatingMachineDynamics .
+
+cim16:SynchronousMachineKind a rdfs:Class ;
+  rdfs:label "SynchronousMachineKind"@en .
+
+cim16:SynchronousMachineModelKind a rdfs:Class ;
+  rdfs:label "SynchronousMachineModelKind"@en .
+
+cim16:SynchronousMachineOperatingMode a rdfs:Class ;
+  rdfs:label "SynchronousMachineOperatingMode"@en .
+
+cim16:SynchronousMachineSimplified a rdfs:Class ;
+  rdfs:label "SynchronousMachineSimplified"@en ;
+  rdfs:subClassOf cim16:SynchronousMachineDynamics .
+
+cim16:SynchronousMachineTimeConstantReactance a rdfs:Class ;
+  rdfs:label "SynchronousMachineTimeConstantReactance"@en ;
+  rdfs:subClassOf cim16:SynchronousMachineDetailed .
+
+cim16:SynchronousMachineUserDefined a rdfs:Class ;
+  rdfs:label "SynchronousMachineUserDefined"@en ;
+  rdfs:subClassOf cim16:SynchronousMachineDynamics .
+
+cim16:TapChanger a rdfs:Class ;
+  rdfs:label "TapChanger"@en ;
+  form_ann:idmap_mapped "2"^^xsd:int ;
+  form_ann:idmap_total "2049"^^xsd:int ;
+  rdfs:subClassOf cim16:PowerSystemResource .
+
+cim16:TapChangerControl a rdfs:Class ;
+  rdfs:label "TapChangerControl"@en ;
+  form_ann:idmap_mapped "0"^^xsd:int ;
+  form_ann:idmap_total "1175"^^xsd:int ;
+  rdfs:subClassOf cim16:RegulatingControl .
+
+cim16:Terminal a rdfs:Class ;
+  rdfs:label "Terminal"@en, "Tilkoblingspunkt"@nb ;
+  rdfs:subClassOf cim16:ACDCTerminal .
+
+cim16:TopologicalIsland a rdfs:Class ;
+  rdfs:label "TopologicalIsland"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:TopologicalNode a rdfs:Class ;
+  rdfs:label "TopologicalNode"@en ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:TransformerControlMode a rdfs:Class ;
+  rdfs:label "TransformerControlMode"@en .
+
+cim16:TransformerEnd a rdfs:Class ;
+  rdfs:label "Transformatortilkobling"@nb, "TransformerEnd"@en ;
+  form_ann:idmap_mapped "3393"^^xsd:int ;
+  form_ann:idmap_total "3869"^^xsd:int ;
+  rdfs:subClassOf cim16:IdentifiedObject .
+
+cim16:TurbineGovernorDynamics a rdfs:Class ;
+  rdfs:label "TurbineGovernorDynamics"@en ;
+  rdfs:subClassOf cim16:DynamicsFunctionBlock .
+
+cim16:UnitMultiplier a rdfs:Class ;
+  rdfs:label "UnitMultiplier"@en .
+
+cim16:UnitSymbol a rdfs:Class ;
+  rdfs:label "UnitSymbol"@en .
+
+cim16:VCompIEEEType1 a rdfs:Class ;
+  rdfs:label "VCompIEEEType1"@en ;
+  rdfs:subClassOf cim16:VoltageCompensatorDynamics .
+
+cim16:Validity a rdfs:Class ;
+  rdfs:label "Validity"@en .
+
+cim16:VoltageCompensatorDynamics a rdfs:Class ;
+  rdfs:label "VoltageCompensatorDynamics"@en ;
+  rdfs:subClassOf cim16:DynamicsFunctionBlock .
+
+cim16:VoltageLevel a rdfs:Class ;
+  rdfs:label "VoltageLevel"@en ;
+  form_ann:idmap_mapped "2088"^^xsd:int ;
+  form_ann:idmap_total "3119"^^xsd:int ;
+  rdfs:subClassOf cim16:EquipmentContainer .
+
+cim16:VsPpccControlKind a rdfs:Class ;
+  rdfs:label "VsPpccControlKind"@en .
+
+cim16:VsQpccControlKind a rdfs:Class ;
+  rdfs:label "VsQpccControlKind"@en .
+
+cim16:WindGenUnitKind a rdfs:Class ;
+  rdfs:label "WindGenUnitKind"@en .
+
+cim16:WindGeneratingUnit a rdfs:Class ;
+  rdfs:label "WindGeneratingUnit"@en ;
+  form_ann:idmap_mapped "10"^^xsd:int ;
+  form_ann:idmap_total "55"^^xsd:int ;
+  rdfs:subClassOf cim16:GeneratingUnit .
+
+cim16:WindLVRTQcontrolModesKind a rdfs:Class ;
+  rdfs:label "WindLVRTQcontrolModesKind"@en .
+
+cim16:WindLookupTableFunctionKind a rdfs:Class ;
+  rdfs:label "WindLookupTableFunctionKind"@en .
+
+cim16:WindQcontrolModesKind a rdfs:Class ;
+  rdfs:label "WindQcontrolModesKind"@en .
+
+cim16:WindingConnection a rdfs:Class ;
+  rdfs:label "WindingConnection"@en .
+
+cim16:ACDCConverter.DCTerminals a rdf:Property ;
+  rdfs:label "DCTerminals"@en ;
+  cims:inverseRoleName cim16:ACDCConverterDCTerminal.DCConductingEquipment ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ACDCConverter ;
+  rdfs:range cim16:ACDCConverterDCTerminal .
+
+cim16:ACDCConverter.PccTerminal a rdf:Property ;
+  rdfs:label "PccTerminal"@en ;
+  cims:inverseRoleName cim16:Terminal.ConverterDCSides ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ACDCConverter ;
+  rdfs:range cim16:Terminal .
+
+cim16:ACDCConverter.numberOfValves a rdf:Property ;
+  rdfs:label "numberOfValves"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ACDCConverter .
+
+cim16:ACDCConverter.p a rdf:Property ;
+  rdfs:label "p"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACDCConverter .
+
+cim16:ACDCConverter.q a rdf:Property ;
+  rdfs:label "q"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACDCConverter .
+
+cim16:ACDCConverter.targetPpcc a rdf:Property ;
+  rdfs:label "targetPpcc"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACDCConverter .
+
+cim16:ACDCConverter.targetUdc a rdf:Property ;
+  rdfs:label "targetUdc"@en ;
+  cims:dataType cim16:Voltage ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACDCConverter .
+
+cim16:ACDCConverterDCTerminal.DCConductingEquipment a rdf:Property ;
+  rdfs:label "DCConductingEquipment"@en ;
+  cims:inverseRoleName cim16:ACDCConverter.DCTerminals ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ACDCConverterDCTerminal ;
+  rdfs:range cim16:ACDCConverter .
+
+cim16:ACDCTerminal.BusNameMarker a rdf:Property ;
+  rdfs:label "BusNameMarker"@en ;
+  cims:inverseRoleName cim16:BusNameMarker.Terminal ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ACDCTerminal ;
+  rdfs:range cim16:BusNameMarker .
+
+cim16:ACDCTerminal.OperationalLimitSet a rdf:Property ;
+  rdfs:label "OperationalLimitSet"@en ;
+  cims:inverseRoleName cim16:OperationalLimitSet.Terminal ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ACDCTerminal ;
+  rdfs:range cim16:OperationalLimitSet .
+
+cim16:ACDCTerminal.connected a rdf:Property ;
+  rdfs:label "connected"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACDCTerminal .
+
+cim16:ACDCTerminal.sequenceNumber a rdf:Property ;
+  rdfs:label "sequenceNumber"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ACDCTerminal .
+
+cim16:ACLineSegment.b0ch a rdf:Property ;
+  rdfs:label "b0ch"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.bch a rdf:Property ;
+  rdfs:label "bch"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.g0ch a rdf:Property ;
+  rdfs:label "g0ch"@en ;
+  cims:dataType cim16:Conductance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.r a rdf:Property ;
+  rdfs:label "r"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.r0 a rdf:Property ;
+  rdfs:label "r0"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.shortCircuitEndTemperature a rdf:Property ;
+  rdfs:label "shortCircuitEndTemperature"@en ;
+  cims:dataType cim16:Temperature ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.x a rdf:Property ;
+  rdfs:label "x"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:ACLineSegment.x0 a rdf:Property ;
+  rdfs:label "x0"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ACLineSegment .
+
+cim16:BaseVoltage.ConductingEquipment a rdf:Property ;
+  rdfs:label "ConductingEquipment"@en ;
+  cims:inverseRoleName cim16:ConductingEquipment.BaseVoltage ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:BaseVoltage ;
+  rdfs:range cim16:ConductingEquipment .
+
+cim16:BaseVoltage.TopologicalNode a rdf:Property ;
+  rdfs:label "TopologicalNode"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.BaseVoltage ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:BaseVoltage ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:BaseVoltage.TransformerEnds a rdf:Property ;
+  rdfs:label "TransformerEnds"@en ;
+  cims:inverseRoleName cim16:TransformerEnd.BaseVoltage ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:BaseVoltage ;
+  rdfs:range cim16:TransformerEnd .
+
+cim16:BaseVoltage.VoltageLevel a rdf:Property ;
+  rdfs:label "VoltageLevel"@en ;
+  cims:inverseRoleName cim16:VoltageLevel.BaseVoltage ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:BaseVoltage ;
+  rdfs:range cim16:VoltageLevel .
+
+cim16:BaseVoltage.nominalVoltage a rdf:Property ;
+  rdfs:label "nominalVoltage"@en ;
+  cims:dataType cim16:Voltage ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:BaseVoltage .
+
+cim16:BusNameMarker.Terminal a rdf:Property ;
+  rdfs:label "Terminal"@en ;
+  cims:inverseRoleName cim16:ACDCTerminal.BusNameMarker ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:BusNameMarker ;
+  rdfs:range cim16:ACDCTerminal .
+
+cim16:ConductingEquipment.BaseVoltage a rdf:Property ;
+  rdfs:label "BaseVoltage"@en ;
+  cims:inverseRoleName cim16:BaseVoltage.ConductingEquipment ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ConductingEquipment ;
+  rdfs:range cim16:BaseVoltage .
+
+cim16:ConductingEquipment.Terminals a rdf:Property ;
+  rdfs:label "Terminals"@en ;
+  cims:inverseRoleName cim16:Terminal.ConductingEquipment ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ConductingEquipment ;
+  rdfs:range cim16:Terminal .
+
+cim16:Conductor.length a rdf:Property ;
+  rdfs:label "length"@en ;
+  cims:dataType cim16:Length ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:Conductor .
+
+cim16:ConformLoad.LoadGroup a rdf:Property ;
+  rdfs:label "LoadGroup"@en ;
+  cims:inverseRoleName cim16:ConformLoadGroup.EnergyConsumers ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ConformLoad ;
+  rdfs:range cim16:ConformLoadGroup .
+
+cim16:ConformLoadGroup.EnergyConsumers a rdf:Property ;
+  rdfs:label "EnergyConsumers"@en ;
+  cims:inverseRoleName cim16:ConformLoad.LoadGroup ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:ConformLoadGroup ;
+  rdfs:range cim16:ConformLoad .
+
+cim16:ConnectivityNode.ConnectivityNodeContainer a rdf:Property ;
+  rdfs:label "ConnectivityNodeContainer"@en ;
+  cims:inverseRoleName cim16:ConnectivityNodeContainer.ConnectivityNodes ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ConnectivityNode ;
+  rdfs:range cim16:ConnectivityNodeContainer .
+
+cim16:ConnectivityNode.Terminals a rdf:Property ;
+  rdfs:label "Terminals"@en ;
+  cims:inverseRoleName cim16:Terminal.ConnectivityNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ConnectivityNode ;
+  rdfs:range cim16:Terminal .
+
+cim16:ConnectivityNode.TopologicalNode a rdf:Property ;
+  rdfs:label "TopologicalNode"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.ConnectivityNodes ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ConnectivityNode ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:ConnectivityNodeContainer.ConnectivityNodes a rdf:Property ;
+  rdfs:label "ConnectivityNodes"@en ;
+  cims:inverseRoleName cim16:ConnectivityNode.ConnectivityNodeContainer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ConnectivityNodeContainer ;
+  rdfs:range cim16:ConnectivityNode .
+
+cim16:ConnectivityNodeContainer.TopologicalNode a rdf:Property ;
+  rdfs:label "TopologicalNode"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.ConnectivityNodeContainer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ConnectivityNodeContainer ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:ControlArea.ControlAreaGeneratingUnit a rdf:Property ;
+  rdfs:label "ControlAreaGeneratingUnit"@en ;
+  cims:inverseRoleName cim16:ControlAreaGeneratingUnit.ControlArea ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:ControlArea ;
+  rdfs:range cim16:ControlAreaGeneratingUnit .
+
+cim16:ControlArea.EnergyArea a rdf:Property ;
+  rdfs:label "EnergyArea"@en ;
+  cims:inverseRoleName cim16:EnergyArea.ControlArea ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ControlArea ;
+  rdfs:range cim16:EnergyArea .
+
+cim16:ControlArea.netInterchange a rdf:Property ;
+  rdfs:label "netInterchange"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ControlArea .
+
+cim16:ControlArea.pTolerance a rdf:Property ;
+  rdfs:label "pTolerance"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ControlArea .
+
+cim16:ControlArea.type a rdf:Property ;
+  rdfs:label "type"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ControlArea ;
+  rdfs:range cim16:ControlAreaTypeKind .
+
+cim16:ControlAreaGeneratingUnit.ControlArea a rdf:Property ;
+  rdfs:label "ControlArea"@en ;
+  cims:inverseRoleName cim16:ControlArea.ControlAreaGeneratingUnit ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ControlAreaGeneratingUnit ;
+  rdfs:range cim16:ControlArea .
+
+cim16:ControlAreaGeneratingUnit.GeneratingUnit a rdf:Property ;
+  rdfs:label "GeneratingUnit"@en ;
+  cims:inverseRoleName cim16:GeneratingUnit.ControlAreaGeneratingUnit ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ControlAreaGeneratingUnit ;
+  rdfs:range cim16:GeneratingUnit .
+
+cim16:CsConverter.maxAlpha a rdf:Property ;
+  rdfs:label "maxAlpha"@en ;
+  cims:dataType cim16:AngleDegrees ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:CsConverter .
+
+cim16:CsConverter.minAlpha a rdf:Property ;
+  rdfs:label "minAlpha"@en ;
+  cims:dataType cim16:AngleDegrees ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:CsConverter .
+
+cim16:CsConverter.operatingMode a rdf:Property ;
+  rdfs:label "operatingMode"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CsConverter ;
+  rdfs:range cim16:CsOperatingModeKind .
+
+cim16:CsConverter.pPccControl a rdf:Property ;
+  rdfs:label "pPccControl"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CsConverter ;
+  rdfs:range cim16:CsPpccControlKind .
+
+cim16:CsConverter.targetAlpha a rdf:Property ;
+  rdfs:label "targetAlpha"@en ;
+  cims:dataType cim16:AngleDegrees ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CsConverter .
+
+cim16:CsConverter.targetGamma a rdf:Property ;
+  rdfs:label "targetGamma"@en ;
+  cims:dataType cim16:AngleDegrees ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CsConverter .
+
+cim16:CsConverter.targetIdc a rdf:Property ;
+  rdfs:label "targetIdc"@en ;
+  cims:dataType cim16:CurrentFlow ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CsConverter .
+
+cim16:CurrentLimit.value a rdf:Property ;
+  rdfs:label "value"@en ;
+  cims:dataType cim16:CurrentFlow ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:CurrentLimit .
+
+cim16:DCBaseTerminal.DCNode a rdf:Property ;
+  rdfs:label "DCNode"@en ;
+  cims:inverseRoleName cim16:DCNode.DCTerminals ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCBaseTerminal ;
+  rdfs:range cim16:DCNode .
+
+cim16:DCBaseTerminal.DCTopologicalNode a rdf:Property ;
+  rdfs:label "DCTopologicalNode"@en ;
+  cims:inverseRoleName cim16:DCTopologicalNode.DCTerminals ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:DCBaseTerminal ;
+  rdfs:range cim16:DCTopologicalNode .
+
+cim16:DCConductingEquipment.DCTerminals a rdf:Property ;
+  rdfs:label "DCTerminals"@en ;
+  cims:inverseRoleName cim16:DCTerminal.DCConductingEquipment ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCConductingEquipment ;
+  rdfs:range cim16:DCTerminal .
+
+cim16:DCConverterUnit.Substation a rdf:Property ;
+  rdfs:label "Substation"@en ;
+  cims:inverseRoleName cim16:Substation.DCConverterUnit ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCConverterUnit ;
+  rdfs:range cim16:Substation .
+
+cim16:DCConverterUnit.operationMode a rdf:Property ;
+  rdfs:label "operationMode"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:DCConverterUnit ;
+  rdfs:range cim16:DCConverterOperatingModeKind .
+
+cim16:DCEquipmentContainer.DCNodes a rdf:Property ;
+  rdfs:label "DCNodes"@en ;
+  cims:inverseRoleName cim16:DCNode.DCEquipmentContainer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCEquipmentContainer ;
+  rdfs:range cim16:DCNode .
+
+cim16:DCEquipmentContainer.DCTopologicalNode a rdf:Property ;
+  rdfs:label "DCTopologicalNode"@en ;
+  cims:inverseRoleName cim16:DCTopologicalNode.DCEquipmentContainer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCEquipmentContainer ;
+  rdfs:range cim16:DCTopologicalNode .
+
+cim16:DCLine.Region a rdf:Property ;
+  rdfs:label "Region"@en ;
+  cims:inverseRoleName cim16:SubGeographicalRegion.DCLines ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCLine ;
+  rdfs:range cim16:SubGeographicalRegion .
+
+cim16:DCLineSegment.inductance a rdf:Property ;
+  rdfs:label "inductance"@en ;
+  cims:dataType cim16:Inductance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCLineSegment .
+
+cim16:DCLineSegment.resistance a rdf:Property ;
+  rdfs:label "resistance"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCLineSegment .
+
+cim16:DCNode.DCEquipmentContainer a rdf:Property ;
+  rdfs:label "DCEquipmentContainer"@en ;
+  cims:inverseRoleName cim16:DCEquipmentContainer.DCNodes ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:DCNode ;
+  rdfs:range cim16:DCEquipmentContainer .
+
+cim16:DCNode.DCTerminals a rdf:Property ;
+  rdfs:label "DCTerminals"@en ;
+  cims:inverseRoleName cim16:DCBaseTerminal.DCNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCNode ;
+  rdfs:range cim16:DCBaseTerminal .
+
+cim16:DCNode.DCTopologicalNode a rdf:Property ;
+  rdfs:label "DCTopologicalNode"@en ;
+  cims:inverseRoleName cim16:DCTopologicalNode.DCNodes ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCNode ;
+  rdfs:range cim16:DCTopologicalNode .
+
+cim16:DCTerminal.DCConductingEquipment a rdf:Property ;
+  rdfs:label "DCConductingEquipment"@en ;
+  cims:inverseRoleName cim16:DCConductingEquipment.DCTerminals ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:DCTerminal ;
+  rdfs:range cim16:DCConductingEquipment .
+
+cim16:DCTopologicalNode.DCEquipmentContainer a rdf:Property ;
+  rdfs:label "DCEquipmentContainer"@en ;
+  cims:inverseRoleName cim16:DCEquipmentContainer.DCTopologicalNode ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:DCTopologicalNode ;
+  rdfs:range cim16:DCEquipmentContainer .
+
+cim16:DCTopologicalNode.DCNodes a rdf:Property ;
+  rdfs:label "DCNodes"@en ;
+  cims:inverseRoleName cim16:DCNode.DCTopologicalNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCTopologicalNode ;
+  rdfs:range cim16:DCNode .
+
+cim16:DCTopologicalNode.DCTerminals a rdf:Property ;
+  rdfs:label "DCTerminals"@en ;
+  cims:inverseRoleName cim16:DCBaseTerminal.DCTopologicalNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:DCTopologicalNode ;
+  rdfs:range cim16:DCBaseTerminal .
+
+cim16:DynamicsFunctionBlock.enabled a rdf:Property ;
+  rdfs:label "enabled"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:DynamicsFunctionBlock .
+
+cim16:EnergyArea.ControlArea a rdf:Property ;
+  rdfs:label "ControlArea"@en ;
+  cims:inverseRoleName cim16:ControlArea.EnergyArea ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:EnergyArea ;
+  rdfs:range cim16:ControlArea .
+
+cim16:EnergyConsumer.LoadResponse a rdf:Property ;
+  rdfs:label "LoadResponse"@en ;
+  cims:inverseRoleName cim16:LoadResponseCharacteristic.EnergyConsumer ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:EnergyConsumer ;
+  rdfs:range cim16:LoadResponseCharacteristic .
+
+cim16:EnergyConsumer.p a rdf:Property ;
+  rdfs:label "p"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:EnergyConsumer .
+
+cim16:EnergyConsumer.pfixed a rdf:Property ;
+  rdfs:label "pfixed"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:EnergyConsumer .
+
+cim16:EnergyConsumer.q a rdf:Property ;
+  rdfs:label "q"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:EnergyConsumer .
+
+cim16:EnergyConsumer.qfixed a rdf:Property ;
+  rdfs:label "qfixed"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:EnergyConsumer .
+
+cim16:Equipment.EquipmentContainer a rdf:Property ;
+  rdfs:label "EquipmentContainer"@en ;
+  cims:inverseRoleName cim16:EquipmentContainer.Equipments ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:Equipment ;
+  rdfs:range cim16:EquipmentContainer .
+
+cim16:Equipment.aggregate a rdf:Property ;
+  rdfs:label "aggregate"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:Equipment .
+
+cim16:EquipmentContainer.Equipments a rdf:Property ;
+  rdfs:label "Equipments"@en ;
+  cims:inverseRoleName cim16:Equipment.EquipmentContainer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:EquipmentContainer ;
+  rdfs:range cim16:Equipment .
+
+cim16:ExcIEEEAC1A.ka a rdf:Property ;
+  rdfs:label "ka"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.kc a rdf:Property ;
+  rdfs:label "kc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.kd a rdf:Property ;
+  rdfs:label "kd"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.ke a rdf:Property ;
+  rdfs:label "ke"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.kf a rdf:Property ;
+  rdfs:label "kf"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.seve1 a rdf:Property ;
+  rdfs:label "seve1"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.seve2 a rdf:Property ;
+  rdfs:label "seve2"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.ta a rdf:Property ;
+  rdfs:label "ta"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.tb a rdf:Property ;
+  rdfs:label "tb"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.tc a rdf:Property ;
+  rdfs:label "tc"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.te a rdf:Property ;
+  rdfs:label "te"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.tf a rdf:Property ;
+  rdfs:label "tf"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.vamax a rdf:Property ;
+  rdfs:label "vamax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.vamin a rdf:Property ;
+  rdfs:label "vamin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.ve1 a rdf:Property ;
+  rdfs:label "ve1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.ve2 a rdf:Property ;
+  rdfs:label "ve2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.vrmax a rdf:Property ;
+  rdfs:label "vrmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC1A.vrmin a rdf:Property ;
+  rdfs:label "vrmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC1A .
+
+cim16:ExcIEEEAC7B.kc a rdf:Property ;
+  rdfs:label "kc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kd a rdf:Property ;
+  rdfs:label "kd"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kdr a rdf:Property ;
+  rdfs:label "kdr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.ke a rdf:Property ;
+  rdfs:label "ke"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kf1 a rdf:Property ;
+  rdfs:label "kf1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kf2 a rdf:Property ;
+  rdfs:label "kf2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kf3 a rdf:Property ;
+  rdfs:label "kf3"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kia a rdf:Property ;
+  rdfs:label "kia"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kir a rdf:Property ;
+  rdfs:label "kir"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kl a rdf:Property ;
+  rdfs:label "kl"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kp a rdf:Property ;
+  rdfs:label "kp"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kpa a rdf:Property ;
+  rdfs:label "kpa"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.kpr a rdf:Property ;
+  rdfs:label "kpr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.seve1 a rdf:Property ;
+  rdfs:label "seve1"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.seve2 a rdf:Property ;
+  rdfs:label "seve2"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.tdr a rdf:Property ;
+  rdfs:label "tdr"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.te a rdf:Property ;
+  rdfs:label "te"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.tf a rdf:Property ;
+  rdfs:label "tf"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vamax a rdf:Property ;
+  rdfs:label "vamax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vamin a rdf:Property ;
+  rdfs:label "vamin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.ve1 a rdf:Property ;
+  rdfs:label "ve1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.ve2 a rdf:Property ;
+  rdfs:label "ve2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vemin a rdf:Property ;
+  rdfs:label "vemin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vfemax a rdf:Property ;
+  rdfs:label "vfemax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vrmax a rdf:Property ;
+  rdfs:label "vrmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC7B.vrmin a rdf:Property ;
+  rdfs:label "vrmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC7B .
+
+cim16:ExcIEEEAC8B.ka a rdf:Property ;
+  rdfs:label "ka"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.kc a rdf:Property ;
+  rdfs:label "kc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.kd a rdf:Property ;
+  rdfs:label "kd"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.kdr a rdf:Property ;
+  rdfs:label "kdr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.ke a rdf:Property ;
+  rdfs:label "ke"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.kir a rdf:Property ;
+  rdfs:label "kir"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.kpr a rdf:Property ;
+  rdfs:label "kpr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.seve1 a rdf:Property ;
+  rdfs:label "seve1"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.seve2 a rdf:Property ;
+  rdfs:label "seve2"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.ta a rdf:Property ;
+  rdfs:label "ta"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.tdr a rdf:Property ;
+  rdfs:label "tdr"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.te a rdf:Property ;
+  rdfs:label "te"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.ve1 a rdf:Property ;
+  rdfs:label "ve1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.ve2 a rdf:Property ;
+  rdfs:label "ve2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.vemin a rdf:Property ;
+  rdfs:label "vemin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.vfemax a rdf:Property ;
+  rdfs:label "vfemax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.vrmax a rdf:Property ;
+  rdfs:label "vrmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEAC8B.vrmin a rdf:Property ;
+  rdfs:label "vrmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEAC8B .
+
+cim16:ExcIEEEST4B.kc a rdf:Property ;
+  rdfs:label "kc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kg a rdf:Property ;
+  rdfs:label "kg"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.ki a rdf:Property ;
+  rdfs:label "ki"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kim a rdf:Property ;
+  rdfs:label "kim"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kir a rdf:Property ;
+  rdfs:label "kir"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kp a rdf:Property ;
+  rdfs:label "kp"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kpm a rdf:Property ;
+  rdfs:label "kpm"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.kpr a rdf:Property ;
+  rdfs:label "kpr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.ta a rdf:Property ;
+  rdfs:label "ta"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.thetap a rdf:Property ;
+  rdfs:label "thetap"@en ;
+  cims:dataType cim16:AngleDegrees ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.vbmax a rdf:Property ;
+  rdfs:label "vbmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.vmmax a rdf:Property ;
+  rdfs:label "vmmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.vmmin a rdf:Property ;
+  rdfs:label "vmmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.vrmax a rdf:Property ;
+  rdfs:label "vrmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.vrmin a rdf:Property ;
+  rdfs:label "vrmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST4B.xl a rdf:Property ;
+  rdfs:label "xl"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST4B .
+
+cim16:ExcIEEEST6B.ilr a rdf:Property ;
+  rdfs:label "ilr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.kci a rdf:Property ;
+  rdfs:label "kci"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.kff a rdf:Property ;
+  rdfs:label "kff"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.kg a rdf:Property ;
+  rdfs:label "kg"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.kia a rdf:Property ;
+  rdfs:label "kia"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.klr a rdf:Property ;
+  rdfs:label "klr"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.km a rdf:Property ;
+  rdfs:label "km"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.kpa a rdf:Property ;
+  rdfs:label "kpa"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.oelin a rdf:Property ;
+  rdfs:label "oelin"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B ;
+  rdfs:range cim16:ExcST6BOELselectorKind .
+
+cim16:ExcIEEEST6B.tg a rdf:Property ;
+  rdfs:label "tg"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.vamax a rdf:Property ;
+  rdfs:label "vamax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.vamin a rdf:Property ;
+  rdfs:label "vamin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.vrmax a rdf:Property ;
+  rdfs:label "vrmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcIEEEST6B.vrmin a rdf:Property ;
+  rdfs:label "vrmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcIEEEST6B .
+
+cim16:ExcSCRX.cswitch a rdf:Property ;
+  rdfs:label "cswitch"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.emax a rdf:Property ;
+  rdfs:label "emax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.emin a rdf:Property ;
+  rdfs:label "emin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.k a rdf:Property ;
+  rdfs:label "k"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.rcrfd a rdf:Property ;
+  rdfs:label "rcrfd"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.tatb a rdf:Property ;
+  rdfs:label "tatb"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.tb a rdf:Property ;
+  rdfs:label "tb"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSCRX.te a rdf:Property ;
+  rdfs:label "te"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSCRX .
+
+cim16:ExcSEXS.efdmax a rdf:Property ;
+  rdfs:label "efdmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.efdmin a rdf:Property ;
+  rdfs:label "efdmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.emax a rdf:Property ;
+  rdfs:label "emax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.emin a rdf:Property ;
+  rdfs:label "emin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.k a rdf:Property ;
+  rdfs:label "k"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.kc a rdf:Property ;
+  rdfs:label "kc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.tatb a rdf:Property ;
+  rdfs:label "tatb"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.tb a rdf:Property ;
+  rdfs:label "tb"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.tc a rdf:Property ;
+  rdfs:label "tc"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcSEXS.te a rdf:Property ;
+  rdfs:label "te"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ExcSEXS .
+
+cim16:ExcitationSystemDynamics.PowerSystemStabilizerDynamics a rdf:Property ;
+  rdfs:label "PowerSystemStabilizerDynamics"@en ;
+  cims:inverseRoleName cim16:PowerSystemStabilizerDynamics.ExcitationSystemDynamics ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ExcitationSystemDynamics ;
+  rdfs:range cim16:PowerSystemStabilizerDynamics .
+
+cim16:ExcitationSystemDynamics.SynchronousMachineDynamics a rdf:Property ;
+  rdfs:label "SynchronousMachineDynamics"@en ;
+  cims:inverseRoleName cim16:SynchronousMachineDynamics.ExcitationSystemDynamics ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:ExcitationSystemDynamics ;
+  rdfs:range cim16:SynchronousMachineDynamics .
+
+cim16:ExcitationSystemDynamics.VoltageCompensatorDynamics a rdf:Property ;
+  rdfs:label "VoltageCompensatorDynamics"@en ;
+  cims:inverseRoleName cim16:VoltageCompensatorDynamics.ExcitationSystemDynamics ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ExcitationSystemDynamics ;
+  rdfs:range cim16:VoltageCompensatorDynamics .
+
+cim16:GeneratingUnit.ControlAreaGeneratingUnit a rdf:Property ;
+  rdfs:label "ControlAreaGeneratingUnit"@en ;
+  cims:inverseRoleName cim16:ControlAreaGeneratingUnit.GeneratingUnit ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:GeneratingUnit ;
+  rdfs:range cim16:ControlAreaGeneratingUnit .
+
+cim16:GeneratingUnit.RotatingMachine a rdf:Property ;
+  rdfs:label "RotatingMachine"@en ;
+  cims:inverseRoleName cim16:RotatingMachine.GeneratingUnit ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:GeneratingUnit ;
+  rdfs:range cim16:RotatingMachine .
+
+cim16:GeneratingUnit.initialP a rdf:Property ;
+  rdfs:label "initialP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.maxOperatingP a rdf:Property ;
+  rdfs:label "maxOperatingP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.minOperatingP a rdf:Property ;
+  rdfs:label "minOperatingP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.nominalP a rdf:Property ;
+  rdfs:label "nominalP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.normalPF a rdf:Property ;
+  rdfs:label "normalPF"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.ratedGrossMaxP a rdf:Property ;
+  rdfs:label "ratedGrossMaxP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.ratedGrossMinP a rdf:Property ;
+  rdfs:label "ratedGrossMinP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeneratingUnit.ratedNetMaxP a rdf:Property ;
+  rdfs:label "ratedNetMaxP"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+cim16:GeographicalRegion.Regions a rdf:Property ;
+  rdfs:label "Regions"@en ;
+  cims:inverseRoleName cim16:SubGeographicalRegion.Region ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:GeographicalRegion ;
+  rdfs:range cim16:SubGeographicalRegion .
+
+cim16:GovGAST.at a rdf:Property ;
+  rdfs:label "at"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.dturb a rdf:Property ;
+  rdfs:label "dturb"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.kt a rdf:Property ;
+  rdfs:label "kt"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.mwbase a rdf:Property ;
+  rdfs:label "mwbase"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.r a rdf:Property ;
+  rdfs:label "r"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.t1 a rdf:Property ;
+  rdfs:label "t1"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.t2 a rdf:Property ;
+  rdfs:label "t2"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.t3 a rdf:Property ;
+  rdfs:label "t3"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.vmax a rdf:Property ;
+  rdfs:label "vmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST.vmin a rdf:Property ;
+  rdfs:label "vmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST .
+
+cim16:GovGAST2.a a rdf:Property ;
+  rdfs:label "a"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.af1 a rdf:Property ;
+  rdfs:label "af1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.af2 a rdf:Property ;
+  rdfs:label "af2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.b a rdf:Property ;
+  rdfs:label "b"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.bf1 a rdf:Property ;
+  rdfs:label "bf1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.bf2 a rdf:Property ;
+  rdfs:label "bf2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.c a rdf:Property ;
+  rdfs:label "c"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.cf2 a rdf:Property ;
+  rdfs:label "cf2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.ecr a rdf:Property ;
+  rdfs:label "ecr"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.etd a rdf:Property ;
+  rdfs:label "etd"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.k3 a rdf:Property ;
+  rdfs:label "k3"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.k4 a rdf:Property ;
+  rdfs:label "k4"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.k5 a rdf:Property ;
+  rdfs:label "k5"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.k6 a rdf:Property ;
+  rdfs:label "k6"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.kf a rdf:Property ;
+  rdfs:label "kf"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.mwbase a rdf:Property ;
+  rdfs:label "mwbase"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.t a rdf:Property ;
+  rdfs:label "t"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.t3 a rdf:Property ;
+  rdfs:label "t3"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.t4 a rdf:Property ;
+  rdfs:label "t4"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.t5 a rdf:Property ;
+  rdfs:label "t5"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tc a rdf:Property ;
+  rdfs:label "tc"@en ;
+  cims:dataType cim16:Temperature ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tcd a rdf:Property ;
+  rdfs:label "tcd"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tf a rdf:Property ;
+  rdfs:label "tf"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tmax a rdf:Property ;
+  rdfs:label "tmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tmin a rdf:Property ;
+  rdfs:label "tmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tr a rdf:Property ;
+  rdfs:label "tr"@en ;
+  cims:dataType cim16:Temperature ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.tt a rdf:Property ;
+  rdfs:label "tt"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.w a rdf:Property ;
+  rdfs:label "w"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.x a rdf:Property ;
+  rdfs:label "x"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.y a rdf:Property ;
+  rdfs:label "y"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovGAST2.z a rdf:Property ;
+  rdfs:label "z"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovGAST2 .
+
+cim16:GovHydro1.at a rdf:Property ;
+  rdfs:label "at"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.dturb a rdf:Property ;
+  rdfs:label "dturb"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.gmax a rdf:Property ;
+  rdfs:label "gmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.gmin a rdf:Property ;
+  rdfs:label "gmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.hdam a rdf:Property ;
+  rdfs:label "hdam"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.mwbase a rdf:Property ;
+  rdfs:label "mwbase"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.qnl a rdf:Property ;
+  rdfs:label "qnl"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.rperm a rdf:Property ;
+  rdfs:label "rperm"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.rtemp a rdf:Property ;
+  rdfs:label "rtemp"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.tf a rdf:Property ;
+  rdfs:label "tf"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.tg a rdf:Property ;
+  rdfs:label "tg"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.tr a rdf:Property ;
+  rdfs:label "tr"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.tw a rdf:Property ;
+  rdfs:label "tw"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovHydro1.velm a rdf:Property ;
+  rdfs:label "velm"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovHydro1 .
+
+cim16:GovSteam0.dt a rdf:Property ;
+  rdfs:label "dt"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.mwbase a rdf:Property ;
+  rdfs:label "mwbase"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.r a rdf:Property ;
+  rdfs:label "r"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.t1 a rdf:Property ;
+  rdfs:label "t1"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.t2 a rdf:Property ;
+  rdfs:label "t2"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.t3 a rdf:Property ;
+  rdfs:label "t3"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.vmax a rdf:Property ;
+  rdfs:label "vmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:GovSteam0.vmin a rdf:Property ;
+  rdfs:label "vmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:GovSteam0 .
+
+cim16:IdentifiedObject.description a rdf:Property ;
+  rdfs:label "description"@en ;
+  cims:dataType cim16:String ;
+  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
+  rdfs:domain cim16:IdentifiedObject .
+
+cim16:IdentifiedObject.mRID a rdf:Property ;
+  rdfs:label "mRID"@en ;
+  cims:dataType cim16:String ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:IdentifiedObject .
+
+cim16:IdentifiedObject.name a rdf:Property ;
+  rdfs:label "Navn"@nb, "name"@en ;
+  cims:dataType cim16:String ;
+  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
+  rdfs:domain cim16:IdentifiedObject .
+
+cim16:Line.Region a rdf:Property ;
+  rdfs:label "Region"@en ;
+  cims:inverseRoleName cim16:SubGeographicalRegion.Lines ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:Line ;
+  rdfs:range cim16:SubGeographicalRegion .
+
+cim16:LinearShuntCompensator.b0PerSection a rdf:Property ;
+  rdfs:label "b0PerSection"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:LinearShuntCompensator .
+
+cim16:LinearShuntCompensator.bPerSection a rdf:Property ;
+  rdfs:label "bPerSection"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:LinearShuntCompensator .
+
+cim16:LinearShuntCompensator.g0PerSection a rdf:Property ;
+  rdfs:label "g0PerSection"@en ;
+  cims:dataType cim16:Conductance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:LinearShuntCompensator .
+
+cim16:LinearShuntCompensator.gPerSection a rdf:Property ;
+  rdfs:label "gPerSection"@en ;
+  cims:dataType cim16:Conductance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:LinearShuntCompensator .
+
+cim16:LoadArea.SubLoadAreas a rdf:Property ;
+  rdfs:label "SubLoadAreas"@en ;
+  cims:inverseRoleName cim16:SubLoadArea.LoadArea ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:LoadArea ;
+  rdfs:range cim16:SubLoadArea .
+
+cim16:LoadGroup.SubLoadArea a rdf:Property ;
+  rdfs:label "SubLoadArea"@en ;
+  cims:inverseRoleName cim16:SubLoadArea.LoadGroups ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:LoadGroup ;
+  rdfs:range cim16:SubLoadArea .
+
+cim16:LoadResponseCharacteristic.EnergyConsumer a rdf:Property ;
+  rdfs:label "EnergyConsumer"@en ;
+  cims:inverseRoleName cim16:EnergyConsumer.LoadResponse ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:LoadResponseCharacteristic ;
+  rdfs:range cim16:EnergyConsumer .
+
+cim16:LoadResponseCharacteristic.exponentModel a rdf:Property ;
+  rdfs:label "exponentModel"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.pConstantCurrent a rdf:Property ;
+  rdfs:label "pConstantCurrent"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.pConstantImpedance a rdf:Property ;
+  rdfs:label "pConstantImpedance"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.pConstantPower a rdf:Property ;
+  rdfs:label "pConstantPower"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.qConstantCurrent a rdf:Property ;
+  rdfs:label "qConstantCurrent"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.qConstantImpedance a rdf:Property ;
+  rdfs:label "qConstantImpedance"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:LoadResponseCharacteristic.qConstantPower a rdf:Property ;
+  rdfs:label "qConstantPower"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:LoadResponseCharacteristic .
+
+cim16:MutualCoupling.First_Terminal a rdf:Property ;
+  rdfs:label "First_Terminal"@en ;
+  cims:inverseRoleName cim16:Terminal.HasFirstMutualCoupling ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:MutualCoupling ;
+  rdfs:range cim16:Terminal .
+
+cim16:MutualCoupling.Second_Terminal a rdf:Property ;
+  rdfs:label "Second_Terminal"@en ;
+  cims:inverseRoleName cim16:Terminal.HasSecondMutualCoupling ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:MutualCoupling ;
+  rdfs:range cim16:Terminal .
+
+cim16:MutualCoupling.distance11 a rdf:Property ;
+  rdfs:label "distance11"@en ;
+  cims:dataType cim16:Length ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:MutualCoupling.distance12 a rdf:Property ;
+  rdfs:label "distance12"@en ;
+  cims:dataType cim16:Length ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:MutualCoupling.distance21 a rdf:Property ;
+  rdfs:label "distance21"@en ;
+  cims:dataType cim16:Length ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:MutualCoupling.distance22 a rdf:Property ;
+  rdfs:label "distance22"@en ;
+  cims:dataType cim16:Length ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:MutualCoupling.r0 a rdf:Property ;
+  rdfs:label "r0"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:MutualCoupling.x0 a rdf:Property ;
+  rdfs:label "x0"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:MutualCoupling .
+
+cim16:NonConformLoad.LoadGroup a rdf:Property ;
+  rdfs:label "LoadGroup"@en ;
+  cims:inverseRoleName cim16:NonConformLoadGroup.EnergyConsumers ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:NonConformLoad ;
+  rdfs:range cim16:NonConformLoadGroup .
+
+cim16:NonConformLoadGroup.EnergyConsumers a rdf:Property ;
+  rdfs:label "EnergyConsumers"@en ;
+  cims:inverseRoleName cim16:NonConformLoad.LoadGroup ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:NonConformLoadGroup ;
+  rdfs:range cim16:NonConformLoad .
+
+cim16:OperationalLimit.OperationalLimitSet a rdf:Property ;
+  rdfs:label "OperationalLimitSet"@en ;
+  cims:inverseRoleName cim16:OperationalLimitSet.OperationalLimitValue ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:OperationalLimit ;
+  rdfs:range cim16:OperationalLimitSet .
+
+cim16:OperationalLimit.OperationalLimitType a rdf:Property ;
+  rdfs:label "OperationalLimitType"@en ;
+  cims:inverseRoleName cim16:OperationalLimitType.OperationalLimit ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:OperationalLimit ;
+  rdfs:range cim16:OperationalLimitType .
+
+cim16:OperationalLimitSet.OperationalLimitValue a rdf:Property ;
+  rdfs:label "OperationalLimitValue"@en ;
+  cims:inverseRoleName cim16:OperationalLimit.OperationalLimitSet ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:OperationalLimitSet ;
+  rdfs:range cim16:OperationalLimit .
+
+cim16:OperationalLimitSet.Terminal a rdf:Property ;
+  rdfs:label "Terminal"@en ;
+  cims:inverseRoleName cim16:ACDCTerminal.OperationalLimitSet ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:OperationalLimitSet ;
+  rdfs:range cim16:ACDCTerminal .
+
+cim16:OperationalLimitType.OperationalLimit a rdf:Property ;
+  rdfs:label "OperationalLimit"@en ;
+  cims:inverseRoleName cim16:OperationalLimit.OperationalLimitType ;
+  cims:multiplicity cims:M:0..n ;
+  form_ann:excludeFromQuery true ;
+  rdfs:domain cim16:OperationalLimitType ;
+  rdfs:range cim16:OperationalLimit .
+
+cim16:OperationalLimitType.acceptableDuration a rdf:Property ;
+  rdfs:label "acceptableDuration"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:OperationalLimitType .
+
+cim16:OperationalLimitType.direction a rdf:Property ;
+  rdfs:label "direction"@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:OperationalLimitType ;
+  rdfs:range cim16:OperationalLimitDirectionKind .
+
+cim16:PowerSystemStabilizerDynamics.ExcitationSystemDynamics a rdf:Property ;
+  rdfs:label "ExcitationSystemDynamics"@en ;
+  cims:inverseRoleName cim16:ExcitationSystemDynamics.PowerSystemStabilizerDynamics ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:PowerSystemStabilizerDynamics ;
+  rdfs:range cim16:ExcitationSystemDynamics .
+
+cim16:PowerTransformer.PowerTransformerEnd a rdf:Property ;
+  rdfs:label "PowerTransformerEnd"@en ;
+  cims:inverseRoleName cim16:PowerTransformerEnd.PowerTransformer ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:PowerTransformer ;
+  rdfs:range cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.PowerTransformer a rdf:Property ;
+  rdfs:label "PowerTransformer"@en ;
+  cims:inverseRoleName cim16:PowerTransformer.PowerTransformerEnd ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd ;
+  rdfs:range cim16:PowerTransformer .
+
+cim16:PowerTransformerEnd.b a rdf:Property ;
+  rdfs:label "b"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.b0 a rdf:Property ;
+  rdfs:label "b0"@en ;
+  cims:dataType cim16:Susceptance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.connectionKind a rdf:Property ;
+  rdfs:label "connectionKind"@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:PowerTransformerEnd ;
+  rdfs:range cim16:WindingConnection .
+
+cim16:PowerTransformerEnd.g a rdf:Property ;
+  rdfs:label "g"@en ;
+  cims:dataType cim16:Conductance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.g0 a rdf:Property ;
+  rdfs:label "g0"@en ;
+  cims:dataType cim16:Conductance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.phaseAngleClock a rdf:Property ;
+  rdfs:label "phaseAngleClock"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.r a rdf:Property ;
+  rdfs:label "r"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.r0 a rdf:Property ;
+  rdfs:label "r0"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.ratedS a rdf:Property ;
+  rdfs:label "ratedS"@en ;
+  cims:dataType cim16:ApparentPower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.ratedU a rdf:Property ;
+  rdfs:label "ratedU"@en ;
+  cims:dataType cim16:Voltage ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.x a rdf:Property ;
+  rdfs:label "x"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:PowerTransformerEnd.x0 a rdf:Property ;
+  rdfs:label "x0"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PowerTransformerEnd .
+
+cim16:ProprietaryParameterDynamics.SynchronousMachineUserDefined a rdf:Property ;
+  rdfs:label "SynchronousMachineUserDefined"@en ;
+  cims:inverseRoleName cim16:SynchronousMachineUserDefined.ProprietaryParameterDynamics ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ProprietaryParameterDynamics ;
+  rdfs:range cim16:SynchronousMachineUserDefined .
+
+cim16:ProprietaryParameterDynamics.floatParameterValue a rdf:Property ;
+  rdfs:label "floatParameterValue"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:ProprietaryParameterDynamics .
+
+cim16:ProprietaryParameterDynamics.parameterNumber a rdf:Property ;
+  rdfs:label "parameterNumber"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ProprietaryParameterDynamics .
+
+cim16:PssIEEE2B.inputSignal1Type a rdf:Property ;
+  rdfs:label "inputSignal1Type"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B ;
+  rdfs:range cim16:InputSignalKind .
+
+cim16:PssIEEE2B.inputSignal2Type a rdf:Property ;
+  rdfs:label "inputSignal2Type"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B ;
+  rdfs:range cim16:InputSignalKind .
+
+cim16:PssIEEE2B.ks1 a rdf:Property ;
+  rdfs:label "ks1"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.ks2 a rdf:Property ;
+  rdfs:label "ks2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.ks3 a rdf:Property ;
+  rdfs:label "ks3"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.m a rdf:Property ;
+  rdfs:label "m"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.n a rdf:Property ;
+  rdfs:label "n"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t1 a rdf:Property ;
+  rdfs:label "t1"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t10 a rdf:Property ;
+  rdfs:label "t10"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t11 a rdf:Property ;
+  rdfs:label "t11"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t2 a rdf:Property ;
+  rdfs:label "t2"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t3 a rdf:Property ;
+  rdfs:label "t3"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t4 a rdf:Property ;
+  rdfs:label "t4"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t6 a rdf:Property ;
+  rdfs:label "t6"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t7 a rdf:Property ;
+  rdfs:label "t7"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t8 a rdf:Property ;
+  rdfs:label "t8"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.t9 a rdf:Property ;
+  rdfs:label "t9"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.tw1 a rdf:Property ;
+  rdfs:label "tw1"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.tw2 a rdf:Property ;
+  rdfs:label "tw2"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.tw3 a rdf:Property ;
+  rdfs:label "tw3"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.tw4 a rdf:Property ;
+  rdfs:label "tw4"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vsi1max a rdf:Property ;
+  rdfs:label "vsi1max"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vsi1min a rdf:Property ;
+  rdfs:label "vsi1min"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vsi2max a rdf:Property ;
+  rdfs:label "vsi2max"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vsi2min a rdf:Property ;
+  rdfs:label "vsi2min"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vstmax a rdf:Property ;
+  rdfs:label "vstmax"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:PssIEEE2B.vstmin a rdf:Property ;
+  rdfs:label "vstmin"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:PssIEEE2B .
+
+cim16:RatioTapChanger.TransformerEnd a rdf:Property ;
+  rdfs:label "TransformerEnd"@en ;
+  cims:inverseRoleName cim16:TransformerEnd.RatioTapChanger ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:RatioTapChanger ;
+  rdfs:range cim16:TransformerEnd .
+
+cim16:RatioTapChanger.stepVoltageIncrement a rdf:Property ;
+  rdfs:label "stepVoltageIncrement"@en ;
+  cims:dataType cim16:PerCent ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RatioTapChanger .
+
+cim16:RatioTapChanger.tculControlMode a rdf:Property ;
+  rdfs:label "tculControlMode"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RatioTapChanger ;
+  rdfs:range cim16:TransformerControlMode .
+
+cim16:RegulatingCondEq.RegulatingControl a rdf:Property ;
+  rdfs:label "RegulatingControl"@en ;
+  cims:inverseRoleName cim16:RegulatingControl.RegulatingCondEq ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RegulatingCondEq ;
+  rdfs:range cim16:RegulatingControl .
+
+cim16:RegulatingCondEq.controlEnabled a rdf:Property ;
+  rdfs:label "controlEnabled"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingCondEq .
+
+cim16:RegulatingControl.RegulatingCondEq a rdf:Property ;
+  rdfs:label "RegulatingCondEq"@en ;
+  cims:inverseRoleName cim16:RegulatingCondEq.RegulatingControl ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:RegulatingControl ;
+  rdfs:range cim16:RegulatingCondEq .
+
+cim16:RegulatingControl.Terminal a rdf:Property ;
+  rdfs:label "Terminal"@en ;
+  cims:inverseRoleName cim16:Terminal.RegulatingControl ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl ;
+  rdfs:range cim16:Terminal .
+
+cim16:RegulatingControl.discrete a rdf:Property ;
+  rdfs:label "discrete"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl .
+
+cim16:RegulatingControl.enabled a rdf:Property ;
+  rdfs:label "enabled"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl .
+
+cim16:RegulatingControl.mode a rdf:Property ;
+  rdfs:label "mode"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl ;
+  rdfs:range cim16:RegulatingControlModeKind .
+
+cim16:RegulatingControl.targetDeadband a rdf:Property ;
+  rdfs:label "targetDeadband"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RegulatingControl .
+
+cim16:RegulatingControl.targetValue a rdf:Property ;
+  rdfs:label "targetValue"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl .
+
+cim16:RegulatingControl.targetValueUnitMultiplier a rdf:Property ;
+  rdfs:label "targetValueUnitMultiplier"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RegulatingControl ;
+  rdfs:range cim16:UnitMultiplier .
+
+cim16:RotatingMachine.GeneratingUnit a rdf:Property ;
+  rdfs:label "GeneratingUnit"@en ;
+  cims:inverseRoleName cim16:GeneratingUnit.RotatingMachine ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachine ;
+  rdfs:range cim16:GeneratingUnit .
+
+cim16:RotatingMachine.p a rdf:Property ;
+  rdfs:label "p"@en ;
+  cims:dataType cim16:ActivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RotatingMachine .
+
+cim16:RotatingMachine.q a rdf:Property ;
+  rdfs:label "q"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:RotatingMachine .
+
+cim16:RotatingMachine.ratedS a rdf:Property ;
+  rdfs:label "ratedS"@en ;
+  cims:dataType cim16:ApparentPower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachine .
+
+cim16:RotatingMachineDynamics.damping a rdf:Property ;
+  rdfs:label "damping"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachineDynamics .
+
+cim16:RotatingMachineDynamics.inertia a rdf:Property ;
+  rdfs:label "inertia"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachineDynamics .
+
+cim16:RotatingMachineDynamics.saturationFactor a rdf:Property ;
+  rdfs:label "saturationFactor"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachineDynamics .
+
+cim16:RotatingMachineDynamics.saturationFactor120 a rdf:Property ;
+  rdfs:label "saturationFactor120"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachineDynamics .
+
+cim16:RotatingMachineDynamics.statorLeakageReactance a rdf:Property ;
+  rdfs:label "statorLeakageReactance"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:RotatingMachineDynamics .
+
+cim16:ShuntCompensator.maximumSections a rdf:Property ;
+  rdfs:label "maximumSections"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ShuntCompensator .
+
+cim16:ShuntCompensator.nomU a rdf:Property ;
+  rdfs:label "nomU"@en ;
+  cims:dataType cim16:Voltage ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ShuntCompensator .
+
+cim16:ShuntCompensator.normalSections a rdf:Property ;
+  rdfs:label "normalSections"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ShuntCompensator .
+
+cim16:ShuntCompensator.sections a rdf:Property ;
+  rdfs:label "sections"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:ShuntCompensator .
+
+cim16:SubGeographicalRegion.DCLines a rdf:Property ;
+  rdfs:label "DCLines"@en ;
+  cims:inverseRoleName cim16:DCLine.Region ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:SubGeographicalRegion ;
+  rdfs:range cim16:DCLine .
+
+cim16:SubGeographicalRegion.Lines a rdf:Property ;
+  rdfs:label "Lines"@en ;
+  cims:inverseRoleName cim16:Line.Region ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:SubGeographicalRegion ;
+  rdfs:range cim16:Line .
+
+cim16:SubGeographicalRegion.Region a rdf:Property ;
+  rdfs:label "Region"@en ;
+  cims:inverseRoleName cim16:GeographicalRegion.Regions ;
+  cims:multiplicity cims:M:1, cims:M:1..1 ;
+  rdfs:domain cim16:SubGeographicalRegion ;
+  rdfs:range cim16:GeographicalRegion .
+
+cim16:SubGeographicalRegion.Substations a rdf:Property ;
+  rdfs:label "Substations"@en ;
+  cims:inverseRoleName cim16:Substation.Region ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:SubGeographicalRegion ;
+  rdfs:range cim16:Substation .
+
+cim16:SubLoadArea.LoadArea a rdf:Property ;
+  rdfs:label "LoadArea"@en ;
+  cims:inverseRoleName cim16:LoadArea.SubLoadAreas ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:SubLoadArea ;
+  rdfs:range cim16:LoadArea .
+
+cim16:SubLoadArea.LoadGroups a rdf:Property ;
+  rdfs:label "LoadGroups"@en ;
+  cims:inverseRoleName cim16:LoadGroup.SubLoadArea ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:SubLoadArea ;
+  rdfs:range cim16:LoadGroup .
+
+cim16:Substation.DCConverterUnit a rdf:Property ;
+  rdfs:label "DCConverterUnit"@en ;
+  cims:inverseRoleName cim16:DCConverterUnit.Substation ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Substation ;
+  rdfs:range cim16:DCConverterUnit .
+
+cim16:Substation.Region a rdf:Property ;
+  rdfs:label "Region"@en ;
+  cims:inverseRoleName cim16:SubGeographicalRegion.Substations ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:Substation ;
+  rdfs:range cim16:SubGeographicalRegion .
+
+cim16:Substation.VoltageLevels a rdf:Property ;
+  rdfs:label "VoltageLevels"@en ;
+  cims:inverseRoleName cim16:VoltageLevel.Substation ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Substation ;
+  rdfs:range cim16:VoltageLevel .
+
+cim16:Switch.normalOpen a rdf:Property ;
+  rdfs:label "normalOpen"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:Switch .
+
+cim16:Switch.open a rdf:Property ;
+  rdfs:label "open"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:Switch .
+
+cim16:Switch.retained a rdf:Property ;
+  rdfs:label "retained"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:Switch .
+
+cim16:SynchronousMachine.SynchronousMachineDynamics a rdf:Property ;
+  rdfs:label "SynchronousMachineDynamics"@en ;
+  cims:inverseRoleName cim16:SynchronousMachineDynamics.SynchronousMachine ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine ;
+  rdfs:range cim16:SynchronousMachineDynamics .
+
+cim16:SynchronousMachine.earthing a rdf:Property ;
+  rdfs:label "earthing"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.earthingStarPointR a rdf:Property ;
+  rdfs:label "earthingStarPointR"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.earthingStarPointX a rdf:Property ;
+  rdfs:label "earthingStarPointX"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.maxQ a rdf:Property ;
+  rdfs:label "maxQ"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.minQ a rdf:Property ;
+  rdfs:label "minQ"@en ;
+  cims:dataType cim16:ReactivePower ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.operatingMode a rdf:Property ;
+  rdfs:label "operatingMode"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine ;
+  rdfs:range cim16:SynchronousMachineOperatingMode .
+
+cim16:SynchronousMachine.qPercent a rdf:Property ;
+  rdfs:label "qPercent"@en ;
+  cims:dataType cim16:PerCent ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.r a rdf:Property ;
+  rdfs:label "r"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.r0 a rdf:Property ;
+  rdfs:label "r0"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.r2 a rdf:Property ;
+  rdfs:label "r2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.referencePriority a rdf:Property ;
+  rdfs:label "referencePriority"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.satDirectSubtransX a rdf:Property ;
+  rdfs:label "satDirectSubtransX"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.satDirectSyncX a rdf:Property ;
+  rdfs:label "satDirectSyncX"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.satDirectTransX a rdf:Property ;
+  rdfs:label "satDirectTransX"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.type a rdf:Property ;
+  rdfs:label "type"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine ;
+  rdfs:range cim16:SynchronousMachineKind .
+
+cim16:SynchronousMachine.x0 a rdf:Property ;
+  rdfs:label "x0"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachine.x2 a rdf:Property ;
+  rdfs:label "x2"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachine .
+
+cim16:SynchronousMachineDynamics.ExcitationSystemDynamics a rdf:Property ;
+  rdfs:label "ExcitationSystemDynamics"@en ;
+  cims:inverseRoleName cim16:ExcitationSystemDynamics.SynchronousMachineDynamics ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineDynamics ;
+  rdfs:range cim16:ExcitationSystemDynamics .
+
+cim16:SynchronousMachineDynamics.SynchronousMachine a rdf:Property ;
+  rdfs:label "SynchronousMachine"@en ;
+  cims:inverseRoleName cim16:SynchronousMachine.SynchronousMachineDynamics ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:SynchronousMachineDynamics ;
+  rdfs:range cim16:SynchronousMachine .
+
+cim16:SynchronousMachineDynamics.TurbineGovernorDynamics a rdf:Property ;
+  rdfs:label "TurbineGovernorDynamics"@en ;
+  cims:inverseRoleName cim16:TurbineGovernorDynamics.SynchronousMachineDynamics ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:SynchronousMachineDynamics ;
+  rdfs:range cim16:TurbineGovernorDynamics .
+
+cim16:SynchronousMachineTimeConstantReactance.modelType a rdf:Property ;
+  rdfs:label "modelType"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance ;
+  rdfs:range cim16:SynchronousMachineModelKind .
+
+cim16:SynchronousMachineTimeConstantReactance.rotorType a rdf:Property ;
+  rdfs:label "rotorType"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance ;
+  rdfs:range cim16:RotorKind .
+
+cim16:SynchronousMachineTimeConstantReactance.tpdo a rdf:Property ;
+  rdfs:label "tpdo"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.tppdo a rdf:Property ;
+  rdfs:label "tppdo"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.tppqo a rdf:Property ;
+  rdfs:label "tppqo"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.tpqo a rdf:Property ;
+  rdfs:label "tpqo"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.xDirectSubtrans a rdf:Property ;
+  rdfs:label "xDirectSubtrans"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.xDirectSync a rdf:Property ;
+  rdfs:label "xDirectSync"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.xDirectTrans a rdf:Property ;
+  rdfs:label "xDirectTrans"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.xQuadSync a rdf:Property ;
+  rdfs:label "xQuadSync"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineTimeConstantReactance.xQuadTrans a rdf:Property ;
+  rdfs:label "xQuadTrans"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:SynchronousMachineTimeConstantReactance .
+
+cim16:SynchronousMachineUserDefined.ProprietaryParameterDynamics a rdf:Property ;
+  rdfs:label "ProprietaryParameterDynamics"@en ;
+  cims:inverseRoleName cim16:ProprietaryParameterDynamics.SynchronousMachineUserDefined ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:SynchronousMachineUserDefined ;
+  rdfs:range cim16:ProprietaryParameterDynamics .
+
+cim16:SynchronousMachineUserDefined.proprietary a rdf:Property ;
+  rdfs:label "proprietary"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:SynchronousMachineUserDefined .
+
+cim16:TapChanger.TapChangerControl a rdf:Property ;
+  rdfs:label "TapChangerControl"@en ;
+  cims:inverseRoleName cim16:TapChangerControl.TapChanger ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TapChanger ;
+  rdfs:range cim16:TapChangerControl .
+
+cim16:TapChanger.controlEnabled a rdf:Property ;
+  rdfs:label "controlEnabled"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.highStep a rdf:Property ;
+  rdfs:label "highStep"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.lowStep a rdf:Property ;
+  rdfs:label "lowStep"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.ltcFlag a rdf:Property ;
+  rdfs:label "ltcFlag"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.neutralStep a rdf:Property ;
+  rdfs:label "neutralStep"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.neutralU a rdf:Property ;
+  rdfs:label "neutralU"@en ;
+  cims:dataType cim16:Voltage ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.normalStep a rdf:Property ;
+  rdfs:label "normalStep"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChanger.step a rdf:Property ;
+  rdfs:label "step"@en ;
+  cims:dataType cim16:Simple_Float ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TapChanger .
+
+cim16:TapChangerControl.TapChanger a rdf:Property ;
+  rdfs:label "TapChanger"@en ;
+  cims:inverseRoleName cim16:TapChanger.TapChangerControl ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:TapChangerControl ;
+  rdfs:range cim16:TapChanger .
+
+cim16:Terminal.ConductingEquipment a rdf:Property ;
+  rdfs:label "ConductingEquipment"@en ;
+  cims:inverseRoleName cim16:ConductingEquipment.Terminals ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:ConductingEquipment .
+
+cim16:Terminal.ConnectivityNode a rdf:Property ;
+  rdfs:label "ConnectivityNode"@en ;
+  cims:inverseRoleName cim16:ConnectivityNode.Terminals ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:ConnectivityNode .
+
+cim16:Terminal.ConverterDCSides a rdf:Property ;
+  rdfs:label "ConverterDCSides"@en ;
+  cims:inverseRoleName cim16:ACDCConverter.PccTerminal ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:ACDCConverter .
+
+cim16:Terminal.HasFirstMutualCoupling a rdf:Property ;
+  rdfs:label "HasFirstMutualCoupling"@en ;
+  cims:inverseRoleName cim16:MutualCoupling.First_Terminal ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:MutualCoupling .
+
+cim16:Terminal.HasSecondMutualCoupling a rdf:Property ;
+  rdfs:label "HasSecondMutualCoupling"@en ;
+  cims:inverseRoleName cim16:MutualCoupling.Second_Terminal ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:MutualCoupling .
+
+cim16:Terminal.RegulatingControl a rdf:Property ;
+  rdfs:label "RegulatingControl"@en ;
+  cims:inverseRoleName cim16:RegulatingControl.Terminal ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:RegulatingControl .
+
+cim16:Terminal.TopologicalNode a rdf:Property ;
+  rdfs:label "TopologicalNode"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.Terminal ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:Terminal.TransformerEnd a rdf:Property ;
+  rdfs:label "TransformerEnd"@en ;
+  cims:inverseRoleName cim16:TransformerEnd.Terminal ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:Terminal ;
+  rdfs:range cim16:TransformerEnd .
+
+cim16:TopologicalIsland.AngleRefTopologicalNode a rdf:Property ;
+  rdfs:label "AngleRefTopologicalNode"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.AngleRefTopologicalIsland ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:TopologicalIsland ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:TopologicalIsland.TopologicalNodes a rdf:Property ;
+  rdfs:label "TopologicalNodes"@en ;
+  cims:inverseRoleName cim16:TopologicalNode.TopologicalIsland ;
+  cims:multiplicity cims:M:1..n ;
+  rdfs:domain cim16:TopologicalIsland ;
+  rdfs:range cim16:TopologicalNode .
+
+cim16:TopologicalNode.AngleRefTopologicalIsland a rdf:Property ;
+  rdfs:label "AngleRefTopologicalIsland"@en ;
+  cims:inverseRoleName cim16:TopologicalIsland.AngleRefTopologicalNode ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:TopologicalIsland .
+
+cim16:TopologicalNode.BaseVoltage a rdf:Property ;
+  rdfs:label "BaseVoltage"@en ;
+  cims:inverseRoleName cim16:BaseVoltage.TopologicalNode ;
+  cims:multiplicity cims:M:1, cims:M:1..1 ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:BaseVoltage .
+
+cim16:TopologicalNode.ConnectivityNodeContainer a rdf:Property ;
+  rdfs:label "ConnectivityNodeContainer"@en ;
+  cims:inverseRoleName cim16:ConnectivityNodeContainer.TopologicalNode ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:ConnectivityNodeContainer .
+
+cim16:TopologicalNode.ConnectivityNodes a rdf:Property ;
+  rdfs:label "ConnectivityNodes"@en ;
+  cims:inverseRoleName cim16:ConnectivityNode.TopologicalNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:ConnectivityNode .
+
+cim16:TopologicalNode.Terminal a rdf:Property ;
+  rdfs:label "Terminal"@en ;
+  cims:inverseRoleName cim16:Terminal.TopologicalNode ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:Terminal .
+
+cim16:TopologicalNode.TopologicalIsland a rdf:Property ;
+  rdfs:label "TopologicalIsland"@en ;
+  cims:inverseRoleName cim16:TopologicalIsland.TopologicalNodes ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TopologicalNode ;
+  rdfs:range cim16:TopologicalIsland .
+
+cim16:TransformerEnd.BaseVoltage a rdf:Property ;
+  rdfs:label "BaseVoltage"@en ;
+  cims:inverseRoleName cim16:BaseVoltage.TransformerEnds ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:TransformerEnd ;
+  rdfs:range cim16:BaseVoltage .
+
+cim16:TransformerEnd.RatioTapChanger a rdf:Property ;
+  rdfs:label "RatioTapChanger"@en ;
+  cims:inverseRoleName cim16:RatioTapChanger.TransformerEnd ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TransformerEnd ;
+  rdfs:range cim16:RatioTapChanger .
+
+cim16:TransformerEnd.Terminal a rdf:Property ;
+  rdfs:label "Terminal"@en ;
+  cims:inverseRoleName cim16:Terminal.TransformerEnd ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TransformerEnd ;
+  rdfs:range cim16:Terminal .
+
+cim16:TransformerEnd.endNumber a rdf:Property ;
+  rdfs:label "endNumber"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TransformerEnd .
+
+cim16:TransformerEnd.grounded a rdf:Property ;
+  rdfs:label "grounded"@en ;
+  cims:dataType cim16:Boolean ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:TransformerEnd .
+
+cim16:TransformerEnd.rground a rdf:Property ;
+  rdfs:label "rground"@en ;
+  cims:dataType cim16:Resistance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TransformerEnd .
+
+cim16:TransformerEnd.xground a rdf:Property ;
+  rdfs:label "xground"@en ;
+  cims:dataType cim16:Reactance ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TransformerEnd .
+
+cim16:TurbineGovernorDynamics.SynchronousMachineDynamics a rdf:Property ;
+  rdfs:label "SynchronousMachineDynamics"@en ;
+  cims:inverseRoleName cim16:SynchronousMachineDynamics.TurbineGovernorDynamics ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cim16:TurbineGovernorDynamics ;
+  rdfs:range cim16:SynchronousMachineDynamics .
+
+cim16:VCompIEEEType1.rc a rdf:Property ;
+  rdfs:label "rc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:VCompIEEEType1 .
+
+cim16:VCompIEEEType1.tr a rdf:Property ;
+  rdfs:label "tr"@en ;
+  cims:dataType cim16:Seconds ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:VCompIEEEType1 .
+
+cim16:VCompIEEEType1.xc a rdf:Property ;
+  rdfs:label "xc"@en ;
+  cims:dataType cim16:PU ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:VCompIEEEType1 .
+
+cim16:VoltageCompensatorDynamics.ExcitationSystemDynamics a rdf:Property ;
+  rdfs:label "ExcitationSystemDynamics"@en ;
+  cims:inverseRoleName cim16:ExcitationSystemDynamics.VoltageCompensatorDynamics ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:VoltageCompensatorDynamics ;
+  rdfs:range cim16:ExcitationSystemDynamics .
+
+cim16:VoltageLevel.BaseVoltage a rdf:Property ;
+  rdfs:label "BaseVoltage"@en, "Driftspenning"@nb ;
+  cims:inverseRoleName cim16:BaseVoltage.VoltageLevel ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:VoltageLevel ;
+  rdfs:range cim16:BaseVoltage ;
+  skos:definition "Driftspenning (nominell) for alle komponenter innenfor Spenningsnivået (samleskinnesystemet)"@nb .
+
+cim16:VoltageLevel.Substation a rdf:Property ;
+  rdfs:label "Substation"@en ;
+  cims:inverseRoleName cim16:Substation.VoltageLevels ;
+  cims:multiplicity cims:M:1 ;
+  rdfs:domain cim16:VoltageLevel ;
+  rdfs:range cim16:Substation .
+
+cim16:WindGeneratingUnit.windGenUnitType a rdf:Property ;
+  rdfs:label "windGenUnitType"@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim16:WindGeneratingUnit ;
+  rdfs:range cim16:WindGenUnitKind .
+
+entsoe_sch:IdentifiedObject.shortName a rdf:Property ;
+  rdfs:label "shortName"@en ;
+  cims:dataType cim16:String ;
+  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
+  rdfs:domain cim16:IdentifiedObject .
+
+pti:GeneratingUnit.baslod a rdf:Property ;
+  rdfs:label "baslod"@en ;
+  cims:dataType cim16:Integer ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:GeneratingUnit .
+
+pti:Resources.PSSEID a rdf:Property ;
+  rdfs:label "PSSEID"@en ;
+  cims:dataType cim16:String ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim16:TopologicalNode .
+
+cims:AssociationUsed a cims:MISSING .
+
+cims:ClassCategory a cims:MISSING .
+
+cims:belongsToCategory a cims:MISSING .
+
+cims:dataType a cims:MISSING .
+
+cims:inverseRoleName a cims:MISSING ;
+  owl:sameAs owl:inverseOf .
+
+cims:isDefault a cims:MISSING .
+
+cims:isFixed a cims:MISSING .
+
+cims:multiplicity a cims:MISSING .
+
+cims:stereotype a cims:MISSING .
+
+dct:title a cims:MISSING .
+
+entsoe_sch:OperationalLimitType.limitType a cims:MISSING .
+
+form_ann:Modelingtasks.OntologyExtensions a cims:MISSING .
+
+form_ann:Modelingtasks.luceneIndex_idmap a cims:MISSING .
+
+form_ann:Modelingtasks.modelReplacement_SystemAnalysis a cims:MISSING .
+
+form_ann:excludeFromQuery a cims:MISSING .
+
+form_ann:idmap a cims:MISSING ;
+  form_ann:excludeFromQuery true .
+
+form_ann:idmap_completed_mappings a cims:MISSING .
+
+form_ann:idmap_mapped a cims:MISSING .
+
+form_ann:idmap_status a cims:MISSING .
+
+form_ann:idmap_total a cims:MISSING .
+
+md:FullModel a cims:MISSING .
+
+md:Model.DependentOn a cims:MISSING .
+
+md:Model.created a cims:MISSING .
+
+md:Model.description a cims:MISSING .
+
+md:Model.modelingAuthoritySet a cims:MISSING .
+
+md:Model.profile a cims:MISSING .
+
+md:Model.version a cims:MISSING .
+
+psys:transitiveOver a cims:MISSING .
+
+pti:ACLineSegment.MET a cims:MISSING .
+
+pti:CsConverter.STPR a cims:MISSING .
+
+pti:CsConverter.TAP a cims:MISSING .
+
+pti:CsConverter.TMNR a cims:MISSING .
+
+pti:CsConverter.TMXR a cims:MISSING .
+
+pti:CsConverter.TRR a cims:MISSING .
+
+pti:CsConverter.compoundResistance a cims:MISSING .
+
+pti:CsConverter.rTransformer a cims:MISSING .
+
+pti:CsConverter.xTransformer a cims:MISSING .
+
+pti:DCLineSegment.METER a cims:MISSING .
+
+pti:DCLineSegment.VCMOD a cims:MISSING .
+
+pti:EnergyConsumer.dgenM a cims:MISSING .
+
+pti:EnergyConsumer.dgenP a cims:MISSING .
+
+pti:EnergyConsumer.dgenQ a cims:MISSING .
+
+pti:EnergyConsumer.interruptibleStatus a cims:MISSING .
+
+pti:GeneratingUnit.gtap a cims:MISSING .
+
+pti:GeneratingUnit.rmpct a cims:MISSING .
+
+pti:GeneratingUnit.rt a cims:MISSING .
+
+pti:GeneratingUnit.xt a cims:MISSING .
+
+pti:Line.MET a cims:MISSING .
+
+pti:Model.createdBy a cims:MISSING .
+
+pti:PowerSystemResource.PlanningZone a cims:MISSING .
+
+pti:PowerTransformer.anstar a cims:MISSING .
+
+pti:PowerTransformer.cm a cims:MISSING .
+
+pti:PowerTransformer.connectionCode a cims:MISSING .
+
+pti:PowerTransformer.cr a cims:MISSING .
+
+pti:PowerTransformer.cw a cims:MISSING .
+
+pti:PowerTransformer.cx a cims:MISSING .
+
+pti:PowerTransformer.cz a cims:MISSING .
+
+pti:PowerTransformer.isCore a cims:MISSING .
+
+pti:PowerTransformer.nmetr a cims:MISSING .
+
+pti:PowerTransformer.rma a cims:MISSING .
+
+pti:PowerTransformer.rmi a cims:MISSING .
+
+pti:PowerTransformer.vmstar a cims:MISSING .
+
+pti:PowerTransformer.zcod a cims:MISSING .
+
+pti:PowerTransformerEnd.ang a cims:MISSING .
+
+pti:PowerTransformerEnd.nomV a cims:MISSING .
+
+pti:PowerTransformerEnd.rn a cims:MISSING .
+
+pti:PowerTransformerEnd.sBase a cims:MISSING .
+
+pti:PowerTransformerEnd.xn a cims:MISSING .
+
+pti:ShuntCompensator.adjMethod a cims:MISSING .
+
+pti:ShuntCompensator.blockNumber a cims:MISSING .
+
+pti:ShuntCompensator.controlMode a cims:MISSING .
+
+pti:ShuntCompensator.rmidnt a cims:MISSING .
+
+pti:ShuntCompensator.rmpct a cims:MISSING .
+
+pti:ShuntCompensator.shuntType a cims:MISSING .
+
+pti:SynchronousMachine.rs a cims:MISSING .
+
+pti:SynchronousMachine.xs a cims:MISSING .
+
+pti:TopologicalNode.IDE a cims:MISSING .
+
+pti:TopologicalNode.PlanningZone a cims:MISSING .
+
+pti:WindGeneratingUnit.wmod a cims:MISSING .
+
+pti:WindGeneratingUnit.wpf a cims:MISSING .
+
+skos:definition a cims:MISSING .
+
+

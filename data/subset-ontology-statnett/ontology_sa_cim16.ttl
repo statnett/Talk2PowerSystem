@@ -1,0 +1,3725 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix cimr: <https://cim.ucaiug.io/rules#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix md: <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix nc-no: <https://cim4.eu/ns/nc-no#> .
+@prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix onto: <http://www.ontotext.com/> .
+@prefix so: <http://www.ontotext.com/semantic-object#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix psys: <http://proton.semanticweb.org/protonsys#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<http://entsoe.eu/CIM/SchemaExtension/3/1#IdentifiedObject.shortName> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "shortName"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#String>;
+  cims:multiplicity cims:M:1..1, cims:M:0..1 .
+
+<http://entsoe.eu/CIM/SchemaExtension/3/1#OperationalLimitType.limitType> a cims:MISSING .
+
+cims:AssociationUsed a cims:MISSING .
+
+cims:ClassCategory a cims:MISSING .
+
+cims:belongsToCategory a cims:MISSING .
+
+cims:dataType a cims:MISSING .
+
+cims:inverseRoleName a cims:MISSING;
+  owl:sameAs owl:inverseOf .
+
+cims:isDefault a cims:MISSING .
+
+cims:isFixed a cims:MISSING .
+
+cims:multiplicity a cims:MISSING .
+
+cims:stereotype a cims:MISSING .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "ACDCConverter"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "12"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.DCTerminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverterDCTerminal>;
+  rdfs:label "DCTerminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverterDCTerminal.DCConductingEquipment>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.PccTerminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "PccTerminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConverterDCSides>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.numberOfValves> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "numberOfValves"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "p"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "q"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.targetPpcc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "targetPpcc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.targetUdc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "targetUdc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverterDCTerminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:label "ACDCConverterDCTerminal"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverterDCTerminal.DCConductingEquipment>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverterDCTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "DCConductingEquipment"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.DCTerminals>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "ACDCTerminal"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.BusNameMarker> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BusNameMarker>;
+  rdfs:label "BusNameMarker"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#BusNameMarker.Terminal>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.OperationalLimitSet> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:label "OperationalLimitSet"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.Terminal>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.connected> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "connected"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.sequenceNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "sequenceNumber"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor>;
+  rdfs:label "ACLineSegment"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "1427"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1718"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.b0ch> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "b0ch"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.bch> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "bch"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.g0ch> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "g0ch"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "r"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.r0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "r0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.shortCircuitEndTemperature>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "shortCircuitEndTemperature"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Temperature>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.x> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "x"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.x0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment>;
+  rdfs:label "x0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#AsynchronousMachineKind> a rdfs:Class;
+  rdfs:label "AsynchronousMachineKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "BaseVoltage"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.ConductingEquipment> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "ConductingEquipment"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.BaseVoltage>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "TopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.BaseVoltage>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TransformerEnds> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "TransformerEnds"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.BaseVoltage>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.VoltageLevel> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:label "VoltageLevel"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.BaseVoltage>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.nominalVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:label "nominalVoltage"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BusNameMarker> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "BusNameMarker"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BusNameMarker.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#BusNameMarker>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.BusNameMarker>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Connector>;
+  rdfs:label "BusbarSection"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "2336"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "3120"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:label "ConductingEquipment"@en, "Strømførende komponent"@nb;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "5977"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "8872"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:label "BaseVoltage"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.ConductingEquipment>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.Terminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Terminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConductingEquipment>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "Conductor"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "1427"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1718"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor.length> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor>;
+  rdfs:label "length"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Length>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "ConformLoad"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "715"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad.LoadGroup> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup>;
+  rdfs:label "LoadGroup"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup.EnergyConsumers>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:label "ConformLoadGroup"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup.EnergyConsumers> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoadGroup>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad>;
+  rdfs:label "EnergyConsumers"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConformLoad.LoadGroup>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "ConnectivityNode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.ConnectivityNodeContainer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  rdfs:label "ConnectivityNodeContainer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.ConnectivityNodes>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.Terminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Terminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConnectivityNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "TopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodes>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:label "ConnectivityNodeContainer"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "3159"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "4551"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.ConnectivityNodes>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:label "ConnectivityNodes"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.ConnectivityNodeContainer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.TopologicalNode>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "TopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodeContainer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Connector> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "Connector"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "2336"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "3120"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:label "ControlArea"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "23"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.ControlAreaGeneratingUnit> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:label "ControlAreaGeneratingUnit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.ControlArea>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.EnergyArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:label "EnergyArea"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea.ControlArea>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.netInterchange> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:label "netInterchange"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.pTolerance> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:label "pTolerance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaTypeKind>;
+  rdfs:label "type"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "ControlAreaGeneratingUnit"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.ControlArea> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:label "ControlArea"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.ControlAreaGeneratingUnit>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.GeneratingUnit>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "GeneratingUnit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ControlAreaGeneratingUnit>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaTypeKind> a rdfs:Class;
+  rdfs:label "ControlAreaTypeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "CsConverter"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "12"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.maxAlpha> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:label "maxAlpha"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.minAlpha> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:label "minAlpha"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.operatingMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#CsOperatingModeKind>;
+  rdfs:label "operatingMode"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.pPccControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#CsPpccControlKind>;
+  rdfs:label "pPccControl"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.targetAlpha> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:label "targetAlpha"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.targetGamma> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:label "targetGamma"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter.targetIdc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CsConverter>;
+  rdfs:label "targetIdc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentFlow>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsOperatingModeKind> a rdfs:Class;
+  rdfs:label "CsOperatingModeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CsPpccControlKind> a rdfs:Class;
+  rdfs:label "CsPpccControlKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Currency> a rdfs:Class;
+  rdfs:label "Currency"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:label "CurrentLimit"@en, "Strømgrense"@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit.value> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit>;
+  rdfs:label "value"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentFlow>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#CurveStyle> a rdfs:Class;
+  rdfs:label "CurveStyle"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "DCBaseTerminal"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal.DCNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:label "DCNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCTerminals>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal.DCTopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:label "DCTopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCTerminals>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:label "DCConductingEquipment"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "6"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment.DCTerminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTerminal>;
+  rdfs:label "DCTerminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTerminal.DCConductingEquipment>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterOperatingModeKind> a rdfs:Class;
+  rdfs:label "DCConverterOperatingModeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:label "DCConverterUnit"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "12"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit.Substation> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:label "Substation"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.DCConverterUnit>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit.operationMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterOperatingModeKind>;
+  rdfs:label "operationMode"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:label "DCEquipmentContainer"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "18"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer.DCNodes> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:label "DCNodes"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCEquipmentContainer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer.DCTopologicalNode>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:label "DCTopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCEquipmentContainer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCLine> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:label "DCLine"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "6"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCLine.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCLine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:label "Region"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.DCLines>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCLineSegment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment>;
+  rdfs:label "DCLineSegment"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "6"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCLineSegment.inductance> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCLineSegment>;
+  rdfs:label "inductance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Inductance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCLineSegment.resistance> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCLineSegment>;
+  rdfs:label "resistance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "DCNode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCEquipmentContainer> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:label "DCEquipmentContainer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer.DCNodes>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCTerminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:label "DCTerminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal.DCNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCTopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:label "DCTopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCNodes>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCPolarityKind> a rdfs:Class;
+  rdfs:label "DCPolarityKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTerminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:label "DCTerminal"@en, "Likestrømsterminal"@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTerminal.DCConductingEquipment> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTerminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment>;
+  rdfs:label "DCConductingEquipment"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConductingEquipment.DCTerminals>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "DCTopologicalNode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCEquipmentContainer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer>;
+  rdfs:label "DCEquipmentContainer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCEquipmentContainer.DCTopologicalNode>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCNodes> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode>;
+  rdfs:label "DCNodes"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCNode.DCTopologicalNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode.DCTerminals> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DCTopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal>;
+  rdfs:label "DCTerminals"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCBaseTerminal.DCTopologicalNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Disconnector> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:label "Disconnector"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DroopSignalFeedbackKind> a rdfs:Class;
+  rdfs:label "DroopSignalFeedbackKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "DynamicsFunctionBlock"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock.enabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "enabled"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "EnergyArea"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea.ControlArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea>;
+  rdfs:label "ControlArea"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlArea.EnergyArea>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "EnergyConsumer"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "825"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.LoadResponse> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "LoadResponse"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.EnergyConsumer>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "p"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.pfixed> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "pfixed"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "q"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.qfixed> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "qfixed"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:label "Equipment"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "6399"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "9793"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.EquipmentContainer> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:label "EquipmentContainer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer.Equipments>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.aggregate> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:label "aggregate"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  rdfs:label "EquipmentContainer"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "3159"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "4551"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer.Equipments> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:label "Equipments"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.EquipmentContainer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcIEEEAC1A"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.ka> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "ka"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.kc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "kc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.kd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "kd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.ke> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "ke"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.kf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "kf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.seve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "seve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.seve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "seve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.ta> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "ta"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.tb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "tb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.tc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "tc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.te> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "te"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.tf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "tf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.vamax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "vamax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.vamin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "vamin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.ve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "ve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.ve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "ve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.vrmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "vrmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A.vrmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC1A>;
+  rdfs:label "vrmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcIEEEAC7B"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kdr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kdr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.ke> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "ke"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kf1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kf1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kf2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kf2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kf3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kf3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kia> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kia"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kir> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kir"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kl"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kp> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kp"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kpa> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kpa"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.kpr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "kpr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.seve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "seve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.seve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "seve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.tdr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "tdr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.te> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "te"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.tf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "tf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vamax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vamax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vamin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vamin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.ve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "ve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.ve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "ve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vemin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vemin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vfemax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vfemax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vrmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vrmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B.vrmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC7B>;
+  rdfs:label "vrmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcIEEEAC8B"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.ka> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "ka"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.kc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "kc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.kd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "kd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.kdr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "kdr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.ke> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "ke"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.kir> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "kir"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.kpr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "kpr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.seve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "seve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.seve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "seve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.ta> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "ta"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.tdr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "tdr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.te> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "te"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.ve1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "ve1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.ve2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "ve2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.vemin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "vemin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.vfemax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "vfemax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.vrmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "vrmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B.vrmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEAC8B>;
+  rdfs:label "vrmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST1AUELselectorKind> a rdfs:Class;
+  rdfs:label "ExcIEEEST1AUELselectorKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcIEEEST4B"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kg> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kg"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.ki> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "ki"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kim> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kim"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kir> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kir"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kp> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kp"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kpm> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kpm"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.kpr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "kpr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.ta> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "ta"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.thetap> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "thetap"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#AngleDegrees>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.vbmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "vbmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.vmmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "vmmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.vmmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "vmmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.vrmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "vrmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.vrmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "vrmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B.xl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST4B>;
+  rdfs:label "xl"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcIEEEST6B"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.ilr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "ilr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.kci> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "kci"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.kff> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "kff"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.kg> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "kg"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.kia> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "kia"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.klr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "klr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.km> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "km"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.kpa> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "kpa"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.oelin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST6BOELselectorKind>;
+  rdfs:label "oelin"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.tg> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "tg"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.vamax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "vamax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.vamin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "vamin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.vrmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "vrmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B.vrmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcIEEEST6B>;
+  rdfs:label "vrmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcREXSFeedbackSignalKind> a rdfs:Class;
+  rdfs:label "ExcREXSFeedbackSignalKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcSCRX"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.cswitch> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "cswitch"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.emax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "emax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.emin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "emin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.k> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "k"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.rcrfd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "rcrfd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.tatb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "tatb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.tb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "tb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX.te> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSCRX>;
+  rdfs:label "te"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcSEXS"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.efdmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "efdmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.efdmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "efdmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.emax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "emax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.emin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "emin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.k> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "k"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.kc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "kc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.tatb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "tatb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.tb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "tb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.tc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "tc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS.te> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcSEXS>;
+  rdfs:label "te"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST6BOELselectorKind> a rdfs:Class;
+  rdfs:label "ExcST6BOELselectorKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST7BOELselectorKind> a rdfs:Class;
+  rdfs:label "ExcST7BOELselectorKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcST7BUELselectorKind> a rdfs:Class;
+  rdfs:label "ExcST7BUELselectorKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "ExcitationSystemDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.PowerSystemStabilizerDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics>;
+  rdfs:label "PowerSystemStabilizerDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics.ExcitationSystemDynamics>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.SynchronousMachineDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.ExcitationSystemDynamics>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.VoltageCompensatorDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics>;
+  rdfs:label "VoltageCompensatorDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics.ExcitationSystemDynamics>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#FrancisGovernorControlKind> a rdfs:Class;
+  rdfs:label "FrancisGovernorControlKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#FuelType> a rdfs:Class;
+  rdfs:label "FuelType"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment>;
+  rdfs:label "GeneratingUnit"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "422"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "915"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ControlAreaGeneratingUnit>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit>;
+  rdfs:label "ControlAreaGeneratingUnit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ControlAreaGeneratingUnit.GeneratingUnit>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.RotatingMachine> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:label "RotatingMachine"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.GeneratingUnit>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.initialP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "initialP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.maxOperatingP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "maxOperatingP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.minOperatingP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "minOperatingP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.nominalP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "nominalP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.normalPF> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "normalPF"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ratedGrossMaxP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "ratedGrossMaxP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ratedGrossMinP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "ratedGrossMinP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.ratedNetMaxP> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "ratedNetMaxP"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratorControlSource> a rdfs:Class;
+  rdfs:label "GeneratorControlSource"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GenericNonLinearLoadModelKind> a rdfs:Class;
+  rdfs:label "GenericNonLinearLoadModelKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "GeographicalRegion"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "18"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion.Regions> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:label "Regions"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Region>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:label "GovGAST"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.at> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "at"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.dturb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "dturb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.kt> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "kt"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.mwbase> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "mwbase"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "r"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.t1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "t1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.t2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "t2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.t3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "t3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.vmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "vmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST.vmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST>;
+  rdfs:label "vmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:label "GovGAST2"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.a> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "a"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.af1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "af1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.af2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "af2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.b> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "b"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.bf1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "bf1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.bf2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "bf2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.c> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "c"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.cf2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "cf2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.ecr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "ecr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.etd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "etd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.k3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "k3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.k4> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "k4"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.k5> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "k5"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.k6> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "k6"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.kf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "kf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.mwbase> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "mwbase"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.t> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "t"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.t3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "t3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.t4> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "t4"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.t5> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "t5"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Temperature>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tcd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tcd"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Temperature>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.tt> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "tt"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.w> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "w"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.x> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "x"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.y> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "y"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2.z> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovGAST2>;
+  rdfs:label "z"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:label "GovHydro1"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.at> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "at"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.dturb> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "dturb"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.gmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "gmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.gmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "gmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.hdam> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "hdam"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.mwbase> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "mwbase"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.qnl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "qnl"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.rperm> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "rperm"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.rtemp> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "rtemp"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.tf> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "tf"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.tg> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "tg"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.tr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "tr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.tw> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "tw"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1.velm> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovHydro1>;
+  rdfs:label "velm"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:label "GovSteam0"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.dt> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "dt"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.mwbase> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "mwbase"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "r"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.t1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "t1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.t2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "t2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.t3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "t3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.vmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "vmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0.vmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GovSteam0>;
+  rdfs:label "vmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#HydroEnergyConversionKind> a rdfs:Class;
+  rdfs:label "HydroEnergyConversionKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#HydroPlantStorageKind> a rdfs:Class;
+  rdfs:label "HydroPlantStorageKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject> a rdfs:Class;
+  rdfs:label "IdentifiedObject"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.description> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "description"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#String>;
+  cims:multiplicity cims:M:1..1, cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.mRID> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "mRID"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#String>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.name> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "name"@en, "Navn"@nb;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#String>;
+  cims:multiplicity cims:M:1..1, cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#IfdBaseKind> a rdfs:Class;
+  rdfs:label "IfdBaseKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind> a rdfs:Class;
+  rdfs:label "InputSignalKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LimitTypeKind> a rdfs:Class;
+  rdfs:label "LimitTypeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Line> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:label "Line"@en, "Overføring"@nb;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "58"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "74"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Line.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Line>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:label "Region"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Lines>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:label "LinearShuntCompensator"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "112"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "528"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.b0PerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:label "b0PerSection"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.bPerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:label "bPerSection"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.g0PerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:label "g0PerSection"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.gPerSection> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator>;
+  rdfs:label "gPerSection"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:label "LoadArea"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea.SubLoadAreas> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  rdfs:label "SubLoadAreas"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadArea>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "LoadGroup"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup.SubLoadArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  rdfs:label "SubLoadArea"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadGroups>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "LoadResponseCharacteristic"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.EnergyConsumer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "EnergyConsumer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.LoadResponse>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.exponentModel>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "exponentModel"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantCurrent>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "pConstantCurrent"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantImpedance>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "pConstantImpedance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.pConstantPower>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "pConstantPower"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantCurrent>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "qConstantCurrent"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantImpedance>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "qConstantImpedance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.qConstantPower>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic>;
+  rdfs:label "qConstantPower"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "MutualCoupling"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.First_Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "First_Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.HasFirstMutualCoupling>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.Second_Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Second_Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.HasSecondMutualCoupling>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.distance11> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "distance11"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Length>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.distance12> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "distance12"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Length>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.distance21> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "distance21"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Length>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.distance22> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "distance22"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Length>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.r0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "r0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.x0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "x0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer>;
+  rdfs:label "NonConformLoad"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "110"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad.LoadGroup> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup>;
+  rdfs:label "LoadGroup"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup.EnergyConsumers>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:label "NonConformLoadGroup"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup.EnergyConsumers> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoadGroup>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad>;
+  rdfs:label "EnergyConsumers"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#NonConformLoad.LoadGroup>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "OperationalLimit"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitSet> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:label "OperationalLimitSet"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.OperationalLimitValue>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitType> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:label "OperationalLimitType"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.OperationalLimit>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind> a rdfs:Class;
+  rdfs:label "OperationalLimitDirectionKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "OperationalLimitSet"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.OperationalLimitValue>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:label "OperationalLimitValue"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitSet>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.OperationalLimitSet>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "OperationalLimitType"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.OperationalLimit> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit>;
+  rdfs:label "OperationalLimit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.OperationalLimitType>;
+  cims:multiplicity cims:M:0..n;
+  <https://form.statnett.no/schema/annotation#excludeFromQuery> true .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.acceptableDuration>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:label "acceptableDuration"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.direction> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind>;
+  rdfs:label "direction"@en;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#OrientationKind> a rdfs:Class;
+  rdfs:label "OrientationKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PetersenCoilModeKind> a rdfs:Class;
+  rdfs:label "PetersenCoilModeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode> a rdfs:Class;
+  rdfs:label "PhaseCode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "PowerSystemResource"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "9560"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "18524"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "PowerSystemStabilizerDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics.ExcitationSystemDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcitationSystemDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.PowerSystemStabilizerDynamics>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "PowerTransformer"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "1683"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1753"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer.PowerTransformerEnd> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "PowerTransformerEnd"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.PowerTransformer>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "PowerTransformerEnd"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "3393"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "3869"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.PowerTransformer> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer>;
+  rdfs:label "PowerTransformer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer.PowerTransformerEnd>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.b> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "b"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.b0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "b0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Susceptance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.connectionKind> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection>;
+  rdfs:label "connectionKind"@en;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.g> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "g"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.g0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "g0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.phaseAngleClock> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "phaseAngleClock"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "r"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.r0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "r0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.ratedS> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "ratedS"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ApparentPower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.ratedU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "ratedU"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.x> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "x"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.x0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd>;
+  rdfs:label "x0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics> a rdfs:Class;
+  rdfs:label "ProprietaryParameterDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics.SynchronousMachineUserDefined>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined>;
+  rdfs:label "SynchronousMachineUserDefined"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined.ProprietaryParameterDynamics>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics.floatParameterValue>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics>;
+  rdfs:label "floatParameterValue"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics.parameterNumber>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics>;
+  rdfs:label "parameterNumber"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemStabilizerDynamics>;
+  rdfs:label "PssIEEE2B"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.inputSignal1Type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind>;
+  rdfs:label "inputSignal1Type"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.inputSignal2Type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#InputSignalKind>;
+  rdfs:label "inputSignal2Type"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.ks1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "ks1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.ks2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "ks2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.ks3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "ks3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.m> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "m"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.n> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "n"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t10> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t10"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t11> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t11"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t4> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t4"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t6> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t6"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t7> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t7"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t8> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t8"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.t9> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "t9"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.tw1> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "tw1"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.tw2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "tw2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.tw3> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "tw3"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.tw4> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "tw4"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vsi1max> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vsi1max"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vsi1min> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vsi1min"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vsi2max> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vsi2max"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vsi2min> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vsi2min"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vstmax> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vstmax"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B.vstmin> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#PssIEEE2B>;
+  rdfs:label "vstmin"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "RatioTapChanger"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "2"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "2049"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.TransformerEnd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "TransformerEnd"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.RatioTapChanger>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.stepVoltageIncrement> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:label "stepVoltageIncrement"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PerCent>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.tculControlMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode>;
+  rdfs:label "tculControlMode"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "RegulatingCondEq"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "531"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1443"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.RegulatingControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "RegulatingControl"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.RegulatingCondEq>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.controlEnabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:label "controlEnabled"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:label "RegulatingControl"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "2108"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.RegulatingCondEq> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:label "RegulatingCondEq"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.RegulatingControl>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.RegulatingControl>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.discrete> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "discrete"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.enabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "enabled"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.mode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind>;
+  rdfs:label "mode"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetDeadband> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "targetDeadband"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetValue> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "targetValue"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.targetValueUnitMultiplier>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier>;
+  rdfs:label "targetValueUnitMultiplier"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind> a rdfs:Class;
+  rdfs:label "RegulatingControlModeKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RemoteSignalKind> a rdfs:Class;
+  rdfs:label "RemoteSignalKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:label "RotatingMachine"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "419"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "915"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.GeneratingUnit> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "GeneratingUnit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.RotatingMachine>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.p> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:label "p"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ActivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.q> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:label "q"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.ratedS> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:label "ratedS"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ApparentPower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "RotatingMachineDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics.damping> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "damping"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics.inertia> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "inertia"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics.saturationFactor>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "saturationFactor"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics.saturationFactor120>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "saturationFactor120"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics.statorLeakageReactance>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "statorLeakageReactance"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind> a rdfs:Class;
+  rdfs:label "RotorKind"@en, "Rotortype"@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SVCControlMode> a rdfs:Class;
+  rdfs:label "SVCControlMode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShortCircuitRotorKind> a rdfs:Class;
+  rdfs:label "ShortCircuitRotorKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq>;
+  rdfs:label "ShuntCompensator"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "112"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "528"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.maximumSections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:label "maximumSections"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.nomU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:label "nomU"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.normalSections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:label "normalSections"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.sections> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator>;
+  rdfs:label "sections"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Source> a rdfs:Class;
+  rdfs:label "Source"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#StaticLoadModelKind> a rdfs:Class;
+  rdfs:label "StaticLoadModelKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "SubGeographicalRegion"@en, "Sub-geografisk region"@nb;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "28"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.DCLines> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCLine>;
+  rdfs:label "DCLines"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCLine.Region>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Lines> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Line>;
+  rdfs:label "Lines"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Line.Region>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion>;
+  rdfs:label "Region"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion.Regions>;
+  cims:multiplicity cims:M:1..1, cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Substations> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:label "Substations"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.Region>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyArea>;
+  rdfs:label "SubLoadArea"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadArea> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea>;
+  rdfs:label "LoadArea"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadArea.SubLoadAreas>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea.LoadGroups> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SubLoadArea>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup>;
+  rdfs:label "LoadGroups"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadGroup.SubLoadArea>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:label "Substation"@en, "Stasjon"@nb;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "1013"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1340"^^xsd:int;
+  skos:definition "Notat: oversatt fra engelsk \"Substation\". I den opprinnelige engelske definisjonen er \"substation\" strengt tatt definert som \"alle stasjoner som ikke driver hverken forbruk eller produksjon\". Men i praksis brukes \"substation\"-begrepet likt som det norske begrepet \"stasjon\", altså inkludert produksjon og forbruk."@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.DCConverterUnit> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit>;
+  rdfs:label "DCConverterUnit"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#DCConverterUnit.Substation>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.Region> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion>;
+  rdfs:label "Region"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.Substations>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.VoltageLevels> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:label "VoltageLevels"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Substation>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "Switch"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.normalOpen> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:label "normalOpen"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.open> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:label "open"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.retained> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch>;
+  rdfs:label "retained"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine>;
+  rdfs:label "SynchronousMachine"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "419"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "915"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.SynchronousMachineDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.SynchronousMachine>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.earthing> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "earthing"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.earthingStarPointR> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "earthingStarPointR"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.earthingStarPointX> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "earthingStarPointX"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.maxQ> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "maxQ"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.minQ> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "minQ"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#ReactivePower>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.operatingMode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineOperatingMode>;
+  rdfs:label "operatingMode"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.qPercent> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "qPercent"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PerCent>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.r> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "r"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.r0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "r0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.r2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "r2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.referencePriority> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "referencePriority"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.satDirectSubtransX> a
+    rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "satDirectSubtransX"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.satDirectSyncX> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "satDirectSyncX"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.satDirectTransX> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "satDirectTransX"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.type> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind>;
+  rdfs:label "type"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.x0> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "x0"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.x2> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "x2"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDetailed> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineDetailed"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachineDynamics>;
+  rdfs:label "SynchronousMachineDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.ExcitationSystemDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcitationSystemDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.SynchronousMachineDynamics>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.SynchronousMachine>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine>;
+  rdfs:label "SynchronousMachine"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.SynchronousMachineDynamics>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.TurbineGovernorDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:label "TurbineGovernorDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics.SynchronousMachineDynamics>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind> a rdfs:Class;
+  rdfs:label "SynchronousMachineKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind> a rdfs:Class;
+  rdfs:label "SynchronousMachineModelKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineOperatingMode> a rdfs:Class;
+  rdfs:label "SynchronousMachineOperatingMode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineSimplified> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineSimplified"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>
+  a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDetailed>;
+  rdfs:label "SynchronousMachineTimeConstantReactance"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.modelType>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineModelKind>;
+  rdfs:label "modelType"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.rotorType>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RotorKind>;
+  rdfs:label "rotorType"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.tpdo>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "tpdo"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.tppdo>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "tppdo"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.tppqo>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "tppqo"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.tpqo>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "tpqo"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.xDirectSubtrans>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "xDirectSubtrans"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.xDirectSync>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "xDirectSync"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.xDirectTrans>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "xDirectTrans"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.xQuadSync>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "xQuadSync"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance.xQuadTrans>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineTimeConstantReactance>;
+  rdfs:label "xQuadTrans"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineUserDefined"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined.ProprietaryParameterDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics>;
+  rdfs:label "ProprietaryParameterDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ProprietaryParameterDynamics.SynchronousMachineUserDefined>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined.proprietary>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineUserDefined>;
+  rdfs:label "proprietary"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerSystemResource>;
+  rdfs:label "TapChanger"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "2"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "2049"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.TapChangerControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl>;
+  rdfs:label "TapChangerControl"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl.TapChanger>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.controlEnabled> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "controlEnabled"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.highStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "highStep"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.lowStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "lowStep"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.ltcFlag> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "ltcFlag"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.neutralStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "neutralStep"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.neutralU> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "neutralU"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Voltage>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.normalStep> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "normalStep"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.step> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "step"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Simple_Float>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "TapChangerControl"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "0"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "1175"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl.TapChanger> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger>;
+  rdfs:label "TapChanger"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.TapChangerControl>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal>;
+  rdfs:label "Terminal"@en, "Tilkoblingspunkt"@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConductingEquipment> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment>;
+  rdfs:label "ConductingEquipment"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.Terminals>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConnectivityNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:label "ConnectivityNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.Terminals>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.ConverterDCSides> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter>;
+  rdfs:label "ConverterDCSides"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCConverter.PccTerminal>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.HasFirstMutualCoupling> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "HasFirstMutualCoupling"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.First_Terminal>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.HasSecondMutualCoupling> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling>;
+  rdfs:label "HasSecondMutualCoupling"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#MutualCoupling.Second_Terminal>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.RegulatingControl> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl>;
+  rdfs:label "RegulatingControl"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.Terminal>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TopologicalNode> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "TopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.Terminal>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TransformerEnd> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "TransformerEnd"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.Terminal>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "TopologicalIsland"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.AngleRefTopologicalNode>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "AngleRefTopologicalNode"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.AngleRefTopologicalIsland>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.TopologicalNodes> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "TopologicalNodes"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.TopologicalIsland>;
+  cims:multiplicity cims:M:1..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "TopologicalNode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.AngleRefTopologicalIsland>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:label "AngleRefTopologicalIsland"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.AngleRefTopologicalNode>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:label "BaseVoltage"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TopologicalNode>;
+  cims:multiplicity cims:M:1..1, cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodeContainer>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer>;
+  rdfs:label "ConnectivityNodeContainer"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNodeContainer.TopologicalNode>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.ConnectivityNodes> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode>;
+  rdfs:label "ConnectivityNodes"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.TopologicalNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TopologicalNode>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode.TopologicalIsland> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland>;
+  rdfs:label "TopologicalIsland"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalIsland.TopologicalNodes>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode> a rdfs:Class;
+  rdfs:label "TransformerControlMode"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject>;
+  rdfs:label "TransformerEnd"@en, "Transformatortilkobling"@nb;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "3393"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "3869"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:label "BaseVoltage"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.TransformerEnds>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.RatioTapChanger> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger>;
+  rdfs:label "RatioTapChanger"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.TransformerEnd>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.Terminal> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal>;
+  rdfs:label "Terminal"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.TransformerEnd>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.endNumber> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "endNumber"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.grounded> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "grounded"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Boolean>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.rground> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "rground"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Resistance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.xground> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd>;
+  rdfs:label "xground"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Reactance>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "TurbineGovernorDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics.SynchronousMachineDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TurbineGovernorDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics>;
+  rdfs:label "SynchronousMachineDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineDynamics.TurbineGovernorDynamics>;
+  cims:multiplicity cims:M:0..n .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier> a rdfs:Class;
+  rdfs:label "UnitMultiplier"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol> a rdfs:Class;
+  rdfs:label "UnitSymbol"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics>;
+  rdfs:label "VCompIEEEType1"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1.rc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1>;
+  rdfs:label "rc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1.tr> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1>;
+  rdfs:label "tr"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Seconds>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1.xc> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VCompIEEEType1>;
+  rdfs:label "xc"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#PU>;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#Validity> a rdfs:Class;
+  rdfs:label "Validity"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#DynamicsFunctionBlock>;
+  rdfs:label "VoltageCompensatorDynamics"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics.ExcitationSystemDynamics>
+  a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageCompensatorDynamics>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics>;
+  rdfs:label "ExcitationSystemDynamics"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#ExcitationSystemDynamics.VoltageCompensatorDynamics>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#EquipmentContainer>;
+  rdfs:label "VoltageLevel"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "2088"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "3119"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.BaseVoltage> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage>;
+  rdfs:label "BaseVoltage"@en, "Driftspenning"@nb;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.VoltageLevel>;
+  cims:multiplicity cims:M:1;
+  skos:definition "Driftspenning (nominell) for alle komponenter innenfor Spenningsnivået (samleskinnesystemet)"@nb .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.Substation> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation>;
+  rdfs:label "Substation"@en;
+  cims:inverseRoleName <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.VoltageLevels>;
+  cims:multiplicity cims:M:1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VsPpccControlKind> a rdfs:Class;
+  rdfs:label "VsPpccControlKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#VsQpccControlKind> a rdfs:Class;
+  rdfs:label "VsQpccControlKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindGenUnitKind> a rdfs:Class;
+  rdfs:label "WindGenUnitKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindGeneratingUnit> a rdfs:Class;
+  rdfs:subClassOf <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "WindGeneratingUnit"@en;
+  <https://form.statnett.no/schema/annotation#idmap_mapped> "10"^^xsd:int;
+  <https://form.statnett.no/schema/annotation#idmap_total> "55"^^xsd:int .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindGeneratingUnit.windGenUnitType> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#WindGeneratingUnit>;
+  rdfs:range <http://iec.ch/TC57/2013/CIM-schema-cim16#WindGenUnitKind>;
+  rdfs:label "windGenUnitType"@en;
+  cims:multiplicity cims:M:1..1 .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindLVRTQcontrolModesKind> a rdfs:Class;
+  rdfs:label "WindLVRTQcontrolModesKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindLookupTableFunctionKind> a rdfs:Class;
+  rdfs:label "WindLookupTableFunctionKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindQcontrolModesKind> a rdfs:Class;
+  rdfs:label "WindQcontrolModesKind"@en .
+
+<http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection> a rdfs:Class;
+  rdfs:label "WindingConnection"@en .
+
+md:FullModel a cims:MISSING .
+
+md:Model.DependentOn a cims:MISSING .
+
+md:Model.created a cims:MISSING .
+
+md:Model.description a cims:MISSING .
+
+md:Model.modelingAuthoritySet a cims:MISSING .
+
+md:Model.profile a cims:MISSING .
+
+md:Model.version a cims:MISSING .
+
+psys:transitiveOver a cims:MISSING .
+
+dct:title a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ACLineSegment.MET> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.STPR> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.TAP> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.TMNR> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.TMXR> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.TRR> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.compoundResistance> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.rTransformer> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#CsConverter.xTransformer> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#DCLineSegment.METER> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#DCLineSegment.VCMOD> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#EnergyConsumer.dgenM> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#EnergyConsumer.dgenP> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#EnergyConsumer.dgenQ> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#EnergyConsumer.interruptibleStatus> a
+    cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#GeneratingUnit.baslod> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit>;
+  rdfs:label "baslod"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#Integer>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#GeneratingUnit.gtap> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#GeneratingUnit.rmpct> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#GeneratingUnit.rt> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#GeneratingUnit.xt> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#Line.MET> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#Model.createdBy> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerSystemResource.PlanningZone> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.anstar> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.cm> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.connectionCode> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.cr> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.cw> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.cx> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.cz> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.isCore> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.nmetr> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.rma> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.rmi> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.vmstar> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformer.zcod> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformerEnd.ang> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformerEnd.nomV> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformerEnd.rn> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformerEnd.sBase> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#PowerTransformerEnd.xn> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#Resources.PSSEID> a rdf:Property;
+  rdfs:domain <http://iec.ch/TC57/2013/CIM-schema-cim16#TopologicalNode>;
+  rdfs:label "PSSEID"@en;
+  cims:dataType <http://iec.ch/TC57/2013/CIM-schema-cim16#String>;
+  cims:multiplicity cims:M:0..1 .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.adjMethod> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.blockNumber> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.controlMode> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.rmidnt> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.rmpct> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#ShuntCompensator.shuntType> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#SynchronousMachine.rs> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#SynchronousMachine.xs> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#TopologicalNode.IDE> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#TopologicalNode.PlanningZone> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#WindGeneratingUnit.wmod> a cims:MISSING .
+
+<http://www.pti-us.com/PTI_CIM-schema-cim16#WindGeneratingUnit.wpf> a cims:MISSING .
+
+skos:definition a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#Modelingtasks.OntologyExtensions> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#Modelingtasks.luceneIndex_idmap> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#Modelingtasks.modelReplacement_SystemAnalysis>
+  a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#excludeFromQuery> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#idmap> a cims:MISSING;
+  <https://form.statnett.no/schema/annotation#excludeFromQuery> true .
+
+<https://form.statnett.no/schema/annotation#idmap_completed_mappings> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#idmap_mapped> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#idmap_status> a cims:MISSING .
+
+<https://form.statnett.no/schema/annotation#idmap_total> a cims:MISSING .
