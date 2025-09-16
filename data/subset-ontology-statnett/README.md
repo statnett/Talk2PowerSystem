@@ -174,4 +174,5 @@ cut -d: -f1 statnett-terms-MISSING.txt|uniq -c
 |  3 | skos       | External, TODO add it                                        |
 |  1 | statnett   | Statnett extension (statnett:PetersenCoil.mode)              |
 |  8 | uml1       | UML, not used on instance data                               |
+
 "TODO" is something that Graphwise can fix, the rest are for Statnett
