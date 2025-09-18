@@ -1,0 +1,144 @@
+@prefix unit:         <http://qudt.org/vocab/unit/> .
+@prefix qudt:         <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qkdv:         <http://qudt.org/vocab/dimensionvector/> .
+@prefix sou:          <http://qudt.org/vocab/sou/> .
+@prefix cim:          <https://cim.ucaiug.io/ns#> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:          <http://purl.org/dc/terms/> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+
+unit:CCY_NOK-PER-MegaW-HR
+    a qudt:Unit ;
+    qudt:applicableSystem sou:SI ;
+    qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
+    qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10 ;
+    qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
+    qudt:hasFactorUnit [
+                           qudt:exponent 1 ;
+                           qudt:hasUnit unit:CCY_NOK ;
+                       ] ;
+    qudt:hasFactorUnit [
+          qudt:exponent -1 ;
+          qudt:hasUnit unit:HR ;
+      ] ;
+    qudt:hasFactorUnit [
+          qudt:exponent -1 ;
+          qudt:hasUnit unit:MegaW ;
+      ] ;
+    qudt:hasQuantityKind quantitykind:CostPerEnergy ;
+    qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
+    qudt:symbol "NOK/(MW·h)" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+    rdfs:label "Norwegian Krone per Megawatt Hour" ;
+    rdfs:label "Norwegian Krone per Megawatt Hour"@en ;
+.
+quantitykind:CostPerEnergy qudt:applicableUnit unit:CCY_NOK-PER-MegaW-HR .
+
+
+unit:CCY_EUR-PER-MegaW-HR
+    a qudt:Unit ;
+    qudt:applicableSystem sou:SI ;
+    qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
+    qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10 ;
+    qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
+    qudt:hasFactorUnit [
+        qudt:exponent -1 ;
+        qudt:hasUnit unit:HR ;
+        ] ;
+    qudt:hasFactorUnit [
+        qudt:exponent -1 ;
+        qudt:hasUnit unit:MegaW ;
+        ] ;
+    qudt:hasFactorUnit [
+        qudt:exponent 1 ;
+        qudt:hasUnit unit:CCY_EUR ;
+        ] ;
+    qudt:hasQuantityKind quantitykind:CostPerEnergy ;
+    qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
+    qudt:symbol "€/(MW·h)" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+    rdfs:label "Euro per Megawatt Hour" ;
+    rdfs:label "Euro per Megawatt Hour"@en ;
+.
+quantitykind:CostPerEnergy qudt:applicableUnit unit:CCY_EUR-PER-MegaW-HR .
+
+## exchange rate
+
+unit:CCY_DKK-PER-CCY_EUR
+    a qudt:Unit ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_DKK;
+        qudt:exponent 1
+        ];
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_EUR;
+        qudt:exponent -1
+        ];
+    rdfs:label "Danish Krone per Euro" ;
+    qudt:symbol "DKK/EUR" ;
+    qudt:plainTextDescription "Exchange rate of Danish Krone to Euros" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+.
+
+unit:CCY_NOK-PER-CCY_EUR
+    a qudt:Unit ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_NOK;
+        qudt:exponent 1
+        ];
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_EUR;
+        qudt:exponent -1
+        ];
+    rdfs:label "Norwegian Krone per Euro" ;
+    qudt:symbol "NOK/EUR" ;
+    qudt:plainTextDescription "Exchange rate of Norwegian Krone to Euros" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+.
+
+unit:CCY_SEK-PER-CCY_EUR
+    a qudt:Unit ;
+    qudt:hasQuantityKind quantitykind:ExchangeRate ;
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_SEK;
+        qudt:exponent 1
+        ];
+    qudt:hasFactorUnit [
+        qudt:hasUnit unit:CCY_EUR;
+        qudt:exponent -1
+        ];
+    rdfs:label "Swedish Krona per Euro" ;
+    qudt:symbol "SEK/EUR" ;
+    qudt:plainTextDescription "Exchange rate of Swedish Krona to Euros" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/unit> ;
+.
+
+quantitykind:ExchangeRate
+    a qudt:QuantityKind ;
+    qudt:applicableUnit unit:CCY_NOK-PER-CCY_EUR ;
+    qudt:applicableUnit unit:CCY_SEK-PER-CCY_EUR ;
+    qudt:applicableUnit unit:CCY_DKK-PER-CCY_EUR ;
+    qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ; ## see https://github.com/qudt/qudt-public-repo/issues/1283
+    qudt:informativeReference "https://en.wikipedia.org/wiki/Exchange_rate"^^xsd:anyURI ;
+    qudt:plainTextDescription "Rate at which one currency will be exchanged for another currency" ;
+    rdfs:comment "Applicable units are fractions of two qudt:CurrencyUnit" ;
+    rdfs:isDefinedBy <http://qudt.org/vocab/quantitykind> ;
+    rdfs:label "Exchange rate"@en .
+
+# TODO more terms in need of definition
+# https://github.com/statnett/Talk2PowerSystem_PM/issues/213
+
+#quantitykind:ActivePowerChangeRate
+#quantitykind:ActivePowerPerCurrentFlow
+#quantitykind:ActivePowerPerFrequency
+#quantitykind:VoltagePerReactivePower
+#unit:V-PER-V-A_Reactive
+#unit:W-PER-A
+#unit:W-PER-SEC
+#unit:W-PER-HZ
+
