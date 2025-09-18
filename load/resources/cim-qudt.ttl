@@ -17,16 +17,16 @@ unit:CCY_NOK-PER-MegaW-HR
     qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10 ;
     qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
     qudt:hasFactorUnit [
+                           qudt:exponent 1 ;
+                           qudt:hasUnit unit:CCY_NOK ;
+                       ] ;
+    qudt:hasFactorUnit [
           qudt:exponent -1 ;
           qudt:hasUnit unit:HR ;
       ] ;
     qudt:hasFactorUnit [
           qudt:exponent -1 ;
           qudt:hasUnit unit:MegaW ;
-      ] ;
-    qudt:hasFactorUnit [
-          qudt:exponent 1 ;
-          qudt:hasUnit unit:CCY_NOK ;
       ] ;
     qudt:hasQuantityKind quantitykind:CostPerEnergy ;
     qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
@@ -123,7 +123,7 @@ quantitykind:ExchangeRate
     qudt:applicableUnit unit:CCY_NOK-PER-CCY_EUR ;
     qudt:applicableUnit unit:CCY_SEK-PER-CCY_EUR ;
     qudt:applicableUnit unit:CCY_DKK-PER-CCY_EUR ;
-    qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ; ## or D1 ?
+    qudt:hasDimensionVector qkdv:A0E0L0I0M0H0T0D1 ; ## see https://github.com/qudt/qudt-public-repo/issues/1283
     qudt:informativeReference "https://en.wikipedia.org/wiki/Exchange_rate"^^xsd:anyURI ;
     qudt:plainTextDescription "Rate at which one currency will be exchanged for another currency" ;
     rdfs:comment "Applicable units are fractions of two qudt:CurrencyUnit" ;
@@ -131,6 +131,7 @@ quantitykind:ExchangeRate
     rdfs:label "Exchange rate"@en .
 
 # TODO more terms in need of definition
+# https://github.com/statnett/Talk2PowerSystem_PM/issues/213
 
 #quantitykind:ActivePowerChangeRate
 #quantitykind:ActivePowerPerCurrentFlow
