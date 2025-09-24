@@ -1,7 +1,7 @@
 # GraphDB query and format commands
 # Query GraphDB and save results as TTL
 
-all: cim-subset.ttl cim-subset-pretty.ttl cim-subset-pretty-hotfixed.ttl cim-subset-pretty-ontology.ttl cim-subset-pretty-ontology.yaml terms-MISSING.txt
+all: cim-subset.ttl cim-subset-pretty-ontology.ttl cim-subset-ontology.ttl terms-MISSING.txt cim-subset-pretty-ontology.yaml
 
 cim-subset.ttl: ontology-query.rq
 	curl -X POST \
@@ -11,16 +11,13 @@ cim-subset.ttl: ontology-query.rq
 		"https://cim.ontotext.com/graphdb/repositories/cim" \
 		> cim-subset.ttl
 
-# Format the TTL file using owl-toolkit
-cim-subset-pretty.ttl: cim-subset.ttl
-	owl write --useCommaByDefault $^ $@
-
-cim-subset-pretty-hotfixed.ttl: cim-subset-hotfixed.ttl
-	owl write --useCommaByDefault $^ $@
-
 # Add ontology record
-cim-subset-pretty-ontology.ttl: cim-ontology-record.ttl cim-subset-pretty-hotfixed.ttl
+cim-subset-ontology.ttl: cim-ontology-record.ttl cim-subset.ttl
 	cat $^ > $@
+
+# Format the TTL file using owl-toolkit
+cim-subset-pretty-ontology.ttl: cim-subset-ontology.ttl
+	owl write --useCommaByDefault $^ $@ ;
 
 # Generate SOML schema
 cim-subset-pretty-ontology.yaml: cim-subset-pretty-ontology.ttl

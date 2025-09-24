@@ -1,29 +1,50 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix alstom: <http://www.alstom.com/grid/CIM-schema-cim15-extension#> .
+@prefix cdpsm: <http://iec.ch/TC57/CIM/CDPSM/SchemaExtension/2/0#> .
+@prefix cim15: <http://iec.ch/TC57/2010/CIM-schema-cim15#> .
+@prefix cim16: <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix cim17: <http://iec.ch/TC57/CIM100#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
 @prefix cimr: <https://cim.ucaiug.io/rules#> .
 @prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix entsoe_prof: <http://entsoe.eu/Secretariat/ProfileExtension/1#> .
+@prefix entsoe_sch: <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
+@prefix eu1: <http://iec.ch/TC57/CIM100-European#> .
 @prefix eu: <https://cim.ucaiug.io/ns/eu#> .
+@prefix eu_ext: <http://iec.ch/TC57/CIM100-EuropeanExtension/1/0#> .
+@prefix form: <https://form.statnett.no/voc/form-ksd-extensions#> .
+@prefix form_ann: <https://form.statnett.no/schema/annotation#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix iec61968: <http://iec.ch/TC57/Inf/61968#> .
 @prefix md: <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
 @prefix nc-no: <https://cim4.eu/ns/nc-no#> .
+@prefix nc1: <http://entsoe.eu/ns/nc#> .
 @prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix nek: <http://NEK.no/NK57/CIM/CIM100-Extension/1/0#> .
 @prefix onto: <http://www.ontotext.com/> .
-@prefix so: <http://www.ontotext.com/semantic-object#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prefix: <http://qudt.org/vocab/prefix/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix psys: <http://proton.semanticweb.org/protonsys#> .
+@prefix pti: <http://www.pti-us.com/PTI_CIM-schema-cim16#> .
+@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix so: <http://www.ontotext.com/semantic-object#> .
+@prefix statnett: <http://www.statnett.no/CIM-schema-cim15-extension#> .
+@prefix uml1: <http://langdale.com.au/2005/UML#> .
 @prefix uml: <http://iec.ch/TC57/NonStandard/UML#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
 @prefix sesame: <http://www.openrdf.org/schema/sesame#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
 <http://cim4.eu/ns/nc#Name.NameType> a cims:MISSING .
@@ -36,15 +57,15 @@
 
 <http://cim4.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
 
-<http://entsoe.eu/ns/nc#Name.NameType> a cims:MISSING .
+nc1:Name.NameType a cims:MISSING .
 
-<http://entsoe.eu/ns/nc#Name.mRID> a cims:MISSING .
+nc1:Name.mRID a cims:MISSING .
 
-<http://entsoe.eu/ns/nc#NameType.NameTypeAuthority> a cims:MISSING .
+nc1:NameType.NameTypeAuthority a cims:MISSING .
 
-<http://entsoe.eu/ns/nc#NameType.mRID> a cims:MISSING .
+nc1:NameType.mRID a cims:MISSING .
 
-<http://entsoe.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
+nc1:NameTypeAuthority.mRID a cims:MISSING .
 
 cims:AssociationUsed a cims:MISSING .
 
@@ -93,7 +114,6 @@ dct:description a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """A free-text account of the resource.
 Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."""@en,
     "A free-text account of the item."@en;
-  rdfs:domain dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "description";
   cims:multiplicity cims:M:0..1 .
@@ -105,6 +125,8 @@ dct:identifier a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:range xsd:string;
   rdfs:label "identifier";
   cims:multiplicity cims:M:0..1 .
+
+dct:isReplacedBy a cims:MISSING .
 
 dct:issued a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """Date of formal issuance of the resource.
@@ -201,21 +223,241 @@ dct:type a owl:ObjectProperty, owl:FunctionalProperty;
 
 <http://purl.org/vocab/vann/preferredNamespaceUri> a cims:MISSING .
 
-qudt:QuantityKind a cims:MISSING .
+qudt:AbstractQuantityKind a cims:MISSING .
+
+qudt:Concept a cims:MISSING .
+
+qudt:ContextualUnit a cims:MISSING .
+
+qudt:CountingUnit a cims:MISSING .
+
+qudt:CurrencyUnit a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:DimensionlessUnit;
+  dct:description """
+  Currency Units have their own subclass of unit because:
+   (a) they have additional properties such as 'country' and
+   (b) their URIs do not conform to the same rules as other units.
+  """^^rdf:HTML;
+  rdfs:label "Currency Unit" .
+
+qudt:DecimalPrefix a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Prefix;
+  dct:description """
+  A <em>Decimal Prefix</em> is a prefix for multiples of units that are powers of 10.
+  """;
+  rdfs:label "Decimal Prefix" .
+
+qudt:DerivedUnit a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Unit;
+  dct:description """
+  <p>A <em>Derived Unit</em> is a type specification for units that are derived from other units.
+  </p>"""^^rdf:HTML;
+  rdfs:label "Derived Unit" .
+
+qudt:DimensionlessUnit a cims:MISSING .
+
+qudt:Prefix a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable;
+  rdfs:label "Prefix" .
+
+qudt:QuantityKind a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Verifiable, qudt:AbstractQuantityKind;
+  dct:description """
+  <p>A <em>Quantity Kind</em> is any observable property that can be  measured and quantified numerically. 
+  Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. 
+  Less familiar examples include currency, interest rate, price to earning ratio, and information capacity.
+  </p>"""^^rdf:HTML;
+  rdfs:label "Quantity Kind" .
+
+qudt:QuantityKindDimensionVector a cims:MISSING .
+
+qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector;
+  dct:description "A <em>CGS Dimension Vector</em> is used to specify the dimensions for a C.G.S. quantity kind."^^rdf:HTML;
+  rdfs:label "CGS Dimension vector" .
+
+qudt:QuantityKindDimensionVector_ISO a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector;
+  rdfs:label "ISO Dimension vector" .
+
+qudt:QuantityKindDimensionVector_Imperial a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector;
+  rdfs:label "Imperial dimension vector" .
+
+qudt:QuantityKindDimensionVector_SI a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector;
+  rdfs:label "Quantity Kind Dimension vector (SI)" .
+
+qudt:SystemOfUnits a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable;
+  dct:description """
+  <p>A <em>System of Units</em> is a set of units which are chosen as the reference scales for some set of quantity kinds together with the definitions of each unit. 
+  Units may be defined by experimental observation or by proportion to another unit not included in the system. 
+  If the unit system is explicitly associated with a quantity kind system, then the unit system must define at least one unit for each quantity kind.
+  </p>"""^^rdf:HTML;
+  rdfs:label "System of Units" .
+
+qudt:Unit a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable;
+  dct:description """
+  A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). 
+  For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). 
+  Any measurement of the length can be expressed as a number multiplied by the unit meter. 
+  More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
+  """^^qudt:LatexString;
+  rdfs:label "Unit" .
+
+qudt:Verifiable a cims:MISSING .
+
+qudt:abbreviation a cims:MISSING .
+
+qudt:altSymbol a cims:MISSING .
+
+qudt:applicableSIUnit a cims:MISSING .
+
+qudt:applicableSystem a cims:MISSING .
 
 qudt:applicableUnit a cims:MISSING .
 
+qudt:baseCGSUnitDimensions a cims:MISSING .
+
+qudt:baseSIUnitDimensions a cims:MISSING .
+
+qudt:conversionMultiplier a cims:MISSING .
+
+qudt:conversionMultiplierSN a cims:MISSING .
+
+qudt:conversionOffset a cims:MISSING .
+
+qudt:conversionOffsetSN a cims:MISSING .
+
+qudt:currencyCode a cims:MISSING .
+
+qudt:currencyExponent a cims:MISSING .
+
+qudt:currencyNumber a cims:MISSING .
+
+qudt:dbpediaMatch a cims:MISSING .
+
+qudt:definedUnitOfSystem a cims:MISSING .
+
+qudt:deprecated a cims:MISSING .
+
+qudt:derivedCoherentUnitOfSystem a cims:MISSING .
+
+qudt:dimensionExponentForAmountOfSubstance a cims:MISSING .
+
+qudt:dimensionExponentForElectricCurrent a cims:MISSING .
+
+qudt:dimensionExponentForLength a cims:MISSING .
+
+qudt:dimensionExponentForLuminousIntensity a cims:MISSING .
+
+qudt:dimensionExponentForMass a cims:MISSING .
+
+qudt:dimensionExponentForThermodynamicTemperature a cims:MISSING .
+
+qudt:dimensionExponentForTime a cims:MISSING .
+
+qudt:dimensionlessExponent a cims:MISSING .
+
+qudt:exactMatch a cims:MISSING .
+
+qudt:exponent a cims:MISSING .
+
+qudt:expression a cims:MISSING .
+
+qudt:guidance a cims:MISSING .
+
+qudt:hasBaseUnit a cims:MISSING .
+
+qudt:hasDimensionVector a cims:MISSING .
+
+qudt:hasFactorUnit a cims:MISSING .
+
 qudt:hasQuantityKind a cims:MISSING .
+
+qudt:hasReciprocalUnit a cims:MISSING .
+
+qudt:hasReferenceQuantityKind a cims:MISSING .
 
 qudt:hasUnit a cims:MISSING .
 
+qudt:iec61360Code a cims:MISSING .
+
+qudt:informativeReference a cims:MISSING .
+
+qudt:isoNormativeReference a cims:MISSING .
+
+qudt:latexDefinition a cims:MISSING .
+
+qudt:latexSymbol a cims:MISSING .
+
+qudt:omUnit a cims:MISSING .
+
+qudt:plainTextDescription a cims:MISSING .
+
+qudt:prefix a cims:MISSING .
+
 qudt:prefixMultiplier a cims:MISSING .
 
-unit:CCY_EUR-PER-MegaW-HR a cims:MISSING .
+qudt:prefixMultiplierSN a cims:MISSING .
 
-unit:CCY_NOK-PER-MegaW-HR a cims:MISSING .
+qudt:qkdvDenominator a cims:MISSING .
 
-unit:MegaW a cims:MISSING .
+qudt:qkdvNumerator a cims:MISSING .
+
+qudt:scalingOf a cims:MISSING .
+
+qudt:siExactMatch a cims:MISSING .
+
+qudt:siUnitsExpression a cims:MISSING .
+
+qudt:symbol a cims:MISSING .
+
+qudt:ucumCode a cims:MISSING .
+
+qudt:udunitsCode a cims:MISSING .
+
+qudt:uneceCommonCode a cims:MISSING .
+
+qudt:wikidataMatch a cims:MISSING .
+
+unit:CCY_EUR-PER-MegaW-HR a qudt:Unit;
+  rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en;
+  qudt:hasQuantityKind quantitykind:CostPerEnergy;
+  qudt:conversionMultiplier 0.000000000277777777777777777777777777778;
+  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10;
+  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0;
+  qudt:hasFactorUnit _:node11, _:node12, _:node13;
+  qudt:plainTextDescription "Unit for measuring the cost of electricity.";
+  qudt:symbol "€/(MW·h)" .
+
+unit:CCY_NOK-PER-MegaW-HR a qudt:Unit;
+  rdfs:label "Norwegian Krone per Megawatt Hour", "Norwegian Krone per Megawatt Hour"@en;
+  qudt:hasQuantityKind quantitykind:CostPerEnergy;
+  qudt:conversionMultiplier 0.000000000277777777777777777777777777778;
+  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10;
+  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0;
+  qudt:hasFactorUnit _:node8, _:node9, _:node10;
+  qudt:plainTextDescription "Unit for measuring the cost of electricity.";
+  qudt:symbol "NOK/(MW·h)" .
+
+unit:MegaW a qudt:Unit;
+  dct:description "1,000,000-fold of the derived unit watt";
+  rdfs:label "Megawatt", "Megawatt"@en;
+  qudt:hasQuantityKind quantitykind:ElectricPower, quantitykind:Power;
+  qudt:conversionMultiplier 1000000.0;
+  qudt:conversionMultiplierSN 1.0E6;
+  qudt:hasDimensionVector qkdv:A0E0L2I0M1H0T-3D0;
+  qudt:symbol "MW";
+  qudt:prefix prefix:Mega;
+  qudt:uneceCommonCode "MAW";
+  qudt:scalingOf unit:W .
+
+<http://www.linkedmodel.org/schema/vaem#todo> a cims:MISSING .
+
+<http://www.linkedmodel.org/schema/vaem#url> a cims:MISSING .
 
 geo:Feature a cims:MISSING .
 
@@ -225,6 +467,10 @@ geo:asWKT a cims:MISSING .
 
 geo:hasGeometry a cims:MISSING .
 
+skos:altLabel a cims:MISSING .
+
+skos:broader a cims:MISSING .
+
 skos:exactMatch a cims:MISSING .
 
 skos:example a cims:MISSING .
@@ -232,6 +478,8 @@ skos:example a cims:MISSING .
 skos:narrower a cims:MISSING .
 
 skos:note a cims:MISSING .
+
+skos:prefLabel a cims:MISSING .
 
 <http://www.w3.org/2004/03/trix/rdfg-1/Graph> a cims:MISSING .
 
@@ -336,6 +584,8 @@ The date and time when the model was serialized in the document where the header
   rdfs:label "generatedAtTime";
   cims:multiplicity cims:M:0..1 .
 
+prov:wasDerivedFrom a cims:MISSING .
+
 prov:wasGeneratedBy a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
 [CIM context:
@@ -345,6 +595,12 @@ Reference to an activity or the exact business nature (process, configuration) w
   rdfs:label "wasGeneratedBy";
   cims:multiplicity cims:M:0..1;
   owl:inverseOf prov:Entity .
+
+prov:wasInfluencedBy a cims:MISSING .
+
+sh:NodeShape a cims:MISSING .
+
+sh:property a cims:MISSING .
 
 cim:ACDCTerminal a owl:Class;
   rdfs:comment "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."@en;
@@ -3828,13 +4084,13 @@ cim:UnitMultiplier a owl:Class;
 cim:UnitMultiplier.M a cim:UnitMultiplier;
   rdfs:comment "Mega 10**6."@en;
   rdfs:label "M";
-  skos:exactMatch <http://qudt.org/vocab/prefix/Mega>;
+  skos:exactMatch prefix:Mega;
   qudt:prefixMultiplier 1.0E6 .
 
 cim:UnitMultiplier.k a cim:UnitMultiplier;
   rdfs:comment "Kilo 10**3."@en;
   rdfs:label "k";
-  skos:exactMatch <http://qudt.org/vocab/prefix/Kilo>;
+  skos:exactMatch prefix:Kilo;
   qudt:prefixMultiplier 1.0E3 .
 
 cim:UnitMultiplier.none a cim:UnitMultiplier;
@@ -3851,17 +4107,22 @@ cim:UnitSymbol.A a cim:UnitSymbol;
   rdfs:label "A";
   skos:exactMatch unit:A .
 
-cim:UnitSymbol.DKKperEUR a cims:MISSING .
+cim:UnitSymbol.DKKperEUR a cims:MISSING;
+  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
 
 cim:UnitSymbol.Deg a cims:MISSING .
 
-cim:UnitSymbol.EURperMWh a cims:MISSING .
+cim:UnitSymbol.EURperMWh a cims:MISSING;
+  skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-cim:UnitSymbol.NOKperEUR a cims:MISSING .
+cim:UnitSymbol.NOKperEUR a cims:MISSING;
+  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
 
-cim:UnitSymbol.NOKperMWh a cims:MISSING .
+cim:UnitSymbol.NOKperMWh a cims:MISSING;
+  skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
 
-cim:UnitSymbol.SEKperEUR a cims:MISSING .
+cim:UnitSymbol.SEKperEUR a cims:MISSING;
+  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
 
 cim:UnitSymbol.V a cim:UnitSymbol;
   rdfs:comment "Electric potential in volts (W/A)."@en;

@@ -26,12 +26,16 @@ prefix nc:          <https://cim4.eu/ns/nc#>
 prefix nek:         <http://NEK.no/NK57/CIM/CIM100-Extension/1/0#>
 prefix onto:        <http://www.ontotext.com/>
 prefix owl:         <http://www.w3.org/2002/07/owl#>
+prefix prefix:      <http://qudt.org/vocab/prefix/>
 prefix prov:        <http://www.w3.org/ns/prov#>
 prefix psys:        <http://proton.semanticweb.org/protonsys#>
 prefix pti:         <http://www.pti-us.com/PTI_CIM-schema-cim16#>
+prefix qkdv:         <http://qudt.org/vocab/dimensionvector/>
+prefix quantitykind: <http://qudt.org/vocab/quantitykind/>
 prefix qudt:        <http://qudt.org/schema/qudt/>
 prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#>
+prefix sh:          <http://www.w3.org/ns/shacl#>
 prefix skos:        <http://www.w3.org/2004/02/skos/core#>
 prefix so:          <http://www.ontotext.com/semantic-object#>
 prefix statnett:    <http://www.statnett.no/CIM-schema-cim15-extension#>
@@ -39,6 +43,7 @@ prefix uml1:        <http://langdale.com.au/2005/UML#>
 prefix uml:         <http://iec.ch/TC57/NonStandard/UML#>
 prefix unit:        <http://qudt.org/vocab/unit/>
 prefix xsd:         <http://www.w3.org/2001/XMLSchema#>
+
 
 # Describe all ontology terms (classes, props and enum values) used in instance data
 construct {
@@ -87,7 +92,10 @@ where {
     filter(?p not in (cims:belongsToCategory, cims:stereotype, cims:AssociationUsed,
                       uml1:baseuri, uml1:hasStereotype, uml1:id,
                       owl:propertyChainAxiom, 
-                      rdfs:isDefinedBy, rdfs:comment))
+                      rdfs:isDefinedBy, rdfs:comment,
+                      qudt:applicableSystem, qudt:iec61360Code, qudt:informativeReference, qudt:ucumCode, qudt:wikidataMatch, qudt:dbpediaMatch,
+                      sh:property
+    ))
     filter(?x not in (cims:belongsToCategory))
   }
   # if the term is not defined, we'll declare it as cims:MISSING
