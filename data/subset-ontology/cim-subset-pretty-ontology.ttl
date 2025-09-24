@@ -5029,89 +5029,9 @@ The date and time when the model was serialized in the document where the header
   rdfs:domain dcat:Dataset ;
   rdfs:range xsd:dateTime .
 
-cim:AmiBillingReady.enabled a cims:MISSING .
-
-cim:AmiBillingReady.operable a cims:MISSING .
-
-cim:Analog.maxValue a cims:MISSING .
-
-cim:Analog.minValue a cims:MISSING .
-
-cim:Analog.normalValue a cims:MISSING .
-
-cim:AnalogValue.value a cims:MISSING .
-
-cim:Asset.AssetInfo a cims:MISSING .
-
-cim:Asset.PowerSystemResource a cims:MISSING .
-
-cim:Asset.ProductAssetModel a cims:MISSING .
-
-cim:Asset.baselineCondition a cims:MISSING .
-
-cim:Asset.baselineLossOfLife a cims:MISSING .
-
-cim:Asset.critical a cims:MISSING .
-
-cim:Asset.inUseDate a cims:MISSING .
-
-cim:Asset.kind a cims:MISSING .
-
-cim:Asset.lifecycleState a cims:MISSING .
-
-cim:Asset.lotNumber a cims:MISSING .
-
-cim:Asset.position a cims:MISSING .
-
-cim:Asset.purchasePrice a cims:MISSING .
-
-cim:Asset.utcNumber a cims:MISSING .
-
-cim:AssetDeployment.BaseVoltage a cims:MISSING .
-
-cim:AssetDeployment.deploymentState a cims:MISSING .
-
-cim:AssetKind.breakerSF6DeadTankBreaker a cims:MISSING .
-
-cim:AssetKind.other a cims:MISSING .
-
-cim:AssetKind.transformer a cims:MISSING .
-
-cim:AssetLifeCycleStateKind.received a cims:MISSING .
-
-cim:AssetModelCatalogueItem a cims:MISSING .
-
-cim:AssetModelCatalogueItem.unitCost a cims:MISSING .
-
 cim:AssetModelUsageKind.transmission a cim:AssetModelUsageKind ;
   rdfs:label "transmission" ;
   rdfs:comment "Asset model is intended for use in transmission network."@en .
-
-cim:BasePower a cims:MISSING .
-
-cim:BasePower.basePower a cims:MISSING .
-
-cim:BusbarSectionInfo a cims:MISSING .
-
-cim:CableConstructionKind.stranded a cims:MISSING .
-
-cim:CableInfo.constructionKind a cims:MISSING .
-
-cim:CableInfo.outerJacketKind a cims:MISSING .
-
-cim:CableInfo.shieldMaterial a cims:MISSING .
-
-cim:CableOuterJacketKind.pvc a cims:MISSING .
-
-cim:CableShieldMaterialKind.aluminum a cims:MISSING .
-
-cim:CableShieldMaterialKind.cooper a cims:MISSING .
-
-cim:CommunicationLink a cims:MISSING .
-
-cim:CommunicationLink.RemoteUnits a cims:MISSING .
-
-cim:ConnectionState.connected a cims:MISSING .
 
 cim:ContingencyEquipmentStatusKind.outOfService a cim:ContingencyEquipmentStatusKind ;
   rdfs:label "outOfService" ;
@@ -5121,63 +5041,9 @@ cim:ControlAreaTypeKind.Interchange a cim:ControlAreaTypeKind ;
   rdfs:label "Interchange" ;
   rdfs:comment "Used for interchange specification or control."@en .
 
-cim:CurrentTransformer.accuracyClass a cims:MISSING .
-
-cim:CurrentTransformer.accuracyLimit a cims:MISSING .
-
-cim:CurrentTransformer.coreBurden a cims:MISSING .
-
-cim:CurrentTransformer.ctClass a cims:MISSING .
-
-cim:CurrentTransformer.usage a cims:MISSING .
-
-cim:CurveData.xValue a cims:MISSING .
-
-cim:CurveData.y1Value a cims:MISSING .
-
-cim:Discrete.maxValue a cims:MISSING .
-
-cim:Discrete.minValue a cims:MISSING .
-
-cim:Discrete.normalValue a cims:MISSING .
-
-cim:DiscreteValue.value a cims:MISSING .
-
-cim:EndDevice.amrSystem a cims:MISSING .
-
-cim:EndDevice.installCode a cims:MISSING .
-
-cim:EndDevice.isPan a cims:MISSING .
-
-cim:EndDevice.isSmartInverter a cims:MISSING .
-
-cim:EndDevice.isVirtual a cims:MISSING .
-
-cim:EndDevice.timeZoneOffset a cims:MISSING .
-
-cim:GeneratingUnit.highControlLimit a cims:MISSING .
-
-cim:GeneratingUnit.initialP a cims:MISSING .
-
-cim:GeneratingUnit.lowControlLimit a cims:MISSING .
-
 cim:InUseStateKind.inUse a cim:InUseStateKind ;
   rdfs:label "inUse" ;
   rdfs:comment "Asset is deployed (in use) or is being put into use."@en .
-
-cim:Manufacturer.ProductAssetModel a cims:MISSING .
-
-cim:Measurement.ACDCTerminal a cims:MISSING .
-
-cim:Measurement.Asset a cims:MISSING .
-
-cim:Name.IdentifiedObject a cims:MISSING .
-
-cim:NameTypeAuthority a cims:MISSING .
-
-cim:NameTypeAuthority.description a cims:MISSING .
-
-cim:NameTypeAuthority.name a cims:MISSING .
 
 cim:OperationalLimitDirectionKind.absoluteValue a cim:OperationalLimitDirectionKind ;
   rdfs:label "absoluteValue" ;
@@ -5191,29 +5057,9 @@ cim:OperationalLimitDirectionKind.low a cim:OperationalLimitDirectionKind ;
   rdfs:label "low" ;
   rdfs:comment "Low means a monitored value below the limit is a violation.  If applied to a terminal flow, the positive direction is into the terminal."@en .
 
-cim:Organisation.city a cims:MISSING .
-
-cim:Organisation.country a cims:MISSING .
-
-cim:Organisation.eMail a cims:MISSING .
-
-cim:Organisation.phone a cims:MISSING .
-
-cim:Organisation.postalCode a cims:MISSING .
-
-cim:Organisation.streetAddress a cims:MISSING .
-
 cim:OrientationKind.negative a cim:OrientationKind ;
   rdfs:label "negative" ;
   rdfs:comment "For 2D diagrams, a negative orientation gives the left-hand orientation (favoured by computer graphics displays) with X values increasing from left to right and Y values increasing from top to bottom.   This is also known as a left hand orientation."@en .
-
-cim:Ownership a cims:MISSING .
-
-cim:Ownership.Asset a cims:MISSING .
-
-cim:Ownership.AssetOwner a cims:MISSING .
-
-cim:Ownership.share a cims:MISSING .
 
 cim:PhaseCode.A a cim:PhaseCode ;
   rdfs:label "A" ;
@@ -5255,63 +5101,9 @@ cim:PhaseCode.none a cim:PhaseCode ;
   rdfs:label "none" ;
   rdfs:comment "No phases specified."@en .
 
-cim:PotentialTransformer.accuracyClass a cims:MISSING .
-
-cim:PotentialTransformer.nominalRatio a cims:MISSING .
-
-cim:PotentialTransformer.ptClass a cims:MISSING .
-
-cim:PotentialTransformer.type a cims:MISSING .
-
-cim:PotentialTransformerKind.capacitiveCoupling a cims:MISSING .
-
-cim:PowerSystemResource.AssetDatasheet a cims:MISSING .
-
-cim:PowerTransformerInfo a cims:MISSING .
-
-cim:ProductAssetModel.AssetModelCatalogueItem a cims:MISSING .
-
-cim:ProductAssetModel.catalogueNumber a cims:MISSING .
-
-cim:ProductAssetModel.drawingNumber a cims:MISSING .
-
-cim:ProductAssetModel.instructionMnaual a cims:MISSING .
-
-cim:ProductAssetModel.weightTotal a cims:MISSING .
-
-cim:RatioTapChanger.tculControlMode a cims:MISSING .
-
 cim:RegulatingControlModeKind.voltage a cim:RegulatingControlModeKind ;
   rdfs:label "voltage" ;
   rdfs:comment "Voltage is specified."@en .
-
-cim:RemotePoint.RemoteUnit a cims:MISSING .
-
-cim:RemoteSource a cims:MISSING .
-
-cim:RemoteSource.deadband a cims:MISSING .
-
-cim:RemoteSource.scanInterval a cims:MISSING .
-
-cim:RemoteSource.sensorMaximum a cims:MISSING .
-
-cim:RemoteSource.sensorMinimum a cims:MISSING .
-
-cim:RemoteUnit a cims:MISSING .
-
-cim:RemoteUnit.remoteUnitType a cims:MISSING .
-
-cim:RemoteUnitType.IED a cims:MISSING .
-
-cim:ShuntCompensatorInfo.maxPowerLoss a cims:MISSING .
-
-cim:ShuntCompensatorInfo.ratedCurrent a cims:MISSING .
-
-cim:SwitchInfo.isSinglePhase a cims:MISSING .
-
-cim:SynchronousMachine.maxU a cims:MISSING .
-
-cim:SynchronousMachine.minU a cims:MISSING .
 
 cim:SynchronousMachineKind.generator a cim:SynchronousMachineKind ;
   rdfs:label "generator" ;
@@ -5320,34 +5112,6 @@ cim:SynchronousMachineKind.generator a cim:SynchronousMachineKind ;
 cim:SynchronousMachineOperatingMode.generator a cim:SynchronousMachineOperatingMode ;
   rdfs:label "generator" ;
   rdfs:comment "Operating as generator."@en .
-
-cim:TapChangerInfo.highStep a cims:MISSING .
-
-cim:TapChangerInfo.lowStep a cims:MISSING .
-
-cim:TapChangerInfo.neutralStep a cims:MISSING .
-
-cim:TapChangerInfo.neutralU a cims:MISSING .
-
-cim:TapChangerInfo.ratedApparentPower a cims:MISSING .
-
-cim:TapChangerInfo.ratedCurrent a cims:MISSING .
-
-cim:TapChangerInfo.ratedVoltage a cims:MISSING .
-
-cim:TapChangerInfo.stepVoltageIncrement a cims:MISSING .
-
-cim:TransformerControlMode.volt a cims:MISSING .
-
-cim:TransformerEndInfo.connectionKind a cims:MISSING .
-
-cim:TransformerEndInfo.endNumber a cims:MISSING .
-
-cim:TransformerEndInfo.phaseAngleClock a cims:MISSING .
-
-cim:TransformerEndInfo.r a cims:MISSING .
-
-cim:TransformerTankInfo.PowerTransformerInfo a cims:MISSING .
 
 cim:UnitMultiplier.M a cim:UnitMultiplier ;
   rdfs:label "M" ;
@@ -5374,8 +5138,6 @@ cim:UnitSymbol.A a cim:UnitSymbol ;
 cim:UnitSymbol.DKKperEUR a cims:MISSING ;
   skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
 
-cim:UnitSymbol.Deg a cims:MISSING .
-
 cim:UnitSymbol.EURperMWh a cims:MISSING ;
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
@@ -5393,8 +5155,6 @@ cim:UnitSymbol.V a cim:UnitSymbol ;
   rdfs:comment "Electric potential in volts (W/A)."@en ;
   skos:exactMatch unit:V .
 
-cim:UnitSymbol.VAR a cims:MISSING .
-
 cim:UnitSymbol.W a cim:UnitSymbol ;
   rdfs:label "W" ;
   rdfs:comment "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."@en ;
@@ -5410,44 +5170,6 @@ cim:UnitSymbol.none a cim:UnitSymbol ;
   rdfs:label "none" ;
   rdfs:comment "Dimension less quantity, e.g. count, per unit, etc."@en .
 
-cim:UsagePoint.Equipments a cims:MISSING .
-
-cim:UsagePoint.amiBillingReady a cims:MISSING .
-
-cim:UsagePoint.chekBilling a cims:MISSING .
-
-cim:UsagePoint.connectionCategory a cims:MISSING .
-
-cim:UsagePoint.connectionState a cims:MISSING .
-
-cim:UsagePoint.estimatedLoad a cims:MISSING .
-
-cim:UsagePoint.grounded a cims:MISSING .
-
-cim:UsagePoint.isSdq a cims:MISSING .
-
-cim:UsagePoint.isVirtual a cims:MISSING .
-
-cim:UsagePoint.minimalUsageExpected a cims:MISSING .
-
-cim:UsagePoint.nominalServiceVoltage a cims:MISSING .
-
-cim:UsagePoint.outageRegion a cims:MISSING .
-
-cim:UsagePoint.phaseCode a cims:MISSING .
-
-cim:UsagePoint.phaseCount a cims:MISSING .
-
-cim:UsagePoint.ratedCurrent a cims:MISSING .
-
-cim:UsagePoint.ratedPower a cims:MISSING .
-
-cim:UsagePoint.readCycle a cims:MISSING .
-
-cim:UsagePoint.serviceDeliveryRemark a cims:MISSING .
-
-cim:UsagePoint.servicePriority a cims:MISSING .
-
 cim:WindingConnection.Y a cim:WindingConnection ;
   rdfs:label "Y" ;
   rdfs:comment "Wye."@en .
@@ -5456,12 +5178,6 @@ cim:WindingConnection.Zn a cim:WindingConnection ;
   rdfs:label "Zn" ;
   rdfs:comment "ZigZag, with neutral brought out for grounding."@en .
 
-cim:WireInfo.material a cims:MISSING .
-
-cim:WireInfo.nominalTemperature a cims:MISSING .
-
-cim:WireInfo.rDC20 a cims:MISSING .
-
 cim:WireInsulationKind.other a cim:WireInsulationKind ;
   rdfs:label "other" ;
   rdfs:comment "Other kind of wire insulation."@en .
@@ -5469,52 +5185,6 @@ cim:WireInsulationKind.other a cim:WireInsulationKind ;
 cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulationKind ;
   rdfs:label "treeRetardantCrosslinkedPolyethylene" ;
   rdfs:comment "Tree retardant crosslinked polyethylene wire insulation."@en .
-
-cim:WireMaterialKind.aluminum a cims:MISSING .
-
-cim:straightLineYValues a cims:MISSING .
-
-cim:unitMultiplier a cims:MISSING .
-
-cim:unitSymbol a cims:MISSING .
-
-cims:AssociationUsed a cims:MISSING .
-
-cims:ClassCategory a cims:MISSING .
-
-cims:belongsToCategory a cims:MISSING .
-
-cims:dataType a cims:MISSING .
-
-cims:multiplicity a cims:MISSING .
-
-cims:stereotype a cims:MISSING .
-
-dc:source a cims:MISSING .
-
-dcat:Distribution a cims:MISSING .
-
-dcat:distribution a cims:MISSING .
-
-dcat:landingPage a cims:MISSING .
-
-dcat:theme a cims:MISSING .
-
-dct:PeriodOfTime a cims:MISSING .
-
-dct:created a cims:MISSING .
-
-dct:creator a cims:MISSING .
-
-dct:isReplacedBy a cims:MISSING .
-
-dct:language a cims:MISSING .
-
-dct:modified a cims:MISSING .
-
-dct:requires a cims:MISSING .
-
-dct:temporal a cims:MISSING .
 
 eu:LimitKind.highVoltage a eu:LimitKind ;
   rdfs:label "highVoltage" ;
@@ -5539,145 +5209,9 @@ eu:LimitKind.tatl a eu:LimitKind ;
   rdfs:label "tatl" ;
   rdfs:comment "Temporarily Admissible Transmission Loading (TATL) which is the loading in amperes, MVA or MW that can be accepted by a branch for a certain limited duration. The TATL can be defined in different ways: <ul> \t<li>as a fixed percentage of the PATL for a given time (for example, 115% of the PATL that can be accepted during 15 minutes),</li> </ul> <ul> \t<li>pairs of TATL type and Duration calculated for each line taking into account its particular configuration and conditions of functioning (for example,"@en .
 
-geo:Feature a cims:MISSING .
-
-geo:Geometry a cims:MISSING .
-
-geo:asWKT a cims:MISSING .
-
-geo:hasGeometry a cims:MISSING .
-
-<http://cim4.eu/ns/nc#Name.NameType> a cims:MISSING .
-
-<http://cim4.eu/ns/nc#Name.mRID> a cims:MISSING .
-
-<http://cim4.eu/ns/nc#NameType.NameTypeAuthority> a cims:MISSING .
-
-<http://cim4.eu/ns/nc#NameType.mRID> a cims:MISSING .
-
-<http://cim4.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
-
-<http://www.linkedmodel.org/schema/vaem#todo> a cims:MISSING .
-
-<http://www.linkedmodel.org/schema/vaem#url> a cims:MISSING .
-
-<http://www.w3.org/2004/03/trix/rdfg-1/Graph> a cims:MISSING .
-
-<https://www.w3.org/ns/json-ld#base> a cims:MISSING .
-
-nc-no:ACLineSegmentSpan a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.ACLineSegment a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.aviationObstacleLightingKind a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.aviationObstacleMarkingKind a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.maxHeight a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.maxWidth a cims:MISSING .
-
-nc-no:ACLineSegmentSpan.spanWireLength a cims:MISSING .
-
-nc-no:ACLineSegmentSpanDeployment a cims:MISSING .
-
-nc-no:ACLineSegmentSpanDeployment.ACLineSegmentSpan a cims:MISSING .
-
-nc-no:AviationObstacleLightingKind.mediumIntensityTypeB a cims:MISSING .
-
-nc-no:AviationObstacleMarkingKind.marker a cims:MISSING .
-
-nc-no:DeploymentStateKind.notYetInstalled a cims:MISSING .
-
-nc-no:Guy a cims:MISSING .
-
-nc-no:Guy.aviationObstacleLightingKind a cims:MISSING .
-
-nc-no:Guy.aviationObstacleMarkingKind a cims:MISSING .
-
-nc-no:Guy.length a cims:MISSING .
-
-nc-no:Guy.maxHeight a cims:MISSING .
-
-nc-no:Guy.maxWidth a cims:MISSING .
-
-nc-no:LineLightingKind.lit a cims:MISSING .
-
-nc-no:LineMarkingKind.colourMarking a cims:MISSING .
-
-nc-no:LocationMethodKind.measured a cims:MISSING .
-
-nc-no:LocationResource.locationMethod a cims:MISSING .
-
-nc-no:OverheadStructure a cims:MISSING .
-
-nc-no:OverheadStructure.aviationObstacleLightingKind a cims:MISSING .
-
-nc-no:OverheadStructure.aviationObstacleMarkingKind a cims:MISSING .
-
-nc-no:OverheadStructure.height a cims:MISSING .
-
-nc-no:OverheadStructure.maxHeight a cims:MISSING .
-
-nc-no:PowerSystemResource.locationMethod a cims:MISSING .
-
-nc-no:StructureDeployment a cims:MISSING .
-
-nc-no:StructureDeployment.Structure a cims:MISSING .
-
-nc-no:StructureSupportDeployment a cims:MISSING .
-
-nc-no:StructureSupportDeployment.StructureSupport a cims:MISSING .
-
-nc-no:Zone a cims:MISSING .
-
-nc-no:Zone.state a cims:MISSING .
-
-nc-no:Zone.zoneKind a cims:MISSING .
-
-nc-no:ZoneKind.substation a cims:MISSING .
-
-nc-no:ZoneStateKind.notYetRegistered a cims:MISSING .
-
-nc-no:locationMethodKind.measured a cims:MISSING .
-
-nc1:Name.NameType a cims:MISSING .
-
-nc1:Name.mRID a cims:MISSING .
-
-nc1:NameType.NameTypeAuthority a cims:MISSING .
-
-nc1:NameType.mRID a cims:MISSING .
-
-nc1:NameTypeAuthority.mRID a cims:MISSING .
-
-nc:BaseTimeSeries.method a cims:MISSING .
-
 nc:BaseTimeSeriesKind.forecast a nc:BaseTimeSeriesKind ;
   rdfs:label "forecast" ;
   rdfs:comment "Time series is forecast data. The values represent the result of scientific predictions based on historical time stamped data."@en .
-
-nc:CapacitySchedule.CapacityTimePoint a cims:MISSING .
-
-nc:CapacityTimePoint.atTime a cims:MISSING .
-
-nc:CapacityTimePoint.maxAllocatedP a cims:MISSING .
-
-nc:CapacityTimePoint.maxAllocatedQ a cims:MISSING .
-
-nc:CapacityTimePoint.maxP a cims:MISSING .
-
-nc:CapacityTimePoint.maxQ a cims:MISSING .
-
-nc:CapacityTimePoint.minAllocatedP a cims:MISSING .
-
-nc:CapacityTimePoint.minAllocatedQ a cims:MISSING .
-
-nc:CapacityTimePoint.minP a cims:MISSING .
-
-nc:CapacityTimePoint.minQ a cims:MISSING .
-
-nc:Feeder.CapacitySchedule a cims:MISSING .
 
 nc:GateLogicKind.and a nc:GateLogicKind ;
   rdfs:label "and" ;
@@ -5686,18 +5220,6 @@ nc:GateLogicKind.and a nc:GateLogicKind ;
 nc:GateLogicKind.or a nc:GateLogicKind ;
   rdfs:label "or" ;
   rdfs:comment "A logical OR operation. True when one or more inputs are true."@en .
-
-nc:GeneratingUnit.normalParticipationFactor a cims:MISSING .
-
-nc:IdentifiedObject.description a cims:MISSING .
-
-nc:IdentifiedObject.name a cims:MISSING .
-
-nc:LogicOperatorsKind.greaterThan a cims:MISSING .
-
-nc:LogicOperatorsKind.lessThan a cims:MISSING .
-
-nc:LogicOperatorsKind.lessThanOrEquals a cims:MISSING .
 
 nc:PinTerminalKind.activePower a nc:PinTerminalKind ;
   rdfs:label "activePower" ;
@@ -5722,158 +5244,6 @@ nc:TimeSeriesInterpolationKind.previous a nc:TimeSeriesInterpolationKind ;
 nc:ValueOffsetKind.incremental a nc:ValueOffsetKind ;
   rdfs:label "incremental" ;
   rdfs:comment "Value of the range constraint is incrementing the attribute value referenced by the PropertyReference in a determined operational scenario."@en .
-
-prov:wasDerivedFrom a cims:MISSING .
-
-prov:wasInfluencedBy a cims:MISSING .
-
-psys:transitiveOver a cims:MISSING .
-
-qudt:AbstractQuantityKind a cims:MISSING .
-
-qudt:Concept a cims:MISSING .
-
-qudt:ContextualUnit a cims:MISSING .
-
-qudt:CountingUnit a cims:MISSING .
-
-qudt:DimensionlessUnit a cims:MISSING .
-
-qudt:QuantityKindDimensionVector a cims:MISSING .
-
-qudt:Verifiable a cims:MISSING .
-
-qudt:abbreviation a cims:MISSING .
-
-qudt:altSymbol a cims:MISSING .
-
-qudt:applicableSIUnit a cims:MISSING .
-
-qudt:applicableSystem a cims:MISSING .
-
-qudt:applicableUnit a cims:MISSING .
-
-qudt:baseCGSUnitDimensions a cims:MISSING .
-
-qudt:baseSIUnitDimensions a cims:MISSING .
-
-qudt:conversionMultiplier a cims:MISSING .
-
-qudt:conversionMultiplierSN a cims:MISSING .
-
-qudt:conversionOffset a cims:MISSING .
-
-qudt:conversionOffsetSN a cims:MISSING .
-
-qudt:currencyCode a cims:MISSING .
-
-qudt:currencyExponent a cims:MISSING .
-
-qudt:currencyNumber a cims:MISSING .
-
-qudt:dbpediaMatch a cims:MISSING .
-
-qudt:definedUnitOfSystem a cims:MISSING .
-
-qudt:deprecated a cims:MISSING .
-
-qudt:derivedCoherentUnitOfSystem a cims:MISSING .
-
-qudt:dimensionExponentForAmountOfSubstance a cims:MISSING .
-
-qudt:dimensionExponentForElectricCurrent a cims:MISSING .
-
-qudt:dimensionExponentForLength a cims:MISSING .
-
-qudt:dimensionExponentForLuminousIntensity a cims:MISSING .
-
-qudt:dimensionExponentForMass a cims:MISSING .
-
-qudt:dimensionExponentForThermodynamicTemperature a cims:MISSING .
-
-qudt:dimensionExponentForTime a cims:MISSING .
-
-qudt:dimensionlessExponent a cims:MISSING .
-
-qudt:exactMatch a cims:MISSING .
-
-qudt:exponent a cims:MISSING .
-
-qudt:expression a cims:MISSING .
-
-qudt:guidance a cims:MISSING .
-
-qudt:hasBaseUnit a cims:MISSING .
-
-qudt:hasDimensionVector a cims:MISSING .
-
-qudt:hasFactorUnit a cims:MISSING .
-
-qudt:hasQuantityKind a cims:MISSING .
-
-qudt:hasReciprocalUnit a cims:MISSING .
-
-qudt:hasReferenceQuantityKind a cims:MISSING .
-
-qudt:hasUnit a cims:MISSING .
-
-qudt:iec61360Code a cims:MISSING .
-
-qudt:informativeReference a cims:MISSING .
-
-qudt:isoNormativeReference a cims:MISSING .
-
-qudt:latexDefinition a cims:MISSING .
-
-qudt:latexSymbol a cims:MISSING .
-
-qudt:omUnit a cims:MISSING .
-
-qudt:plainTextDescription a cims:MISSING .
-
-qudt:prefix a cims:MISSING .
-
-qudt:prefixMultiplier a cims:MISSING .
-
-qudt:prefixMultiplierSN a cims:MISSING .
-
-qudt:qkdvDenominator a cims:MISSING .
-
-qudt:qkdvNumerator a cims:MISSING .
-
-qudt:scalingOf a cims:MISSING .
-
-qudt:siExactMatch a cims:MISSING .
-
-qudt:siUnitsExpression a cims:MISSING .
-
-qudt:symbol a cims:MISSING .
-
-qudt:ucumCode a cims:MISSING .
-
-qudt:udunitsCode a cims:MISSING .
-
-qudt:uneceCommonCode a cims:MISSING .
-
-qudt:wikidataMatch a cims:MISSING .
-
-sh:NodeShape a cims:MISSING .
-
-sh:property a cims:MISSING .
-
-skos:altLabel a cims:MISSING .
-
-skos:broader a cims:MISSING .
-
-skos:exactMatch a cims:MISSING .
-
-skos:example a cims:MISSING .
-
-skos:narrower a cims:MISSING .
-
-skos:note a cims:MISSING .
-
-skos:prefLabel a cims:MISSING .
 
 unit:CCY_EUR-PER-MegaW-HR a qudt:Unit ;
   rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en ;
@@ -5906,9 +5276,4 @@ unit:MegaW a qudt:Unit ;
   qudt:scalingOf unit:W ;
   qudt:symbol "MW" ;
   qudt:uneceCommonCode "MAW" .
-
-vann:preferredNamespacePrefix a cims:MISSING .
-
-vann:preferredNamespaceUri a cims:MISSING .
-
 
