@@ -8,7 +8,7 @@ Relevant task [#18](https://github.com/statnett/Talk2PowerSystem_PM/issues/18)
 - Creates a repository from [nordic44-repo-config.ttl](resources/nordic44-repo-config.ttl)
 - Downloads and loads all files from [ontologies.txt] in `https://cim.ucaiug.io/ns#graph`
 - Downloads and loads all instance data from [instances.txt] in the graph specified in the file.
-- Loads custom inference rules from [cim_owl2-rl-optimized.pie](resources/cim_owl2-rl-optimized.pie)
+- Loads custom inference rules from [cim_owl2-rl-optimized.pie](../data/cim_owl2-rl-optimized.pie)
 - Executes post-loading SPARQL queries
 
 ## Prerequisites
