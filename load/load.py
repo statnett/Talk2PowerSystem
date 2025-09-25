@@ -22,7 +22,7 @@ class GraphDBLoader:
         self,
         graphdb_url: str = "http://localhost:7200",
         repository_name: str = "cim",
-        config_file: str = "resources/repo-config.ttl",
+        config_file: str = "../data/repo-config.ttl",
         ontology_graph: str = "https://cim.ucaiug.io/ns#graph",
         ontologies_list: str = "ontologies.txt",
         instances_list: str = "instances.txt",
@@ -108,7 +108,7 @@ class GraphDBLoader:
 
     def execute_all_queries(self):
         """Execute all .ru files in the resources/queries directory."""
-        query_dir = Path("resources/queries")
+        query_dir = Path("../data/queries")
         if not query_dir.exists():
             print(f"Warning: Query directory {query_dir} does not exist")
             return
