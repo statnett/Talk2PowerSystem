@@ -48,7 +48,7 @@ prefix xsd:         <http://www.w3.org/2001/XMLSchema#>
 # Describe all ontology terms (classes, props and enum values) used in instance data
 construct {
   ?x ?p ?o; rdfs:comment ?new.
-  ?x a ?missing
+#  ?x a ?missing
 }
 from onto:explicit # use only explicit statements in the description
 where {
