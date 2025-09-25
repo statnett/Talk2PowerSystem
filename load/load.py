@@ -101,13 +101,14 @@ class GraphDBLoader:
 
         if response.status_code in [200, 204]:
             print(f"Successfully executed query from {query_file}")
+            time.sleep(1)
             return True
         else:
             print(f"Error: Failed to execute query from {query_file}. Status code: {response.status_code}")
             return False
 
     def execute_all_queries(self):
-        """Execute all .ru files in the resources/queries directory."""
+        """Execute all .ru files in the ../data/queries directory."""
         query_dir = Path("../data/queries")
         if not query_dir.exists():
             print(f"Warning: Query directory {query_dir} does not exist")
@@ -117,7 +118,7 @@ class GraphDBLoader:
         query_files = sorted(query_dir.glob("*.ru"), key=lambda f: f.name)
         
         if not query_files:
-            print("No .ru files found in resources/queries directory")
+            print("No .ru files found in ../data/queries directory")
             return
 
         for query_file in query_files:
@@ -186,6 +187,7 @@ class GraphDBLoader:
 
         if response.status_code == 204:
             print(f"Successfully loaded {filename}")
+            time.sleep(1)
             return True
         else:
             print(f"Error: Failed to load {filename}. Status code: {response.status_code}")
@@ -219,6 +221,7 @@ class GraphDBLoader:
 
         if response.status_code == 204:
             print(f"Successfully loaded {filename}")
+            time.sleep(1)
             return True
         else:
             print(f"Error: Failed to load {filename}. Status code: {response.status_code}")
@@ -360,7 +363,7 @@ def main():
                       help='GraphDB server URL')
     parser.add_argument('-r', '--repository', default='cim',
                       help='Repository name')
-    parser.add_argument('-c', '--config', default='resources/repo-config.ttl',
+    parser.add_argument('-c', '--config', default='../data/repo-config.ttl',
                       help='Repository configuration file')
     parser.add_argument('-g', '--graph', default='https://cim.ucaiug.io/ns#graph',
                       help='Named graph URI')
