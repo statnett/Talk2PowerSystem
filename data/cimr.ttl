@@ -169,15 +169,6 @@ pti:Diagram.type
   skos:example "Worldview", "Substation";
   cims:pragmatics "Possible values: Worldview, Substation".
 
-# Additional mappings of units to QUDT.
-
-cim:UnitSymbol.NOKperMWh skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
-cim:UnitSymbol.EURperMWh skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
-cim:UnitSymbol.DKKperEUR skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
-cim:UnitSymbol.NOKperEUR skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
-cim:UnitSymbol.SEKperEUR skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
-cim:UnitSymbol.H skos:exactMatch unit:H .
-
 #### Patch to add some entsoe2 terms
 
 #entsoe2:EnergyCongestionZone a rdfs:Class;

@@ -1,0 +1,52 @@
+@prefix cim:          <https://cim.ucaiug.io/ns#> .
+@prefix cims:         <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt:         <http://qudt.org/schema/qudt/> .
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix uml:          <http://iec.ch/TC57/NonStandard/UML#> .
+@prefix unit:         <http://qudt.org/vocab/unit/> .
+
+# Additional CIM units and their mappings to QUDT.
+
+## Energy Price
+cim:RealEnergyPrice a qudt:QuantityKind;
+  rdfs:label "RealEnergyPrice";
+  rdfs:comment "Real electrical energy price."@en;
+  skos:exactMatch quantitykind:CostPerEnergy;
+  qudt:applicableUnit cim:UnitSymbol.NOKperMWh, cim:UnitSymbol.EURperMWh.
+
+cim:UnitSymbol.EURperMWh a cim:UnitSymbol;
+  rdfs:label "EURperMWh";
+  rdfs:comment "Energy price in Euro per Mega-watt hour."@en;
+  skos:exactMatch unit:CCY_EUR-PER-MegaW-HR.
+
+cim:UnitSymbol.NOKperMWh a cim:UnitSymbol;
+  rdfs:label "NOKperMWh";
+  rdfs:comment "Energy price in Norwegian Krone per Mega-watt hour."@en;
+  skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
+
+# Currency Exchange Rate
+cim:CurrencyExchangeRate a owl:Class;
+  cims:stereotype uml:enumeration;
+  rdfs:label "CurrencyExchangeRate";
+  rdfs:comment "Exchange rate between two currencies as of some moment"@en;
+  skos:exactMatch quantitykind:ExchangeRate. 
+
+cim:CurrencyExchangeRate.DKKperEUR a cim:CurrencyExchangeRate;
+  cims:stereotype "enum";
+  rdfs:label "DKKperEUR";
+  rdfs:comment "Exchange rate of Danish kroner to Euro"@en;
+  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.NOKperEUR a cim:CurrencyExchangeRate;
+  rdfs:label "NOKperEUR";
+  rdfs:comment "Exchange rate of Norwegian kroner to Euro"@en;
+  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.SEKperEUR a cim:CurrencyExchangeRate;
+  rdfs:label "SEKperEUR";
+  rdfs:comment "Exchange rate of Swedish kroner to Euro"@en;
+  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
+
