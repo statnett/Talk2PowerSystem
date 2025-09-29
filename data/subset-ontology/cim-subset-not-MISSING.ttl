@@ -47,48 +47,29 @@
 @prefix sesame: <http://www.openrdf.org/schema/sesame#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
-<http://cim4.eu/ns/nc#Name.NameType> a cims:MISSING .
 
-<http://cim4.eu/ns/nc#Name.mRID> a cims:MISSING .
 
-<http://cim4.eu/ns/nc#NameType.NameTypeAuthority> a cims:MISSING .
 
-<http://cim4.eu/ns/nc#NameType.mRID> a cims:MISSING .
 
-<http://cim4.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
 
-nc1:Name.NameType a cims:MISSING .
 
-nc1:Name.mRID a cims:MISSING .
 
-nc1:NameType.NameTypeAuthority a cims:MISSING .
 
-nc1:NameType.mRID a cims:MISSING .
 
-nc1:NameTypeAuthority.mRID a cims:MISSING .
 
-cims:AssociationUsed a cims:MISSING .
 
-cims:ClassCategory a cims:MISSING .
 
-cims:belongsToCategory a cims:MISSING .
 
-cims:dataType a cims:MISSING .
 
-cims:multiplicity a cims:MISSING .
 
 cims:pragmatics a owl:DatatypeProperty;
   rdfs:comment "Specific SPARQL guidance and important practical information for an LLM. Applies to Classes and Properties.";
   rdfs:range xsd:string;
   rdfs:label "LLM Pragmatics" .
 
-cims:stereotype a cims:MISSING .
 
-psys:transitiveOver a cims:MISSING .
 
-dc:source a cims:MISSING .
 
-dct:PeriodOfTime a cims:MISSING .
 
 dct:accessRights a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.
@@ -106,9 +87,7 @@ dct:conformsTo a owl:ObjectProperty;
   rdfs:label "conformsTo";
   cims:multiplicity cims:M:0..n .
 
-dct:created a cims:MISSING .
 
-dct:creator a cims:MISSING .
 
 dct:description a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """A free-text account of the resource.
@@ -126,7 +105,6 @@ dct:identifier a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:label "identifier";
   cims:multiplicity cims:M:0..1 .
 
-dct:isReplacedBy a cims:MISSING .
 
 dct:issued a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """Date of formal issuance of the resource.
@@ -141,7 +119,6 @@ Reference to the date that the complete data set was made valid/available.]."""@
   rdfs:label "issued";
   cims:multiplicity cims:M:0..1 .
 
-dct:language a cims:MISSING .
 
 dct:license a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.
@@ -152,7 +129,6 @@ Reference to the license under which the data is made available. If no license h
   rdfs:label "license";
   cims:multiplicity cims:M:0..1 .
 
-dct:modified a cims:MISSING .
 
 dct:publisher a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """An entity responsible for making the resource available.
@@ -170,7 +146,6 @@ The referenced resource that is being complemented in this dataset, e.g. SSH is 
   rdfs:label "references";
   cims:multiplicity cims:M:0..n .
 
-dct:requires a cims:MISSING .
 
 dct:rights a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements."@en;
@@ -197,7 +172,6 @@ The responsibility area that multiple model can describe, also referred to frame
   rdfs:label "spatial";
   cims:multiplicity cims:M:0..1 .
 
-dct:temporal a cims:MISSING .
 
 dct:title a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """A name given to the resource.
@@ -219,17 +193,11 @@ dct:type a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:label "type";
   cims:multiplicity cims:M:0..1 .
 
-<http://purl.org/vocab/vann/preferredNamespacePrefix> a cims:MISSING .
 
-<http://purl.org/vocab/vann/preferredNamespaceUri> a cims:MISSING .
 
-qudt:AbstractQuantityKind a cims:MISSING .
 
-qudt:Concept a cims:MISSING .
 
-qudt:ContextualUnit a cims:MISSING .
 
-qudt:CountingUnit a cims:MISSING .
 
 qudt:CurrencyUnit a rdfs:Class, sh:NodeShape;
   rdfs:subClassOf qudt:DimensionlessUnit;
@@ -254,7 +222,6 @@ qudt:DerivedUnit a rdfs:Class, sh:NodeShape;
   </p>"""^^rdf:HTML;
   rdfs:label "Derived Unit" .
 
-qudt:DimensionlessUnit a cims:MISSING .
 
 qudt:Prefix a rdfs:Class, sh:NodeShape;
   rdfs:subClassOf qudt:Concept, qudt:Verifiable;
@@ -269,7 +236,6 @@ qudt:QuantityKind a rdfs:Class, sh:NodeShape;
   </p>"""^^rdf:HTML;
   rdfs:label "Quantity Kind" .
 
-qudt:QuantityKindDimensionVector a cims:MISSING .
 
 qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape;
   rdfs:subClassOf qudt:QuantityKindDimensionVector;
@@ -307,121 +273,63 @@ qudt:Unit a rdfs:Class, sh:NodeShape;
   """^^qudt:LatexString;
   rdfs:label "Unit" .
 
-qudt:Verifiable a cims:MISSING .
 
-qudt:abbreviation a cims:MISSING .
 
-qudt:altSymbol a cims:MISSING .
 
-qudt:applicableSIUnit a cims:MISSING .
 
-qudt:applicableSystem a cims:MISSING .
 
-qudt:applicableUnit a cims:MISSING .
 
-qudt:baseCGSUnitDimensions a cims:MISSING .
 
-qudt:baseSIUnitDimensions a cims:MISSING .
 
-qudt:conversionMultiplier a cims:MISSING .
 
-qudt:conversionMultiplierSN a cims:MISSING .
 
-qudt:conversionOffset a cims:MISSING .
 
-qudt:conversionOffsetSN a cims:MISSING .
 
-qudt:currencyCode a cims:MISSING .
 
-qudt:currencyExponent a cims:MISSING .
 
-qudt:currencyNumber a cims:MISSING .
 
-qudt:dbpediaMatch a cims:MISSING .
 
-qudt:definedUnitOfSystem a cims:MISSING .
 
-qudt:deprecated a cims:MISSING .
 
-qudt:derivedCoherentUnitOfSystem a cims:MISSING .
 
-qudt:dimensionExponentForAmountOfSubstance a cims:MISSING .
 
-qudt:dimensionExponentForElectricCurrent a cims:MISSING .
 
-qudt:dimensionExponentForLength a cims:MISSING .
 
-qudt:dimensionExponentForLuminousIntensity a cims:MISSING .
 
-qudt:dimensionExponentForMass a cims:MISSING .
 
-qudt:dimensionExponentForThermodynamicTemperature a cims:MISSING .
 
-qudt:dimensionExponentForTime a cims:MISSING .
 
-qudt:dimensionlessExponent a cims:MISSING .
 
-qudt:exactMatch a cims:MISSING .
 
-qudt:exponent a cims:MISSING .
 
-qudt:expression a cims:MISSING .
 
-qudt:guidance a cims:MISSING .
 
-qudt:hasBaseUnit a cims:MISSING .
 
-qudt:hasDimensionVector a cims:MISSING .
 
-qudt:hasFactorUnit a cims:MISSING .
 
-qudt:hasQuantityKind a cims:MISSING .
 
-qudt:hasReciprocalUnit a cims:MISSING .
 
-qudt:hasReferenceQuantityKind a cims:MISSING .
 
-qudt:hasUnit a cims:MISSING .
 
-qudt:iec61360Code a cims:MISSING .
 
-qudt:informativeReference a cims:MISSING .
 
-qudt:isoNormativeReference a cims:MISSING .
 
-qudt:latexDefinition a cims:MISSING .
 
-qudt:latexSymbol a cims:MISSING .
 
-qudt:omUnit a cims:MISSING .
 
-qudt:plainTextDescription a cims:MISSING .
 
-qudt:prefix a cims:MISSING .
 
-qudt:prefixMultiplier a cims:MISSING .
 
-qudt:prefixMultiplierSN a cims:MISSING .
 
-qudt:qkdvDenominator a cims:MISSING .
 
-qudt:qkdvNumerator a cims:MISSING .
 
-qudt:scalingOf a cims:MISSING .
 
-qudt:siExactMatch a cims:MISSING .
 
-qudt:siUnitsExpression a cims:MISSING .
 
-qudt:symbol a cims:MISSING .
 
-qudt:ucumCode a cims:MISSING .
 
-qudt:udunitsCode a cims:MISSING .
 
-qudt:uneceCommonCode a cims:MISSING .
 
-qudt:wikidataMatch a cims:MISSING .
 
 unit:CCY_EUR-PER-MegaW-HR a qudt:Unit;
   rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en;
@@ -453,33 +361,19 @@ unit:MegaW a qudt:Unit;
   qudt:uneceCommonCode "MAW";
   qudt:scalingOf unit:W .
 
-<http://www.linkedmodel.org/schema/vaem#todo> a cims:MISSING .
 
-<http://www.linkedmodel.org/schema/vaem#url> a cims:MISSING .
 
-geo:Feature a cims:MISSING .
 
-geo:Geometry a cims:MISSING .
 
-geo:asWKT a cims:MISSING .
 
-geo:hasGeometry a cims:MISSING .
 
-skos:altLabel a cims:MISSING .
 
-skos:broader a cims:MISSING .
 
-skos:exactMatch a cims:MISSING .
 
-skos:example a cims:MISSING .
 
-skos:narrower a cims:MISSING .
 
-skos:note a cims:MISSING .
 
-skos:prefLabel a cims:MISSING .
 
-<http://www.w3.org/2004/03/trix/rdfg-1/Graph> a cims:MISSING .
 
 adms:versionNotes a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "A description of changes between this version and the previous version of the resource."@en;
@@ -492,9 +386,7 @@ dcat:Dataset a owl:Class;
   rdfs:comment "A collection of data, published or curated by a single source, and available for access or download in one or more representations."@en;
   rdfs:label "Dataset" .
 
-dcat:Distribution a cims:MISSING .
 
-dcat:distribution a cims:MISSING .
 
 dcat:endDate a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """This property contains the end of the period.
@@ -533,7 +425,6 @@ dcat:keyword a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:label "keyword";
   cims:multiplicity cims:M:0..n, cims:M:0..1 .
 
-dcat:landingPage a cims:MISSING .
 
 dcat:startDate a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "This property contains the start of the period. [CIM context: The date and time that this model represents, i.e. for which the model is (or was) valid. It indicates the beginning of the validity period. It is indicating either an instant (in cases where the model is only valid for a point in time) or the start time of a period. If not provided the model is considered valid for any time stamp. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]."@en,
@@ -556,7 +447,6 @@ Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en;
   rdfs:label "temporalResolution";
   cims:multiplicity cims:M:0..1 .
 
-dcat:theme a cims:MISSING .
 
 dcat:version a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The version indicator (name or identifier) of a resource."@en, "The version number of a resource."@en;
@@ -582,7 +472,6 @@ The date and time when the model was serialized in the document where the header
   rdfs:label "generatedAtTime";
   cims:multiplicity cims:M:0..1 .
 
-prov:wasDerivedFrom a cims:MISSING .
 
 prov:wasGeneratedBy a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
@@ -594,11 +483,8 @@ Reference to an activity or the exact business nature (process, configuration) w
   cims:multiplicity cims:M:0..1;
   owl:inverseOf prov:Entity .
 
-prov:wasInfluencedBy a cims:MISSING .
 
-sh:NodeShape a cims:MISSING .
 
-sh:property a cims:MISSING .
 
 cim:ACDCTerminal a owl:Class;
   rdfs:comment "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."@en;
@@ -758,9 +644,7 @@ cim:ActivePowerLimit.value a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:ActivePower;
   qudt:hasUnit unit:MegaW .
 
-cim:AmiBillingReady.enabled a cims:MISSING .
 
-cim:AmiBillingReady.operable a cims:MISSING .
 
 cim:Analog a owl:Class;
   rdfs:comment "Analog represents an analog Measurement."@en;
@@ -775,11 +659,8 @@ cim:Analog.AnalogValues a owl:ObjectProperty, owl:InverseFunctionalProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:AnalogValue.Analog .
 
-cim:Analog.maxValue a cims:MISSING .
 
-cim:Analog.minValue a cims:MISSING .
 
-cim:Analog.normalValue a cims:MISSING .
 
 cim:Analog.positiveFlowIn a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource."@en;
@@ -804,7 +685,6 @@ cim:AnalogValue.Analog a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:Analog.AnalogValues .
 
-cim:AnalogValue.value a cims:MISSING .
 
 cim:Asset a owl:Class;
   rdfs:comment "Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role."@en;
@@ -819,9 +699,7 @@ cim:Asset.AssetContainer a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:AssetContainer.Assets .
 
-cim:Asset.AssetInfo a cims:MISSING .
 
-cim:Asset.PowerSystemResource a cims:MISSING .
 
 cim:Asset.PowerSystemResources a owl:ObjectProperty;
   rdfs:comment "All power system resources used to electrically model this asset. For example, transformer asset is electrically modelled with a transformer and its windings and tap changer."@en;
@@ -831,15 +709,10 @@ cim:Asset.PowerSystemResources a owl:ObjectProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:PowerSystemResource.Assets .
 
-cim:Asset.ProductAssetModel a cims:MISSING .
 
-cim:Asset.baselineCondition a cims:MISSING .
 
-cim:Asset.baselineLossOfLife a cims:MISSING .
 
-cim:Asset.critical a cims:MISSING .
 
-cim:Asset.inUseDate a cims:MISSING .
 
 cim:Asset.inUseState a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use."@en;
@@ -848,15 +721,10 @@ cim:Asset.inUseState a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:label "inUseState";
   cims:multiplicity cims:M:0..1 .
 
-cim:Asset.kind a cims:MISSING .
 
-cim:Asset.lifecycleState a cims:MISSING .
 
-cim:Asset.lotNumber a cims:MISSING .
 
-cim:Asset.position a cims:MISSING .
 
-cim:Asset.purchasePrice a cims:MISSING .
 
 cim:Asset.serialNumber a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Serial number of this asset."@en;
@@ -872,7 +740,6 @@ cim:Asset.type a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   cims:dataType cim:String .
 
-cim:Asset.utcNumber a cims:MISSING .
 
 cim:AssetContainer a owl:Class;
   rdfs:comment "Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc."@en;
@@ -887,9 +754,7 @@ cim:AssetContainer.Assets a owl:ObjectProperty, owl:InverseFunctionalProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:Asset.AssetContainer .
 
-cim:AssetDeployment.BaseVoltage a cims:MISSING .
 
-cim:AssetDeployment.deploymentState a cims:MISSING .
 
 cim:AssetInfo a owl:Class;
   rdfs:comment """Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts:
@@ -908,17 +773,11 @@ cim:AssetInfo.ProductAssetModel a owl:ObjectProperty, owl:InverseFunctionalPrope
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:ProductAssetModel.AssetInfo .
 
-cim:AssetKind.breakerSF6DeadTankBreaker a cims:MISSING .
 
-cim:AssetKind.other a cims:MISSING .
 
-cim:AssetKind.transformer a cims:MISSING .
 
-cim:AssetLifeCycleStateKind.received a cims:MISSING .
 
-cim:AssetModelCatalogueItem a cims:MISSING .
 
-cim:AssetModelCatalogueItem.unitCost a cims:MISSING .
 
 cim:AssetModelUsageKind a owl:Class;
   rdfs:comment "Usage for an asset model."@en;
@@ -956,9 +815,7 @@ cim:AuxiliaryEquipment.Terminal a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:Terminal.AuxiliaryEquipment .
 
-cim:BasePower a cims:MISSING .
 
-cim:BasePower.basePower a cims:MISSING .
 
 cim:BaseVoltage a owl:Class;
   rdfs:comment "Defines a system base voltage which is referenced."@en;
@@ -1048,30 +905,20 @@ Mechanical limit of the busbar in the substation itself. Used for short circuit 
   qudt:hasQuantityKind cim:CurrentFlow;
   qudt:hasUnit unit:A .
 
-cim:BusbarSectionInfo a cims:MISSING .
 
-cim:CableConstructionKind.stranded a cims:MISSING .
 
 cim:CableInfo a owl:Class;
   rdfs:comment "Cable data."@en;
   rdfs:subClassOf cim:WireInfo;
   rdfs:label "CableInfo" .
 
-cim:CableInfo.constructionKind a cims:MISSING .
 
-cim:CableInfo.outerJacketKind a cims:MISSING .
 
-cim:CableInfo.shieldMaterial a cims:MISSING .
 
-cim:CableOuterJacketKind.pvc a cims:MISSING .
 
-cim:CableShieldMaterialKind.aluminum a cims:MISSING .
 
-cim:CableShieldMaterialKind.cooper a cims:MISSING .
 
-cim:CommunicationLink a cims:MISSING .
 
-cim:CommunicationLink.RemoteUnits a cims:MISSING .
 
 cim:ConductingEquipment a owl:Class;
   rdfs:comment "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."@en;
@@ -1146,7 +993,6 @@ cim:ConformLoadGroup.EnergyConsumers a owl:ObjectProperty, owl:InverseFunctional
   cims:multiplicity cims:M:1..n;
   owl:inverseOf cim:ConformLoad.LoadGroup .
 
-cim:ConnectionState.connected a cims:MISSING .
 
 cim:ConnectivityNode a owl:Class;
   rdfs:comment "Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance."@en;
@@ -1408,15 +1254,10 @@ cim:CurrentTransformer a owl:Class;
   rdfs:subClassOf cim:Sensor;
   rdfs:label "CurrentTransformer" .
 
-cim:CurrentTransformer.accuracyClass a cims:MISSING .
 
-cim:CurrentTransformer.accuracyLimit a cims:MISSING .
 
-cim:CurrentTransformer.coreBurden a cims:MISSING .
 
-cim:CurrentTransformer.ctClass a cims:MISSING .
 
-cim:CurrentTransformer.usage a cims:MISSING .
 
 cim:Curve a owl:Class;
   rdfs:comment "A multi-purpose curve or functional relationship between an independent variable (X-axis) and dependent (Y-axis) variables."@en;
@@ -1464,9 +1305,7 @@ cim:CurveData.Curve a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:Curve.CurveDatas .
 
-cim:CurveData.xValue a cims:MISSING .
 
-cim:CurveData.y1Value a cims:MISSING .
 
 cim:CurveStyle a owl:Class;
   rdfs:comment "Style or shape of curve."@en;
@@ -1612,11 +1451,8 @@ cim:Discrete.DiscreteValues a owl:ObjectProperty, owl:InverseFunctionalProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:DiscreteValue.Discrete .
 
-cim:Discrete.maxValue a cims:MISSING .
 
-cim:Discrete.minValue a cims:MISSING .
 
-cim:Discrete.normalValue a cims:MISSING .
 
 cim:DiscreteValue a owl:Class;
   rdfs:comment "DiscreteValue represents a discrete MeasurementValue."@en;
@@ -1631,7 +1467,6 @@ cim:DiscreteValue.Discrete a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:Discrete.DiscreteValues .
 
-cim:DiscreteValue.value a cims:MISSING .
 
 cim:DroopSignalFeedbackKind a owl:Class;
   rdfs:comment "Governor droop signal feedback source."@en;
@@ -1647,17 +1482,11 @@ cim:EndDevice a owl:Class;
   rdfs:subClassOf cim:AssetContainer;
   rdfs:label "EndDevice" .
 
-cim:EndDevice.amrSystem a cims:MISSING .
 
-cim:EndDevice.installCode a cims:MISSING .
 
-cim:EndDevice.isPan a cims:MISSING .
 
-cim:EndDevice.isSmartInverter a cims:MISSING .
 
-cim:EndDevice.isVirtual a cims:MISSING .
 
-cim:EndDevice.timeZoneOffset a cims:MISSING .
 
 cim:EnergyArea a owl:Class;
   rdfs:comment "Describes an area having energy production or consumption.  Specializations are intended to support the load allocation function as typically required in energy management systems or planning studies to allocate hypothesized load levels to individual load points for power flow analysis.  Often the energy area can be linked to both measured and forecast load levels."@en;
@@ -2017,11 +1846,8 @@ cim:GeneratingUnit.RotatingMachine a owl:ObjectProperty, owl:InverseFunctionalPr
   cims:multiplicity cims:M:1..n;
   owl:inverseOf cim:RotatingMachine.GeneratingUnit .
 
-cim:GeneratingUnit.highControlLimit a cims:MISSING .
 
-cim:GeneratingUnit.initialP a cims:MISSING .
 
-cim:GeneratingUnit.lowControlLimit a cims:MISSING .
 
 cim:GeneratingUnit.maxEconomicP a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Maximum high economic active power limit, that should not exceed the maximum operating active power limit."@en;
@@ -2374,7 +2200,6 @@ cim:Manufacturer a owl:Class;
   rdfs:subClassOf cim:OrganisationRole;
   rdfs:label "Manufacturer" .
 
-cim:Manufacturer.ProductAssetModel a cims:MISSING .
 
 cim:Manufacturer.ProductAssetModels a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:comment "All asset models by this manufacturer."@en;
@@ -2389,9 +2214,7 @@ cim:Measurement a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "Measurement" .
 
-cim:Measurement.ACDCTerminal a cims:MISSING .
 
-cim:Measurement.Asset a cims:MISSING .
 
 cim:Measurement.PowerSystemResource a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "The power system resource that contains the measurement."@en;
@@ -2486,7 +2309,6 @@ cim:Name a owl:Class;
   rdfs:comment "The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."@en;
   rdfs:label "Name" .
 
-cim:Name.IdentifiedObject a cims:MISSING .
 
 cim:Name.name a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Any free text that used as a name or alternative identifier of the object."@en;
@@ -2513,11 +2335,8 @@ cim:NameType.name a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:label "name";
   cims:multiplicity cims:M:1..1 .
 
-cim:NameTypeAuthority a cims:MISSING .
 
-cim:NameTypeAuthority.description a cims:MISSING .
 
-cim:NameTypeAuthority.name a cims:MISSING .
 
 cim:NonConformLoad a owl:Class;
   rdfs:comment "NonConformLoad represents loads that do not follow a daily load change pattern and whose changes are not correlated with the daily load change pattern."@en;
@@ -2654,17 +2473,11 @@ cim:Organisation.Roles a owl:ObjectProperty, owl:InverseFunctionalProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:OrganisationRole.Organisation .
 
-cim:Organisation.city a cims:MISSING .
 
-cim:Organisation.country a cims:MISSING .
 
-cim:Organisation.eMail a cims:MISSING .
 
-cim:Organisation.phone a cims:MISSING .
 
-cim:Organisation.postalCode a cims:MISSING .
 
-cim:Organisation.streetAddress a cims:MISSING .
 
 cim:OrganisationRole a owl:Class;
   rdfs:comment "Identifies a way in which an organisation may participate in the utility enterprise (e.g., customer, manufacturer, etc)."@en;
@@ -2692,13 +2505,9 @@ cim:OverheadWireInfo a owl:Class;
   rdfs:subClassOf cim:WireInfo;
   rdfs:label "OverheadWireInfo" .
 
-cim:Ownership a cims:MISSING .
 
-cim:Ownership.Asset a cims:MISSING .
 
-cim:Ownership.AssetOwner a cims:MISSING .
 
-cim:Ownership.share a cims:MISSING .
 
 cim:PetersenCoil a owl:Class;
   rdfs:comment "A variable impedance device normally used to offset line charging during single line faults in an ungrounded section of network."@en;
@@ -2762,22 +2571,16 @@ cim:PotentialTransformer a owl:Class;
   rdfs:subClassOf cim:Sensor;
   rdfs:label "PotentialTransformer" .
 
-cim:PotentialTransformer.accuracyClass a cims:MISSING .
 
-cim:PotentialTransformer.nominalRatio a cims:MISSING .
 
-cim:PotentialTransformer.ptClass a cims:MISSING .
 
-cim:PotentialTransformer.type a cims:MISSING .
 
-cim:PotentialTransformerKind.capacitiveCoupling a cims:MISSING .
 
 cim:PowerSystemResource a owl:Class;
   rdfs:comment "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."@en;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "PowerSystemResource" .
 
-cim:PowerSystemResource.AssetDatasheet a cims:MISSING .
 
 cim:PowerSystemResource.Assets a owl:ObjectProperty;
   rdfs:comment "All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment."@en;
@@ -2914,7 +2717,6 @@ cim:PowerTransformerEnd.x a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:Reactance;
   qudt:hasUnit unit:OHM .
 
-cim:PowerTransformerInfo a cims:MISSING .
 
 cim:ProductAssetModel a owl:Class;
   rdfs:comment "Asset model by a specific manufacturer."@en;
@@ -2930,7 +2732,6 @@ cim:ProductAssetModel.AssetInfo a owl:ObjectProperty, owl:InverseFunctionalPrope
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:AssetInfo.ProductAssetModel .
 
-cim:ProductAssetModel.AssetModelCatalogueItem a cims:MISSING .
 
 cim:ProductAssetModel.Manufacturer a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Manufacturer of this asset model."@en;
@@ -2940,11 +2741,8 @@ cim:ProductAssetModel.Manufacturer a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:Manufacturer.ProductAssetModels .
 
-cim:ProductAssetModel.catalogueNumber a cims:MISSING .
 
-cim:ProductAssetModel.drawingNumber a cims:MISSING .
 
-cim:ProductAssetModel.instructionMnaual a cims:MISSING .
 
 cim:ProductAssetModel.modelNumber a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Manufacturer's model number."@en;
@@ -2967,7 +2765,6 @@ cim:ProductAssetModel.usageKind a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:label "usageKind";
   cims:multiplicity cims:M:0..1 .
 
-cim:ProductAssetModel.weightTotal a cims:MISSING .
 
 cim:ProtectedSwitch a owl:Class;
   rdfs:comment "A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment."@en;
@@ -3002,7 +2799,6 @@ When the increment is negative, the voltage decreases when the tap step increase
   qudt:hasQuantityKind cim:PerCent;
   qudt:hasUnit unit:PERCENT .
 
-cim:RatioTapChanger.tculControlMode a cims:MISSING .
 
 cim:RegulatingCondEq a owl:Class;
   rdfs:comment "A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network."@en;
@@ -3096,27 +2892,18 @@ cim:RegulatingControlModeKind.voltage a cim:RegulatingControlModeKind;
   rdfs:comment "Voltage is specified."@en;
   rdfs:label "voltage" .
 
-cim:RemotePoint.RemoteUnit a cims:MISSING .
 
 cim:RemoteSignalKind a owl:Class;
   rdfs:comment "Type of input signal coming from remote bus."@en;
   rdfs:label "RemoteSignalKind" .
 
-cim:RemoteSource a cims:MISSING .
 
-cim:RemoteSource.deadband a cims:MISSING .
 
-cim:RemoteSource.scanInterval a cims:MISSING .
 
-cim:RemoteSource.sensorMaximum a cims:MISSING .
 
-cim:RemoteSource.sensorMinimum a cims:MISSING .
 
-cim:RemoteUnit a cims:MISSING .
 
-cim:RemoteUnit.remoteUnitType a cims:MISSING .
 
-cim:RemoteUnitType.IED a cims:MISSING .
 
 cim:RotatingMachine a owl:Class;
   rdfs:comment "A rotating machine which may be used as a generator or motor."@en;
@@ -3247,9 +3034,7 @@ cim:ShuntCompensatorInfo a owl:Class;
   rdfs:subClassOf cim:AssetInfo;
   rdfs:label "ShuntCompensatorInfo" .
 
-cim:ShuntCompensatorInfo.maxPowerLoss a cims:MISSING .
 
-cim:ShuntCompensatorInfo.ratedCurrent a cims:MISSING .
 
 cim:ShuntCompensatorInfo.ratedReactivePower a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Rated reactive power."@en;
@@ -3572,7 +3357,6 @@ cim:SwitchInfo.breakingCapacity a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   cims:dataType cim:CurrentFlow .
 
-cim:SwitchInfo.isSinglePhase a cims:MISSING .
 
 cim:SwitchInfo.isUnganged a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)."@en;
@@ -3611,7 +3395,6 @@ cim:SynchronousMachine.maxQ a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:ReactivePower;
   qudt:hasUnit unit:MegaV-A_Reactive .
 
-cim:SynchronousMachine.maxU a cims:MISSING .
 
 cim:SynchronousMachine.minQ a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Minimum reactive power limit for the unit."@en;
@@ -3624,7 +3407,6 @@ cim:SynchronousMachine.minQ a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:ReactivePower;
   qudt:hasUnit unit:MegaV-A_Reactive .
 
-cim:SynchronousMachine.minU a cims:MISSING .
 
 cim:SynchronousMachine.operatingMode a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Current mode of operation."@en;
@@ -3794,21 +3576,13 @@ cim:TapChangerInfo a owl:Class;
   rdfs:subClassOf cim:AssetInfo;
   rdfs:label "TapChangerInfo" .
 
-cim:TapChangerInfo.highStep a cims:MISSING .
 
-cim:TapChangerInfo.lowStep a cims:MISSING .
 
-cim:TapChangerInfo.neutralStep a cims:MISSING .
 
-cim:TapChangerInfo.neutralU a cims:MISSING .
 
-cim:TapChangerInfo.ratedApparentPower a cims:MISSING .
 
-cim:TapChangerInfo.ratedCurrent a cims:MISSING .
 
-cim:TapChangerInfo.ratedVoltage a cims:MISSING .
 
-cim:TapChangerInfo.stepVoltageIncrement a cims:MISSING .
 
 cim:Terminal a owl:Class;
   rdfs:comment "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."@en;
@@ -3980,7 +3754,6 @@ cim:TopologicalNode.TopologicalIsland a owl:ObjectProperty, owl:FunctionalProper
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:TopologicalIsland.TopologicalNodes .
 
-cim:TransformerControlMode.volt a cims:MISSING .
 
 cim:TransformerEnd a owl:Class;
   rdfs:comment "A conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose, but this class is more flexible because it associates to terminal but is not a specialization of ConductingEquipment."@en;
@@ -4039,13 +3812,9 @@ cim:TransformerEndInfo.TransformerTankInfo a owl:ObjectProperty, owl:FunctionalP
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:TransformerTankInfo.TransformerEndInfos .
 
-cim:TransformerEndInfo.connectionKind a cims:MISSING .
 
-cim:TransformerEndInfo.endNumber a cims:MISSING .
 
-cim:TransformerEndInfo.phaseAngleClock a cims:MISSING .
 
-cim:TransformerEndInfo.r a cims:MISSING .
 
 cim:TransformerEndInfo.ratedS a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Normal apparent power rating."@en;
@@ -4066,7 +3835,6 @@ cim:TransformerTankInfo a owl:Class;
   rdfs:subClassOf cim:AssetInfo;
   rdfs:label "TransformerTankInfo" .
 
-cim:TransformerTankInfo.PowerTransformerInfo a cims:MISSING .
 
 cim:TransformerTankInfo.TransformerEndInfos a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Data for all the ends described by this transformer tank data."@en;
@@ -4109,7 +3877,6 @@ cim:UnitSymbol.A a cim:UnitSymbol;
 cim:UnitSymbol.DKKperEUR a cims:MISSING;
   skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
 
-cim:UnitSymbol.Deg a cims:MISSING .
 
 cim:UnitSymbol.EURperMWh a cims:MISSING;
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
@@ -4128,7 +3895,6 @@ cim:UnitSymbol.V a cim:UnitSymbol;
   rdfs:label "V";
   skos:exactMatch unit:V .
 
-cim:UnitSymbol.VAR a cims:MISSING .
 
 cim:UnitSymbol.W a cim:UnitSymbol;
   rdfs:comment "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."@en;
@@ -4150,43 +3916,24 @@ cim:UsagePoint a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "UsagePoint" .
 
-cim:UsagePoint.Equipments a cims:MISSING .
 
-cim:UsagePoint.amiBillingReady a cims:MISSING .
 
-cim:UsagePoint.chekBilling a cims:MISSING .
 
-cim:UsagePoint.connectionCategory a cims:MISSING .
 
-cim:UsagePoint.connectionState a cims:MISSING .
 
-cim:UsagePoint.estimatedLoad a cims:MISSING .
 
-cim:UsagePoint.grounded a cims:MISSING .
 
-cim:UsagePoint.isSdq a cims:MISSING .
 
-cim:UsagePoint.isVirtual a cims:MISSING .
 
-cim:UsagePoint.minimalUsageExpected a cims:MISSING .
 
-cim:UsagePoint.nominalServiceVoltage a cims:MISSING .
 
-cim:UsagePoint.outageRegion a cims:MISSING .
 
-cim:UsagePoint.phaseCode a cims:MISSING .
 
-cim:UsagePoint.phaseCount a cims:MISSING .
 
-cim:UsagePoint.ratedCurrent a cims:MISSING .
 
-cim:UsagePoint.ratedPower a cims:MISSING .
 
-cim:UsagePoint.readCycle a cims:MISSING .
 
-cim:UsagePoint.serviceDeliveryRemark a cims:MISSING .
 
-cim:UsagePoint.servicePriority a cims:MISSING .
 
 cim:Validity a owl:Class;
   rdfs:comment "Validity for MeasurementValue."@en;
@@ -4316,9 +4063,7 @@ cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:label "insulationMaterial";
   cims:multiplicity cims:M:0..1 .
 
-cim:WireInfo.material a cims:MISSING .
 
-cim:WireInfo.nominalTemperature a cims:MISSING .
 
 cim:WireInfo.rAC25 a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "AC resistance per unit length of the conductor at 25 °C."@en;
@@ -4334,7 +4079,6 @@ cim:WireInfo.rAC75 a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   cims:dataType cim:ResistancePerLength .
 
-cim:WireInfo.rDC20 a cims:MISSING .
 
 cim:WireInfo.radius a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Outside radius of the wire."@en;
@@ -4362,17 +4106,13 @@ cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulation
   rdfs:comment "Tree retardant crosslinked polyethylene wire insulation."@en;
   rdfs:label "treeRetardantCrosslinkedPolyethylene" .
 
-cim:WireMaterialKind.aluminum a cims:MISSING .
 
 cim:WireUsageKind a owl:Class;
   rdfs:comment "Kind of wire usage."@en;
   rdfs:label "WireUsageKind" .
 
-cim:straightLineYValues a cims:MISSING .
 
-cim:unitMultiplier a cims:MISSING .
 
-cim:unitSymbol a cims:MISSING .
 
 eu:BoundaryPoint a owl:Class;
   rdfs:comment "Designates a connection point at which one or more model authority sets shall connect to. The location of the connection point as well as other properties are agreed between organisations responsible for the interconnection, hence all attributes of the class represent this agreement.  It is primarily used in a boundary model authority set which can contain one or many BoundaryPoint-s among other Equipment-s and their connections."@en;
@@ -4611,7 +4351,6 @@ nc:BaseTimeSeries.kind a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:label "kind";
   cims:multiplicity cims:M:1..1 .
 
-nc:BaseTimeSeries.method a cims:MISSING .
 
 nc:BaseTimeSeries.percentile a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The percentile is a number where a certain percentage of scores/ranking/values of a sample fall below that number. This is a way for expressing uncertainty in the number provided."@en;
@@ -4698,25 +4437,15 @@ nc:CapacityCalculationRegion a owl:Class;
   rdfs:subClassOf nc:Region;
   rdfs:label "CapacityCalculationRegion" .
 
-nc:CapacitySchedule.CapacityTimePoint a cims:MISSING .
 
-nc:CapacityTimePoint.atTime a cims:MISSING .
 
-nc:CapacityTimePoint.maxAllocatedP a cims:MISSING .
 
-nc:CapacityTimePoint.maxAllocatedQ a cims:MISSING .
 
-nc:CapacityTimePoint.maxP a cims:MISSING .
 
-nc:CapacityTimePoint.maxQ a cims:MISSING .
 
-nc:CapacityTimePoint.minAllocatedP a cims:MISSING .
 
-nc:CapacityTimePoint.minAllocatedQ a cims:MISSING .
 
-nc:CapacityTimePoint.minP a cims:MISSING .
 
-nc:CapacityTimePoint.minQ a cims:MISSING .
 
 nc:CertaintyLevelKind a owl:Class;
   rdfs:comment "High certainty level is used when the cause of a fault is 100 % certain or when the cause is the most probable cause and potentially determined by an expert."@en;
@@ -4939,7 +4668,6 @@ nc:FaultKind a owl:Class;
 In case of developing faults, that is in faults changing from one type to another, the final type is given."""@en;
   rdfs:label "FaultKind" .
 
-nc:Feeder.CapacitySchedule a cims:MISSING .
 
 nc:FunctionInputVariable a owl:Class;
   rdfs:comment "Functional input variable defines the domain of the function."@en;
@@ -5048,7 +4776,6 @@ nc:GeneratingUnit.ScheduleResource a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   owl:inverseOf nc:ScheduleResource.GeneratingUnit .
 
-nc:GeneratingUnit.normalParticipationFactor a cims:MISSING .
 
 nc:GeothermalUnitKind a owl:Class;
   rdfs:comment "Kind of geothermal."@en;
@@ -5118,9 +4845,7 @@ nc:GridStateAlterationCollection.StageAction a owl:ObjectProperty, owl:InverseFu
   cims:multiplicity cims:M:0..n;
   owl:inverseOf nc:Stage.GridStateAlterationCollection .
 
-nc:IdentifiedObject.description a cims:MISSING .
 
-nc:IdentifiedObject.name a cims:MISSING .
 
 nc:ImpactAgreementKind a owl:Class;
   rdfs:comment "The impact agreement for the remedial action."@en;
@@ -5166,11 +4891,8 @@ nc:LoadAction.EnergyConsumer a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf nc:EnergyConsumer.LoadAction .
 
-nc:LogicOperatorsKind.greaterThan a cims:MISSING .
 
-nc:LogicOperatorsKind.lessThan a cims:MISSING .
 
-nc:LogicOperatorsKind.lessThanOrEquals a cims:MISSING .
 
 nc:LogicalOperatorsKind a owl:Class;
   rdfs:comment "Kinds of logical operators for comparison."@en;
@@ -5869,80 +5591,41 @@ nc:ValueOffsetKind.incremental a nc:ValueOffsetKind;
   rdfs:comment "Value of the range constraint is incrementing the attribute value referenced by the PropertyReference in a determined operational scenario."@en;
   rdfs:label "incremental" .
 
-nc-no:ACLineSegmentSpan a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.ACLineSegment a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.aviationObstacleLightingKind a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.aviationObstacleMarkingKind a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.maxHeight a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.maxWidth a cims:MISSING .
 
-nc-no:ACLineSegmentSpan.spanWireLength a cims:MISSING .
 
-nc-no:ACLineSegmentSpanDeployment a cims:MISSING .
 
-nc-no:ACLineSegmentSpanDeployment.ACLineSegmentSpan a cims:MISSING .
 
-nc-no:AviationObstacleLightingKind.mediumIntensityTypeB a cims:MISSING .
 
-nc-no:AviationObstacleMarkingKind.marker a cims:MISSING .
 
-nc-no:DeploymentStateKind.notYetInstalled a cims:MISSING .
 
-nc-no:Guy a cims:MISSING .
 
-nc-no:Guy.aviationObstacleLightingKind a cims:MISSING .
 
-nc-no:Guy.aviationObstacleMarkingKind a cims:MISSING .
 
-nc-no:Guy.length a cims:MISSING .
 
-nc-no:Guy.maxHeight a cims:MISSING .
 
-nc-no:Guy.maxWidth a cims:MISSING .
 
-nc-no:LineLightingKind.lit a cims:MISSING .
 
-nc-no:LineMarkingKind.colourMarking a cims:MISSING .
 
-nc-no:LocationMethodKind.measured a cims:MISSING .
 
-nc-no:LocationResource.locationMethod a cims:MISSING .
 
-nc-no:OverheadStructure a cims:MISSING .
 
-nc-no:OverheadStructure.aviationObstacleLightingKind a cims:MISSING .
 
-nc-no:OverheadStructure.aviationObstacleMarkingKind a cims:MISSING .
 
-nc-no:OverheadStructure.height a cims:MISSING .
 
-nc-no:OverheadStructure.maxHeight a cims:MISSING .
 
-nc-no:PowerSystemResource.locationMethod a cims:MISSING .
 
-nc-no:StructureDeployment a cims:MISSING .
 
-nc-no:StructureDeployment.Structure a cims:MISSING .
 
-nc-no:StructureSupportDeployment a cims:MISSING .
 
-nc-no:StructureSupportDeployment.StructureSupport a cims:MISSING .
 
-nc-no:Zone a cims:MISSING .
 
-nc-no:Zone.state a cims:MISSING .
 
-nc-no:Zone.zoneKind a cims:MISSING .
 
-nc-no:ZoneKind.substation a cims:MISSING .
 
-nc-no:ZoneStateKind.notYetRegistered a cims:MISSING .
 
-nc-no:locationMethodKind.measured a cims:MISSING .
 
-<https://www.w3.org/ns/json-ld#base> a cims:MISSING .

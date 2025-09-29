@@ -48,7 +48,7 @@ prefix xsd:         <http://www.w3.org/2001/XMLSchema#>
 # Describe all ontology terms (classes, props and enum values) used in instance data
 construct {
   ?x ?p ?o; rdfs:comment ?new.
-#  ?x a ?missing
+  ?x a ?missing
 }
 from onto:explicit # use only explicit statements in the description
 where {
@@ -93,7 +93,7 @@ where {
                       uml1:baseuri, uml1:hasStereotype, uml1:id,
                       owl:propertyChainAxiom, 
                       rdfs:isDefinedBy, rdfs:comment,
-                      qudt:applicableSystem, qudt:iec61360Code, qudt:informativeReference, qudt:ucumCode, qudt:wikidataMatch, qudt:dbpediaMatch,
+                      qudt:applicableSystem, qudt:iec61360Code, qudt:informativeReference, qudt:hasFactorUnit, qudt:ucumCode, qudt:wikidataMatch, qudt:dbpediaMatch, qudt:latexDefinition,
                       sh:property
     ))
     filter(?x not in (cims:belongsToCategory))

@@ -21,78 +21,6 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
-qudt:CurrencyUnit a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Currency Unit" ;
-  dct:description """
-  Currency Units have their own subclass of unit because:
-   (a) they have additional properties such as 'country' and
-   (b) their URIs do not conform to the same rules as other units.
-  """^^rdf:HTML ;
-  rdfs:subClassOf qudt:DimensionlessUnit .
-
-qudt:DecimalPrefix a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Decimal Prefix" ;
-  dct:description """
-  A <em>Decimal Prefix</em> is a prefix for multiples of units that are powers of 10.
-  """ ;
-  rdfs:subClassOf qudt:Prefix .
-
-qudt:DerivedUnit a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Derived Unit" ;
-  dct:description """
-  <p>A <em>Derived Unit</em> is a type specification for units that are derived from other units.
-  </p>"""^^rdf:HTML ;
-  rdfs:subClassOf qudt:Unit .
-
-qudt:Prefix a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Prefix" ;
-  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
-
-qudt:QuantityKind a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Quantity Kind" ;
-  dct:description """
-  <p>A <em>Quantity Kind</em> is any observable property that can be  measured and quantified numerically. 
-  Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. 
-  Less familiar examples include currency, interest rate, price to earning ratio, and information capacity.
-  </p>"""^^rdf:HTML ;
-  rdfs:subClassOf qudt:AbstractQuantityKind, qudt:Verifiable .
-
-qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape ;
-  rdfs:label "CGS Dimension vector" ;
-  dct:description "A <em>CGS Dimension Vector</em> is used to specify the dimensions for a C.G.S. quantity kind."^^rdf:HTML ;
-  rdfs:subClassOf qudt:QuantityKindDimensionVector .
-
-qudt:QuantityKindDimensionVector_ISO a rdfs:Class, sh:NodeShape ;
-  rdfs:label "ISO Dimension vector" ;
-  rdfs:subClassOf qudt:QuantityKindDimensionVector .
-
-qudt:QuantityKindDimensionVector_Imperial a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Imperial dimension vector" ;
-  rdfs:subClassOf qudt:QuantityKindDimensionVector .
-
-qudt:QuantityKindDimensionVector_SI a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Quantity Kind Dimension vector (SI)" ;
-  rdfs:subClassOf qudt:QuantityKindDimensionVector .
-
-qudt:SystemOfUnits a rdfs:Class, sh:NodeShape ;
-  rdfs:label "System of Units" ;
-  dct:description """
-  <p>A <em>System of Units</em> is a set of units which are chosen as the reference scales for some set of quantity kinds together with the definitions of each unit. 
-  Units may be defined by experimental observation or by proportion to another unit not included in the system. 
-  If the unit system is explicitly associated with a quantity kind system, then the unit system must define at least one unit for each quantity kind.
-  </p>"""^^rdf:HTML ;
-  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
-
-qudt:Unit a rdfs:Class, sh:NodeShape ;
-  rdfs:label "Unit" ;
-  dct:description """
-  A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). 
-  For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). 
-  Any measurement of the length can be expressed as a number multiplied by the unit meter. 
-  More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
-  """^^qudt:LatexString ;
-  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
-
 cim: a owl:Ontology ;
   rdfs:label "Common Information Model" ;
   rdfs:comment "Created by merging CIM and NC ontologies, adding CIM Rules (cimr), then subsetting them to terms used in the Nordic44 and Telemark120 datasets. Part of the Talk2PowerSystem project" ;
@@ -5131,15 +5059,20 @@ cim:UnitSymbol.A a cim:UnitSymbol ;
   rdfs:comment "Current in amperes."@en ;
   skos:exactMatch unit:A .
 
-cim:UnitSymbol.DKKperEUR skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
+cim:UnitSymbol.DKKperEUR a cims:MISSING ;
+  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
 
-cim:UnitSymbol.EURperMWh skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
+cim:UnitSymbol.EURperMWh a cims:MISSING ;
+  skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-cim:UnitSymbol.NOKperEUR skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
+cim:UnitSymbol.NOKperEUR a cims:MISSING ;
+  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
 
-cim:UnitSymbol.NOKperMWh skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
+cim:UnitSymbol.NOKperMWh a cims:MISSING ;
+  skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
 
-cim:UnitSymbol.SEKperEUR skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
+cim:UnitSymbol.SEKperEUR a cims:MISSING ;
+  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
 
 cim:UnitSymbol.V a cim:UnitSymbol ;
   rdfs:label "V" ;
@@ -5236,12 +5169,83 @@ nc:ValueOffsetKind.incremental a nc:ValueOffsetKind ;
   rdfs:label "incremental" ;
   rdfs:comment "Value of the range constraint is incrementing the attribute value referenced by the PropertyReference in a determined operational scenario."@en .
 
+qudt:CurrencyUnit a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Currency Unit" ;
+  dct:description """
+  Currency Units have their own subclass of unit because:
+   (a) they have additional properties such as 'country' and
+   (b) their URIs do not conform to the same rules as other units.
+  """^^rdf:HTML ;
+  rdfs:subClassOf qudt:DimensionlessUnit .
+
+qudt:DecimalPrefix a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Decimal Prefix" ;
+  dct:description """
+  A <em>Decimal Prefix</em> is a prefix for multiples of units that are powers of 10.
+  """ ;
+  rdfs:subClassOf qudt:Prefix .
+
+qudt:DerivedUnit a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Derived Unit" ;
+  dct:description """
+  <p>A <em>Derived Unit</em> is a type specification for units that are derived from other units.
+  </p>"""^^rdf:HTML ;
+  rdfs:subClassOf qudt:Unit .
+
+qudt:Prefix a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Prefix" ;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
+
+qudt:QuantityKind a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Quantity Kind" ;
+  dct:description """
+  <p>A <em>Quantity Kind</em> is any observable property that can be  measured and quantified numerically. 
+  Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. 
+  Less familiar examples include currency, interest rate, price to earning ratio, and information capacity.
+  </p>"""^^rdf:HTML ;
+  rdfs:subClassOf qudt:AbstractQuantityKind, qudt:Verifiable .
+
+qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape ;
+  rdfs:label "CGS Dimension vector" ;
+  dct:description "A <em>CGS Dimension Vector</em> is used to specify the dimensions for a C.G.S. quantity kind."^^rdf:HTML ;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector .
+
+qudt:QuantityKindDimensionVector_ISO a rdfs:Class, sh:NodeShape ;
+  rdfs:label "ISO Dimension vector" ;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector .
+
+qudt:QuantityKindDimensionVector_Imperial a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Imperial dimension vector" ;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector .
+
+qudt:QuantityKindDimensionVector_SI a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Quantity Kind Dimension vector (SI)" ;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector .
+
+qudt:SystemOfUnits a rdfs:Class, sh:NodeShape ;
+  rdfs:label "System of Units" ;
+  dct:description """
+  <p>A <em>System of Units</em> is a set of units which are chosen as the reference scales for some set of quantity kinds together with the definitions of each unit. 
+  Units may be defined by experimental observation or by proportion to another unit not included in the system. 
+  If the unit system is explicitly associated with a quantity kind system, then the unit system must define at least one unit for each quantity kind.
+  </p>"""^^rdf:HTML ;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
+
+qudt:Unit a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Unit" ;
+  dct:description """
+  A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). 
+  For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). 
+  Any measurement of the length can be expressed as a number multiplied by the unit meter. 
+  More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
+  """^^qudt:LatexString ;
+  rdfs:subClassOf qudt:Concept, qudt:Verifiable .
+
 unit:CCY_EUR-PER-MegaW-HR a qudt:Unit ;
   rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en ;
   qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
   qudt:conversionMultiplierSN 2.7778E-10 ;
   qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
-  qudt:hasFactorUnit  [],  [],  [];
   qudt:hasQuantityKind quantitykind:CostPerEnergy ;
   qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
   qudt:symbol "€/(MW·h)" .
@@ -5251,7 +5255,6 @@ unit:CCY_NOK-PER-MegaW-HR a qudt:Unit ;
   qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
   qudt:conversionMultiplierSN 2.7778E-10 ;
   qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
-  qudt:hasFactorUnit  [],  [],  [];
   qudt:hasQuantityKind quantitykind:CostPerEnergy ;
   qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
   qudt:symbol "NOK/(MW·h)" .
