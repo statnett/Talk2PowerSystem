@@ -5,11 +5,12 @@ Relevant task [#18](https://github.com/statnett/Talk2PowerSystem_PM/issues/18)
 
 ## Features
 
-- Creates a repository from [nordic44-repo-config.ttl](resources/nordic44-repo-config.ttl)
-- Downloads and loads all files from [ontologies.txt] in `https://cim.ucaiug.io/ns#graph`
-- Downloads and loads all instance data from [instances.txt] in the graph specified in the file.
-- Loads custom inference rules from [cim_owl2-rl-optimized.pie](../data/cim_owl2-rl-optimized.pie)
-- Executes post-loading SPARQL queries
+- Creates a repository from [repo-config.ttl](../data/repo-config.ttl)
+- Downloads and loads all files from [ontologies.txt](ontologies.txt) in `https://cim.ucaiug.io/ns#graph`
+- Downloads and loads all instance data from list of files in [instances.txt](instances.txt]) in the graph specified in the `.trig` files.
+- Loads custom inference rules from [cim_owl2-rl-optimized.pie](../data/cim_owl2-rl-optimized.pie). (see the [wiki](https://github.com/statnett/Talk2PowerSystem/wiki/Inference) for details)
+- Executes post-loading SPARQL [queries](../data/queries/) in order w.r.t the filename.
+- Enables [autocomplete](https://graphdb.ontotext.com/documentation/11.1/autocomplete-index.html) for the labels specified in [autocomplete-labels.txt](autocomplete-labels.txt)
 
 ## Prerequisites
 
@@ -71,18 +72,10 @@ python load.py --no-auth
 
 - `ontologies.txt`: List of ontology files to load
 - `instances.txt`: List of instance files to load
-- `resources/`: Directory containing configuration and rule files
-  - `nordic44-repo-config.ttl`: Repository configuration
+- `../data`: Directory containing configuration, rule files and queries
+  - `repo-config.ttl`: Repository configuration
   - `cim_owl2-rl-optimized.pie`: Custom inference rules
   - `queries/`: Directory containing SPARQL update queries
     - `01-add-inference.ru`: Sets up inference rules and triggers reinference
     - `02-add-mridSignificantPart.ru`: Adds significant part annotations
     - `03-add-missing-mrid.ru`: Adds missing mRID identifiers
-
-## Remaining to do
-
-- enable autocomplete
-    - see https://graphwise.atlassian.net/browse/GDB-12211
-
-- create visual graphs
-
