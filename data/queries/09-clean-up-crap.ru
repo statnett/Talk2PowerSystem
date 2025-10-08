@@ -12,6 +12,7 @@ delete {
 where {
     values ?pat {
         "http://purl.org/dc/terms/Resource"
+        "http://www.w3.org/ns/dcat#Resource"
         "http://iec.ch/TC57/61970-552/ModelDescription/1#Model"
     }
     ?s ?p ?o .
