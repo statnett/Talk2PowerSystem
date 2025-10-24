@@ -442,23 +442,6 @@ Rules
 	------------------------------------
 	  c a d [Context <onto:_checkChain>]
 
-
-	Id: prp_eqp1
-
-	  a <owl:equivalentProperty> b
-	  c a d
-	------------------------------------
-	  c b d
-
-
-	Id: prp_eqp2
-
-	  a <owl:equivalentProperty> b
-	  c b d
-	------------------------------------
-	  c a d
-
-
 	Id: owl_allDisjProp1
 
 	  a <rdf:type> <owl:AllDisjointProperties>
@@ -568,81 +551,6 @@ Rules
 	------------------------------------
 	  d <rdf:type> a
 
-
-	Id: cls_svf2
-
-	  a <owl:someValuesFrom> <owl:Thing>
-	  a <owl:onProperty> b
-	  c b d
-	------------------------------------
-	  c <rdf:type> a
-
-
-	Id: cls_avf
-
-	  a <owl:allValuesFrom> b
-	  a <owl:onProperty> c
-	  d <rdf:type> a
-	  d c e
-	------------------------------------
-	  e <rdf:type> b
-
-
-	Id: cls_hv1
-
-	  a <owl:hasValue> b
-	  a <owl:onProperty> c
-	  d <rdf:type> a
-	------------------------------------
-	  d c b
-
-
-	Id: cls_hv2
-
-	  a <owl:hasValue> b
-	  a <owl:onProperty> c
-	  d c b
-	------------------------------------
-	  d <rdf:type> a
-
-
-	Id: cls_maxc2
-
-	  a <owl:maxCardinality> "1"^^xsd:nonNegativeInteger
-	  a <owl:onProperty> b
-	  c <rdf:type> a
-	  c b d
-	  c b e
-	------------------------------------
-	  d <owl:sameAs> e
-
-
-	Id: cls_maxqc3
-
-	  a <owl:maxQualifiedCardinality> "1"^^xsd:nonNegativeInteger
-	  a <owl:onProperty> b
-	  a <owl:onClass> c
-	  d <rdf:type> a
-	  d b e
-	  e <rdf:type> c
-	  d b f [Cut]
-	  f <rdf:type> c [Cut]
-	------------------------------------
-	  e <owl:sameAs> f [Constraint e != f]
-
-
-	Id: cls_maxqc4
-
-	  a <owl:maxQualifiedCardinality> "1"^^xsd:nonNegativeInteger
-	  a <owl:onClass> <owl:Thing>
-	  a <owl:onProperty> b
-	  c <rdf:type> a
-	  c b d [Cut]
-	  c b e [Constraint d != e]
-	------------------------------------
-	  d <owl:sameAs> e
-
-
 	Id: cls_oo_1
 
 	  a <owl:oneOf> b
@@ -666,23 +574,6 @@ Rules
 	  c <rdf:type> a
 	------------------------------------
 	  c <rdf:type> b
-
-
-	Id: cax_eqc1
-
-	  a <owl:equivalentClass> b [Constraint a != b]
-	  c <rdf:type> a
-	------------------------------------
-	  c <rdf:type> b
-
-
-	Id: cax_eqc2
-
-	  a <owl:equivalentClass> b [Constraint a != b]
-	  c <rdf:type> b
-	------------------------------------
-	  c <rdf:type> a
-
 
 	Id: owl_allDisjClasses1
 
@@ -772,62 +663,6 @@ Rules
 	  c <rdfs:subPropertyOf> a
 	------------------------------------
 	  c <rdfs:range> b
-
-
-	Id: scm_hv
-
-	  a <owl:hasValue> b
-	  a <owl:onProperty> c
-	  d <owl:onProperty> e [Constraint c != e]
-	  c <rdfs:subPropertyOf> e
-	  d <owl:hasValue> b
-	------------------------------------
-	  a <rdfs:subClassOf> d [Constraint a != d]
-
-
-	Id: scm_svf1
-
-	  a <owl:someValuesFrom> b
-	  a <owl:onProperty> c
-	  d <owl:onProperty> c
-	  d <owl:someValuesFrom> e [Constraint b != e]
-	  b <rdfs:subClassOf> e
-	------------------------------------
-	  a <rdfs:subClassOf> d [Constraint a != d]
-
-
-	Id: scm_svf2
-
-	  a <owl:someValuesFrom> b
-	  a <owl:onProperty> c
-	  d <owl:onProperty> e [Constraint c != e]
-	  c <rdfs:subPropertyOf> e
-	  d <owl:someValuesFrom> b
-	------------------------------------
-	  a <rdfs:subClassOf> d [Constraint a != d]
-
-
-	Id: scm_avf1
-
-	  a <owl:allValuesFrom> b
-	  a <owl:onProperty> c
-	  d <owl:onProperty> c
-	  d <owl:allValuesFrom> e [Constraint b != e]
-	  b <rdfs:subClassOf> e
-	------------------------------------
-	  a <rdfs:subClassOf> d [Constraint a != d]
-
-
-	Id: scm_avf2
-
-	  a <owl:allValuesFrom> b
-	  a <owl:onProperty> c
-	  d <owl:onProperty> e [Constraint c != e]
-	  c <rdfs:subPropertyOf> e
-	  d <owl:allValuesFrom> b
-	------------------------------------
-	  d <rdfs:subClassOf> a [Constraint a != d]
-
 
 	Id: scm_int_1
 
