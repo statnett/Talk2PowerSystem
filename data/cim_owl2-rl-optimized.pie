@@ -417,24 +417,6 @@ Rules
 	------------------------------------
 
 
-	Id: prp_fp
-
-	  a <rdf:type> <owl:FunctionalProperty>
-	  b a c
-	  b a d [Constraint c != d] [Cut]
-	------------------------------------
-	  c <owl:sameAs> d
-
-
-	Id: prp_ifp
-
-	  a <rdf:type> <owl:InverseFunctionalProperty>
-	  b a c
-	  d a c [Constraint b != d] [Cut]
-	------------------------------------
-	  b <owl:sameAs> d
-
-
 	Consistency: prp_irp
 
 	  a <rdf:type> <owl:IrreflexiveProperty>
