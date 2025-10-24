@@ -417,22 +417,6 @@ Rules
 	------------------------------------
 
 
-	Id: prp_dom
-
-	  a <rdfs:domain> b
-	  c a d
-	------------------------------------
-	  c <rdf:type> b
-
-
-	Id: prp_rng
-
-	  a <rdfs:range> b
-	  c a d
-	------------------------------------
-	  d <rdf:type> b
-
-
 	Id: prp_fp
 
 	  a <rdf:type> <owl:FunctionalProperty>
