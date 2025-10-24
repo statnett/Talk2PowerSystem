@@ -375,13 +375,6 @@ Rules
 	  ---------------
 	  x p z
 
-	
-	Consistency: eq_diff1
-
-	  a <owl:sameAs> b
-	  a <owl:differentFrom> b
-	------------------------------------
-
 
 	Id: owl_allDiff1
 
@@ -407,37 +400,12 @@ Rules
 	  a <onto:_distinct> c [Context <onto:_allDiff>]
 
 
-	Consistency: owl_allDiff
-
-	  a <onto:_distinct> b [Context <onto:_allDiff>]
-	  b <rdf:first> d
-	  d <owl:sameAs> e
-	  c <rdf:first> e
-	  a <onto:_distinct> c [Context <onto:_allDiff>]
-	------------------------------------
-
-
-	Consistency: prp_irp
-
-	  a <rdf:type> <owl:IrreflexiveProperty>
-	  b a b
-	------------------------------------
-
-
 	Id: prp_symp
 
 	  a <rdf:type> <owl:SymmetricProperty>
 	  b a c
 	------------------------------------
 	  c a b
-
-
-	Consistency: prp_asyp
-
-	  a <rdf:type> <owl:AsymmetricProperty>
-	  b a c
-	  c a b [Cut]
-	------------------------------------
 
 
 	Id: prp_spo1
@@ -489,14 +457,6 @@ Rules
 	  c b d
 	------------------------------------
 	  c a d
-
-
-	Consistency: prp_pdw
-
-	  a <owl:propertyDisjointWith> b
-	  c a d
-	  c b d
-	------------------------------------
 
 
 	Id: owl_allDisjProp1
@@ -572,31 +532,6 @@ Rules
 	------------------------------------
 	  c e d [Context <onto:_sameKey>]
 
-
-	Consistency: prp_npa1
-
-	  a <owl:sourceIndividual> b
-	  a <owl:assertionProperty> c
-	  a <owl:targetIndividual> d
-	  b c d
-	------------------------------------
-
-
-	Consistency: prp_npa2
-
-	  a <owl:sourceIndividual> b
-	  a <owl:assertionProperty> c
-	  a <owl:targetValue> d
-	  b c d
-	------------------------------------
-
-
-	Consistency: cls_nothing2
-
-	  a <rdf:type> <owl:Nothing>
-	------------------------------------
-
-
 	Id: owl_typeByIntersect_1
 
 	  a <onto:_allTypes> b [Context <onto:_typeByInt>]
@@ -622,14 +557,6 @@ Rules
 	  d <rdf:type> b
 	------------------------------------
 	  d <onto:_allTypes> a [Context <onto:_typeByInt>]
-
-
-	Consistency: cls_com
-
-	  a <owl:complementOf> b
-	  c <rdf:type> a
-	  c <rdf:type> b
-	------------------------------------
 
 
 	Id: cls_svf1
@@ -679,15 +606,6 @@ Rules
 	  d <rdf:type> a
 
 
-	Consistency: cls_maxc1
-
-	  a <owl:maxCardinality> "0"^^xsd:nonNegativeInteger
-	  a <owl:onProperty> b
-	  c <rdf:type> a
-	  c b d
-	------------------------------------
-
-
 	Id: cls_maxc2
 
 	  a <owl:maxCardinality> "1"^^xsd:nonNegativeInteger
@@ -697,27 +615,6 @@ Rules
 	  c b e
 	------------------------------------
 	  d <owl:sameAs> e
-
-
-	Consistency: cls_maxqc1
-
-	  a <owl:maxQualifiedCardinality> "0"^^xsd:nonNegativeInteger
-	  a <owl:onProperty> b
-	  a <owl:onClass> c
-	  d <rdf:type> a
-	  d b e
-	  e <rdf:type> c
-	------------------------------------
-
-
-	Consistency: cls_maxqc2
-
-	  a <owl:maxQualifiedCardinality> "0"^^xsd:nonNegativeInteger
-	  a <owl:onClass> <owl:Thing>
-	  a <owl:onProperty> b
-	  c <rdf:type> a
-	  c b d
-	------------------------------------
 
 
 	Id: cls_maxqc3
@@ -785,14 +682,6 @@ Rules
 	  c <rdf:type> b
 	------------------------------------
 	  c <rdf:type> a
-
-
-	Consistency: cax_dw
-
-	  a <owl:disjointWith> b
-	  c <rdf:type> a
-	  c <rdf:type> b
-	------------------------------------
 
 
 	Id: owl_allDisjClasses1
