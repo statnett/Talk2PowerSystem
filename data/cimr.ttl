@@ -133,7 +133,8 @@ cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   psys:premise3   cimr:isPartTransitive ;
   psys:conclusion cimr:connectedThroughPart .  
 
-cimr:mridSignificantPart a owl:DatatypeProperty ;
+cimr:mridSignificantPart a owl:FunctionalProperty ;
+   cims:multiplicity cims:M:1..1 ;
    rdfs:label "MRID significant part";
    rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
    rdfs:domain cim:IdentifiedObject;
