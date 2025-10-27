@@ -113,8 +113,12 @@ cimr:connectedTo a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:range  cim:Equipment;
   rdfs:isDefinedBy cimr: .
 
-cimr:connectedTo owl:propertyChainAxiom
-  (cimr:Equipment.Terminals cim:Terminal.ConnectivityNode cim:ConnectivityNode.Terminals cimr:Terminal.Equipment).
+cimr:InferConnectedTo a psys:PropChain4 ;
+  psys:premise1   cimr:Equipment.Terminals ;
+  psys:premise2   cim:Terminal.ConnectivityNode ;
+  psys:premise3   cim:ConnectivityNode.Terminals ;
+  psys:premise4   cimr:Terminal.Equipment ;
+  psys:conclusion cimr:connectedTo .   
 
 cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:label "connected through part";
@@ -123,8 +127,11 @@ cimr:connectedThroughPart a owl:ObjectProperty, owl:SymmetricProperty;
   rdfs:range  cimr:EquipmentOrContainer;
   rdfs:isDefinedBy cimr: .
 
-cimr:connectedThroughPart owl:propertyChainAxiom
-  (cimr:hasPartTransitive cimr:connectedTo cimr:isPartTransitive).
+ cimr:InferConnectedThroughPart a psys:PropChain3 ;
+  psys:premise1   cimr:hasPartTransitive ;
+  psys:premise2   cimr:connectedTo ;
+  psys:premise3   cimr:isPartTransitive ;
+  psys:conclusion cimr:connectedThroughPart .  
 
 cimr:mridSignificantPart a owl:DatatypeProperty ;
    rdfs:label "MRID significant part";
