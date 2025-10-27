@@ -1,0 +1,94 @@
+Prefices
+{
+	rdf  : http://www.w3.org/1999/02/22-rdf-syntax-ns#
+	rdfs : http://www.w3.org/2000/01/rdf-schema#
+	owl  : http://www.w3.org/2002/07/owl#
+	onto : http://www.ontotext.com/
+	xsd  : http://www.w3.org/2001/XMLSchema#
+	psys : http://proton.semanticweb.org/protonsys#
+}
+
+Axioms
+{
+	
+}
+
+Rules
+{
+	Id: psys_transitiveOver
+	  p <psys:transitiveOver> q
+	  x p y
+	  y q z
+	  ---------------
+	  x p z
+
+	Id: prp_symp
+
+	  a <rdf:type> <owl:SymmetricProperty>
+	  b a c
+	------------------------------------
+	  c a b
+
+	Id: prp_spo1
+
+	  a <rdfs:subPropertyOf> b
+	  c a d
+	------------------------------------
+	  c b d
+
+	Id: psys_PropChain3 
+		t <rdf:type> <psys:PropChain3> 
+		t <psys:premise1>   p1 
+		t <psys:premise2>   p2 
+		t <psys:premise3>   p3
+		t <psys:conclusion> q
+        x1 p1 x2 
+		x2 p2 x3
+		x3 p3 x4
+	------------------------
+		x1 q x4	
+
+	Id: psys_PropChain4 
+		t <rdf:type> <psys:PropChain4> 
+		t <psys:premise1>   p1 
+		t <psys:premise2>   p2 
+		t <psys:premise3>   p3
+		t <psys:premise4>   p4
+		t <psys:conclusion> q
+        x1 p1 x2 
+		x2 p2 x3
+		x3 p3 x4
+		x4 p4 x5
+	------------------------
+		x1 q x5	
+
+	Id: prp_inv1
+	  a <owl:inverseOf> b
+	  c a d
+	------------------------------------
+	  d b c
+
+	Id: prp_inv2
+	  a <owl:inverseOf> b
+	  c b d
+	------------------------------------
+	  d a c
+
+	Id: cax_sco
+	  a <rdfs:subClassOf> b [Constraint a != b]
+	  c <rdf:type> a
+	------------------------------------
+	  c <rdf:type> b
+
+	Id: scm_sco
+	  a <rdfs:subClassOf> b
+	  b <rdfs:subClassOf> c
+	------------------------------------
+	  a <rdfs:subClassOf> c
+
+	Id: scm_spo
+	  a <rdfs:subPropertyOf> b
+	  b <rdfs:subPropertyOf> c
+	------------------------------------
+	  a <rdfs:subPropertyOf> c
+}
