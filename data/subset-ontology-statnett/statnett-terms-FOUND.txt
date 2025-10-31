@@ -1,0 +1,311 @@
+alstom:DCTieCorridor.manualRegXRampDC
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor.manualRegXRampDC">
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#alstom"/>
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    	<uml:id>EAID_6F18C08F_B47F_4ec6_A8F2_650CCAC1723B</uml:id>
+    	<rdfs:comment>The ramp value for the +/- X MW controls. Used for 1/ info-display and 2/ response supervision.</rdfs:comment>
+    	<rdfs:domain rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_ControlArea"/>
+    	<rdfs:label>manualRegXRampDC</rdfs:label>
+    	<rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ActivePower"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    </rdf:Description>
+alstom:DCTieCorridor.rampDCLimitOp
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor.rampDCLimitOp">
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#alstom"/>
+    	<uml:id>EAID_E1FB23FC_1848_4ea6_8565_6AD8E3C4CAC6</uml:id>
+    	<rdfs:comment>HVDC Ramp value, operational value [MW]</rdfs:comment>
+    	<rdfs:domain rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_ControlArea"/>
+    	<rdfs:label>rampDCLimitOp</rdfs:label>
+    	<rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ActivePower"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    </rdf:Description>
+alstom:DCTieCorridor.rampDCLimitRef
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor.rampDCLimitRef">
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    	<uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#alstom"/>
+    	<uml:id>EAID_EE1DC44A_D40F_42b3_9091_FD1A196D758F</uml:id>
+    	<rdfs:comment>HVDC Ramp value, reference value [MW]</rdfs:comment>
+    	<rdfs:domain rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#DCTieCorridor"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_ControlArea"/>
+    	<rdfs:label>rampDCLimitRef</rdfs:label>
+    	<rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ActivePower"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    </rdf:Description>
+alstom:SynchrocheckRelay.SynchroncheckType
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#SynchrocheckRelay.SynchroncheckType">
+    	<uml:id>EAID_CF49DC8B_19BF_4a66_BEC6_C85460468DA3-A</uml:id>
+    	<rdfs:domain rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchrocheckRelay"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Protection"/>
+    	<rdfs:label>SynchroncheckType</rdfs:label>
+    	<rdfs:range rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#SynchroncheckType"/>
+    	<owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#SynchroncheckType.SynchrocheckRelay"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+cim15:CurrentRelayAction.CurrentRelay
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#CurrentRelay.CurrentRelayAction">
+    	<uml:baseuri>http://www.alstom.com/grid/CIM-schema-cim15-extension#</uml:baseuri>
+    	<uml:id>EAID_6D279021_86B8_403b_8391_B2B53EBF737A-A</uml:id>
+    	<rdfs:domain rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentRelay"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Protection"/>
+    	<rdfs:label>CurrentRelayAction</rdfs:label>
+    	<rdfs:range rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#CurrentRelayAction"/>
+    	<owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentRelayAction.CurrentRelay"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </rdf:Description>
+cim15:GateInputPin.monitoredTerminal
+    <rdf:Description rdf:about="http://iec.ch/TC57/2010/CIM-schema-cim15#GateInputPin.monitoredTerminal">
+    	<uml:id>EAID_DD46A8A3_7515_4110_9043_A2D8DDC8A336-B</uml:id>
+    	<rdfs:comment>Reference to the Terminal from which the flow is monitored for this GateInputPin. The monitored Terminal shall be provided whenever the attributes alarmLowerBound, alarmUpperBound and monitoredFlowKind are also provided. This is applicable whatever the type of GateInputPin if flow monitoring is associated with this GateInputPin. For example, this is used to define the terminal used for flow monitoring on a PinEquipment of type “connected”. For another example, this is used to define the terminal used for flow monitoring on a PinTerminal (in this case, the referenced monitoredTerminal and Terminal have both to be defined).</rdfs:comment>
+    	<rdfs:domain rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#GateInputPin"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_SIPS"/>
+    	<rdfs:label>monitoredTerminal</rdfs:label>
+    	<rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Terminal"/>
+    	<owl:inverseOf rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#Terminal.GateInputPin"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+cim15:ProtectedSwitchAction.ProtectedSwitch
+    <rdf:Description rdf:about="http://iec.ch/TC57/2010/CIM-schema-cim15#ProtectedSwitchAction.ProtectedSwitch">
+    	<uml:baseuri>http://www.alstom.com/grid/CIM-schema-cim15-extension#</uml:baseuri>
+    	<uml:id>EAID_F37D4B7F_A613_4d8f_BCEE_B853ACC39A7B-B</uml:id>
+    	<rdfs:domain rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#ProtectedSwitchAction"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Protection"/>
+    	<rdfs:label>ProtectedSwitch</rdfs:label>
+    	<rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ProtectedSwitch"/>
+    	<owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ProtectedSwitchAction.ProtectedSwitch"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    </rdf:Description>
+cim15:ProtectiveAction.EnablingMeasurement
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#Measurement.ProtectiveAction">
+    	<uml:id>EAID_A1A1ED1A_5A5C_444e_A46A_34807690905A-A</uml:id>
+    	<rdfs:domain rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Measurement"/>
+    	<rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_SIPS"/>
+    	<rdfs:label>ProtectiveAction</rdfs:label>
+    	<rdfs:range rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#ProtectiveAction"/>
+    	<owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ProtectiveAction.EnablingMeasurement"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </rdf:Description>
+cim15:ProtectiveAction.TrippingMeasurement
+    <rdf:Description rdf:about="http://www.alstom.com/grid/CIM-schema-cim15-extension#Measurement.ProtectiveActionTripping">
+        <uml:id>EAID_7F8070DE_2383_4ec9_9A8E_A869F33F746D-B</uml:id>
+        <rdfs:domain rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Measurement"/>
+        <rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_SIPS"/>
+        <rdfs:label>ProtectiveActionTripping</rdfs:label>
+        <rdfs:range rdf:resource="http://www.alstom.com/grid/CIM-schema-cim15-extension#ProtectiveAction"/>
+        <owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#ProtectiveAction.TrippingMeasurement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </rdf:Description>
+cim15:RegulationAlarmDiscrete.Discrete
+    <rdf:Description rdf:about="http://www.statnett.no/CIM-schema-cim15-extension#Discrete.RegulationAlarmDiscrete">
+        <uml:id>EAID_043E9125_45C7_47ca_B0BC_65762A1692C9-A</uml:id>
+        <rdfs:domain rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Discrete"/>
+        <rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Market"/>
+        <rdfs:label>RegulationAlarmDiscrete</rdfs:label>
+        <rdfs:range rdf:resource="http://www.statnett.no/CIM-schema-cim15-extension#RegulationAlarmDiscrete"/>
+        <owl:inverseOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#RegulationAlarmDiscrete.Discrete"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </rdf:Description>
+cim15:RegulationAlarmDiscrete.Organisation
+    <rdf:Description rdf:about="http://www.statnett.no/CIM-schema-cim15-extension#RegulationAlarmDiscrete.Organisation">
+        <uml:id>EAID_A39B507E_C548_4fe4_87DA_A74001AC6711-A</uml:id>
+        <rdfs:domain rdf:resource="http://www.statnett.no/CIM-schema-cim15-extension#RegulationAlarmDiscrete"/>
+        <rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Market"/>
+        <rdfs:label>Organisation</rdfs:label>
+        <rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Organisation"/>
+        <owl:inverseOf rdf:resource="http://www.statnett.no/CIM-schema-cim15-extension#Organisation.RegulationAlarmDiscrete"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    </rdf:Description>
+cim15:ScheduleResource.NonConformLoadGroup
+    <rdf:Description rdf:about="http://iec.ch/TC57/2010/CIM-schema-cim15#ScheduleResource.NonConformLoadGroup">
+        <uml:baseuri>http://www.statnett.no/CIM-schema-cim15-extension#</uml:baseuri>
+        <uml:id>EAID_C8EBBEF8_DA24_4696_B8C5_CD0E08BD9CCF-B</uml:id>
+        <rdfs:domain rdf:resource="http://www.statnett.no/CIM-schema-cim15-extension#ScheduleResource"/>
+        <rdfs:isDefinedBy rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Package_Market"/>
+        <rdfs:label>NonConformLoadGroup</rdfs:label>
+        <rdfs:range rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#NonConformLoadGroup"/>
+        <owl:inverseOf rdf:resource="http://www.statnett.no/CIM-schema-cim15-extension#NonConformLoadGroup.ScheduleResource"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+entsoe_sch:OperationalLimitType.limitType
+  <rdf:Description rdf:about="http://entsoe.eu/CIM/SchemaExtension/3/1#OperationalLimitType.limitType">
+    <rdfs:label>limitType</rdfs:label>
+    <uml:baseuri>http://entsoe.eu/CIM/SchemaExtension/3/1#</uml:baseuri>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <uml:id>EAID_4754EC83_68CD_4ca7_BD33_CA29A513DF63</uml:id>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#entsoe"/>
+    <rdfs:domain rdf:resource="#OperationalLimitType"/>
+    <rdfs:isDefinedBy rdf:resource="#Package_OperationalLimits"/>
+    <rdfs:range rdf:resource="http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind"/>
+    <rdfs:comment>Types of limits defined in the ENTSO-E Operational Handbook Policy 3.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+form:PetersenCoilStepPoint.PetersenCoilInfo
+    <rdf:Description rdf:about="https://form.statnett.no/voc/form-ksd-extensions#PetersenCoilInfo.PetersenCoilStepPoint">
+        <rdfs:domain rdf:resource="http://NEK.no/NK57/CIM/CIM100-Extension/1/0#PetersenCoilInfo"/>
+        <rdfs:label>PetersenCoilStepPoint</rdfs:label>
+        <rdfs:range rdf:resource="http://NEK.no/NK57/CIM/CIM100-Extension/1/0#PetersenCoilStepPoint"/>
+        <owl:inverseOf rdf:resource="https://form.statnett.no/voc/form-ksd-extensions#PetersenCoilStepPoint.PetersenCoilInfo"/>
+        <rdfs:isDefinedBy rdf:resource="#AutofosInformalPatches"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#aggregateOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <uml:baseuri>https://form.statnett.no/voc/form-ksd-extensions#</uml:baseuri>
+        <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#nek.no"/>
+    </rdf:Description>
+md:FullModel
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.DependentOn
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.Supersedes
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.created
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.description
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.modelingAuthoritySet
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.profile
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.scenarioTime
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+md:Model.version
+    This is the official ModelDescription ontology, it just wasn't loaded in GraphDB .
+nek:WireEarthInfo.WirePhaseInfo
+  <rdf:Description rdf:about="http://NEK.no/NK57/CIM/CIM100-Extension/1/0#WireEarthInfo.WirePhaseInfo">
+    <rdfs:isDefinedBy rdf:resource="#Package_AssetInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>WirePhaseInfo</rdfs:label>
+    <rdfs:domain rdf:resource="http://NEK.no/NK57/CIM/CIM100-Extension/1/0#WireEarthInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:range rdf:resource="#WirePhaseInfo"/>
+    <owl:inverseOf rdf:resource="#WirePhaseInfo.WireEarthInfo"/>
+    <uml:id>EAID_29CC0846_9E76_43b6_B71D_0B6ADB4661B9-B</uml:id>
+  </rdf:Description>
+psys:transitiveOver
+    Zero results in our ontology folder.
+pti:ACLineSegment.MET
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.STPR
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.TAP
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.TMNR
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.TMXR
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.TRR
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.compoundResistance
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.rTransformer
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:CsConverter.xTransformer
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:DCLineSegment.METER
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:DCLineSegment.VCMOD
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:EnergyConsumer.dgenM
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:EnergyConsumer.dgenP
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:EnergyConsumer.dgenQ
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:EnergyConsumer.interruptibleStatus
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:GeneratingUnit.gtap
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:GeneratingUnit.rmpct
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:GeneratingUnit.rt
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:GeneratingUnit.xt
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:Line.MET
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:Model.createdBy
+    Always "ODMS", possibly a version number.
+pti:PowerSystemResource.PlanningZone
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.anstar
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.cm
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.connectionCode
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.cr
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.cw
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.cx
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.cz
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.isCore
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.nmetr
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.rma
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.rmi
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.vmstar
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformer.zcod
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformerEnd.ang
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformerEnd.nomV
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformerEnd.rn
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformerEnd.sBase
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:PowerTransformerEnd.xn
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:ShuntCompensator.adjMethod
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:ShuntCompensator.blockNumber
+    Was not able to trace this back to any file at all, assuming it's a Siemens extension.
+pti:ShuntCompensator.controlMode
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:ShuntCompensator.rmidnt
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:ShuntCompensator.rmpct
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:ShuntCompensator.shuntType
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:SynchronousMachine.rs
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:SynchronousMachine.xs
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:TopologicalNode.IDE
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:TopologicalNode.PlanningZone
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:WindGeneratingUnit.wmod
+    From PTI/Siemens, we do not have any ontology file covering this.
+pti:WindGeneratingUnit.wpf
+    From PTI/Siemens, we do not have any ontology file covering this.
+statnett:PetersenCoil.mode
+    This is just an old namespace for the same thing in CIM17, just reuse the values extracted for the CIM17 variant.
