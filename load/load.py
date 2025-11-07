@@ -237,6 +237,7 @@ class GraphDBLoader:
             headers={"x-graphdb-repository": self.repository_name},
             auth=self.auth
         )
+        response.raise_for_status()
 
         if not os.path.exists(labels_file):
             print(f"Warning: Labels file '{labels_file}' not found.")
@@ -259,6 +260,7 @@ class GraphDBLoader:
                     headers={"x-graphdb-repository": self.repository_name},
                     auth=self.auth
                 )
+                response.raise_for_status()
 
                 self.print_response(response, f"Update Autocomplete Label: {label_iri}")
 
