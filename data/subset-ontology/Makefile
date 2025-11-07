@@ -1,6 +1,6 @@
 # Extract subset of ontology terms in use
 
-all: cim-subset.ttl cim-subset-pretty-ontology.ttl terms-MISSING.txt
+all: cim-subset.ttl cim-subset-pretty-ontology.ttl terms-MISSING.txt cim-subset-not-MISSING.ttl
 soml: cim-subset-pretty-ontology.yaml
 
 # Query GraphDB and save results as TTL
@@ -11,7 +11,7 @@ cim-subset.ttl: ontology-query.rq
 	 -H "Accept: application/x-turtle" \
 	 --data-binary @ontology-query.rq \
 	 "https://cim.ontotext.com/graphdb/repositories/cim" \
-	 > cim-subset.ttl
+	 > $@
 
 terms-MISSING.txt: cim-subset.ttl
 	grep MISSING $^ | sort > $@

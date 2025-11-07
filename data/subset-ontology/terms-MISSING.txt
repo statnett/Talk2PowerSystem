@@ -9,6 +9,13 @@
 <http://www.linkedmodel.org/schema/vaem#url> a cims:MISSING .
 <http://www.w3.org/2004/03/trix/rdfg-1/Graph> a cims:MISSING .
 <https://www.w3.org/ns/json-ld#base> a cims:MISSING .
+<urn:uuid:00160296-775f-407a-8d67-c9a5d610715a> a cim:RemoteUnit, cims:MISSING;
+<urn:uuid:5462d46a-9ee5-4d09-9ac2-9f97933caa4d> a cim:PowerTransformerInfo, cims:MISSING;
+<urn:uuid:5df846f4-0a3a-43fc-af92-1d2fa0c6d860> a cims:MISSING .
+<urn:uuid:628b66ae-c9c7-4191-89c0-82d95f26319e> a cim:BusbarSectionInfo, cims:MISSING;
+<urn:uuid:99e19919-b030-4742-8609-f1230681333d> a cim:AssetModelCatalogueItem, cims:MISSING;
+<urn:uuid:9eb4e906-d4f4-11e7-9296-cec278b6b50a> a cim:PowerTransformerInfo, cims:MISSING;
+<urn:uuid:cebd0c20-568c-4bb4-8542-1a6e90e741af> a cims:MISSING .
 cim:AmiBillingReady.enabled a cims:MISSING .
 cim:AmiBillingReady.operable a cims:MISSING .
 cim:Analog.maxValue a cims:MISSING .
@@ -107,7 +114,6 @@ cim:RemoteSource.sensorMaximum a cims:MISSING .
 cim:RemoteSource.sensorMinimum a cims:MISSING .
 cim:RemoteUnit a cims:MISSING .
 cim:RemoteUnit.remoteUnitType a cims:MISSING .
-cim:RemoteUnitType.IED a cims:MISSING .
 cim:ShuntCompensatorInfo.maxPowerLoss a cims:MISSING .
 cim:ShuntCompensatorInfo.ratedCurrent a cims:MISSING .
 cim:SwitchInfo.isSinglePhase a cims:MISSING .
@@ -127,12 +133,10 @@ cim:TransformerEndInfo.endNumber a cims:MISSING .
 cim:TransformerEndInfo.phaseAngleClock a cims:MISSING .
 cim:TransformerEndInfo.r a cims:MISSING .
 cim:TransformerTankInfo.PowerTransformerInfo a cims:MISSING .
-cim:UnitSymbol.DKKperEUR a cims:MISSING;
+cim:UnitSymbol.DKKperEUR a cims:MISSING .
 cim:UnitSymbol.Deg a cims:MISSING .
-cim:UnitSymbol.EURperMWh a cims:MISSING;
-cim:UnitSymbol.NOKperEUR a cims:MISSING;
-cim:UnitSymbol.NOKperMWh a cims:MISSING;
-cim:UnitSymbol.SEKperEUR a cims:MISSING;
+cim:UnitSymbol.NOKperEUR a cims:MISSING .
+cim:UnitSymbol.SEKperEUR a cims:MISSING .
 cim:UnitSymbol.VAR a cims:MISSING .
 cim:UsagePoint.Equipments a cims:MISSING .
 cim:UsagePoint.amiBillingReady a cims:MISSING .
@@ -192,18 +196,12 @@ nc-no:ACLineSegmentSpan.maxWidth a cims:MISSING .
 nc-no:ACLineSegmentSpan.spanWireLength a cims:MISSING .
 nc-no:ACLineSegmentSpanDeployment a cims:MISSING .
 nc-no:ACLineSegmentSpanDeployment.ACLineSegmentSpan a cims:MISSING .
-nc-no:AviationObstacleLightingKind.mediumIntensityTypeB a cims:MISSING .
-nc-no:AviationObstacleMarkingKind.marker a cims:MISSING .
-nc-no:DeploymentStateKind.notYetInstalled a cims:MISSING .
 nc-no:Guy a cims:MISSING .
 nc-no:Guy.aviationObstacleLightingKind a cims:MISSING .
 nc-no:Guy.aviationObstacleMarkingKind a cims:MISSING .
 nc-no:Guy.length a cims:MISSING .
 nc-no:Guy.maxHeight a cims:MISSING .
 nc-no:Guy.maxWidth a cims:MISSING .
-nc-no:LineLightingKind.lit a cims:MISSING .
-nc-no:LineMarkingKind.colourMarking a cims:MISSING .
-nc-no:LocationMethodKind.measured a cims:MISSING .
 nc-no:LocationResource.locationMethod a cims:MISSING .
 nc-no:OverheadStructure a cims:MISSING .
 nc-no:OverheadStructure.aviationObstacleLightingKind a cims:MISSING .
@@ -218,9 +216,6 @@ nc-no:StructureSupportDeployment.StructureSupport a cims:MISSING .
 nc-no:Zone a cims:MISSING .
 nc-no:Zone.state a cims:MISSING .
 nc-no:Zone.zoneKind a cims:MISSING .
-nc-no:ZoneKind.substation a cims:MISSING .
-nc-no:ZoneStateKind.notYetRegistered a cims:MISSING .
-nc-no:locationMethodKind.measured a cims:MISSING .
 nc1:Name.NameType a cims:MISSING .
 nc1:Name.mRID a cims:MISSING .
 nc1:NameType.NameTypeAuthority a cims:MISSING .
@@ -246,6 +241,13 @@ nc:LogicOperatorsKind.lessThan a cims:MISSING .
 nc:LogicOperatorsKind.lessThanOrEquals a cims:MISSING .
 prov:wasDerivedFrom a cims:MISSING .
 prov:wasInfluencedBy a cims:MISSING .
+psys:PropChain3 a cims:MISSING .
+psys:PropChain4 a cims:MISSING .
+psys:conclusion a cims:MISSING .
+psys:premise1 a cims:MISSING .
+psys:premise2 a cims:MISSING .
+psys:premise3 a cims:MISSING .
+psys:premise4 a cims:MISSING .
 psys:transitiveOver a cims:MISSING .
 qudt:AbstractQuantityKind a cims:MISSING .
 qudt:Concept a cims:MISSING .
