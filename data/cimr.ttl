@@ -187,28 +187,31 @@ psys:PropChain4 a rdfs:Class;
   rdfs:label "Property Chain 4";
   rdfs:comment "A property chain of length 4: premise1 / premise2 / premise 3 / premise 4 => conclusion".
 
-psys:conclusion a rdfs:ObjectProperty;
+psys:conclusion a owl:ObjectProperty;
   rdfs:label "conclusion";
-  rdfs:comment "The conclusion of the property chain".
+  rdfs:comment "The conclusion of the property chain";
+  rdfs:domain [a owl:Class; owl:unionOf (psys:PropChain3 psys:PropChain4)];
+  rdfs:range owl:ObjectProperty.
 
-psys:premise1 a rdfs:ObjectProperty;
+psys:premise1 a owl:ObjectProperty;
   rdfs:label "premise 1";
   rdfs:comment "The first premise of the property chain".
 
-psys:premise2 a rdfs:ObjectProperty;
+psys:premise2 a owl:ObjectProperty;
   rdfs:label "premise 2";
   rdfs:comment "The second premise of the property chain".
 
-psys:premise3 a rdfs:ObjectProperty;
+psys:premise3 a owl:ObjectProperty;
   rdfs:label "premise 3";
   rdfs:comment "The third premise of the property chain".
 
-psys:premise4 a rdfs:ObjectProperty;
+psys:premise4 a owl:ObjectProperty;
   rdfs:label "premise 4";
   rdfs:comment "The fourth premise of the property chain".
 
-psys:transitiveOver a rdf:Property;
+psys:transitiveOver a owl:ObjectProperty;
   rdfs:label "transitive over";
+  rdfs:domain owl:ObjectProperty; rdfs:range owl:ObjectProperty;
   rdfs:comment "If p transitiveOver q then p/q => p".
 
 #### Patch to add some entsoe2 terms
