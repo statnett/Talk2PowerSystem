@@ -87,6 +87,41 @@ cims:pragmatics a owl:DatatypeProperty;
   rdfs:label "LLM Pragmatics" .
 
 
+psys:PropChain3 a rdfs:Class;
+  rdfs:comment "A property chain of length 3: premise1 / premise2 / premise 3 => conclusion";
+  rdfs:label "Property Chain 3" .
+
+psys:PropChain4 a rdfs:Class;
+  rdfs:comment "A property chain of length 4: premise1 / premise2 / premise 3 / premise 4 => conclusion";
+  rdfs:label "Property Chain 4" .
+
+psys:conclusion a owl:ObjectProperty;
+  rdfs:comment "The conclusion of the property chain";
+  rdfs:domain _:node13;
+  rdfs:range owl:ObjectProperty;
+  rdfs:label "conclusion" .
+
+psys:premise1 a owl:ObjectProperty;
+  rdfs:comment "The first premise of the property chain";
+  rdfs:label "premise 1" .
+
+psys:premise2 a owl:ObjectProperty;
+  rdfs:comment "The second premise of the property chain";
+  rdfs:label "premise 2" .
+
+psys:premise3 a owl:ObjectProperty;
+  rdfs:comment "The third premise of the property chain";
+  rdfs:label "premise 3" .
+
+psys:premise4 a owl:ObjectProperty;
+  rdfs:comment "The fourth premise of the property chain";
+  rdfs:label "premise 4" .
+
+psys:transitiveOver a owl:ObjectProperty;
+  rdfs:comment "If p transitiveOver q then p/q => p";
+  rdfs:domain owl:ObjectProperty;
+  rdfs:range owl:ObjectProperty;
+  rdfs:label "transitive over" .
 
 
 
@@ -167,7 +202,7 @@ The referenced resource that is being complemented in this dataset, e.g. SSH is 
 
 
 dct:rights a owl:FunctionalProperty, owl:DatatypeProperty;
-  rdfs:comment "A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements."@en;
+  rdfs:comment "A statement that concerns all rights not addressed with dcterms:license or dcterms:accessRights, such as copyright statements."@en;
   rdfs:domain dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "rights";
@@ -255,6 +290,22 @@ qudt:QuantityKind a rdfs:Class, sh:NodeShape;
   </p>"""^^rdf:HTML;
   rdfs:label "Quantity Kind" .
 
+qudt:QuantityKindDimensionVector a rdfs:Class, sh:NodeShape;
+  rdfs:subClassOf qudt:Concept;
+  dct:description """
+ $\\text{Quantity Kind Dimension Vector}$ describes the dimensionality of a quantity kind in the context of a system of units. 
+ In the SI system of units, the dimensions of a quantity kind are expressed as a product of the basic
+  physical dimensions mass ($M$), length ($L$), time ($T$) current ($I$), amount of substance ($N$),
+   luminous intensity ($J$) and absolute temperature 
+   ($\\theta$) as $dim \\, Q = L^{\\alpha} \\, M^{\\beta} \\, T^{\\gamma} \\, I ^{\\delta} \\, \\theta ^{\\epsilon} \\, N^{\\eta} \\, J ^{\\nu}$.
+
+
+  The rational powers of the dimensional exponents, $\\alpha, \\, \\beta, \\, \\gamma, \\, \\delta, \\, \\epsilon, \\, \\eta, \\, \\nu$, are positive, negative, or zero.
+
+  For example, the dimension of the physical quantity kind $\\it{speed}$ is $\\boxed{length/time}$, $L/T$ or $LT^{-1}$,
+   and the dimension of the physical quantity kind force is $\\boxed{mass \\times acceleration}$ or $\\boxed{mass \\times (length/time)/time}$, $ML/T^2$ or $MLT^{-2}$ respectively.
+ """^^qudt:LatexString;
+  rdfs:label "Quantity Kind Dimension Vector" .
 
 qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape;
   rdfs:subClassOf qudt:QuantityKindDimensionVector;
@@ -420,7 +471,7 @@ dcat:hasVersion a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:comment """This resource is a version of a non-versioned or abstract resource.
 This property is intended for relating a versioned resource to a non-versioned or abstract resource.
 
-The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:isVersionOf, which makes use of a broader notion of version, including editions and adaptations."""@en;
+The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:isVersionOf, which makes use of a broader notion of version, including editions and adaptations."""@en;
   rdfs:domain dcat:Dataset;
   rdfs:range dcat:Dataset;
   rdfs:label "hasVersion";
@@ -430,7 +481,7 @@ The notion of version used by this property is limited to versions resulting fro
 dcat:isVersionOf a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment """This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.
 
-The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:hasVersion, which makes use of a broader notion of version, including editions and adaptations."""@en;
+The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:hasVersion, which makes use of a broader notion of version, including editions and adaptations."""@en;
   rdfs:domain dcat:Dataset;
   rdfs:range dcat:Dataset;
   rdfs:label "isVersionOf";
@@ -442,7 +493,7 @@ dcat:keyword a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:domain dcat:Dataset;
   rdfs:range xsd:string;
   rdfs:label "keyword";
-  cims:multiplicity cims:M:0..n, cims:M:0..1 .
+  cims:multiplicity cims:M:0..1, cims:M:0..n .
 
 
 dcat:startDate a owl:FunctionalProperty, owl:DatatypeProperty;
@@ -745,19 +796,19 @@ cim:Asset.inUseState a owl:ObjectProperty, owl:FunctionalProperty;
 
 
 
-cim:Asset.serialNumber a owl:ObjectProperty, owl:FunctionalProperty;
+cim:Asset.serialNumber a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Serial number of this asset."@en;
   rdfs:domain cim:Asset;
+  rdfs:range xsd:string;
   rdfs:label "serialNumber";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1 .
 
-cim:Asset.type a owl:ObjectProperty, owl:FunctionalProperty;
+cim:Asset.type a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)."@en;
   rdfs:domain cim:Asset;
+  rdfs:range xsd:string;
   rdfs:label "type";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1 .
 
 
 cim:AssetContainer a owl:Class;
@@ -783,8 +834,7 @@ cim:AssetInfo a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "AssetInfo" .
 
-cim:AssetInfo.ProductAssetModel a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:AssetInfo.ProductAssetModel a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Product asset model which conforms to this catalog asset type."@en;
   rdfs:domain cim:AssetInfo;
   rdfs:range cim:ProductAssetModel;
@@ -953,8 +1003,7 @@ cim:ConductingEquipment.BaseVoltage a owl:ObjectProperty, owl:FunctionalProperty
   cims:multiplicity cims:M:0..1;
   owl:inverseOf cim:BaseVoltage.ConductingEquipment .
 
-cim:ConductingEquipment.SvStatus a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:ConductingEquipment.SvStatus a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The status state variable associated with this conducting equipment."@en;
   rdfs:domain cim:ConductingEquipment;
   rdfs:range cim:SvStatus;
@@ -1142,7 +1191,7 @@ cim:ControlArea.ControlAreaGeneratingUnit a owl:ObjectProperty, owl:InverseFunct
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:ControlAreaGeneratingUnit.ControlArea .
 
-cim:ControlArea.EnergyArea a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:ControlArea.EnergyArea a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The energy area that is forecast from this control area specification."@en;
   rdfs:domain cim:ControlArea;
   rdfs:range cim:EnergyArea;
@@ -1161,9 +1210,8 @@ cim:ControlArea.netInterchange a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:ActivePower;
   qudt:hasUnit unit:MegaW .
 
-cim:ControlArea.pTolerance a owl:FunctionalProperty;
+cim:ControlArea.pTolerance a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Active power net interchange tolerance. The attribute shall be a positive value or zero."@en;
-  a owl:DatatypeProperty;
   rdfs:domain cim:ControlArea;
   rdfs:range xsd:float;
   rdfs:label "pTolerance";
@@ -1240,6 +1288,11 @@ cim:CsPpccControlKind a owl:Class;
 cim:Currency a owl:Class;
   rdfs:comment "Monetary currencies.  ISO 4217 standard including 3-character currency code."@en;
   rdfs:label "Currency" .
+
+cim:CurrencyExchangeRate a owl:Class;
+  rdfs:comment "Exchange rate between two currencies as of some moment"@en;
+  rdfs:label "CurrencyExchangeRate";
+  skos:exactMatch quantitykind:ExchangeRate .
 
 cim:CurrentLimit a owl:Class;
   rdfs:comment "Operational limit on current."@en;
@@ -1512,7 +1565,7 @@ cim:EnergyArea a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "EnergyArea" .
 
-cim:EnergyArea.ControlArea a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:EnergyArea.ControlArea a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The control area specification that is used for the load forecast."@en;
   rdfs:domain cim:EnergyArea;
   rdfs:range cim:ControlArea;
@@ -2017,30 +2070,29 @@ The attribute aliasName is retained because of backwards compatibility between C
   rdfs:label "aliasName";
   cims:multiplicity cims:M:0..1 .
 
-cim:IdentifiedObject.description a owl:ObjectProperty, owl:FunctionalProperty, owl:DatatypeProperty;
+cim:IdentifiedObject.description a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."@en;
   rdfs:domain cim:IdentifiedObject;
   rdfs:range xsd:string;
   rdfs:label "description";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1 .
 
-cim:IdentifiedObject.mRID a owl:ObjectProperty, owl:FunctionalProperty, owl:DatatypeProperty;
+cim:IdentifiedObject.mRID a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en,
+    """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en;
   rdfs:domain cim:IdentifiedObject;
   rdfs:range xsd:string;
   rdfs:label "mRID";
-  cims:multiplicity cims:M:0..1, cims:M:1..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1, cims:M:1..1 .
 
-cim:IdentifiedObject.name a owl:ObjectProperty, owl:FunctionalProperty, owl:DatatypeProperty;
+cim:IdentifiedObject.name a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The name is any free human readable and possibly non unique text naming the object."@en;
   rdfs:domain cim:IdentifiedObject;
   rdfs:range xsd:string;
   rdfs:label "name";
-  cims:multiplicity cims:M:0..1, cims:M:1..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1, cims:M:1..1 .
 
 cim:IfdBaseKind a owl:Class;
   rdfs:comment "Excitation base system mode."@en;
@@ -2205,8 +2257,7 @@ cim:Location.CoordinateSystem a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:CoordinateSystem.Locations .
 
-cim:Location.PowerSystemResources a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:Location.PowerSystemResources a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "All power system resources at this location."@en;
   rdfs:domain cim:Location;
   rdfs:range cim:PowerSystemResource;
@@ -2609,8 +2660,7 @@ cim:PowerSystemResource.Assets a owl:ObjectProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:Asset.PowerSystemResources .
 
-cim:PowerSystemResource.Location a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:PowerSystemResource.Location a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Location of this power system resource."@en;
   rdfs:domain cim:PowerSystemResource;
   rdfs:range cim:Location;
@@ -2742,8 +2792,7 @@ cim:ProductAssetModel a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "ProductAssetModel" .
 
-cim:ProductAssetModel.AssetInfo a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:ProductAssetModel.AssetInfo a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Asset information (nameplate) for this product asset model."@en;
   rdfs:domain cim:ProductAssetModel;
   rdfs:range cim:AssetInfo;
@@ -2763,19 +2812,19 @@ cim:ProductAssetModel.Manufacturer a owl:ObjectProperty, owl:FunctionalProperty;
 
 
 
-cim:ProductAssetModel.modelNumber a owl:ObjectProperty, owl:FunctionalProperty;
+cim:ProductAssetModel.modelNumber a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Manufacturer's model number."@en;
   rdfs:domain cim:ProductAssetModel;
+  rdfs:range xsd:string;
   rdfs:label "modelNumber";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1 .
 
-cim:ProductAssetModel.modelVersion a owl:ObjectProperty, owl:FunctionalProperty;
+cim:ProductAssetModel.modelVersion a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "Version number for product model, which indicates vintage of the product."@en;
   rdfs:domain cim:ProductAssetModel;
+  rdfs:range xsd:string;
   rdfs:label "modelVersion";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:String .
+  cims:multiplicity cims:M:0..1 .
 
 cim:ProductAssetModel.usageKind a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Intended usage for this asset model."@en;
@@ -2797,8 +2846,7 @@ Angle sign convention (general): Positive value indicates a positive phase shift
   rdfs:subClassOf cim:TapChanger;
   rdfs:label "RatioTapChanger" .
 
-cim:RatioTapChanger.TransformerEnd a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:RatioTapChanger.TransformerEnd a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Transformer end to which this ratio tap changer belongs."@en;
   rdfs:domain cim:RatioTapChanger;
   rdfs:range cim:TransformerEnd;
@@ -2923,7 +2971,6 @@ cim:RemoteSignalKind a owl:Class;
 
 
 
-
 cim:RotatingMachine a owl:Class;
   rdfs:comment "A rotating machine which may be used as a generator or motor."@en;
   rdfs:subClassOf cim:RegulatingCondEq;
@@ -2996,8 +3043,8 @@ cim:ShuntCompensator a owl:Class;
   rdfs:subClassOf cim:RegulatingCondEq;
   rdfs:label "ShuntCompensator" .
 
-cim:ShuntCompensator.SvShuntCompensatorSections a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:ShuntCompensator.SvShuntCompensatorSections a owl:ObjectProperty, owl:FunctionalProperty,
+    owl:InverseFunctionalProperty;
   rdfs:comment "The state for the number of shunt compensator sections in service."@en;
   rdfs:domain cim:ShuntCompensator;
   rdfs:range cim:SvShuntCompensatorSections;
@@ -3162,7 +3209,7 @@ cim:SvPowerFlow a owl:Class;
   rdfs:comment "State variable for power flow. Load convention is used for flow direction. This means flow out from the TopologicalNode into the equipment is positive."@en;
   rdfs:label "SvPowerFlow" .
 
-cim:SvPowerFlow.Terminal a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:SvPowerFlow.Terminal a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The terminal associated with the power flow state variable."@en;
   rdfs:domain cim:SvPowerFlow;
   rdfs:range cim:Terminal;
@@ -3196,8 +3243,8 @@ cim:SvShuntCompensatorSections a owl:Class;
   rdfs:comment "State variable for the number of sections in service for a shunt compensator."@en;
   rdfs:label "SvShuntCompensatorSections" .
 
-cim:SvShuntCompensatorSections.ShuntCompensator a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:SvShuntCompensatorSections.ShuntCompensator a owl:ObjectProperty, owl:FunctionalProperty,
+    owl:InverseFunctionalProperty;
   rdfs:comment "The shunt compensator for which the state applies."@en;
   rdfs:domain cim:SvShuntCompensatorSections;
   rdfs:range cim:ShuntCompensator;
@@ -3216,8 +3263,7 @@ cim:SvStatus a owl:Class;
   rdfs:comment "State variable for status."@en;
   rdfs:label "SvStatus" .
 
-cim:SvStatus.ConductingEquipment a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:SvStatus.ConductingEquipment a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The conducting equipment associated with the status state variable."@en;
   rdfs:domain cim:SvStatus;
   rdfs:range cim:ConductingEquipment;
@@ -3255,7 +3301,7 @@ cim:SvTapStep a owl:Class;
   rdfs:comment "State variable for transformer tap step."@en;
   rdfs:label "SvTapStep" .
 
-cim:SvTapStep.TapChanger a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:SvTapStep.TapChanger a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The tap changer associated with the tap step state."@en;
   rdfs:domain cim:SvTapStep;
   rdfs:range cim:TapChanger;
@@ -3274,8 +3320,7 @@ cim:SvVoltage a owl:Class;
   rdfs:comment "State variable for voltage."@en;
   rdfs:label "SvVoltage" .
 
-cim:SvVoltage.TopologicalNode a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:SvVoltage.TopologicalNode a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The topological node associated with the voltage state."@en;
   rdfs:domain cim:SvVoltage;
   rdfs:range cim:TopologicalNode;
@@ -3377,12 +3422,12 @@ cim:SwitchInfo.breakingCapacity a owl:ObjectProperty, owl:FunctionalProperty;
   cims:dataType cim:CurrentFlow .
 
 
-cim:SwitchInfo.isUnganged a owl:ObjectProperty, owl:FunctionalProperty;
+cim:SwitchInfo.isUnganged a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)."@en;
   rdfs:domain cim:SwitchInfo;
+  rdfs:range xsd:boolean;
   rdfs:label "isUnganged";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:Boolean .
+  cims:multiplicity cims:M:0..1 .
 
 cim:SwitchInfo.ratedCurrent a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "Rated current."@en;
@@ -3495,7 +3540,7 @@ cim:TapChanger a owl:Class;
   rdfs:subClassOf cim:PowerSystemResource;
   rdfs:label "TapChanger" .
 
-cim:TapChanger.SvTapStep a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:TapChanger.SvTapStep a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The tap step state associated with the tap changer."@en;
   rdfs:domain cim:TapChanger;
   rdfs:range cim:SvTapStep;
@@ -3642,7 +3687,7 @@ cim:Terminal.RegulatingControl a owl:ObjectProperty, owl:InverseFunctionalProper
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:RegulatingControl.Terminal .
 
-cim:Terminal.SvPowerFlow a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+cim:Terminal.SvPowerFlow a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The power flow state variable associated with the terminal."@en;
   rdfs:domain cim:Terminal;
   rdfs:range cim:SvPowerFlow;
@@ -3693,8 +3738,8 @@ Only energised TopologicalNode-s shall be part of the topological island."""@en;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "TopologicalIsland" .
 
-cim:TopologicalIsland.AngleRefTopologicalNode a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:TopologicalIsland.AngleRefTopologicalNode a owl:ObjectProperty, owl:FunctionalProperty,
+    owl:InverseFunctionalProperty;
   rdfs:comment "The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional."@en;
   rdfs:domain cim:TopologicalIsland;
   rdfs:range cim:TopologicalNode;
@@ -3715,8 +3760,8 @@ cim:TopologicalNode a owl:Class;
   rdfs:subClassOf cim:IdentifiedObject;
   rdfs:label "TopologicalNode" .
 
-cim:TopologicalNode.AngleRefTopologicalIsland a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:TopologicalNode.AngleRefTopologicalIsland a owl:ObjectProperty, owl:FunctionalProperty,
+    owl:InverseFunctionalProperty;
   rdfs:comment "The island for which the node is an angle reference.   Normally there is one angle reference node for each island."@en;
   rdfs:domain cim:TopologicalNode;
   rdfs:range cim:TopologicalIsland;
@@ -3748,8 +3793,7 @@ cim:TopologicalNode.ConnectivityNodes a owl:ObjectProperty, owl:InverseFunctiona
   cims:multiplicity cims:M:0..n;
   owl:inverseOf cim:ConnectivityNode.TopologicalNode .
 
-cim:TopologicalNode.SvVoltage a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:TopologicalNode.SvVoltage a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The state voltage associated with the topological node."@en;
   rdfs:domain cim:TopologicalNode;
   rdfs:range cim:SvVoltage;
@@ -3787,8 +3831,7 @@ cim:TransformerEnd.BaseVoltage a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1;
   owl:inverseOf cim:BaseVoltage.TransformerEnds .
 
-cim:TransformerEnd.RatioTapChanger a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+cim:TransformerEnd.RatioTapChanger a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Ratio tap changer associated with this transformer end."@en;
   rdfs:domain cim:TransformerEnd;
   rdfs:range cim:RatioTapChanger;
@@ -3864,7 +3907,7 @@ cim:TransformerTankInfo.TransformerEndInfos a owl:ObjectProperty, owl:InverseFun
   owl:inverseOf cim:TransformerEndInfo.TransformerTankInfo .
 
 cim:UnitMultiplier a owl:Class;
-  rdfs:comment "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.   For example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier"@en;
+  rdfs:comment "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.  For example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier"@en;
   rdfs:label "UnitMultiplier" .
 
 cim:UnitMultiplier.M a cim:UnitMultiplier;
@@ -3893,21 +3936,19 @@ cim:UnitSymbol.A a cim:UnitSymbol;
   rdfs:label "A";
   skos:exactMatch unit:A .
 
-cim:UnitSymbol.DKKperEUR a cims:MISSING;
-  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
 
 
-cim:UnitSymbol.EURperMWh a cims:MISSING;
+cim:UnitSymbol.EURperMWh a cim:UnitSymbol;
+  rdfs:comment "Energy price in Euro per Mega-watt hour."@en;
+  rdfs:label "EURperMWh";
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-cim:UnitSymbol.NOKperEUR a cims:MISSING;
-  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
 
-cim:UnitSymbol.NOKperMWh a cims:MISSING;
+cim:UnitSymbol.NOKperMWh a cim:UnitSymbol;
+  rdfs:comment "Energy price in Norwegian Krone per Mega-watt hour."@en;
+  rdfs:label "NOKperMWh";
   skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
 
-cim:UnitSymbol.SEKperEUR a cims:MISSING;
-  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
 
 cim:UnitSymbol.V a cim:UnitSymbol;
   rdfs:comment "Electric potential in volts (W/A)."@en;
@@ -3922,6 +3963,8 @@ cim:UnitSymbol.W a cim:UnitSymbol;
 
 cim:UnitSymbol.degC a cim:UnitSymbol;
   rdfs:comment """Relative temperature in degrees Celsius.
+In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."""@en,
+    """Relative temperature in degrees Celsius.
 In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."""@en;
   rdfs:label "degC";
   skos:exactMatch unit:DEG_C .
@@ -4068,12 +4111,12 @@ cim:WireInfo.gmr a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1;
   cims:dataType cim:Length .
 
-cim:WireInfo.insulated a owl:ObjectProperty, owl:FunctionalProperty;
+cim:WireInfo.insulated a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "True if conductor is insulated."@en;
   rdfs:domain cim:WireInfo;
+  rdfs:range xsd:boolean;
   rdfs:label "insulated";
-  cims:multiplicity cims:M:0..1;
-  cims:dataType cim:Boolean .
+  cims:multiplicity cims:M:0..1 .
 
 cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:comment "(if insulated conductor) Material used for insulation."@en;
@@ -4084,19 +4127,25 @@ cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty;
 
 
 
-cim:WireInfo.rAC25 a owl:ObjectProperty, owl:FunctionalProperty;
+cim:WireInfo.rAC25 a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "AC resistance per unit length of the conductor at 25 °C."@en;
   rdfs:domain cim:WireInfo;
+  rdfs:range xsd:float;
   rdfs:label "rAC25";
   cims:multiplicity cims:M:0..1;
-  cims:dataType cim:ResistancePerLength .
+  cim:unitMultiplier cim:UnitMultiplier.none;
+  cim:unitSymbol cim:UnitSymbol.ohmPerm;
+  qudt:hasQuantityKind cim:ResistancePerLength .
 
-cim:WireInfo.rAC75 a owl:ObjectProperty, owl:FunctionalProperty;
+cim:WireInfo.rAC75 a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "AC resistance per unit length of the conductor at 75 °C."@en;
   rdfs:domain cim:WireInfo;
+  rdfs:range xsd:float;
   rdfs:label "rAC75";
   cims:multiplicity cims:M:0..1;
-  cims:dataType cim:ResistancePerLength .
+  cim:unitMultiplier cim:UnitMultiplier.none;
+  cim:unitSymbol cim:UnitSymbol.ohmPerm;
+  qudt:hasQuantityKind cim:ResistancePerLength .
 
 
 cim:WireInfo.radius a owl:ObjectProperty, owl:FunctionalProperty;
@@ -4138,8 +4187,7 @@ eu:BoundaryPoint a owl:Class;
   rdfs:subClassOf cim:PowerSystemResource;
   rdfs:label "BoundaryPoint" .
 
-eu:BoundaryPoint.ConnectivityNode a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+eu:BoundaryPoint.ConnectivityNode a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The connectivity node that is designated as a boundary point."@en;
   rdfs:domain eu:BoundaryPoint;
   rdfs:range cim:ConnectivityNode;
@@ -4195,8 +4243,7 @@ eu:BoundaryPoint.toEndNameTso a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:label "toEndNameTso";
   cims:multiplicity cims:M:1..1 .
 
-eu:ConnectivityNode.BoundaryPoint a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+eu:ConnectivityNode.BoundaryPoint a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The boundary point associated with the connectivity node."@en;
   rdfs:domain cim:ConnectivityNode;
   rdfs:range eu:BoundaryPoint;
@@ -4292,7 +4339,7 @@ cimr:hasPart a owl:ObjectProperty;
   rdfs:range cimr:EquipmentOrContainer;
   rdfs:label "has part";
   owl:inverseOf cimr:isPart;
-  skos:example cim:VoltageLevel.Bays, cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels .
+  skos:example cim:EquipmentContainer.Equipments, cim:Substation.VoltageLevels, cim:VoltageLevel.Bays .
 
 cimr:hasPartTransitive a owl:ObjectProperty;
   rdfs:comment "EquipmentContainer and its subcontainers have part Equipment. Transitive closure of cimr:hasPart";
@@ -4308,7 +4355,7 @@ cimr:isPart a owl:ObjectProperty;
   rdfs:range cimr:EquipmentOrContainer;
   rdfs:label "is part";
   owl:inverseOf cimr:hasPart;
-  skos:example cim:Bay.VoltageLevel, cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation .
+  skos:example cim:Equipment.EquipmentContainer, cim:VoltageLevel.Substation, cim:Bay.VoltageLevel .
 
 cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:comment "Equipment is part of EquipmentContainer and its super-containers. Transitive closure of cimr:isPart";
@@ -4317,11 +4364,12 @@ cimr:isPartTransitive a owl:ObjectProperty;
   rdfs:label "is part transitive";
   owl:inverseOf cimr:hasPartTransitive .
 
-cimr:mridSignificantPart a owl:DatatypeProperty;
+cimr:mridSignificantPart a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing";
   rdfs:domain cim:IdentifiedObject;
   rdfs:range xsd:string;
-  rdfs:label "MRID significant part" .
+  rdfs:label "MRID significant part";
+  cims:multiplicity cims:M:1..1 .
 
 nc:AmbientTemperatureDependencyCurve a owl:Class;
   rdfs:comment "A curve or functional relationship between the ambient temperature independent variable (X-axis) and relative temperature dependent (Y-axis) variables."@en;
@@ -4343,11 +4391,6 @@ nc:AvailabilityFunctionKind a owl:Class;
 nc:AvailabilityScheduleCauseKind a owl:Class;
   rdfs:comment "The kinds of cause of the (un)availability schedule."@en;
   rdfs:label "AvailabilityScheduleCauseKind" .
-
-nc:BaseTimeSeries a owl:Class;
-  rdfs:comment "Time series of values at points in time."@en;
-  rdfs:subClassOf cim:IdentifiedObject;
-  rdfs:label "BaseTimeSeries" .
 
 nc:BaseTimeSeries.generatedAtTime a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The time this time series (entity) come to existents and available for use."@en;
@@ -4381,10 +4424,6 @@ nc:BaseTimeSeries.percentile a owl:FunctionalProperty, owl:DatatypeProperty;
 nc:BaseTimeSeriesKind a owl:Class;
   rdfs:comment "Kind of time series."@en;
   rdfs:label "BaseTimeSeriesKind" .
-
-nc:BaseTimeSeriesKind.forecast a nc:BaseTimeSeriesKind;
-  rdfs:comment "Time series is forecast data. The values represent the result of scientific predictions based on historical time stamped data."@en;
-  rdfs:label "forecast" .
 
 nc:BidDirectionKind a owl:Class;
   rdfs:comment "Kind of direction of the bid."@en;
@@ -4483,8 +4522,7 @@ nc:Circuit.CircuitShare a owl:ObjectProperty, owl:InverseFunctionalProperty;
   cims:multiplicity cims:M:0..n;
   owl:inverseOf nc:CircuitShare.Circuit .
 
-nc:Circuit.IdentifyingTerminal a owl:ObjectProperty, owl:InverseFunctionalProperty,
-    owl:FunctionalProperty;
+nc:Circuit.IdentifyingTerminal a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Terminal that identifies the circuit."@en;
   rdfs:domain nc:Circuit;
   rdfs:range cim:Terminal;
@@ -5127,10 +5165,6 @@ nc:PowerTransferCorridor.normalEnabled a owl:FunctionalProperty, owl:DatatypePro
   rdfs:label "normalEnabled";
   cims:multiplicity cims:M:0..1 .
 
-nc:PropertyReference a owl:Class;
-  rdfs:comment "The reference to a class and one of its properties."@en;
-  rdfs:label "PropertyReference" .
-
 nc:PropertyReference.GridStateAlteration a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:comment "The grid state alteration for this property reference."@en;
   rdfs:domain nc:PropertyReference;
@@ -5547,14 +5581,14 @@ nc:SystemOperator.Contingency a owl:ObjectProperty, owl:InverseFunctionalPropert
   owl:inverseOf nc:Contingency.EquipmentOperator .
 
 nc:SystemUnitKind a owl:Class;
-  rdfs:comment "A system unit is defined as:  A group of components which are delimited by one or more circuit breakers.  Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.   Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit."@en;
+  rdfs:comment "A system unit is defined as: A group of components which are delimited by one or more circuit breakers. Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.  Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit. Note"@en;
   rdfs:label "SystemUnitKind" .
 
 nc:TCSCControlModeKind a owl:Class;
   rdfs:comment "Kind of TCSC control mode."@en;
   rdfs:label "TCSCControlModeKind" .
 
-nc:Terminal.Circuit a owl:ObjectProperty, owl:InverseFunctionalProperty, owl:FunctionalProperty;
+nc:Terminal.Circuit a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty;
   rdfs:comment "Circuit that is identified by the given Terminal."@en;
   rdfs:domain cim:Terminal;
   rdfs:range nc:Circuit;
@@ -5573,10 +5607,6 @@ nc:Terminal.PinTerminal a owl:ObjectProperty, owl:InverseFunctionalProperty;
 nc:TimeSeriesInterpolationKind a owl:Class;
   rdfs:comment "Kinds of interpolation of values between two time point."@en;
   rdfs:label "TimeSeriesInterpolationKind" .
-
-nc:TimeSeriesInterpolationKind.previous a nc:TimeSeriesInterpolationKind;
-  rdfs:comment "The value between two time points is set to previous value."@en;
-  rdfs:label "previous" .
 
 nc:TopologyAction a owl:Class;
   rdfs:comment "Topology action means the connection or disconnection of a switch in the grid model compared to the base case."@en;
@@ -5640,11 +5670,30 @@ nc:ValueOffsetKind.incremental a nc:ValueOffsetKind;
 
 
 
+<urn:uuid:00160296-775f-407a-8d67-c9a5d610715a> a cim:RemoteUnit, cims:MISSING;
+  cim:IdentifiedObject.description "400 Volt Telemarkstien 2 Remote Unit 1";
+  cim:IdentifiedObject.mRID "00160296-775f-407a-8d67-c9a5d610715a";
+  cim:IdentifiedObject.name "04 TELEMA 2 RU1";
+  cim:RemoteUnit.remoteUnitType cim:RemoteUnitType.IED .
+
+<urn:uuid:5462d46a-9ee5-4d09-9ac2-9f97933caa4d> a cim:PowerTransformerInfo, cims:MISSING;
+  cim:IdentifiedObject.mRID "5462d46a-9ee5-4d09-9ac2-9f97933caa4d";
+  cim:IdentifiedObject.name "Engene 132-22 KV PowerTransformerInfo" .
 
 
+<urn:uuid:628b66ae-c9c7-4191-89c0-82d95f26319e> a cim:BusbarSectionInfo, cims:MISSING;
+  cim:AssetInfo.ProductAssetModel <urn:uuid:4ffa629d-a671-4bd1-b4bb-c69c8fd2511d>;
+  cim:ShuntCompensatorInfo.ratedVoltage "300"^^xsd:float;
+  cim:IdentifiedObject.name "SH BusbarSection";
+  cim:ShuntCompensatorInfo.ratedCurrent "0"^^xsd:float .
 
+<urn:uuid:99e19919-b030-4742-8609-f1230681333d> a cim:AssetModelCatalogueItem, cims:MISSING;
+  cim:IdentifiedObject.description "Pricing for RTU skap for småkraftverk";
+  cim:IdentifiedObject.mRID "99e19919-b030-4742-8609-f1230681333d";
+  cim:IdentifiedObject.name "Price_RS5970P";
+  cim:AssetModelCatalogueItem.unitCost "38500" .
 
-
-
-
+<urn:uuid:9eb4e906-d4f4-11e7-9296-cec278b6b50a> a cim:PowerTransformerInfo, cims:MISSING;
+  cim:AssetInfo.ProductAssetModel <urn:uuid:6d993b26-72bf-46f0-9eb3-70bc26d544ac>;
+  cim:IdentifiedObject.name "PTI Power Transformer" .
 

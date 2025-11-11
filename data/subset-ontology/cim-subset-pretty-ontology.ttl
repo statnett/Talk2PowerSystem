@@ -93,7 +93,7 @@ cim:AsynchronousMachineKind a owl:Class ;
 
 cim:AuxiliaryEquipment a owl:Class ;
   rdfs:label "AuxiliaryEquipment" ;
-  rdfs:comment """AuxiliaryEquipment describe equipment that is not performing any primary functions but support for the equipment performing the primary function.
+  rdfs:comment """AuxiliaryEquipment describe equipment that is not performing any primary functions but support for the equipment performing the primary function.\r
 AuxiliaryEquipment is attached to primary equipment via an association with Terminal."""@en ;
   rdfs:subClassOf cim:Equipment .
 
@@ -118,7 +118,7 @@ cim:Breaker a owl:Class ;
 
 cim:BusbarSection a owl:Class ;
   rdfs:label "BusbarSection" ;
-  rdfs:comment """A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. 
+  rdfs:comment """A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. \r
 Voltage measurements are typically obtained from voltage transformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal."""@en ;
   rdfs:subClassOf cim:Connector .
 
@@ -213,6 +213,11 @@ cim:Currency a owl:Class ;
   rdfs:label "Currency" ;
   rdfs:comment "Monetary currencies.  ISO 4217 standard including 3-character currency code."@en .
 
+cim:CurrencyExchangeRate a owl:Class ;
+  rdfs:label "CurrencyExchangeRate" ;
+  rdfs:comment "Exchange rate between two currencies as of some moment"@en ;
+  skos:exactMatch quantitykind:ExchangeRate .
+
 cim:CurrentLimit a owl:Class ;
   rdfs:label "CurrentLimit" ;
   rdfs:comment "Operational limit on current."@en ;
@@ -304,7 +309,7 @@ cim:EnergyConnection a owl:Class ;
 
 cim:EnergyConsumer a owl:Class ;
   rdfs:label "EnergyConsumer" ;
-  rdfs:comment """Generic user of energy - a  point of consumption on the power system model.
+  rdfs:comment """Generic user of energy - a  point of consumption on the power system model.\r
 EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False."""@en ;
   rdfs:subClassOf cim:EnergyConnection .
 
@@ -350,7 +355,7 @@ cim:ExcST7BUELselectorKind a owl:Class ;
 
 cim:Feeder a owl:Class ;
   rdfs:label "Feeder" ;
-  rdfs:comment """A collection of equipment for organizational purposes, used for grouping distribution resources.
+  rdfs:comment """A collection of equipment for organizational purposes, used for grouping distribution resources.\r
 The organization a feeder does not necessarily reflect connectivity or current operation state."""@en ;
   rdfs:subClassOf cim:EquipmentContainer .
 
@@ -588,8 +593,8 @@ cim:ProtectedSwitch a owl:Class ;
 
 cim:RatioTapChanger a owl:Class ;
   rdfs:label "RatioTapChanger" ;
-  rdfs:comment """A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.
-
+  rdfs:comment """A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.\r
+\r
 Angle sign convention (general): Positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer)."""@en ;
   rdfs:subClassOf cim:TapChanger .
 
@@ -755,9 +760,9 @@ cim:TextDiagramObject a owl:Class ;
 
 cim:TopologicalIsland a owl:Class ;
   rdfs:label "TopologicalIsland" ;
-  rdfs:comment """An electrically connected subset of the network. Topological islands can change as the current network state changes, e.g. due to: 
-- disconnect switches or breakers changing state in a SCADA/EMS.
-- manual creation, change or deletion of topological nodes in a planning tool.
+  rdfs:comment """An electrically connected subset of the network. Topological islands can change as the current network state changes, e.g. due to: \r
+- disconnect switches or breakers changing state in a SCADA/EMS.\r
+- manual creation, change or deletion of topological nodes in a planning tool.\r
 Only energised TopologicalNode-s shall be part of the topological island."""@en ;
   rdfs:subClassOf cim:IdentifiedObject .
 
@@ -783,7 +788,7 @@ cim:TransformerTankInfo a owl:Class ;
 
 cim:UnitMultiplier a owl:Class ;
   rdfs:label "UnitMultiplier" ;
-  rdfs:comment "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.   For example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier"@en .
+  rdfs:comment "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.  For example, if a unit symbol is \"m2Pers\" and the multiplier is \"k\", then the value is k(m**2/s), and the multiplier"@en .
 
 cim:UnitSymbol a owl:Class ;
   rdfs:label "UnitSymbol" ;
@@ -805,7 +810,7 @@ cim:VoltageLevel a owl:Class ;
 
 cim:VoltageLimit a owl:Class ;
   rdfs:label "VoltageLimit" ;
-  rdfs:comment """Operational limit applied to voltage.
+  rdfs:comment """Operational limit applied to voltage.\r
 The use of operational VoltageLimit is preferred instead of limits defined at VoltageLevel. The operational VoltageLimits are used, if present."""@en ;
   rdfs:subClassOf cim:OperationalLimit .
 
@@ -879,10 +884,10 @@ nc:AmbientTemperatureDependencyCurve a owl:Class ;
 
 nc:AutoReclosingKind a owl:Class ;
   rdfs:label "AutoReclosingKind" ;
-  rdfs:comment """The type of autoreclosing that occurred with the trip.
-
-If high-speed automatic reclosing is successful at one end of a line, but the line needs to be reclosed manually at the other end, choose manual reclosing.
-
+  rdfs:comment """The type of autoreclosing that occurred with the trip.\r
+\r
+If high-speed automatic reclosing is successful at one end of a line, but the line needs to be reclosed manually at the other end, choose manual reclosing.\r
+\r
 In this document, high-speed automatic reclosing refers to automatic reclosing after less than 2 seconds."""@en .
 
 nc:AvailabilityFunctionKind a owl:Class ;
@@ -892,11 +897,6 @@ nc:AvailabilityFunctionKind a owl:Class ;
 nc:AvailabilityScheduleCauseKind a owl:Class ;
   rdfs:label "AvailabilityScheduleCauseKind" ;
   rdfs:comment "The kinds of cause of the (un)availability schedule."@en .
-
-nc:BaseTimeSeries a owl:Class ;
-  rdfs:label "BaseTimeSeries" ;
-  rdfs:comment "Time series of values at points in time."@en ;
-  rdfs:subClassOf cim:IdentifiedObject .
 
 nc:BaseTimeSeriesKind a owl:Class ;
   rdfs:label "BaseTimeSeriesKind" ;
@@ -999,8 +999,8 @@ nc:FaultCategoryKind a owl:Class ;
 
 nc:FaultKind a owl:Class ;
   rdfs:label "FaultKind" ;
-  rdfs:comment """One fault can consist of several fault types. If a fault consists of several fault types, the most significant fault type is used.
-
+  rdfs:comment """One fault can consist of several fault types. If a fault consists of several fault types, the most significant fault type is used.\r
+\r
 In case of developing faults, that is in faults changing from one type to another, the final type is given."""@en .
 
 nc:FunctionInputVariable a owl:Class ;
@@ -1169,10 +1169,6 @@ nc:PowerTransferCorridor a owl:Class ;
   rdfs:comment "A power transfer corridor is defined as a set of circuits (transmission lines or transformers) separating two portions of the power system, or a subset of circuits exposed to a substantial portion of the transmission exchange between two parts of the system."@en ;
   rdfs:subClassOf cim:PowerSystemResource .
 
-nc:PropertyReference a owl:Class ;
-  rdfs:label "PropertyReference" ;
-  rdfs:comment "The reference to a class and one of its properties."@en .
-
 nc:RampingPrincipleKind a owl:Class ;
   rdfs:label "RampingPrincipleKind" ;
   rdfs:comment "Kind of ramping principle."@en .
@@ -1213,7 +1209,7 @@ nc:RemedialActionScheduleStatusKind a owl:Class ;
 
 nc:RemedialActionScheme a owl:Class ;
   rdfs:label "RemedialActionScheme" ;
-  rdfs:comment """Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).
+  rdfs:comment """Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).\r
 A Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action."""@en ;
   rdfs:subClassOf cim:PowerSystemResource .
 
@@ -1302,7 +1298,7 @@ nc:SystemOperator a owl:Class ;
 
 nc:SystemUnitKind a owl:Class ;
   rdfs:label "SystemUnitKind" ;
-  rdfs:comment "A system unit is defined as:  A group of components which are delimited by one or more circuit breakers.  Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.   Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit."@en .
+  rdfs:comment "A system unit is defined as: A group of components which are delimited by one or more circuit breakers. Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.  Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit. Note"@en .
 
 nc:TCSCControlModeKind a owl:Class ;
   rdfs:label "TCSCControlModeKind" ;
@@ -1324,8 +1320,8 @@ nc:TransmissionSystemOperator a owl:Class ;
 
 nc:TripKind a owl:Class ;
   rdfs:label "TripKind" ;
-  rdfs:comment """Whether the type of the trip due to the outage was automatic, automatic with successful automatic reclosing or manual.
-
+  rdfs:comment """Whether the type of the trip due to the outage was automatic, automatic with successful automatic reclosing or manual.\r
+\r
 In case of a fault in the reclosing automatics resulting in lack of reclosing, automatic should be chosen as an alternative."""@en .
 
 nc:ValueOffsetKind a owl:Class ;
@@ -1378,20 +1374,6 @@ cim:Asset.inUseState a owl:ObjectProperty, owl:FunctionalProperty ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:Asset ;
   rdfs:range cim:InUseStateKind .
-
-cim:Asset.serialNumber a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "serialNumber" ;
-  rdfs:comment "Serial number of this asset."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:Asset .
-
-cim:Asset.type a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "type" ;
-  rdfs:comment "Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:Asset .
 
 cim:AssetContainer.Assets a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "Assets" ;
@@ -1804,31 +1786,6 @@ cim:IdentifiedObject.DiagramObjects a owl:ObjectProperty, owl:InverseFunctionalP
   rdfs:domain cim:IdentifiedObject ;
   rdfs:range cim:DiagramObject .
 
-cim:IdentifiedObject.description a owl:ObjectProperty, owl:DatatypeProperty, owl:FunctionalProperty ;
-  rdfs:label "description" ;
-  rdfs:comment "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:IdentifiedObject ;
-  rdfs:range xsd:string .
-
-cim:IdentifiedObject.mRID a owl:ObjectProperty, owl:DatatypeProperty, owl:FunctionalProperty ;
-  rdfs:label "mRID" ;
-  rdfs:comment """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
-For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
-  rdfs:domain cim:IdentifiedObject ;
-  rdfs:range xsd:string .
-
-cim:IdentifiedObject.name a owl:ObjectProperty, owl:DatatypeProperty, owl:FunctionalProperty ;
-  rdfs:label "name" ;
-  rdfs:comment "The name is any free human readable and possibly non unique text naming the object."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
-  rdfs:domain cim:IdentifiedObject ;
-  rdfs:range xsd:string .
-
 cim:Line.Region a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "Region" ;
   rdfs:comment "The sub-geographical region of the line."@en ;
@@ -1895,7 +1852,7 @@ cim:Measurement.PowerSystemResource a owl:ObjectProperty, owl:FunctionalProperty
 
 cim:Measurement.phases a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "phases" ;
-  rdfs:comment """Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.
+  rdfs:comment """Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.\r
 If the attribute is missing three phases (ABC) shall be assumed."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:Measurement ;
@@ -2072,20 +2029,6 @@ cim:ProductAssetModel.Manufacturer a owl:ObjectProperty, owl:FunctionalProperty 
   owl:inverseOf cim:Manufacturer.ProductAssetModels ;
   rdfs:domain cim:ProductAssetModel ;
   rdfs:range cim:Manufacturer .
-
-cim:ProductAssetModel.modelNumber a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "modelNumber" ;
-  rdfs:comment "Manufacturer's model number."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:ProductAssetModel .
-
-cim:ProductAssetModel.modelVersion a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "modelVersion" ;
-  rdfs:comment "Version number for product model, which indicates vintage of the product."@en ;
-  cims:dataType cim:String ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:ProductAssetModel .
 
 cim:ProductAssetModel.usageKind a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "usageKind" ;
@@ -2287,13 +2230,6 @@ cim:SwitchInfo.breakingCapacity a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "breakingCapacity" ;
   rdfs:comment "The maximum fault current a breaking device can break safely under prescribed conditions of use."@en ;
   cims:dataType cim:CurrentFlow ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:SwitchInfo .
-
-cim:SwitchInfo.isUnganged a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "isUnganged" ;
-  rdfs:comment "If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)."@en ;
-  cims:dataType cim:Boolean ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:SwitchInfo .
 
@@ -2572,33 +2508,12 @@ cim:WireInfo.gmr a owl:ObjectProperty, owl:FunctionalProperty ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:WireInfo .
 
-cim:WireInfo.insulated a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "insulated" ;
-  rdfs:comment "True if conductor is insulated."@en ;
-  cims:dataType cim:Boolean ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
-
 cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "insulationMaterial" ;
   rdfs:comment "(if insulated conductor) Material used for insulation."@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:WireInfo ;
   rdfs:range cim:WireInsulationKind .
-
-cim:WireInfo.rAC25 a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "rAC25" ;
-  rdfs:comment "AC resistance per unit length of the conductor at 25 °C."@en ;
-  cims:dataType cim:ResistancePerLength ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
-
-cim:WireInfo.rAC75 a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "rAC75" ;
-  rdfs:comment "AC resistance per unit length of the conductor at 75 °C."@en ;
-  cims:dataType cim:ResistancePerLength ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
 
 cim:WireInfo.radius a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "radius" ;
@@ -2675,10 +2590,10 @@ cimr:isPartTransitive a owl:ObjectProperty ;
 
 dcat:hasVersion a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "hasVersion" ;
-  rdfs:comment """This resource is a version of a non-versioned or abstract resource.
-This property is intended for relating a versioned resource to a non-versioned or abstract resource.
-
-The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:isVersionOf, which makes use of a broader notion of version, including editions and adaptations."""@en ;
+  rdfs:comment """This resource is a version of a non-versioned or abstract resource.\r
+This property is intended for relating a versioned resource to a non-versioned or abstract resource.\r
+\r
+The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:isVersionOf, which makes use of a broader notion of version, including editions and adaptations."""@en ;
   cims:multiplicity cims:M:0..n ;
   owl:inverseOf dcat:isVersionOf ;
   rdfs:domain dcat:Dataset ;
@@ -2686,9 +2601,9 @@ The notion of version used by this property is limited to versions resulting fro
 
 dcat:isVersionOf a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "isVersionOf" ;
-  rdfs:comment """This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.
-
-The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:hasVersion, which makes use of a broader notion of version, including editions and adaptations."""@en ;
+  rdfs:comment """This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.\r
+\r
+The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:hasVersion, which makes use of a broader notion of version, including editions and adaptations."""@en ;
   cims:multiplicity cims:M:0..1 ;
   owl:inverseOf dcat:hasVersion ;
   rdfs:domain dcat:Dataset ;
@@ -2696,8 +2611,8 @@ The notion of version used by this property is limited to versions resulting fro
 
 dct:accessRights a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "accessRights" ;
-  rdfs:comment """Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.
-[CIM context:
+  rdfs:comment """Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.\r
+[CIM context:\r
 Reference to the confidentiality level that shall be applied when handling this model.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -2712,8 +2627,8 @@ dct:conformsTo a owl:ObjectProperty ;
 
 dct:license a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "license" ;
-  rdfs:comment """A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.
-[CIM context:
+  rdfs:comment """A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.\r
+[CIM context:\r
 Reference to the license under which the data is made available. If no license holder is defined, then the original data provider holds the license.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -2721,15 +2636,15 @@ Reference to the license under which the data is made available. If no license h
 
 dct:publisher a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "publisher" ;
-  rdfs:comment """An entity responsible for making the resource available.
-[CIM context: 
+  rdfs:comment """An entity responsible for making the resource available.\r
+[CIM context: \r
 The agent that is publishing the dataset on the given platform.]"""@en ;
   cims:multiplicity cims:M:0..1 .
 
 dct:references a owl:ObjectProperty ;
   rdfs:label "references" ;
-  rdfs:comment """A related resource that is referenced, cited, or otherwise pointed to by the described resource[.
-[CIM context: 
+  rdfs:comment """A related resource that is referenced, cited, or otherwise pointed to by the described resource[.\r
+[CIM context: \r
 The referenced resource that is being complemented in this dataset, e.g. SSH is referencing EQ.]"""@en ;
   cims:multiplicity cims:M:0..n ;
   rdfs:domain dcat:Dataset ;
@@ -2737,8 +2652,8 @@ The referenced resource that is being complemented in this dataset, e.g. SSH is 
 
 dct:spatial a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "spatial" ;
-  rdfs:comment """The geographical area covered by the dataset.
-[CIM context: 
+  rdfs:comment """The geographical area covered by the dataset.\r
+[CIM context: \r
 The responsibility area that multiple model can describe, also referred to frame.]"""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -3320,13 +3235,41 @@ prov:Entity a owl:ObjectProperty, owl:InverseFunctionalProperty ;
 
 prov:wasGeneratedBy a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "wasGeneratedBy" ;
-  rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
-[CIM context:
+  rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.\r
+[CIM context:\r
 Reference to an activity or the exact business nature (process, configuration) which produced or uses the model.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   owl:inverseOf prov:Entity ;
   rdfs:domain dcat:Dataset ;
   rdfs:range dcat:Dataset .
+
+psys:conclusion a owl:ObjectProperty ;
+  rdfs:label "conclusion" ;
+  rdfs:comment "The conclusion of the property chain" ;
+  rdfs:domain  [];
+  rdfs:range owl:ObjectProperty .
+
+psys:premise1 a owl:ObjectProperty ;
+  rdfs:label "premise 1" ;
+  rdfs:comment "The first premise of the property chain" .
+
+psys:premise2 a owl:ObjectProperty ;
+  rdfs:label "premise 2" ;
+  rdfs:comment "The second premise of the property chain" .
+
+psys:premise3 a owl:ObjectProperty ;
+  rdfs:label "premise 3" ;
+  rdfs:comment "The third premise of the property chain" .
+
+psys:premise4 a owl:ObjectProperty ;
+  rdfs:label "premise 4" ;
+  rdfs:comment "The fourth premise of the property chain" .
+
+psys:transitiveOver a owl:ObjectProperty ;
+  rdfs:label "transitive over" ;
+  rdfs:comment "If p transitiveOver q then p/q => p" ;
+  rdfs:domain owl:ObjectProperty ;
+  rdfs:range owl:ObjectProperty .
 
 adms:versionNotes a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "versionNotes" ;
@@ -3480,6 +3423,20 @@ cim:Analog.positiveFlowIn a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:Analog ;
   rdfs:range xsd:boolean .
 
+cim:Asset.serialNumber a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "serialNumber" ;
+  rdfs:comment "Serial number of this asset."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:Asset ;
+  rdfs:range xsd:string .
+
+cim:Asset.type a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "type" ;
+  rdfs:comment "Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:Asset ;
+  rdfs:range xsd:string .
+
 cim:BaseVoltage.nominalVoltage a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "nominalVoltage" ;
   rdfs:comment "The power system resource's base voltage.  Shall be a positive value and not zero."@en ;
@@ -3493,7 +3450,7 @@ cim:BaseVoltage.nominalVoltage a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:BusbarSection.ipMax a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ipMax" ;
-  rdfs:comment """Maximum allowable peak short-circuit current of busbar (Ipmax in IEC 60909-0). 
+  rdfs:comment """Maximum allowable peak short-circuit current of busbar (Ipmax in IEC 60909-0). \r
 Mechanical limit of the busbar in the substation itself. Used for short circuit data exchange according to IEC 60909."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.A ;
@@ -3606,8 +3563,8 @@ cim:DiagramObjectPoint.yPosition a owl:DatatypeProperty, owl:FunctionalProperty 
 
 cim:EnergyConsumer.p a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "p" ;
-  rdfs:comment """Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
-For voltage dependent loads the value is at rated voltage.
+  rdfs:comment """Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.\r
+For voltage dependent loads the value is at rated voltage.\r
 Starting value for a steady state solution."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -3641,8 +3598,8 @@ cim:EnergyConsumer.pfixedPct a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:EnergyConsumer.q a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "q" ;
-  rdfs:comment """Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
-For voltage dependent loads the value is at rated voltage.
+  rdfs:comment """Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.\r
+For voltage dependent loads the value is at rated voltage.\r
 Starting value for a steady state solution."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.VAr ;
@@ -3748,7 +3705,7 @@ cim:EquivalentInjection.minQ a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:EquivalentInjection.p a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "p" ;
-  rdfs:comment """Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+  rdfs:comment """Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r
 Starting value for steady state solutions."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -3760,7 +3717,7 @@ Starting value for steady state solutions."""@en ;
 
 cim:EquivalentInjection.q a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "q" ;
-  rdfs:comment """Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+  rdfs:comment """Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r
 Starting value for steady state solutions."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.VAr ;
@@ -3772,7 +3729,7 @@ Starting value for steady state solutions."""@en ;
 
 cim:EquivalentInjection.r a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "r" ;
-  rdfs:comment """Positive sequence resistance. Used to represent Extended-Ward (IEC 60909).
+  rdfs:comment """Positive sequence resistance. Used to represent Extended-Ward (IEC 60909).\r
 Usage : Extended-Ward is a result of network reduction prior to the data exchange."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.ohm ;
@@ -3784,7 +3741,7 @@ Usage : Extended-Ward is a result of network reduction prior to the data exchang
 
 cim:EquivalentInjection.r0 a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "r0" ;
-  rdfs:comment """Zero sequence resistance. Used to represent Extended-Ward (IEC 60909).
+  rdfs:comment """Zero sequence resistance. Used to represent Extended-Ward (IEC 60909).\r
 Usage : Extended-Ward is a result of network reduction prior to the data exchange."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.ohm ;
@@ -3803,7 +3760,7 @@ cim:EquivalentInjection.regulationCapability a owl:DatatypeProperty, owl:Functio
 
 cim:EquivalentInjection.x a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "x" ;
-  rdfs:comment """Positive sequence reactance. Used to represent Extended-Ward (IEC 60909).
+  rdfs:comment """Positive sequence reactance. Used to represent Extended-Ward (IEC 60909).\r
 Usage : Extended-Ward is a result of network reduction prior to the data exchange."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.ohm ;
@@ -3815,7 +3772,7 @@ Usage : Extended-Ward is a result of network reduction prior to the data exchang
 
 cim:EquivalentInjection.x0 a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "x0" ;
-  rdfs:comment """Zero sequence reactance. Used to represent Extended-Ward (IEC 60909).
+  rdfs:comment """Zero sequence reactance. Used to represent Extended-Ward (IEC 60909).\r
 Usage : Extended-Ward is a result of network reduction prior to the data exchange."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.ohm ;
@@ -3871,7 +3828,7 @@ cim:GeneratingUnit.minOperatingP a owl:DatatypeProperty, owl:FunctionalProperty 
 
 cim:GeneratingUnit.nominalP a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "nominalP" ;
-  rdfs:comment """The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).
+  rdfs:comment """The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).\r
 The attribute shall be a positive value equal to or less than RotatingMachine.ratedS."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -3890,7 +3847,7 @@ cim:GeneratingUnit.normalPF a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:GeneratingUnit.ratedGrossMaxP a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedGrossMaxP" ;
-  rdfs:comment """The unit's gross rated maximum capacity (book value).
+  rdfs:comment """The unit's gross rated maximum capacity (book value).\r
 The attribute shall be a positive value."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -3902,7 +3859,7 @@ The attribute shall be a positive value."""@en ;
 
 cim:GeneratingUnit.ratedNetMaxP a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedNetMaxP" ;
-  rdfs:comment """The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.
+  rdfs:comment """The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.\r
 The attribute shall be a positive value."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -3914,9 +3871,32 @@ The attribute shall be a positive value."""@en ;
 
 cim:IdentifiedObject.aliasName a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "aliasName" ;
-  rdfs:comment """The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
+  rdfs:comment """The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.\r
 The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time."""@en ;
   cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:IdentifiedObject ;
+  rdfs:range xsd:string .
+
+cim:IdentifiedObject.description a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "description" ;
+  rdfs:comment "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:IdentifiedObject ;
+  rdfs:range xsd:string .
+
+cim:IdentifiedObject.mRID a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "mRID" ;
+  rdfs:comment """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en, """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en ;
+  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
+  rdfs:domain cim:IdentifiedObject ;
+  rdfs:range xsd:string .
+
+cim:IdentifiedObject.name a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "name" ;
+  rdfs:comment "The name is any free human readable and possibly non unique text naming the object."@en ;
+  cims:multiplicity cims:M:0..1, cims:M:1..1 ;
   rdfs:domain cim:IdentifiedObject ;
   rdfs:range xsd:string .
 
@@ -3993,7 +3973,7 @@ cim:LoadResponseCharacteristic.qConstantPower a owl:DatatypeProperty, owl:Functi
 
 cim:Measurement.measurementType a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "measurementType" ;
-  rdfs:comment """Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
+  rdfs:comment """Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r
 When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement."""@en ;
   cims:multiplicity cims:M:1..1 ;
   cims:pragmatics "Possible values: CurrencyExchange-Actual, Price-Actual, ThreePhaseActivePower, ThreePhaseActivePower-Flow-Estimated" ;
@@ -4089,7 +4069,7 @@ cim:PowerTransformerEnd.g a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:PowerTransformerEnd.r a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "r" ;
-  rdfs:comment """Resistance (star-model) of the transformer end.
+  rdfs:comment """Resistance (star-model) of the transformer end.\r
 The attribute shall be equal to or greater than zero for non-equivalent transformers."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.ohm ;
@@ -4101,7 +4081,7 @@ The attribute shall be equal to or greater than zero for non-equivalent transfor
 
 cim:PowerTransformerEnd.ratedS a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedS" ;
-  rdfs:comment """Normal apparent power rating.
+  rdfs:comment """Normal apparent power rating.\r
 The attribute shall be a positive value. For a two-winding transformer the values for the high and low voltage sides shall be identical."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.VA ;
@@ -4113,8 +4093,8 @@ The attribute shall be a positive value. For a two-winding transformer the value
 
 cim:PowerTransformerEnd.ratedU a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedU" ;
-  rdfs:comment """Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.
-A high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.
+  rdfs:comment """Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.\r
+A high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.\r
 The attribute shall be a positive value."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.k ;
   cim:unitSymbol cim:UnitSymbol.V ;
@@ -4135,9 +4115,23 @@ cim:PowerTransformerEnd.x a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:PowerTransformerEnd ;
   rdfs:range xsd:float .
 
+cim:ProductAssetModel.modelNumber a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "modelNumber" ;
+  rdfs:comment "Manufacturer's model number."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:ProductAssetModel ;
+  rdfs:range xsd:string .
+
+cim:ProductAssetModel.modelVersion a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "modelVersion" ;
+  rdfs:comment "Version number for product model, which indicates vintage of the product."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:ProductAssetModel ;
+  rdfs:range xsd:string .
+
 cim:RatioTapChanger.stepVoltageIncrement a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "stepVoltageIncrement" ;
-  rdfs:comment """Tap step increment, in per cent of rated voltage of the power transformer end, per step position.
+  rdfs:comment """Tap step increment, in per cent of rated voltage of the power transformer end, per step position.\r
 When the increment is negative, the voltage decreases when the tap step increases."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4170,7 +4164,7 @@ cim:RegulatingControl.enabled a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:RegulatingControl.targetDeadband a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "targetDeadband" ;
-  rdfs:comment """This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband is to be ignored.
+  rdfs:comment """This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband is to be ignored.\r
 Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:RegulatingControl ;
@@ -4185,7 +4179,7 @@ cim:RegulatingControl.targetValue a owl:DatatypeProperty, owl:FunctionalProperty
 
 cim:RotatingMachine.p a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "p" ;
-  rdfs:comment """Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+  rdfs:comment """Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r
 Starting value for a steady state solution."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.W ;
@@ -4197,7 +4191,7 @@ Starting value for a steady state solution."""@en ;
 
 cim:RotatingMachine.q a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "q" ;
-  rdfs:comment """Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+  rdfs:comment """Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r
 Starting value for a steady state solution."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.VAr ;
@@ -4209,7 +4203,7 @@ Starting value for a steady state solution."""@en ;
 
 cim:RotatingMachine.ratedS a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedS" ;
-  rdfs:comment """Nameplate apparent power rating for the unit.
+  rdfs:comment """Nameplate apparent power rating for the unit.\r
 The attribute shall have a positive value."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.M ;
   cim:unitSymbol cim:UnitSymbol.VA ;
@@ -4336,11 +4330,11 @@ cim:SvVoltage.v a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:Switch.locked a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "locked" ;
-  rdfs:comment """If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:
-<ul>
-\t<li>locked=true and Switch.open=true. The resulting state is open and locked;</li>
-\t<li>locked=false and Switch.open=true. The resulting state is open;</li>
-\t<li>locked=false and Switch.open=false. The resulting state is closed.</li>
+  rdfs:comment """If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:\r
+<ul>\r
+\t<li>locked=true and Switch.open=true. The resulting state is open and locked;</li>\r
+\t<li>locked=false and Switch.open=true. The resulting state is open;</li>\r
+\t<li>locked=false and Switch.open=false. The resulting state is closed.</li>\r
 </ul>"""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:Switch ;
@@ -4362,7 +4356,7 @@ cim:Switch.open a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:Switch.ratedCurrent a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "ratedCurrent" ;
-  rdfs:comment """The maximum continuous current carrying capacity in amps governed by the device material and construction.
+  rdfs:comment """The maximum continuous current carrying capacity in amps governed by the device material and construction.\r
 The attribute shall be a positive value."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.A ;
@@ -4377,6 +4371,13 @@ cim:Switch.retained a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:comment "Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow."@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:Switch ;
+  rdfs:range xsd:boolean .
+
+cim:SwitchInfo.isUnganged a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "isUnganged" ;
+  rdfs:comment "If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:SwitchInfo ;
   rdfs:range xsd:boolean .
 
 cim:SynchronousMachine.maxQ a owl:DatatypeProperty, owl:FunctionalProperty ;
@@ -4439,7 +4440,7 @@ cim:TapChanger.controlEnabled a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:TapChanger.highStep a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "highStep" ;
-  rdfs:comment """Highest possible tap step position, advance from neutral.
+  rdfs:comment """Highest possible tap step position, advance from neutral.\r
 The attribute shall be greater than lowStep."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:TapChanger ;
@@ -4461,8 +4462,8 @@ cim:TapChanger.ltcFlag a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:TapChanger.neutralStep a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "neutralStep" ;
-  rdfs:comment """The neutral tap step position for this winding.
-The attribute shall be equal to or greater than lowStep and equal or less than highStep.
+  rdfs:comment """The neutral tap step position for this winding.\r
+The attribute shall be equal to or greater than lowStep and equal or less than highStep.\r
 It is the step position where the voltage is neutralU when the other terminals of the transformer are at the ratedU.  If there are other tap changers on the transformer those taps are kept constant at their neutralStep."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:TapChanger ;
@@ -4481,7 +4482,7 @@ cim:TapChanger.neutralU a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 cim:TapChanger.normalStep a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "normalStep" ;
-  rdfs:comment """The tap step position used in "normal" network operation for this winding. For a "Fixed" tap changer indicates the current physical tap setting.
+  rdfs:comment """The tap step position used in "normal" network operation for this winding. For a "Fixed" tap changer indicates the current physical tap setting.\r
 The attribute shall be equal to or greater than lowStep and equal to or less than highStep."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:TapChanger ;
@@ -4489,8 +4490,8 @@ The attribute shall be equal to or greater than lowStep and equal to or less tha
 
 cim:TapChanger.step a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "step" ;
-  rdfs:comment """Tap changer position.
-Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.
+  rdfs:comment """Tap changer position.\r
+Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.\r
 The attribute shall be equal to or greater than lowStep and equal to or less than highStep."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:TapChanger ;
@@ -4539,6 +4540,33 @@ cim:VoltageLimit.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLimit ;
   rdfs:range xsd:float .
 
+cim:WireInfo.insulated a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "insulated" ;
+  rdfs:comment "True if conductor is insulated."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:boolean .
+
+cim:WireInfo.rAC25 a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "rAC25" ;
+  rdfs:comment "AC resistance per unit length of the conductor at 25 °C."@en ;
+  cim:unitMultiplier cim:UnitMultiplier.none ;
+  cim:unitSymbol cim:UnitSymbol.ohmPerm ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:ResistancePerLength ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:float .
+
+cim:WireInfo.rAC75 a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "rAC75" ;
+  rdfs:comment "AC resistance per unit length of the conductor at 75 °C."@en ;
+  cim:unitMultiplier cim:UnitMultiplier.none ;
+  cim:unitSymbol cim:UnitSymbol.ohmPerm ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:ResistancePerLength ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:float .
+
 cimr:Measurement.isInCognite a owl:DatatypeProperty ;
   rdfs:label "Measurement is in Cognite" ;
   rdfs:comment "Flag indicating if a cim:Analog measurement represents to a Cognite timeseries" ;
@@ -4546,9 +4574,10 @@ cimr:Measurement.isInCognite a owl:DatatypeProperty ;
   rdfs:domain cim:Analog ;
   rdfs:range xsd:boolean .
 
-cimr:mridSignificantPart a owl:DatatypeProperty ;
+cimr:mridSignificantPart a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "MRID significant part" ;
   rdfs:comment "CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing" ;
+  cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:IdentifiedObject ;
   rdfs:range xsd:string .
 
@@ -4559,8 +4588,8 @@ cims:pragmatics a owl:DatatypeProperty ;
 
 dcat:endDate a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "endDate" ;
-  rdfs:comment """This property contains the end of the period.
-[CIM context:
+  rdfs:comment """This property contains the end of the period.\r
+[CIM context:\r
 The end date and time of the validity period of the model that it is serialized in the document where the header is located. It is only used in relation to the startDate property which indicates the beginning of the validity period of the model.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -4582,11 +4611,11 @@ dcat:startDate a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 dcat:temporalResolution a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "temporalResolution" ;
-  rdfs:comment """Minimum time period resolvable in a dataset.
-[CIM context: 
-Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en, """Minimum time period resolvable in the dataset.
-[CIM context: 
-
+  rdfs:comment """Minimum time period resolvable in a dataset.\r
+[CIM context: \r
+Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en, """Minimum time period resolvable in the dataset.\r
+[CIM context: \r
+\r
 Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -4601,7 +4630,7 @@ dcat:version a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 dct:description a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "description" ;
-  rdfs:comment "A free-text account of the item."@en, """A free-text account of the resource.
+  rdfs:comment "A free-text account of the item."@en, """A free-text account of the resource.\r
 Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:range xsd:string .
@@ -4615,11 +4644,11 @@ dct:identifier a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 dct:issued a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "issued" ;
-  rdfs:comment """Date of formal issuance of the resource.
-Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.
-[CIM context:
-Reference to the date that the complete data set was made valid/available.]."""@en, """The date of listing (i.e., formal recording) of the corresponding dataset or service in the catalog.
-[CIM context:
+  rdfs:comment """Date of formal issuance of the resource.\r
+Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.\r
+[CIM context:\r
+Reference to the date that the complete data set was made valid/available.]."""@en, """The date of listing (i.e., formal recording) of the corresponding dataset or service in the catalog.\r
+[CIM context:\r
 Reference to the date that the complete data set was made valid/available.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -4627,14 +4656,14 @@ Reference to the date that the complete data set was made valid/available.]."""@
 
 dct:rights a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "rights" ;
-  rdfs:comment "A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements."@en ;
+  rdfs:comment "A statement that concerns all rights not addressed with dcterms:license or dcterms:accessRights, such as copyright statements."@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
   rdfs:range xsd:string .
 
 dct:rightsHolder a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "rightsHolder" ;
-  rdfs:comment """Information about rights held in and over the resource.
+  rdfs:comment """Information about rights held in and over the resource.\r
 Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided."""@en, "Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -4642,11 +4671,11 @@ Typically, rights information includes a statement about various property rights
 
 dct:title a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "title" ;
-  rdfs:comment """A name given to the resource
-[CIM context: 
-
-The human readable name of the dataset that can form the instance file name.]"""@en, """A name given to the resource.
-[CIM context: 
+  rdfs:comment """A name given to the resource\r
+[CIM context: \r
+\r
+The human readable name of the dataset that can form the instance file name.]"""@en, """A name given to the resource.\r
+[CIM context: \r
 The human readable name of the dataset that can form the instance file name.]"""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -4654,7 +4683,7 @@ The human readable name of the dataset that can form the instance file name.]"""
 
 eu:BoundaryPoint.fromEndIsoCode a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "fromEndIsoCode" ;
-  rdfs:comment """The ISO code of the region which the "From" side of the Boundary point belongs to or it is connected to.
+  rdfs:comment """The ISO code of the region which the "From" side of the Boundary point belongs to or it is connected to.\r
 The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain eu:BoundaryPoint ;
@@ -4662,8 +4691,8 @@ The ISO code is a two-character country code as defined by ISO 3166 (http://www.
 
 eu:BoundaryPoint.fromEndName a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "fromEndName" ;
-  rdfs:comment """A human readable name with length of the string 64 characters maximum. It covers the following two cases:
--if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "From" side of the tie-line is connected to.
+  rdfs:comment """A human readable name with length of the string 64 characters maximum. It covers the following two cases:\r
+-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "From" side of the tie-line is connected to.\r
 -if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the "From" side of the Boundary point is connected to."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain eu:BoundaryPoint ;
@@ -4678,7 +4707,7 @@ eu:BoundaryPoint.fromEndNameTso a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 eu:BoundaryPoint.toEndIsoCode a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "toEndIsoCode" ;
-  rdfs:comment """The ISO code of the region which the "To" side of the Boundary point belongs to or is connected to.
+  rdfs:comment """The ISO code of the region which the "To" side of the Boundary point belongs to or is connected to.\r
 The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain eu:BoundaryPoint ;
@@ -4686,8 +4715,8 @@ The ISO code is a two-character country code as defined by ISO 3166 (http://www.
 
 eu:BoundaryPoint.toEndName a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "toEndName" ;
-  rdfs:comment """A human readable name with length of the string 64 characters maximum. It covers the following two cases:
--if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "To" side of the tie-line is connected to.
+  rdfs:comment """A human readable name with length of the string 64 characters maximum. It covers the following two cases:\r
+-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "To" side of the tie-line is connected to.\r
 -if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the "To" side of the Boundary point is connected to."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain eu:BoundaryPoint ;
@@ -4738,7 +4767,7 @@ nc:Circuit.positiveFlowIn a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 nc:CircuitShare.contributionFactor a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "contributionFactor" ;
-  rdfs:comment """Contribution factor for the circuit which is part of a power transfer corridor.
+  rdfs:comment """Contribution factor for the circuit which is part of a power transfer corridor.\r
 The allowed value range is [0,100]."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4750,7 +4779,7 @@ The allowed value range is [0,100]."""@en ;
 
 nc:CircuitShare.normalContributionFactor a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "normalContributionFactor" ;
-  rdfs:comment """Normal contribution factor for the circuit which is part of a power transfer corridor.
+  rdfs:comment """Normal contribution factor for the circuit which is part of a power transfer corridor.\r
 The allowed value range is [0,100]."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4769,7 +4798,7 @@ nc:Contingency.normalMustStudy a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 nc:Contingency.normalProbability a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "normalProbability" ;
-  rdfs:comment """Normal probability of the occurrence of the contingency based on normal operational condition. The value is used as the default if the probability is missing.
+  rdfs:comment """Normal probability of the occurrence of the contingency based on normal operational condition. The value is used as the default if the probability is missing.\r
 The allowed value range is [0,100]."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4781,7 +4810,7 @@ The allowed value range is [0,100]."""@en ;
 
 nc:Contingency.probability a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "probability" ;
-  rdfs:comment """The forecasted probability of the occurrence of the contingency based on the given operational condition, status of the equipment and the forecasted environment condition.
+  rdfs:comment """The forecasted probability of the occurrence of the contingency based on the given operational condition, status of the equipment and the forecasted environment condition.\r
 The allowed value range is [0,100]."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4800,7 +4829,7 @@ nc:GateInputPin.negate a owl:DatatypeProperty, owl:FunctionalProperty ;
 
 nc:GateInputPin.thresholdPercentage a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "thresholdPercentage" ;
-  rdfs:comment """The threshold percentage that should be used for compare with the percentage change between input value and threshold value.
+  rdfs:comment """The threshold percentage that should be used for compare with the percentage change between input value and threshold value.\r
 The allowed value range is [0,100]."""@en ;
   cim:unitMultiplier cim:UnitMultiplier.none ;
   cim:unitSymbol cim:UnitSymbol.none ;
@@ -4847,8 +4876,8 @@ nc:PowerTransferCorridor.normalEnabled a owl:DatatypeProperty, owl:FunctionalPro
 
 nc:RangeConstraint.normalValue a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "normalValue" ;
-  rdfs:comment """The normal (initial) value. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false.
-If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).
+  rdfs:comment """The normal (initial) value. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false.\r
+If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\r
 If the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain nc:RangeConstraint ;
@@ -4856,8 +4885,8 @@ If the valueKind is incrementalPercentage, then the value shall be in the range 
 
 nc:RangeConstraint.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "value" ;
-  rdfs:comment """The value at the time. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false. 
-If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).
+  rdfs:comment """The value at the time. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false. \r
+If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\r
 If the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]."""@en ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain nc:RangeConstraint ;
@@ -4946,8 +4975,8 @@ nc:SynchronousArea.nominalFrequency a owl:DatatypeProperty, owl:FunctionalProper
 
 prov:generatedAtTime a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "generatedAtTime" ;
-  rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
-[CIM context:
+  rdfs:comment """Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.\r
+[CIM context:\r
 The date and time when the model was serialized in the document where the header is located. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]."""@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain dcat:Dataset ;
@@ -5059,20 +5088,15 @@ cim:UnitSymbol.A a cim:UnitSymbol ;
   rdfs:comment "Current in amperes."@en ;
   skos:exactMatch unit:A .
 
-cim:UnitSymbol.DKKperEUR a cims:MISSING ;
-  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
-
-cim:UnitSymbol.EURperMWh a cims:MISSING ;
+cim:UnitSymbol.EURperMWh a cim:UnitSymbol ;
+  rdfs:label "EURperMWh" ;
+  rdfs:comment "Energy price in Euro per Mega-watt hour."@en ;
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-cim:UnitSymbol.NOKperEUR a cims:MISSING ;
-  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
-
-cim:UnitSymbol.NOKperMWh a cims:MISSING ;
+cim:UnitSymbol.NOKperMWh a cim:UnitSymbol ;
+  rdfs:label "NOKperMWh" ;
+  rdfs:comment "Energy price in Norwegian Krone per Mega-watt hour."@en ;
   skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
-
-cim:UnitSymbol.SEKperEUR a cims:MISSING ;
-  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
 
 cim:UnitSymbol.V a cim:UnitSymbol ;
   rdfs:label "V" ;
@@ -5087,6 +5111,7 @@ cim:UnitSymbol.W a cim:UnitSymbol ;
 cim:UnitSymbol.degC a cim:UnitSymbol ;
   rdfs:label "degC" ;
   rdfs:comment """Relative temperature in degrees Celsius.
+In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."""@en, """Relative temperature in degrees Celsius.\r
 In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."""@en ;
   skos:exactMatch unit:DEG_C .
 
@@ -5112,17 +5137,17 @@ cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulation
 
 eu:LimitKind.highVoltage a eu:LimitKind ;
   rdfs:label "highVoltage" ;
-  rdfs:comment """Referring to the rating of the equipments, a voltage too high can lead to accelerated ageing or the destruction of the equipment. 
+  rdfs:comment """Referring to the rating of the equipments, a voltage too high can lead to accelerated ageing or the destruction of the equipment. \r
 This limit type may or may not have duration."""@en .
 
 eu:LimitKind.lowVoltage a eu:LimitKind ;
   rdfs:label "lowVoltage" ;
-  rdfs:comment """A too low voltage can disturb the normal operation of some protections and transformer equipped with on-load tap changers, electronic power devices or can affect the behaviour of the auxiliaries of generation units.
+  rdfs:comment """A too low voltage can disturb the normal operation of some protections and transformer equipped with on-load tap changers, electronic power devices or can affect the behaviour of the auxiliaries of generation units.\r
 This limit type may or may not have duration."""@en .
 
 eu:LimitKind.patl a eu:LimitKind ;
   rdfs:label "patl" ;
-  rdfs:comment """The Permanent Admissible Transmission Loading (PATL) is the loading in amperes, MVA or MW that can be accepted by a network branch for an unlimited duration without any risk for the material.
+  rdfs:comment """The Permanent Admissible Transmission Loading (PATL) is the loading in amperes, MVA or MW that can be accepted by a network branch for an unlimited duration without any risk for the material.\r
 The OperationnalLimitType.isInfiniteDuration is set to true. There shall be only one OperationalLimitType of kind PATL per OperationalLimitSet if the PATL is ApparentPowerLimit, ActivePowerLimit, or CurrentLimit for a given Terminal or Equipment."""@en .
 
 eu:LimitKind.stability a eu:LimitKind ;
@@ -5132,10 +5157,6 @@ eu:LimitKind.stability a eu:LimitKind ;
 eu:LimitKind.tatl a eu:LimitKind ;
   rdfs:label "tatl" ;
   rdfs:comment "Temporarily Admissible Transmission Loading (TATL) which is the loading in amperes, MVA or MW that can be accepted by a branch for a certain limited duration. The TATL can be defined in different ways: <ul> \t<li>as a fixed percentage of the PATL for a given time (for example, 115% of the PATL that can be accepted during 15 minutes),</li> </ul> <ul> \t<li>pairs of TATL type and Duration calculated for each line taking into account its particular configuration and conditions of functioning (for example,"@en .
-
-nc:BaseTimeSeriesKind.forecast a nc:BaseTimeSeriesKind ;
-  rdfs:label "forecast" ;
-  rdfs:comment "Time series is forecast data. The values represent the result of scientific predictions based on historical time stamped data."@en .
 
 nc:GateLogicKind.and a nc:GateLogicKind ;
   rdfs:label "and" ;
@@ -5161,13 +5182,17 @@ nc:RemedialActionSchemeKind.sips a nc:RemedialActionSchemeKind ;
   rdfs:label "sips" ;
   rdfs:comment "System Integrity Protection Scheme (SIPS). The triggering conditions are met through field measurements."@en .
 
-nc:TimeSeriesInterpolationKind.previous a nc:TimeSeriesInterpolationKind ;
-  rdfs:label "previous" ;
-  rdfs:comment "The value between two time points is set to previous value."@en .
-
 nc:ValueOffsetKind.incremental a nc:ValueOffsetKind ;
   rdfs:label "incremental" ;
   rdfs:comment "Value of the range constraint is incrementing the attribute value referenced by the PropertyReference in a determined operational scenario."@en .
+
+psys:PropChain3 a rdfs:Class ;
+  rdfs:label "Property Chain 3" ;
+  rdfs:comment "A property chain of length 3: premise1 / premise2 / premise 3 => conclusion" .
+
+psys:PropChain4 a rdfs:Class ;
+  rdfs:label "Property Chain 4" ;
+  rdfs:comment "A property chain of length 4: premise1 / premise2 / premise 3 / premise 4 => conclusion" .
 
 qudt:CurrencyUnit a rdfs:Class, sh:NodeShape ;
   rdfs:label "Currency Unit" ;
@@ -5204,6 +5229,23 @@ qudt:QuantityKind a rdfs:Class, sh:NodeShape ;
   Less familiar examples include currency, interest rate, price to earning ratio, and information capacity.
   </p>"""^^rdf:HTML ;
   rdfs:subClassOf qudt:AbstractQuantityKind, qudt:Verifiable .
+
+qudt:QuantityKindDimensionVector a rdfs:Class, sh:NodeShape ;
+  rdfs:label "Quantity Kind Dimension Vector" ;
+  dct:description """
+ $\\text{Quantity Kind Dimension Vector}$ describes the dimensionality of a quantity kind in the context of a system of units. 
+ In the SI system of units, the dimensions of a quantity kind are expressed as a product of the basic
+  physical dimensions mass ($M$), length ($L$), time ($T$) current ($I$), amount of substance ($N$),
+   luminous intensity ($J$) and absolute temperature 
+   ($\\theta$) as $dim \\, Q = L^{\\alpha} \\, M^{\\beta} \\, T^{\\gamma} \\, I ^{\\delta} \\, \\theta ^{\\epsilon} \\, N^{\\eta} \\, J ^{\\nu}$.
+
+
+  The rational powers of the dimensional exponents, $\\alpha, \\, \\beta, \\, \\gamma, \\, \\delta, \\, \\epsilon, \\, \\eta, \\, \\nu$, are positive, negative, or zero.
+
+  For example, the dimension of the physical quantity kind $\\it{speed}$ is $\\boxed{length/time}$, $L/T$ or $LT^{-1}$,
+   and the dimension of the physical quantity kind force is $\\boxed{mass \\times acceleration}$ or $\\boxed{mass \\times (length/time)/time}$, $ML/T^2$ or $MLT^{-2}$ respectively.
+ """^^qudt:LatexString ;
+  rdfs:subClassOf qudt:Concept .
 
 qudt:QuantityKindDimensionVector_CGS a rdfs:Class, sh:NodeShape ;
   rdfs:label "CGS Dimension vector" ;
@@ -5270,5 +5312,31 @@ unit:MegaW a qudt:Unit ;
   qudt:scalingOf unit:W ;
   qudt:symbol "MW" ;
   qudt:uneceCommonCode "MAW" .
+
+<urn:uuid:00160296-775f-407a-8d67-c9a5d610715a> a cims:MISSING, cim:RemoteUnit ;
+  cim:IdentifiedObject.description "400 Volt Telemarkstien 2 Remote Unit 1" ;
+  cim:IdentifiedObject.mRID "00160296-775f-407a-8d67-c9a5d610715a" ;
+  cim:IdentifiedObject.name "04 TELEMA 2 RU1" ;
+  cim:RemoteUnit.remoteUnitType cim:RemoteUnitType.IED .
+
+<urn:uuid:5462d46a-9ee5-4d09-9ac2-9f97933caa4d> a cims:MISSING, cim:PowerTransformerInfo ;
+  cim:IdentifiedObject.mRID "5462d46a-9ee5-4d09-9ac2-9f97933caa4d" ;
+  cim:IdentifiedObject.name "Engene 132-22 KV PowerTransformerInfo" .
+
+<urn:uuid:628b66ae-c9c7-4191-89c0-82d95f26319e> a cims:MISSING, cim:BusbarSectionInfo ;
+  cim:AssetInfo.ProductAssetModel <urn:uuid:4ffa629d-a671-4bd1-b4bb-c69c8fd2511d> ;
+  cim:IdentifiedObject.name "SH BusbarSection" ;
+  cim:ShuntCompensatorInfo.ratedCurrent "0"^^xsd:float ;
+  cim:ShuntCompensatorInfo.ratedVoltage "300"^^xsd:float .
+
+<urn:uuid:99e19919-b030-4742-8609-f1230681333d> a cims:MISSING, cim:AssetModelCatalogueItem ;
+  cim:AssetModelCatalogueItem.unitCost "38500" ;
+  cim:IdentifiedObject.description "Pricing for RTU skap for småkraftverk" ;
+  cim:IdentifiedObject.mRID "99e19919-b030-4742-8609-f1230681333d" ;
+  cim:IdentifiedObject.name "Price_RS5970P" .
+
+<urn:uuid:9eb4e906-d4f4-11e7-9296-cec278b6b50a> a cims:MISSING, cim:PowerTransformerInfo ;
+  cim:AssetInfo.ProductAssetModel <urn:uuid:6d993b26-72bf-46f0-9eb3-70bc26d544ac> ;
+  cim:IdentifiedObject.name "PTI Power Transformer" .
 
 
