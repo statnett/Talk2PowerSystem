@@ -103,6 +103,6 @@ where {
   # shorten overly long term descriptions
   optional {
     ?x rdfs:comment ?old .
-    bind(if(strlen(?old)>500,replace(replace(?old,"\n"," "),"(.{500}.*?) .*","$1"),?old) as ?new)
+    bind(if(strlen(?old)>500,replace(replace(?old,"[\r\n]+"," "),"(.{500}.*?) .*","$1"),?old) as ?new)
   }
 } order by ?x
