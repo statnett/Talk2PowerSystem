@@ -4994,6 +4994,21 @@ cim:ControlAreaTypeKind.Interchange a cim:ControlAreaTypeKind ;
   rdfs:label "Interchange" ;
   rdfs:comment "Used for interchange specification or control."@en .
 
+cim:CurrencyExchangeRate.DKKperEUR a cim:CurrencyExchangeRate ;
+  rdfs:label "DKKperEUR" ;
+  rdfs:comment "Exchange rate of Danish kroner to Euro"@en ;
+  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.NOKperEUR a cim:CurrencyExchangeRate ;
+  rdfs:label "NOKperEUR" ;
+  rdfs:comment "Exchange rate of Norwegian kroner to Euro"@en ;
+  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.SEKperEUR a cim:CurrencyExchangeRate ;
+  rdfs:label "SEKperEUR" ;
+  rdfs:comment "Exchange rate of Swedish kroner to Euro"@en ;
+  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
+
 cim:InUseStateKind.inUse a cim:InUseStateKind ;
   rdfs:label "inUse" ;
   rdfs:comment "Asset is deployed (in use) or is being put into use."@en .

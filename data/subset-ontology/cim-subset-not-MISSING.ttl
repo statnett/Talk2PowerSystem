@@ -1275,6 +1275,21 @@ cim:CurrencyExchangeRate a owl:Class;
   rdfs:label "CurrencyExchangeRate";
   skos:exactMatch quantitykind:ExchangeRate .
 
+cim:CurrencyExchangeRate.DKKperEUR a cim:CurrencyExchangeRate;
+  rdfs:comment "Exchange rate of Danish kroner to Euro"@en;
+  rdfs:label "DKKperEUR";
+  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.NOKperEUR a cim:CurrencyExchangeRate;
+  rdfs:comment "Exchange rate of Norwegian kroner to Euro"@en;
+  rdfs:label "NOKperEUR";
+  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
+
+cim:CurrencyExchangeRate.SEKperEUR a cim:CurrencyExchangeRate;
+  rdfs:comment "Exchange rate of Swedish kroner to Euro"@en;
+  rdfs:label "SEKperEUR";
+  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
+
 cim:CurrentLimit a owl:Class;
   rdfs:comment "Operational limit on current."@en;
   rdfs:subClassOf cim:OperationalLimit;
@@ -3918,18 +3933,15 @@ cim:UnitSymbol.A a cim:UnitSymbol;
   skos:exactMatch unit:A .
 
 
-
 cim:UnitSymbol.EURperMWh a cim:UnitSymbol;
   rdfs:comment "Energy price in Euro per Mega-watt hour."@en;
   rdfs:label "EURperMWh";
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-
 cim:UnitSymbol.NOKperMWh a cim:UnitSymbol;
   rdfs:comment "Energy price in Norwegian Krone per Mega-watt hour."@en;
   rdfs:label "NOKperMWh";
   skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
-
 
 cim:UnitSymbol.V a cim:UnitSymbol;
   rdfs:comment "Electric potential in volts (W/A)."@en;
