@@ -258,7 +258,7 @@
   cim:IdentifiedObject.name "Valutakurs_EUR_DKK";
   cim:IdentifiedObject.description "Valutakurs for EUR DKKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
   cim:Measurement.measurementType "CurrencyExchange-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.DKKperEUR .
+  cim:Measurement.unitSymbol cim:CurrencyExchangeRate.DKKperEUR .
 
 <urn:uuid:de509a35-5427-4ae1-8e2b-9c6925d17999> a cim:Analog;
   cimr:Measurement.isInCognite true;
@@ -276,7 +276,7 @@
   cim:IdentifiedObject.name "Valutakurs_EUR_SEK";
   cim:IdentifiedObject.description "Valutakurs for EUR SEKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
   cim:Measurement.measurementType "CurrencyExchange-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.SEKperEUR .
+  cim:Measurement.unitSymbol cim:CurrencyExchangeRate.SEKperEUR .
 
 <urn:uuid:4812f003-3e17-4da1-8ff8-d74c7711f23b> a cim:Analog;
   cimr:Measurement.isInCognite true;
@@ -326,7 +326,7 @@
   cim:IdentifiedObject.name "Valutakurs_EUR_NOK";
   cim:IdentifiedObject.description "Valutakurs for EUR NOKkafka_stream: connect_ogg_fifty_MMS_RAPPORT_KRAFTPRIS_ELSPOT_NO_avro";
   cim:Measurement.measurementType "CurrencyExchange-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.NOKperEUR .
+  cim:Measurement.unitSymbol cim:CurrencyExchangeRate.NOKperEUR .
 
 <urn:uuid:4486436e-0200-466f-bf6c-91110db82ddd> a cim:Analog;
   cimr:Measurement.isInCognite true;
