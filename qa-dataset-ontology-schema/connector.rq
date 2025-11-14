@@ -1,0 +1,23 @@
+PREFIX retr: <http://www.ontotext.com/connectors/retrieval#>
+PREFIX retr-index: <http://www.ontotext.com/connectors/retrieval/instance#>
+
+INSERT DATA {
+  retr-index:qa_dataset retr:createConnector '''
+{
+  "fields": [
+    {
+      "fieldName": "text",
+      "propertyChain": [
+        "https://www.statnett.no/Talk2PowerSystem/qa#question"
+      ]
+    }
+  ],
+  "types": [
+    "https://www.statnett.no/Talk2PowerSystem/qa#Paraphrase"
+  ],
+  "retrievalUrl": "http://retrieval-plugin:8080/OpenAIDocument",
+  "retrievalBearerToken": "***"
+  "bulkUpdateBatchSize": 50
+}
+''' .
+}
