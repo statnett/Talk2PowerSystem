@@ -45,10 +45,10 @@ Options used:
 - `-super 1` generates abstract interfaces for each superclass, eg `IdentifiedObjectInterface` is superclass of pretty much every CIM class
 - `-string 2` downgrades langString to string (actually CIM data doesn't use langString, only CIM ontologies use it)
 
-TODO: [#173 keep cims:multiplicity in ontology subsetting](https://github.com/statnett/Talk2PowerSystem_PM/issues/173) 
+Done: [#173 keep cims:multiplicity in ontology subsetting](https://github.com/statnett/Talk2PowerSystem_PM/issues/173) 
 
-## Generation warnings
-It gives the following warnings, but they are harmless (`md:Model` should not be used anyway).
+## Harmless Generation Warnings
+It gives the following warnings, but they are harmless: `md:Model` should not be used anyway.
 ```
 Prop dcat:temporalResolution uses unsupported datatype xsd:duration, ignored
 Found multiple ranges for prop dct:resource1, using only the first one: dcat:Dataset, md:Model
@@ -70,8 +70,42 @@ Found multiple ranges for prop dct:conformsTo, using only the first one: dcat:Da
 Found multiple ranges for prop dct:type, using only the first one: dcat:Dataset, md:Model
 ```
 
-## Import errors
-When we import the SOML schema at https://cim.ontotext.com/graphdb/graphql/endpoints, we get this GraphQL endpoint creation report
+These are also harmless: we'd only query by `Unit`, but we don't care about its type.
+```
+Found multiple superclasses for qudt:Prefix, using only the first one: qudt:Concept, qudt:Verifiable
+Found multiple superclasses for qudt:SystemOfUnits, using only the first one: qudt:Concept, qudt:Verifiable
+Found multiple superclasses for qudt:Unit, using only the first one: qudt:Concept, qudt:Verifiable
+Found multiple superclasses for qudt:QuantityKind, using only the first one: qudt:AbstractQuantityKind, qudt:Verifiable
+```
+
+
+## Fixed Generation Errors
+
+```
+No suitable prefix for IRI _:b64fe9485c14d11f08643c5aa2e3c6db9
+```
+This is not a very informative error so I changed the perl code
+- From `my_die()`, which does `exit()`
+- To `die`, which together with `Carp::Always` produces a stack trace:
+```
+No suitable prefix for IRI _:b3efb676bc14f11f0ba6ad4bc9e7703a4 at owl2soml.pl line 781.
+        main::iri_name(Attean::Blank=HASH(0x15021bf21e8), 0) called at owl2soml.pl line 1036
+```
+
+Now I know the error comes from a blank-node domain.
+```ttl
+psys:conclusion a owl:ObjectProperty ;
+  rdfs:label "conclusion" ;
+  rdfs:comment "The conclusion of the property chain" ;
+  rdfs:domain  [];
+  rdfs:range owl:ObjectProperty .
+```
+The blank node was `[owl:unionOf (psys:PropChain3 psys:PropChain4)]` but
+the subset extraction query has left out its content.
+So I changed the script to simply ignore deficient empty domains like this.
+
+## Fixed Import Errors
+When we import the SOML schema at https://cim.ontotext.com/graphdb/graphql/endpoints , we get this GraphQL endpoint creation report
 
 These are unimportant because `md:Model` should not be used, and  `dct:resource11` (intended to be `inverseOf: dct:publisher`) is defective (wrong name).
 But they are treated as errors, so they preclude loading the schema
@@ -96,7 +130,6 @@ ERROR: Property 'md:Model.prov:entity' is inverse property of 'dcat:Dataset.prov
 ERROR: Property 'md:Model.prov:wasGeneratedBy' is inverse property of 'dcat:Dataset.prov:entity', but the range of 'dcat:Dataset.prov:entity' is 'dcat:Dataset', which is not a superclass of 'md:Model'
 ```
 - Task [#175 exclude Model, dct:resource11 from subset](https://github.com/statnett/Talk2PowerSystem_PM/issues/175)
-- Hotfixed in `cim-subset-hotfixed.ttl`
 
 We need to fix these (by assigning domain/range) so we can use them in querying
 ```
@@ -107,5 +140,5 @@ ERROR: Property 'cimr:isPartTransitive' refers to an undefined 'inverseOf: cimr:
 ERROR: Property 'cimr:equipment_Terminals' refers to an undefined 'inverseOf: cimr:terminal.Equipment' in 'range: iri'
 ERROR: Property 'cimr:terminal_Equipment' refers to an undefined 'inverseOf: cimr:equipment.Terminals' in 'range: iri'
 ```
+- Added `cimr:EquipmentOrContainer` as superclass of `cim:ConductingEquipment` and `cim:EquipmentContainer`
 - Added domain/range to `cimr.ttl`
-- Concatenated the same to the end of  `cim-subset-hotfixed.ttl`

@@ -13,7 +13,6 @@
 @prefix prefix: <http://qudt.org/vocab/prefix/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix psys: <http://proton.semanticweb.org/protonsys#> .
-@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -5297,61 +5296,5 @@ qudt:Unit a rdfs:Class, sh:NodeShape ;
   More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
   """^^qudt:LatexString ;
   rdfs:subClassOf qudt:Concept, qudt:Verifiable .
-
-unit:CCY_EUR-PER-MegaW-HR a qudt:Unit ;
-  rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en ;
-  qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
-  qudt:conversionMultiplierSN 2.7778E-10 ;
-  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
-  qudt:hasQuantityKind quantitykind:CostPerEnergy ;
-  qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
-  qudt:symbol "€/(MW·h)" .
-
-unit:CCY_NOK-PER-MegaW-HR a qudt:Unit ;
-  rdfs:label "Norwegian Krone per Megawatt Hour", "Norwegian Krone per Megawatt Hour"@en ;
-  qudt:conversionMultiplier 0.000000000277777777777777777777777777778 ;
-  qudt:conversionMultiplierSN 2.7778E-10 ;
-  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0 ;
-  qudt:hasQuantityKind quantitykind:CostPerEnergy ;
-  qudt:plainTextDescription "Unit for measuring the cost of electricity." ;
-  qudt:symbol "NOK/(MW·h)" .
-
-unit:MegaW a qudt:Unit ;
-  rdfs:label "Megawatt", "Megawatt"@en ;
-  dct:description "1,000,000-fold of the derived unit watt" ;
-  qudt:conversionMultiplier 1000000.0 ;
-  qudt:conversionMultiplierSN 1E6 ;
-  qudt:hasDimensionVector qkdv:A0E0L2I0M1H0T-3D0 ;
-  qudt:hasQuantityKind quantitykind:ElectricPower, quantitykind:Power ;
-  qudt:prefix prefix:Mega ;
-  qudt:scalingOf unit:W ;
-  qudt:symbol "MW" ;
-  qudt:uneceCommonCode "MAW" .
-
-<urn:uuid:00160296-775f-407a-8d67-c9a5d610715a> a cims:MISSING, cim:RemoteUnit ;
-  cim:IdentifiedObject.description "400 Volt Telemarkstien 2 Remote Unit 1" ;
-  cim:IdentifiedObject.mRID "00160296-775f-407a-8d67-c9a5d610715a" ;
-  cim:IdentifiedObject.name "04 TELEMA 2 RU1" ;
-  cim:RemoteUnit.remoteUnitType cim:RemoteUnitType.IED .
-
-<urn:uuid:5462d46a-9ee5-4d09-9ac2-9f97933caa4d> a cims:MISSING, cim:PowerTransformerInfo ;
-  cim:IdentifiedObject.mRID "5462d46a-9ee5-4d09-9ac2-9f97933caa4d" ;
-  cim:IdentifiedObject.name "Engene 132-22 KV PowerTransformerInfo" .
-
-<urn:uuid:628b66ae-c9c7-4191-89c0-82d95f26319e> a cims:MISSING, cim:BusbarSectionInfo ;
-  cim:AssetInfo.ProductAssetModel <urn:uuid:4ffa629d-a671-4bd1-b4bb-c69c8fd2511d> ;
-  cim:IdentifiedObject.name "SH BusbarSection" ;
-  cim:ShuntCompensatorInfo.ratedCurrent "0"^^xsd:float ;
-  cim:ShuntCompensatorInfo.ratedVoltage "300"^^xsd:float .
-
-<urn:uuid:99e19919-b030-4742-8609-f1230681333d> a cims:MISSING, cim:AssetModelCatalogueItem ;
-  cim:AssetModelCatalogueItem.unitCost "38500" ;
-  cim:IdentifiedObject.description "Pricing for RTU skap for småkraftverk" ;
-  cim:IdentifiedObject.mRID "99e19919-b030-4742-8609-f1230681333d" ;
-  cim:IdentifiedObject.name "Price_RS5970P" .
-
-<urn:uuid:9eb4e906-d4f4-11e7-9296-cec278b6b50a> a cims:MISSING, cim:PowerTransformerInfo ;
-  cim:AssetInfo.ProductAssetModel <urn:uuid:6d993b26-72bf-46f0-9eb3-70bc26d544ac> ;
-  cim:IdentifiedObject.name "PTI Power Transformer" .
 
 

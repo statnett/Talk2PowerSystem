@@ -64,18 +64,15 @@ where {
         } union {
           # enumeration values
           values ?idObjClass {cim:IdentifiedObject cim15:IdentifiedObject cim16:IdentifiedObject cim17:IdentifiedObject}
-          ?thing a ?idObjClass; ?prop ?x
-          filter(isIRI(?x))
+          [] a ?idObjClass; ?prop ?x
+          filter(isIRI(?x) && !strstarts(str(?x),"urn:uuid"))
           filter(?prop not in (skos:exactMatch, rdf:type, 
             nc:StaticPropertyRange.PropertyReference, nc:GridStateAlteration.PropertyReference, nc:PinEquipment.PropertyReference, # https://github.com/Sveino/Inst4CIM-KG/issues/145
             cim:TransformerEndInfo.TransformerTankInfo, # https://github.com/statnett/Nordic44/issues/69
             nc-no:ACLineSegmentSpan.ACLineSegment # https://github.com/3lbits/CIM4NoUtility/issues/391
           ))
-          filter not exists {
-            values ?bizType {cim:IdentifiedObject cim:DiagramObjectPoint cim:PositionPoint geo:Geometry cim:CurveData
-              cim:SvStatus cim:SvSwitch cim:SvVoltage cim:SvPowerFlow cim:SvTapStep cim:SvShuntCompensatorSections}
-            ?x a ?bizType
-          }
+          filter (exists {?x a ?enum. ?enum cims:stereotype uml:enumeration}
+                  || !exists {?x a []})
         }
       }
     }

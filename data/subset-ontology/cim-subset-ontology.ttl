@@ -17,7 +17,9 @@ cim: a owl:Ontology;
     <https://github.com/Sveino/Inst4CIM-KG/blob/develop/rdfs-improved/>,
     <https://github.com/statnett/Talk2PowerSystem/blob/main/load/resources/cimr.ttl>,
     <https://github.com/statnett/Nordic44>,
-    <https://github.com/3lbits/CIM4NoUtility/tree/develop/Telemark-120>.@prefix adms: <http://www.w3.org/ns/adms#> .
+    <https://github.com/3lbits/CIM4NoUtility/tree/develop/Telemark-120>.
+
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix alstom: <http://www.alstom.com/grid/CIM-schema-cim15-extension#> .
 @prefix cdpsm: <http://iec.ch/TC57/CIM/CDPSM/SchemaExtension/2/0#> .
 @prefix cim15: <http://iec.ch/TC57/2010/CIM-schema-cim15#> .
@@ -400,36 +402,6 @@ qudt:Unit a rdfs:Class, sh:NodeShape;
 
 
 
-
-unit:CCY_EUR-PER-MegaW-HR a qudt:Unit;
-  rdfs:label "Euro per Megawatt Hour", "Euro per Megawatt Hour"@en;
-  qudt:hasQuantityKind quantitykind:CostPerEnergy;
-  qudt:conversionMultiplier 0.000000000277777777777777777777777777778;
-  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10;
-  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0;
-  qudt:plainTextDescription "Unit for measuring the cost of electricity.";
-  qudt:symbol "€/(MW·h)" .
-
-unit:CCY_NOK-PER-MegaW-HR a qudt:Unit;
-  rdfs:label "Norwegian Krone per Megawatt Hour", "Norwegian Krone per Megawatt Hour"@en;
-  qudt:hasQuantityKind quantitykind:CostPerEnergy;
-  qudt:conversionMultiplier 0.000000000277777777777777777777777777778;
-  qudt:conversionMultiplierSN 2.777777777777777777777777777777778E-10;
-  qudt:hasDimensionVector qkdv:A0E0L-2I0M-1H0T2D0;
-  qudt:plainTextDescription "Unit for measuring the cost of electricity.";
-  qudt:symbol "NOK/(MW·h)" .
-
-unit:MegaW a qudt:Unit;
-  dct:description "1,000,000-fold of the derived unit watt";
-  rdfs:label "Megawatt", "Megawatt"@en;
-  qudt:hasQuantityKind quantitykind:ElectricPower, quantitykind:Power;
-  qudt:conversionMultiplier 1000000.0;
-  qudt:conversionMultiplierSN 1.0E6;
-  qudt:hasDimensionVector qkdv:A0E0L2I0M1H0T-3D0;
-  qudt:symbol "MW";
-  qudt:prefix prefix:Mega;
-  qudt:uneceCommonCode "MAW";
-  qudt:scalingOf unit:W .
 
 
 
@@ -1210,8 +1182,9 @@ cim:ControlArea.netInterchange a owl:FunctionalProperty, owl:DatatypeProperty;
   qudt:hasQuantityKind cim:ActivePower;
   qudt:hasUnit unit:MegaW .
 
-cim:ControlArea.pTolerance a owl:FunctionalProperty, owl:DatatypeProperty;
+cim:ControlArea.pTolerance a owl:FunctionalProperty;
   rdfs:comment "Active power net interchange tolerance. The attribute shall be a positive value or zero."@en;
+  a owl:DatatypeProperty;
   rdfs:domain cim:ControlArea;
   rdfs:range xsd:float;
   rdfs:label "pTolerance";
@@ -5680,32 +5653,4 @@ nc:ValueOffsetKind.incremental a nc:ValueOffsetKind;
 
 
 
-
-
-<urn:uuid:00160296-775f-407a-8d67-c9a5d610715a> a cim:RemoteUnit, cims:MISSING;
-  cim:IdentifiedObject.description "400 Volt Telemarkstien 2 Remote Unit 1";
-  cim:IdentifiedObject.mRID "00160296-775f-407a-8d67-c9a5d610715a";
-  cim:IdentifiedObject.name "04 TELEMA 2 RU1";
-  cim:RemoteUnit.remoteUnitType cim:RemoteUnitType.IED .
-
-<urn:uuid:5462d46a-9ee5-4d09-9ac2-9f97933caa4d> a cim:PowerTransformerInfo, cims:MISSING;
-  cim:IdentifiedObject.mRID "5462d46a-9ee5-4d09-9ac2-9f97933caa4d";
-  cim:IdentifiedObject.name "Engene 132-22 KV PowerTransformerInfo" .
-
-
-<urn:uuid:628b66ae-c9c7-4191-89c0-82d95f26319e> a cim:BusbarSectionInfo, cims:MISSING;
-  cim:AssetInfo.ProductAssetModel <urn:uuid:4ffa629d-a671-4bd1-b4bb-c69c8fd2511d>;
-  cim:ShuntCompensatorInfo.ratedVoltage "300"^^xsd:float;
-  cim:IdentifiedObject.name "SH BusbarSection";
-  cim:ShuntCompensatorInfo.ratedCurrent "0"^^xsd:float .
-
-<urn:uuid:99e19919-b030-4742-8609-f1230681333d> a cim:AssetModelCatalogueItem, cims:MISSING;
-  cim:IdentifiedObject.description "Pricing for RTU skap for småkraftverk";
-  cim:IdentifiedObject.mRID "99e19919-b030-4742-8609-f1230681333d";
-  cim:IdentifiedObject.name "Price_RS5970P";
-  cim:AssetModelCatalogueItem.unitCost "38500" .
-
-<urn:uuid:9eb4e906-d4f4-11e7-9296-cec278b6b50a> a cim:PowerTransformerInfo, cims:MISSING;
-  cim:AssetInfo.ProductAssetModel <urn:uuid:6d993b26-72bf-46f0-9eb3-70bc26d544ac>;
-  cim:IdentifiedObject.name "PTI Power Transformer" .
 

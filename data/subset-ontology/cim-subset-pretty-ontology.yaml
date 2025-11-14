@@ -53,14 +53,71 @@ objects:
     props:
       analogValue.Analog: {}
     type: cim:AnalogValue
+  Asset:
+    descr: 'Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role'
+    inherits: AssetInterface
+    label: Asset
+    type: cim:Asset
+  AssetContainer:
+    descr: 'Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc'
+    inherits: AssetContainerInterface
+    label: AssetContainer
+    type: cim:AssetContainer
+  AssetContainerInterface:
+    descr: Abstract superclass of AssetContainer
+    inherits: AssetInterface
+    kind: abstract
+    props:
+      assetContainer.Assets: {}
+  AssetInfo:
+    descr: |-
+      Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts:
+      - as attributes of an asset instance (installed or in stock)
+      - as attributes of an asset model (product by a manufacturer)
+      - as attributes of a type asset (generic type of an asset as used in designs/extension planning)
+    inherits: AssetInfoInterface
+    label: AssetInfo
+    type: cim:AssetInfo
+  AssetInfoInterface:
+    descr: Abstract superclass of AssetInfo
+    inherits: IdentifiedObjectInterface
+    kind: abstract
+    props:
+      assetInfo.ProductAssetModel: {}
+  AssetInterface:
+    descr: Abstract superclass of Asset
+    inherits: IdentifiedObjectInterface
+    kind: abstract
+    props:
+      asset.AssetContainer: {}
+      asset.PowerSystemResources: {}
+      asset.inUseState: {}
+      asset.serialNumber: {}
+      asset.type: {}
+  AssetModelUsageKind:
+    descr: Usage for an asset model
+    label: AssetModelUsageKind
+    type: cim:AssetModelUsageKind
+  AssetOrganisationRole:
+    descr: Role an organisation plays with respect to asset
+    inherits: AssetOrganisationRoleInterface
+    label: AssetOrganisationRole
+    type: cim:AssetOrganisationRole
+  AssetOrganisationRoleInterface:
+    descr: Abstract superclass of AssetOrganisationRole
+    inherits: OrganisationRoleInterface
+    kind: abstract
+  AssetOwner:
+    descr: Owner of the asset
+    inherits: AssetOrganisationRoleInterface
+    label: AssetOwner
+    type: cim:AssetOwner
   AsynchronousMachineKind:
     descr: Kind of Asynchronous Machine
     label: AsynchronousMachineKind
     type: cim:AsynchronousMachineKind
   AuxiliaryEquipment:
-    descr: |-
-      AuxiliaryEquipment describe equipment that is not performing any primary functions but support for the equipment performing the primary function.
-      AuxiliaryEquipment is attached to primary equipment via an association with Terminal
+    descr: "AuxiliaryEquipment describe equipment that is not performing any primary functions but support for the equipment performing the primary function.\r\nAuxiliaryEquipment is attached to primary equipment via an association with Terminal"
     inherits: AuxiliaryEquipmentInterface
     label: AuxiliaryEquipment
     type: cim:AuxiliaryEquipment
@@ -98,14 +155,17 @@ objects:
     label: Breaker
     type: cim:Breaker
   BusbarSection:
-    descr: |-
-      A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. 
-      Voltage measurements are typically obtained from voltage transformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal
+    descr: "A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. \r\nVoltage measurements are typically obtained from voltage transformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal"
     inherits: ConnectorInterface
     label: BusbarSection
     props:
       busbarSection.ipMax: {}
     type: cim:BusbarSection
+  CableInfo:
+    descr: Cable data
+    inherits: WireInfoInterface
+    label: CableInfo
+    type: cim:CableInfo
   ConductingEquipment:
     descr: The parts of the AC power system that are designed to carry current or that are conductively connected through terminals
     inherits: ConductingEquipmentInterface
@@ -258,6 +318,10 @@ objects:
     descr: Monetary currencies.  ISO 4217 standard including 3-character currency code
     label: Currency
     type: cim:Currency
+  CurrencyExchangeRate:
+    descr: Exchange rate between two currencies as of some moment
+    label: CurrencyExchangeRate
+    type: cim:CurrencyExchangeRate
   CurrentLimit:
     descr: Operational limit on current
     inherits: OperationalLimitInterface
@@ -288,6 +352,9 @@ objects:
     kind: abstract
     props:
       curve.CurveDatas: {}
+      curve.curveStyle: {}
+      curve.xUnit: {}
+      curve.y2Unit: {}
   CurveStyle:
     descr: Style or shape of curve
     label: CurveStyle
@@ -371,6 +438,15 @@ objects:
     descr: Abstract superclass of EarthFaultCompensator
     inherits: ConductingEquipmentInterface
     kind: abstract
+  EndDevice:
+    descr: 'Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise'
+    inherits: EndDeviceInterface
+    label: EndDevice
+    type: cim:EndDevice
+  EndDeviceInterface:
+    descr: Abstract superclass of EndDevice
+    inherits: AssetContainerInterface
+    kind: abstract
   EnergyArea:
     descr: Describes an area having energy production or consumption.  Specializations are intended to support the load allocation function as typically required in energy management systems or planning studies to allocate hypothesized load levels to individual load points for power flow analysis.  Often the energy area can be linked to both measured and forecast load levels
     inherits: EnergyAreaInterface
@@ -392,9 +468,7 @@ objects:
     inherits: ConductingEquipmentInterface
     kind: abstract
   EnergyConsumer:
-    descr: |-
-      Generic user of energy - a  point of consumption on the power system model.
-      EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False
+    descr: "Generic user of energy - a  point of consumption on the power system model.\r\nEnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False"
     inherits: EnergyConsumerInterface
     label: EnergyConsumer
     type: cim:EnergyConsumer
@@ -490,9 +564,7 @@ objects:
     label: ExcST7BUELselectorKind
     type: cim:ExcST7BUELselectorKind
   Feeder:
-    descr: |-
-      A collection of equipment for organizational purposes, used for grouping distribution resources.
-      The organization a feeder does not necessarily reflect connectivity or current operation state
+    descr: "A collection of equipment for organizational purposes, used for grouping distribution resources.\r\nThe organization a feeder does not necessarily reflect connectivity or current operation state"
     inherits: EquipmentContainerInterface
     label: Feeder
     type: cim:Feeder
@@ -588,6 +660,10 @@ objects:
     descr: Excitation base system mode
     label: IfdBaseKind
     type: cim:IfdBaseKind
+  InUseStateKind:
+    descr: Possible 'in use' states that an asset can be in
+    label: InUseStateKind
+    type: cim:InUseStateKind
   InputSignalKind:
     descr: 'Types of input signals.  In dynamics modelling, commonly represented by the <i>j</i> parameter'
     label: InputSignalKind
@@ -652,6 +728,13 @@ objects:
       location.CoordinateSystem: {}
       location.PowerSystemResources: {}
     type: cim:Location
+  Manufacturer:
+    descr: Organisation that manufactures asset products
+    inherits: OrganisationRoleInterface
+    label: Manufacturer
+    props:
+      manufacturer.ProductAssetModels: {}
+    type: cim:Manufacturer
   Measurement:
     descr: 'A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.  The PSR - Measurement association is intended to capture this use of Measurement and is included in the'
     inherits: MeasurementInterface
@@ -687,6 +770,11 @@ objects:
     props:
       measurementValueSource.MeasurementValues: {}
     type: cim:MeasurementValueSource
+  Meter:
+    descr: Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events
+    inherits: EndDeviceInterface
+    label: Meter
+    type: cim:Meter
   Name:
     descr: The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'
     label: Name
@@ -773,6 +861,11 @@ objects:
     descr: 'The orientation of the coordinate system with respect to top, left, and the coordinate number system'
     label: OrientationKind
     type: cim:OrientationKind
+  OverheadWireInfo:
+    descr: Overhead wire data
+    inherits: WireInfoInterface
+    label: OverheadWireInfo
+    type: cim:OverheadWireInfo
   PetersenCoil:
     descr: A variable impedance device normally used to offset line charging during single line faults in an ungrounded section of network
     inherits: EarthFaultCompensatorInterface
@@ -805,6 +898,7 @@ objects:
     inherits: IdentifiedObjectInterface
     kind: abstract
     props:
+      powerSystemResource.Assets: {}
       powerSystemResource.Location: {}
       powerSystemResource.Measurements: {}
   PowerTransformer:
@@ -829,6 +923,17 @@ objects:
       powerTransformerEnd.ratedU: {}
       powerTransformerEnd.x: {}
     type: cim:PowerTransformerEnd
+  ProductAssetModel:
+    descr: Asset model by a specific manufacturer
+    inherits: IdentifiedObjectInterface
+    label: ProductAssetModel
+    props:
+      productAssetModel.AssetInfo: {}
+      productAssetModel.Manufacturer: {}
+      productAssetModel.modelNumber: {}
+      productAssetModel.modelVersion: {}
+      productAssetModel.usageKind: {}
+    type: cim:ProductAssetModel
   ProtectedSwitch:
     descr: A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment
     inherits: ProtectedSwitchInterface
@@ -839,10 +944,7 @@ objects:
     inherits: SwitchInterface
     kind: abstract
   RatioTapChanger:
-    descr: |-
-      A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.
-      
-      Angle sign convention (general): Positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer)
+    descr: "A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.\r\n\r\nAngle sign convention (general): Positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer)"
     inherits: TapChangerInterface
     label: RatioTapChanger
     props:
@@ -928,6 +1030,14 @@ objects:
     inherits: ShuntCompensatorInterface
     label: ShuntCompensator
     type: cim:ShuntCompensator
+  ShuntCompensatorInfo:
+    descr: 'Properties of shunt capacitor, shunt reactor or switchable bank of shunt capacitor or reactor assets'
+    inherits: AssetInfoInterface
+    label: ShuntCompensatorInfo
+    props:
+      shuntCompensatorInfo.ratedReactivePower: {}
+      shuntCompensatorInfo.ratedVoltage: {}
+    type: cim:ShuntCompensatorInfo
   ShuntCompensatorInterface:
     descr: Abstract superclass of ShuntCompensator
     inherits: RegulatingCondEqInterface
@@ -939,6 +1049,10 @@ objects:
       shuntCompensator.nomU: {}
       shuntCompensator.normalSections: {}
       shuntCompensator.sections: {}
+  SinglePhaseKind:
+    descr: 'Enumeration of single phase identifiers. Allows designation of single phases for both transmission and distribution equipment, circuits and loads'
+    label: SinglePhaseKind
+    type: cim:SinglePhaseKind
   Source:
     descr: Source gives information related to the origin of a value
     label: Source
@@ -1026,6 +1140,18 @@ objects:
     inherits: SwitchInterface
     label: Switch
     type: cim:Switch
+  SwitchInfo:
+    descr: |-
+      <was Switch data.>
+      Switch datasheet information
+    inherits: AssetInfoInterface
+    label: SwitchInfo
+    props:
+      switchInfo.breakingCapacity: {}
+      switchInfo.isUnganged: {}
+      switchInfo.ratedCurrent: {}
+      switchInfo.ratedVoltage: {}
+    type: cim:SwitchInfo
   SwitchInterface:
     descr: Abstract superclass of Switch
     inherits: ConductingEquipmentInterface
@@ -1075,6 +1201,11 @@ objects:
     props:
       tapChangerControl.TapChanger: {}
     type: cim:TapChangerControl
+  TapChangerInfo:
+    descr: Tap changer data
+    inherits: AssetInfoInterface
+    label: TapChangerInfo
+    type: cim:TapChangerInfo
   TapChangerInterface:
     descr: Abstract superclass of TapChanger
     inherits: PowerSystemResourceInterface
@@ -1096,6 +1227,7 @@ objects:
     label: Terminal
     props:
       cimr:terminal.Equipment: {}
+      nc:terminal.Circuit: {}
       nc:terminal.PinTerminal: {}
       terminal.AuxiliaryEquipment: {}
       terminal.ConductingEquipment: {}
@@ -1114,11 +1246,7 @@ objects:
       textDiagramObject.text: {}
     type: cim:TextDiagramObject
   TopologicalIsland:
-    descr: |-
-      An electrically connected subset of the network. Topological islands can change as the current network state changes, e.g. due to: 
-      - disconnect switches or breakers changing state in a SCADA/EMS.
-      - manual creation, change or deletion of topological nodes in a planning tool.
-      Only energised TopologicalNode-s shall be part of the topological island
+    descr: "An electrically connected subset of the network. Topological islands can change as the current network state changes, e.g. due to: \r\n- disconnect switches or breakers changing state in a SCADA/EMS.\r\n- manual creation, change or deletion of topological nodes in a planning tool.\r\nOnly energised TopologicalNode-s shall be part of the topological island"
     inherits: IdentifiedObjectInterface
     label: TopologicalIsland
     props:
@@ -1143,6 +1271,15 @@ objects:
     inherits: TransformerEndInterface
     label: TransformerEnd
     type: cim:TransformerEnd
+  TransformerEndInfo:
+    descr: Transformer end data
+    inherits: AssetInfoInterface
+    label: TransformerEndInfo
+    props:
+      transformerEndInfo.TransformerTankInfo: {}
+      transformerEndInfo.ratedS: {}
+      transformerEndInfo.ratedU: {}
+    type: cim:TransformerEndInfo
   TransformerEndInterface:
     descr: Abstract superclass of TransformerEnd
     inherits: IdentifiedObjectInterface
@@ -1153,14 +1290,26 @@ objects:
       transformerEnd.Terminal: {}
       transformerEnd.endNumber: {}
       transformerEnd.grounded: {}
+  TransformerTankInfo:
+    descr: 'Set of transformer tank data, from an equipment library'
+    inherits: AssetInfoInterface
+    label: TransformerTankInfo
+    props:
+      transformerTankInfo.TransformerEndInfos: {}
+    type: cim:TransformerTankInfo
   UnitMultiplier:
-    descr: 'The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.   For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier'
+    descr: 'The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.  For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier'
     label: UnitMultiplier
     type: cim:UnitMultiplier
   UnitSymbol:
     descr: 'The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as "F" instead of "CPerV". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as "kgPerm3". With the exception'
     label: UnitSymbol
     type: cim:UnitSymbol
+  UsagePoint:
+    descr: 'Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present'
+    inherits: IdentifiedObjectInterface
+    label: UsagePoint
+    type: cim:UsagePoint
   Validity:
     descr: Validity for MeasurementValue
     label: Validity
@@ -1175,9 +1324,7 @@ objects:
       voltageLevel.Substation: {}
     type: cim:VoltageLevel
   VoltageLimit:
-    descr: |-
-      Operational limit applied to voltage.
-      The use of operational VoltageLimit is preferred instead of limits defined at VoltageLevel. The operational VoltageLimits are used, if present
+    descr: "Operational limit applied to voltage.\r\nThe use of operational VoltageLimit is preferred instead of limits defined at VoltageLevel. The operational VoltageLimits are used, if present"
     inherits: OperationalLimitInterface
     label: VoltageLimit
     props:
@@ -1216,6 +1363,31 @@ objects:
     descr: Winding connection type
     label: WindingConnection
     type: cim:WindingConnection
+  WireInfo:
+    descr: 'Wire data that can be specified per line segment phase, or for the line segment as a whole in case its phases all have the same wire characteristics'
+    inherits: WireInfoInterface
+    label: WireInfo
+    type: cim:WireInfo
+  WireInfoInterface:
+    descr: Abstract superclass of WireInfo
+    inherits: AssetInfoInterface
+    kind: abstract
+    props:
+      wireInfo.gmr: {}
+      wireInfo.insulated: {}
+      wireInfo.insulationMaterial: {}
+      wireInfo.rAC25: {}
+      wireInfo.rAC75: {}
+      wireInfo.radius: {}
+      wireInfo.ratedCurrent: {}
+  WireInsulationKind:
+    descr: Kind of wire insulation
+    label: WireInsulationKind
+    type: cim:WireInsulationKind
+  WireUsageKind:
+    descr: Kind of wire usage
+    label: WireUsageKind
+    type: cim:WireUsageKind
   cimr:EquipmentOrContainer:
     descr: Union (superclass) of Equipment and ConnectivityNodeContainer
     inherits: cimr:EquipmentOrContainerInterface
@@ -1245,17 +1417,10 @@ objects:
       dcat:version: {}
       dct:accessRights: {}
       dct:conformsTo: {}
-      dct:description: {}
       dct:identifier: {}
       dct:issued: {}
       dct:license: {}
       dct:references: {}
-      dct:resource1: {}
-      dct:resource10: {}
-      dct:resource13: {}
-      dct:resource2: {}
-      dct:resource3: {}
-      dct:resource4: {}
       dct:rights: {}
       dct:rightsHolder: {}
       dct:spatial: {}
@@ -1288,12 +1453,7 @@ objects:
     label: AmbientTemperatureDependencyCurve
     type: nc:AmbientTemperatureDependencyCurve
   nc:AutoReclosingKind:
-    descr: |-
-      The type of autoreclosing that occurred with the trip.
-      
-      If high-speed automatic reclosing is successful at one end of a line, but the line needs to be reclosed manually at the other end, choose manual reclosing.
-      
-      In this document, high-speed automatic reclosing refers to automatic reclosing after less than 2 seconds
+    descr: "The type of autoreclosing that occurred with the trip.\r\n\r\nIf high-speed automatic reclosing is successful at one end of a line, but the line needs to be reclosed manually at the other end, choose manual reclosing.\r\n\r\nIn this document, high-speed automatic reclosing refers to automatic reclosing after less than 2 seconds"
     label: AutoReclosingKind
     type: nc:AutoReclosingKind
   nc:AvailabilityFunctionKind:
@@ -1305,9 +1465,6 @@ objects:
     label: AvailabilityScheduleCauseKind
     type: nc:AvailabilityScheduleCauseKind
   nc:BaseTimeSeries:
-    descr: Time series of values at points in time
-    inherits: IdentifiedObjectInterface
-    label: BaseTimeSeries
     props:
       nc:baseTimeSeries.generatedAtTime: {}
       nc:baseTimeSeries.interpolationKind: {}
@@ -1364,6 +1521,7 @@ objects:
     kind: abstract
     props:
       nc:circuit.CircuitShare: {}
+      nc:circuit.IdentifyingTerminal: {}
       nc:circuit.positiveFlowIn: {}
   nc:CircuitShare:
     descr: Defines the share of the circuit which is part of an associated power transfer corridor
@@ -1434,10 +1592,7 @@ objects:
     label: FaultCategoryKind
     type: nc:FaultCategoryKind
   nc:FaultKind:
-    descr: |-
-      One fault can consist of several fault types. If a fault consists of several fault types, the most significant fault type is used.
-      
-      In case of developing faults, that is in faults changing from one type to another, the final type is given
+    descr: "One fault can consist of several fault types. If a fault consists of several fault types, the most significant fault type is used.\r\n\r\nIn case of developing faults, that is in faults changing from one type to another, the final type is given"
     label: FaultKind
     type: nc:FaultKind
   nc:FunctionInputVariable:
@@ -1672,8 +1827,6 @@ objects:
       nc:powerTransferCorridor.enabled: {}
       nc:powerTransferCorridor.normalEnabled: {}
   nc:PropertyReference:
-    descr: The reference to a class and one of its properties
-    label: PropertyReference
     props:
       nc:propertyReference.GridStateAlteration: {}
       nc:propertyReference.PinEquipment: {}
@@ -1732,9 +1885,7 @@ objects:
     label: RemedialActionScheduleStatusKind
     type: nc:RemedialActionScheduleStatusKind
   nc:RemedialActionScheme:
-    descr: |-
-      Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).
-      A Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action
+    descr: "Remedial Action Scheme (RAS), Special Protection Schemes (SPS), System Protection Schemes (SPS) or System Integrity Protection Schemes (SIPS).\r\nA Remedial Action Scheme consists of one or more stages that can trigger and execute a protection action"
     inherits: PowerSystemResourceInterface
     label: RemedialActionScheme
     props:
@@ -1869,7 +2020,7 @@ objects:
     props:
       nc:systemOperator.Contingency: {}
   nc:SystemUnitKind:
-    descr: 'A system unit is defined as:  A group of components which are delimited by one or more circuit breakers.  Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.   Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit'
+    descr: 'A system unit is defined as: A group of components which are delimited by one or more circuit breakers. Note 1: the system unit concept has been defined to simplify the calculation of availability. While a system unit is always delimited by circuit breakers, an individual component may not always be. A system unit may therefore contain more than one component.  Note 2: the circuit breakers are not included in the system unit.   Note 3: a tripped element is synonymous to a tripped system unit. Note'
     label: SystemUnitKind
     type: nc:SystemUnitKind
   nc:TCSCControlModeKind:
@@ -1893,16 +2044,151 @@ objects:
     label: TransmissionSystemOperator
     type: nc:TransmissionSystemOperator
   nc:TripKind:
-    descr: |-
-      Whether the type of the trip due to the outage was automatic, automatic with successful automatic reclosing or manual.
-      
-      In case of a fault in the reclosing automatics resulting in lack of reclosing, automatic should be chosen as an alternative
+    descr: "Whether the type of the trip due to the outage was automatic, automatic with successful automatic reclosing or manual.\r\n\r\nIn case of a fault in the reclosing automatics resulting in lack of reclosing, automatic should be chosen as an alternative"
     label: TripKind
     type: nc:TripKind
   nc:ValueOffsetKind:
     descr: The kind of the value offset
     label: ValueOffsetKind
     type: nc:ValueOffsetKind
+  owl:ObjectProperty:
+    props:
+      psys:transitiveOver: {}
+    type: owl:ObjectProperty
+  psys:PropChain3:
+    descr: 'A property chain of length 3: premise1 / premise2 / premise 3 => conclusion'
+    label: Property Chain 3
+    type: psys:PropChain3
+  psys:PropChain4:
+    descr: 'A property chain of length 4: premise1 / premise2 / premise 3 / premise 4 => conclusion'
+    label: Property Chain 4
+    type: psys:PropChain4
+  qudt:AbstractQuantityKind:
+    inherits: qudt:AbstractQuantityKindInterface
+    type: qudt:AbstractQuantityKind
+  qudt:AbstractQuantityKindInterface:
+    descr: Abstract superclass of qudt:AbstractQuantityKind
+    kind: abstract
+  qudt:Concept:
+    inherits: qudt:ConceptInterface
+    type: qudt:Concept
+  qudt:ConceptInterface:
+    descr: Abstract superclass of qudt:Concept
+    kind: abstract
+  qudt:CurrencyUnit:
+    descr: |-2
+      
+        Currency Units have their own subclass of unit because:
+         (a) they have additional properties such as 'country' and
+         (b) their URIs do not conform to the same rules as other units.
+        
+    inherits: qudt:DimensionlessUnitInterface
+    label: Currency Unit
+    type: qudt:CurrencyUnit
+  qudt:DecimalPrefix:
+    descr: |-2
+      
+        A <em>Decimal Prefix</em> is a prefix for multiples of units that are powers of 10.
+        
+    inherits: qudt:PrefixInterface
+    label: Decimal Prefix
+    type: qudt:DecimalPrefix
+  qudt:DerivedUnit:
+    descr: |-2
+      
+        <p>A <em>Derived Unit</em> is a type specification for units that are derived from other units.
+        </p>
+    inherits: qudt:UnitInterface
+    label: Derived Unit
+    type: qudt:DerivedUnit
+  qudt:DimensionlessUnit:
+    inherits: qudt:DimensionlessUnitInterface
+    type: qudt:DimensionlessUnit
+  qudt:DimensionlessUnitInterface:
+    descr: Abstract superclass of qudt:DimensionlessUnit
+    kind: abstract
+  qudt:Prefix:
+    inherits: qudt:PrefixInterface
+    label: Prefix
+    type: qudt:Prefix
+  qudt:PrefixInterface:
+    descr: Abstract superclass of qudt:Prefix
+    inherits: qudt:ConceptInterface
+    kind: abstract
+  qudt:QuantityKind:
+    descr: |-2
+      
+        <p>A <em>Quantity Kind</em> is any observable property that can be  measured and quantified numerically. 
+        Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. 
+        Less familiar examples include currency, interest rate, price to earning ratio, and information capacity.
+        </p>
+    inherits: qudt:AbstractQuantityKindInterface
+    label: Quantity Kind
+    type: qudt:QuantityKind
+  qudt:QuantityKindDimensionVector:
+    descr: |-2
+      
+       $\text{Quantity Kind Dimension Vector}$ describes the dimensionality of a quantity kind in the context of a system of units. 
+       In the SI system of units, the dimensions of a quantity kind are expressed as a product of the basic
+        physical dimensions mass ($M$), length ($L$), time ($T$) current ($I$), amount of substance ($N$),
+         luminous intensity ($J$) and absolute temperature 
+         ($\theta$) as $dim \, Q = L^{\alpha} \, M^{\beta} \, T^{\gamma} \, I ^{\delta} \, \theta ^{\epsilon} \, N^{\eta} \, J ^{\nu}$.
+      
+      
+        The rational powers of the dimensional exponents, $\alpha, \, \beta, \, \gamma, \, \delta, \, \epsilon, \, \eta, \, \nu$, are positive, negative, or zero.
+      
+        For example, the dimension of the physical quantity kind $\it{speed}$ is $\boxed{length/time}$, $L/T$ or $LT^{-1}$,
+         and the dimension of the physical quantity kind force is $\boxed{mass \times acceleration}$ or $\boxed{mass \times (length/time)/time}$, $ML/T^2$ or $MLT^{-2}$ respectively.
+       
+    inherits: qudt:QuantityKindDimensionVectorInterface
+    label: Quantity Kind Dimension Vector
+    type: qudt:QuantityKindDimensionVector
+  qudt:QuantityKindDimensionVectorInterface:
+    descr: Abstract superclass of qudt:QuantityKindDimensionVector
+    inherits: qudt:ConceptInterface
+    kind: abstract
+  qudt:QuantityKindDimensionVector_CGS:
+    descr: A <em>CGS Dimension Vector</em> is used to specify the dimensions for a C.G.S. quantity kind
+    inherits: qudt:QuantityKindDimensionVectorInterface
+    label: CGS Dimension vector
+    type: qudt:QuantityKindDimensionVector_CGS
+  qudt:QuantityKindDimensionVector_ISO:
+    inherits: qudt:QuantityKindDimensionVectorInterface
+    label: ISO Dimension vector
+    type: qudt:QuantityKindDimensionVector_ISO
+  qudt:QuantityKindDimensionVector_Imperial:
+    inherits: qudt:QuantityKindDimensionVectorInterface
+    label: Imperial dimension vector
+    type: qudt:QuantityKindDimensionVector_Imperial
+  qudt:QuantityKindDimensionVector_SI:
+    inherits: qudt:QuantityKindDimensionVectorInterface
+    label: Quantity Kind Dimension vector (SI)
+    type: qudt:QuantityKindDimensionVector_SI
+  qudt:SystemOfUnits:
+    descr: |-2
+      
+        <p>A <em>System of Units</em> is a set of units which are chosen as the reference scales for some set of quantity kinds together with the definitions of each unit. 
+        Units may be defined by experimental observation or by proportion to another unit not included in the system. 
+        If the unit system is explicitly associated with a quantity kind system, then the unit system must define at least one unit for each quantity kind.
+        </p>
+    inherits: qudt:ConceptInterface
+    label: System of Units
+    type: qudt:SystemOfUnits
+  qudt:Unit:
+    descr: |-2
+      
+        A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). 
+        For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). 
+        Any measurement of the length can be expressed as a number multiplied by the unit meter. 
+        More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
+        
+    inherits: qudt:UnitInterface
+    label: Unit
+    type: qudt:Unit
+  qudt:UnitInterface:
+    descr: Abstract superclass of qudt:Unit
+    inherits: qudt:ConceptInterface
+    kind: abstract
 prefixes:
   adms: http://www.w3.org/ns/adms#
   cim: https://cim.ucaiug.io/ns#
@@ -1913,11 +2199,14 @@ prefixes:
   eu: https://cim.ucaiug.io/ns/eu#
   nc: https://cim4.eu/ns/nc#
   owl: http://www.w3.org/2002/07/owl#
+  prefix: http://qudt.org/vocab/prefix/
   prov: http://www.w3.org/ns/prov#
   psys: http://proton.semanticweb.org/protonsys#
+  quantitykind: http://qudt.org/vocab/quantitykind/
   qudt: http://qudt.org/schema/qudt/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
   unit: http://qudt.org/vocab/unit/
   vann: http://purl.org/vocab/vann/
@@ -1929,90 +2218,119 @@ properties:
     kind: object
     label: OperationalLimitSet
     max: inf
+    min: 0
     range: OperationalLimitSet
     rdfProp: cim:ACDCTerminal.OperationalLimitSet
   aCDCTerminal.connected:
     descr: 'The connected status is related to a bus-branch model and the topological node to terminal relation.  True implies the terminal is connected to the related topological node and false implies it is not.  In a bus-branch model, the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the topological node to terminal relation. A valid case is that conducting equipment can be connected in one end and open in the other. In particular for'
     kind: literal
     label: connected
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:ACDCTerminal.connected
   aCDCTerminal.sequenceNumber:
     descr: The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the "starting point" for a two terminal branch
     kind: literal
     label: sequenceNumber
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:ACDCTerminal.sequenceNumber
   aCLineSegment.b0ch:
     descr: 'Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section'
     kind: literal
     label: b0ch
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.b0ch
   aCLineSegment.bch:
     descr: 'Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line'
     kind: literal
     label: bch
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.bch
   aCLineSegment.g0ch:
     descr: 'Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section'
     kind: literal
     label: g0ch
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.g0ch
   aCLineSegment.gch:
     descr: 'Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section'
     kind: literal
     label: gch
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:ACLineSegment.gch
   aCLineSegment.r:
     descr: Positive sequence series resistance of the entire line section
     kind: literal
     label: r
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.r
   aCLineSegment.r0:
     descr: Zero sequence series resistance of the entire line section
     kind: literal
     label: r0
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.r0
   aCLineSegment.shortCircuitEndTemperature:
     descr: Maximum permitted temperature at the end of SC for the calculation of minimum short-circuit currents. Used for short circuit data exchange according to IEC 60909
     kind: literal
     label: shortCircuitEndTemperature
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.shortCircuitEndTemperature
   aCLineSegment.x:
     descr: Positive sequence series reactance of the entire line section
     kind: literal
     label: x
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.x
   aCLineSegment.x0:
     descr: Zero sequence series reactance of the entire line section
     kind: literal
     label: x0
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ACLineSegment.x0
   activePowerLimit.normalValue:
     descr: The normal value of active power limit. The attribute shall be a positive value or zero
     kind: literal
     label: normalValue
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ActivePowerLimit.normalValue
   activePowerLimit.value:
     descr: Value of active power limit. The attribute shall be a positive value or zero
     kind: literal
     label: value
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ActivePowerLimit.value
   adms:versionNotes:
     descr: A description of changes between this version and the previous version of the resource
     kind: literal
     label: versionNotes
+    max: 1
+    min: 0
     range: string
     rdfProp: adms:versionNotes
   analog.AnalogValues:
@@ -2021,12 +2339,15 @@ properties:
     kind: object
     label: AnalogValues
     max: inf
+    min: 0
     range: AnalogValue
     rdfProp: cim:Analog.AnalogValues
   analog.positiveFlowIn:
     descr: 'If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource'
     kind: literal
     label: positiveFlowIn
+    max: 1
+    min: 0
     range: boolean
     rdfProp: cim:Analog.positiveFlowIn
   analogValue.Analog:
@@ -2034,13 +2355,77 @@ properties:
     inverseOf: analog.AnalogValues
     kind: object
     label: Analog
+    max: 1
+    min: 1
     range: Analog
     rdfProp: cim:AnalogValue.Analog
+  asset.AssetContainer:
+    descr: Container of this asset
+    inverseOf: assetContainer.Assets
+    kind: object
+    label: AssetContainer
+    max: 1
+    min: 0
+    range: AssetContainerInterface
+    rdfProp: cim:Asset.AssetContainer
+  asset.PowerSystemResources:
+    descr: 'All power system resources used to electrically model this asset. For example, transformer asset is electrically modelled with a transformer and its windings and tap changer'
+    inverseOf: powerSystemResource.Assets
+    kind: object
+    label: PowerSystemResources
+    max: inf
+    min: 0
+    range: PowerSystemResourceInterface
+    rdfProp: cim:Asset.PowerSystemResources
+  asset.inUseState:
+    descr: 'Indication of whether asset is currently deployed (in use), ready to be put into use or not available for use'
+    kind: object
+    label: inUseState
+    max: 1
+    min: 0
+    range: InUseStateKind
+    rdfProp: cim:Asset.inUseState
+  asset.serialNumber:
+    descr: Serial number of this asset
+    kind: literal
+    label: serialNumber
+    max: 1
+    min: 0
+    range: string
+    rdfProp: cim:Asset.serialNumber
+  asset.type:
+    descr: 'Utility-specific classification of Asset and its subtypes, according to their corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)'
+    kind: literal
+    label: type
+    max: 1
+    min: 0
+    range: string
+    rdfProp: cim:Asset.type
+  assetContainer.Assets:
+    descr: All assets within this container asset
+    inverseOf: asset.AssetContainer
+    kind: object
+    label: Assets
+    max: inf
+    min: 0
+    range: AssetInterface
+    rdfProp: cim:AssetContainer.Assets
+  assetInfo.ProductAssetModel:
+    descr: Product asset model which conforms to this catalog asset type
+    inverseOf: productAssetModel.AssetInfo
+    kind: object
+    label: ProductAssetModel
+    max: 1
+    min: 0
+    range: ProductAssetModel
+    rdfProp: cim:AssetInfo.ProductAssetModel
   auxiliaryEquipment.Terminal:
     descr: The Terminal at the equipment where the AuxiliaryEquipment is attached
     inverseOf: terminal.AuxiliaryEquipment
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: Terminal
     rdfProp: cim:AuxiliaryEquipment.Terminal
   baseVoltage.ConductingEquipment:
@@ -2049,6 +2434,7 @@ properties:
     kind: object
     label: ConductingEquipment
     max: inf
+    min: 0
     range: ConductingEquipmentInterface
     rdfProp: cim:BaseVoltage.ConductingEquipment
   baseVoltage.TopologicalNode:
@@ -2057,6 +2443,7 @@ properties:
     kind: object
     label: TopologicalNode
     max: inf
+    min: 0
     range: TopologicalNode
     rdfProp: cim:BaseVoltage.TopologicalNode
   baseVoltage.TransformerEnds:
@@ -2065,6 +2452,7 @@ properties:
     kind: object
     label: TransformerEnds
     max: inf
+    min: 0
     range: TransformerEndInterface
     rdfProp: cim:BaseVoltage.TransformerEnds
   baseVoltage.VoltageLevel:
@@ -2073,12 +2461,15 @@ properties:
     kind: object
     label: VoltageLevel
     max: inf
+    min: 0
     range: VoltageLevel
     rdfProp: cim:BaseVoltage.VoltageLevel
   baseVoltage.nominalVoltage:
     descr: The power system resource's base voltage.  Shall be a positive value and not zero
     kind: literal
     label: nominalVoltage
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:BaseVoltage.nominalVoltage
   bay.VoltageLevel:
@@ -2086,14 +2477,16 @@ properties:
     inverseOf: voltageLevel.Bays
     kind: object
     label: VoltageLevel
+    max: 1
+    min: 1
     range: VoltageLevel
     rdfProp: cim:Bay.VoltageLevel
   busbarSection.ipMax:
-    descr: |-
-      Maximum allowable peak short-circuit current of busbar (Ipmax in IEC 60909-0). 
-      Mechanical limit of the busbar in the substation itself. Used for short circuit data exchange according to IEC 60909
+    descr: "Maximum allowable peak short-circuit current of busbar (Ipmax in IEC 60909-0). \r\nMechanical limit of the busbar in the substation itself. Used for short circuit data exchange according to IEC 60909"
     kind: literal
     label: ipMax
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:BusbarSection.ipMax
   cimr:connectedThroughPart:
@@ -2163,7 +2556,8 @@ properties:
     descr: CIM UUIDs vary in the first component and confuse some indexers. This property isolates only the significant part if the id for easier indexing
     kind: literal
     label: MRID significant part
-    max: inf
+    max: 1
+    min: 1
     range: string
     rdfProp: cimr:mridSignificantPart
   cimr:terminal.Equipment:
@@ -2186,6 +2580,8 @@ properties:
     inverseOf: baseVoltage.ConductingEquipment
     kind: object
     label: BaseVoltage
+    max: 1
+    min: 0
     range: BaseVoltage
     rdfProp: cim:ConductingEquipment.BaseVoltage
   conductingEquipment.SvStatus:
@@ -2193,6 +2589,8 @@ properties:
     inverseOf: svStatus.ConductingEquipment
     kind: object
     label: SvStatus
+    max: 1
+    min: 0
     range: SvStatus
     rdfProp: cim:ConductingEquipment.SvStatus
   conductingEquipment.Terminals:
@@ -2201,12 +2599,15 @@ properties:
     kind: object
     label: Terminals
     max: inf
+    min: 0
     range: Terminal
     rdfProp: cim:ConductingEquipment.Terminals
   conductor.length:
     descr: Segment length for calculating line section capabilities
     kind: literal
     label: length
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:Conductor.length
   conformLoad.LoadGroup:
@@ -2214,6 +2615,8 @@ properties:
     inverseOf: conformLoadGroup.EnergyConsumers
     kind: object
     label: LoadGroup
+    max: 1
+    min: 1
     range: ConformLoadGroup
     rdfProp: cim:ConformLoad.LoadGroup
   conformLoadGroup.EnergyConsumers:
@@ -2222,6 +2625,7 @@ properties:
     kind: object
     label: EnergyConsumers
     max: inf
+    min: 1
     range: ConformLoad
     rdfProp: cim:ConformLoadGroup.EnergyConsumers
   connectivityNode.ConnectivityNodeContainer:
@@ -2229,6 +2633,8 @@ properties:
     inverseOf: connectivityNodeContainer.ConnectivityNodes
     kind: object
     label: ConnectivityNodeContainer
+    max: 1
+    min: 1
     range: ConnectivityNodeContainerInterface
     rdfProp: cim:ConnectivityNode.ConnectivityNodeContainer
   connectivityNode.Terminals:
@@ -2237,6 +2643,7 @@ properties:
     kind: object
     label: Terminals
     max: inf
+    min: 0
     range: Terminal
     rdfProp: cim:ConnectivityNode.Terminals
   connectivityNode.TopologicalNode:
@@ -2244,6 +2651,8 @@ properties:
     inverseOf: topologicalNode.ConnectivityNodes
     kind: object
     label: TopologicalNode
+    max: 1
+    min: 1
     range: TopologicalNode
     rdfProp: cim:ConnectivityNode.TopologicalNode
   connectivityNodeContainer.ConnectivityNodes:
@@ -2252,6 +2661,7 @@ properties:
     kind: object
     label: ConnectivityNodes
     max: inf
+    min: 0
     range: ConnectivityNode
     rdfProp: cim:ConnectivityNodeContainer.ConnectivityNodes
   connectivityNodeContainer.TopologicalNode:
@@ -2260,6 +2670,7 @@ properties:
     kind: object
     label: TopologicalNode
     max: inf
+    min: 0
     range: TopologicalNode
     rdfProp: cim:ConnectivityNodeContainer.TopologicalNode
   contingency.ContingencyElement:
@@ -2268,12 +2679,15 @@ properties:
     kind: object
     label: ContingencyElement
     max: inf
+    min: 1
     range: ContingencyElementInterface
     rdfProp: cim:Contingency.ContingencyElement
   contingency.mustStudy:
     descr: Set true if must study this contingency
     kind: literal
     label: mustStudy
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Contingency.mustStudy
   contingencyElement.Contingency:
@@ -2281,6 +2695,8 @@ properties:
     inverseOf: contingency.ContingencyElement
     kind: object
     label: Contingency
+    max: 1
+    min: 1
     range: ContingencyInterface
     rdfProp: cim:ContingencyElement.Contingency
   contingencyEquipment.Equipment:
@@ -2288,12 +2704,16 @@ properties:
     inverseOf: equipment.ContingencyEquipment
     kind: object
     label: Equipment
+    max: 1
+    min: 1
     range: EquipmentInterface
     rdfProp: cim:ContingencyEquipment.Equipment
   contingencyEquipment.contingentStatus:
     descr: 'The status for the associated equipment when in the contingency state.   This status is independent of the case to which the contingency is originally applied, but defines the equipment status when the contingency is applied'
     kind: object
     label: contingentStatus
+    max: 1
+    min: 1
     range: ContingencyEquipmentStatusKind
     rdfProp: cim:ContingencyEquipment.contingentStatus
   controlArea.ControlAreaGeneratingUnit:
@@ -2302,6 +2722,7 @@ properties:
     kind: object
     label: ControlAreaGeneratingUnit
     max: inf
+    min: 0
     range: ControlAreaGeneratingUnit
     rdfProp: cim:ControlArea.ControlAreaGeneratingUnit
   controlArea.EnergyArea:
@@ -2309,24 +2730,32 @@ properties:
     inverseOf: energyArea.ControlArea
     kind: object
     label: EnergyArea
+    max: 1
+    min: 1
     range: EnergyAreaInterface
     rdfProp: cim:ControlArea.EnergyArea
   controlArea.netInterchange:
     descr: 'The specified positive net interchange into the control area, i.e. positive sign means flow into the area'
     kind: literal
     label: netInterchange
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ControlArea.netInterchange
   controlArea.pTolerance:
     descr: Active power net interchange tolerance. The attribute shall be a positive value or zero
     kind: literal
     label: pTolerance
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:ControlArea.pTolerance
   controlArea.type:
     descr: 'The primary type of control area definition used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.   A control area specified with primary type of automatic generation control could still be forecast and used as an interchange area in power flow analysis'
     kind: object
     label: type
+    max: 1
+    min: 1
     range: ControlAreaTypeKind
     rdfProp: cim:ControlArea.type
   controlAreaGeneratingUnit.ControlArea:
@@ -2334,6 +2763,8 @@ properties:
     inverseOf: controlArea.ControlAreaGeneratingUnit
     kind: object
     label: ControlArea
+    max: 1
+    min: 1
     range: ControlArea
     rdfProp: cim:ControlAreaGeneratingUnit.ControlArea
   controlAreaGeneratingUnit.GeneratingUnit:
@@ -2341,6 +2772,8 @@ properties:
     inverseOf: generatingUnit.ControlAreaGeneratingUnit
     kind: object
     label: GeneratingUnit
+    max: 1
+    min: 1
     range: GeneratingUnit
     rdfProp: cim:ControlAreaGeneratingUnit.GeneratingUnit
   coordinateSystem.Locations:
@@ -2349,24 +2782,31 @@ properties:
     kind: object
     label: Locations
     max: inf
+    min: 0
     range: Location
     rdfProp: cim:CoordinateSystem.Locations
   coordinateSystem.crsUrn:
     descr: "A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'. An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude)"
     kind: literal
     label: crsUrn
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:CoordinateSystem.crsUrn
   currentLimit.normalValue:
     descr: The normal value for limit on current flow. The attribute shall be a positive value or zero
     kind: literal
     label: normalValue
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:CurrentLimit.normalValue
   currentLimit.value:
     descr: Limit on current flow. The attribute shall be a positive value or zero
     kind: literal
     label: value
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:CurrentLimit.value
   curve.CurveDatas:
@@ -2375,230 +2815,202 @@ properties:
     kind: object
     label: CurveDatas
     max: inf
+    min: 1
     range: CurveData
     rdfProp: cim:Curve.CurveDatas
+  curve.curveStyle:
+    descr: The style or shape of the curve
+    kind: object
+    label: curveStyle
+    max: 1
+    min: 1
+    range: CurveStyle
+    rdfProp: cim:Curve.curveStyle
+  curve.xUnit:
+    descr: The X-axis units of measure
+    kind: object
+    label: xUnit
+    max: 1
+    min: 1
+    range: UnitSymbol
+    rdfProp: cim:Curve.xUnit
+  curve.y2Unit:
+    descr: The Y2-axis units of measure
+    kind: object
+    label: y2Unit
+    max: 1
+    min: 0
+    range: UnitSymbol
+    rdfProp: cim:Curve.y2Unit
   curveData.Curve:
     descr: The curve of  this curve data point
     inverseOf: curve.CurveDatas
     kind: object
     label: Curve
+    max: 1
+    min: 1
     range: CurveInterface
     rdfProp: cim:CurveData.Curve
   dcat:endDate:
-    descr: |-
-      This property contains the end of the period.
-      [CIM context:
-      The end date and time of the validity period of the model that it is serialized in the document where the header is located. It is only used in relation to the startDate property which indicates the beginning of the validity period of the model.]
+    descr: "This property contains the end of the period.\r\n[CIM context:\r\nThe end date and time of the validity period of the model that it is serialized in the document where the header is located. It is only used in relation to the startDate property which indicates the beginning of the validity period of the model.]"
     kind: literal
     label: endDate
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: dcat:endDate
   dcat:hasVersion:
-    descr: |-
-      This resource is a version of a non-versioned or abstract resource.
-      This property is intended for relating a versioned resource to a non-versioned or abstract resource.
-      
-      The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:isVersionOf, which makes use of a broader notion of version, including editions and adaptations
+    descr: "This resource is a version of a non-versioned or abstract resource.\r\nThis property is intended for relating a versioned resource to a non-versioned or abstract resource.\r\n\r\nThe notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:isVersionOf, which makes use of a broader notion of version, including editions and adaptations"
     inverseOf: dcat:isVersionOf
     kind: object
     label: hasVersion
     max: inf
+    min: 0
     range: dcat:Dataset
     rdfProp: dcat:hasVersion
   dcat:isVersionOf:
-    descr: |-
-      This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.
-      
-      The notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dct:hasVersion, which makes use of a broader notion of version, including editions and adaptations
+    descr: "This resource has a more specific, versioned resource. This property is intended for relating a non-versioned or abstract resource to several versioned resources, e.g., snapshots.\r\n\r\nThe notion of version used by this property is limited to versions resulting from revisions occurring to a resource as part of its life-cycle. Therefore, its semantics is more specific than its super-property dcterms:hasVersion, which makes use of a broader notion of version, including editions and adaptations"
     inverseOf: dcat:hasVersion
     kind: object
     label: isVersionOf
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: dcat:isVersionOf
   dcat:keyword:
     descr: 'A keyword or tag describing a resource. [CIM context: The intended content type of the model, usually the profile keyword. Used to identify what profiles and content is expected in the document, e.g., Equipment, Boundary, SSH, AE, etc. The same keyword is used for different versions of same profile. It can be also used to identify different content based on the same profile. For instance, as the equipment profile can be used for both boundary data and equipment not related to boundary, the keyword'
     kind: literal
     label: keyword
+    max: 1
+    min: 0
     range: string
     rdfProp: dcat:keyword
   dcat:startDate:
     descr: 'This property contains the start of the  period. [CIM context: The date and time that this model represents, i.e. for which the model is (or was) valid. It indicates the beginning of the validity period. It is indicating either an instant (in cases where the model is only valid for a point in time) or the start time of a period. If not provided the model is considered valid for any time stamp. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]. This property contains the start of the period. [CIM context: The date and time that this model represents, i.e. for which the model is (or was) valid. It indicates the beginning of the validity period. It is indicating either an instant (in cases where the model is only valid for a point in time) or the start time of a period. If not provided the model is considered valid for any time stamp. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]'
     kind: literal
     label: startDate
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: dcat:startDate
   dcat:temporalResolution:
-    descr: |-
-      Minimum time period resolvable in a dataset.
-      [CIM context: 
-      Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]. Minimum time period resolvable in the dataset.
-      [CIM context: 
-      
-      Describes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]
+    descr: "Minimum time period resolvable in a dataset.\r\n[CIM context: \r\nDescribes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]. Minimum time period resolvable in the dataset.\r\n[CIM context: \r\n\r\nDescribes the Market Time Unit (MTU), e.g. hourly, 15 min., etc.]"
     kind: literal
     label: temporalResolution
+    max: 1
+    min: 0
     range: string
     rdfProp: dcat:temporalResolution
   dcat:version:
     descr: The version indicator (name or identifier) of a resource. The version number of a resource
     kind: literal
     label: version
+    max: 1
+    min: 0
     range: string
     rdfProp: dcat:version
   dct:accessRights:
-    descr: |-
-      Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.
-      [CIM context:
-      Reference to the confidentiality level that shall be applied when handling this model.]
-    inverseOf: dct:resource1
+    descr: "Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies.\r\n[CIM context:\r\nReference to the confidentiality level that shall be applied when handling this model.]"
     kind: object
     label: accessRights
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:accessRights
   dct:conformsTo:
     descr: 'An established standard to which the described resource conforms. [CIM context: An IRI describing the profile that governs this model. It uniquely identifies the profile and its version. Multiple instances of the property describe all standards or specifications to which the model and the document representing this model conform to. A document would normally conform to profile definitions, the constraints that relate to the profile and/or the set of business specific constrains. A reference to a'
-    inverseOf: dct:resource2
     kind: object
     label: conformsTo
     max: inf
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:conformsTo
   dct:description:
-    descr: |-
-      A free-text account of the item. A free-text account of the resource.
-      Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource
+    descr: "A free-text account of the item. A free-text account of the resource.\r\nDescription may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource"
     kind: literal
     label: description
+    max: 1
+    min: 0
     range: string
     rdfProp: dct:description
   dct:identifier:
     descr: 'A unique identifier of the resource being described or cataloged. The identifier might be used as part of the IRI of the resource, but still having it represented explicitly is useful. The identifier is a text string which is assigned to the resource to provide an unambiguous reference within a particular context. [CIM context: A unique identifier of the model which is serialised in the document where the header is located. The identifier is persistent for a given version of the model and shall change. An unambiguous reference to the resource within a given context. Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN). Persistent identifiers should be provided as HTTP URIs. [CIM context: A unique identifier of the model which is serialised in the document where the header is located. The identifier is persistent for'
     kind: literal
     label: identifier
+    max: 1
+    min: 0
     range: string
     rdfProp: dct:identifier
   dct:issued:
-    descr: |-
-      Date of formal issuance of the resource.
-      Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.
-      [CIM context:
-      Reference to the date that the complete data set was made valid/available.]. The date of listing (i.e., formal recording) of the corresponding dataset or service in the catalog.
-      [CIM context:
-      Reference to the date that the complete data set was made valid/available.]
+    descr: "Date of formal issuance of the resource.\r\nRecommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.\r\n[CIM context:\r\nReference to the date that the complete data set was made valid/available.]. The date of listing (i.e., formal recording) of the corresponding dataset or service in the catalog.\r\n[CIM context:\r\nReference to the date that the complete data set was made valid/available.]"
     kind: literal
     label: issued
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: dct:issued
   dct:license:
-    descr: |-
-      A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.
-      [CIM context:
-      Reference to the license under which the data is made available. If no license holder is defined, then the original data provider holds the license.]
-    inverseOf: dct:resource3
+    descr: "A legal document giving official permission to do something with the resource. Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided.\r\n[CIM context:\r\nReference to the license under which the data is made available. If no license holder is defined, then the original data provider holds the license.]"
     kind: object
     label: license
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:license
+  dct:publisher:
+    descr: "An entity responsible for making the resource available.\r\n[CIM context: \r\nThe agent that is publishing the dataset on the given platform.]"
+    kind: object
+    label: publisher
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: dct:publisher
   dct:references:
-    descr: |-
-      A related resource that is referenced, cited, or otherwise pointed to by the described resource[.
-      [CIM context: 
-      The referenced resource that is being complemented in this dataset, e.g. SSH is referencing EQ.]
-    inverseOf: dct:resource13
+    descr: "A related resource that is referenced, cited, or otherwise pointed to by the described resource[.\r\n[CIM context: \r\nThe referenced resource that is being complemented in this dataset, e.g. SSH is referencing EQ.]"
     kind: object
     label: references
     max: inf
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:references
-  dct:resource1:
-    descr: The resource that has these access rights
-    inverseOf: dct:accessRights
-    kind: object
-    label: Resource1
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource1
-  dct:resource10:
-    descr: The resource that has this spatial location
-    inverseOf: dct:spatial
-    kind: object
-    label: Resource10
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource10
-  dct:resource13:
-    descr: The resource that has these recerences
-    inverseOf: dct:references
-    kind: object
-    label: Resource13
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource13
-  dct:resource2:
-    descr: The resource that conforms to
-    inverseOf: dct:conformsTo
-    kind: object
-    label: Resource2
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource2
-  dct:resource3:
-    descr: The resource that has this license
-    inverseOf: dct:license
-    kind: object
-    label: Resource3
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource3
-  dct:resource4:
-    descr: The resource that has this type
-    inverseOf: dct:type
-    kind: object
-    label: Resource4
-    max: inf
-    range: dcat:Dataset
-    rdfProp: dct:Resource4
   dct:rights:
-    descr: 'A statement that concerns all rights not addressed with dct:license or dct:accessRights, such as copyright statements'
+    descr: 'A statement that concerns all rights not addressed with dcterms:license or dcterms:accessRights, such as copyright statements'
     kind: literal
     label: rights
+    max: 1
+    min: 0
     range: string
     rdfProp: dct:rights
   dct:rightsHolder:
-    descr: |-
-      Information about rights held in and over the resource.
-      Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided. Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided
+    descr: "Information about rights held in and over the resource.\r\nTypically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided. Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided"
     kind: literal
     label: rightsHolder
+    max: 1
+    min: 0
     range: string
     rdfProp: dct:rightsHolder
   dct:spatial:
-    descr: |-
-      The geographical area covered by the dataset.
-      [CIM context: 
-      The responsibility area that multiple model can describe, also referred to frame.]
-    inverseOf: dct:resource10
+    descr: "The geographical area covered by the dataset.\r\n[CIM context: \r\nThe responsibility area that multiple model can describe, also referred to frame.]"
     kind: object
     label: spatial
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:spatial
   dct:title:
-    descr: |-
-      A name given to the resource
-      [CIM context: 
-      
-      The human readable name of the dataset that can form the instance file name.]. A name given to the resource.
-      [CIM context: 
-      The human readable name of the dataset that can form the instance file name.]
+    descr: "A name given to the resource\r\n[CIM context: \r\n\r\nThe human readable name of the dataset that can form the instance file name.]. A name given to the resource.\r\n[CIM context: \r\nThe human readable name of the dataset that can form the instance file name.]"
     kind: literal
     label: title
+    max: 1
+    min: 0
     range: string
     rdfProp: dct:title
   dct:type:
     descr: 'The nature or genre of the resource. Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format'
-    inverseOf: dct:resource4
     kind: object
     label: type
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: dct:type
   diagram.DiagramElements:
@@ -2607,12 +3019,15 @@ properties:
     kind: object
     label: DiagramElements
     max: inf
+    min: 0
     range: DiagramObjectInterface
     rdfProp: cim:Diagram.DiagramElements
   diagram.orientation:
     descr: 'Coordinate system orientation of the diagram. A positive orientation gives standard “right-hand” orientation, with negative orientation indicating a “left-hand” orientation. For 2D diagrams, a positive orientation will result in X values increasing from left to right and Y values increasing from bottom to top. A negative orientation gives the “left-hand” orientation (favoured by computer graphics displays) with X values increasing from left to right and Y values increasing from top to bottom'
     kind: object
     label: orientation
+    max: 1
+    min: 1
     range: OrientationKind
     rdfProp: cim:Diagram.orientation
   diagramObject.Diagram:
@@ -2620,6 +3035,8 @@ properties:
     inverseOf: diagram.DiagramElements
     kind: object
     label: Diagram
+    max: 1
+    min: 1
     range: Diagram
     rdfProp: cim:DiagramObject.Diagram
   diagramObject.DiagramObjectPoints:
@@ -2628,6 +3045,7 @@ properties:
     kind: object
     label: DiagramObjectPoints
     max: inf
+    min: 0
     range: DiagramObjectPoint
     rdfProp: cim:DiagramObject.DiagramObjectPoints
   diagramObject.DiagramObjectStyle:
@@ -2635,6 +3053,8 @@ properties:
     inverseOf: diagramObjectStyle.StyledObjects
     kind: object
     label: DiagramObjectStyle
+    max: 1
+    min: 0
     range: DiagramObjectStyle
     rdfProp: cim:DiagramObject.DiagramObjectStyle
   diagramObject.IdentifiedObject:
@@ -2642,12 +3062,16 @@ properties:
     inverseOf: identifiedObject.DiagramObjects
     kind: object
     label: IdentifiedObject
+    max: 1
+    min: 0
     range: IdentifiedObjectInterface
     rdfProp: cim:DiagramObject.IdentifiedObject
   diagramObject.rotation:
     descr: 'Sets the angle of rotation of the diagram object.  Zero degrees is pointing to the top of the diagram.  Rotation is clockwise.  DiagramObject.rotation=0 has the following meaning: The connection point of an element which has one terminal is pointing to the top side of the diagram. The connection point "From side" of an element which has more than one terminal is pointing to the top side of the diagram. DiagramObject.rotation=90 has the following meaning: The connection point of an element which has'
     kind: literal
     label: rotation
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:DiagramObject.rotation
   diagramObjectPoint.DiagramObject:
@@ -2655,24 +3079,32 @@ properties:
     inverseOf: diagramObject.DiagramObjectPoints
     kind: object
     label: DiagramObject
+    max: 1
+    min: 1
     range: DiagramObjectInterface
     rdfProp: cim:DiagramObjectPoint.DiagramObject
   diagramObjectPoint.sequenceNumber:
     descr: 'The sequence position of the point, used for defining the order of points for diagram objects acting as a polyline or polygon with more than one point. The attribute shall be a positive value'
     kind: literal
     label: sequenceNumber
+    max: 1
+    min: 0
     range: integer
     rdfProp: cim:DiagramObjectPoint.sequenceNumber
   diagramObjectPoint.xPosition:
     descr: The X coordinate of this point
     kind: literal
     label: xPosition
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:DiagramObjectPoint.xPosition
   diagramObjectPoint.yPosition:
     descr: The Y coordinate of this point
     kind: literal
     label: yPosition
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:DiagramObjectPoint.yPosition
   diagramObjectStyle.StyledObjects:
@@ -2681,6 +3113,7 @@ properties:
     kind: object
     label: StyledObjects
     max: inf
+    min: 0
     range: DiagramObjectInterface
     rdfProp: cim:DiagramObjectStyle.StyledObjects
   discrete.DiscreteValues:
@@ -2689,6 +3122,7 @@ properties:
     kind: object
     label: DiscreteValues
     max: inf
+    min: 0
     range: DiscreteValue
     rdfProp: cim:Discrete.DiscreteValues
   discreteValue.Discrete:
@@ -2696,6 +3130,8 @@ properties:
     inverseOf: discrete.DiscreteValues
     kind: object
     label: Discrete
+    max: 1
+    min: 1
     range: Discrete
     rdfProp: cim:DiscreteValue.Discrete
   energyArea.ControlArea:
@@ -2703,6 +3139,8 @@ properties:
     inverseOf: controlArea.EnergyArea
     kind: object
     label: ControlArea
+    max: 1
+    min: 0
     range: ControlArea
     rdfProp: cim:EnergyArea.ControlArea
   energyConsumer.LoadResponse:
@@ -2710,48 +3148,56 @@ properties:
     inverseOf: loadResponseCharacteristic.EnergyConsumer
     kind: object
     label: LoadResponse
+    max: 1
+    min: 0
     range: LoadResponseCharacteristic
     rdfProp: cim:EnergyConsumer.LoadResponse
   energyConsumer.p:
-    descr: |-
-      Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
-      For voltage dependent loads the value is at rated voltage.
-      Starting value for a steady state solution
+    descr: "Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nFor voltage dependent loads the value is at rated voltage.\r\nStarting value for a steady state solution"
     kind: literal
     label: p
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EnergyConsumer.p
   energyConsumer.pfixed:
     descr: 'Active power of the load that is a fixed quantity and does not vary as load group value varies. Load sign convention is used, i.e. positive sign means flow out from a node'
     kind: literal
     label: pfixed
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EnergyConsumer.pfixed
   energyConsumer.pfixedPct:
     descr: 'Fixed active power as a percentage of load group fixed active power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node'
     kind: literal
     label: pfixedPct
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EnergyConsumer.pfixedPct
   energyConsumer.q:
-    descr: |-
-      Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
-      For voltage dependent loads the value is at rated voltage.
-      Starting value for a steady state solution
+    descr: "Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nFor voltage dependent loads the value is at rated voltage.\r\nStarting value for a steady state solution"
     kind: literal
     label: q
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EnergyConsumer.q
   energyConsumer.qfixed:
     descr: 'Reactive power of the load that is a fixed quantity and does not vary as load group value varies. Load sign convention is used, i.e. positive sign means flow out from a node'
     kind: literal
     label: qfixed
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EnergyConsumer.qfixed
   energyConsumer.qfixedPct:
     descr: 'Fixed reactive power as a percentage of load group fixed reactive power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node'
     kind: literal
     label: qfixedPct
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EnergyConsumer.qfixedPct
   equipment.ContingencyEquipment:
@@ -2760,6 +3206,7 @@ properties:
     kind: object
     label: ContingencyEquipment
     max: inf
+    min: 0
     range: ContingencyEquipment
     rdfProp: cim:Equipment.ContingencyEquipment
   equipment.EquipmentContainer:
@@ -2767,30 +3214,40 @@ properties:
     inverseOf: equipmentContainer.Equipments
     kind: object
     label: EquipmentContainer
+    max: 1
+    min: 0
     range: EquipmentContainerInterface
     rdfProp: cim:Equipment.EquipmentContainer
   equipment.aggregate:
     descr: The aggregate flag provides an alternative way of representing an aggregated (equivalent) element. It is applicable in cases when the dedicated classes for equivalent equipment do not have all of the attributes necessary to represent the required level of detail.  In case the flag is set to “true” the single instance of equipment represents multiple pieces of equipment that have been modelled together as an aggregate equivalent obtained by a network reduction procedure. Examples would be power transformers
     kind: literal
     label: aggregate
+    max: 1
+    min: 0
     range: boolean
     rdfProp: cim:Equipment.aggregate
   equipment.inService:
     descr: 'Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model'
     kind: literal
     label: inService
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Equipment.inService
   equipment.networkAnalysisEnabled:
     descr: 'The equipment is enabled to participate in network analysis.  If unspecified, the value is assumed to be true'
     kind: literal
     label: networkAnalysisEnabled
+    max: 1
+    min: 0
     range: boolean
     rdfProp: cim:Equipment.networkAnalysisEnabled
   equipment.normallyInService:
     descr: 'Specifies the availability of the equipment under normal operating conditions. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model'
     kind: literal
     label: normallyInService
+    max: 1
+    min: 0
     range: boolean
     rdfProp: cim:Equipment.normallyInService
   equipmentContainer.Equipments:
@@ -2799,84 +3256,95 @@ properties:
     kind: object
     label: Equipments
     max: inf
+    min: 0
     range: EquipmentInterface
     rdfProp: cim:EquipmentContainer.Equipments
   equivalentInjection.maxP:
     descr: Maximum active power of the injection
     kind: literal
     label: maxP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EquivalentInjection.maxP
   equivalentInjection.maxQ:
     descr: Maximum reactive power of the injection.  Used for modelling of infeed for load flow exchange. Not used for short circuit modelling.  If maxQ and minQ are not used ReactiveCapabilityCurve can be used
     kind: literal
     label: maxQ
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EquivalentInjection.maxQ
   equivalentInjection.minP:
     descr: Minimum active power of the injection
     kind: literal
     label: minP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EquivalentInjection.minP
   equivalentInjection.minQ:
     descr: Minimum reactive power of the injection.  Used for modelling of infeed for load flow exchange. Not used for short circuit modelling.  If maxQ and minQ are not used ReactiveCapabilityCurve can be used
     kind: literal
     label: minQ
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:EquivalentInjection.minQ
   equivalentInjection.p:
-    descr: |-
-      Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
-      Starting value for steady state solutions
+    descr: "Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nStarting value for steady state solutions"
     kind: literal
     label: p
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.p
   equivalentInjection.q:
-    descr: |-
-      Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
-      Starting value for steady state solutions
+    descr: "Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nStarting value for steady state solutions"
     kind: literal
     label: q
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.q
   equivalentInjection.r:
-    descr: |-
-      Positive sequence resistance. Used to represent Extended-Ward (IEC 60909).
-      Usage : Extended-Ward is a result of network reduction prior to the data exchange
+    descr: "Positive sequence resistance. Used to represent Extended-Ward (IEC 60909).\r\nUsage : Extended-Ward is a result of network reduction prior to the data exchange"
     kind: literal
     label: r
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.r
   equivalentInjection.r0:
-    descr: |-
-      Zero sequence resistance. Used to represent Extended-Ward (IEC 60909).
-      Usage : Extended-Ward is a result of network reduction prior to the data exchange
+    descr: "Zero sequence resistance. Used to represent Extended-Ward (IEC 60909).\r\nUsage : Extended-Ward is a result of network reduction prior to the data exchange"
     kind: literal
     label: r0
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.r0
   equivalentInjection.regulationCapability:
     descr: Specifies whether or not the EquivalentInjection has the capability to regulate the local voltage. If true the EquivalentInjection can regulate. If false the EquivalentInjection cannot regulate. ReactiveCapabilityCurve can only be associated with EquivalentInjection  if the flag is true
     kind: literal
     label: regulationCapability
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:EquivalentInjection.regulationCapability
   equivalentInjection.x:
-    descr: |-
-      Positive sequence reactance. Used to represent Extended-Ward (IEC 60909).
-      Usage : Extended-Ward is a result of network reduction prior to the data exchange
+    descr: "Positive sequence reactance. Used to represent Extended-Ward (IEC 60909).\r\nUsage : Extended-Ward is a result of network reduction prior to the data exchange"
     kind: literal
     label: x
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.x
   equivalentInjection.x0:
-    descr: |-
-      Zero sequence reactance. Used to represent Extended-Ward (IEC 60909).
-      Usage : Extended-Ward is a result of network reduction prior to the data exchange
+    descr: "Zero sequence reactance. Used to represent Extended-Ward (IEC 60909).\r\nUsage : Extended-Ward is a result of network reduction prior to the data exchange"
     kind: literal
     label: x0
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:EquivalentInjection.x0
   eu:boundaryPoint.ConnectivityNode:
@@ -2884,52 +3352,56 @@ properties:
     inverseOf: eu:connectivityNode.BoundaryPoint
     kind: object
     label: ConnectivityNode
+    max: 1
+    min: 1
     range: ConnectivityNode
     rdfProp: eu:BoundaryPoint.ConnectivityNode
   eu:boundaryPoint.fromEndIsoCode:
-    descr: |-
-      The ISO code of the region which the "From" side of the Boundary point belongs to or it is connected to.
-      The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum
+    descr: "The ISO code of the region which the \"From\" side of the Boundary point belongs to or it is connected to.\r\nThe ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum"
     kind: literal
     label: fromEndIsoCode
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.fromEndIsoCode
   eu:boundaryPoint.fromEndName:
-    descr: |-
-      A human readable name with length of the string 64 characters maximum. It covers the following two cases:
-      -if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "From" side of the tie-line is connected to.
-      -if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the "From" side of the Boundary point is connected to
+    descr: "A human readable name with length of the string 64 characters maximum. It covers the following two cases:\r\n-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the \"From\" side of the tie-line is connected to.\r\n-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the \"From\" side of the Boundary point is connected to"
     kind: literal
     label: fromEndName
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.fromEndName
   eu:boundaryPoint.fromEndNameTso:
     descr: 'Identifies the name of the transmission system operator, distribution system operator or other entity at which the "From" side of the interconnection is connected to. The length of the string is 64 characters maximum'
     kind: literal
     label: fromEndNameTso
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.fromEndNameTso
   eu:boundaryPoint.toEndIsoCode:
-    descr: |-
-      The ISO code of the region which the "To" side of the Boundary point belongs to or is connected to.
-      The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum
+    descr: "The ISO code of the region which the \"To\" side of the Boundary point belongs to or is connected to.\r\nThe ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum"
     kind: literal
     label: toEndIsoCode
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.toEndIsoCode
   eu:boundaryPoint.toEndName:
-    descr: |-
-      A human readable name with length of the string 64 characters maximum. It covers the following two cases:
-      -if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the "To" side of the tie-line is connected to.
-      -if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the "To" side of the Boundary point is connected to
+    descr: "A human readable name with length of the string 64 characters maximum. It covers the following two cases:\r\n-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the \"To\" side of the tie-line is connected to.\r\n-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the \"To\" side of the Boundary point is connected to"
     kind: literal
     label: toEndName
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.toEndName
   eu:boundaryPoint.toEndNameTso:
     descr: 'Identifies the name of the transmission system operator, distribution system operator or other entity at which the "To" side of the interconnection is connected to. The length of the string is 64 characters maximum'
     kind: literal
     label: toEndNameTso
+    max: 1
+    min: 1
     range: string
     rdfProp: eu:BoundaryPoint.toEndNameTso
   eu:connectivityNode.BoundaryPoint:
@@ -2937,18 +3409,24 @@ properties:
     inverseOf: eu:boundaryPoint.ConnectivityNode
     kind: object
     label: BoundaryPoint
+    max: 1
+    min: 0
     range: eu:BoundaryPoint
     rdfProp: eu:ConnectivityNode.BoundaryPoint
   eu:identifiedObject.energyIdentCodeEic:
     descr: The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site
     kind: literal
     label: energyIdentCodeEic
+    max: 1
+    min: 0
     range: string
     rdfProp: eu:IdentifiedObject.energyIdentCodeEic
   eu:operationalLimitType.kind:
     descr: Types of limits defined in the ENTSO-E Operational Handbook Policy 3
     kind: object
     label: kind
+    max: 1
+    min: 1
     range: eu:LimitKind
     rdfProp: eu:OperationalLimitType.kind
   generatingUnit.ControlAreaGeneratingUnit:
@@ -2957,6 +3435,7 @@ properties:
     kind: object
     label: ControlAreaGeneratingUnit
     max: inf
+    min: 0
     range: ControlAreaGeneratingUnit
     rdfProp: cim:GeneratingUnit.ControlAreaGeneratingUnit
   generatingUnit.RotatingMachine:
@@ -2965,60 +3444,71 @@ properties:
     kind: object
     label: RotatingMachine
     max: inf
+    min: 1
     range: RotatingMachineInterface
     rdfProp: cim:GeneratingUnit.RotatingMachine
   generatingUnit.maxEconomicP:
     descr: 'Maximum high economic active power limit, that should not exceed the maximum operating active power limit'
     kind: literal
     label: maxEconomicP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:GeneratingUnit.maxEconomicP
   generatingUnit.maxOperatingP:
     descr: This is the maximum operating active power limit the dispatcher can enter for this unit
     kind: literal
     label: maxOperatingP
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:GeneratingUnit.maxOperatingP
   generatingUnit.minEconomicP:
     descr: Low economic active power limit that shall be greater than or equal to the minimum operating active power limit
     kind: literal
     label: minEconomicP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:GeneratingUnit.minEconomicP
   generatingUnit.minOperatingP:
     descr: This is the minimum operating active power limit the dispatcher can enter for this unit
     kind: literal
     label: minOperatingP
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:GeneratingUnit.minOperatingP
   generatingUnit.nominalP:
-    descr: |-
-      The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).
-      The attribute shall be a positive value equal to or less than RotatingMachine.ratedS
+    descr: "The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).\r\nThe attribute shall be a positive value equal to or less than RotatingMachine.ratedS"
     kind: literal
     label: nominalP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:GeneratingUnit.nominalP
   generatingUnit.normalPF:
     descr: Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero
     kind: literal
     label: normalPF
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:GeneratingUnit.normalPF
   generatingUnit.ratedGrossMaxP:
-    descr: |-
-      The unit's gross rated maximum capacity (book value).
-      The attribute shall be a positive value
+    descr: "The unit's gross rated maximum capacity (book value).\r\nThe attribute shall be a positive value"
     kind: literal
     label: ratedGrossMaxP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:GeneratingUnit.ratedGrossMaxP
   generatingUnit.ratedNetMaxP:
-    descr: |-
-      The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.
-      The attribute shall be a positive value
+    descr: "The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.\r\nThe attribute shall be a positive value"
     kind: literal
     label: ratedNetMaxP
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:GeneratingUnit.ratedNetMaxP
   geographicalRegion.Regions:
@@ -3027,6 +3517,7 @@ properties:
     kind: object
     label: Regions
     max: inf
+    min: 0
     range: SubGeographicalRegion
     rdfProp: cim:GeographicalRegion.Regions
   identifiedObject.DiagramObjects:
@@ -3035,34 +3526,39 @@ properties:
     kind: object
     label: DiagramObjects
     max: inf
+    min: 0
     range: DiagramObjectInterface
     rdfProp: cim:IdentifiedObject.DiagramObjects
   identifiedObject.aliasName:
-    descr: |-
-      The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.
-      The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time
+    descr: "The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.\r\nThe attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time"
     kind: literal
     label: aliasName
+    max: 1
+    min: 0
     range: string
     rdfProp: cim:IdentifiedObject.aliasName
   identifiedObject.description:
     descr: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy
     kind: literal
     label: description
+    max: 1
+    min: 0
     range: string
     rdfProp: cim:IdentifiedObject.description
   identifiedObject.mRID:
-    descr: |-
-      Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
-      For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements
+    descr: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements"
     kind: literal
     label: mRID
+    max: 1
+    min: 0
     range: string
     rdfProp: cim:IdentifiedObject.mRID
   identifiedObject.name:
     descr: The name is any free human readable and possibly non unique text naming the object
     kind: literal
     label: name
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:IdentifiedObject.name
   line.Region:
@@ -3070,18 +3566,24 @@ properties:
     inverseOf: subGeographicalRegion.Lines
     kind: object
     label: Region
+    max: 1
+    min: 0
     range: SubGeographicalRegion
     rdfProp: cim:Line.Region
   linearShuntCompensator.bPerSection:
     descr: Positive sequence shunt (charging) susceptance per section
     kind: literal
     label: bPerSection
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:LinearShuntCompensator.bPerSection
   linearShuntCompensator.gPerSection:
     descr: Positive sequence shunt (charging) conductance per section
     kind: literal
     label: gPerSection
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:LinearShuntCompensator.gPerSection
   loadArea.SubLoadAreas:
@@ -3090,6 +3592,7 @@ properties:
     kind: object
     label: SubLoadAreas
     max: inf
+    min: 1
     range: SubLoadArea
     rdfProp: cim:LoadArea.SubLoadAreas
   loadGroup.SubLoadArea:
@@ -3097,6 +3600,8 @@ properties:
     inverseOf: subLoadArea.LoadGroups
     kind: object
     label: SubLoadArea
+    max: 1
+    min: 1
     range: SubLoadArea
     rdfProp: cim:LoadGroup.SubLoadArea
   loadResponseCharacteristic.EnergyConsumer:
@@ -3105,48 +3610,63 @@ properties:
     kind: object
     label: EnergyConsumer
     max: inf
+    min: 0
     range: EnergyConsumerInterface
     rdfProp: cim:LoadResponseCharacteristic.EnergyConsumer
   loadResponseCharacteristic.exponentModel:
     descr: 'Indicates the exponential voltage dependency model is to be used. If false, the coefficient model is to be used. The exponential voltage dependency model consist of the attributes: - pVoltageExponent - qVoltageExponent - pFrequencyExponent - qFrequencyExponent. The coefficient model consist of the attributes: - pConstantImpedance - pConstantCurrent - pConstantPower - qConstantImpedance - qConstantCurrent - qConstantPower. The sum of pConstantImpedance, pConstantCurrent and pConstantPower shall equal'
     kind: literal
     label: exponentModel
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:LoadResponseCharacteristic.exponentModel
   loadResponseCharacteristic.pConstantCurrent:
     descr: Portion of active power load modelled as constant current
     kind: literal
     label: pConstantCurrent
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.pConstantCurrent
   loadResponseCharacteristic.pConstantImpedance:
     descr: Portion of active power load modelled as constant impedance
     kind: literal
     label: pConstantImpedance
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.pConstantImpedance
   loadResponseCharacteristic.pConstantPower:
     descr: Portion of active power load modelled as constant power
     kind: literal
     label: pConstantPower
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.pConstantPower
   loadResponseCharacteristic.qConstantCurrent:
     descr: Portion of reactive power load modelled as constant current
     kind: literal
     label: qConstantCurrent
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.qConstantCurrent
   loadResponseCharacteristic.qConstantImpedance:
     descr: Portion of reactive power load modelled as constant impedance
     kind: literal
     label: qConstantImpedance
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.qConstantImpedance
   loadResponseCharacteristic.qConstantPower:
     descr: Portion of reactive power load modelled as constant power
     kind: literal
     label: qConstantPower
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:LoadResponseCharacteristic.qConstantPower
   location.CoordinateSystem:
@@ -3154,6 +3674,8 @@ properties:
     inverseOf: coordinateSystem.Locations
     kind: object
     label: CoordinateSystem
+    max: 1
+    min: 1
     range: CoordinateSystem
     rdfProp: cim:Location.CoordinateSystem
   location.PowerSystemResources:
@@ -3161,41 +3683,58 @@ properties:
     inverseOf: powerSystemResource.Location
     kind: object
     label: PowerSystemResources
+    max: 1
+    min: 1
     range: PowerSystemResourceInterface
     rdfProp: cim:Location.PowerSystemResources
+  manufacturer.ProductAssetModels:
+    descr: All asset models by this manufacturer
+    inverseOf: productAssetModel.Manufacturer
+    kind: object
+    label: ProductAssetModels
+    max: inf
+    min: 0
+    range: ProductAssetModel
+    rdfProp: cim:Manufacturer.ProductAssetModels
   measurement.PowerSystemResource:
     descr: The power system resource that contains the measurement
     inverseOf: powerSystemResource.Measurements
     kind: object
     label: PowerSystemResource
+    max: 1
+    min: 1
     range: PowerSystemResourceInterface
     rdfProp: cim:Measurement.PowerSystemResource
   measurement.measurementType:
-    descr: |-
-      Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
-      When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement
+    descr: "Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r\nWhen the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement"
     kind: literal
     label: measurementType
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:Measurement.measurementType
   measurement.phases:
-    descr: |-
-      Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.
-      If the attribute is missing three phases (ABC) shall be assumed
+    descr: "Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.\r\nIf the attribute is missing three phases (ABC) shall be assumed"
     kind: object
     label: phases
+    max: 1
+    min: 0
     range: PhaseCode
     rdfProp: cim:Measurement.phases
   measurement.unitMultiplier:
     descr: The unit multiplier of the measured quantity
     kind: object
     label: unitMultiplier
+    max: 1
+    min: 1
     range: UnitMultiplier
     rdfProp: cim:Measurement.unitMultiplier
   measurement.unitSymbol:
     descr: The unit of measure of the measured quantity
     kind: object
     label: unitSymbol
+    max: 1
+    min: 1
     range: UnitSymbol
     rdfProp: cim:Measurement.unitSymbol
   measurementValue.MeasurementValueSource:
@@ -3203,18 +3742,24 @@ properties:
     inverseOf: measurementValueSource.MeasurementValues
     kind: object
     label: MeasurementValueSource
+    max: 1
+    min: 1
     range: MeasurementValueSource
     rdfProp: cim:MeasurementValue.MeasurementValueSource
   measurementValue.sensorAccuracy:
     descr: 'The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions'
     kind: literal
     label: sensorAccuracy
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:MeasurementValue.sensorAccuracy
   measurementValue.timeStamp:
     descr: The time when the value was last updated
     kind: literal
     label: timeStamp
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: cim:MeasurementValue.timeStamp
   measurementValueSource.MeasurementValues:
@@ -3223,48 +3768,63 @@ properties:
     kind: object
     label: MeasurementValues
     max: inf
+    min: 0
     range: MeasurementValueInterface
     rdfProp: cim:MeasurementValueSource.MeasurementValues
   name.name:
     descr: Any free text that used as a name or alternative identifier of the object
     kind: literal
     label: name
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:Name.name
   nameType.description:
     descr: Description of the name type
     kind: literal
     label: description
+    max: 1
+    min: 0
     range: string
     rdfProp: cim:NameType.description
   nameType.name:
     descr: Name of the name type
     kind: literal
     label: name
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:NameType.name
   nc:baseTimeSeries.generatedAtTime:
     descr: The time this time series (entity) come to existents and available for use
     kind: literal
     label: generatedAtTime
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: nc:BaseTimeSeries.generatedAtTime
   nc:baseTimeSeries.interpolationKind:
     descr: Kind of interpolation done between time point
     kind: object
     label: interpolationKind
+    max: 1
+    min: 1
     range: nc:TimeSeriesInterpolationKind
     rdfProp: nc:BaseTimeSeries.interpolationKind
   nc:baseTimeSeries.kind:
     descr: Kind of base time series
     kind: object
     label: kind
+    max: 1
+    min: 1
     range: nc:BaseTimeSeriesKind
     rdfProp: nc:BaseTimeSeries.kind
   nc:baseTimeSeries.percentile:
     descr: The percentile is a number where a certain percentage of scores/ranking/values of a sample fall below that number. This is a way for expressing uncertainty in the number provided
     kind: literal
     label: percentile
+    max: 1
+    min: 0
     range: integer
     rdfProp: nc:BaseTimeSeries.percentile
   nc:biddingZone.BiddingZoneBorderOne:
@@ -3273,6 +3833,7 @@ properties:
     kind: object
     label: BiddingZoneBorderOne
     max: inf
+    min: 0
     range: nc:BiddingZoneBorder
     rdfProp: nc:BiddingZone.BiddingZoneBorderOne
   nc:biddingZone.BiddingZoneBorderTwo:
@@ -3281,6 +3842,7 @@ properties:
     kind: object
     label: BiddingZoneBorderTwo
     max: inf
+    min: 0
     range: nc:BiddingZoneBorder
     rdfProp: nc:BiddingZone.BiddingZoneBorderTwo
   nc:biddingZone.SchedulingArea:
@@ -3289,12 +3851,15 @@ properties:
     kind: object
     label: SchedulingArea
     max: inf
+    min: 1
     range: nc:SchedulingArea
     rdfProp: nc:BiddingZone.SchedulingArea
   nc:biddingZone.isTradeEnabled:
     descr: 'Identifies the mechanism for determining the energy price for a given bidding zone. If true, the bid and the offer is expected to be provided for the bidding zone to create the market price. If false,  other mechanism determines the price of energy for a given bidding zone, e.g. virtual bidding zone'
     kind: literal
     label: isTradeEnabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:BiddingZone.isTradeEnabled
   nc:biddingZoneBorder.BiddingZoneOne:
@@ -3302,6 +3867,8 @@ properties:
     inverseOf: nc:biddingZone.BiddingZoneBorderOne
     kind: object
     label: BiddingZoneOne
+    max: 1
+    min: 1
     range: nc:BiddingZone
     rdfProp: nc:BiddingZoneBorder.BiddingZoneOne
   nc:biddingZoneBorder.BiddingZoneTwo:
@@ -3309,6 +3876,8 @@ properties:
     inverseOf: nc:biddingZone.BiddingZoneBorderTwo
     kind: object
     label: BiddingZoneTwo
+    max: 1
+    min: 1
     range: nc:BiddingZone
     rdfProp: nc:BiddingZoneBorder.BiddingZoneTwo
   nc:circuit.CircuitShare:
@@ -3317,12 +3886,24 @@ properties:
     kind: object
     label: CircuitShare
     max: inf
+    min: 0
     range: nc:CircuitShare
     rdfProp: nc:Circuit.CircuitShare
+  nc:circuit.IdentifyingTerminal:
+    descr: Terminal that identifies the circuit
+    inverseOf: nc:terminal.Circuit
+    kind: object
+    label: IdentifyingTerminal
+    max: 1
+    min: 0
+    range: Terminal
+    rdfProp: nc:Circuit.IdentifyingTerminal
   nc:circuit.positiveFlowIn:
     descr: 'True, if the positive value on the terminal shall be considered flow into the circuit. False, if the positive value on the terminal shall be considered flow out of the circuit'
     kind: literal
     label: positiveFlowIn
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:Circuit.positiveFlowIn
   nc:circuitShare.Circuit:
@@ -3330,6 +3911,8 @@ properties:
     inverseOf: nc:circuit.CircuitShare
     kind: object
     label: Circuit
+    max: 1
+    min: 1
     range: nc:CircuitInterface
     rdfProp: nc:CircuitShare.Circuit
   nc:circuitShare.PowerTransferCorridor:
@@ -3337,22 +3920,24 @@ properties:
     inverseOf: nc:powerTransferCorridor.CircuitShare
     kind: object
     label: PowerTransferCorridor
+    max: 1
+    min: 1
     range: nc:PowerTransferCorridorInterface
     rdfProp: nc:CircuitShare.PowerTransferCorridor
   nc:circuitShare.contributionFactor:
-    descr: |-
-      Contribution factor for the circuit which is part of a power transfer corridor.
-      The allowed value range is [0,100]
+    descr: "Contribution factor for the circuit which is part of a power transfer corridor.\r\nThe allowed value range is [0,100]"
     kind: literal
     label: contributionFactor
+    max: 1
+    min: 1
     range: double
     rdfProp: nc:CircuitShare.contributionFactor
   nc:circuitShare.normalContributionFactor:
-    descr: |-
-      Normal contribution factor for the circuit which is part of a power transfer corridor.
-      The allowed value range is [0,100]
+    descr: "Normal contribution factor for the circuit which is part of a power transfer corridor.\r\nThe allowed value range is [0,100]"
     kind: literal
     label: normalContributionFactor
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:CircuitShare.normalContributionFactor
   nc:contingency.EquipmentOperator:
@@ -3360,28 +3945,32 @@ properties:
     inverseOf: nc:systemOperator.Contingency
     kind: object
     label: EquipmentOperator
+    max: 1
+    min: 0
     range: nc:SystemOperatorInterface
     rdfProp: nc:Contingency.EquipmentOperator
   nc:contingency.normalMustStudy:
     descr: Specifies the requirement of study the contingency under normal operating conditions. True means the contingency must be study in a normal scenario. False means that the contingency does not need to be included in the scenario. This is the default value if mustStudy is missing
     kind: literal
     label: normalMustStudy
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:Contingency.normalMustStudy
   nc:contingency.normalProbability:
-    descr: |-
-      Normal probability of the occurrence of the contingency based on normal operational condition. The value is used as the default if the probability is missing.
-      The allowed value range is [0,100]
+    descr: "Normal probability of the occurrence of the contingency based on normal operational condition. The value is used as the default if the probability is missing.\r\nThe allowed value range is [0,100]"
     kind: literal
     label: normalProbability
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:Contingency.normalProbability
   nc:contingency.probability:
-    descr: |-
-      The forecasted probability of the occurrence of the contingency based on the given operational condition, status of the equipment and the forecasted environment condition.
-      The allowed value range is [0,100]
+    descr: "The forecasted probability of the occurrence of the contingency based on the given operational condition, status of the equipment and the forecasted environment condition.\r\nThe allowed value range is [0,100]"
     kind: literal
     label: probability
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:Contingency.probability
   nc:controlArea.SchedulingArea:
@@ -3390,6 +3979,7 @@ properties:
     kind: object
     label: SchedulingArea
     max: inf
+    min: 1
     range: nc:SchedulingArea
     rdfProp: nc:ControlArea.SchedulingArea
   nc:energyConsumer.LoadAction:
@@ -3398,6 +3988,7 @@ properties:
     kind: object
     label: LoadAction
     max: inf
+    min: 0
     range: nc:LoadAction
     rdfProp: nc:EnergyConsumer.LoadAction
   nc:equipment.InServiceAction:
@@ -3406,6 +3997,7 @@ properties:
     kind: object
     label: InServiceAction
     max: inf
+    min: 0
     range: nc:InServiceAction
     rdfProp: nc:Equipment.InServiceAction
   nc:equipment.PinEquipment:
@@ -3414,6 +4006,7 @@ properties:
     kind: object
     label: PinEquipment
     max: inf
+    min: 0
     range: nc:PinEquipment
     rdfProp: nc:Equipment.PinEquipment
   nc:equipment.PinEquipmentTripping:
@@ -3422,6 +4015,7 @@ properties:
     kind: object
     label: PinEquipmentTripping
     max: inf
+    min: 0
     range: nc:PinEquipmentTripping
     rdfProp: nc:Equipment.PinEquipmentTripping
   nc:gate.GateInputPin:
@@ -3430,6 +4024,7 @@ properties:
     kind: object
     label: GateInputPin
     max: inf
+    min: 1
     range: nc:GateInputPinInterface
     rdfProp: nc:Gate.GateInputPin
   nc:gate.PinGate:
@@ -3438,6 +4033,7 @@ properties:
     kind: object
     label: PinGate
     max: inf
+    min: 0
     range: nc:PinGate
     rdfProp: nc:Gate.PinGate
   nc:gate.StageTrigger:
@@ -3446,12 +4042,15 @@ properties:
     kind: object
     label: StageTrigger
     max: inf
+    min: 0
     range: nc:StageTrigger
     rdfProp: nc:Gate.StageTrigger
   nc:gate.kind:
     descr: The logical operation of the gate
     kind: object
     label: kind
+    max: 1
+    min: 1
     range: nc:GateLogicKind
     rdfProp: nc:Gate.kind
   nc:gateInputPin.Gate:
@@ -3459,32 +4058,40 @@ properties:
     inverseOf: nc:gate.GateInputPin
     kind: object
     label: Gate
+    max: 1
+    min: 1
     range: nc:Gate
     rdfProp: nc:GateInputPin.Gate
   nc:gateInputPin.logicKind:
     descr: The logical operator kind used for comparison
     kind: object
     label: logicKind
+    max: 1
+    min: 1
     range: nc:LogicalOperatorsKind
     rdfProp: nc:GateInputPin.logicKind
   nc:gateInputPin.negate:
     descr: Invert/negate the result of the comparison
     kind: literal
     label: negate
+    max: 1
+    min: 0
     range: boolean
     rdfProp: nc:GateInputPin.negate
   nc:gateInputPin.thresholdPercentage:
-    descr: |-
-      The threshold percentage that should be used for compare with the percentage change between input value and threshold value.
-      The allowed value range is [0,100]
+    descr: "The threshold percentage that should be used for compare with the percentage change between input value and threshold value.\r\nThe allowed value range is [0,100]"
     kind: literal
     label: thresholdPercentage
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:GateInputPin.thresholdPercentage
   nc:gateInputPin.thresholdValue:
     descr: The threshold value that should be used for compare with the input value
     kind: literal
     label: thresholdValue
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:GateInputPin.thresholdValue
   nc:generatingUnit.ScheduleResource:
@@ -3492,6 +4099,8 @@ properties:
     inverseOf: nc:scheduleResource.GeneratingUnit
     kind: object
     label: ScheduleResource
+    max: 1
+    min: 0
     range: nc:ScheduleResource
     rdfProp: nc:GeneratingUnit.ScheduleResource
   nc:gridStateAlteration.GridStateAlterationCollection:
@@ -3499,6 +4108,8 @@ properties:
     inverseOf: nc:gridStateAlterationCollection.GridStateAlteration
     kind: object
     label: GridStateAlterationCollection
+    max: 1
+    min: 0
     range: nc:GridStateAlterationCollection
     rdfProp: nc:GridStateAlteration.GridStateAlterationCollection
   nc:gridStateAlteration.PropertyReference:
@@ -3506,6 +4117,8 @@ properties:
     inverseOf: nc:propertyReference.GridStateAlteration
     kind: object
     label: PropertyReference
+    max: 1
+    min: 1
     range: nc:PropertyReference
     rdfProp: nc:GridStateAlteration.PropertyReference
   nc:gridStateAlteration.RangeConstraint:
@@ -3514,18 +4127,23 @@ properties:
     kind: object
     label: RangeConstraint
     max: inf
+    min: 0
     range: nc:RangeConstraintInterface
     rdfProp: nc:GridStateAlteration.RangeConstraint
   nc:gridStateAlteration.enabled:
     descr: The status of the GridStateAlteration set by an operation or by a signal resulting from a control action
     kind: literal
     label: enabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:GridStateAlteration.enabled
   nc:gridStateAlteration.normalEnabled:
     descr: The default/normal value used when other active signal/values are missing
     kind: literal
     label: normalEnabled
+    max: 1
+    min: 0
     range: boolean
     rdfProp: nc:GridStateAlteration.normalEnabled
   nc:gridStateAlterationCollection.GridStateAlteration:
@@ -3534,6 +4152,7 @@ properties:
     kind: object
     label: GridStateAlteration
     max: inf
+    min: 0
     range: nc:GridStateAlterationInterface
     rdfProp: nc:GridStateAlterationCollection.GridStateAlteration
   nc:gridStateAlterationCollection.StageAction:
@@ -3542,6 +4161,7 @@ properties:
     kind: object
     label: StageAction
     max: inf
+    min: 0
     range: nc:Stage
     rdfProp: nc:GridStateAlterationCollection.StageAction
   nc:inServiceAction.Equipment:
@@ -3549,6 +4169,8 @@ properties:
     inverseOf: nc:equipment.InServiceAction
     kind: object
     label: Equipment
+    max: 1
+    min: 1
     range: EquipmentInterface
     rdfProp: nc:InServiceAction.Equipment
   nc:loadAction.EnergyConsumer:
@@ -3556,6 +4178,8 @@ properties:
     inverseOf: nc:energyConsumer.LoadAction
     kind: object
     label: EnergyConsumer
+    max: 1
+    min: 1
     range: EnergyConsumerInterface
     rdfProp: nc:LoadAction.EnergyConsumer
   nc:operationalLimit.PinOperationallLimit:
@@ -3564,6 +4188,7 @@ properties:
     kind: object
     label: PinOperationallLimit
     max: inf
+    min: 0
     range: nc:PinOperationalLimit
     rdfProp: nc:OperationalLimit.PinOperationallLimit
   nc:operationalLimitSet.PowerTransferCorridor:
@@ -3571,6 +4196,8 @@ properties:
     inverseOf: nc:powerTransferCorridor.OperationalLimitSet
     kind: object
     label: PowerTransferCorridor
+    max: 1
+    min: 0
     range: nc:PowerTransferCorridorInterface
     rdfProp: nc:OperationalLimitSet.PowerTransferCorridor
   nc:pinEquipment.Equipment:
@@ -3578,6 +4205,8 @@ properties:
     inverseOf: nc:equipment.PinEquipment
     kind: object
     label: Equipment
+    max: 1
+    min: 1
     range: EquipmentInterface
     rdfProp: nc:PinEquipment.Equipment
   nc:pinEquipment.PropertyReference:
@@ -3585,6 +4214,8 @@ properties:
     inverseOf: nc:propertyReference.PinEquipment
     kind: object
     label: PropertyReference
+    max: 1
+    min: 1
     range: nc:PropertyReference
     rdfProp: nc:PinEquipment.PropertyReference
   nc:pinEquipmentTripping.Equipment:
@@ -3592,6 +4223,8 @@ properties:
     inverseOf: nc:equipment.PinEquipmentTripping
     kind: object
     label: Equipment
+    max: 1
+    min: 1
     range: EquipmentInterface
     rdfProp: nc:PinEquipmentTripping.Equipment
   nc:pinGate.GateOutput:
@@ -3599,6 +4232,8 @@ properties:
     inverseOf: nc:gate.PinGate
     kind: object
     label: GateOutput
+    max: 1
+    min: 1
     range: nc:Gate
     rdfProp: nc:PinGate.GateOutput
   nc:pinOperationalLimit.OperationalLimit:
@@ -3606,6 +4241,8 @@ properties:
     inverseOf: nc:operationalLimit.PinOperationallLimit
     kind: object
     label: OperationalLimit
+    max: 1
+    min: 1
     range: OperationalLimitInterface
     rdfProp: nc:PinOperationalLimit.OperationalLimit
   nc:pinTerminal.Terminal:
@@ -3613,12 +4250,16 @@ properties:
     inverseOf: nc:terminal.PinTerminal
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: Terminal
     rdfProp: nc:PinTerminal.Terminal
   nc:pinTerminal.kind:
     descr: The kind of quantity which is used as an input value
     kind: object
     label: kind
+    max: 1
+    min: 1
     range: nc:PinTerminalKind
     rdfProp: nc:PinTerminal.kind
   nc:powerTransferCorridor.CircuitShare:
@@ -3627,6 +4268,7 @@ properties:
     kind: object
     label: CircuitShare
     max: inf
+    min: 0
     range: nc:CircuitShare
     rdfProp: nc:PowerTransferCorridor.CircuitShare
   nc:powerTransferCorridor.OperationalLimitSet:
@@ -3635,18 +4277,23 @@ properties:
     kind: object
     label: OperationalLimitSet
     max: inf
+    min: 0
     range: OperationalLimitSet
     rdfProp: nc:PowerTransferCorridor.OperationalLimitSet
   nc:powerTransferCorridor.enabled:
     descr: It enables/disables the monitoring/assessment of a power transfer corridor. True means that the monitoring of the power transfer corridor is assessed. False means the power transfer corridor is not assessed
     kind: literal
     label: enabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:PowerTransferCorridor.enabled
   nc:powerTransferCorridor.normalEnabled:
     descr: It is the normal enable/disable the monitoring/assessment of a power transfer corridor. True means that the monitoring of the power transfer corridor is assessed. False means the power transfer corridor is not assessed
     kind: literal
     label: normalEnabled
+    max: 1
+    min: 0
     range: boolean
     rdfProp: nc:PowerTransferCorridor.normalEnabled
   nc:propertyReference.GridStateAlteration:
@@ -3655,6 +4302,7 @@ properties:
     kind: object
     label: GridStateAlteration
     max: inf
+    min: 0
     range: nc:GridStateAlterationInterface
     rdfProp: nc:PropertyReference.GridStateAlteration
   nc:propertyReference.PinEquipment:
@@ -3663,6 +4311,7 @@ properties:
     kind: object
     label: PinEquipment
     max: inf
+    min: 0
     range: nc:PinEquipment
     rdfProp: nc:PropertyReference.PinEquipment
   nc:propertyReference.StaticPropertyRange:
@@ -3671,6 +4320,7 @@ properties:
     kind: object
     label: StaticPropertyRange
     max: inf
+    min: 0
     range: nc:StaticPropertyRange
     rdfProp: nc:PropertyReference.StaticPropertyRange
   nc:rangeConstraint.GridStateAlteration:
@@ -3678,36 +4328,40 @@ properties:
     inverseOf: nc:gridStateAlteration.RangeConstraint
     kind: object
     label: GridStateAlteration
+    max: 1
+    min: 1
     range: nc:GridStateAlterationInterface
     rdfProp: nc:RangeConstraint.GridStateAlteration
   nc:rangeConstraint.direction:
     descr: Defines the direction of the attribute value referenced by the PropertyReference
     kind: object
     label: direction
+    max: 1
+    min: 1
     range: nc:RelativeDirectionKind
     rdfProp: nc:RangeConstraint.direction
   nc:rangeConstraint.normalValue:
-    descr: |-
-      The normal (initial) value. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false.
-      If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).
-      If the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]
+    descr: "The normal (initial) value. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false.\r\nIf the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\r\nIf the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]"
     kind: literal
     label: normalValue
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:RangeConstraint.normalValue
   nc:rangeConstraint.value:
-    descr: |-
-      The value at the time. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false. 
-      If the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).
-      If the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]
+    descr: "The value at the time. The meaning of the value is defined by the attribute referenced by the PropertyReference. The value can be integer, float or boolean. In case of boolean 1 equals true and 0 equals false. \r\nIf the valueKind is incremental or incrementalPercentage, then the value shall be positive (greater than zero).\r\nIf the valueKind is incrementalPercentage, then the value shall be in the range [0, 100]"
     kind: literal
     label: value
+    max: 1
+    min: 1
     range: double
     rdfProp: nc:RangeConstraint.value
   nc:rangeConstraint.valueKind:
     descr: Kind of value offset for the range that applies to the attribute referenced by the PropertyReference
     kind: object
     label: valueKind
+    max: 1
+    min: 0
     range: nc:ValueOffsetKind
     rdfProp: nc:RangeConstraint.valueKind
   nc:remedialActionScheme.Stage:
@@ -3716,30 +4370,39 @@ properties:
     kind: object
     label: Stage
     max: inf
+    min: 1
     range: nc:Stage
     rdfProp: nc:RemedialActionScheme.Stage
   nc:remedialActionScheme.armed:
     descr: Defines the arming status of the remedial action scheme. It is set by operation or by signal
     kind: literal
     label: armed
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:RemedialActionScheme.armed
   nc:remedialActionScheme.inService:
     descr: 'Specifies the availability of the Remedial Action Scheme (RAS). If true, the RAS is available for contingency processing. If false, the RAS is treated by contingency processing as if it is not in the model'
     kind: literal
     label: inService
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:RemedialActionScheme.inService
   nc:remedialActionScheme.kind:
     descr: Kind of Remedial Action Scheme
     kind: object
     label: kind
+    max: 1
+    min: 1
     range: nc:RemedialActionSchemeKind
     rdfProp: nc:RemedialActionScheme.kind
   nc:remedialActionScheme.normalArmed:
     descr: Defines the normal arming status of the remedial action scheme
     kind: literal
     label: normalArmed
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:RemedialActionScheme.normalArmed
   nc:rotatingMachine.RotatingMachineAction:
@@ -3748,6 +4411,7 @@ properties:
     kind: object
     label: RotatingMachineAction
     max: inf
+    min: 0
     range: nc:RotatingMachineAction
     rdfProp: nc:RotatingMachine.RotatingMachineAction
   nc:rotatingMachineAction.RotatingMachine:
@@ -3755,6 +4419,8 @@ properties:
     inverseOf: nc:rotatingMachine.RotatingMachineAction
     kind: object
     label: RotatingMachine
+    max: 1
+    min: 1
     range: RotatingMachineInterface
     rdfProp: nc:RotatingMachineAction.RotatingMachine
   nc:scheduleResource.GeneratingUnit:
@@ -3763,6 +4429,7 @@ properties:
     kind: object
     label: GeneratingUnit
     max: inf
+    min: 0
     range: GeneratingUnit
     rdfProp: nc:ScheduleResource.GeneratingUnit
   nc:schedulingArea.BiddingZone:
@@ -3770,6 +4437,8 @@ properties:
     inverseOf: nc:biddingZone.SchedulingArea
     kind: object
     label: BiddingZone
+    max: 1
+    min: 1
     range: nc:BiddingZone
     rdfProp: nc:SchedulingArea.BiddingZone
   nc:schedulingArea.ControlArea:
@@ -3777,6 +4446,8 @@ properties:
     inverseOf: nc:controlArea.SchedulingArea
     kind: object
     label: ControlArea
+    max: 1
+    min: 0
     range: ControlArea
     rdfProp: nc:SchedulingArea.ControlArea
   nc:schedulingArea.SynchronousArea:
@@ -3784,18 +4455,24 @@ properties:
     inverseOf: nc:synchronousArea.SchedulingArea
     kind: object
     label: SynchronousArea
+    max: 1
+    min: 0
     range: nc:SynchronousArea
     rdfProp: nc:SchedulingArea.SynchronousArea
   nc:schedulingArea.normalParticipationFactor:
     descr: 'Normal participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value. In the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF).  In the case of priority strategy, the item with'
     kind: literal
     label: normalParticipationFactor
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:SchedulingArea.normalParticipationFactor
   nc:schedulingArea.participationFactor:
     descr: 'Participation factor describing the entity part of the active power provided by a collection of entities (e.g. an active power forecast to a collection of entities is divided to each of the member entity according to the participation factor). Must be a positive value. In the case of a sharing strategy, the distribution is following entities value (V) equals aggregated value (T) divided by sum of participation factors (PF), i.e. V=T/sum(PF).  In the case of priority strategy, the item with the lowest'
     kind: literal
     label: participationFactor
+    max: 1
+    min: 0
     range: double
     rdfProp: nc:SchedulingArea.participationFactor
   nc:stage.GridStateAlterationCollection:
@@ -3803,6 +4480,8 @@ properties:
     inverseOf: nc:gridStateAlterationCollection.StageAction
     kind: object
     label: GridStateAlterationCollection
+    max: 1
+    min: 0
     range: nc:GridStateAlterationCollection
     rdfProp: nc:Stage.GridStateAlterationCollection
   nc:stage.RemedialActionScheme:
@@ -3810,6 +4489,8 @@ properties:
     inverseOf: nc:remedialActionScheme.Stage
     kind: object
     label: RemedialActionScheme
+    max: 1
+    min: 1
     range: nc:RemedialActionScheme
     rdfProp: nc:Stage.RemedialActionScheme
   nc:stage.StageTrigger:
@@ -3818,12 +4499,15 @@ properties:
     kind: object
     label: StageTrigger
     max: inf
+    min: 1
     range: nc:StageTrigger
     rdfProp: nc:Stage.StageTrigger
   nc:stage.priority:
     descr: The priority of the stage.   0 = do not care (default) 1 = highest priority. 2 is less than 1 and so on. A stage with higher priority needs be activated before a lower stage can be activated
     kind: literal
     label: priority
+    max: 1
+    min: 1
     range: integer
     rdfProp: nc:Stage.priority
   nc:stageTrigger.GateTrigger:
@@ -3831,6 +4515,8 @@ properties:
     inverseOf: nc:gate.StageTrigger
     kind: object
     label: GateTrigger
+    max: 1
+    min: 0
     range: nc:Gate
     rdfProp: nc:StageTrigger.GateTrigger
   nc:stageTrigger.Stage:
@@ -3838,30 +4524,40 @@ properties:
     inverseOf: nc:stage.StageTrigger
     kind: object
     label: Stage
+    max: 1
+    min: 1
     range: nc:Stage
     rdfProp: nc:StageTrigger.Stage
   nc:stageTrigger.armed:
     descr: The status of the class set by operation or by signal. Optional field that will override other status fields
     kind: literal
     label: armed
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:StageTrigger.armed
   nc:stageTrigger.inService:
     descr: Indicates if the stage trigger is in service
     kind: literal
     label: inService
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:StageTrigger.inService
   nc:stageTrigger.normalArmed:
     descr: The default/normal value used when other active signal/values are missing
     kind: literal
     label: normalArmed
+    max: 1
+    min: 1
     range: boolean
     rdfProp: nc:StageTrigger.normalArmed
   nc:stageTrigger.priority:
     descr: Priority of trigger. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. A trigger with the highest priority will trigger first
     kind: literal
     label: priority
+    max: 1
+    min: 1
     range: integer
     rdfProp: nc:StageTrigger.priority
   nc:staticPropertyRange.PropertyReference:
@@ -3869,6 +4565,8 @@ properties:
     inverseOf: nc:propertyReference.StaticPropertyRange
     kind: object
     label: PropertyReference
+    max: 1
+    min: 1
     range: nc:PropertyReference
     rdfProp: nc:StaticPropertyRange.PropertyReference
   nc:switch.TopologyAction:
@@ -3877,6 +4575,7 @@ properties:
     kind: object
     label: TopologyAction
     max: inf
+    min: 0
     range: nc:TopologyAction
     rdfProp: nc:Switch.TopologyAction
   nc:synchronousArea.SchedulingArea:
@@ -3885,12 +4584,15 @@ properties:
     kind: object
     label: SchedulingArea
     max: inf
+    min: 0
     range: nc:SchedulingArea
     rdfProp: nc:SynchronousArea.SchedulingArea
   nc:synchronousArea.nominalFrequency:
     descr: 'The nominal frequency for the Synchronous Area, e.g. 50 Hz for Europe'
     kind: literal
     label: nominalFrequency
+    max: 1
+    min: 1
     range: double
     rdfProp: nc:SynchronousArea.nominalFrequency
   nc:systemOperator.Contingency:
@@ -3899,14 +4601,25 @@ properties:
     kind: object
     label: Contingency
     max: inf
+    min: 0
     range: ContingencyInterface
     rdfProp: nc:SystemOperator.Contingency
+  nc:terminal.Circuit:
+    descr: Circuit that is identified by the given Terminal
+    inverseOf: nc:circuit.IdentifyingTerminal
+    kind: object
+    label: Circuit
+    max: 1
+    min: 0
+    range: nc:CircuitInterface
+    rdfProp: nc:Terminal.Circuit
   nc:terminal.PinTerminal:
     descr: The pin that uses this input
     inverseOf: nc:pinTerminal.Terminal
     kind: object
     label: PinTerminal
     max: inf
+    min: 0
     range: nc:PinTerminal
     rdfProp: nc:Terminal.PinTerminal
   nc:topologyAction.Switch:
@@ -3914,6 +4627,8 @@ properties:
     inverseOf: nc:switch.TopologyAction
     kind: object
     label: Switch
+    max: 1
+    min: 1
     range: SwitchInterface
     rdfProp: nc:TopologyAction.Switch
   nonConformLoad.LoadGroup:
@@ -3921,6 +4636,8 @@ properties:
     inverseOf: nonConformLoadGroup.EnergyConsumers
     kind: object
     label: LoadGroup
+    max: 1
+    min: 1
     range: NonConformLoadGroup
     rdfProp: cim:NonConformLoad.LoadGroup
   nonConformLoadGroup.EnergyConsumers:
@@ -3929,6 +4646,7 @@ properties:
     kind: object
     label: EnergyConsumers
     max: inf
+    min: 1
     range: NonConformLoad
     rdfProp: cim:NonConformLoadGroup.EnergyConsumers
   operationalLimit.OperationalLimitSet:
@@ -3936,6 +4654,8 @@ properties:
     inverseOf: operationalLimitSet.OperationalLimitValue
     kind: object
     label: OperationalLimitSet
+    max: 1
+    min: 1
     range: OperationalLimitSet
     rdfProp: cim:OperationalLimit.OperationalLimitSet
   operationalLimit.OperationalLimitType:
@@ -3943,6 +4663,8 @@ properties:
     inverseOf: operationalLimitType.OperationalLimit
     kind: object
     label: OperationalLimitType
+    max: 1
+    min: 1
     range: OperationalLimitType
     rdfProp: cim:OperationalLimit.OperationalLimitType
   operationalLimitSet.OperationalLimitValue:
@@ -3951,6 +4673,7 @@ properties:
     kind: object
     label: OperationalLimitValue
     max: inf
+    min: 0
     range: OperationalLimitInterface
     rdfProp: cim:OperationalLimitSet.OperationalLimitValue
   operationalLimitSet.Terminal:
@@ -3958,6 +4681,8 @@ properties:
     inverseOf: aCDCTerminal.OperationalLimitSet
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: ACDCTerminalInterface
     rdfProp: cim:OperationalLimitSet.Terminal
   operationalLimitType.OperationalLimit:
@@ -3966,24 +4691,31 @@ properties:
     kind: object
     label: OperationalLimit
     max: inf
+    min: 1
     range: OperationalLimitInterface
     rdfProp: cim:OperationalLimitType.OperationalLimit
   operationalLimitType.acceptableDuration:
     descr: 'The nominal acceptable duration of the limit. Limits are commonly expressed in terms of the time limit for which the limit is normally acceptable. The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. The attribute has meaning only if the flag isInfiniteDuration is set to false, hence it shall not be exchanged when isInfiniteDuration is set to true'
     kind: literal
     label: acceptableDuration
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:OperationalLimitType.acceptableDuration
   operationalLimitType.direction:
     descr: The direction of the limit
     kind: object
     label: direction
+    max: 1
+    min: 1
     range: OperationalLimitDirectionKind
     rdfProp: cim:OperationalLimitType.direction
   operationalLimitType.isInfiniteDuration:
     descr: 'Defines if the operational limit type has infinite duration. If true, the limit has infinite duration. If false, the limit has definite duration which is defined by the attribute acceptableDuration'
     kind: literal
     label: isInfiniteDuration
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:OperationalLimitType.isInfiniteDuration
   organisation.Roles:
@@ -3992,6 +4724,7 @@ properties:
     kind: object
     label: Roles
     max: inf
+    min: 0
     range: OrganisationRoleInterface
     rdfProp: cim:Organisation.Roles
   organisationRole.Organisation:
@@ -3999,13 +4732,26 @@ properties:
     inverseOf: organisation.Roles
     kind: object
     label: Organisation
+    max: 1
+    min: 0
     range: Organisation
     rdfProp: cim:OrganisationRole.Organisation
+  powerSystemResource.Assets:
+    descr: 'All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment'
+    inverseOf: asset.PowerSystemResources
+    kind: object
+    label: Assets
+    max: inf
+    min: 0
+    range: AssetInterface
+    rdfProp: cim:PowerSystemResource.Assets
   powerSystemResource.Location:
     descr: Location of this power system resource
     inverseOf: location.PowerSystemResources
     kind: object
     label: Location
+    max: 1
+    min: 0
     range: Location
     rdfProp: cim:PowerSystemResource.Location
   powerSystemResource.Measurements:
@@ -4014,6 +4760,7 @@ properties:
     kind: object
     label: Measurements
     max: inf
+    min: 0
     range: MeasurementInterface
     rdfProp: cim:PowerSystemResource.Measurements
   powerTransformer.PowerTransformerEnd:
@@ -4022,12 +4769,15 @@ properties:
     kind: object
     label: PowerTransformerEnd
     max: inf
+    min: 0
     range: PowerTransformerEnd
     rdfProp: cim:PowerTransformer.PowerTransformerEnd
   powerTransformer.isPartOfGeneratorUnit:
     descr: 'Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909.  It has an impact on how the correction factors are calculated for transformers, since the transformer is not necessarily part of a synchronous machine and generating unit. It is not always possible to derive this information from the model. This is why the attribute is necessary'
     kind: literal
     label: isPartOfGeneratorUnit
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:PowerTransformer.isPartOfGeneratorUnit
   powerTransformerEnd.PowerTransformer:
@@ -4035,97 +4785,191 @@ properties:
     inverseOf: powerTransformer.PowerTransformerEnd
     kind: object
     label: PowerTransformer
+    max: 1
+    min: 1
     range: PowerTransformer
     rdfProp: cim:PowerTransformerEnd.PowerTransformer
   powerTransformerEnd.b:
     descr: Magnetizing branch susceptance (B mag).  The value can be positive or negative
     kind: literal
     label: b
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:PowerTransformerEnd.b
   powerTransformerEnd.connectionKind:
     descr: Kind of connection
     kind: object
     label: connectionKind
+    max: 1
+    min: 0
     range: WindingConnection
     rdfProp: cim:PowerTransformerEnd.connectionKind
   powerTransformerEnd.g:
     descr: Magnetizing branch conductance
     kind: literal
     label: g
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:PowerTransformerEnd.g
   powerTransformerEnd.r:
-    descr: |-
-      Resistance (star-model) of the transformer end.
-      The attribute shall be equal to or greater than zero for non-equivalent transformers
+    descr: "Resistance (star-model) of the transformer end.\r\nThe attribute shall be equal to or greater than zero for non-equivalent transformers"
     kind: literal
     label: r
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:PowerTransformerEnd.r
   powerTransformerEnd.ratedS:
-    descr: |-
-      Normal apparent power rating.
-      The attribute shall be a positive value. For a two-winding transformer the values for the high and low voltage sides shall be identical
+    descr: "Normal apparent power rating.\r\nThe attribute shall be a positive value. For a two-winding transformer the values for the high and low voltage sides shall be identical"
     kind: literal
     label: ratedS
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:PowerTransformerEnd.ratedS
   powerTransformerEnd.ratedU:
-    descr: |-
-      Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.
-      A high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.
-      The attribute shall be a positive value
+    descr: "Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.\r\nA high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.\r\nThe attribute shall be a positive value"
     kind: literal
     label: ratedU
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:PowerTransformerEnd.ratedU
   powerTransformerEnd.x:
     descr: Positive sequence series reactance (star-model) of the transformer end
     kind: literal
     label: x
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:PowerTransformerEnd.x
+  productAssetModel.AssetInfo:
+    descr: Asset information (nameplate) for this product asset model
+    inverseOf: assetInfo.ProductAssetModel
+    kind: object
+    label: AssetInfo
+    max: 1
+    min: 0
+    range: AssetInfoInterface
+    rdfProp: cim:ProductAssetModel.AssetInfo
+  productAssetModel.Manufacturer:
+    descr: Manufacturer of this asset model
+    inverseOf: manufacturer.ProductAssetModels
+    kind: object
+    label: Manufacturer
+    max: 1
+    min: 0
+    range: Manufacturer
+    rdfProp: cim:ProductAssetModel.Manufacturer
+  productAssetModel.modelNumber:
+    descr: Manufacturer's model number
+    kind: literal
+    label: modelNumber
+    max: 1
+    min: 0
+    range: string
+    rdfProp: cim:ProductAssetModel.modelNumber
+  productAssetModel.modelVersion:
+    descr: 'Version number for product model, which indicates vintage of the product'
+    kind: literal
+    label: modelVersion
+    max: 1
+    min: 0
+    range: string
+    rdfProp: cim:ProductAssetModel.modelVersion
+  productAssetModel.usageKind:
+    descr: Intended usage for this asset model
+    kind: object
+    label: usageKind
+    max: 1
+    min: 0
+    range: AssetModelUsageKind
+    rdfProp: cim:ProductAssetModel.usageKind
   prov:entity:
     descr: The entity that generated by this activity
     inverseOf: prov:wasGeneratedBy
     kind: object
     label: Entity
     max: inf
+    min: 0
     range: dcat:Dataset
     rdfProp: prov:Entity
   prov:generatedAtTime:
-    descr: |-
-      Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
-      [CIM context:
-      The date and time when the model was serialized in the document where the header is located. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]
+    descr: "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.\r\n[CIM context:\r\nThe date and time when the model was serialized in the document where the header is located. The format is an extended format according to the ISO 8601-2005. European exchanges shall refer to UTC.]"
     kind: literal
     label: generatedAtTime
+    max: 1
+    min: 0
     range: dateTime
     rdfProp: prov:generatedAtTime
   prov:wasGeneratedBy:
-    descr: |-
-      Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.
-      [CIM context:
-      Reference to an activity or the exact business nature (process, configuration) which produced or uses the model.]
+    descr: "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation.\r\n[CIM context:\r\nReference to an activity or the exact business nature (process, configuration) which produced or uses the model.]"
     inverseOf: prov:entity
     kind: object
     label: wasGeneratedBy
+    max: 1
+    min: 0
     range: dcat:Dataset
     rdfProp: prov:wasGeneratedBy
+  psys:conclusion:
+    descr: The conclusion of the property chain
+    kind: object
+    label: conclusion
+    max: inf
+    range: owl:ObjectProperty
+    rdfProp: psys:conclusion
+  psys:premise1:
+    descr: The first premise of the property chain
+    kind: object
+    label: premise 1
+    max: inf
+    range: iri
+    rdfProp: psys:premise1
+  psys:premise2:
+    descr: The second premise of the property chain
+    kind: object
+    label: premise 2
+    max: inf
+    range: iri
+    rdfProp: psys:premise2
+  psys:premise3:
+    descr: The third premise of the property chain
+    kind: object
+    label: premise 3
+    max: inf
+    range: iri
+    rdfProp: psys:premise3
+  psys:premise4:
+    descr: The fourth premise of the property chain
+    kind: object
+    label: premise 4
+    max: inf
+    range: iri
+    rdfProp: psys:premise4
+  psys:transitiveOver:
+    descr: If p transitiveOver q then p/q => p
+    kind: object
+    label: transitive over
+    max: inf
+    range: owl:ObjectProperty
+    rdfProp: psys:transitiveOver
   ratioTapChanger.TransformerEnd:
     descr: Transformer end to which this ratio tap changer belongs
     inverseOf: transformerEnd.RatioTapChanger
     kind: object
     label: TransformerEnd
+    max: 1
+    min: 1
     range: TransformerEndInterface
     rdfProp: cim:RatioTapChanger.TransformerEnd
   ratioTapChanger.stepVoltageIncrement:
-    descr: |-
-      Tap step increment, in per cent of rated voltage of the power transformer end, per step position.
-      When the increment is negative, the voltage decreases when the tap step increases
+    descr: "Tap step increment, in per cent of rated voltage of the power transformer end, per step position.\r\nWhen the increment is negative, the voltage decreases when the tap step increases"
     kind: literal
     label: stepVoltageIncrement
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:RatioTapChanger.stepVoltageIncrement
   regulatingCondEq.RegulatingControl:
@@ -4133,12 +4977,16 @@ properties:
     inverseOf: regulatingControl.RegulatingCondEq
     kind: object
     label: RegulatingControl
+    max: 1
+    min: 0
     range: RegulatingControlInterface
     rdfProp: cim:RegulatingCondEq.RegulatingControl
   regulatingCondEq.controlEnabled:
     descr: 'Specifies the regulation status of the equipment.  True is regulating, false is not regulating'
     kind: literal
     label: controlEnabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:RegulatingCondEq.controlEnabled
   regulatingControl.RegulatingCondEq:
@@ -4147,6 +4995,7 @@ properties:
     kind: object
     label: RegulatingCondEq
     max: inf
+    min: 0
     range: RegulatingCondEqInterface
     rdfProp: cim:RegulatingControl.RegulatingCondEq
   regulatingControl.Terminal:
@@ -4154,44 +5003,56 @@ properties:
     inverseOf: terminal.RegulatingControl
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: Terminal
     rdfProp: cim:RegulatingControl.Terminal
   regulatingControl.discrete:
     descr: 'The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators'
     kind: literal
     label: discrete
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:RegulatingControl.discrete
   regulatingControl.enabled:
     descr: The flag tells if regulation is enabled
     kind: literal
     label: enabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:RegulatingControl.enabled
   regulatingControl.mode:
     descr: The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule
     kind: object
     label: mode
+    max: 1
+    min: 1
     range: RegulatingControlModeKind
     rdfProp: cim:RegulatingControl.mode
   regulatingControl.targetDeadband:
-    descr: |-
-      This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband is to be ignored.
-      Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV
+    descr: "This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to \"false\", the RegulatingControl.targetDeadband is to be ignored.\r\nNote that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV"
     kind: literal
     label: targetDeadband
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:RegulatingControl.targetDeadband
   regulatingControl.targetValue:
     descr: The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute
     kind: literal
     label: targetValue
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:RegulatingControl.targetValue
   regulatingControl.targetValueUnitMultiplier:
     descr: Specify the multiplier for used for the targetValue
     kind: object
     label: targetValueUnitMultiplier
+    max: 1
+    min: 1
     range: UnitMultiplier
     rdfProp: cim:RegulatingControl.targetValueUnitMultiplier
   rotatingMachine.GeneratingUnit:
@@ -4199,30 +5060,32 @@ properties:
     inverseOf: generatingUnit.RotatingMachine
     kind: object
     label: GeneratingUnit
+    max: 1
+    min: 0
     range: GeneratingUnit
     rdfProp: cim:RotatingMachine.GeneratingUnit
   rotatingMachine.p:
-    descr: |-
-      Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
-      Starting value for a steady state solution
+    descr: "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nStarting value for a steady state solution"
     kind: literal
     label: p
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:RotatingMachine.p
   rotatingMachine.q:
-    descr: |-
-      Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
-      Starting value for a steady state solution
+    descr: "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.\r\nStarting value for a steady state solution"
     kind: literal
     label: q
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:RotatingMachine.q
   rotatingMachine.ratedS:
-    descr: |-
-      Nameplate apparent power rating for the unit.
-      The attribute shall have a positive value
+    descr: "Nameplate apparent power rating for the unit.\r\nThe attribute shall have a positive value"
     kind: literal
     label: ratedS
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:RotatingMachine.ratedS
   shuntCompensator.SvShuntCompensatorSections:
@@ -4230,44 +5093,73 @@ properties:
     inverseOf: svShuntCompensatorSections.ShuntCompensator
     kind: object
     label: SvShuntCompensatorSections
+    max: 1
+    min: 0
     range: SvShuntCompensatorSections
     rdfProp: cim:ShuntCompensator.SvShuntCompensatorSections
   shuntCompensator.aVRDelay:
     descr: An automatic voltage regulation delay (AVRDelay) which is the time delay from a change in voltage to when the capacitor is allowed to change state. This filters out temporary changes in voltage
     kind: literal
     label: aVRDelay
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:ShuntCompensator.aVRDelay
   shuntCompensator.maximumSections:
     descr: The maximum number of sections that may be switched in
     kind: literal
     label: maximumSections
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:ShuntCompensator.maximumSections
   shuntCompensator.nomU:
     descr: The voltage at which the nominal reactive power may be calculated. This should normally be within 10% of the voltage at which the capacitor is connected to the network
     kind: literal
     label: nomU
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ShuntCompensator.nomU
   shuntCompensator.normalSections:
     descr: The normal number of sections switched in. The value shall be between zero and ShuntCompensator.maximumSections
     kind: literal
     label: normalSections
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:ShuntCompensator.normalSections
   shuntCompensator.sections:
     descr: 'Shunt compensator sections in use. Starting value for steady state solution. The attribute shall be a positive value or zero. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input.  For LinearShuntConpensator the value shall be between zero and ShuntCompensator.maximumSections'
     kind: literal
     label: sections
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:ShuntCompensator.sections
+  shuntCompensatorInfo.ratedReactivePower:
+    descr: Rated reactive power
+    kind: object
+    label: ratedReactivePower
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:ShuntCompensatorInfo.ratedReactivePower
+  shuntCompensatorInfo.ratedVoltage:
+    descr: Rated voltage
+    kind: object
+    label: ratedVoltage
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:ShuntCompensatorInfo.ratedVoltage
   subGeographicalRegion.Lines:
     descr: The lines within the sub-geographical region
     inverseOf: line.Region
     kind: object
     label: Lines
     max: inf
+    min: 0
     range: Line
     rdfProp: cim:SubGeographicalRegion.Lines
   subGeographicalRegion.Region:
@@ -4275,6 +5167,8 @@ properties:
     inverseOf: geographicalRegion.Regions
     kind: object
     label: Region
+    max: 1
+    min: 1
     range: GeographicalRegion
     rdfProp: cim:SubGeographicalRegion.Region
   subGeographicalRegion.Substations:
@@ -4283,6 +5177,7 @@ properties:
     kind: object
     label: Substations
     max: inf
+    min: 0
     range: Substation
     rdfProp: cim:SubGeographicalRegion.Substations
   subLoadArea.LoadArea:
@@ -4290,6 +5185,8 @@ properties:
     inverseOf: loadArea.SubLoadAreas
     kind: object
     label: LoadArea
+    max: 1
+    min: 1
     range: LoadArea
     rdfProp: cim:SubLoadArea.LoadArea
   subLoadArea.LoadGroups:
@@ -4298,6 +5195,7 @@ properties:
     kind: object
     label: LoadGroups
     max: inf
+    min: 1
     range: LoadGroupInterface
     rdfProp: cim:SubLoadArea.LoadGroups
   substation.Region:
@@ -4305,6 +5203,8 @@ properties:
     inverseOf: subGeographicalRegion.Substations
     kind: object
     label: Region
+    max: 1
+    min: 1
     range: SubGeographicalRegion
     rdfProp: cim:Substation.Region
   substation.VoltageLevels:
@@ -4313,6 +5213,7 @@ properties:
     kind: object
     label: VoltageLevels
     max: inf
+    min: 0
     range: VoltageLevel
     rdfProp: cim:Substation.VoltageLevels
   svPowerFlow.Terminal:
@@ -4320,18 +5221,24 @@ properties:
     inverseOf: terminal.SvPowerFlow
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: Terminal
     rdfProp: cim:SvPowerFlow.Terminal
   svPowerFlow.p:
     descr: 'The active power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment'
     kind: literal
     label: p
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvPowerFlow.p
   svPowerFlow.q:
     descr: 'The reactive power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment'
     kind: literal
     label: q
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvPowerFlow.q
   svShuntCompensatorSections.ShuntCompensator:
@@ -4339,12 +5246,16 @@ properties:
     inverseOf: shuntCompensator.SvShuntCompensatorSections
     kind: object
     label: ShuntCompensator
+    max: 1
+    min: 1
     range: ShuntCompensatorInterface
     rdfProp: cim:SvShuntCompensatorSections.ShuntCompensator
   svShuntCompensatorSections.sections:
     descr: The number of sections in service as a continuous variable. The attribute shall be a positive value or zero. To get integer value scale with ShuntCompensator.bPerSection
     kind: literal
     label: sections
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvShuntCompensatorSections.sections
   svStatus.ConductingEquipment:
@@ -4352,12 +5263,16 @@ properties:
     inverseOf: conductingEquipment.SvStatus
     kind: object
     label: ConductingEquipment
+    max: 1
+    min: 1
     range: ConductingEquipmentInterface
     rdfProp: cim:SvStatus.ConductingEquipment
   svStatus.inService:
     descr: The in service status as a result of topology processing.  It indicates if the equipment is considered as energized by the power flow. It reflects if the equipment is connected within a solvable island.  It does not necessarily reflect whether or not the island was solved by the power flow
     kind: literal
     label: inService
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:SvStatus.inService
   svSwitch.Switch:
@@ -4365,12 +5280,16 @@ properties:
     inverseOf: switch.SvSwitch
     kind: object
     label: Switch
+    max: 1
+    min: 1
     range: SwitchInterface
     rdfProp: cim:SvSwitch.Switch
   svSwitch.open:
     descr: The attribute tells if the computed state of the switch is considered open
     kind: literal
     label: open
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:SvSwitch.open
   svTapStep.TapChanger:
@@ -4378,12 +5297,16 @@ properties:
     inverseOf: tapChanger.SvTapStep
     kind: object
     label: TapChanger
+    max: 1
+    min: 1
     range: TapChangerInterface
     rdfProp: cim:SvTapStep.TapChanger
   svTapStep.position:
     descr: 'The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions'
     kind: literal
     label: position
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvTapStep.position
   svVoltage.TopologicalNode:
@@ -4391,18 +5314,24 @@ properties:
     inverseOf: topologicalNode.SvVoltage
     kind: object
     label: TopologicalNode
+    max: 1
+    min: 1
     range: TopologicalNode
     rdfProp: cim:SvVoltage.TopologicalNode
   svVoltage.angle:
     descr: The voltage angle of the topological node complex voltage with respect to system reference
     kind: literal
     label: angle
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvVoltage.angle
   svVoltage.v:
     descr: The voltage magnitude at the topological node. The attribute shall be a positive value
     kind: literal
     label: v
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SvVoltage.v
   switch.SvSwitch:
@@ -4411,86 +5340,135 @@ properties:
     kind: object
     label: SvSwitch
     max: inf
+    min: 0
     range: SvSwitch
     rdfProp: cim:Switch.SvSwitch
   switch.locked:
-    descr: |-
-      If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:
-      <ul>
-      	<li>locked=true and Switch.open=true. The resulting state is open and locked;</li>
-      	<li>locked=false and Switch.open=true. The resulting state is open;</li>
-      	<li>locked=false and Switch.open=false. The resulting state is closed.</li>
-      </ul>
+    descr: "If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:\r\n<ul>\r\n\t<li>locked=true and Switch.open=true. The resulting state is open and locked;</li>\r\n\t<li>locked=false and Switch.open=true. The resulting state is open;</li>\r\n\t<li>locked=false and Switch.open=false. The resulting state is closed.</li>\r\n</ul>"
     kind: literal
     label: locked
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Switch.locked
   switch.normalOpen:
     descr: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen
     kind: literal
     label: normalOpen
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Switch.normalOpen
   switch.open:
     descr: The attribute tells if the switch is considered open when used as input to topology processing
     kind: literal
     label: open
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Switch.open
   switch.ratedCurrent:
-    descr: |-
-      The maximum continuous current carrying capacity in amps governed by the device material and construction.
-      The attribute shall be a positive value
+    descr: "The maximum continuous current carrying capacity in amps governed by the device material and construction.\r\nThe attribute shall be a positive value"
     kind: literal
     label: ratedCurrent
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:Switch.ratedCurrent
   switch.retained:
     descr: Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow
     kind: literal
     label: retained
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:Switch.retained
+  switchInfo.breakingCapacity:
+    descr: The maximum fault current a breaking device can break safely under prescribed conditions of use
+    kind: object
+    label: breakingCapacity
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:SwitchInfo.breakingCapacity
+  switchInfo.isUnganged:
+    descr: 'If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)'
+    kind: literal
+    label: isUnganged
+    max: 1
+    min: 0
+    range: boolean
+    rdfProp: cim:SwitchInfo.isUnganged
+  switchInfo.ratedCurrent:
+    descr: Rated current
+    kind: object
+    label: ratedCurrent
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:SwitchInfo.ratedCurrent
+  switchInfo.ratedVoltage:
+    descr: Rated voltage
+    kind: object
+    label: ratedVoltage
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:SwitchInfo.ratedVoltage
   synchronousMachine.maxQ:
     descr: Maximum reactive power limit. This is the maximum (nameplate) limit for the unit
     kind: literal
     label: maxQ
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:SynchronousMachine.maxQ
   synchronousMachine.minQ:
     descr: Minimum reactive power limit for the unit
     kind: literal
     label: minQ
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:SynchronousMachine.minQ
   synchronousMachine.operatingMode:
     descr: Current mode of operation
     kind: object
     label: operatingMode
+    max: 1
+    min: 1
     range: SynchronousMachineOperatingMode
     rdfProp: cim:SynchronousMachine.operatingMode
   synchronousMachine.qPercent:
     descr: Part of the coordinated reactive control that comes from this machine. The attribute is used as a participation factor not necessarily summing up to 100% for the participating devices in the control
     kind: literal
     label: qPercent
+    max: 1
+    min: 0
     range: double
     rdfProp: cim:SynchronousMachine.qPercent
   synchronousMachine.r:
     descr: 'Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909'
     kind: literal
     label: r
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:SynchronousMachine.r
   synchronousMachine.referencePriority:
     descr: Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on
     kind: literal
     label: referencePriority
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:SynchronousMachine.referencePriority
   synchronousMachine.type:
     descr: Modes that this synchronous machine can operate in
     kind: object
     label: type
+    max: 1
+    min: 1
     range: SynchronousMachineKind
     rdfProp: cim:SynchronousMachine.type
   tapChanger.SvTapStep:
@@ -4498,6 +5476,8 @@ properties:
     inverseOf: svTapStep.TapChanger
     kind: object
     label: SvTapStep
+    max: 1
+    min: 0
     range: SvTapStep
     rdfProp: cim:TapChanger.SvTapStep
   tapChanger.TapChangerControl:
@@ -4505,64 +5485,72 @@ properties:
     inverseOf: tapChangerControl.TapChanger
     kind: object
     label: TapChangerControl
+    max: 1
+    min: 0
     range: TapChangerControl
     rdfProp: cim:TapChanger.TapChangerControl
   tapChanger.controlEnabled:
     descr: 'Specifies the regulation status of the equipment.  True is regulating, false is not regulating'
     kind: literal
     label: controlEnabled
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:TapChanger.controlEnabled
   tapChanger.highStep:
-    descr: |-
-      Highest possible tap step position, advance from neutral.
-      The attribute shall be greater than lowStep
+    descr: "Highest possible tap step position, advance from neutral.\r\nThe attribute shall be greater than lowStep"
     kind: literal
     label: highStep
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:TapChanger.highStep
   tapChanger.lowStep:
     descr: 'Lowest possible tap step position, retard from neutral'
     kind: literal
     label: lowStep
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:TapChanger.lowStep
   tapChanger.ltcFlag:
     descr: Specifies whether or not a TapChanger has load tap changing capabilities
     kind: literal
     label: ltcFlag
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:TapChanger.ltcFlag
   tapChanger.neutralStep:
-    descr: |-
-      The neutral tap step position for this winding.
-      The attribute shall be equal to or greater than lowStep and equal or less than highStep.
-      It is the step position where the voltage is neutralU when the other terminals of the transformer are at the ratedU.  If there are other tap changers on the transformer those taps are kept constant at their neutralStep
+    descr: "The neutral tap step position for this winding.\r\nThe attribute shall be equal to or greater than lowStep and equal or less than highStep.\r\nIt is the step position where the voltage is neutralU when the other terminals of the transformer are at the ratedU.  If there are other tap changers on the transformer those taps are kept constant at their neutralStep"
     kind: literal
     label: neutralStep
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:TapChanger.neutralStep
   tapChanger.neutralU:
     descr: 'Voltage at which the winding operates at the neutral tap setting. It is the voltage at the terminal of the PowerTransformerEnd associated with the tap changer when all tap changers on the transformer are at their neutralStep position.  Normally neutralU of the tap changer is the same as ratedU of the PowerTransformerEnd, but it can differ in special cases such as when the tapping mechanism is separate from the winding more common on lower voltage transformers. This attribute is not relevant for PhaseTapChangerAsymmetrical,'
     kind: literal
     label: neutralU
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:TapChanger.neutralU
   tapChanger.normalStep:
-    descr: |-
-      The tap step position used in "normal" network operation for this winding. For a "Fixed" tap changer indicates the current physical tap setting.
-      The attribute shall be equal to or greater than lowStep and equal to or less than highStep
+    descr: "The tap step position used in \"normal\" network operation for this winding. For a \"Fixed\" tap changer indicates the current physical tap setting.\r\nThe attribute shall be equal to or greater than lowStep and equal to or less than highStep"
     kind: literal
     label: normalStep
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:TapChanger.normalStep
   tapChanger.step:
-    descr: |-
-      Tap changer position.
-      Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.
-      The attribute shall be equal to or greater than lowStep and equal to or less than highStep
+    descr: "Tap changer position.\r\nStarting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.\r\nThe attribute shall be equal to or greater than lowStep and equal to or less than highStep"
     kind: literal
     label: step
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:TapChanger.step
   tapChangerControl.TapChanger:
@@ -4571,6 +5559,7 @@ properties:
     kind: object
     label: TapChanger
     max: inf
+    min: 1
     range: TapChangerInterface
     rdfProp: cim:TapChangerControl.TapChanger
   terminal.AuxiliaryEquipment:
@@ -4579,6 +5568,7 @@ properties:
     kind: object
     label: AuxiliaryEquipment
     max: inf
+    min: 0
     range: AuxiliaryEquipmentInterface
     rdfProp: cim:Terminal.AuxiliaryEquipment
   terminal.ConductingEquipment:
@@ -4586,6 +5576,8 @@ properties:
     inverseOf: conductingEquipment.Terminals
     kind: object
     label: ConductingEquipment
+    max: 1
+    min: 1
     range: ConductingEquipmentInterface
     rdfProp: cim:Terminal.ConductingEquipment
   terminal.ConnectivityNode:
@@ -4593,6 +5585,8 @@ properties:
     inverseOf: connectivityNode.Terminals
     kind: object
     label: ConnectivityNode
+    max: 1
+    min: 0
     range: ConnectivityNode
     rdfProp: cim:Terminal.ConnectivityNode
   terminal.RegulatingControl:
@@ -4601,6 +5595,7 @@ properties:
     kind: object
     label: RegulatingControl
     max: inf
+    min: 0
     range: RegulatingControlInterface
     rdfProp: cim:Terminal.RegulatingControl
   terminal.SvPowerFlow:
@@ -4608,6 +5603,8 @@ properties:
     inverseOf: svPowerFlow.Terminal
     kind: object
     label: SvPowerFlow
+    max: 1
+    min: 0
     range: SvPowerFlow
     rdfProp: cim:Terminal.SvPowerFlow
   terminal.TopologicalNode:
@@ -4615,6 +5612,8 @@ properties:
     inverseOf: topologicalNode.Terminal
     kind: object
     label: TopologicalNode
+    max: 1
+    min: 0
     range: TopologicalNode
     rdfProp: cim:Terminal.TopologicalNode
   terminal.TransformerEnd:
@@ -4623,18 +5622,23 @@ properties:
     kind: object
     label: TransformerEnd
     max: inf
+    min: 0
     range: TransformerEndInterface
     rdfProp: cim:Terminal.TransformerEnd
   terminal.phases:
     descr: 'Represents the normal network phasing condition. If the attribute is missing, three phases (ABC) shall be assumed, except for terminals of grounding classes (specializations of EarthFaultCompensator, GroundDisconnector, and Ground) which will be assumed to be N. Therefore, phase code ABCN is explicitly declared when needed, e.g. for star point grounding equipment. The phase code on terminals connecting same ConnectivityNode or same TopologicalNode as well as for equipment between two terminals shall'
     kind: object
     label: phases
+    max: 1
+    min: 0
     range: PhaseCode
     rdfProp: cim:Terminal.phases
   textDiagramObject.text:
     descr: The text that is displayed by this text diagram object
     kind: literal
     label: text
+    max: 1
+    min: 1
     range: string
     rdfProp: cim:TextDiagramObject.text
   topologicalIsland.AngleRefTopologicalNode:
@@ -4642,6 +5646,8 @@ properties:
     inverseOf: topologicalNode.AngleRefTopologicalIsland
     kind: object
     label: AngleRefTopologicalNode
+    max: 1
+    min: 1
     range: TopologicalNode
     rdfProp: cim:TopologicalIsland.AngleRefTopologicalNode
   topologicalIsland.TopologicalNodes:
@@ -4650,6 +5656,7 @@ properties:
     kind: object
     label: TopologicalNodes
     max: inf
+    min: 1
     range: TopologicalNode
     rdfProp: cim:TopologicalIsland.TopologicalNodes
   topologicalNode.AngleRefTopologicalIsland:
@@ -4657,6 +5664,8 @@ properties:
     inverseOf: topologicalIsland.AngleRefTopologicalNode
     kind: object
     label: AngleRefTopologicalIsland
+    max: 1
+    min: 0
     range: TopologicalIsland
     rdfProp: cim:TopologicalNode.AngleRefTopologicalIsland
   topologicalNode.BaseVoltage:
@@ -4664,6 +5673,8 @@ properties:
     inverseOf: baseVoltage.TopologicalNode
     kind: object
     label: BaseVoltage
+    max: 1
+    min: 1
     range: BaseVoltage
     rdfProp: cim:TopologicalNode.BaseVoltage
   topologicalNode.ConnectivityNodeContainer:
@@ -4671,6 +5682,8 @@ properties:
     inverseOf: connectivityNodeContainer.TopologicalNode
     kind: object
     label: ConnectivityNodeContainer
+    max: 1
+    min: 1
     range: ConnectivityNodeContainerInterface
     rdfProp: cim:TopologicalNode.ConnectivityNodeContainer
   topologicalNode.ConnectivityNodes:
@@ -4679,6 +5692,7 @@ properties:
     kind: object
     label: ConnectivityNodes
     max: inf
+    min: 0
     range: ConnectivityNode
     rdfProp: cim:TopologicalNode.ConnectivityNodes
   topologicalNode.SvVoltage:
@@ -4686,6 +5700,8 @@ properties:
     inverseOf: svVoltage.TopologicalNode
     kind: object
     label: SvVoltage
+    max: 1
+    min: 0
     range: SvVoltage
     rdfProp: cim:TopologicalNode.SvVoltage
   topologicalNode.Terminal:
@@ -4694,6 +5710,7 @@ properties:
     kind: object
     label: Terminal
     max: inf
+    min: 1
     range: Terminal
     rdfProp: cim:TopologicalNode.Terminal
   topologicalNode.TopologicalIsland:
@@ -4701,6 +5718,8 @@ properties:
     inverseOf: topologicalIsland.TopologicalNodes
     kind: object
     label: TopologicalIsland
+    max: 1
+    min: 0
     range: TopologicalIsland
     rdfProp: cim:TopologicalNode.TopologicalIsland
   transformerEnd.BaseVoltage:
@@ -4708,6 +5727,8 @@ properties:
     inverseOf: baseVoltage.TransformerEnds
     kind: object
     label: BaseVoltage
+    max: 1
+    min: 1
     range: BaseVoltage
     rdfProp: cim:TransformerEnd.BaseVoltage
   transformerEnd.RatioTapChanger:
@@ -4715,6 +5736,8 @@ properties:
     inverseOf: ratioTapChanger.TransformerEnd
     kind: object
     label: RatioTapChanger
+    max: 1
+    min: 0
     range: RatioTapChanger
     rdfProp: cim:TransformerEnd.RatioTapChanger
   transformerEnd.Terminal:
@@ -4722,25 +5745,67 @@ properties:
     inverseOf: terminal.TransformerEnd
     kind: object
     label: Terminal
+    max: 1
+    min: 1
     range: Terminal
     rdfProp: cim:TransformerEnd.Terminal
   transformerEnd.endNumber:
     descr: "Number for this transformer end, corresponding to the end's order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number"
     kind: literal
     label: endNumber
+    max: 1
+    min: 1
     range: integer
     rdfProp: cim:TransformerEnd.endNumber
   transformerEnd.grounded:
     descr: (for Yn and Zn connections) True if the neutral is solidly grounded
     kind: literal
     label: grounded
+    max: 1
+    min: 1
     range: boolean
     rdfProp: cim:TransformerEnd.grounded
+  transformerEndInfo.TransformerTankInfo:
+    descr: Transformer tank data that this end description is part of
+    inverseOf: transformerTankInfo.TransformerEndInfos
+    kind: object
+    label: TransformerTankInfo
+    max: 1
+    min: 1
+    range: TransformerTankInfo
+    rdfProp: cim:TransformerEndInfo.TransformerTankInfo
+  transformerEndInfo.ratedS:
+    descr: Normal apparent power rating
+    kind: object
+    label: ratedS
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:TransformerEndInfo.ratedS
+  transformerEndInfo.ratedU:
+    descr: 'Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings'
+    kind: object
+    label: ratedU
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:TransformerEndInfo.ratedU
+  transformerTankInfo.TransformerEndInfos:
+    descr: Data for all the ends described by this transformer tank data
+    inverseOf: transformerEndInfo.TransformerTankInfo
+    kind: object
+    label: TransformerEndInfos
+    max: inf
+    min: 1
+    range: TransformerEndInfo
+    rdfProp: cim:TransformerTankInfo.TransformerEndInfos
   voltageLevel.BaseVoltage:
     descr: The base voltage used for all equipment within the voltage level
     inverseOf: baseVoltage.VoltageLevel
     kind: object
     label: BaseVoltage
+    max: 1
+    min: 1
     range: BaseVoltage
     rdfProp: cim:VoltageLevel.BaseVoltage
   voltageLevel.Bays:
@@ -4749,6 +5814,7 @@ properties:
     kind: object
     label: Bays
     max: inf
+    min: 0
     range: Bay
     rdfProp: cim:VoltageLevel.Bays
   voltageLevel.Substation:
@@ -4756,20 +5822,82 @@ properties:
     inverseOf: substation.VoltageLevels
     kind: object
     label: Substation
+    max: 1
+    min: 1
     range: Substation
     rdfProp: cim:VoltageLevel.Substation
   voltageLimit.normalValue:
     descr: The normal limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type. The attribute shall be a positive value or zero
     kind: literal
     label: normalValue
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:VoltageLimit.normalValue
   voltageLimit.value:
     descr: Limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type. The attribute shall be a positive value or zero
     kind: literal
     label: value
+    max: 1
+    min: 1
     range: double
     rdfProp: cim:VoltageLimit.value
+  wireInfo.gmr:
+    descr: 'Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor'
+    kind: object
+    label: gmr
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:WireInfo.gmr
+  wireInfo.insulated:
+    descr: True if conductor is insulated
+    kind: literal
+    label: insulated
+    max: 1
+    min: 0
+    range: boolean
+    rdfProp: cim:WireInfo.insulated
+  wireInfo.insulationMaterial:
+    descr: (if insulated conductor) Material used for insulation
+    kind: object
+    label: insulationMaterial
+    max: 1
+    min: 0
+    range: WireInsulationKind
+    rdfProp: cim:WireInfo.insulationMaterial
+  wireInfo.rAC25:
+    descr: AC resistance per unit length of the conductor at 25 °C
+    kind: literal
+    label: rAC25
+    max: 1
+    min: 0
+    range: double
+    rdfProp: cim:WireInfo.rAC25
+  wireInfo.rAC75:
+    descr: AC resistance per unit length of the conductor at 75 °C
+    kind: literal
+    label: rAC75
+    max: 1
+    min: 0
+    range: double
+    rdfProp: cim:WireInfo.rAC75
+  wireInfo.radius:
+    descr: Outside radius of the wire
+    kind: object
+    label: radius
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:WireInfo.radius
+  wireInfo.ratedCurrent:
+    descr: Current carrying capacity of the wire under stated thermal conditions
+    kind: object
+    label: ratedCurrent
+    max: 1
+    min: 0
+    range: iri
+    rdfProp: cim:WireInfo.ratedCurrent
 specialPrefixes:
   ontology_iri: https://cim.ucaiug.io/ns#
   vocab_iri: https://cim.ucaiug.io/ns#
