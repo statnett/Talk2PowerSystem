@@ -2098,20 +2098,6 @@ cim:ShuntCompensator.SvShuntCompensatorSections a owl:ObjectProperty, owl:Functi
   rdfs:domain cim:ShuntCompensator ;
   rdfs:range cim:SvShuntCompensatorSections .
 
-cim:ShuntCompensatorInfo.ratedReactivePower a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedReactivePower" ;
-  rdfs:comment "Rated reactive power."@en ;
-  cims:dataType cim:ReactivePower ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:ShuntCompensatorInfo .
-
-cim:ShuntCompensatorInfo.ratedVoltage a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedVoltage" ;
-  rdfs:comment "Rated voltage."@en ;
-  cims:dataType cim:Voltage ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:ShuntCompensatorInfo .
-
 cim:SubGeographicalRegion.Lines a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "Lines" ;
   rdfs:comment "The lines within the sub-geographical region."@en ;
@@ -2224,27 +2210,6 @@ cim:Switch.SvSwitch a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   owl:inverseOf cim:SvSwitch.Switch ;
   rdfs:domain cim:Switch ;
   rdfs:range cim:SvSwitch .
-
-cim:SwitchInfo.breakingCapacity a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "breakingCapacity" ;
-  rdfs:comment "The maximum fault current a breaking device can break safely under prescribed conditions of use."@en ;
-  cims:dataType cim:CurrentFlow ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:SwitchInfo .
-
-cim:SwitchInfo.ratedCurrent a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedCurrent" ;
-  rdfs:comment "Rated current."@en ;
-  cims:dataType cim:CurrentFlow ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:SwitchInfo .
-
-cim:SwitchInfo.ratedVoltage a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedVoltage" ;
-  rdfs:comment "Rated voltage."@en ;
-  cims:dataType cim:Voltage ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:SwitchInfo .
 
 cim:SynchronousMachine.operatingMode a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "operatingMode" ;
@@ -2453,20 +2418,6 @@ cim:TransformerEndInfo.TransformerTankInfo a owl:ObjectProperty, owl:FunctionalP
   rdfs:domain cim:TransformerEndInfo ;
   rdfs:range cim:TransformerTankInfo .
 
-cim:TransformerEndInfo.ratedS a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedS" ;
-  rdfs:comment "Normal apparent power rating."@en ;
-  cims:dataType cim:ApparentPower ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:TransformerEndInfo .
-
-cim:TransformerEndInfo.ratedU a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedU" ;
-  rdfs:comment "Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."@en ;
-  cims:dataType cim:Voltage ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:TransformerEndInfo .
-
 cim:TransformerTankInfo.TransformerEndInfos a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "TransformerEndInfos" ;
   rdfs:comment "Data for all the ends described by this transformer tank data."@en ;
@@ -2500,33 +2451,12 @@ cim:VoltageLevel.Substation a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLevel ;
   rdfs:range cim:Substation .
 
-cim:WireInfo.gmr a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "gmr" ;
-  rdfs:comment "Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor."@en ;
-  cims:dataType cim:Length ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
-
 cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "insulationMaterial" ;
   rdfs:comment "(if insulated conductor) Material used for insulation."@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:WireInfo ;
   rdfs:range cim:WireInsulationKind .
-
-cim:WireInfo.radius a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "radius" ;
-  rdfs:comment "Outside radius of the wire."@en ;
-  cims:dataType cim:Length ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
-
-cim:WireInfo.ratedCurrent a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "ratedCurrent" ;
-  rdfs:comment "Current carrying capacity of the wire under stated thermal conditions."@en ;
-  cims:dataType cim:CurrentFlow ;
-  cims:multiplicity cims:M:0..1 ;
-  rdfs:domain cim:WireInfo .
 
 cimr:Equipment.Terminals a owl:ObjectProperty ;
   rdfs:label "terminals" ;
@@ -4255,6 +4185,24 @@ cim:ShuntCompensator.sections a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:ShuntCompensator ;
   rdfs:range xsd:float .
 
+cim:ShuntCompensatorInfo.ratedReactivePower a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedReactivePower" ;
+  rdfs:comment "Rated reactive power."@en ;
+  cim:unitSymbol cim:UnitSymbol.VAr ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:ReactivePower ;
+  rdfs:domain cim:ShuntCompensatorInfo ;
+  rdfs:range xsd:float .
+
+cim:ShuntCompensatorInfo.ratedVoltage a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedVoltage" ;
+  rdfs:comment "Rated voltage."@en ;
+  cim:unitSymbol cim:UnitSymbol.V ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:Voltage ;
+  rdfs:domain cim:ShuntCompensatorInfo ;
+  rdfs:range xsd:float .
+
 cim:SvPowerFlow.p a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "p" ;
   rdfs:comment "The active power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment."@en ;
@@ -4372,12 +4320,39 @@ cim:Switch.retained a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:Switch ;
   rdfs:range xsd:boolean .
 
+cim:SwitchInfo.breakingCapacity a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "breakingCapacity" ;
+  rdfs:comment "The maximum fault current a breaking device can break safely under prescribed conditions of use."@en ;
+  cim:unitSymbol cim:UnitSymbol.A ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:CurrentFlow ;
+  rdfs:domain cim:SwitchInfo ;
+  rdfs:range xsd:float .
+
 cim:SwitchInfo.isUnganged a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "isUnganged" ;
   rdfs:comment "If true, the switch is not ganged (i.e., a switch phase may be operated separately from other phases)."@en ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:SwitchInfo ;
   rdfs:range xsd:boolean .
+
+cim:SwitchInfo.ratedCurrent a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedCurrent" ;
+  rdfs:comment "Rated current."@en ;
+  cim:unitSymbol cim:UnitSymbol.A ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:CurrentFlow ;
+  rdfs:domain cim:SwitchInfo ;
+  rdfs:range xsd:float .
+
+cim:SwitchInfo.ratedVoltage a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedVoltage" ;
+  rdfs:comment "Rated voltage."@en ;
+  cim:unitSymbol cim:UnitSymbol.V ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:Voltage ;
+  rdfs:domain cim:SwitchInfo ;
+  rdfs:range xsd:float .
 
 cim:SynchronousMachine.maxQ a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "maxQ" ;
@@ -4517,6 +4492,24 @@ cim:TransformerEnd.grounded a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:TransformerEnd ;
   rdfs:range xsd:boolean .
 
+cim:TransformerEndInfo.ratedS a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedS" ;
+  rdfs:comment "Normal apparent power rating."@en ;
+  cim:unitSymbol cim:UnitSymbol.VA ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:ApparentPower ;
+  rdfs:domain cim:TransformerEndInfo ;
+  rdfs:range xsd:float .
+
+cim:TransformerEndInfo.ratedU a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedU" ;
+  rdfs:comment "Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings."@en ;
+  cim:unitSymbol cim:UnitSymbol.V ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:Voltage ;
+  rdfs:domain cim:TransformerEndInfo ;
+  rdfs:range xsd:float .
+
 cim:VoltageLimit.normalValue a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "normalValue" ;
   rdfs:comment "The normal limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type. The attribute shall be a positive value or zero."@en ;
@@ -4539,6 +4532,15 @@ cim:VoltageLimit.value a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:domain cim:VoltageLimit ;
   rdfs:range xsd:float .
 
+cim:WireInfo.gmr a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "gmr" ;
+  rdfs:comment "Geometric mean radius. If we replace the conductor by a thin walled tube of radius GMR, then its reactance is identical to the reactance of the actual conductor."@en ;
+  cim:unitSymbol cim:UnitSymbol.m ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:Length ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:float .
+
 cim:WireInfo.insulated a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "insulated" ;
   rdfs:comment "True if conductor is insulated."@en ;
@@ -4553,6 +4555,7 @@ cim:WireInfo.rAC25 a owl:DatatypeProperty, owl:FunctionalProperty ;
   cim:unitSymbol cim:UnitSymbol.ohmPerm ;
   cims:multiplicity cims:M:0..1 ;
   qudt:hasQuantityKind cim:ResistancePerLength ;
+  qudt:hasUnit unit:OHM-PER-M ;
   rdfs:domain cim:WireInfo ;
   rdfs:range xsd:float .
 
@@ -4563,6 +4566,25 @@ cim:WireInfo.rAC75 a owl:DatatypeProperty, owl:FunctionalProperty ;
   cim:unitSymbol cim:UnitSymbol.ohmPerm ;
   cims:multiplicity cims:M:0..1 ;
   qudt:hasQuantityKind cim:ResistancePerLength ;
+  qudt:hasUnit unit:OHM-PER-M ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:float .
+
+cim:WireInfo.radius a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "radius" ;
+  rdfs:comment "Outside radius of the wire."@en ;
+  cim:unitSymbol cim:UnitSymbol.m ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:Length ;
+  rdfs:domain cim:WireInfo ;
+  rdfs:range xsd:float .
+
+cim:WireInfo.ratedCurrent a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "ratedCurrent" ;
+  rdfs:comment "Current carrying capacity of the wire under stated thermal conditions."@en ;
+  cim:unitSymbol cim:UnitSymbol.A ;
+  cims:multiplicity cims:M:0..1 ;
+  qudt:hasQuantityKind cim:CurrentFlow ;
   rdfs:domain cim:WireInfo ;
   rdfs:range xsd:float .
 
