@@ -1,0 +1,65 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qa:   <https://www.statnett.no/Talk2PowerSystem/qa#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+
+qa: {
+
+#################################################################
+# Ontology Definition
+#################################################################
+
+qa: a owl:Ontology ;
+    rdfs:label "Talk2PowerSystem Q&A Dataset Ontology"@en ;
+    rdfs:comment "Ontology describing templates and paraphrases for the Q&A dataset in the Talk2PowerSystem project."@en ;
+    dct:creator <https://graphwise.ai> ;
+    dct:created "2025-11-14"^^xsd:date ;
+    dct:modified "2025-11-14"^^xsd:date ;
+    owl:versionInfo "1.0.0"^^xsd:string ;
+    dct:license <https://creativecommons.org/licenses/by-sa/4.0> .
+
+#################################################################
+# Classes
+#################################################################
+
+qa:Template a owl:Class ;
+    rdfs:label "Template"@en ;
+    rdfs:comment "A query template that defines a general question pattern."@en ;
+    rdfs:isDefinedBy qa: .
+
+qa:Paraphrase a owl:Class ;
+    rdfs:label "Paraphrase"@en ;
+    rdfs:comment "A paraphrase instance representing a natural language question."@en ;
+    rdfs:isDefinedBy qa: .
+
+#################################################################
+# Object Properties
+#################################################################
+
+qa:paraphrase a owl:ObjectProperty ;
+    rdfs:label "paraphrase"@en ;
+    rdfs:comment "Links a template to one of its paraphrases."@en ;
+    rdfs:domain qa:Template ;
+    rdfs:range qa:Paraphrase ;
+    rdfs:isDefinedBy qa: .
+
+#################################################################
+# Data Properties
+#################################################################
+
+qa:question a owl:DatatypeProperty ;
+    rdfs:label "question"@en ;
+    rdfs:comment "The natural language question corresponding to the paraphrase."@en ;
+    rdfs:domain qa:Paraphrase ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy qa: .
+
+qa:querySparql a owl:DatatypeProperty ;
+    rdfs:label "SPARQL query"@en ;
+    rdfs:comment "The SPARQL query corresponding to the template."@en ;
+    rdfs:domain qa:Template ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy qa: .
+
+}
