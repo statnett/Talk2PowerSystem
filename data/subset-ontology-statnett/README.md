@@ -7,7 +7,11 @@ Task: https://github.com/statnett/Talk2PowerSystem_PM/issues/202
 - [Ontology Subsets from Statnett Production Data](#ontology-subsets-from-statnett-production-data)
     - [Input and Problems](#input-and-problems)
     - [Ontology Observations](#ontology-observations)
-    - [Missing Terms](#missing-terms)
+    - [Missing Terms Per Namespace](#missing-terms-per-namespace)
+    - [EMS CIM15 Missing Terms](#ems-cim15-missing-terms)
+- [Adding Terms](#adding-terms)
+    - [Still Missing Terms](#still-missing-terms)
+    - [Unimportant Missing Terms](#unimportant-missing-terms)
 
 <!-- markdown-toc end -->
 
@@ -149,7 +153,7 @@ cim16:ACDCConverter.numberOfValves a rdf:Property ;
 ```
 - `kam` uses a non-existing prop `skos:prefSymbol` (there is `skos:prefLabel`)
 
-## Missing Terms
+## Missing Terms Per Namespace
 
 [statnett-terms-MISSING.txt](statnett-terms-MISSING.txt) is a list of the terms for which we have no definition.
 
@@ -170,9 +174,141 @@ cut -d: -f1 statnett-terms-MISSING.txt|uniq -c
 |  9 | md         | Model (old format), TODO add it                              |
 |  1 | nek        | NEK extension (nek:WireEarthInfo.WirePhaseInfo)              |
 |  1 | psys       | GW's psys:transitiveOver, ignore                             |
-| 52 | pti        | PTI extension                                                |
+| 52 | pti        | PTI/Siemens extension                                        |
 |  3 | skos       | External, TODO add it                                        |
 |  1 | statnett   | Statnett extension (statnett:PetersenCoil.mode)              |
-|  8 | uml1       | UML, not used on instance data                               |
+|  8 | uml        | UML stereotypes, not used on instance data                   |
 
 "TODO" is something that Graphwise can fix, the rest are for Statnett
+
+## EMS CIM15 Missing Terms
+
+Statnett has decided that this project should focus only on the EMS system, whcih uses CIM15. The set of missing terms is much smaller:
+- alstom:DCTieCorridor.manualRegXRampDC
+- alstom:DCTieCorridor.rampDCLimitOp
+- alstom:DCTieCorridor.rampDCLimitRef
+- alstom:SynchrocheckRelay.SynchroncheckType
+- cim:CurrentRelayAction.CurrentRelay
+- cim:GateInputPin.monitoredTerminal
+- cim:ProtectedSwitchAction.ProtectedSwitch
+- cim:ProtectiveAction.EnablingMeasurement
+- cim:ProtectiveAction.TrippingMeasurement
+- cim:RegulationAlarmDiscrete.Discrete
+- cim:RegulationAlarmDiscrete.Organisation
+- cim:ScheduleResource.NonConformLoadGroup
+- md:FullModel
+- md:Model.created
+- md:Model.description
+- md:Model.scenarioTime
+- psys:transitiveOver
+- statnett:PetersenCoil.mode
+- uml:Package a owl:Class .
+- uml:Stereotype a owl:Class .
+- uml:hasInitialValue a owl:AnnotationProperty .
+- uml:hasMultiplier a owl:AnnotationProperty .
+- uml:hasStereotype a owl:AnnotationProperty .
+- uml:hasUnits a owl:AnnotationProperty .
+- uml:id a owl:AnnotationProperty .
+
+# Adding Terms
+
+Statnett and Graphwise made an effort to find missing terms as follows:
+
+Added Alstom, CIM, ENTSO-E, FORM, NEK terms:
+- alstom:DCTieCorridor.manualRegXRampDC
+- alstom:DCTieCorridor.rampDCLimitOp
+- alstom:DCTieCorridor.rampDCLimitRef
+- alstom:SynchrocheckRelay.SynchroncheckType
+- cim:CurrentRelayAction.CurrentRelay
+- cim:GateInputPin.monitoredTerminal
+- cim:ProtectedSwitchAction.ProtectedSwitch
+- cim:ProtectiveAction.EnablingMeasurement
+- cim:ProtectiveAction.TrippingMeasurement
+- cim:RegulationAlarmDiscrete.Discrete
+- cim:RegulationAlarmDiscrete.Organisation
+- cim:ScheduleResource.NonConformLoadGroup
+- entsoe_sch:OperationalLimitType.limitType
+- form:PetersenCoilStepPoint.PetersenCoilInfo
+- nek:WireEarthInfo.WirePhaseInfo
+- statnett:PetersenCoil.mode: old namespace: reused terms extracted from CIM17
+
+Official ModelDescription ontology, it just wasn't loaded in GraphDB. Obtained from CGMES v3.0 RDFS2020 `61970-600-2_Header-AP-Voc-RDFS2019_v3-0-0.rdf` and downgraded namespace to cim15:
+- md:FullModel
+- md:Model.DependentOn
+- md:Model.Supersedes
+- md:Model.created
+- md:Model.description
+- md:Model.modelingAuthoritySet
+- md:Model.profile
+- md:Model.scenarioTime
+- md:Model.version
+
+This covers all important terms in EMS CIM15.
+
+## Still Missing Terms
+
+`pti` terms from PTI/Siemens, we do not have any ontology file covering this:
+- pti:Model.createdBy: Always "ODMS", possibly a version number.
+- pti:ACLineSegment.MET
+- pti:CsConverter.STPR
+- pti:CsConverter.TAP
+- pti:CsConverter.TMNR
+- pti:CsConverter.TMXR
+- pti:CsConverter.TRR
+- pti:CsConverter.compoundResistance
+- pti:CsConverter.rTransformer
+- pti:CsConverter.xTransformer
+- pti:DCLineSegment.METER
+- pti:DCLineSegment.VCMOD
+- pti:EnergyConsumer.dgenM
+- pti:EnergyConsumer.dgenP
+- pti:EnergyConsumer.dgenQ
+- pti:EnergyConsumer.interruptibleStatus
+- pti:GeneratingUnit.gtap
+- pti:GeneratingUnit.rmpct
+- pti:GeneratingUnit.rt
+- pti:GeneratingUnit.xt
+- pti:Line.MET
+- pti:PowerSystemResource.PlanningZone
+- pti:PowerTransformer.anstar
+- pti:PowerTransformer.cm
+- pti:PowerTransformer.connectionCode
+- pti:PowerTransformer.cr
+- pti:PowerTransformer.cw
+- pti:PowerTransformer.cx
+- pti:PowerTransformer.cz
+- pti:PowerTransformer.isCore
+- pti:PowerTransformer.nmetr
+- pti:PowerTransformer.rma
+- pti:PowerTransformer.rmi
+- pti:PowerTransformer.vmstar
+- pti:PowerTransformer.zcod
+- pti:PowerTransformerEnd.ang
+- pti:PowerTransformerEnd.nomV
+- pti:PowerTransformerEnd.rn
+- pti:PowerTransformerEnd.sBase
+- pti:PowerTransformerEnd.xn
+- pti:ShuntCompensator.adjMethod
+- pti:ShuntCompensator.blockNumber: Was not able to trace this back to any file at all, assuming it's a Siemens extension.
+- pti:ShuntCompensator.controlMode
+- pti:ShuntCompensator.rmidnt
+- pti:ShuntCompensator.rmpct
+- pti:ShuntCompensator.shuntType
+- pti:SynchronousMachine.rs
+- pti:SynchronousMachine.xs
+- pti:TopologicalNode.IDE
+- pti:TopologicalNode.PlanningZone
+- pti:WindGeneratingUnit.wmod
+- pti:WindGeneratingUnit.wpf
+
+## Unimportant Missing Terms
+- psys:transitiveOver: This is used by GraphDB reasoning
+
+The following are used only as ontology annotations, not in instance data:
+- uml:Package a owl:Class .
+- uml:Stereotype a owl:Class .
+- uml:hasInitialValue a owl:AnnotationProperty .
+- uml:hasMultiplier a owl:AnnotationProperty .
+- uml:hasStereotype a owl:AnnotationProperty .
+- uml:hasUnits a owl:AnnotationProperty .
+- uml:id a owl:AnnotationProperty .

@@ -1,0 +1,168 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix alstom: <http://www.alstom.com/grid/CIM-schema-cim15-extension#> .
+@prefix cim: <http://iec.ch/TC57/2010/CIM-schema-cim15#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix entsoe_sch: <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
+@prefix form: <https://form.statnett.no/voc/form-ksd-extensions#> .
+@prefix nek: <http://NEK.no/NK57/CIM/CIM100-Extension/1/0#> .
+@prefix statnett: <http://www.statnett.no/CIM-schema-cim15-extension#> .
+@prefix uml: <http://langdale.com.au/2005/UML#> .
+
+statnett: a owl:Ontology ;
+  dct:description "Supplementary vocabulary of terms used in Statnett EMS based on CIM15"@en ;
+  dcat:theme "vocabulary"@en ;
+  dct:creator "Statnett"@en ;
+  dct:language "en-GB" ;
+  dct:modified "2025-11-18"^^xsd:date ;
+  dct:publisher "Statnett"@en ;
+  dct:title "Statnett Supplementary Vocabulary"@en .
+
+alstom:DCTieCorridor.manualRegXRampDC a owl:DatatypeProperty, owl:FunctionalProperty, rdf:Property ;
+  rdfs:label "manualRegXRampDC" ;
+  rdfs:comment "The ramp value for the +/- X MW controls. Used for 1/ info-display and 2/ response supervision." ;
+  rdfs:domain alstom:DCTieCorridor ;
+  rdfs:isDefinedBy cim:Package_ControlArea ;
+  rdfs:range cim:ActivePower ;
+  uml:hasStereotype uml:alstom, uml:attribute ;
+  uml:id "EAID_6F18C08F_B47F_4ec6_A8F2_650CCAC1723B" .
+
+alstom:DCTieCorridor.rampDCLimitOp a owl:DatatypeProperty, owl:FunctionalProperty, rdf:Property ;
+  rdfs:label "rampDCLimitOp" ;
+  rdfs:comment "HVDC Ramp value, operational value [MW]" ;
+  rdfs:domain alstom:DCTieCorridor ;
+  rdfs:isDefinedBy cim:Package_ControlArea ;
+  rdfs:range cim:ActivePower ;
+  uml:hasStereotype uml:alstom, uml:attribute ;
+  uml:id "EAID_E1FB23FC_1848_4ea6_8565_6AD8E3C4CAC6" .
+
+alstom:DCTieCorridor.rampDCLimitRef a owl:DatatypeProperty, owl:FunctionalProperty, rdf:Property ;
+  rdfs:label "rampDCLimitRef" ;
+  rdfs:comment "HVDC Ramp value, reference value [MW]" ;
+  rdfs:domain alstom:DCTieCorridor ;
+  rdfs:isDefinedBy cim:Package_ControlArea ;
+  rdfs:range cim:ActivePower ;
+  uml:hasStereotype uml:alstom, uml:attribute ;
+  uml:id "EAID_EE1DC44A_D40F_42b3_9091_FD1A196D758F" .
+
+entsoe_sch:OperationalLimitType.limitType a owl:ObjectProperty, owl:FunctionalProperty, rdf:Property ;
+  rdfs:label "limitType" ;
+  rdfs:comment "Types of limits defined in the ENTSO-E Operational Handbook Policy 3." ;
+  rdfs:domain cim:OperationalLimitType ;
+  rdfs:isDefinedBy cim:Package_OperationalLimits ;
+  rdfs:range entsoe_sch:LimitTypeKind ;
+  uml:baseuri "http://entsoe.eu/CIM/SchemaExtension/3/1#" ;
+  uml:hasStereotype uml:attribute, uml:entsoe ;
+  uml:id "EAID_4754EC83_68CD_4ca7_BD33_CA29A513DF63" .
+
+alstom:CurrentRelay.CurrentRelayAction a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "CurrentRelayAction" ;
+  owl:inverseOf cim:CurrentRelayAction.CurrentRelay ;
+  rdfs:domain cim:CurrentRelay ;
+  rdfs:isDefinedBy cim:Package_Protection ;
+  rdfs:range alstom:CurrentRelayAction ;
+  uml:baseuri "http://www.alstom.com/grid/CIM-schema-cim15-extension#" ;
+  uml:id "EAID_6D279021_86B8_403b_8391_B2B53EBF737A-A" .
+
+alstom:Measurement.ProtectiveAction a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "ProtectiveAction" ;
+  owl:inverseOf cim:ProtectiveAction.EnablingMeasurement ;
+  rdfs:domain cim:Measurement ;
+  rdfs:isDefinedBy cim:Package_SIPS ;
+  rdfs:range alstom:ProtectiveAction ;
+  uml:id "EAID_A1A1ED1A_5A5C_444e_A46A_34807690905A-A" .
+
+alstom:Measurement.ProtectiveActionTripping a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "ProtectiveActionTripping" ;
+  owl:inverseOf cim:ProtectiveAction.TrippingMeasurement ;
+  rdfs:domain cim:Measurement ;
+  rdfs:isDefinedBy cim:Package_SIPS ;
+  rdfs:range alstom:ProtectiveAction ;
+  uml:id "EAID_7F8070DE_2383_4ec9_9A8E_A869F33F746D-B" .
+
+alstom:SynchrocheckRelay.SynchroncheckType a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "SynchroncheckType" ;
+  owl:inverseOf cim:SynchroncheckType.SynchrocheckRelay ;
+  rdfs:domain cim:SynchrocheckRelay ;
+  rdfs:isDefinedBy cim:Package_Protection ;
+  rdfs:range alstom:SynchroncheckType ;
+  uml:id "EAID_CF49DC8B_19BF_4a66_BEC6_C85460468DA3-A" .
+
+cim:GateInputPin.monitoredTerminal a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "monitoredTerminal" ;
+  rdfs:comment "Reference to the Terminal from which the flow is monitored for this GateInputPin. The monitored Terminal shall be provided whenever the attributes alarmLowerBound, alarmUpperBound and monitoredFlowKind are also provided. This is applicable whatever the type of GateInputPin if flow monitoring is associated with this GateInputPin. For example, this is used to define the terminal used for flow monitoring on a PinEquipment of type “connected”. For another example, this is used to define the terminal used for flow monitoring on a PinTerminal (in this case, the referenced monitoredTerminal and Terminal have both to be defined)." ;
+  owl:inverseOf alstom:Terminal.GateInputPin ;
+  rdfs:domain alstom:GateInputPin ;
+  rdfs:isDefinedBy cim:Package_SIPS ;
+  rdfs:range cim:Terminal ;
+  uml:id "EAID_DD46A8A3_7515_4110_9043_A2D8DDC8A336-B" .
+
+cim:PetersenCoil.mode a owl:ObjectProperty, owl:FunctionalProperty, rdf:Property ;
+  rdfs:label "Modus"@nb, "mode" ;
+  rdfs:comment "The mode of operation of the Petersen coil." ;
+  rdfs:domain cim:PetersenCoil ;
+  rdfs:range cim:PetersenCoilModeKind ;
+  uml:hasStereotype uml:attribute ;
+  uml:id "_9E0AA2E1-5653-4ebc-B5B4-49027065D01D", "_DD0DE607-2B79-4e1d-A95B-0BADF150E632" .
+
+cim:PetersenCoilModeKind a owl:Class ;
+  rdfs:label "PetersenCoilModeKind" ;
+  rdfs:comment "The mode of operation for a Petersen coil." ;
+  uml:hasStereotype uml:enumeration ;
+  uml:id "_A3B138A4-5F19-4e20-BDB3-AAD9C53E9436", "_D7A85068-34C3-4fcd-ABCF-8D0867FEC0FF" .
+
+cim:ProtectedSwitchAction.ProtectedSwitch a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "ProtectedSwitch" ;
+  owl:inverseOf cim:ProtectedSwitchAction.ProtectedSwitch ;
+  rdfs:domain alstom:ProtectedSwitchAction ;
+  rdfs:isDefinedBy cim:Package_Protection ;
+  rdfs:range cim:ProtectedSwitch ;
+  uml:baseuri "http://www.alstom.com/grid/CIM-schema-cim15-extension#" ;
+  uml:id "EAID_F37D4B7F_A613_4d8f_BCEE_B853ACC39A7B-B" .
+
+cim:ScheduleResource.NonConformLoadGroup a owl:ObjectProperty, owl:FunctionalProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "NonConformLoadGroup" ;
+  owl:inverseOf statnett:NonConformLoadGroup.ScheduleResource ;
+  rdfs:domain statnett:ScheduleResource ;
+  rdfs:isDefinedBy cim:Package_Market ;
+  rdfs:range cim:NonConformLoadGroup ;
+  uml:baseuri "http://www.statnett.no/CIM-schema-cim15-extension#" ;
+  uml:id "EAID_C8EBBEF8_DA24_4696_B8C5_CD0E08BD9CCF-B" .
+
+form:PetersenCoilInfo.PetersenCoilStepPoint a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "PetersenCoilStepPoint" ;
+  owl:inverseOf form:PetersenCoilStepPoint.PetersenCoilInfo ;
+  rdfs:domain nek:PetersenCoilInfo ;
+  rdfs:isDefinedBy form:AutofosInformalPatches ;
+  rdfs:range nek:PetersenCoilStepPoint ;
+  uml:baseuri "https://form.statnett.no/voc/form-ksd-extensions#" ;
+  uml:hasStereotype uml:aggregateOf, uml:nek.no .
+
+nek:WireEarthInfo.WirePhaseInfo a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "WirePhaseInfo" ;
+  owl:inverseOf nek:WirePhaseInfo.WireEarthInfo ;
+  rdfs:domain nek:WireEarthInfo ;
+  rdfs:isDefinedBy nek:Package_AssetInfo ;
+  rdfs:range cim:WirePhaseInfo ;
+  uml:id "EAID_29CC0846_9E76_43b6_B71D_0B6ADB4661B9-B" .
+
+statnett:Discrete.RegulationAlarmDiscrete a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "RegulationAlarmDiscrete" ;
+  owl:inverseOf cim:RegulationAlarmDiscrete.Discrete ;
+  rdfs:domain cim:Discrete ;
+  rdfs:isDefinedBy cim:Package_Market ;
+  rdfs:range statnett:RegulationAlarmDiscrete ;
+  uml:id "EAID_043E9125_45C7_47ca_B0BC_65762A1692C9-A" .
+
+statnett:RegulationAlarmDiscrete.Organisation a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "Organisation" ;
+  owl:inverseOf statnett:Organisation.RegulationAlarmDiscrete ;
+  rdfs:domain statnett:RegulationAlarmDiscrete ;
+  rdfs:isDefinedBy cim:Package_Market ;
+  rdfs:range cim:Organisation ;
+  uml:id "EAID_A39B507E_C548_4fe4_87DA_A74001AC6711-A" .
+
+
