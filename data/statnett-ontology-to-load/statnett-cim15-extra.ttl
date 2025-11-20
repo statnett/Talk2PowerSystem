@@ -114,6 +114,18 @@ cim:PetersenCoilModeKind a owl:Class ;
   uml:hasStereotype uml:enumeration ;
   uml:id "_A3B138A4-5F19-4e20-BDB3-AAD9C53E9436", "_D7A85068-34C3-4fcd-ABCF-8D0867FEC0FF" .
 
+cim:PetersenCoilModeKind.automaticPositioning a cim:PetersenCoilModeKind ;
+  rdfs:comment "Automatic positioning." ;
+  rdfs:label "automaticPositioning".
+
+cim:PetersenCoilModeKind.fixed a cim:PetersenCoilModeKind ;
+  rdfs:comment "Fixed position." ;
+  rdfs:label "fixed".
+
+cim:PetersenCoilModeKind.manual a cim:PetersenCoilModeKind ;
+  rdfs:comment "Manual positioning." ;
+  rdfs:label "manual.
+
 cim:ProtectedSwitchAction.ProtectedSwitch a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "ProtectedSwitch" ;
   owl:inverseOf cim:ProtectedSwitchAction.ProtectedSwitch ;
