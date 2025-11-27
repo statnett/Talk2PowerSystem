@@ -1,19 +1,19 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix alstom: <http://www.alstom.com/grid/CIM-schema-cim15-extension#> .
-@prefix cim: <http://iec.ch/TC57/2010/CIM-schema-cim15#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix alstom:     <http://www.alstom.com/grid/CIM-schema-cim15-extension#> .
+@prefix cim:        <http://iec.ch/TC57/CIM100#> . # cim17 not <http://iec.ch/TC57/2010/CIM-schema-cim15#> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix dct:        <http://purl.org/dc/terms/> .
 @prefix entsoe_sch: <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
-@prefix form: <https://form.statnett.no/voc/form-ksd-extensions#> .
-@prefix nek: <http://NEK.no/NK57/CIM/CIM100-Extension/1/0#> .
-@prefix statnett: <http://www.statnett.no/CIM-schema-cim15-extension#> .
-@prefix uml: <http://langdale.com.au/2005/UML#> .
+@prefix form:       <https://form.statnett.no/voc/form-ksd-extensions#> .
+@prefix nek:        <http://NEK.no/NK57/CIM/CIM100-Extension/1/0#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix statnett:   <http://www.statnett.no/CIM-schema-cim15-extension#> .
+@prefix uml:        <http://langdale.com.au/2005/UML#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
 
 statnett: a owl:Ontology ;
-  dct:description "Supplementary vocabulary of terms used in Statnett EMS based on CIM15"@en ;
+  dct:description "Supplementary vocabulary of terms used in Statnett EMS based on CIM17"@en ;
   dcat:theme "vocabulary"@en ;
   dct:creator "Statnett"@en ;
   dct:language "en-GB" ;
@@ -124,7 +124,7 @@ cim:PetersenCoilModeKind.fixed a cim:PetersenCoilModeKind ;
 
 cim:PetersenCoilModeKind.manual a cim:PetersenCoilModeKind ;
   rdfs:comment "Manual positioning." ;
-  rdfs:label "manual.
+  rdfs:label "manual".
 
 cim:ProtectedSwitchAction.ProtectedSwitch a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "ProtectedSwitch" ;
