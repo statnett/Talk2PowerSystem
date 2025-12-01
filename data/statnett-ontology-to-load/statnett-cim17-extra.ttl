@@ -91,7 +91,7 @@ alstom:SynchrocheckRelay.SynchroncheckType a owl:ObjectProperty, owl:FunctionalP
   rdfs:range alstom:SynchroncheckType ;
   uml:id "EAID_CF49DC8B_19BF_4a66_BEC6_C85460468DA3-A" .
 
-cim:GateInputPin.monitoredTerminal a owl:ObjectProperty, owl:FunctionalProperty ;
+alstom:GateInputPin.monitoredTerminal a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "monitoredTerminal" ;
   rdfs:comment "Reference to the Terminal from which the flow is monitored for this GateInputPin. The monitored Terminal shall be provided whenever the attributes alarmLowerBound, alarmUpperBound and monitoredFlowKind are also provided. This is applicable whatever the type of GateInputPin if flow monitoring is associated with this GateInputPin. For example, this is used to define the terminal used for flow monitoring on a PinEquipment of type “connected”. For another example, this is used to define the terminal used for flow monitoring on a PinTerminal (in this case, the referenced monitoredTerminal and Terminal have both to be defined)." ;
   owl:inverseOf alstom:Terminal.GateInputPin ;
