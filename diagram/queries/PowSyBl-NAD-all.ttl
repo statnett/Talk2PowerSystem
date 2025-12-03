@@ -1,0 +1,19 @@
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix cimr: <https://cim.ucaiug.io/rules#> .
+@prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<urn:uuid:b4e5d8e1-709b-4be8-af70-a50f2941c281> a cimr:Diagram;
+  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Network-Area-Diagram";
+  cim:IdentifiedObject.mRID "b4e5d8e1-709b-4be8-af70-a50f2941c281";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of all Nordic44 and Telemark120 voltage levels";
+  cimr:Diagram.PowerSystemResource <urn:uuid:2dd9048c-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimr:Diagram.link "PowSyBl-NAD-all.svg" .

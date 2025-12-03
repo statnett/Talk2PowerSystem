@@ -1,0 +1,16 @@
+﻿PREFIX afn: <http://jena.apache.org/ARQ/function#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
+PREFIX nc: <https://cim4.eu/ns/nc#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+
+construct {
+  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+    cim:IdentifiedObject.name "Network-Area-Diagram"; cim:IdentifiedObject.mRID ?diagMrid;
+    cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of all Nordic44 and Telemark120 voltage levels";
+    cimr:Diagram.PowerSystemResource ?psr; cimr:Diagram.link "PowSyBl-NAD-all.svg"
+} 
+where {
+  ?psr a cim:GeographicalRegion
+  bind(uuid() as ?diag)
+  bind(afn:localname(?diag) as ?diagMrid)
+}

@@ -1,0 +1,8 @@
+﻿PREFIX cimr: <https://cim.ucaiug.io/rules#>
+select ?kind ?mrids ?link {
+  ?x a cimr:Diagram; 
+    cimr:Diagram.kind ?kindUrl;
+    cimr:Diagram.link ?link.
+  optional {?x cimr:Diagram.mRIDs ?mrids}
+  bind(strafter(str(?kindUrl),"PowSyBl-") as ?kind)
+} order by ?link

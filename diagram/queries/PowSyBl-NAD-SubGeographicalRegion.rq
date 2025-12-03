@@ -1,0 +1,25 @@
+﻿PREFIX afn: <http://jena.apache.org/ARQ/function#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
+PREFIX nc: <https://cim4.eu/ns/nc#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+
+construct {
+  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+    cim:IdentifiedObject.name ?diagName; cim:IdentifiedObject.mRID ?diagMrid; cim:IdentifiedObject.description ?diagDescr;
+    cimr:Diagram.PowerSystemResource ?psr; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
+} 
+where {
+  {select ?psr (concat('(',group_concat(?quotedMrid; separator=","),')') as ?mrids) {
+    ?psr a cim:SubGeographicalRegion.
+    ?voltageLevel cim:VoltageLevel.Substation/cim:Substation.Region ?psr;
+      cim:IdentifiedObject.mRID ?mrid.
+    bind(concat('"',?mrid,'"') as ?quotedMrid)
+  } group by ?psr}
+  ?psr cim:IdentifiedObject.name ?psrName; cim:IdentifiedObject.mRID ?psrMrid.
+  bind(replace(?psrName," ","-") as ?psrSlug)
+  bind(uuid() as ?diag)
+  bind(afn:localname(?diag) as ?diagMrid)
+  bind(concat("Diagram of SubGeographicalRegion ",?psrName) as ?diagName)
+  bind(concat("PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion ",?psrName) as ?diagDescr)
+  bind(concat("PowSyBl-NAD-SubGeographicalRegion-",?psrSlug,".svg") as ?link)
+}

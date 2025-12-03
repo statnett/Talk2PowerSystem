@@ -1,0 +1,26 @@
+﻿PREFIX afn: <http://jena.apache.org/ARQ/function#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
+PREFIX nc: <https://cim4.eu/ns/nc#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+
+construct {
+  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram-Multi;
+    cim:IdentifiedObject.name ?diagName; cim:IdentifiedObject.mRID ?diagMrid; cim:IdentifiedObject.description ?diagDescr;
+    cimr:Diagram.PowerSystemResource ?psr1,?psr2; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
+} 
+where {
+  {select distinct ?psr1 ?psr2 ?psr1Name ?psr2Name ?psr1Mrid ?psr2Mrid {
+    ?psr1 a cim:Substation; cim:IdentifiedObject.name ?psr1Name; cim:IdentifiedObject.mRID ?psr1Mrid.
+    ?psr2 a cim:Substation; cim:IdentifiedObject.name ?psr2Name; cim:IdentifiedObject.mRID ?psr2Mrid.
+    {?psr1 cimr:connectedThroughPart ?psr2} union {?psr1 cimr:connectedThroughPart ?line. ?psr2 cimr:connectedThroughPart ?line}
+    filter(?psr1Name < ?psr2Name)
+  }}
+  bind(replace(?psr1Name," ","-") as ?psr1Slug)
+  bind(replace(?psr2Name," ","-") as ?psr2Slug)
+  bind(uuid() as ?diag)
+  bind(afn:localname(?diag) as ?diagMrid)
+  bind(concat("Diagram of substations ",?psr1Name," and ",?psr2Name) as ?diagName)
+  bind(concat("PowSyBl Single-Line-Diagram of substations ",?psr1Name," and ",?psr2Name) as ?diagDescr)
+  bind(concat('[["',?psr1Mrid,'","',?psr2Mrid,'"]]') as ?mrids)
+  bind(concat("PowSyBl-SLD-2substations-",?psr1Slug,"-and-",?psr2Slug,".svg") as ?link)
+}

@@ -1,0 +1,20 @@
+PREFIX afn: <http://jena.apache.org/ARQ/function#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
+PREFIX nc: <https://cim4.eu/ns/nc#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+
+construct {
+  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+    cim:IdentifiedObject.name ?diagName; cim:IdentifiedObject.mRID ?diagMrid; cim:IdentifiedObject.description ?diagDescr;
+    cimr:Diagram.PowerSystemResource ?psr; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
+} 
+where {
+  {select * {?psr a cim:Substation; cim:IdentifiedObject.name ?psrName; cim:IdentifiedObject.mRID ?psrMrid}}
+  bind(uuid() as ?diag)
+  bind(afn:localname(?diag) as ?diagMrid)
+  bind(replace(?psrName," ","-") as ?psrSlug)
+  bind(concat("Diagram of substation ",?psrName) as ?diagName)
+  bind(concat("PowSyBl Single-Line-Diagram of substation ",?psrName) as ?diagDescr)
+  bind(concat('"',?psrMrid,'"') as ?mrids)
+  bind(concat("PowSyBl-SLD-substation-",?psrSlug,".svg") as ?link)
+}
