@@ -8,7 +8,7 @@ soml: cim-subset-pretty-ontology.yaml
 cim-subset.ttl: ontology-query.rq
 	curl -X POST \
 	 -H "Content-Type: application/sparql-query" \
-	 -H "Accept: application/x-turtle" \
+	 -H "Accept: text/turtle" \
 	 --data-binary @ontology-query.rq \
 	 "https://cim.ontotext.com/graphdb/repositories/cim" \
 	 > $@
