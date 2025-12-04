@@ -1,4 +1,4 @@
-﻿PREFIX cimr: <https://cim.ucaiug.io/rules#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
 select ?kind ?mrids ?link {
   ?x a cimr:Diagram; 
     cimr:Diagram.kind ?kindUrl;

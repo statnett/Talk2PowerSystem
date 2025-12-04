@@ -1,4 +1,5 @@
-﻿PREFIX afn: <http://jena.apache.org/ARQ/function#>
+PREFIX afn: <http://jena.apache.org/ARQ/function#>
+prefix geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX cimr: <https://cim.ucaiug.io/rules#>
 PREFIX nc: <https://cim4.eu/ns/nc#>
 PREFIX cim: <https://cim.ucaiug.io/ns#>
@@ -9,18 +10,28 @@ construct {
     cimr:Diagram.PowerSystemResource ?psr1,?psr2; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
 } 
 where {
-  {select distinct ?psr1 ?psr2 ?psr1Name ?psr2Name ?psr1Mrid ?psr2Mrid {
+  {select distinct ?psr1 ?psr2 ?psr1Name ?psr2Name ?psr1Mrid ?psr2Mrid ?x1 ?x2 {
     ?psr1 a cim:Substation; cim:IdentifiedObject.name ?psr1Name; cim:IdentifiedObject.mRID ?psr1Mrid.
     ?psr2 a cim:Substation; cim:IdentifiedObject.name ?psr2Name; cim:IdentifiedObject.mRID ?psr2Mrid.
     {?psr1 cimr:connectedThroughPart ?psr2} union {?psr1 cimr:connectedThroughPart ?line. ?psr2 cimr:connectedThroughPart ?line}
     filter(?psr1Name < ?psr2Name)
+    optional {
+      ?psr1 geo:hasGeometry/geo:asWKT ?geo1.
+      ?psr2 geo:hasGeometry/geo:asWKT ?geo2
+      bind(xsd:decimal(replace(str(?geo1),".*POINT *[(]([0-9.]+) ([0-9.]+)[)]","$1","i")) as ?x1)
+      bind(xsd:decimal(replace(str(?geo2),".*POINT *[(]([0-9.]+) ([0-9.]+)[)]","$1","i")) as ?x2)
+    }
   }}
+  bind(coalesce(?x1 > ?x2, false) as ?swap)
   bind(replace(?psr1Name," ","-") as ?psr1Slug)
   bind(replace(?psr2Name," ","-") as ?psr2Slug)
   bind(uuid() as ?diag)
   bind(afn:localname(?diag) as ?diagMrid)
-  bind(concat("Diagram of substations ",?psr1Name," and ",?psr2Name) as ?diagName)
-  bind(concat("PowSyBl Single-Line-Diagram of substations ",?psr1Name," and ",?psr2Name) as ?diagDescr)
-  bind(concat('[["',?psr1Mrid,'","',?psr2Mrid,'"]]') as ?mrids)
-  bind(concat("PowSyBl-SLD-2substations-",?psr1Slug,"-and-",?psr2Slug,".svg") as ?link)
+  bind(concat("Diagram of substations ",
+              if(?swap,?psr2Name,?psr1Name)," and ",if(?swap,?psr1Name,?psr2Name)) as ?diagName)
+  bind(concat("PowSyBl Single-Line-Diagram of substations ",
+              if(?swap,?psr2Name,?psr1Name)," and ",if(?swap,?psr1Name,?psr2Name)) as ?diagDescr)
+  bind(concat('[["',if(?swap,?psr2Mrid,?psr1Mrid),'","',if(?swap,?psr1Mrid,?psr2Mrid),'"]]') as ?mrids)
+  bind(concat("PowSyBl-SLD-2substations-",
+              if(?swap,?psr2Slug,?psr1Slug),"-and-",if(?swap,?psr1Slug,?psr2Slug),".svg") as ?link)
 }
