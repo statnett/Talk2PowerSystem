@@ -1,19 +1,21 @@
-PREFIX afn: <http://jena.apache.org/ARQ/function#>
-prefix geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX cimr: <https://cim.ucaiug.io/rules#>
-PREFIX nc: <https://cim4.eu/ns/nc#>
-PREFIX cim: <https://cim.ucaiug.io/ns#>
+PREFIX cimd: <https://cim.ucaiug.io/diagrams#> 
+PREFIX cimr: <https://cim.ucaiug.io/rules#> 
+PREFIX cim:  <https://cim.ucaiug.io/ns#>
+PREFIX afn:  <http://jena.apache.org/ARQ/function#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+prefix geo:  <http://www.opengis.net/ont/geosparql#>
 
 construct {
-  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram-Multi;
+  ?diag a cimd:Diagram; cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi;
     cim:IdentifiedObject.name ?diagName; cim:IdentifiedObject.mRID ?diagMrid; cim:IdentifiedObject.description ?diagDescr;
-    cimr:Diagram.PowerSystemResource ?psr1,?psr2; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
+    cimd:Diagram.PowerSystemResource ?psr1,?psr2; cimd:Diagram.mRIDs ?mrids; cimd:Diagram.link ?link; dct:format "image/svg+xml"
 } 
 where {
   {select distinct ?psr1 ?psr2 ?psr1Name ?psr2Name ?psr1Mrid ?psr2Mrid ?x1 ?x2 {
     ?psr1 a cim:Substation; cim:IdentifiedObject.name ?psr1Name; cim:IdentifiedObject.mRID ?psr1Mrid.
     ?psr2 a cim:Substation; cim:IdentifiedObject.name ?psr2Name; cim:IdentifiedObject.mRID ?psr2Mrid.
-    {?psr1 cimr:connectedThroughPart ?psr2} union {?psr1 cimr:connectedThroughPart ?line. ?psr2 cimr:connectedThroughPart ?line}
+    {?psr1 cimr:connectedThroughPart ?psr2}
+    union {?psr1 cimr:connectedThroughPart ?line. ?line a cim:Line. ?psr2 cimr:connectedThroughPart ?line}
     filter(?psr1Name < ?psr2Name)
     optional {
       ?psr1 geo:hasGeometry/geo:asWKT ?geo1.

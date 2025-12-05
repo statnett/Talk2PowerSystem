@@ -1,7 +1,7 @@
-@prefix afn: <http://jena.apache.org/ARQ/function#> .
-@prefix cimr: <https://cim.ucaiug.io/rules#> .
-@prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
@@ -10,101 +10,112 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
-<urn:uuid:a0f2c358-29b7-46f5-9ce7-b746453a55a8> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:540705d2-951f-45a0-8f7d-f6eccdb26b05> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion FI1 SGR";
-  cim:IdentifiedObject.mRID "a0f2c358-29b7-46f5-9ce7-b746453a55a8";
+  cim:IdentifiedObject.mRID "540705d2-951f-45a0-8f7d-f6eccdb26b05";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion FI1 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696b3-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c6-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-FI1-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696b3-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c6-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-FI1-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:6ca4133e-c41f-4f6d-a38a-464eaa6dfa96> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:9ad89f66-6e9f-485d-b766-5996b5b2862b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion NO1 SGR";
-  cim:IdentifiedObject.mRID "6ca4133e-c41f-4f6d-a38a-464eaa6dfa96";
+  cim:IdentifiedObject.mRID "9ad89f66-6e9f-485d-b766-5996b5b2862b";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion NO1 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769609-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f1769650-9aeb-11e5-91da-b8763fd99c5f\",\"f1769620-9aeb-11e5-91da-b8763fd99c5f\",\"f1769656-9aeb-11e5-91da-b8763fd99c5f\",\"f1769610-9aeb-11e5-91da-b8763fd99c5f\",\"f176964a-9aeb-11e5-91da-b8763fd99c5f\",\"f1769644-9aeb-11e5-91da-b8763fd99c5f\",\"f176963e-9aeb-11e5-91da-b8763fd99c5f\",\"f176960a-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO1-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769609-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f1769650-9aeb-11e5-91da-b8763fd99c5f\",\"f1769620-9aeb-11e5-91da-b8763fd99c5f\",\"f1769656-9aeb-11e5-91da-b8763fd99c5f\",\"f1769610-9aeb-11e5-91da-b8763fd99c5f\",\"f176964a-9aeb-11e5-91da-b8763fd99c5f\",\"f1769644-9aeb-11e5-91da-b8763fd99c5f\",\"f176963e-9aeb-11e5-91da-b8763fd99c5f\",\"f176960a-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO1-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:a4782d09-fff1-4168-9fc2-fde07b649be8> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:c94bb663-02db-45b5-80f9-43b3c475a46b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion SE3 SGR";
-  cim:IdentifiedObject.mRID "a4782d09-fff1-4168-9fc2-fde07b649be8";
+  cim:IdentifiedObject.mRID "c94bb663-02db-45b5-80f9-43b3c475a46b";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion SE3 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695af-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17695b0-9aeb-11e5-91da-b8763fd99c5f\",\"f17695d4-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ed-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f9-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE3-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695af-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17695b0-9aeb-11e5-91da-b8763fd99c5f\",\"f17695d4-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ed-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f9-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE3-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:2ce636d4-b70d-4b9e-bac6-8b5c0b8b1407> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:1936e725-30ca-43be-9ffa-dc3f31b618a6> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion SE2 SGR";
-  cim:IdentifiedObject.mRID "2ce636d4-b70d-4b9e-bac6-8b5c0b8b1407";
+  cim:IdentifiedObject.mRID "1936e725-30ca-43be-9ffa-dc3f31b618a6";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion SE2 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695c3-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17695c4-9aeb-11e5-91da-b8763fd99c5f\",\"f17695e7-9aeb-11e5-91da-b8763fd99c5f\",\"f17695da-9aeb-11e5-91da-b8763fd99c5f\",\"f17695e1-9aeb-11e5-91da-b8763fd99c5f\",\"f1769600-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE2-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695c3-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17695c4-9aeb-11e5-91da-b8763fd99c5f\",\"f17695e7-9aeb-11e5-91da-b8763fd99c5f\",\"f17695da-9aeb-11e5-91da-b8763fd99c5f\",\"f17695e1-9aeb-11e5-91da-b8763fd99c5f\",\"f1769600-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE2-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:eb02a64b-2ace-4377-a6b4-8860fb7d82b1> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:43e34140-a428-4982-b3be-8192ec76ad72> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion SE4 SGR";
-  cim:IdentifiedObject.mRID "eb02a64b-2ace-4377-a6b4-8860fb7d82b1";
+  cim:IdentifiedObject.mRID "43e34140-a428-4982-b3be-8192ec76ad72";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion SE4 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696cf-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d6-9aeb-11e5-91da-b8763fd99c5f\",\"f17696dc-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE4-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696cf-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d6-9aeb-11e5-91da-b8763fd99c5f\",\"f17696dc-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE4-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:f30cd056-af5e-4af6-8552-c0128dbb80d6> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:f865a2e5-45d2-4bb2-a245-8cd4d481e7a2> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion NO4 SGR";
-  cim:IdentifiedObject.mRID "f30cd056-af5e-4af6-8552-c0128dbb80d6";
+  cim:IdentifiedObject.mRID "f865a2e5-45d2-4bb2-a245-8cd4d481e7a2";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion NO4 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696a3-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17696aa-9aeb-11e5-91da-b8763fd99c5f\",\"f17696a4-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO4-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696a3-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17696aa-9aeb-11e5-91da-b8763fd99c5f\",\"f17696a4-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO4-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:d40101da-9a36-434b-85e8-c51f7b7898c8> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:108c7cca-b5fe-4502-932d-2e553c905c37> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion NO5 SGR";
-  cim:IdentifiedObject.mRID "d40101da-9a36-434b-85e8-c51f7b7898c8";
+  cim:IdentifiedObject.mRID "108c7cca-b5fe-4502-932d-2e553c905c37";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion NO5 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769619-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f1769626-9aeb-11e5-91da-b8763fd99c5f\",\"f176962c-9aeb-11e5-91da-b8763fd99c5f\",\"f176961a-9aeb-11e5-91da-b8763fd99c5f\",\"f176968a-9aeb-11e5-91da-b8763fd99c5f\",\"f1769632-9aeb-11e5-91da-b8763fd99c5f\",\"f1769638-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO5-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769619-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f1769626-9aeb-11e5-91da-b8763fd99c5f\",\"f176962c-9aeb-11e5-91da-b8763fd99c5f\",\"f176961a-9aeb-11e5-91da-b8763fd99c5f\",\"f176968a-9aeb-11e5-91da-b8763fd99c5f\",\"f1769632-9aeb-11e5-91da-b8763fd99c5f\",\"f1769638-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO5-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:36e7f0e0-5a5a-4c71-b7b8-df82d92e66b5> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:ef4d2bf9-5479-4a64-9bc4-fbca8174f115> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion NO2 SGR";
-  cim:IdentifiedObject.mRID "36e7f0e0-5a5a-4c71-b7b8-df82d92e66b5";
+  cim:IdentifiedObject.mRID "ef4d2bf9-5479-4a64-9bc4-fbca8174f115";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion NO2 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176965f-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f1769684-9aeb-11e5-91da-b8763fd99c5f\",\"f1769660-9aeb-11e5-91da-b8763fd99c5f\",\"f1769672-9aeb-11e5-91da-b8763fd99c5f\",\"f1769678-9aeb-11e5-91da-b8763fd99c5f\",\"1f4fabd4-8c57-c245-b107-4e64c9007ae3\",\"f176966c-9aeb-11e5-91da-b8763fd99c5f\",\"f1769690-9aeb-11e5-91da-b8763fd99c5f\",\"f176967e-9aeb-11e5-91da-b8763fd99c5f\",\"f1769666-9aeb-11e5-91da-b8763fd99c5f\",\"681a21b6-5a55-11eb-a658-74e5f963e191\",\"92d33b37-7034-11eb-a65a-74e5f963e191\",\"d4addb12-e956-e44b-9a9d-f118fdbe49f8\",\"681a1e4e-5a55-11eb-a658-74e5f963e191\",\"681a1e65-5a55-11eb-a658-74e5f963e191\",\"681a1e17-5a55-11eb-a658-74e5f963e191\",\"d4959144-d4c4-4885-a5fd-2a8ad9abbe2c\",\"681a1e3e-5a55-11eb-a658-74e5f963e191\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO2-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176965f-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f1769684-9aeb-11e5-91da-b8763fd99c5f\",\"f1769660-9aeb-11e5-91da-b8763fd99c5f\",\"f1769672-9aeb-11e5-91da-b8763fd99c5f\",\"f1769678-9aeb-11e5-91da-b8763fd99c5f\",\"1f4fabd4-8c57-c245-b107-4e64c9007ae3\",\"f176966c-9aeb-11e5-91da-b8763fd99c5f\",\"f1769690-9aeb-11e5-91da-b8763fd99c5f\",\"f176967e-9aeb-11e5-91da-b8763fd99c5f\",\"f1769666-9aeb-11e5-91da-b8763fd99c5f\",\"681a21b6-5a55-11eb-a658-74e5f963e191\",\"92d33b37-7034-11eb-a65a-74e5f963e191\",\"d4addb12-e956-e44b-9a9d-f118fdbe49f8\",\"681a1e4e-5a55-11eb-a658-74e5f963e191\",\"681a1e65-5a55-11eb-a658-74e5f963e191\",\"681a1e17-5a55-11eb-a658-74e5f963e191\",\"d4959144-d4c4-4885-a5fd-2a8ad9abbe2c\",\"681a1e3e-5a55-11eb-a658-74e5f963e191\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO2-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:db310442-c168-4337-9ff0-ec207bebacb5> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:bf7f2542-e085-4ef1-bad8-70369586c15f> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion NO3 SGR";
-  cim:IdentifiedObject.mRID "db310442-c168-4337-9ff0-ec207bebacb5";
+  cim:IdentifiedObject.mRID "bf7f2542-e085-4ef1-bad8-70369586c15f";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion NO3 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769699-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f176969a-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO3-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769699-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f176969a-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-NO3-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:943dc287-a49b-4f09-b2c4-50f2716e3746> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:317e9f11-b92f-49c3-b9a2-f35ca39bd985> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion SE1 SGR";
-  cim:IdentifiedObject.mRID "943dc287-a49b-4f09-b2c4-50f2716e3746";
+  cim:IdentifiedObject.mRID "317e9f11-b92f-49c3-b9a2-f35ca39bd985";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion SE1 SGR";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695cd-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "(\"f17695ce-9aeb-11e5-91da-b8763fd99c5f\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE1-SGR.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695cd-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "(\"f17695ce-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-SE1-SGR.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:24ddb832-5ca4-4640-b89f-115bd47ee195> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-NetworkAreaDiagram;
+<urn:uuid:270a578d-c810-4422-b8f2-f941c0999906> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
   cim:IdentifiedObject.name "Diagram of SubGeographicalRegion DSO V";
-  cim:IdentifiedObject.mRID "24ddb832-5ca4-4640-b89f-115bd47ee195";
+  cim:IdentifiedObject.mRID "270a578d-c810-4422-b8f2-f941c0999906";
   cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion DSO V";
-  cimr:Diagram.PowerSystemResource <urn:uuid:d9b89685-1fed-4233-8f85-70fd9e6cfd23>;
-  cimr:Diagram.mRIDs "(\"d82114b7-09c0-4cb4-b9c8-19a5fdaf991a\",\"91ef68b3-8878-47a4-b24f-66f42bb459ba\",\"d87764a9-3363-4342-908f-d96f8e7ef71d\",\"791059a4-3f6e-4242-a478-1fbbf1abc328\",\"8da6d670-4607-4432-abce-49614b85fd8e\",\"bb017e3b-c1e1-463c-b719-fe73df802624\",\"277ce47c-fa5b-438d-9f82-346c887b57fd\")";
-  cimr:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-DSO-V.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:d9b89685-1fed-4233-8f85-70fd9e6cfd23>;
+  cimd:Diagram.mRIDs "(\"d82114b7-09c0-4cb4-b9c8-19a5fdaf991a\",\"91ef68b3-8878-47a4-b24f-66f42bb459ba\",\"d87764a9-3363-4342-908f-d96f8e7ef71d\",\"791059a4-3f6e-4242-a478-1fbbf1abc328\",\"8da6d670-4607-4432-abce-49614b85fd8e\",\"bb017e3b-c1e1-463c-b719-fe73df802624\",\"277ce47c-fa5b-438d-9f82-346c887b57fd\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubGeographicalRegion-DSO-V.svg";
+  dct:format "image/svg+xml" .

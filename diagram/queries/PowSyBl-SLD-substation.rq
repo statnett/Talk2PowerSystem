@@ -1,12 +1,12 @@
-PREFIX afn: <http://jena.apache.org/ARQ/function#>
-PREFIX cimr: <https://cim.ucaiug.io/rules#>
-PREFIX nc: <https://cim4.eu/ns/nc#>
-PREFIX cim: <https://cim.ucaiug.io/ns#>
+PREFIX cimd: <https://cim.ucaiug.io/diagrams#>
+PREFIX cim:  <https://cim.ucaiug.io/ns#>
+PREFIX afn:  <http://jena.apache.org/ARQ/function#>
+PREFIX dct:  <http://purl.org/dc/terms/>
 
 construct {
-  ?diag a cimr:Diagram; cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+  ?diag a cimd:Diagram; cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
     cim:IdentifiedObject.name ?diagName; cim:IdentifiedObject.mRID ?diagMrid; cim:IdentifiedObject.description ?diagDescr;
-    cimr:Diagram.PowerSystemResource ?psr; cimr:Diagram.mRIDs ?mrids; cimr:Diagram.link ?link
+    cimd:Diagram.PowerSystemResource ?psr; cimd:Diagram.mRIDs ?mrids; cimd:Diagram.link ?link; dct:format "image/svg+xml"
 } 
 where {
   {select * {?psr a cim:Substation; cim:IdentifiedObject.name ?psrName; cim:IdentifiedObject.mRID ?psrMrid}}

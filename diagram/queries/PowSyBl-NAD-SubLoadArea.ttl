@@ -1,0 +1,131 @@
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
+@prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+
+<urn:uuid:7043614d-4c14-4dae-af07-79898b4d95be> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea NO2 SLA";
+  cim:IdentifiedObject.mRID "7043614d-4c14-4dae-af07-79898b4d95be";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea NO2 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd90198-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f1769660-9aeb-11e5-91da-b8763fd99c5f\",\"f1769660-9aeb-11e5-91da-b8763fd99c5f\",\"f1769690-9aeb-11e5-91da-b8763fd99c5f\",\"f1769690-9aeb-11e5-91da-b8763fd99c5f\",\"f1769678-9aeb-11e5-91da-b8763fd99c5f\",\"f176967e-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-NO2-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:19d878fa-3f2f-4426-948d-af17f9175ef1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea NO1 SLA";
+  cim:IdentifiedObject.mRID "19d878fa-3f2f-4426-948d-af17f9175ef1";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea NO1 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd9017a-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f1769650-9aeb-11e5-91da-b8763fd99c5f\",\"f1769650-9aeb-11e5-91da-b8763fd99c5f\",\"f176963e-9aeb-11e5-91da-b8763fd99c5f\",\"f176960a-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-NO1-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:beea8d34-4a26-4bf4-afd5-b58a59ab5eb1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea SE3 SLA";
+  cim:IdentifiedObject.mRID "beea8d34-4a26-4bf4-afd5-b58a59ab5eb1";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea SE3 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd90158-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17695b0-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695b0-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ed-9aeb-11e5-91da-b8763fd99c5f\",\"f17695b0-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ed-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f3-9aeb-11e5-91da-b8763fd99c5f\",\"f17695ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17695f9-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-SE3-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:7858edde-a195-4ebd-8567-7afd27b259c9> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea SE2 SLA";
+  cim:IdentifiedObject.mRID "7858edde-a195-4ebd-8567-7afd27b259c9";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea SE2 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd90160-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17695c4-9aeb-11e5-91da-b8763fd99c5f\",\"f17695e7-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-SE2-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:30081208-82c1-4636-bad1-4cbdff46bc08> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea FI1 SLA";
+  cim:IdentifiedObject.mRID "30081208-82c1-4636-bad1-4cbdff46bc08";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea FI1 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd901b6-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c6-9aeb-11e5-91da-b8763fd99c5f\",\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c6-9aeb-11e5-91da-b8763fd99c5f\",\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696b4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696ba-9aeb-11e5-91da-b8763fd99c5f\",\"f17696c6-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-FI1-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:17e39834-98e5-40f7-9a44-4ee03ab15b28> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea SE1 SLA";
+  cim:IdentifiedObject.mRID "17e39834-98e5-40f7-9a44-4ee03ab15b28";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea SE1 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd90164-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17695ce-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-SE1-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:c08710a2-cb85-4507-babb-34ef83f756a9> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea SE4 SLA";
+  cim:IdentifiedObject.mRID "c08710a2-cb85-4507-babb-34ef83f756a9";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea SE4 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd901c0-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696dc-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d0-9aeb-11e5-91da-b8763fd99c5f\",\"f17696d6-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-SE4-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:0a3dbbba-9a22-4a44-a0df-bd2904a10cc5> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea NO5 SLA";
+  cim:IdentifiedObject.mRID "0a3dbbba-9a22-4a44-a0df-bd2904a10cc5";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea NO5 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd90180-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f1769626-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-NO5-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:470b7e39-34ab-457c-b2eb-63bd70f7b30b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea NO4 SLA";
+  cim:IdentifiedObject.mRID "470b7e39-34ab-457c-b2eb-63bd70f7b30b";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea NO4 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd901b0-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f17696a4-9aeb-11e5-91da-b8763fd99c5f\",\"f17696aa-9aeb-11e5-91da-b8763fd99c5f\",\"f17696aa-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-NO4-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:307ad444-8eb4-46e8-a95b-7854bd94cd16> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea NO3 SLA";
+  cim:IdentifiedObject.mRID "307ad444-8eb4-46e8-a95b-7854bd94cd16";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea NO3 SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:2dd901ac-bdfb-11e5-94fa-c8f73332c8f4>;
+  cimd:Diagram.mRIDs "(\"f176969a-9aeb-11e5-91da-b8763fd99c5f\",\"f176969a-9aeb-11e5-91da-b8763fd99c5f\",\"f176969a-9aeb-11e5-91da-b8763fd99c5f\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-NO3-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:9c68875e-d479-47e4-b25f-61029bcdf76a> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea Bamble SLA";
+  cim:IdentifiedObject.mRID "9c68875e-d479-47e4-b25f-61029bcdf76a";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea Bamble SLA";
+  cimd:Diagram.PowerSystemResource <urn:uuid:8e39a403-1b86-4a06-be89-3a83eb230789>;
+  cimd:Diagram.mRIDs "(\"bb017e3b-c1e1-463c-b719-fe73df802624\",\"d87764a9-3363-4342-908f-d96f8e7ef71d\",\"d82114b7-09c0-4cb4-b9c8-19a5fdaf991a\",\"d87764a9-3363-4342-908f-d96f8e7ef71d\",\"91ef68b3-8878-47a4-b24f-66f42bb459ba\",\"791059a4-3f6e-4242-a478-1fbbf1abc328\",\"91ef68b3-8878-47a4-b24f-66f42bb459ba\",\"277ce47c-fa5b-438d-9f82-346c887b57fd\",\"d82114b7-09c0-4cb4-b9c8-19a5fdaf991a\",\"791059a4-3f6e-4242-a478-1fbbf1abc328\",\"8da6d670-4607-4432-abce-49614b85fd8e\",\"d87764a9-3363-4342-908f-d96f8e7ef71d\",\"8da6d670-4607-4432-abce-49614b85fd8e\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-Bamble-SLA.svg";
+  dct:format "image/svg+xml" .
+
+<urn:uuid:a0e85025-4087-48ca-a4b1-69921f0ece55> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
+  cim:IdentifiedObject.name "Diagram of SubLoadArea DSO1 SA 1";
+  cim:IdentifiedObject.mRID "a0e85025-4087-48ca-a4b1-69921f0ece55";
+  cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of voltage levels in SubLoadArea DSO1 SA 1";
+  cimd:Diagram.PowerSystemResource <urn:uuid:92d33b3a-7034-11eb-a65a-74e5f963e191>;
+  cimd:Diagram.mRIDs "(\"d4addb12-e956-e44b-9a9d-f118fdbe49f8\",\"681a1e65-5a55-11eb-a658-74e5f963e191\")";
+  cimd:Diagram.link "PowSyBl-NAD-SubLoadArea-DSO1-SA-1.svg";
+  dct:format "image/svg+xml" .

@@ -10,8 +10,9 @@ construct {
 } 
 where {
   {select ?psr (concat('(',group_concat(?quotedMrid; separator=","),')') as ?mrids) {
-    ?psr a cim:SubGeographicalRegion.
-    ?voltageLevel cim:VoltageLevel.Substation/cim:Substation.Region ?psr;
+    ?psr a cim:LoadArea.
+    ?voltageLevel a cim:VoltageLevel;
+      cim:EquipmentContainer.Equipments/(cim:ConformLoad.LoadGroup|cim:NonConformLoad.LoadGroup)/cim:LoadGroup.SubLoadArea/cim:SubLoadArea.LoadArea ?psr;
       cim:IdentifiedObject.mRID ?mrid.
     bind(concat('"',?mrid,'"') as ?quotedMrid)
   } group by ?psr}
@@ -19,7 +20,7 @@ where {
   bind(replace(?psrName," ","-") as ?psrSlug)
   bind(uuid() as ?diag)
   bind(afn:localname(?diag) as ?diagMrid)
-  bind(concat("Diagram of SubGeographicalRegion ",?psrName) as ?diagName)
-  bind(concat("PowSyBl Network-Area-Diagram of voltage levels in SubGeographicalRegion ",?psrName) as ?diagDescr)
-  bind(concat("PowSyBl-NAD-SubGeographicalRegion-",?psrSlug,".svg") as ?link)
+  bind(concat("Diagram of LoadArea ",?psrName) as ?diagName)
+  bind(concat("PowSyBl Network-Area-Diagram of voltage levels in LoadArea ",?psrName) as ?diagDescr)
+  bind(concat("PowSyBl-NAD-LoadArea-",?psrSlug,".svg") as ?link)
 }

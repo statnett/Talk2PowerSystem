@@ -1,0 +1,100 @@
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
+@prefix cim:  <https://cim.ucaiug.io/ns#> .
+@prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix uml:  <http://iec.ch/TC57/NonStandard/UML#> .
+
+cimd: a owl:Ontology;
+  rdfs:label "CIM Diagrams Ontology";
+  dct:title  "CIM Diagrams Ontology";
+  rdfs:comment    "Various CIM/CGMES diagrams: electrical (generated with PowSyBl), geospatial, GraphDB VizGraph";
+  dct:description "Various CIM/CGMES diagrams: electrical (generated with PowSyBl), geospatial, GraphDB VizGraph";
+  vann:preferredNamespacePrefix "cimd";
+  vann:preferredNamespaceUri "https://cim.ucaiug.io/diagrams#"^^xsd:anyURI ;
+  dct:creator <https://graphwise.ai> ;
+  dct:created  "2025-12-05"^^xsd:date ;
+  dct:modified "2025-12-05"^^xsd:date ;
+  dct:issued   "2025-12-05"^^xsd:date ;
+  owl:versionInfo "1.0";
+  rdfs:seeAlso <https://github.com/statnett/Talk2PowerSystem/wiki/Electrical-Diagrams>, <https://github.com/statnett/Talk2PowerSystem/tree/main/diagram>;
+  dcat:keyword "CIM", "CGMES", "diagrams", "PowSyBl", "Network-Area-Diagram", "Single-Line-Diagram", "Visual Graph".
+
+cimd:Diagram a owl:Class ;
+  rdfs:label "Diagram" ;
+  rdfs:comment """Diagram represented as an image (SVG, PNG) or web app (the MIME type is indicated by dct:format).
+Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPoints.""" ;
+  cims:stereotype uml:concrete ;
+  rdfs:subClassOf cim:IdentifiedObject;
+  cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed";
+  cims:belongsToCategory cimd: ;
+  rdfs:isDefinedBy cimd: .
+
+cim:Diagram cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed".
+
+cimd:DiagramKind a owl:Class ;
+  rdfs:label "DiagramKind" ;
+  rdfs:comment "Diagram kind reflecting the technology (e.g. PowSyBl vs VizGraph) and subkind." ;
+  cims:stereotype uml:enumeration ;
+  cims:belongsToCategory cimd: ;
+  rdfs:isDefinedBy cimd: .
+
+cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind;
+  rdfs:label "PowSyBl-NetworkAreaDiagram";
+  rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
+Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""";
+  cims:stereotype "enum" ;
+  rdfs:isDefinedBy cimd: .
+
+cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind;
+  rdfs:label "PowSyBl-SingleLineDiagram";
+  rdfs:comment """PowSyBl Single-Line-Diagram. Shows equipment (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.
+Can display one or several substations, voltage levels or areas.""";
+  cims:stereotype "enum" ;
+  rdfs:isDefinedBy cimd: .
+  
+cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi a cimd:DiagramKind;
+  rdfs:label "PowSyBl-SingleLineDiagram-Multi";
+  rdfs:comment """PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.""";
+  cims:stereotype "enum" ;
+  rdfs:isDefinedBy cimd: .
+  
+cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:label "kind";
+  rdfs:comment "Kind of diagram";
+  rdfs:domain cimd:Diagram;
+  rdfs:range cimd:DiagramKind.
+
+cimd:Diagram.PowerSystemResource a owl:Property;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:label "PowerSystemResource";
+  rdfs:comment "Power System Resource(s) shown on the diagram. This lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels compare to cimd:Diagram.mRIDs)";
+  rdfs:domain cimd:Diagram;
+  rdfs:range cim:PowerSystemResource.
+
+cimd:Diagram.link a owl:Property, owl:FunctionalProperty;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:label "link";
+  rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base).";
+  rdfs:domain cimd:Diagram;
+  rdfs:range xsd:string.
+
+cimd:Diagram.mRIDs a owl:Property, owl:FunctionalProperty;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:label "mRIDs";
+  rdfs:comment "mRIDs of the lower-level PSRs (Substations or VoltageLevels) shown on the diagram, as a string suitable for passing to PowSyBl Python version. Compare to cimd:Diagram.PowerSystemResource.";
+  skos:example
+    'Single substation or voltage level: "mrid1"',
+    'Two substations listed left-to-right (west-to-east): [["mrid1","mrid2"]]',
+    'Multiple voltage levels: ("mrid1","mrid2"..."mridN")';
+  rdfs:domain cimd:Diagram;
+  rdfs:range xsd:string.
+
+# TODO: add DiagramKind.VizGraph* and DiagramConfiguration

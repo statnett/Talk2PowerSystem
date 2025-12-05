@@ -1,7 +1,7 @@
-@prefix afn: <http://jena.apache.org/ARQ/function#> .
-@prefix cimr: <https://cim.ucaiug.io/rules#> .
-@prefix nc: <https://cim4.eu/ns/nc#> .
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
@@ -10,497 +10,552 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 
-<urn:uuid:5fa10212-04c3-47b0-ae2f-a9e06f5b2f64> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:146974f1-6515-4741-a927-b117e3742d95> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation BLAFALLI";
-  cim:IdentifiedObject.mRID "5fa10212-04c3-47b0-ae2f-a9e06f5b2f64";
+  cim:IdentifiedObject.mRID "146974f1-6515-4741-a927-b117e3742d95";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation BLAFALLI";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176968e-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176968e-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-BLAFALLI.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176968e-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176968e-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-BLAFALLI.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:6bf52f8f-0214-47c3-a825-f12965327596> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:f4e04c9d-f36f-4826-a3ef-f8903455ba5d> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation KRISTIA_HVDC";
-  cim:IdentifiedObject.mRID "6bf52f8f-0214-47c3-a825-f12965327596";
+  cim:IdentifiedObject.mRID "f4e04c9d-f36f-4826-a3ef-f8903455ba5d";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation KRISTIA_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769676-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769676-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-KRISTIA_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769676-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769676-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-KRISTIA_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:349fb479-d7b2-4cee-8a0c-5c18957c262f> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:22fd17f6-ca4b-4409-a5be-bd44bdb195f1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation KRISTIANSAND";
-  cim:IdentifiedObject.mRID "349fb479-d7b2-4cee-8a0c-5c18957c262f";
+  cim:IdentifiedObject.mRID "22fd17f6-ca4b-4409-a5be-bd44bdb195f1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation KRISTIANSAND";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176965a-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176965a-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-KRISTIANSAND.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176965a-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176965a-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-KRISTIANSAND.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:8af5991a-5007-4750-9bca-af5325dee62f> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:2127a313-2d21-4e20-b24d-62f8dd84143b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation HAGAFOSS";
-  cim:IdentifiedObject.mRID "8af5991a-5007-4750-9bca-af5325dee62f";
+  cim:IdentifiedObject.mRID "2127a313-2d21-4e20-b24d-62f8dd84143b";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation HAGAFOSS";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769688-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769688-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-HAGAFOSS.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769688-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769688-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-HAGAFOSS.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:7537fda2-354c-4e21-844a-c7ba7a163403> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:95cc0dcc-fbc2-4704-ab4f-606d006c6865> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation ESTLINK_HVDC";
-  cim:IdentifiedObject.mRID "7537fda2-354c-4e21-844a-c7ba7a163403";
+  cim:IdentifiedObject.mRID "95cc0dcc-fbc2-4704-ab4f-606d006c6865";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation ESTLINK_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696be-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696be-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-ESTLINK_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696be-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696be-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-ESTLINK_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:d310ca5a-2e70-4112-a38b-e086ff79d40a> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:3391b31d-c97b-4db7-b8ab-29d502f285da> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation PORJUS";
-  cim:IdentifiedObject.mRID "d310ca5a-2e70-4112-a38b-e086ff79d40a";
+  cim:IdentifiedObject.mRID "3391b31d-c97b-4db7-b8ab-29d502f285da";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation PORJUS";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695c8-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695c8-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-PORJUS.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695c8-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695c8-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-PORJUS.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:82157243-21c2-4dc0-9ed7-87679f809e43> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:336fce18-0da1-4dba-926a-7d8033d811d1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation SANDEFJORD";
-  cim:IdentifiedObject.mRID "82157243-21c2-4dc0-9ed7-87679f809e43";
+  cim:IdentifiedObject.mRID "336fce18-0da1-4dba-926a-7d8033d811d1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation SANDEFJORD";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176966a-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176966a-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-SANDEFJORD.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176966a-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176966a-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-SANDEFJORD.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:68e8114f-b620-4ad5-9408-58c2ee944145> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:5603c835-9746-4c68-876b-0a521bc35ed5> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation ARENDAL";
-  cim:IdentifiedObject.mRID "68e8114f-b620-4ad5-9408-58c2ee944145";
+  cim:IdentifiedObject.mRID "5603c835-9746-4c68-876b-0a521bc35ed5";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation ARENDAL";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769670-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769670-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-ARENDAL.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769670-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769670-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-ARENDAL.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:9e4c2d7c-7d6e-4e59-a4a1-cc57529e74f0> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:f9c81457-3619-4642-bc21-0d0ac00296e9> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation ARRIE_HVDC";
-  cim:IdentifiedObject.mRID "9e4c2d7c-7d6e-4e59-a4a1-cc57529e74f0";
+  cim:IdentifiedObject.mRID "f9c81457-3619-4642-bc21-0d0ac00296e9";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation ARRIE_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696d4-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696d4-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-ARRIE_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696d4-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696d4-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-ARRIE_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:5e782506-9b85-4811-8a2d-47ce45e2e614> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:fa86e7b0-45bf-4c60-ad99-fb4678e45430> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation KVILLDAL";
-  cim:IdentifiedObject.mRID "5e782506-9b85-4811-8a2d-47ce45e2e614";
+  cim:IdentifiedObject.mRID "fa86e7b0-45bf-4c60-ad99-fb4678e45430";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation KVILLDAL";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769682-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769682-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-KVILLDAL.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769682-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769682-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-KVILLDAL.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:bb8d3fb6-4048-4edf-9993-28c38c1aa604> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:a66e8742-f7d8-4df4-9ee0-60cce864eaea> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation NARVIK";
-  cim:IdentifiedObject.mRID "bb8d3fb6-4048-4edf-9993-28c38c1aa604";
+  cim:IdentifiedObject.mRID "a66e8742-f7d8-4df4-9ee0-60cce864eaea";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation NARVIK";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696a8-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696a8-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-NARVIK.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696a8-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696a8-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-NARVIK.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:b824b41e-0ed7-43b7-b846-87a7c92a4609> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:d521bd65-2bc1-4f05-a8a8-5a60177ba7bb> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation FEDA_HVDC";
-  cim:IdentifiedObject.mRID "b824b41e-0ed7-43b7-b846-87a7c92a4609";
+  cim:IdentifiedObject.mRID "d521bd65-2bc1-4f05-a8a8-5a60177ba7bb";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation FEDA_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176967c-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176967c-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-FEDA_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176967c-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176967c-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-FEDA_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:d8d0781d-3cc9-479e-acc2-340296f8d920> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:ab5daa0f-328f-47e8-b713-f226f36080d1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation KONGSBERG";
-  cim:IdentifiedObject.mRID "d8d0781d-3cc9-479e-acc2-340296f8d920";
+  cim:IdentifiedObject.mRID "ab5daa0f-328f-47e8-b713-f226f36080d1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation KONGSBERG";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176961e-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176961e-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-KONGSBERG.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176961e-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176961e-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-KONGSBERG.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:783d67d5-be78-4497-b18e-44a24743be40> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:7b6dde50-b95c-4e4e-bde7-3f0934186c22> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation HALDEN";
-  cim:IdentifiedObject.mRID "783d67d5-be78-4497-b18e-44a24743be40";
+  cim:IdentifiedObject.mRID "7b6dde50-b95c-4e4e-bde7-3f0934186c22";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation HALDEN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176960e-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176960e-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-HALDEN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176960e-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176960e-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-HALDEN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:f0cb8160-598b-44f7-aa8e-ee90694c653c> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:65aced60-b6af-4d4a-a07f-9f963ef2d595> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation KARLSH_HVDC";
-  cim:IdentifiedObject.mRID "f0cb8160-598b-44f7-aa8e-ee90694c653c";
+  cim:IdentifiedObject.mRID "65aced60-b6af-4d4a-a07f-9f963ef2d595";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation KARLSH_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696da-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696da-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-KARLSH_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696da-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696da-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-KARLSH_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:6453a1ea-c25c-4bb4-ad0b-4b35c7a2bc9d> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:99396499-b8c2-4342-b8d7-49a230e07fb3> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation OSKARSHAMN";
-  cim:IdentifiedObject.mRID "6453a1ea-c25c-4bb4-ad0b-4b35c7a2bc9d";
+  cim:IdentifiedObject.mRID "99396499-b8c2-4342-b8d7-49a230e07fb3";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation OSKARSHAMN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695eb-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695eb-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-OSKARSHAMN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695eb-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695eb-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-OSKARSHAMN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:c1ba9b04-c8a2-480e-8fa6-30b51384ca65> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:6009c61b-1f1b-43da-8bfe-317dcb73488f> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation VYBORG_HVDC";
-  cim:IdentifiedObject.mRID "c1ba9b04-c8a2-480e-8fa6-30b51384ca65";
+  cim:IdentifiedObject.mRID "6009c61b-1f1b-43da-8bfe-317dcb73488f";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation VYBORG_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696b8-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696b8-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-VYBORG_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696b8-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696b8-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-VYBORG_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:a9e562c0-a582-4f71-b321-1187656ca33e> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:d83792c8-0e8f-4d98-876e-5ed019b6e5dc> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation ASKER";
-  cim:IdentifiedObject.mRID "a9e562c0-a582-4f71-b321-1187656ca33e";
+  cim:IdentifiedObject.mRID "d83792c8-0e8f-4d98-876e-5ed019b6e5dc";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation ASKER";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176964e-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176964e-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-ASKER.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176964e-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176964e-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-ASKER.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:5afef9c8-ffe8-4b77-b9bd-b8efdfd6af88> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:20e8e39c-33e6-4eeb-9f3a-7f6c995c7f68> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation SKIEN";
-  cim:IdentifiedObject.mRID "5afef9c8-ffe8-4b77-b9bd-b8efdfd6af88";
+  cim:IdentifiedObject.mRID "20e8e39c-33e6-4eeb-9f3a-7f6c995c7f68";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation SKIEN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769654-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769654-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-SKIEN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769654-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769654-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-SKIEN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:8864e4e3-2bc6-490d-91f8-52977bad689c> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:68b21bd0-fcd0-4dbc-b3e1-be94ba31aa99> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation AURLAND";
-  cim:IdentifiedObject.mRID "8864e4e3-2bc6-490d-91f8-52977bad689c";
+  cim:IdentifiedObject.mRID "68b21bd0-fcd0-4dbc-b3e1-be94ba31aa99";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation AURLAND";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176962a-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176962a-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-AURLAND.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176962a-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176962a-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-AURLAND.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:1b702b6c-5002-4f3b-9d8c-59b178584efd> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:af735b3b-2b5b-41f2-8241-42489ca6371f> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation STAVANGER";
-  cim:IdentifiedObject.mRID "1b702b6c-5002-4f3b-9d8c-59b178584efd";
+  cim:IdentifiedObject.mRID "af735b3b-2b5b-41f2-8241-42489ca6371f";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation STAVANGER";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769664-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769664-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-STAVANGER.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769664-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769664-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-STAVANGER.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:e3830f17-6340-4077-8481-80cdcbb77ae7> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:e3af3f93-fdf7-477a-8f5b-897f822c34f3> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TRONDHEIM";
-  cim:IdentifiedObject.mRID "e3830f17-6340-4077-8481-80cdcbb77ae7";
+  cim:IdentifiedObject.mRID "e3af3f93-fdf7-477a-8f5b-897f822c34f3";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TRONDHEIM";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769694-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769694-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TRONDHEIM.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769694-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769694-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TRONDHEIM.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:5b97e2c4-848f-4219-b86e-0d6bc2786321> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:eac559f1-a949-4829-ae32-0ea38479ce5a> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation MALMO";
-  cim:IdentifiedObject.mRID "5b97e2c4-848f-4219-b86e-0d6bc2786321";
+  cim:IdentifiedObject.mRID "eac559f1-a949-4829-ae32-0ea38479ce5a";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation MALMO";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696ca-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696ca-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-MALMO.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696ca-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696ca-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-MALMO.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:0f8b1512-8607-4b90-a840-873dbc02ac19> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:48554bca-7992-4520-aa16-fbfb1aaed13b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation MO";
-  cim:IdentifiedObject.mRID "0f8b1512-8607-4b90-a840-873dbc02ac19";
+  cim:IdentifiedObject.mRID "48554bca-7992-4520-aa16-fbfb1aaed13b";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation MO";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176969e-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176969e-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-MO.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176969e-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176969e-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-MO.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:96b5899a-43a9-4d69-b380-fbbcfdd97385> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:523dd9d7-3379-4e8f-83f4-9134a5be9a73> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation SYSLE";
-  cim:IdentifiedObject.mRID "96b5899a-43a9-4d69-b380-fbbcfdd97385";
+  cim:IdentifiedObject.mRID "523dd9d7-3379-4e8f-83f4-9134a5be9a73";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation SYSLE";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769648-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769648-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-SYSLE.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769648-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769648-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-SYSLE.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:20f825db-efb8-42df-949d-422a63eec83f> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:ad4c22dd-e4f4-40e1-a1e4-83a0f2e4b889> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation HELSINKI";
-  cim:IdentifiedObject.mRID "20f825db-efb8-42df-949d-422a63eec83f";
+  cim:IdentifiedObject.mRID "ad4c22dd-e4f4-40e1-a1e4-83a0f2e4b889";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation HELSINKI";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696ae-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696ae-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-HELSINKI.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696ae-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696ae-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-HELSINKI.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:14347c30-2bab-43ad-be68-367a74199cb1> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:a53f9c60-189d-4be2-b3af-0320298e529d> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation OSLO";
-  cim:IdentifiedObject.mRID "14347c30-2bab-43ad-be68-367a74199cb1";
+  cim:IdentifiedObject.mRID "a53f9c60-189d-4be2-b3af-0320298e529d";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation OSLO";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f176963c-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f176963c-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-OSLO.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f176963c-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f176963c-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-OSLO.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:0f1b5f9a-1f72-4861-b7f0-fdf8953215d8> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:238226cc-9642-4ff3-96e9-120ce94c68c1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation AJAURE";
-  cim:IdentifiedObject.mRID "0f1b5f9a-1f72-4861-b7f0-fdf8953215d8";
+  cim:IdentifiedObject.mRID "238226cc-9642-4ff3-96e9-120ce94c68c1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation AJAURE";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695fe-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695fe-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-AJAURE.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695fe-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695fe-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-AJAURE.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:2ac141fb-e49c-49d9-8d0e-d24760c132b4> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:e52ce1cf-1b73-42ac-a4ff-9a794cd5ff03> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation GEILO";
-  cim:IdentifiedObject.mRID "2ac141fb-e49c-49d9-8d0e-d24760c132b4";
+  cim:IdentifiedObject.mRID "e52ce1cf-1b73-42ac-a4ff-9a794cd5ff03";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation GEILO";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769630-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769630-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-GEILO.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769630-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769630-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-GEILO.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:849dd632-16b3-4795-a906-bed6220e8b00> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:12187c1b-e9fc-4dc5-9136-78b362cd7993> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation DANNEBO_HVDC";
-  cim:IdentifiedObject.mRID "849dd632-16b3-4795-a906-bed6220e8b00";
+  cim:IdentifiedObject.mRID "12187c1b-e9fc-4dc5-9136-78b362cd7993";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation DANNEBO_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695b8-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695b8-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-DANNEBO_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695b8-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695b8-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-DANNEBO_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:55839b49-a2ae-4bf8-9d7f-68eea52053cf> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:8d25d819-497c-4d1b-89c1-9a916c09abc6> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation JARPSTROMMEN";
-  cim:IdentifiedObject.mRID "55839b49-a2ae-4bf8-9d7f-68eea52053cf";
+  cim:IdentifiedObject.mRID "8d25d819-497c-4d1b-89c1-9a916c09abc6";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation JARPSTROMMEN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695df-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695df-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-JARPSTROMMEN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695df-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695df-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-JARPSTROMMEN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:7cc76eb1-bd67-4147-9ded-bd6be97fe364> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:c86b6b92-121a-4771-aaf7-8866fde69dd3> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation STENKU_HVDC";
-  cim:IdentifiedObject.mRID "7cc76eb1-bd67-4147-9ded-bd6be97fe364";
+  cim:IdentifiedObject.mRID "c86b6b92-121a-4771-aaf7-8866fde69dd3";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation STENKU_HVDC";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695f7-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695f7-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-STENKU_HVDC.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695f7-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695f7-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-STENKU_HVDC.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:b7233605-cb5a-4a8e-b63a-c1e4612a1cb0> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:66def327-3ac6-4c04-b0eb-87996a80f9c8> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation HOGASEN";
-  cim:IdentifiedObject.mRID "b7233605-cb5a-4a8e-b63a-c1e4612a1cb0";
+  cim:IdentifiedObject.mRID "66def327-3ac6-4c04-b0eb-87996a80f9c8";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation HOGASEN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695d8-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695d8-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-HOGASEN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695d8-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695d8-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-HOGASEN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:a53b8d6b-a464-4f9d-80e1-85a200bb137c> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:93e34655-4c7d-4d72-9906-4fffd9c2600a> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation DAGALI";
-  cim:IdentifiedObject.mRID "a53b8d6b-a464-4f9d-80e1-85a200bb137c";
+  cim:IdentifiedObject.mRID "93e34655-4c7d-4d72-9906-4fffd9c2600a";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation DAGALI";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769614-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769614-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-DAGALI.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769614-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769614-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-DAGALI.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:c061c766-b339-40a8-8199-db60cf0908db> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:878ed8f6-3c6d-4d3a-a6a0-a80a8e95d736> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation OULU";
-  cim:IdentifiedObject.mRID "c061c766-b339-40a8-8199-db60cf0908db";
+  cim:IdentifiedObject.mRID "878ed8f6-3c6d-4d3a-a6a0-a80a8e95d736";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation OULU";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17696c4-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17696c4-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-OULU.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17696c4-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17696c4-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-OULU.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:4bf67d99-0581-4a0f-89ea-2fa729bf5a3f> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:02d400a1-2ee2-416e-bab3-539bf459f0bb> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation HJALTA";
-  cim:IdentifiedObject.mRID "4bf67d99-0581-4a0f-89ea-2fa729bf5a3f";
+  cim:IdentifiedObject.mRID "02d400a1-2ee2-416e-bab3-539bf459f0bb";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation HJALTA";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695be-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695be-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-HJALTA.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695be-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695be-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-HJALTA.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:fbb96fb9-5359-4072-a4fa-61f5d3d6f6a3> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:c0ae206f-9aff-4336-a62d-ea61b6d0285d> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation RINGHALS";
-  cim:IdentifiedObject.mRID "fbb96fb9-5359-4072-a4fa-61f5d3d6f6a3";
+  cim:IdentifiedObject.mRID "c0ae206f-9aff-4336-a62d-ea61b6d0285d";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation RINGHALS";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695f1-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695f1-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-RINGHALS.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695f1-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695f1-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-RINGHALS.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:1d47d434-d163-49dc-b309-10a21fb7a133> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:e740d8dd-bb94-4b4c-900a-98ad61953e42> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation SIMA";
-  cim:IdentifiedObject.mRID "1d47d434-d163-49dc-b309-10a21fb7a133";
+  cim:IdentifiedObject.mRID "e740d8dd-bb94-4b4c-900a-98ad61953e42";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation SIMA";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769624-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769624-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-SIMA.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769624-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769624-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-SIMA.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:c0febf0b-8b48-4553-9e17-16d51c5d9176> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:b997d8ee-1f37-466a-9cf5-267b630888f4> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TRETTEN";
-  cim:IdentifiedObject.mRID "c0febf0b-8b48-4553-9e17-16d51c5d9176";
+  cim:IdentifiedObject.mRID "b997d8ee-1f37-466a-9cf5-267b630888f4";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TRETTEN";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769604-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769604-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TRETTEN.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769604-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769604-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TRETTEN.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:66801e5e-21c1-439a-a20f-d76181be99b5> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:c58496fd-ca9a-40ca-8c0a-884487d93d25> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation FORSMARK";
-  cim:IdentifiedObject.mRID "66801e5e-21c1-439a-a20f-d76181be99b5";
+  cim:IdentifiedObject.mRID "c58496fd-ca9a-40ca-8c0a-884487d93d25";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation FORSMARK";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695aa-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695aa-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-FORSMARK.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695aa-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695aa-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-FORSMARK.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:f65b0f1b-f39b-4488-b1ec-1dc11e8f9e00> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:ddb6e841-6844-45e4-aa31-9ca6c5fe53a9> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TENHULT";
-  cim:IdentifiedObject.mRID "f65b0f1b-f39b-4488-b1ec-1dc11e8f9e00";
+  cim:IdentifiedObject.mRID "ddb6e841-6844-45e4-aa31-9ca6c5fe53a9";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TENHULT";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695d2-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695d2-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TENHULT.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695d2-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695d2-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TENHULT.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:2e3fea8f-abee-4002-8165-506580f43dda> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:4e693338-2e7a-4047-9c49-3244f5bfbec1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation EIDFJORD";
-  cim:IdentifiedObject.mRID "2e3fea8f-abee-4002-8165-506580f43dda";
+  cim:IdentifiedObject.mRID "4e693338-2e7a-4047-9c49-3244f5bfbec1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation EIDFJORD";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769636-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769636-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-EIDFJORD.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769636-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769636-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-EIDFJORD.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:c6599be6-87eb-4421-8501-a6d01add1cda> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:088474f1-cbd2-43a2-83c7-83b727b5e603> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation SYLLING";
-  cim:IdentifiedObject.mRID "c6599be6-87eb-4421-8501-a6d01add1cda";
+  cim:IdentifiedObject.mRID "088474f1-cbd2-43a2-83c7-83b727b5e603";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation SYLLING";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f1769642-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f1769642-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-SYLLING.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f1769642-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f1769642-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-SYLLING.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:21ef5ae7-c73f-4ea3-9821-2172cc7ac827> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:901f01d9-0329-49cf-a786-dd805e44c28b> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation GRUNDFORS";
-  cim:IdentifiedObject.mRID "21ef5ae7-c73f-4ea3-9821-2172cc7ac827";
+  cim:IdentifiedObject.mRID "901f01d9-0329-49cf-a786-dd805e44c28b";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation GRUNDFORS";
-  cimr:Diagram.PowerSystemResource <urn:uuid:f17695e5-9aeb-11e5-91da-b8763fd99c5f>;
-  cimr:Diagram.mRIDs "\"f17695e5-9aeb-11e5-91da-b8763fd99c5f\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-GRUNDFORS.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:f17695e5-9aeb-11e5-91da-b8763fd99c5f>;
+  cimd:Diagram.mRIDs "\"f17695e5-9aeb-11e5-91da-b8763fd99c5f\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-GRUNDFORS.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:50ae1788-12e2-4733-93e5-f55f2895663d> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:9d648b46-8918-4b4c-9241-34d912c105c5> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation NEDENES";
-  cim:IdentifiedObject.mRID "50ae1788-12e2-4733-93e5-f55f2895663d";
+  cim:IdentifiedObject.mRID "9d648b46-8918-4b4c-9241-34d912c105c5";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation NEDENES";
-  cimr:Diagram.PowerSystemResource <urn:uuid:681a2179-5a55-11eb-a658-74e5f963e191>;
-  cimr:Diagram.mRIDs "\"681a2179-5a55-11eb-a658-74e5f963e191\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-NEDENES.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:681a2179-5a55-11eb-a658-74e5f963e191>;
+  cimd:Diagram.mRIDs "\"681a2179-5a55-11eb-a658-74e5f963e191\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-NEDENES.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:ec6f524a-0de0-4eb3-acd5-26f39600ac40> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:5a4e9a84-9b94-44b3-be7a-0f64b1d440f9> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB2";
-  cim:IdentifiedObject.mRID "ec6f524a-0de0-4eb3-acd5-26f39600ac40";
+  cim:IdentifiedObject.mRID "5a4e9a84-9b94-44b3-be7a-0f64b1d440f9";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB2";
-  cimr:Diagram.PowerSystemResource <urn:uuid:4bb21420-ef4f-4af1-979e-863c3f484c51>;
-  cimr:Diagram.mRIDs "\"4bb21420-ef4f-4af1-979e-863c3f484c51\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB2.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:4bb21420-ef4f-4af1-979e-863c3f484c51>;
+  cimd:Diagram.mRIDs "\"4bb21420-ef4f-4af1-979e-863c3f484c51\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB2.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:d3e6920c-ec4a-467f-92ab-64febe7601c1> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:d9cab4a7-5b3c-48c7-9540-1c6a0da46d8a> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB5";
-  cim:IdentifiedObject.mRID "d3e6920c-ec4a-467f-92ab-64febe7601c1";
+  cim:IdentifiedObject.mRID "d9cab4a7-5b3c-48c7-9540-1c6a0da46d8a";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB5";
-  cimr:Diagram.PowerSystemResource <urn:uuid:27a21834-5457-4f1b-ad5c-1c69ff88fbd4>;
-  cimr:Diagram.mRIDs "\"27a21834-5457-4f1b-ad5c-1c69ff88fbd4\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB5.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:27a21834-5457-4f1b-ad5c-1c69ff88fbd4>;
+  cimd:Diagram.mRIDs "\"27a21834-5457-4f1b-ad5c-1c69ff88fbd4\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB5.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:d8fe55ba-6fe0-4d2b-9827-6058ebf852f1> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:9d798648-31db-46b2-aeac-13968173bb55> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB3";
-  cim:IdentifiedObject.mRID "d8fe55ba-6fe0-4d2b-9827-6058ebf852f1";
+  cim:IdentifiedObject.mRID "9d798648-31db-46b2-aeac-13968173bb55";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB3";
-  cimr:Diagram.PowerSystemResource <urn:uuid:ccffa748-19de-412a-9946-1fc846d98b71>;
-  cimr:Diagram.mRIDs "\"ccffa748-19de-412a-9946-1fc846d98b71\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB3.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:ccffa748-19de-412a-9946-1fc846d98b71>;
+  cimd:Diagram.mRIDs "\"ccffa748-19de-412a-9946-1fc846d98b71\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB3.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:9eb81fa9-58e1-4e9d-ac73-6301fc22a7c4> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:d9a9dfe3-9d93-4719-87eb-357f0a9592d1> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB4";
-  cim:IdentifiedObject.mRID "9eb81fa9-58e1-4e9d-ac73-6301fc22a7c4";
+  cim:IdentifiedObject.mRID "d9a9dfe3-9d93-4719-87eb-357f0a9592d1";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB4";
-  cimr:Diagram.PowerSystemResource <urn:uuid:37a3bd2c-7817-48de-aa01-13a324a6d6bd>;
-  cimr:Diagram.mRIDs "\"37a3bd2c-7817-48de-aa01-13a324a6d6bd\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB4.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:37a3bd2c-7817-48de-aa01-13a324a6d6bd>;
+  cimd:Diagram.mRIDs "\"37a3bd2c-7817-48de-aa01-13a324a6d6bd\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB4.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:f88cd753-39d6-4419-ad82-1c71c01c0e1e> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:8ce6aae0-3456-48ec-99de-1023035a6d10> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB1";
-  cim:IdentifiedObject.mRID "f88cd753-39d6-4419-ad82-1c71c01c0e1e";
+  cim:IdentifiedObject.mRID "8ce6aae0-3456-48ec-99de-1023035a6d10";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB1";
-  cimr:Diagram.PowerSystemResource <urn:uuid:e322d64a-0413-4703-b31c-b8e0c5c32f44>;
-  cimr:Diagram.mRIDs "\"e322d64a-0413-4703-b31c-b8e0c5c32f44\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB1.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:e322d64a-0413-4703-b31c-b8e0c5c32f44>;
+  cimd:Diagram.mRIDs "\"e322d64a-0413-4703-b31c-b8e0c5c32f44\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB1.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:59a42911-2426-4c5d-894c-add076e4100b> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:828b1b93-5c92-4965-9bd6-49a47e33754e> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB7";
-  cim:IdentifiedObject.mRID "59a42911-2426-4c5d-894c-add076e4100b";
+  cim:IdentifiedObject.mRID "828b1b93-5c92-4965-9bd6-49a47e33754e";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB7";
-  cimr:Diagram.PowerSystemResource <urn:uuid:99a5ca36-e724-49a7-8e7f-247357b6f336>;
-  cimr:Diagram.mRIDs "\"99a5ca36-e724-49a7-8e7f-247357b6f336\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB7.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:99a5ca36-e724-49a7-8e7f-247357b6f336>;
+  cimd:Diagram.mRIDs "\"99a5ca36-e724-49a7-8e7f-247357b6f336\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB7.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:61fce745-fa92-472e-ad8b-03e74b69ae24> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:7ff87ef5-4789-4886-9c4a-ca6cd55e3e46> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation TELEMA2 04 CB6";
-  cim:IdentifiedObject.mRID "61fce745-fa92-472e-ad8b-03e74b69ae24";
+  cim:IdentifiedObject.mRID "7ff87ef5-4789-4886-9c4a-ca6cd55e3e46";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation TELEMA2 04 CB6";
-  cimr:Diagram.PowerSystemResource <urn:uuid:811613d5-c44f-4daa-9dc1-03005740a4e5>;
-  cimr:Diagram.mRIDs "\"811613d5-c44f-4daa-9dc1-03005740a4e5\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB6.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:811613d5-c44f-4daa-9dc1-03005740a4e5>;
+  cimd:Diagram.mRIDs "\"811613d5-c44f-4daa-9dc1-03005740a4e5\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-TELEMA2-04-CB6.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:fad7484f-874d-4782-83fd-98e2f80e641e> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:3c1fcc08-79c0-496e-8725-373c307fbaa7> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation ENGENE";
-  cim:IdentifiedObject.mRID "fad7484f-874d-4782-83fd-98e2f80e641e";
+  cim:IdentifiedObject.mRID "3c1fcc08-79c0-496e-8725-373c307fbaa7";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation ENGENE";
-  cimr:Diagram.PowerSystemResource <urn:uuid:681a1e15-5a55-11eb-a658-74e5f963e191>;
-  cimr:Diagram.mRIDs "\"681a1e15-5a55-11eb-a658-74e5f963e191\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-ENGENE.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:681a1e15-5a55-11eb-a658-74e5f963e191>;
+  cimd:Diagram.mRIDs "\"681a1e15-5a55-11eb-a658-74e5f963e191\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-ENGENE.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:f84c1604-f0d9-4d49-9755-984cc41ed9ac> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:47b2cd48-16a1-46aa-9c74-cbc4e3e87063> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation FROLAND";
-  cim:IdentifiedObject.mRID "f84c1604-f0d9-4d49-9755-984cc41ed9ac";
+  cim:IdentifiedObject.mRID "47b2cd48-16a1-46aa-9c74-cbc4e3e87063";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation FROLAND";
-  cimr:Diagram.PowerSystemResource <urn:uuid:681a1e63-5a55-11eb-a658-74e5f963e191>;
-  cimr:Diagram.mRIDs "\"681a1e63-5a55-11eb-a658-74e5f963e191\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-FROLAND.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:681a1e63-5a55-11eb-a658-74e5f963e191>;
+  cimd:Diagram.mRIDs "\"681a1e63-5a55-11eb-a658-74e5f963e191\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-FROLAND.svg";
+  dct:format "image/svg+xml" .
 
-<urn:uuid:13a5f62c-6928-4012-b87a-a5f65938df28> a cimr:Diagram;
-  cimr:Diagram.kind cimr:DiagramKind.PowSyBl-SingleLineDiagram;
+<urn:uuid:6ab6ac61-8dab-4ff3-92a1-92ff501fd77a> a cimd:Diagram;
+  cimd:Diagram.kind cimd:DiagramKind.PowSyBl-SingleLineDiagram;
   cim:IdentifiedObject.name "Diagram of substation T_ENGENE";
-  cim:IdentifiedObject.mRID "13a5f62c-6928-4012-b87a-a5f65938df28";
+  cim:IdentifiedObject.mRID "6ab6ac61-8dab-4ff3-92a1-92ff501fd77a";
   cim:IdentifiedObject.description "PowSyBl Single-Line-Diagram of substation T_ENGENE";
-  cimr:Diagram.PowerSystemResource <urn:uuid:681a1e3c-5a55-11eb-a658-74e5f963e191>;
-  cimr:Diagram.mRIDs "\"681a1e3c-5a55-11eb-a658-74e5f963e191\"";
-  cimr:Diagram.link "PowSyBl-SLD-substation-T_ENGENE.svg" .
+  cimd:Diagram.PowerSystemResource <urn:uuid:681a1e3c-5a55-11eb-a658-74e5f963e191>;
+  cimd:Diagram.mRIDs "\"681a1e3c-5a55-11eb-a658-74e5f963e191\"";
+  cimd:Diagram.link "PowSyBl-SLD-substation-T_ENGENE.svg";
+  dct:format "image/svg+xml" .

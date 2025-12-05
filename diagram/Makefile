@@ -1,9 +1,9 @@
 TTL = $(wildcard queries/*.ttl)
 
-all: diagrams.ttl diagrams.tsv
+all: diagrams.trig diagrams.tsv
 
-diagrams.ttl: $(TTL)
-	cat $^ > $@
+diagrams.trig: $(TTL) | diagrams-header.trig diagrams-footer.trig
+	cat $^ | grep -v '^@prefix' | cat diagrams-header.trig - diagrams-footer.trig > $@
 
-diagrams.tsv: queries/diagrams.rq diagrams.ttl
-	arq.bat --query=queries/diagrams.rq --data=diagrams.ttl --results=tsv > diagrams.tsv
+diagrams.tsv: queries/diagrams.rq diagrams.trig
+	arq.bat --query=queries/diagrams.rq --data=diagrams.trig --results=tsv > diagrams.tsv
