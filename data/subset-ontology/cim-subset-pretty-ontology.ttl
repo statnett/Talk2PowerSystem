@@ -4,6 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
 @prefix cimr: <https://cim.ucaiug.io/rules#> .
 @prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -251,6 +252,7 @@ cim:DCPolarityKind a owl:Class ;
 cim:Diagram a owl:Class ;
   rdfs:label "Diagram" ;
   rdfs:comment "The diagram being exchanged. The coordinate system is a standard Cartesian coordinate system and the orientation attribute defines the orientation. The initial view related attributes can be used to specify an initial view with the x,y coordinates of the diagonal points."@en ;
+  cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed" ;
   rdfs:subClassOf cim:IdentifiedObject .
 
 cim:DiagramObject a owl:Class ;
@@ -857,6 +859,17 @@ cim:WireInsulationKind a owl:Class ;
 cim:WireUsageKind a owl:Class ;
   rdfs:label "WireUsageKind" ;
   rdfs:comment "Kind of wire usage."@en .
+
+cimd:Diagram a owl:Class ;
+  rdfs:label "Diagram" ;
+  rdfs:comment """Diagram represented as an image (SVG, PNG) or web app (the MIME type is indicated by dct:format).
+Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPoints.""" ;
+  cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed" ;
+  rdfs:subClassOf cim:IdentifiedObject .
+
+cimd:DiagramKind a owl:Class ;
+  rdfs:label "DiagramKind" ;
+  rdfs:comment "Diagram kind reflecting the technology (e.g. PowSyBl vs VizGraph) and subkind." .
 
 cimr:EquipmentOrContainer a owl:Class ;
   rdfs:label "Equipment or Container" ;
@@ -2457,6 +2470,13 @@ cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty ;
   cims:multiplicity cims:M:0..1 ;
   rdfs:domain cim:WireInfo ;
   rdfs:range cim:WireInsulationKind .
+
+cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "kind" ;
+  rdfs:comment "Kind of diagram" ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range cimd:DiagramKind .
 
 cimr:Equipment.Terminals a owl:ObjectProperty ;
   rdfs:label "terminals" ;
@@ -5170,6 +5190,42 @@ cim:WireInsulationKind.other a cim:WireInsulationKind ;
 cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulationKind ;
   rdfs:label "treeRetardantCrosslinkedPolyethylene" ;
   rdfs:comment "Tree retardant crosslinked polyethylene wire insulation."@en .
+
+cimd:Diagram.PowerSystemResource a owl:Property ;
+  rdfs:label "PowerSystemResource" ;
+  rdfs:comment "Power System Resource(s) shown on the diagram. This lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels compare to cimd:Diagram.mRIDs)" ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range cim:PowerSystemResource .
+
+cimd:Diagram.link a owl:FunctionalProperty, owl:Property ;
+  rdfs:label "link" ;
+  rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base)." ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range xsd:string .
+
+cimd:Diagram.mRIDs a owl:FunctionalProperty, owl:Property ;
+  rdfs:label "mRIDs" ;
+  rdfs:comment "mRIDs of the lower-level PSRs (Substations or VoltageLevels) shown on the diagram, as a string suitable for passing to PowSyBl Python version. Compare to cimd:Diagram.PowerSystemResource." ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range xsd:string ;
+  skos:example "Multiple voltage levels: (\"mrid1\",\"mrid2\"...\"mridN\")", "Single substation or voltage level: \"mrid1\"", "Two substations listed left-to-right (west-to-east): [[\"mrid1\",\"mrid2\"]]" .
+
+cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind ;
+  rdfs:label "PowSyBl-NetworkAreaDiagram" ;
+  rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
+Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""" .
+
+cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind ;
+  rdfs:label "PowSyBl-SingleLineDiagram" ;
+  rdfs:comment """PowSyBl Single-Line-Diagram. Shows equipment (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.
+Can display one or several substations, voltage levels or areas.""" .
+
+cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi a cimd:DiagramKind ;
+  rdfs:label "PowSyBl-SingleLineDiagram-Multi" ;
+  rdfs:comment "PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows." .
 
 eu:LimitKind.highVoltage a eu:LimitKind ;
   rdfs:label "highVoltage" ;

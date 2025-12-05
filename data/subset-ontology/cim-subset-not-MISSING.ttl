@@ -5,6 +5,7 @@
 @prefix cim16: <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
 @prefix cim17: <http://iec.ch/TC57/CIM100#> .
 @prefix cim: <https://cim.ucaiug.io/ns#> .
+@prefix cimd: <https://cim.ucaiug.io/diagrams#> .
 @prefix cimr: <https://cim.ucaiug.io/rules#> .
 @prefix cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -130,6 +131,7 @@ Description may include but is not limited to: an abstract, a table of contents,
   rdfs:range xsd:string;
   rdfs:label "description";
   cims:multiplicity cims:M:0..1 .
+
 
 dct:identifier a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "A unique identifier of the resource being described or cataloged. The identifier might be used as part of the IRI of the resource, but still having it represented explicitly is useful. The identifier is a text string which is assigned to the resource to provide an unambiguous reference within a particular context. [CIM context: A unique identifier of the model which is serialised in the document where the header is located. The identifier is persistent for a given version of the model and shall change"@en,
@@ -505,6 +507,61 @@ Reference to an activity or the exact business nature (process, configuration) w
 
 
 
+
+cimd:Diagram a owl:Class;
+  rdfs:comment """Diagram represented as an image (SVG, PNG) or web app (the MIME type is indicated by dct:format).
+Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPoints.""";
+  rdfs:subClassOf cim:IdentifiedObject;
+  rdfs:label "Diagram";
+  cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed" .
+
+cimd:Diagram.PowerSystemResource a owl:Property;
+  rdfs:comment "Power System Resource(s) shown on the diagram. This lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels compare to cimd:Diagram.mRIDs)";
+  rdfs:domain cimd:Diagram;
+  rdfs:range cim:PowerSystemResource;
+  rdfs:label "PowerSystemResource";
+  cims:multiplicity cims:M:0..n .
+
+cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty;
+  rdfs:comment "Kind of diagram";
+  rdfs:domain cimd:Diagram;
+  rdfs:range cimd:DiagramKind;
+  rdfs:label "kind";
+  cims:multiplicity cims:M:1..1 .
+
+cimd:Diagram.link a owl:FunctionalProperty, owl:Property;
+  rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base).";
+  rdfs:domain cimd:Diagram;
+  rdfs:range xsd:string;
+  rdfs:label "link";
+  cims:multiplicity cims:M:1..1 .
+
+cimd:Diagram.mRIDs a owl:FunctionalProperty, owl:Property;
+  rdfs:comment "mRIDs of the lower-level PSRs (Substations or VoltageLevels) shown on the diagram, as a string suitable for passing to PowSyBl Python version. Compare to cimd:Diagram.PowerSystemResource.";
+  rdfs:domain cimd:Diagram;
+  rdfs:range xsd:string;
+  rdfs:label "mRIDs";
+  cims:multiplicity cims:M:0..1;
+  skos:example "Single substation or voltage level: \"mrid1\"", "Two substations listed left-to-right (west-to-east): [[\"mrid1\",\"mrid2\"]]",
+    "Multiple voltage levels: (\"mrid1\",\"mrid2\"...\"mridN\")" .
+
+cimd:DiagramKind a owl:Class;
+  rdfs:comment "Diagram kind reflecting the technology (e.g. PowSyBl vs VizGraph) and subkind.";
+  rdfs:label "DiagramKind" .
+
+cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind;
+  rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
+Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""";
+  rdfs:label "PowSyBl-NetworkAreaDiagram" .
+
+cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind;
+  rdfs:comment """PowSyBl Single-Line-Diagram. Shows equipment (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.
+Can display one or several substations, voltage levels or areas.""";
+  rdfs:label "PowSyBl-SingleLineDiagram" .
+
+cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi a cimd:DiagramKind;
+  rdfs:comment "PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.";
+  rdfs:label "PowSyBl-SingleLineDiagram-Multi" .
 
 cim:ACDCTerminal a owl:Class;
   rdfs:comment "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."@en;
@@ -1359,7 +1416,8 @@ cim:DCPolarityKind a owl:Class;
 cim:Diagram a owl:Class;
   rdfs:comment "The diagram being exchanged. The coordinate system is a standard Cartesian coordinate system and the orientation attribute defines the orientation. The initial view related attributes can be used to specify an initial view with the x,y coordinates of the diagonal points."@en;
   rdfs:subClassOf cim:IdentifiedObject;
-  rdfs:label "Diagram" .
+  rdfs:label "Diagram";
+  cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed" .
 
 cim:Diagram.DiagramElements a owl:ObjectProperty, owl:InverseFunctionalProperty;
   rdfs:comment "A diagram is made up of multiple diagram objects."@en;
@@ -4398,9 +4456,8 @@ nc:BaseTimeSeries.kind a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1 .
 
 
-nc:BaseTimeSeries.percentile a owl:FunctionalProperty;
+nc:BaseTimeSeries.percentile a owl:FunctionalProperty, owl:DatatypeProperty;
   rdfs:comment "The percentile is a number where a certain percentage of scores/ranking/values of a sample fall below that number. This is a way for expressing uncertainty in the number provided."@en;
-  a owl:DatatypeProperty;
   rdfs:domain nc:BaseTimeSeries;
   rdfs:range xsd:integer;
   rdfs:label "percentile";
