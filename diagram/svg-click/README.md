@@ -143,6 +143,7 @@ In summary, our analysis suggests the following algorithm for associating an SVG
 - Globally replace `_45_` to dash, `_95_` to underscore
 - If it doesn't start with `id`, skip it. Else remove this `id`
 - If it doesn't start with a UUID (optionally followed by underscore), skip it
+- Else return this UUID
 
 In other words, you could use the following regex replaces to find the mRID
 ```perl
