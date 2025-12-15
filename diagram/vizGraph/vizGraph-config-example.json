@@ -1,0 +1,41 @@
+﻿{
+  "id": "99638482586148159e97fb379901dc54",
+  "name": "VoltageLevel",
+  "startMode": "search",
+  "owner": "admin",
+  "startQueryIncludeInferred": true,
+  "startQuerySameAs": true,
+  "startGraphQuery": null,
+  "startIRI": null,
+  "startIRILabel": null,
+  "expandQuery": // shown unescaped
+"PREFIX cim: <https://cim.ucaiug.io/ns#>
+PREFIX cimr: <https://cim.ucaiug.io/rules#>
+construct {
+  ?cn cimr:connectedTo ?eq .
+}
+where { 
+  ?node a cim:VoltageLevel .
+    ?cn cim:ConnectivityNode.ConnectivityNodeContainer ?node .
+    ?t cim:Terminal.ConnectivityNode ?cn ;
+       cim:Terminal.ConductingEquipment ?eq .
+}",
+  "resourceQuery": // shown unescaped
+"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cim: <https://cim.ucaiug.io/ns#>
+PREFIX sesame: <http://www.openrdf.org/schema/sesame#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+select * {
+    ?node sesame:directType ?type . ?type rdfs:label ?type_label
+    optional {?node cim:IdentifiedObject.name ?name. 
+        bind(concat(?type_label,"\n",?name) as ?label)
+    }
+    optional {?node cim:IdentifiedObject.description ?comment}
+    filter(!sameterm(?type,owl:Thing))
+}",
+  "predicateLabelQuery": "",
+  "resourcePropertiesQuery": "",
+  "shared": true,
+  "description": "Enter a cim:VoltageLevel node",
+  "hint": "Enter a cim:VoltageLevel node such as urn:uuid:f1769660-9aeb-11e5-91da-b8763fd99c5f"
+}
