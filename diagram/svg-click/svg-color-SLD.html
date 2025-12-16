@@ -27,6 +27,23 @@
         <div id="svg-container" class="svg-container-box p-4 rounded-lg flex items-center justify-center">
             <p id="loading-text" class="text-gray-500 italic">Loading SVG...</p>
         </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Element Color Script</title>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
+<style><![CDATA[
+.red {fill: red, stroke: red}
+.black {fill: black, stroke: black}
+]]>
+</style>
+        <!-- Container where the script will inject the processed SVG -->
+        <div id="svg-container" class="svg-container-box p-4 rounded-lg flex items-center justify-center">
+            <p id="loading-text" class="text-gray-500 italic">Loading SVG...</p>
+        </div>
 
     <script>
         // --- 1. The Core Logic ---
@@ -58,30 +75,19 @@
                     throw new Error("Could not find SVG root element in the parsed document.");
                 }
 
+                const allElements = svgElement.querySelectorAll('*');
                 // Define the Regex: matches 'id' followed by 8 hex chars and an underscore
                 const idRegex = /^id[0-9a-f]{8}_/;
 
                 // Select all elements within the SVG that have an ID attribute
-                // Note: We also select elements without ID to check if they should be processed,
-                // but the coloring logic is applied to *all* elements in this implementation.
-                const allElements = svgElement.querySelectorAll('*');
-
                 allElements.forEach(el => {
                     const id = el.getAttribute('id');
-
-                    // Skip the coloring if the element has no ID or is the root SVG element itself
-                    if (!id || el === svgElement) {
-                        return; 
-                    }
+                    // Skip the coloring if the element is the root SVG element itself
+                    if (el === svgElement) {return;}
 
                     if (idRegex.test(id)) {
-                        // Apply RED if the ID matches the pattern
-                        el.setAttribute('fill', 'red');
-                        el.setAttribute('stroke', 'red'); 
-                    } else {
-                        // Apply BLACK otherwise
-                        el.setAttribute('fill', 'black');
-                        el.setAttribute('stroke', 'black');
+                      // Apply RED if the ID matches the pattern
+                      el.setAttribute('class', id && idRegex.test(id) ? 'red' : 'black');
                     }
                 });
 
@@ -98,7 +104,7 @@
 
         // Execute the function on page load
         window.onload = () => {
-            loadAndColorSVG("../svg/PowSyBl-SLD-2substations-KRISTIANSAND-and-ARENDAL.svg", 'svg-container');
+            loadAndColorSVG("../svg/PowSyBl-NAD-all.svg", 'svg-container');
         };
 
     </script>
