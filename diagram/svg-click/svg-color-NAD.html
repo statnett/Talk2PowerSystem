@@ -61,7 +61,7 @@
                 const allElements = svgElement.querySelectorAll('*');
               // remove CSS classes, which override directly set fill/stroke
                 allElements.forEach(el => {
-                    el.deleteAttribute('class');
+                  el.setAttribute('class', null);
                 };
 
                 // Define the Regex: matches 'id' followed by 8 hex chars and an underscore
