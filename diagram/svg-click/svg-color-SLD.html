@@ -56,9 +56,10 @@
                   if (el === svgElement) {return;}
 
                   const id = el.getAttribute('id');
-                  const class = el.getAttribute('class');
-                  el.setAttribute('class', // overwrite 'class'
-                                  id ? (idRegex.test(id) ? 'red' : 'black') : undef);
+                  el.setAttribute('class', null)
+                  if (id) {el.setAttribute('stroke', idRegex.test(id) ? 'red' : 'black');}
+                  if (id) {el.setAttribute('fill',   idRegex.test(id) ? 'red' : 'black');}
+                  if (id) {el.setAttribute('color',  idRegex.test(id) ? 'red' : 'black');}
                 });
 
                 // Clear the loading text and append the modified SVG to the container
