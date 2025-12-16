@@ -6,10 +6,10 @@
     <title>SVG Element Color Script</title>
 </head>
 <body>
-        <!-- Container where the script will inject the processed SVG -->
-        <div id="svg-container">
-            <p id="loading-text">Loading SVG...</p>
-        </div>
+    <!-- Container where the script will inject the processed SVG -->
+    <div id="svg-container">
+        <p id="loading-text">Loading SVG...</p>
+    </div>
 
     <script>
         // --- 1. The Core Logic ---
@@ -51,9 +51,9 @@
 
                   const id = el.getAttribute('id');
                   el.setAttribute('class', ''); // reset class
-                  if (id) {el.setAttribute('stroke', idRegex.test(id) ? 'red' : 'black');}
-                  if (id) {el.setAttribute('fill',   idRegex.test(id) ? 'red' : 'black');}
                   if (id) {el.setAttribute('color',  idRegex.test(id) ? 'red' : 'black');}
+                  if (id) {el.setAttribute('stroke', idRegex.test(id) ? 'red' : 'black');}
+                  // if (id) {el.setAttribute('fill',   idRegex.test(id) ? 'red' : 'black');}
                 });
 
                 // Clear the loading text and append the modified SVG to the container
