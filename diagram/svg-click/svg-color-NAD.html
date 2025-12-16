@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Element Color Script</title>
-    <!-- Load Tailwind CSS for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles to ensure the container is visually distinct */
-        .svg-container-box {
-            min-height: 200px;
-            border: 2px solid #3b82f6;
-            background-color: #f3f4f6;
-            transition: all 0.3s ease-in-out;
-        }
-        /* Style for the SVG container, ensuring it centers its content */
-        #svg-container svg {
-            display: block;
-            margin: auto;
-        }
-    </style>
+    <!-- <\!-- Load Tailwind CSS for modern styling -\-> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <style> -->
+    <!--     /* Custom styles to ensure the container is visually distinct */ -->
+    <!--     .svg-container-box { -->
+    <!--         min-height: 200px; -->
+    <!--         border: 2px solid #3b82f6; -->
+    <!--         background-color: #f3f4f6; -->
+    <!--         transition: all 0.3s ease-in-out; -->
+    <!--     } -->
+    <!--     /* Style for the SVG container, ensuring it centers its content */ -->
+    <!--     #svg-container svg { -->
+    <!--         display: block; -->
+    <!--         margin: auto; -->
+    <!--     } -->
+    <!-- </style> -->
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
 
@@ -74,10 +74,11 @@
                         return; 
                     }
 
+                    el.deleteAttribute('class');
                     if (idRegex.test(id)) {
                         // Apply RED if the ID matches the pattern
                         el.setAttribute('fill', 'red');
-                        el.setAttribute('stroke', 'red'); 
+                        el.setAttribute('stroke', 'red');
                     } else {
                         // Apply BLACK otherwise
                         el.setAttribute('fill', 'black');
