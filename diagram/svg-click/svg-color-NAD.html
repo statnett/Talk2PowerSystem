@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Element Color Script</title>
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
-<style><![CDATA[
-.red {fill: red, stroke: red}
-.black {fill: black, stroke: black}
-]]>
-</style>
-        <!-- Container where the script will inject the processed SVG -->
-        <div id="svg-container" class="svg-container-box p-4 rounded-lg flex items-center justify-center">
-            <p id="loading-text" class="text-gray-500 italic">Loading SVG...</p>
-        </div>
+<body>
+    <!-- Container where the script will inject the processed SVG -->
+    <div id="svg-container">
+        <p id="loading-text">Loading SVG...</p>
+    </div>
 
     <script>
         // --- 1. The Core Logic ---
@@ -50,16 +45,15 @@
                 // Define the Regex: matches 'id' followed by 8 hex chars and an underscore
                 const idRegex = /^id[0-9a-f]{8}_/;
 
-                // Select all elements within the SVG that have an ID attribute
                 allElements.forEach(el => {
-                    const id = el.getAttribute('id');
-                    // Skip the coloring if the element is the root SVG element itself
-                    if (el === svgElement) {return;}
+                  // Skip the coloring if the element is the root SVG element itself
+                  if (el === svgElement) {return;}
 
-                    if (idRegex.test(id)) {
-                      // Apply RED if the ID matches the pattern
-                      el.setAttribute('class', id && idRegex.test(id) ? 'red' : 'black');
-                    }
+                  const id = el.getAttribute('id');
+                  el.setAttribute('class', ''); // reset class
+                  if (id) {el.setAttribute('color',  idRegex.test(id) ? 'red' : 'black');}
+                  if (id) {el.setAttribute('stroke', idRegex.test(id) ? 'red' : 'black');}
+                  // if (id) {el.setAttribute('fill',   idRegex.test(id) ? 'red' : 'black');}
                 });
 
                 // Clear the loading text and append the modified SVG to the container

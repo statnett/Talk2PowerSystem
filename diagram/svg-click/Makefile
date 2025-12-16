@@ -10,3 +10,6 @@ all:
 	perl -pe 's{id="(.*?)"}{$$1}; s{id}{}; s{_+}{\n}g; ' id-all-norm.txt  | sort | uniq > svg-words.txt
 	perl -pe 's{([0-9a-f-]{36})-\1}{$$1}; s{(ONE|fict)-}{$$1\n}' svg-words.txt | sort | uniq > svg-dedup.txt 
 	wc -l *.txt
+
+color:
+	perl -pe 's{PowSyBl-SLD-2substations-KRISTIANSAND-and-ARENDAL.svg}{PowSyBl-NAD-all.svg}' svg-color-SLD.html > svg-color-NAD.html
