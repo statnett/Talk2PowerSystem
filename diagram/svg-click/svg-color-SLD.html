@@ -7,8 +7,8 @@
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
 <style><![CDATA[
-.red {fill: red, stroke: red}
-.black {fill: black, stroke: black}
+.red {fill: red, stroke: red, color: red}
+.black {fill: black, stroke: black, color: black}
 ]]>
 </style>
         <!-- Container where the script will inject the processed SVG -->
@@ -52,14 +52,15 @@
 
                 // Select all elements within the SVG that have an ID attribute
                 allElements.forEach(el => {
-                    const id = el.getAttribute('id');
-                    // Skip the coloring if the element is the root SVG element itself
-                    if (el === svgElement) {return;}
+                  const id = el.getAttribute('id');
+                  // Skip the coloring if the element is the root SVG element itself
+                  if (el === svgElement) {return;}
 
-                    if (idRegex.test(id)) {
-                      // Apply RED if the ID matches the pattern
-                      el.setAttribute('class', id && idRegex.test(id) ? 'red' : 'black');
-                    }
+                  // overwrite 'class' if present, or force it for every element with 'id'
+                  if (id || el.getAttribute('class')) {
+                    // RED if id matches the pattern, else BLACK
+                    el.setAttribute('class', id && idRegex.test(id) ? 'red' : 'black');
+                  }
                 });
 
                 // Clear the loading text and append the modified SVG to the container
