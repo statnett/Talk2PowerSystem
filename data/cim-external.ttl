@@ -1,0 +1,59 @@
+
+@prefix qudt:         <http://qudt.org/schema/qudt/> .
+@prefix cim:          <https://cim.ucaiug.io/ns#> .
+@prefix cims:         <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dcat:         <http://www.w3.org/ns/dcat#>.
+@prefix geo:         <http://www.opengis.net/ont/geosparql#>.
+@prefix rdfs:         <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:         <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:          <http://purl.org/dc/terms/> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:          <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+dct:requires a owl:ObjectProperty ;
+  rdfs:label "Requires" ;
+  rdfs:comment "A reference to the the model that this model depends on. In general there can be 0 or many dct:requires depending on the profile and the content of the instance model"@en ;
+  cims:multiplicity cims:M:0..n ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range dcat:Dataset .
+
+geo:Feature
+	a rdfs:Class, owl:Class ;
+	owl:disjointWith geo:Geometry ;
+	skos:definition """A discrete spatial phenomenon in a universe of discourse."""@en ;
+	skos:note """A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."""@en ;
+	skos:prefLabel "Feature"@en ;
+.
+
+geo:asWKT
+	a rdf:Property, owl:DatatypeProperty ;
+	rdfs:domain geo:Geometry ;
+	rdfs:range geo:wktLiteral ;
+	skos:definition """The WKT serialization of a Geometry"""@en ;
+	skos:prefLabel "as WKT"@en ;
+.
+
+geo:Geometry
+	a rdfs:Class, owl:Class ;
+	skos:definition """A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."""@en ;
+	skos:note """Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."""@en ;
+	skos:prefLabel "Geometry"@en ;
+.
+
+geo:hasGeometry
+	a rdf:Property, owl:ObjectProperty ;
+	rdfs:domain geo:Feature ;
+	rdfs:range geo:Geometry ;
+	skos:definition """A spatial representation for a given Feature."""@en ;
+	skos:prefLabel "has geometry"@en ;
+.
+
+qudt:hasUnit
+  a owl:ObjectProperty ;
+  dct:description "This property relates a system of units with a unit of measure that is either a) defined by the system, or b) accepted for use by the system and is convertible to a unit of equivalent dimension that is defined by the system. Systems of units may distinguish between base and derived units. Base units are the units which measure the base quantities for the corresponding system of quantities. The base units are used to define units for all other quantities as products of powers of the base units. Such units are called derived units for the system."^^rdf:HTML ;
+  rdfs:label "has unit" ;
+.
+
+qudt:plainTextDescription rdfs:subPropertyOf dct:description .
+
