@@ -4,35 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Element Color Script</title>
-    <!-- Load Tailwind CSS for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles to ensure the container is visually distinct */
-        .svg-container-box {
-            min-height: 200px;
-            border: 2px solid #3b82f6;
-            background-color: #f3f4f6;
-            transition: all 0.3s ease-in-out;
-        }
-        /* Style for the SVG container, ensuring it centers its content */
-        #svg-container svg {
-            display: block;
-            margin: auto;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
-
-        <!-- Container where the script will inject the processed SVG -->
-        <div id="svg-container" class="svg-container-box p-4 rounded-lg flex items-center justify-center">
-            <p id="loading-text" class="text-gray-500 italic">Loading SVG...</p>
-        </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG Element Color Script</title>
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
 <style><![CDATA[
@@ -104,7 +75,7 @@
 
         // Execute the function on page load
         window.onload = () => {
-            loadAndColorSVG("../svg/PowSyBl-NAD-all.svg", 'svg-container');
+            loadAndColorSVG("../svg/PowSyBl-SLD-2substations-KRISTIANSAND-and-ARENDAL.svg", 'svg-container');
         };
 
     </script>
