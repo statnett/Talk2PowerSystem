@@ -108,18 +108,29 @@ The result is shown on a single line:
 
 ## SLD vs NAD Diagrams
 
-We wrote a simple JS that replaces SVG styles with `stroke=red, fill=red` for clickable elements, and `black` for non-clickable elements
+We wrote a simple JS that replaces SVG styles with `stroke=red, color=red` for clickable elements, and `black` for non-clickable elements
 (it is embedded in the HTML files referenced below).
 
 In this way we can examine which SVG elements are clickable, and compare the relative area of clickable vs non-clickable.
 
 ### SLD Diagrams: Clickable
 The above `id` analysis is about SLD (Single-Line-Diagrams).
-In this diagram, red is clickable and black is not: [svg-color-SLD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-SLD.html)
+Here is an original SLD diagram:
+
+![svg-orig-SLD.png](svg-orig-SLD.png)
+
+[svg-color-SLD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-SLD.html) forces the colors: red is clickable and black is not:
+
+![svg-color-SLD.png](svg-color-SLD.png)
 
 ### NAD Diagrams: Not Clickable
 Unfortunately NAD (Network-Area-Diagrams) don't have any mRIDs: all identifiers are sequential numbers.
-So no NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html)
+
+![svg-orig-NAD.png](svg-orig-NAD.png)
+
+No NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html):
+
+![svg-color-NAD.png](svg-color-NAD.png)
 
 ## Summary
 In summary, our analysis suggests the following algorithm for associating an SVG ID to a mRID:
