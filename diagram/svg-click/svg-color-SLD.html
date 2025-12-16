@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Element Color Script</title>
+    <!-- Load Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to ensure the container is visually distinct */
+        .svg-container-box {
+            min-height: 200px;
+            border: 2px solid #3b82f6;
+            background-color: #f3f4f6;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Style for the SVG container, ensuring it centers its content */
+        #svg-container svg {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
+
+        <!-- Container where the script will inject the processed SVG -->
+        <div id="svg-container" class="svg-container-box p-4 rounded-lg flex items-center justify-center">
+            <p id="loading-text" class="text-gray-500 italic">Loading SVG...</p>
+        </div>
+
+    <script>
+        // --- 1. The Core Logic ---
+
+        /**
+         * Fetches an SVG, processes it by coloring elements based on a regex ID pattern,
+         * and injects the result into a specified container.
+         * * @param {string} url - The URL (or Data URI) of the SVG file to load.
+         * @param {string} containerId - The ID of the HTML element to hold the resulting SVG.
+         */
+        async function loadAndColorSVG(url, containerId) {
+            const container = document.getElementById(containerId);
+            const loadingText = document.getElementById('loading-text');
+
+            try {
+                // Fetch the SVG file content
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const svgText = await response.text();
+
+                // Parse the text into a DOM structure
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+                const svgElement = svgDoc.querySelector("svg");
+
+                if (!svgElement) {
+                    throw new Error("Could not find SVG root element in the parsed document.");
+                }
+
+                // Define the Regex: matches 'id' followed by 8 hex chars and an underscore
+                const idRegex = /^id[0-9a-f]{8}_/;
+
+                // Select all elements within the SVG that have an ID attribute
+                // Note: We also select elements without ID to check if they should be processed,
+                // but the coloring logic is applied to *all* elements in this implementation.
+                const allElements = svgElement.querySelectorAll('*');
+
+                allElements.forEach(el => {
+                    const id = el.getAttribute('id');
+
+                    // Skip the coloring if the element has no ID or is the root SVG element itself
+                    if (!id || el === svgElement) {
+                        return; 
+                    }
+
+                    if (idRegex.test(id)) {
+                        // Apply RED if the ID matches the pattern
+                        el.setAttribute('fill', 'red');
+                        el.setAttribute('stroke', 'red'); 
+                    } else {
+                        // Apply BLACK otherwise
+                        el.setAttribute('fill', 'black');
+                        el.setAttribute('stroke', 'black');
+                    }
+                });
+
+                // Clear the loading text and append the modified SVG to the container
+                if(loadingText) loadingText.remove();
+                container.appendChild(svgElement);
+
+            } catch (error) {
+                console.error("Error loading or processing SVG:", error);
+                if(loadingText) loadingText.textContent = `Error: ${error.message}. Check console for details.`;
+                container.classList.add('border-red-500');
+            }
+        }
+
+        // Execute the function on page load
+        window.onload = () => {
+            loadAndColorSVG("../svg/PowSyBl-SLD-2substations-KRISTIANSAND-and-ARENDAL.svg", 'svg-container');
+        };
+
+    </script>
+</body>
+</html>
