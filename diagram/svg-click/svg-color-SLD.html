@@ -52,15 +52,13 @@
 
                 // Select all elements within the SVG that have an ID attribute
                 allElements.forEach(el => {
-                  const id = el.getAttribute('id');
                   // Skip the coloring if the element is the root SVG element itself
                   if (el === svgElement) {return;}
 
-                  // overwrite 'class' if present, or force it for every element with 'id'
-                  if (id || el.getAttribute('class')) {
-                    // RED if id matches the pattern, else BLACK
-                    el.setAttribute('class', id && idRegex.test(id) ? 'red' : 'black');
-                  }
+                  const id = el.getAttribute('id');
+                  const class = el.getAttribute('class');
+                  el.setAttribute('class', // overwrite 'class'
+                                  id ? (idRegex.test(id) ? 'red' : 'black') : undef);
                 });
 
                 // Clear the loading text and append the modified SVG to the container
