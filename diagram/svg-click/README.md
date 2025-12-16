@@ -124,11 +124,12 @@ Here is an original SLD diagram:
 ![svg-color-SLD.png](svg-color-SLD.png)
 
 ### NAD Diagrams: Not Clickable
-Unfortunately NAD (Network-Area-Diagrams) don't have any mRIDs: all identifiers are sequential numbers.
+Here is an original NAD (Network-Area-Diagrams):
 
 ![svg-orig-NAD.png](svg-orig-NAD.png)
 
-No NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html):
+Unfortunately NADs don't have any mRIDs: all identifiers are sequential numbers. 
+Therefore no NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html):
 
 ![svg-color-NAD.png](svg-color-NAD.png)
 
