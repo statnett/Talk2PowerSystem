@@ -9,6 +9,9 @@ This is some simple analysis of what SVG IDs are used by PowSyBl in order to ena
 - [Identifier Analysis](#identifier-analysis)
 - [Identifier Pattern Analysis](#identifier-pattern-analysis)
 - [Coverage Analysis](#coverage-analysis)
+- [SLD vs NAD Diagrams](#sld-vs-nad-diagrams)
+    - [SLD Diagrams: Clickable](#sld-diagrams-clickable)
+    - [NAD Diagrams: Not Clickable](#nad-diagrams-not-clickable)
 - [Summary](#summary)
 
 <!-- markdown-toc end -->
@@ -98,44 +101,25 @@ The following command shows that:
 
 ```
 comm -3 svg-dedup.txt uuid-mrid.txt
-
-0
-1
-11
-12
-19
-2
-20
-21
-23
-24
-27
-3
-32
-4
-5
-6
-7
-8
-9
-ACTIVE
-ARROW
-BUSCO
-EDGE
-EXTERN
-FictitiousBus
-INTERNAL
-LABEL
-N
-NW
-ONE
-REACTIVE
-S
-SW
-TWO
-VL
-fict
 ```
+The result is shown on a single line:
+
+0 1 11 12 19 2 20 21 23 24 27 3 32 4 5 6 7 8 9 ACTIVE ARROW BUSCO EDGE EXTERN FictitiousBus INTERNAL LABEL N NW ONE REACTIVE S SW TWO VL fict
+
+## SLD vs NAD Diagrams
+
+We wrote a simple JS that replaces SVG styles with `stroke=red, fill=red` for clickable elements, and `black` for non-clickable elements
+(it is embedded in the HTML files referenced below).
+
+In this way we can examine which SVG elements are clickable, and compare the relative area of clickable vs non-clickable.
+
+### SLD Diagrams: Clickable
+The above `id` analysis is about SLD (Single-Line-Diagrams).
+In this diagram, red is clickable and black is not: [svg-color-SLD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-SLD.html)
+
+### NAD Diagrams: Not Clickable
+Unfortunately NAD (Network-Area-Diagrams) don't have any mRIDs: all identifiers are sequential numbers.
+So no NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html)
 
 ## Summary
 In summary, our analysis suggests the following algorithm for associating an SVG ID to a mRID:
