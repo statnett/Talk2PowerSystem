@@ -58,14 +58,16 @@
                     throw new Error("Could not find SVG root element in the parsed document.");
                 }
 
+                const allElements = svgElement.querySelectorAll('*');
+              // remove CSS classes, which override directly set fill/stroke
+                allElements.forEach(el => {
+                    el.deleteAttribute('class');
+                };
+
                 // Define the Regex: matches 'id' followed by 8 hex chars and an underscore
                 const idRegex = /^id[0-9a-f]{8}_/;
 
                 // Select all elements within the SVG that have an ID attribute
-                // Note: We also select elements without ID to check if they should be processed,
-                // but the coloring logic is applied to *all* elements in this implementation.
-                const allElements = svgElement.querySelectorAll('*');
-
                 allElements.forEach(el => {
                     const id = el.getAttribute('id');
 
@@ -74,7 +76,6 @@
                         return; 
                     }
 
-                    el.deleteAttribute('class');
                     if (idRegex.test(id)) {
                         // Apply RED if the ID matches the pattern
                         el.setAttribute('fill', 'red');
