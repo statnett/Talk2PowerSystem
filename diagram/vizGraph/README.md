@@ -14,7 +14,11 @@ We use two REST APIs from GraphDB Workbench endpoint https://cim.ontotext.com/gr
 - `saved`: get Diagrams
 - `config`: get DiagramConfigurations 
 
-Check that all diagrams of "admin" are configured as `shared`.
+Check that all `diagramConfigs` and `diagrams` are `shared`.
+TODO: write a `jq` command to:
+- Check `"shared": true` for all top-array elements
+- If not, print the offending ID and abort `make get`
+- (Strictly speaking, we should check that only for `"owner": "admin"` but we don't expect anyone else to be making diagrams)
 
 ## Semantization
 - Extend Ontology: add classes/enum values to the `cimd` (cim-diagrams.ttl) ontology
