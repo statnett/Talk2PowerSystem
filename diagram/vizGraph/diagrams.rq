@@ -1,0 +1,10 @@
+prefix xyz:  <http://sparql.xyz/facade-x/data/>
+prefix fx:   <http://sparql.xyz/facade-x/ns/>
+
+construct {
+  ?s ?p ?o
+} where {
+  service <x-sparql-anything:location=diagrams.json> {
+  ?s  ?p  ?o .
+  }
+}

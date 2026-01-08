@@ -1,0 +1,88 @@
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+
+[ a       fx:root;
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+          [ xyz:description                "Exposes the immediate context of a node in the CIM knowledge graph.";
+            xyz:expandQuery                "PREFIX onto: <http://www.ontotext.com/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \nCONSTRUCT { \n    ?node ?edge ?newNodeLTR . \n    ?newNodeRTL ?edge ?node . \n} \nFROM onto:explicit\nWHERE { \n    { ?node ?edge ?newNodeLTR . } \n    UNION \n    { ?newNodeRTL ?edge ?node . } \n    FILTER(?edge != rdf:type) \n}";
+            xyz:hint                       "Can be used with any node. Is the default graph viz for displaying instance data";
+            xyz:id                         "7166ff4a5a414f36a7e8a33fd4f42444";
+            xyz:name                       "CIM";
+            xyz:owner                      "admin";
+            xyz:predicateLabelQuery        "";
+            xyz:resourcePropertiesQuery    "";
+            xyz:resourceQuery              "PREFIX geo: <http://www.opengis.net/ont/geosparql#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX afn: <http://jena.apache.org/ARQ/function#>\nPREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nselect * {\n    ?node sesame:directType ?type\n    filter(?type != geo:Feature)\n    optional {?node cim:IdentifiedObject.name ?name}\n    bind(concat(afn:localname(?type),\"\\n\",coalesce(?name,\"\")) as ?label)\n    optional {?node cim:IdentifiedObject.description ?comment}    \n}";
+            xyz:shared                     true;
+            xyz:startMode                  "search";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ];
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+          [ xyz:description                "Shows the hierarchy (parent and children) of any class.";
+            xyz:expandQuery                "PREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nPREFIX onto: <http://www.ontotext.com/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nconstruct {\n    ?node1 rdfs:subClassOf ?node.\n    ?node  rdfs:subClassOf ?node2 \n}\nwhere {\n    {?node1 sesame:directSubClassOf ?node} union\n    {?node  sesame:directSubClassOf ?node2}\n}";
+            xyz:hint                       "Can only be used with nodes of type owl:Class.";
+            xyz:id                         "5099ad5fc1954153a12f1f052fe1df7c";
+            xyz:name                       "Class hierarchy";
+            xyz:owner                      "admin";
+            xyz:shared                     true;
+            xyz:startMode                  "search";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ];
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3>
+          [ xyz:description                "Shows the hierarchy and properties associated with a class";
+            xyz:expandQuery                "PREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>\nPREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nPREFIX onto: <http://www.ontotext.com/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nconstruct {\n    ?node1 ?rel1 ?node.\n    ?node  ?rel2 ?node2.\n    ?node3 rdfs:subClassOf ?node.\n    ?node  rdfs:subClassOf ?node4.\n}\nfrom onto:explicit\nwhere {\n    {?rel1 a owl:ObjectProperty; rdfs:domain ?node1; rdfs:range ?node.  filter not exists {?rel1 cims:AssociationUsed \"No\"}} union\n    {?rel2 a owl:ObjectProperty; rdfs:domain ?node;  rdfs:range ?node2. filter not exists {?rel2 cims:AssociationUsed \"No\"}} union\n    {?node3 sesame:directSubClassOf ?node} union\n    {?node  sesame:directSubClassOf ?node4}\n}";
+            xyz:hint                       "Can only be used with nodes of type owl:Class.";
+            xyz:id                         "13dc69219ffb4bd6866cb527dfd283fa";
+            xyz:name                       "Classes and Relations";
+            xyz:owner                      "admin";
+            xyz:predicateLabelQuery        "";
+            xyz:resourceQuery              "";
+            xyz:shared                     true;
+            xyz:startMode                  "search";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ];
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4>
+          [ xyz:expandQuery                "";
+            xyz:id                         "a4e059a108d7493985539f235d1ddae7";
+            xyz:name                       "Lines and Voltage Levels (Telemark120 MV)";
+            xyz:owner                      "admin";
+            xyz:predicateLabelQuery        "";
+            xyz:resourcePropertiesQuery    "";
+            xyz:resourceQuery              "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nselect * {\n    ?node sesame:directType ?type . ?type rdfs:label ?type_label\n    optional {?node cim:IdentifiedObject.name ?name. \n        bind(concat(?type_label,\"\\n\",?name) as ?label)\n    }\n    optional {?node cim:IdentifiedObject.description ?comment}\n    filter(?type != owl:Thing)\n}";
+            xyz:shared                     true;
+            xyz:startGraphQuery            "PREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX cimr: <https://cim.ucaiug.io/rules#>\nconstruct {?line cimr:connectedThroughPart ?vl}\n{\n  #bind(<urn:uuid:e710212f-f6b2-8d4c-9dc0-365398d8b59c> as ?graph) # Nordic44: 136\n  #bind(<urn:uuid:c47d4310-b8ee-480d-9cf3-e53a81630981> as ?graph) # Telemark120 LV: 31\n  bind(<urn:uuid:d12e4546-e6a5-4211-a4c8-877ac1e24d16> as ?graph) # Telemark120 MV: 16\n  graph ?graph {?line a cim:Line. ?vl a cim:VoltageLevel}\n  ?line cimr:connectedThroughPart ?vl .\n}";
+            xyz:startMode                  "query";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ];
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_5>
+          [ xyz:description                "Select a Substation (eg \"ARENDAL\") or Line (eg \"LC 300KRISTIAN-ARENDAL\")";
+            xyz:expandQuery                "PREFIX cimr: <https://cim.ucaiug.io/rules#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nconstruct {\n  ?node  cimr:connectedThroughPart ?node1.\n  ?node2 cimr:connectedThroughPart ?node.\n} where {\n  values ?type {cim:Substation cim:Line}\n  {?node  cimr:connectedThroughPart ?node1. ?node1 a ?type}\n  union {?node2 cimr:connectedThroughPart ?node. ?node2 a ?type}\n}";
+            xyz:id                         "68af0b0637114e23a831d0cfd2985bb6";
+            xyz:name                       "Substations and Lines (some)";
+            xyz:owner                      "admin";
+            xyz:resourceQuery              "PREFIX afn: <http://jena.apache.org/ARQ/function#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nselect * {\n    ?node sesame:directType ?type; cim:IdentifiedObject.name ?name\n    bind(concat(afn:localname(?type),\"\\n\",?name) as ?label)\n}";
+            xyz:shared                     true;
+            xyz:startGraphQuery            "PREFIX cimr: <https://cim.ucaiug.io/rules#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nconstruct {\n  ?sub1 cimr:connectedThroughPart ?line.\n  ?sub2 cimr:connectedThroughPart ?line\n} where {\n  values ?sub1Name {\"ARENDAL\"}\n  ?sub1 a cim:Substation; cim:IdentifiedObject.name ?sub1Name;\n    cimr:connectedThroughPart ?line.\n  ?line a cim:Line; cim:IdentifiedObject.name ?lineName.\n  ?sub2 a cim:Substation; cim:IdentifiedObject.name ?sub2Name;\n    cimr:connectedThroughPart ?line.\n  filter(?sub1 != ?sub2)\n}";
+            xyz:startMode                  "search";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ];
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_6>
+          [ xyz:description                "Displays a simplified diagram of a VoltageLevel";
+            xyz:expandQuery                "PREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX cimr: <https://cim.ucaiug.io/rules#>\nconstruct {\n        ?cn cimr:connectedTo ?eq .\n}\nwhere { \n\t?node a cim:VoltageLevel .\n    ?cn cim:ConnectivityNode.ConnectivityNodeContainer ?node .\n    ?t cim:Terminal.ConnectivityNode ?cn ;\n       cim:Terminal.ConductingEquipment ?eq .\n}";
+            xyz:hint                       "use only with nodes of type  cim:VoltageLevel";
+            xyz:id                         "99638482586148159e97fb379901dc54";
+            xyz:name                       "VoltageLevel";
+            xyz:owner                      "admin";
+            xyz:predicateLabelQuery        "";
+            xyz:resourcePropertiesQuery    "";
+            xyz:resourceQuery              "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX cim: <https://cim.ucaiug.io/ns#>\nPREFIX sesame: <http://www.openrdf.org/schema/sesame#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nselect * {\n    ?node sesame:directType ?type . ?type rdfs:label ?type_label\n    optional {?node cim:IdentifiedObject.name ?name. \n        bind(concat(?type_label,\"\\n\",?name) as ?label)\n    }\n    optional {?node cim:IdentifiedObject.description ?comment}\n    filter(!sameterm(?type,owl:Thing))\n}";
+            xyz:shared                     true;
+            xyz:startMode                  "search";
+            xyz:startQueryIncludeInferred  true;
+            xyz:startQuerySameAs           true
+          ]
+] .

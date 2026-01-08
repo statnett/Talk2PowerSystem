@@ -1,6 +1,7 @@
-﻿ENDPOINT = https://cim.ontotext.com/graphdb/rest/explore-graph/
-TTL      = diagrams.ttl diagramConfigs.ttl
-TRIG     = $(TTL:ttl=trig)
+ENDPOINT   = https://cim.ontotext.com/graphdb/rest/explore-graph/
+CREDS_FILE = creds.txt # expects it formatted as user:password no new line
+TTL        = diagrams.ttl diagramConfigs.ttl
+TRIG       = $(TTL:ttl=trig)
 
 all: $(TRIG)
 
@@ -9,12 +10,9 @@ ttl: $(TTL)
 %.trig: %-header.trig  %.ttl diagrams-footer.trig
 	cat $*.ttl | grep -v '^@prefix' | cat $*-header.trig - diagrams-footer.trig > $@
 
-# sparql-anything is a script like this:
-# java -jar .../sparql-anything-v1.0.0.jar 
-
 %.ttl: %.json %.rq
-	sparql-anything -v location=$*.rq -o $*.ttl -q $*.rq
+	sparql-anything -v location=$*.json -o $*.ttl -q $*.rq
 
 get:
-	curl -s $(ENDPOINT)/saved  -o diagrams.json
-	curl -s $(ENDPOINT)/config -o diagramConfigs.json
+	curl --anyauth   -s -u "$$(cat $(CREDS_FILE))" "$(ENDPOINT)/saved" --header "x-graphdb-repository: cim" -o diagrams.json
+	curl --anyauth   -s -u "$$(cat $(CREDS_FILE))" "$(ENDPOINT)/config" --header "x-graphdb-repository: cim" -o diagramConfigs.json	
