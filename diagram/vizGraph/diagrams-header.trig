@@ -1,0 +1,22 @@
+﻿PREFIX cim:      <https://cim.ucaiug.io/ns#>
+PREFIX cimd:     <https://cim.ucaiug.io/diagrams#>
+PREFIX dcat:     <http://www.w3.org/ns/dcat#>
+PREFIX dct:      <http://purl.org/dc/terms/>
+PREFIX prov:     <http://www.w3.org/ns/prov#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+<urn:uuid:09d1cff6-cafc-4f9c-bcc1-f3d37efa42bf> {
+  <urn:uuid:09d1cff6-cafc-4f9c-bcc1-f3d37efa42bf>
+    rdf:type           dcat:Dataset;
+    dct:conformsTo     cimd:, cimd:Diagram;
+    dct:description    "GraphDB VizGraph diagrams of Nordic44 and Telemark120";
+    dct:identifier     "09d1cff6-cafc-4f9c-bcc1-f3d37efa42bf";
+    dct:issued         "2026-01-08"^^xsd:date;
+    dcat:version       "1";
+    dct:requires
+      <urn:uuid:e710212f-f6b2-8d4c-9dc0-365398d8b59c>, # Nordic44 EQ
+      <urn:uuid:7b3f94c0-bd9b-e74e-866b-f473153c3e70>, # Nordic44 TP
+      <urn:uuid:c47d4310-b8ee-480d-9cf3-e53a81630981>, # Telemark LV1 EQ
+      <urn:uuid:d12e4546-e6a5-4211-a4c8-877ac1e24d16>. # Telemark MV EQ
+

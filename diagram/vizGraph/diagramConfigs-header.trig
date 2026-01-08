@@ -1,0 +1,17 @@
+﻿PREFIX cim:      <https://cim.ucaiug.io/ns#>
+PREFIX cimd:     <https://cim.ucaiug.io/diagrams#>
+PREFIX dcat:     <http://www.w3.org/ns/dcat#>
+PREFIX dct:      <http://purl.org/dc/terms/>
+PREFIX prov:     <http://www.w3.org/ns/prov#>
+PREFIX rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+<urn:uuid:663ca007-9303-4812-a950-f18d8b288602> {
+  <urn:uuid:663ca007-9303-4812-a950-f18d8b288602>
+    rdf:type           dcat:Dataset;
+    dct:conformsTo     cimd:, cimd:DiagramConfiguration;
+    dct:description    "GraphDB VizGraph diagram configurations for Talk2PowerSystem";
+    dct:identifier     "663ca007-9303-4812-a950-f18d8b288602";
+    dct:issued         "2026-01-08"^^xsd:date;
+    dcat:version       "1".
+
