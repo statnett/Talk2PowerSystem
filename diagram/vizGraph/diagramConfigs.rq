@@ -1,10 +1,24 @@
 prefix xyz:  <http://sparql.xyz/facade-x/data/>
 prefix fx:   <http://sparql.xyz/facade-x/ns/>
+prefix cimd: <https://cim.ucaiug.io/diagrams#> 
+prefix cim:  <https://cim.ucaiug.io/ns#>
 
 construct {
-  ?s ?p ?o
+  ?uri a cimd:DiagramConfiguration ;
+    cim:IdentifiedObject.name ?name ;
+    cim:IdentifiedObject.description ?description ;
+    cimd:appliesTo ?hint ;
+    cimd:link  ?link ;
+  .   
 } where {
-  service <x-sparql-anything:location=diagramConfigs.json> {
-  ?s  ?p  ?o .
+  service <x-sparql-anything:> {
+  fx:properties fx:location $_location .
+    [] xyz:name ?name ;
+       xyz:description ?description ;
+       xyz:hint ?hint ;
+       xyz:id ?id ;
+    .   
   }
+  bind(concat("graphs-visualizations?config=",?id) as ?link)
+  bind(uuid() as ?uri)
 }
