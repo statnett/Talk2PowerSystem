@@ -5,7 +5,7 @@ PREFIX dct:  <http://purl.org/dc/terms/>
 
 construct {
   ?diag a cimd:Diagram; cimd:Diagram.kind cimd:DiagramKind.PowSyBl-NetworkAreaDiagram;
-    cim:IdentifiedObject.name "Network-Area-Diagram"; cim:IdentifiedObject.mRID ?diagMrid;
+    cim:IdentifiedObject.name "Network-Area-Diagram of the whole grid"; cim:IdentifiedObject.mRID ?diagMrid;
     cim:IdentifiedObject.description "PowSyBl Network-Area-Diagram of all Nordic44 and Telemark120 voltage levels";
     cimd:Diagram.PowerSystemResource ?psr; cimd:Diagram.link "PowSyBl-NAD-all.svg"; dct:format "image/svg+xml"
 } 
