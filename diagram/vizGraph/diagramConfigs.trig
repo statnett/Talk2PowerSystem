@@ -16,7 +16,7 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
     dcat:version       "1".
 
 
-<urn:uuid:b3c4ee72-b5a8-4166-9c3b-95bf89af688c>
+<urn:uuid:8e88a1f5-2ea1-4a4a-a8a4-64fc1c7dc396>
         a                               cimd:DiagramConfiguration;
         cimd:DiagramConfiguration.appliesTo
                 "cim:VoltageLevel";
@@ -25,9 +25,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=99638482586148159e97fb379901dc54";
         cim:IdentifiedObject.description
                 "Displays a simplified diagram of a VoltageLevel";
-        cim:IdentifiedObject.name       "VoltageLevel" .
+        cim:IdentifiedObject.name       "VoltageLevel (VizGraph config)" .
 
-<urn:uuid:a1fbd163-8b9a-4eee-940a-7dc49d30c126>
+<urn:uuid:371ee694-a879-48e3-a9c4-8891ff452730>
         a                               cimd:DiagramConfiguration;
         cimd:DiagramConfiguration.appliesTo
                 "cim:Substation";
@@ -36,9 +36,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=68af0b0637114e23a831d0cfd2985bb6";
         cim:IdentifiedObject.description
                 "Select a Substation (eg \"ARENDAL\") or Line (eg \"LC 300KRISTIAN-ARENDAL\")";
-        cim:IdentifiedObject.name       "Substations and Lines (some)" .
+        cim:IdentifiedObject.name       "Substations and Lines (VizGraph config)" .
 
-<urn:uuid:843c4ddb-b452-4c5b-9c44-cf6524bfcb36>
+<urn:uuid:8689f428-588a-40f8-a222-941cfeaf51bc>
         a                               cimd:DiagramConfiguration;
         cimd:DiagramConfiguration.appliesTo
                 "owl:Class";
@@ -47,9 +47,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=13dc69219ffb4bd6866cb527dfd283fa";
         cim:IdentifiedObject.description
                 "Shows the hierarchy and properties associated with a class";
-        cim:IdentifiedObject.name       "Classes and Relations" .
+        cim:IdentifiedObject.name       "Classes and Relations (VizGraph config)" .
 
-<urn:uuid:a5e3478f-d264-49bd-897c-1d0e1f982a1f>
+<urn:uuid:950de249-b106-408d-977b-77501a2720c2>
         a                               cimd:DiagramConfiguration;
         cimd:DiagramConfiguration.appliesTo
                 "owl:Class";
@@ -58,9 +58,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=5099ad5fc1954153a12f1f052fe1df7c";
         cim:IdentifiedObject.description
                 "Shows the hierarchy (parent and children) of any class.";
-        cim:IdentifiedObject.name       "Class hierarchy" .
+        cim:IdentifiedObject.name       "Class hierarchy (VizGraph config)" .
 
-<urn:uuid:c8cdaff4-53c3-46ce-9e12-926f94bfd117>
+<urn:uuid:65568ed0-a35d-4b01-abf8-66c9f4a07fee>
         a                               cimd:DiagramConfiguration;
         cimd:DiagramConfiguration.appliesTo
                 "cim:PowerSystemResource";
@@ -69,7 +69,7 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=7166ff4a5a414f36a7e8a33fd4f42444";
         cim:IdentifiedObject.description
                 "Exposes the immediate context of a node in the CIM knowledge graph. Can be used with any node. Is the default graph viz for displaying instance data";
-        cim:IdentifiedObject.name       "CIM" .
+        cim:IdentifiedObject.name       "CIM (VizGraph config)" .
 
 }
 
