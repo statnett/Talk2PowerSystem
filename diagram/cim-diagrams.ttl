@@ -116,6 +116,14 @@ cimd:Diagram.link a owl:Property, owl:FunctionalProperty;
   rdfs:domain cimd:Diagram;
   rdfs:range xsd:string.
 
+cimd:DiagramConfiguration.link a owl:Property, owl:FunctionalProperty;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:label "link";
+  cims:pragmatics "Diagram configurations should always be invoked adding a focus node as a uri=<URI> get parameter to the value of this property." ;
+  rdfs:comment "Web app link of the diagram configuration. For reasons of portability between servers, it is a relative URL (does not include the base).";
+  rdfs:domain cimd:DiagramConfiguration;
+  rdfs:range xsd:string.
+
 cimd:Diagram.mRIDs a owl:Property, owl:FunctionalProperty;
   cims:multiplicity cims:M:0..1 ;
   rdfs:label "mRIDs";
@@ -127,4 +135,24 @@ cimd:Diagram.mRIDs a owl:Property, owl:FunctionalProperty;
   rdfs:domain cimd:Diagram;
   rdfs:range xsd:string.
 
-# TODO: add DiagramKind.VizGraph* and DiagramConfiguration
+cimd:DiagramConfiguration.appliesTo a owl:FunctionalProperty ;
+  rdfs:label "Applies to";
+  rdfs:comment "The classes of the resources allowed as a focus node in the diagram configuration.";
+  cims:pragmatics "Only allow resources of the types indicated here as a focus node in a visual graph diagram configuration!" ;
+  rdfs:domain cimd:DiagramConfiguration;
+  rdfs:range xsd:string.
+#TODO change domain and prop type to object when we fix the datatype emitted by sparql anything 
+
+
+cimd:DiagramConfiguration.displaysInstances a owl:FunctionalProperty ;
+  rdfs:label "Displays instances";
+  rdfs:comment "A flag to indicate whether a diagram configuration is suitable for instance data";
+  cims:pragmatics "if the value is false do not use the configuration to display instance data, only classes." ;
+  rdfs:domain cimd:DiagramConfiguration;
+  rdfs:range xsd:boolean.
+
+cimd:DiagramKind.isClickable a owl:FunctionalProperty ;
+  rdfs:label "Is clickable";
+  rdfs:comment "A flag to indicate whether a diagram is clickable by the user";
+  rdfs:domain cimd:Diagram;
+  rdfs:range xsd:boolean.
