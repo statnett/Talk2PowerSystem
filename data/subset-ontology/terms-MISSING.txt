@@ -5,6 +5,7 @@
 <http://cim4.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
 <http://purl.org/vocab/vann/preferredNamespacePrefix> a cims:MISSING .
 <http://purl.org/vocab/vann/preferredNamespaceUri> a cims:MISSING .
+<http://schema.org/domainIncludes> a cims:MISSING .
 <http://www.linkedmodel.org/schema/vaem#todo> a cims:MISSING .
 <http://www.linkedmodel.org/schema/vaem#url> a cims:MISSING .
 <http://www.w3.org/2004/03/trix/rdfg-1/Graph> a cims:MISSING .
@@ -171,12 +172,7 @@ dct:format a cims:MISSING .
 dct:isReplacedBy a cims:MISSING .
 dct:language a cims:MISSING .
 dct:modified a cims:MISSING .
-dct:requires a cims:MISSING .
 dct:temporal a cims:MISSING .
-geo:Feature a cims:MISSING .
-geo:Geometry a cims:MISSING .
-geo:asWKT a cims:MISSING .
-geo:hasGeometry a cims:MISSING .
 nc-no:ACLineSegmentSpan a cims:MISSING .
 nc-no:ACLineSegmentSpan.ACLineSegment a cims:MISSING .
 nc-no:ACLineSegmentSpan.aviationObstacleLightingKind a cims:MISSING .
@@ -273,14 +269,13 @@ qudt:hasFactorUnit a cims:MISSING .
 qudt:hasQuantityKind a cims:MISSING .
 qudt:hasReciprocalUnit a cims:MISSING .
 qudt:hasReferenceQuantityKind a cims:MISSING .
-qudt:hasUnit a cims:MISSING .
 qudt:iec61360Code a cims:MISSING .
 qudt:informativeReference a cims:MISSING .
 qudt:isoNormativeReference a cims:MISSING .
 qudt:latexDefinition a cims:MISSING .
 qudt:latexSymbol a cims:MISSING .
 qudt:omUnit a cims:MISSING .
-qudt:plainTextDescription a cims:MISSING .
+qudt:plainTextDescription a cims:MISSING;
 qudt:prefix a cims:MISSING .
 qudt:prefixMultiplier a cims:MISSING .
 qudt:prefixMultiplierSN a cims:MISSING .
@@ -298,6 +293,7 @@ sh:NodeShape a cims:MISSING .
 sh:property a cims:MISSING .
 skos:altLabel a cims:MISSING .
 skos:broader a cims:MISSING .
+skos:definition a cims:MISSING .
 skos:exactMatch a cims:MISSING .
 skos:example a cims:MISSING .
 skos:narrower a cims:MISSING .

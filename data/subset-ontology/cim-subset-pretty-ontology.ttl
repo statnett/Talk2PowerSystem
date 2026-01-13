@@ -10,6 +10,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eu: <https://cim.ucaiug.io/ns/eu#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix nc: <https://cim4.eu/ns/nc#> .
 @prefix prefix: <http://qudt.org/vocab/prefix/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -867,6 +868,12 @@ Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPo
   cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed" ;
   rdfs:subClassOf cim:IdentifiedObject .
 
+cimd:DiagramConfiguration a owl:Class ;
+  rdfs:label "Diagram Configuration" ;
+  rdfs:comment "todo." ;
+  cims:pragmatics "todo only for viz graph used to viz a selected rdf resource or class" ;
+  rdfs:subClassOf cim:IdentifiedObject .
+
 cimd:DiagramKind a owl:Class ;
   rdfs:label "DiagramKind" ;
   rdfs:comment "Diagram kind reflecting the technology (e.g. PowSyBl vs VizGraph) and subkind." .
@@ -888,6 +895,17 @@ eu:BoundaryPoint a owl:Class ;
 eu:LimitKind a owl:Class ;
   rdfs:label "LimitKind" ;
   rdfs:comment "Limit kinds."@en .
+
+geo:Feature a owl:Class ;
+  rdfs:label "Feature"@en ;
+  owl:disjointWith geo:Geometry ;
+  skos:definition "A discrete spatial phenomenon in a universe of discourse."@en ;
+  skos:note "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en .
+
+geo:Geometry a owl:Class ;
+  rdfs:label "Geometry"@en ;
+  skos:definition "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
+  skos:note "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en .
 
 nc:AmbientTemperatureDependencyCurve a owl:Class ;
   rdfs:label "AmbientTemperatureDependencyCurve" ;
@@ -2471,12 +2489,29 @@ cim:WireInfo.insulationMaterial a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:domain cim:WireInfo ;
   rdfs:range cim:WireInsulationKind .
 
+cimd:Diagram.PowerSystemResource a owl:ObjectProperty ;
+  rdfs:label "PowerSystemResource" ;
+  rdfs:comment """Power System Resource(s) shown on the diagram. 
+For PowSyBl diagrams, this lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels (compare to cimd:Diagram.mRIDs).
+For VizGraph diagrams, this lists all depicted resources.""" ;
+  cims:multiplicity cims:M:n..n ;
+  owl:inverseOf cimd:PowerSystemResource.Diagrams ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range cim:PowerSystemResource .
+
 cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "kind" ;
   rdfs:comment "Kind of diagram" ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cimd:Diagram ;
   rdfs:range cimd:DiagramKind .
+
+cimd:PowerSystemResource.Diagrams a owl:ObjectProperty ;
+  rdfs:label "Diagram" ;
+  rdfs:comment "Diagrams(s) available for a Power System Resource." ;
+  cims:multiplicity cims:M:n..n ;
+  rdfs:domain cim:PowerSystemResource ;
+  rdfs:range cimd:Diagram .
 
 cimr:Equipment.Terminals a owl:ObjectProperty ;
   rdfs:label "terminals" ;
@@ -2599,6 +2634,12 @@ The referenced resource that is being complemented in this dataset, e.g. SSH is 
   rdfs:domain dcat:Dataset ;
   rdfs:range dcat:Dataset .
 
+dct:requires a owl:ObjectProperty ;
+  rdfs:label "Requires" ;
+  rdfs:comment "A reference to the the model that this model depends on. In general there can be 0 or many dct:requires depending on the profile and the content of the instance model"@en ;
+  cims:multiplicity cims:M:0..n ;
+  <http://schema.org/domainIncludes> dcat:Dataset .
+
 dct:spatial a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "spatial" ;
   rdfs:comment """The geographical area covered by the dataset.\r
@@ -2637,6 +2678,12 @@ eu:OperationalLimitType.kind a owl:ObjectProperty, owl:FunctionalProperty ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cim:OperationalLimitType ;
   rdfs:range eu:LimitKind .
+
+geo:hasGeometry a owl:ObjectProperty ;
+  rdfs:label "has geometry"@en ;
+  rdfs:domain geo:Feature ;
+  rdfs:range geo:Geometry ;
+  skos:definition "A spatial representation for a given Feature."@en .
 
 nc:BaseTimeSeries.interpolationKind a owl:ObjectProperty, owl:FunctionalProperty ;
   rdfs:label "interpolationKind" ;
@@ -3219,6 +3266,10 @@ psys:transitiveOver a owl:ObjectProperty ;
   rdfs:comment "If p transitiveOver q then p/q => p" ;
   rdfs:domain owl:ObjectProperty ;
   rdfs:range owl:ObjectProperty .
+
+qudt:hasUnit a owl:ObjectProperty ;
+  rdfs:label "has unit" ;
+  dct:description "This property relates a system of units with a unit of measure that is either a) defined by the system, or b) accepted for use by the system and is convertible to a unit of equivalent dimension that is defined by the system. Systems of units may distinguish between base and derived units. Base units are the units which measure the base quantities for the corresponding system of quantities. The base units are used to define units for all other quantities as products of powers of the base units. Such units are called derived units for the system."^^rdf:HTML .
 
 adms:versionNotes a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "versionNotes" ;
@@ -4778,6 +4829,12 @@ eu:IdentifiedObject.energyIdentCodeEic a owl:DatatypeProperty, owl:FunctionalPro
   rdfs:domain cim:IdentifiedObject ;
   rdfs:range xsd:string .
 
+geo:asWKT a owl:DatatypeProperty ;
+  rdfs:label "as WKT"@en ;
+  rdfs:domain geo:Geometry ;
+  rdfs:range geo:wktLiteral ;
+  skos:definition "The WKT serialization of a Geometry"@en .
+
 nc:BaseTimeSeries.generatedAtTime a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "generatedAtTime" ;
   rdfs:comment "The time this time series (entity) come to existents and available for use."@en ;
@@ -5191,13 +5248,6 @@ cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulation
   rdfs:label "treeRetardantCrosslinkedPolyethylene" ;
   rdfs:comment "Tree retardant crosslinked polyethylene wire insulation."@en .
 
-cimd:Diagram.PowerSystemResource a owl:Property ;
-  rdfs:label "PowerSystemResource" ;
-  rdfs:comment "Power System Resource(s) shown on the diagram. This lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels compare to cimd:Diagram.mRIDs)" ;
-  cims:multiplicity cims:M:0..n ;
-  rdfs:domain cimd:Diagram ;
-  rdfs:range cim:PowerSystemResource .
-
 cimd:Diagram.link a owl:FunctionalProperty, owl:Property ;
   rdfs:label "link" ;
   rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base)." ;
@@ -5213,6 +5263,33 @@ cimd:Diagram.mRIDs a owl:FunctionalProperty, owl:Property ;
   rdfs:range xsd:string ;
   skos:example "Multiple voltage levels: (\"mrid1\",\"mrid2\"...\"mridN\")", "Single substation or voltage level: \"mrid1\"", "Two substations listed left-to-right (west-to-east): [[\"mrid1\",\"mrid2\"]]" .
 
+cimd:DiagramConfiguration.appliesTo a owl:FunctionalProperty ;
+  rdfs:label "Applies to" ;
+  rdfs:comment "The classes of the resources allowed as a focus node in the diagram configuration." ;
+  cims:pragmatics "Only allow resources of the types indicated here as a focus node in a visual graph diagram configuration!" ;
+  rdfs:domain cimd:DiagramConfiguration ;
+  rdfs:range xsd:string .
+
+cimd:DiagramConfiguration.displaysInstances a owl:FunctionalProperty ;
+  rdfs:label "Displays instances" ;
+  rdfs:comment "A flag to indicate whether a diagram configuration is suitable for instance data" ;
+  cims:pragmatics "if the value is false do not use the configuration to display instance data, only classes." ;
+  rdfs:domain cimd:DiagramConfiguration ;
+  rdfs:range xsd:boolean .
+
+cimd:DiagramConfiguration.link a owl:FunctionalProperty, owl:Property ;
+  rdfs:label "link" ;
+  rdfs:comment "Web app link of the diagram configuration. For reasons of portability between servers, it is a relative URL (does not include the base)." ;
+  cims:multiplicity cims:M:1..1 ;
+  cims:pragmatics "Diagram configurations should always be invoked adding a focus node as a uri=<URI> get parameter to the value of this property." ;
+  rdfs:domain cimd:DiagramConfiguration ;
+  rdfs:range xsd:string .
+
+cimd:DiagramKind.GraphDB-VizGraph a cimd:DiagramKind ;
+  rdfs:label "GraphDB-VizGraph " ;
+  rdfs:comment "GraphDB Visual Graph Saved Graph. Shows a predefined RDF graph, containing equipment nodes and/or classes and properties." ;
+  cimd:DiagramKind.isClickable true .
+
 cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind ;
   rdfs:label "PowSyBl-NetworkAreaDiagram" ;
   rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
@@ -5221,11 +5298,19 @@ Can display the whole grid, one or several voltage levels, and the neighborhood 
 cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind ;
   rdfs:label "PowSyBl-SingleLineDiagram" ;
   rdfs:comment """PowSyBl Single-Line-Diagram. Shows equipment (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.
-Can display one or several substations, voltage levels or areas.""" .
+Can display one or several substations, voltage levels or areas.""" ;
+  cimd:DiagramKind.isClickable true .
 
 cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi a cimd:DiagramKind ;
   rdfs:label "PowSyBl-SingleLineDiagram-Multi" ;
-  rdfs:comment "PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows." .
+  rdfs:comment "PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows." ;
+  cimd:DiagramKind.isClickable true .
+
+cimd:DiagramKind.isClickable a owl:FunctionalProperty ;
+  rdfs:label "Is clickable" ;
+  rdfs:comment "A flag to indicate whether a diagram is clickable by the user" ;
+  rdfs:domain cimd:Diagram ;
+  rdfs:range xsd:boolean .
 
 eu:LimitKind.highVoltage a eu:LimitKind ;
   rdfs:label "highVoltage" ;
@@ -5374,5 +5459,8 @@ qudt:Unit a rdfs:Class, sh:NodeShape ;
   More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  $Q = nU$.
   """^^qudt:LatexString ;
   rdfs:subClassOf qudt:Concept, qudt:Verifiable .
+
+qudt:plainTextDescription a cims:MISSING ;
+  rdfs:subPropertyOf dct:description .
 
 
