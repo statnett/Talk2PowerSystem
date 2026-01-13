@@ -36,6 +36,15 @@ Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPo
   cims:belongsToCategory cimd: ;
   rdfs:isDefinedBy cimd: .
 
+cimd:DiagramConfiguration a owl:Class ;
+  rdfs:label "Diagram Configuration" ;
+  rdfs:comment """todo.""" ;
+  cims:stereotype uml:concrete ;
+  rdfs:subClassOf cim:IdentifiedObject;
+  cims:pragmatics "todo only for viz graph used to viz a selected rdf resource or class";
+  cims:belongsToCategory cimd: ;
+  rdfs:isDefinedBy cimd: .
+
 cim:Diagram cims:pragmatics "In this knowledge graph, cimd:Diagram instances can be displayed by the diagram tool; cim:Diagram instances cannot be displayed".
 
 cimd:DiagramKind a owl:Class ;
@@ -56,12 +65,21 @@ cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind;
   rdfs:label "PowSyBl-SingleLineDiagram";
   rdfs:comment """PowSyBl Single-Line-Diagram. Shows equipment (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.
 Can display one or several substations, voltage levels or areas.""";
+  cimd:DiagramKind.isClickable true ;
   cims:stereotype "enum" ;
   rdfs:isDefinedBy cimd: .
   
 cimd:DiagramKind.PowSyBl-SingleLineDiagram-Multi a cimd:DiagramKind;
   rdfs:label "PowSyBl-SingleLineDiagram-Multi";
   rdfs:comment """PowSyBl Single-Line-Diagram (Multi). Shows equipment in several substations (switches, disconnectors, busbars, voltage levels, power transformers, loads, generators), adjacent lines, voltages and input/output flows.""";
+  cimd:DiagramKind.isClickable true ;
+  cims:stereotype "enum" ;
+  rdfs:isDefinedBy cimd: .
+
+cimd:DiagramKind.GraphDB-VizGraph a cimd:DiagramKind;
+  rdfs:label "GraphDB-VizGraph ";
+  rdfs:comment """GraphDB Visual Graph Saved Graph. Shows a predefined RDF graph, containing equipment nodes and/or classes and properties.""";
+  cimd:DiagramKind.isClickable true ;
   cims:stereotype "enum" ;
   rdfs:isDefinedBy cimd: .
   
@@ -72,12 +90,24 @@ cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty;
   rdfs:domain cimd:Diagram;
   rdfs:range cimd:DiagramKind.
 
-cimd:Diagram.PowerSystemResource a owl:Property;
-  cims:multiplicity cims:M:0..n ;
+cimd:Diagram.PowerSystemResource a owl:ObjectProperty;
+  cims:multiplicity cims:M:n..n ;
   rdfs:label "PowerSystemResource";
-  rdfs:comment "Power System Resource(s) shown on the diagram. This lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels compare to cimd:Diagram.mRIDs)";
+  rdfs:comment '''Power System Resource(s) shown on the diagram. 
+For PowSyBl diagrams, this lists major resources (eg SubGeographicalArea, LoadArea) but doesn't list the individual VoltageLevels (compare to cimd:Diagram.mRIDs).
+For VizGraph diagrams, this lists all depicted resources.''';
   rdfs:domain cimd:Diagram;
-  rdfs:range cim:PowerSystemResource.
+  rdfs:range cim:PowerSystemResource;
+  owl:inverseOf cimd:PowerSystemResource.Diagrams; 
+  .
+
+cimd:PowerSystemResource.Diagrams a owl:ObjectProperty;
+  cims:multiplicity cims:M:n..n ;
+  rdfs:label "Diagram";
+  rdfs:comment "Diagrams(s) available for a Power System Resource.";
+  rdfs:domain cim:PowerSystemResource;
+  rdfs:range cimd:Diagram;  
+  .
 
 cimd:Diagram.link a owl:Property, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1 ;

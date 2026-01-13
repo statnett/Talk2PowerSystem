@@ -2,13 +2,16 @@ prefix xyz:  <http://sparql.xyz/facade-x/data/>
 prefix fx:   <http://sparql.xyz/facade-x/ns/>
 prefix cimd: <https://cim.ucaiug.io/diagrams#> 
 prefix cim:  <https://cim.ucaiug.io/ns#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
 
 construct {
   ?uri a cimd:DiagramConfiguration ;
     cim:IdentifiedObject.name ?name ;
     cim:IdentifiedObject.description ?description ;
-    cimd:appliesTo ?hint ;
-    cimd:link  ?link ;
+    cimd:DiagramConfiguration.appliesTo ?hint ;
+    cimd:DiagramConfiguration.link  ?link ;
+    cimd:DiagramConfiguration.displaysInstances ?displaysInstances ;
   .   
 } where {
   service <x-sparql-anything:> {
@@ -17,8 +20,11 @@ construct {
        xyz:description ?description ;
        xyz:hint ?hint ;
        xyz:id ?id ;
+       xyz:startMode "search" ;
     .   
   }
   bind(concat("graphs-visualizations?config=",?id) as ?link)
   bind(uuid() as ?uri)
+  # bind(uri(?hint) as ?appliesTo) todo post bug fx makes <owl:Class>
+  bind(?hint !="owl:Class" as ?displaysInstances)
 }
