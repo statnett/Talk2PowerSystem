@@ -23,7 +23,7 @@ geo:Feature
 	owl:disjointWith geo:Geometry ;
 	skos:definition """A discrete spatial phenomenon in a universe of discourse."""@en ;
 	skos:note """A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."""@en ;
-	skos:prefLabel "Feature"@en ;
+	rdfs:label "Feature"@en ;
 .
 
 geo:asWKT
@@ -31,22 +31,22 @@ geo:asWKT
 	rdfs:domain geo:Geometry ;
 	rdfs:range geo:wktLiteral ;
 	skos:definition """The WKT serialization of a Geometry"""@en ;
-	skos:prefLabel "as WKT"@en ;
+	rdfs:label "as WKT"@en ;
 .
 
 geo:Geometry
 	a owl:Class ;
 	skos:definition """A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."""@en ;
 	skos:note """Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."""@en ;
-	skos:prefLabel "Geometry"@en ;
+	rdfs:label "Geometry"@en ;
 .
 
 geo:hasGeometry
 	a owl:ObjectProperty ;
-	rdfs:domain geo:Feature ;
+	rdfs:domain geo:Feature;
 	rdfs:range geo:Geometry ;
 	skos:definition """A spatial representation for a given Feature."""@en ;
-	skos:prefLabel "has geometry"@en ;
+	rdfs:label "has geometry"@en ;
 .
 
 qudt:hasUnit
