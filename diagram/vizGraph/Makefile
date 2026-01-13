@@ -8,11 +8,11 @@ all: $(TRIG)
 ttl: $(TTL)
 
 %.trig: %-header.trig  %.ttl diagrams-footer.trig
-	cat $*.ttl | grep -v '^@prefix' | cat $*-header.trig - diagrams-footer.trig > $@
+	cat $*.ttl | grep -vi '^PREFIX' | cat $*-header.trig - diagrams-footer.trig > $@
 
 %.ttl: %.json %.rq
 	sparql-anything -v location=$*.json -o $*.ttl -q $*.rq
 
 get:
-	curl --anyauth   -s -u "$$(cat $(CREDS_FILE))" "$(ENDPOINT)/saved" --header "x-graphdb-repository: cim" -o diagrams.json
+	curl --anyauth   -s -u "$$(cat $(CREDS_FILE))" "$(ENDPOINT)/saved"  --header "x-graphdb-repository: cim" -o diagrams.json
 	curl --anyauth   -s -u "$$(cat $(CREDS_FILE))" "$(ENDPOINT)/config" --header "x-graphdb-repository: cim" -o diagramConfigs.json	

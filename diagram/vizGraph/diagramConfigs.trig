@@ -15,42 +15,61 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
     dct:issued         "2026-01-08"^^xsd:date;
     dcat:version       "1".
 
-PREFIX cim:  <https://cim.ucaiug.io/ns#>
-PREFIX cimd: <https://cim.ucaiug.io/diagrams#>
-PREFIX fx:   <http://sparql.xyz/facade-x/ns/>
-PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
 
-<urn:uuid:ed713d30-df04-4e30-b7a8-c7981b788c15>
-        a                          cimd:DiagramConfiguration;
-        cimd:appliesTo             "use only with nodes of type  cim:VoltageLevel";
-        cimd:link                  "graphs-visualizations?config=99638482586148159e97fb379901dc54";
+<urn:uuid:b3c4ee72-b5a8-4166-9c3b-95bf89af688c>
+        a                               cimd:DiagramConfiguration;
+        cimd:DiagramConfiguration.appliesTo
+                "cim:VoltageLevel";
+        cimd:DiagramConfiguration.displaysInstances
+                true;
+        cimd:DiagramConfiguration.link  "graphs-visualizations?config=99638482586148159e97fb379901dc54";
         cim:IdentifiedObject.description
                 "Displays a simplified diagram of a VoltageLevel";
-        cim:IdentifiedObject.name  "VoltageLevel" .
+        cim:IdentifiedObject.name       "VoltageLevel" .
 
-<urn:uuid:edfb16c7-0e08-42d5-a8f0-11aadffbe4ff>
-        a                          cimd:DiagramConfiguration;
-        cimd:appliesTo             "Can only be used with nodes of type owl:Class.";
-        cimd:link                  "graphs-visualizations?config=13dc69219ffb4bd6866cb527dfd283fa";
+<urn:uuid:a1fbd163-8b9a-4eee-940a-7dc49d30c126>
+        a                               cimd:DiagramConfiguration;
+        cimd:DiagramConfiguration.appliesTo
+                "cim:Substation";
+        cimd:DiagramConfiguration.displaysInstances
+                true;
+        cimd:DiagramConfiguration.link  "graphs-visualizations?config=68af0b0637114e23a831d0cfd2985bb6";
+        cim:IdentifiedObject.description
+                "Select a Substation (eg \"ARENDAL\") or Line (eg \"LC 300KRISTIAN-ARENDAL\")";
+        cim:IdentifiedObject.name       "Substations and Lines (some)" .
+
+<urn:uuid:843c4ddb-b452-4c5b-9c44-cf6524bfcb36>
+        a                               cimd:DiagramConfiguration;
+        cimd:DiagramConfiguration.appliesTo
+                "owl:Class";
+        cimd:DiagramConfiguration.displaysInstances
+                false;
+        cimd:DiagramConfiguration.link  "graphs-visualizations?config=13dc69219ffb4bd6866cb527dfd283fa";
         cim:IdentifiedObject.description
                 "Shows the hierarchy and properties associated with a class";
-        cim:IdentifiedObject.name  "Classes and Relations" .
+        cim:IdentifiedObject.name       "Classes and Relations" .
 
-<urn:uuid:f7f623b2-b645-423c-8015-32ed18e0010b>
-        a                          cimd:DiagramConfiguration;
-        cimd:appliesTo             "Can only be used with nodes of type owl:Class.";
-        cimd:link                  "graphs-visualizations?config=5099ad5fc1954153a12f1f052fe1df7c";
+<urn:uuid:a5e3478f-d264-49bd-897c-1d0e1f982a1f>
+        a                               cimd:DiagramConfiguration;
+        cimd:DiagramConfiguration.appliesTo
+                "owl:Class";
+        cimd:DiagramConfiguration.displaysInstances
+                false;
+        cimd:DiagramConfiguration.link  "graphs-visualizations?config=5099ad5fc1954153a12f1f052fe1df7c";
         cim:IdentifiedObject.description
                 "Shows the hierarchy (parent and children) of any class.";
-        cim:IdentifiedObject.name  "Class hierarchy" .
+        cim:IdentifiedObject.name       "Class hierarchy" .
 
-<urn:uuid:1560b978-8ee5-4771-bf30-afc52e2e53b6>
-        a                          cimd:DiagramConfiguration;
-        cimd:appliesTo             "Can be used with any node. Is the default graph viz for displaying instance data";
-        cimd:link                  "graphs-visualizations?config=7166ff4a5a414f36a7e8a33fd4f42444";
+<urn:uuid:c8cdaff4-53c3-46ce-9e12-926f94bfd117>
+        a                               cimd:DiagramConfiguration;
+        cimd:DiagramConfiguration.appliesTo
+                "cim:PowerSystemResource";
+        cimd:DiagramConfiguration.displaysInstances
+                true;
+        cimd:DiagramConfiguration.link  "graphs-visualizations?config=7166ff4a5a414f36a7e8a33fd4f42444";
         cim:IdentifiedObject.description
-                "Exposes the immediate context of a node in the CIM knowledge graph.";
-        cim:IdentifiedObject.name  "CIM" .
+                "Exposes the immediate context of a node in the CIM knowledge graph. Can be used with any node. Is the default graph viz for displaying instance data";
+        cim:IdentifiedObject.name       "CIM" .
 
 }
 
