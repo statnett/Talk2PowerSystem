@@ -870,8 +870,10 @@ Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPo
 
 cimd:DiagramConfiguration a owl:Class ;
   rdfs:label "Diagram Configuration" ;
-  rdfs:comment "todo." ;
-  cims:pragmatics "todo only for viz graph used to viz a selected rdf resource or class" ;
+  rdfs:comment """Diagram configurations are custom configurations of GraphDB Visual Graph. 
+Provided a focus node, the custom configuration will display a subgraph around that node
+and emphasise relevant relationships with the rest of the knowledge graph. The focus node is provided as an argument to the configuration link""" ;
+  cims:pragmatics "Only use to visualize a resource or class of the type indicated in cimd:DiagramConfiguration.appliesTo" ;
   rdfs:subClassOf cim:IdentifiedObject .
 
 cimd:DiagramKind a owl:Class ;
@@ -2500,7 +2502,7 @@ For VizGraph diagrams, this lists all depicted resources.""" ;
   rdfs:range cim:PowerSystemResource .
 
 cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty ;
-  rdfs:label "kind" ;
+  rdfs:label "Kind" ;
   rdfs:comment "Kind of diagram" ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cimd:Diagram ;
@@ -2514,7 +2516,7 @@ cimd:PowerSystemResource.Diagrams a owl:ObjectProperty ;
   rdfs:range cimd:Diagram .
 
 cimr:Equipment.Terminals a owl:ObjectProperty ;
-  rdfs:label "terminals" ;
+  rdfs:label "Terminals" ;
   rdfs:comment "Terminals of the equipment" ;
   owl:inverseOf cimr:Terminal.Equipment ;
   rdfs:domain cim:Equipment ;
@@ -5249,7 +5251,7 @@ cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene a cim:WireInsulation
   rdfs:comment "Tree retardant crosslinked polyethylene wire insulation."@en .
 
 cimd:Diagram.link a owl:FunctionalProperty, owl:Property ;
-  rdfs:label "link" ;
+  rdfs:label "Link" ;
   rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base)." ;
   cims:multiplicity cims:M:1..1 ;
   rdfs:domain cimd:Diagram ;
@@ -5278,7 +5280,7 @@ cimd:DiagramConfiguration.displaysInstances a owl:FunctionalProperty ;
   rdfs:range xsd:boolean .
 
 cimd:DiagramConfiguration.link a owl:FunctionalProperty, owl:Property ;
-  rdfs:label "link" ;
+  rdfs:label "Link" ;
   rdfs:comment "Web app link of the diagram configuration. For reasons of portability between servers, it is a relative URL (does not include the base)." ;
   cims:multiplicity cims:M:1..1 ;
   cims:pragmatics "Diagram configurations should always be invoked adding a focus node as a uri=<URI> get parameter to the value of this property." ;
