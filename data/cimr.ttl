@@ -98,7 +98,7 @@ cim:Terminal.ConductingEquipment rdfs:subPropertyOf cimr:Terminal.Equipment.
 cim:Terminal.AuxiliaryEquipment  rdfs:subPropertyOf cimr:Terminal.Equipment.
 
 cimr:Equipment.Terminals a owl:ObjectProperty;
-  rdfs:label "terminals";
+  rdfs:label "Terminals";
   rdfs:comment "Terminals of the equipment";
   rdfs:domain  cim:Equipment;
   rdfs:range   cim:Terminal;

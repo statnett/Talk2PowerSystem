@@ -38,10 +38,12 @@ Unlike cim:Diagram, cimd:Diagram doesn't have DiagramObjects and DiagramObjectPo
 
 cimd:DiagramConfiguration a owl:Class ;
   rdfs:label "Diagram Configuration" ;
-  rdfs:comment """todo.""" ;
+  rdfs:comment """Diagram configurations are custom configurations of GraphDB Visual Graph. 
+Provided a focus node, the custom configuration will display a subgraph around that node
+and emphasise relevant relationships with the rest of the knowledge graph. The focus node is provided as an argument to the configuration link""" ;
   cims:stereotype uml:concrete ;
   rdfs:subClassOf cim:IdentifiedObject;
-  cims:pragmatics "todo only for viz graph used to viz a selected rdf resource or class";
+  cims:pragmatics "Only use to visualize a resource or class of the type indicated in cimd:DiagramConfiguration.appliesTo";
   cims:belongsToCategory cimd: ;
   rdfs:isDefinedBy cimd: .
 
@@ -85,7 +87,7 @@ cimd:DiagramKind.GraphDB-VizGraph a cimd:DiagramKind;
   
 cimd:Diagram.kind a owl:ObjectProperty, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1 ;
-  rdfs:label "kind";
+  rdfs:label "Kind";
   rdfs:comment "Kind of diagram";
   rdfs:domain cimd:Diagram;
   rdfs:range cimd:DiagramKind.
@@ -111,14 +113,14 @@ cimd:PowerSystemResource.Diagrams a owl:ObjectProperty;
 
 cimd:Diagram.link a owl:Property, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1 ;
-  rdfs:label "link";
+  rdfs:label "Link";
   rdfs:comment "Image file or web app link. For reasons of portability between servers, it is a relative URL (does not include the base).";
   rdfs:domain cimd:Diagram;
   rdfs:range xsd:string.
 
 cimd:DiagramConfiguration.link a owl:Property, owl:FunctionalProperty;
   cims:multiplicity cims:M:1..1 ;
-  rdfs:label "link";
+  rdfs:label "Link";
   cims:pragmatics "Diagram configurations should always be invoked adding a focus node as a uri=<URI> get parameter to the value of this property." ;
   rdfs:comment "Web app link of the diagram configuration. For reasons of portability between servers, it is a relative URL (does not include the base).";
   rdfs:domain cimd:DiagramConfiguration;
