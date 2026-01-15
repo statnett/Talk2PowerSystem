@@ -3,6 +3,7 @@ prefix fx:   <http://sparql.xyz/facade-x/ns/>
 prefix cimd: <https://cim.ucaiug.io/diagrams#> 
 prefix cim:  <https://cim.ucaiug.io/ns#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix dct:  <http://purl.org/dc/terms/> 
 
 
 construct {
@@ -12,6 +13,7 @@ construct {
     cimd:DiagramConfiguration.appliesTo ?hint ;
     cimd:DiagramConfiguration.link  ?link ;
     cimd:DiagramConfiguration.displaysInstances ?displaysInstances ;
+    dct:format "text/html" ;
   .   
 } where {
   service <x-sparql-anything:> {

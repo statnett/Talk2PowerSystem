@@ -16,8 +16,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
     dcat:version       "1".
 
 
-<urn:uuid:8e88a1f5-2ea1-4a4a-a8a4-64fc1c7dc396>
+<urn:uuid:694c7201-eef8-49c5-8fe7-bd48c01e4cc0>
         a                               cimd:DiagramConfiguration;
+        dct:format                      "text/html";
         cimd:DiagramConfiguration.appliesTo
                 "cim:VoltageLevel";
         cimd:DiagramConfiguration.displaysInstances
@@ -27,19 +28,21 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
                 "Displays a simplified diagram of a VoltageLevel";
         cim:IdentifiedObject.name       "VoltageLevel (VizGraph config)" .
 
-<urn:uuid:371ee694-a879-48e3-a9c4-8891ff452730>
+<urn:uuid:ae3979f2-486c-43ff-bc0b-8dceafcb9525>
         a                               cimd:DiagramConfiguration;
+        dct:format                      "text/html";
         cimd:DiagramConfiguration.appliesTo
                 "cim:Substation";
         cimd:DiagramConfiguration.displaysInstances
                 true;
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=68af0b0637114e23a831d0cfd2985bb6";
         cim:IdentifiedObject.description
-                "Select a Substation (eg \"ARENDAL\") or Line (eg \"LC 300KRISTIAN-ARENDAL\")";
+                "Shows high level connectivity of substations through lines";
         cim:IdentifiedObject.name       "Substations and Lines (VizGraph config)" .
 
-<urn:uuid:8689f428-588a-40f8-a222-941cfeaf51bc>
+<urn:uuid:53f892c7-2e6f-49ca-924d-493a7af7f5f0>
         a                               cimd:DiagramConfiguration;
+        dct:format                      "text/html";
         cimd:DiagramConfiguration.appliesTo
                 "owl:Class";
         cimd:DiagramConfiguration.displaysInstances
@@ -49,8 +52,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
                 "Shows the hierarchy and properties associated with a class";
         cim:IdentifiedObject.name       "Classes and Relations (VizGraph config)" .
 
-<urn:uuid:950de249-b106-408d-977b-77501a2720c2>
+<urn:uuid:e81beed4-781c-4683-91a4-9ed8d8ebf377>
         a                               cimd:DiagramConfiguration;
+        dct:format                      "text/html";
         cimd:DiagramConfiguration.appliesTo
                 "owl:Class";
         cimd:DiagramConfiguration.displaysInstances
@@ -60,8 +64,9 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
                 "Shows the hierarchy (parent and children) of any class.";
         cim:IdentifiedObject.name       "Class hierarchy (VizGraph config)" .
 
-<urn:uuid:65568ed0-a35d-4b01-abf8-66c9f4a07fee>
+<urn:uuid:2016eb11-d994-48ac-9f23-57296809206e>
         a                               cimd:DiagramConfiguration;
+        dct:format                      "text/html";
         cimd:DiagramConfiguration.appliesTo
                 "cim:PowerSystemResource";
         cimd:DiagramConfiguration.displaysInstances
