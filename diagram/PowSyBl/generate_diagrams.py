@@ -11,6 +11,7 @@ Three diagram types are supported:
 - SingleLineDiagram-Multi: Multi-substation single-line diagrams in matrix layout
 """
 
+from __future__ import annotations
 import os
 import ast
 import argparse
@@ -163,32 +164,38 @@ def generate_diagrams(network_path: str, tsv_path: str, output_dir: str, verbose
         
         try:
             mrids = parse_mrids(mrids_raw, kind)
-            
+            metadata_path = os.path.splitext(output_path)[0] + '.json'
+
             if kind == "NetworkAreaDiagram":
                 if verbose:
                     print(f"Generating NetworkAreaDiagram: {link}")
-                
-                if mrids:
-                    # NAD with specific voltage levels
-                    network.write_network_area_diagram_svg(output_path, voltage_level_ids=mrids)
-                else:
-                    # Full network NAD
-                    network.write_network_area_diagram_svg(output_path)
-            
+
+                network.write_network_area_diagram(
+                    output_path,
+                    voltage_level_ids=mrids,
+                    metadata_file=metadata_path,
+                )
+
             elif kind == "SingleLineDiagram":
                 if verbose:
                     print(f"Generating SingleLineDiagram: {link}")
-                
+
                 if mrids:
-                    network.write_single_line_diagram_svg(mrids, output_path, parameters=sld_params)
-            
+                    network.write_single_line_diagram_svg(
+                        mrids, output_path,
+                        metadata_file=metadata_path,
+                        parameters=sld_params,
+                    )
+
             elif kind == "SingleLineDiagram-Multi":
                 if verbose:
                     print(f"Generating SingleLineDiagram-Multi: {link}")
-                
+
                 if mrids:
                     network.write_matrix_multi_substation_single_line_diagram_svg(
-                        mrids, output_path, parameters=sld_params
+                        mrids, output_path,
+                        metadata_file=metadata_path,
+                        parameters=sld_params,
                     )
             
             else:
