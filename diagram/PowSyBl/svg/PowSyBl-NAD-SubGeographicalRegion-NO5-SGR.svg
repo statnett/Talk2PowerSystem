@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="579.13" height="600.00" viewBox="-935.25 -869.07 2078.12 2153.02" xmlns="http://www.w3.org/2000/svg">
-    <style><![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" width="579.13" height="600.00" viewBox="-935.25 -869.07 2078.12 2153.02">
+    <style>
 .nad-branch-edges .nad-edge-path, .nad-3wt-edges .nad-edge-path {stroke: var(--nad-vl-color, lightgrey); stroke-width: 5; fill: none}
 .nad-branch-edges .nad-winding, .nad-3wt-nodes .nad-winding {stroke: var(--nad-vl-color, lightgrey); stroke-width: 5; fill: none}
 .nad-text-edges {stroke: black; stroke-width: 3; stroke-dasharray: 6,7}
@@ -113,29 +112,29 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
   0%, 80%, 100% {stroke: white; stroke-width: 0}
   40% {stroke: #00BCD4; stroke-width: 15}
 }
-]]></style>
+</style>
     <g class="nad-vl-nodes">
-        <g transform="translate(369.52,-349.26)" id="0">
-            <circle r="27.50" id="1" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(369.52,-349.26)" id="0" iri="urn:uuid:f176961a-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="1" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f176961a-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
-        <g transform="translate(73.55,698.12)" id="2">
-            <circle r="27.50" id="3" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(73.55,698.12)" id="2" iri="urn:uuid:f1769626-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="3" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f1769626-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
-        <g transform="translate(176.18,225.39)" id="4">
-            <circle r="27.50" id="5" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(176.18,225.39)" id="4" iri="urn:uuid:f176962c-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="5" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f176962c-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
-        <g transform="translate(519.85,-50.50)" id="6">
-            <circle r="27.50" id="7" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(519.85,-50.50)" id="6" iri="urn:uuid:f1769632-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="7" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f1769632-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
-        <g transform="translate(578.19,326.03)" id="8">
-            <circle r="27.50" id="9" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(578.19,326.03)" id="8" iri="urn:uuid:f1769638-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="9" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f1769638-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
-        <g transform="translate(-227.86,-206.93)" id="10">
-            <circle r="27.50" id="11" class="nad-vl300to500-0 nad-busnode"/>
+        <g transform="translate(-227.86,-206.93)" id="10" iri="urn:uuid:f176968a-9aeb-11e5-91da-b8763fd99c5f">
+            <circle r="27.50" id="11" class="nad-vl300to500-0 nad-busnode" iri="urn:uuid:f176968a-9aeb-11e5-91da-b8763fd99c5f"/>
         </g>
     </g>
     <g class="nad-branch-edges">
-        <g id="26">
+        <g id="26" iri="urn:uuid:f1769bea-9aeb-11e5-91da-b8763fd99c5f">
             <g id="26.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="381.88,-324.70 444.69,-199.88"/>
                 <g class="nad-edge-infos" transform="translate(396.49,-295.67)">
@@ -161,7 +160,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="27">
+        <g id="27" iri="urn:uuid:f1769bf6-9aeb-11e5-91da-b8763fd99c5f">
             <g id="27.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="342.77,-342.89 70.83,-278.09"/>
                 <g class="nad-edge-infos" transform="translate(311.15,-335.36)">
@@ -187,7 +186,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="28">
+        <g id="28" iri="urn:uuid:f1769bde-9aeb-11e5-91da-b8763fd99c5f">
             <g id="28.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="391.03,-366.40 489.86,-445.18"/>
                 <g class="nad-edge-infos" transform="translate(416.44,-386.66)">
@@ -201,7 +200,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="29">
+        <g id="29" iri="urn:uuid:f1769bb4-9aeb-11e5-91da-b8763fd99c5f">
             <g id="29.2" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="397.02,-349.62 656.20,-353.01"/>
                 <g class="nad-edge-infos" transform="translate(429.52,-350.05)">
@@ -215,7 +214,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="30">
+        <g id="30" iri="urn:uuid:f1769c20-9aeb-11e5-91da-b8763fd99c5f">
             <g id="30.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="71.95,725.57 62.31,891.03"/>
                 <g class="nad-edge-infos" transform="translate(70.06,758.01)">
@@ -229,7 +228,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="31">
+        <g id="31" iri="urn:uuid:f1769dc4-9aeb-11e5-91da-b8763fd99c5f">
             <g id="31.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="170.35,252.26 131.23,432.44"/>
                 <g class="nad-edge-infos" transform="translate(163.45,284.02)">
@@ -259,7 +258,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 <circle class="nad-vl300to500-line nad-winding" cx="122.75" cy="471.52" r="20.00"/>
             </g>
         </g>
-        <g id="32">
+        <g id="32" iri="urn:uuid:f1769c38-9aeb-11e5-91da-b8763fd99c5f">
             <g id="32.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="202.86,232.07 377.19,275.71"/>
                 <g class="nad-edge-infos" transform="translate(234.39,239.96)">
@@ -285,7 +284,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="33">
+        <g id="33" iri="urn:uuid:f1769c2c-9aeb-11e5-91da-b8763fd99c5f">
             <g id="33.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="197.63,208.17 348.02,87.44"/>
                 <g class="nad-edge-infos" transform="translate(222.97,187.83)">
@@ -311,7 +310,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="34">
+        <g id="34" iri="urn:uuid:f1769c44-9aeb-11e5-91da-b8763fd99c5f">
             <g id="34.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="157.41,205.30 -25.84,9.23"/>
                 <g class="nad-edge-infos" transform="translate(135.22,181.55)">
@@ -337,7 +336,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="35">
+        <g id="35" iri="urn:uuid:f1769c50-9aeb-11e5-91da-b8763fd99c5f">
             <g id="35.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="509.91,-24.86 490.93,24.09 509.49,143.89"/>
                 <g class="nad-edge-infos" transform="translate(495.52,53.73)">
@@ -363,7 +362,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="36">
+        <g id="36" iri="urn:uuid:f1769c5c-9aeb-11e5-91da-b8763fd99c5f">
             <g id="36.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="537.09,-29.07 569.99,11.84 588.55,131.64"/>
                 <g class="nad-edge-infos" transform="translate(574.58,41.49)">
@@ -389,7 +388,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="37">
+        <g id="37" iri="urn:uuid:f1769c08-9aeb-11e5-91da-b8763fd99c5f">
             <g id="37.2" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="510.64,-76.41 493.06,-125.88 525.69,-303.05"/>
                 <g class="nad-edge-infos" transform="translate(498.49,-155.39)">
@@ -403,7 +402,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="38">
+        <g id="38" iri="urn:uuid:f1769c14-9aeb-11e5-91da-b8763fd99c5f">
             <g id="38.2" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="537.69,-71.43 571.74,-111.39 604.36,-288.56"/>
                 <g class="nad-edge-infos" transform="translate(577.17,-140.90)">
@@ -417,7 +416,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="39">
+        <g id="39" iri="urn:uuid:f1769c98-9aeb-11e5-91da-b8763fd99c5f">
             <g id="39.2" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="-224.14,-234.17 -196.27,-438.00"/>
                 <g class="nad-edge-infos" transform="translate(-219.73,-266.37)">
@@ -431,7 +430,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="40">
+        <g id="40" iri="urn:uuid:f1769caa-9aeb-11e5-91da-b8763fd99c5f">
             <g id="40.2" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="-247.76,-225.91 -403.43,-374.39"/>
                 <g class="nad-edge-infos" transform="translate(-271.28,-248.34)">
@@ -445,7 +444,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </g>
             </g>
         </g>
-        <g id="41">
+        <g id="41" iri="urn:uuid:f1769e30-9aeb-11e5-91da-b8763fd99c5f">
             <g id="41.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="-242.02,-183.35 -334.13,-29.99"/>
                 <g class="nad-edge-infos" transform="translate(-258.75,-155.49)">
@@ -458,13 +457,13 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                     </g>
                 </g>
             </g>
-            <g id="41.2" class="nad-vl300to500-line"></g>
+            <g id="41.2" class="nad-vl300to500-line"/>
             <g>
                 <circle class="nad-vl300to500-line nad-winding" cx="-344.43" cy="-12.85" r="20.00"/>
                 <circle class="nad-vl300to500-line nad-winding" cx="-354.73" cy="4.30" r="20.00"/>
             </g>
         </g>
-        <g id="42">
+        <g id="42" iri="urn:uuid:f1769e0c-9aeb-11e5-91da-b8763fd99c5f">
             <g id="42.1" class="nad-vl300to500-line">
                 <polyline class="nad-edge-path" points="-255.12,-203.26 -451.82,-176.76"/>
                 <g class="nad-edge-infos" transform="translate(-287.32,-198.92)">
@@ -477,7 +476,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                     </g>
                 </g>
             </g>
-            <g id="42.2" class="nad-vl300to500-line"></g>
+            <g id="42.2" class="nad-vl300to500-line"/>
             <g>
                 <circle class="nad-vl300to500-line nad-winding" cx="-471.64" cy="-174.09" r="20.00"/>
                 <circle class="nad-vl300to500-line nad-winding" cx="-491.46" cy="-171.42" r="20.00"/>
@@ -493,7 +492,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
         <polyline id="10-textedge" points="-198.19,-211.38 -127.86,-221.93"/>
     </g>
     <g class="nad-text-nodes">
-        <foreignObject id="0-textnode" y="-389.26" x="469.52" height="1" width="1">
+        <foreignObject id="0-textnode" y="-389.26" x="469.52" height="1" width="1" iri="urn:uuid:f176961a-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>DAGALI  420</div>
                 <table>
@@ -506,7 +505,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </table>
             </div>
         </foreignObject>
-        <foreignObject id="2-textnode" y="658.12" x="173.55" height="1" width="1">
+        <foreignObject id="2-textnode" y="658.12" x="173.55" height="1" width="1" iri="urn:uuid:f1769626-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>SIMA    300</div>
                 <table>
@@ -519,7 +518,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </table>
             </div>
         </foreignObject>
-        <foreignObject id="4-textnode" y="185.39" x="276.18" height="1" width="1">
+        <foreignObject id="4-textnode" y="185.39" x="276.18" height="1" width="1" iri="urn:uuid:f176962c-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>AURLAND 420</div>
                 <table>
@@ -532,7 +531,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </table>
             </div>
         </foreignObject>
-        <foreignObject id="6-textnode" y="-90.50" x="619.85" height="1" width="1">
+        <foreignObject id="6-textnode" y="-90.50" x="619.85" height="1" width="1" iri="urn:uuid:f1769632-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>GEILO   420</div>
                 <table>
@@ -545,7 +544,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </table>
             </div>
         </foreignObject>
-        <foreignObject id="8-textnode" y="286.03" x="678.19" height="1" width="1">
+        <foreignObject id="8-textnode" y="286.03" x="678.19" height="1" width="1" iri="urn:uuid:f1769638-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>EIDFJORD420</div>
                 <table>
@@ -558,7 +557,7 @@ path.nad-arrow-in:not(.nad-state-in .nad-arrow-in) {visibility: hidden}
                 </table>
             </div>
         </foreignObject>
-        <foreignObject id="10-textnode" y="-246.93" x="-127.86" height="1" width="1">
+        <foreignObject id="10-textnode" y="-246.93" x="-127.86" height="1" width="1" iri="urn:uuid:f176968a-9aeb-11e5-91da-b8763fd99c5f">
             <div xmlns="http://www.w3.org/1999/xhtml" class="nad-label-box">
                 <div>HAGAFOSS420</div>
                 <table>

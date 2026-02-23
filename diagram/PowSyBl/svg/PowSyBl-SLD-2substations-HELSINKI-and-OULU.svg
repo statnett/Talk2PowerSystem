@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg height="724.0" viewBox="0 0 1980.0 724.0" width="1980.0" xmlns="http://www.w3.org/2000/svg">
-    <style><![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" height="724.0" viewBox="0 0 1980.0 724.0" width="1980.0">
+    <style>
 /* ----------------------------------------------------------------------- */
 /* File: tautologies.css ------------------------------------------------- */
 .sld-out .sld-arrow-in {visibility: hidden}
@@ -121,9 +120,9 @@
 .sld-vsc {stroke: var(--sld-vl-color, blue); font-size: 7.43px; fill: none}
 .sld-lcc {stroke: var(--sld-vl-color, blue); font-size: 7.43px; fill: none}
 .sld-ground {stroke: var(--sld-vl-color, blue); fill: none}
-/* Stroke none & fill: --sld-vl-color */
+/* Stroke none &amp; fill: --sld-vl-color */
 .sld-node-infos {stroke: none; fill: var(--sld-vl-color, black)}
-/* Stroke none & fill: black */
+/* Stroke none &amp; fill: black */
 .sld-node {stroke: none; fill: black}
 .sld-flash {stroke: none; fill: black}
 .sld-lock {stroke: none; fill: black}
@@ -150,13 +149,13 @@
 .sld-ground-disconnection .sld-sw-open {stroke: black; fill: none}
 .sld-ground-disconnection .sld-sw-closed {stroke: black; fill: none}
 
-]]></style>
+</style>
     <rect class="sld-frame" height="100%" width="100%"/>
     <g>
         <g id="LABEL_VL_f17696b4-9aeb-11e5-91da-b8763fd99c5f">
             <text class="sld-graph-label" x="130.0" y="150.0">HELSINKI420</text>
         </g>
-        <g class="sld-busbar-section sld-vl300to500-0" id="id2dd901b3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(142.5,342.0)">
+        <g class="sld-busbar-section sld-vl300to500-0" id="id2dd901b3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(142.5,342.0)" iri="urn:uuid:2dd901b3-bdfb-11e5-94fa-c8f73332c8f4">
             <line x1="0" x2="975.0" y1="0" y2="0"/>
             <text class="sld-label" id="2dd901b3-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL" x="-5.0" y="-5.0">HELSINKI420 A</text>
         </g>
@@ -189,7 +188,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176979a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(151.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf176979a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(147.0,165.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf176979a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(147.0,165.5)" iri="urn:uuid:f176979a-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -225,7 +224,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697a0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(201.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697a0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(197.0,509.5)">
+            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697a0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(197.0,509.5)" iri="urn:uuid:f17697a0-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -261,7 +260,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697a6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(251.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf17697a6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(247.0,165.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf17697a6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(247.0,165.5)" iri="urn:uuid:f17697a6-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -297,7 +296,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697ac_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(301.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697ac_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(297.0,509.5)">
+            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697ac_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(297.0,509.5)" iri="urn:uuid:f17697ac-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -333,7 +332,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697b2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(351.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf17697b2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(347.0,165.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-0" id="idf17697b2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(347.0,165.5)" iri="urn:uuid:f17697b2-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -369,7 +368,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697b8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(401.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697b8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(397.0,509.5)">
+            <g class="sld-load sld-bottom-feeder sld-vl300to500-0" id="idf17697b8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(397.0,509.5)" iri="urn:uuid:f17697b8-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -405,7 +404,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699bd_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(451.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699bd_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(449.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699bd_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(449.0,164.0)" iri="urn:uuid:f17699bd-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -441,7 +440,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699c4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(501.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699c4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(499.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699c4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(499.0,508.0)" iri="urn:uuid:f17699c4-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -477,7 +476,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699cb_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(551.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699cb_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(549.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699cb_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(549.0,164.0)" iri="urn:uuid:f17699cb-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -513,7 +512,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699d2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(601.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699d2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(599.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699d2_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(599.0,508.0)" iri="urn:uuid:f17699d2-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -549,7 +548,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699d9_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(651.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699d9_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(649.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699d9_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(649.0,164.0)" iri="urn:uuid:f17699d9-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -585,7 +584,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699e0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(701.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699e0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(699.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699e0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(699.0,508.0)" iri="urn:uuid:f17699e0-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -621,7 +620,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699e7_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(751.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699e7_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(749.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699e7_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(749.0,164.0)" iri="urn:uuid:f17699e7-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -657,7 +656,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699ee_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(801.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699ee_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(799.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-0" id="idf17699ee_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(799.0,508.0)" iri="urn:uuid:f17699ee-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -693,7 +692,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699f5_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(851.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699f5_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(849.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-0" id="idf17699f5_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(849.0,164.0)" iri="urn:uuid:f17699f5-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -729,7 +728,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d34_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(951.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769d34_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(955.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769d34_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(955.0,170.0)" iri="urn:uuid:f1769d34-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d34-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL" x="-5.0" y="-5.0">420HELSINKI-ESTLINK</text>
             </g>
         </g>
@@ -762,7 +761,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1001.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1005.0,514.0)">
+            <g class="sld-bottom-feeder" id="idf1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1005.0,514.0)" iri="urn:uuid:f1769d40-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d40-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">420HELSINKI-OULU    1</text>
             </g>
         </g>
@@ -795,7 +794,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1051.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1055.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1055.0,170.0)" iri="urn:uuid:f1769d4c-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d4c-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL" x="-5.0" y="-5.0">420HELSINKI-OULU    2</text>
             </g>
         </g>
@@ -828,7 +827,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1101.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1105.0,514.0)">
+            <g class="sld-bottom-feeder" id="idf1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1105.0,514.0)" iri="urn:uuid:f1769d58-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d58-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">420HELSINKI-OULU    3</text>
             </g>
         </g>
@@ -861,14 +860,14 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_f17696b4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d28_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(901.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769d28_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(905.0,514.0)">
+            <g class="sld-bottom-feeder" id="idf1769d28_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(905.0,514.0)" iri="urn:uuid:f1769d28-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d28-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">420HELSINKI-VYBORG</text>
             </g>
         </g>
         <g id="LABEL_VL_f17696c6-9aeb-11e5-91da-b8763fd99c5f">
             <text class="sld-graph-label" x="1260.0" y="150.0">OULU    420</text>
         </g>
-        <g class="sld-busbar-section sld-vl300to500-1" id="id2dd901bb_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1272.5,342.0)">
+        <g class="sld-busbar-section sld-vl300to500-1" id="id2dd901bb_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1272.5,342.0)" iri="urn:uuid:2dd901bb-bdfb-11e5-94fa-c8f73332c8f4">
             <line x1="0" x2="525.0" y1="0" y2="0"/>
             <text class="sld-label" id="2dd901bb-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL" x="-5.0" y="-5.0">OULU    420 A</text>
         </g>
@@ -901,7 +900,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697ca_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1281.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-1" id="idf17697ca_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1277.0,165.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-1" id="idf17697ca_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1277.0,165.5)" iri="urn:uuid:f17697ca-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -937,7 +936,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697d0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1331.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-bottom-feeder sld-vl300to500-1" id="idf17697d0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1327.0,509.5)">
+            <g class="sld-load sld-bottom-feeder sld-vl300to500-1" id="idf17697d0_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1327.0,509.5)" iri="urn:uuid:f17697d0-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -973,7 +972,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17697d6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1381.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-1" id="idf17697d6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1377.0,165.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-1" id="idf17697d6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1377.0,165.5)" iri="urn:uuid:f17697d6-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -1009,7 +1008,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f17699fe_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1431.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-1" id="idf17699fe_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1429.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-1" id="idf17699fe_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1429.0,508.0)" iri="urn:uuid:f17699fe-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -1045,7 +1044,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769a04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1481.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-1" id="idf1769a04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1479.0,164.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-1" id="idf1769a04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1479.0,164.0)" iri="urn:uuid:f1769a04-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -1081,7 +1080,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769a0a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1531.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-1" id="idf1769a0a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1529.0,508.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-1" id="idf1769a0a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1529.0,508.0)" iri="urn:uuid:f1769a0a-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -1117,7 +1116,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769b3c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1631.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769b3c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1635.0,514.0)">
+            <g class="sld-bottom-feeder" id="idf1769b3c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1635.0,514.0)" iri="urn:uuid:f1769b3c-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769b3c-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL" x="-5.0" y="5.0">420GRUNDFOR-OULU</text>
             </g>
         </g>
@@ -1150,7 +1149,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1681.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1685.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769d40_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1685.0,170.0)" iri="urn:uuid:f1769d40-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d40-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">420HELSINKI-OULU    1</text>
             </g>
         </g>
@@ -1183,7 +1182,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1731.0,448.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1735.0,514.0)">
+            <g class="sld-bottom-feeder" id="idf1769d4c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1735.0,514.0)" iri="urn:uuid:f1769d4c-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d4c-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL" x="-5.0" y="5.0">420HELSINKI-OULU    2</text>
             </g>
         </g>
@@ -1216,7 +1215,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1781.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1785.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769d58_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1785.0,170.0)" iri="urn:uuid:f1769d58-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769d58-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">420HELSINKI-OULU    3</text>
             </g>
         </g>
@@ -1249,7 +1248,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f17696c6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769b00_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1581.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769b00_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1585.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769b00_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1585.0,170.0)" iri="urn:uuid:f1769b00-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769b00-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">420PORJUS-OULU</text>
             </g>
         </g>

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg height="1021.0" viewBox="0 0 1660.0 1021.0" width="1660.0" xmlns="http://www.w3.org/2000/svg">
-    <style><![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" height="1021.0" viewBox="0 0 1660.0 1021.0" width="1660.0">
+    <style>
 /* ----------------------------------------------------------------------- */
 /* File: tautologies.css ------------------------------------------------- */
 .sld-out .sld-arrow-in {visibility: hidden}
@@ -121,9 +120,9 @@
 .sld-vsc {stroke: var(--sld-vl-color, blue); font-size: 7.43px; fill: none}
 .sld-lcc {stroke: var(--sld-vl-color, blue); font-size: 7.43px; fill: none}
 .sld-ground {stroke: var(--sld-vl-color, blue); fill: none}
-/* Stroke none & fill: --sld-vl-color */
+/* Stroke none &amp; fill: --sld-vl-color */
 .sld-node-infos {stroke: none; fill: var(--sld-vl-color, black)}
-/* Stroke none & fill: black */
+/* Stroke none &amp; fill: black */
 .sld-node {stroke: none; fill: black}
 .sld-flash {stroke: none; fill: black}
 .sld-lock {stroke: none; fill: black}
@@ -150,13 +149,13 @@
 .sld-ground-disconnection .sld-sw-open {stroke: black; fill: none}
 .sld-ground-disconnection .sld-sw-closed {stroke: black; fill: none}
 
-]]></style>
+</style>
     <rect class="sld-frame" height="100%" width="100%"/>
     <g>
         <g id="LABEL_VL_1f4fabd4-8c57-c245-b107-4e64c9007ae3">
             <text class="sld-graph-label" x="130.0" y="286.0">ARENDAL 420</text>
         </g>
-        <g class="sld-busbar-section sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_0_95_FictitiousBus" transform="translate(155.0,478.0)">
+        <g class="sld-busbar-section sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_0_95_FictitiousBus" transform="translate(155.0,478.0)" iri="urn:uuid:INTERNAL_1f4fabd4-8c57-c245-b107-4e64c9007ae3_0_FictitiousBus">
             <line x1="0" x2="50.0" y1="0" y2="0"/>
         </g>
         <g class="sld-extern-cell sld-cell-direction-bottom" id="idEXTERN_32_0">
@@ -188,7 +187,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_f1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(201.0,584.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder sld-vl300to500-0" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(205.0,650.0)">
+            <g class="sld-bottom-feeder sld-vl300to500-0" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(205.0,650.0)" iri="urn:uuid:f1769e1e-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769e1e-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">ARENDAL T1</text>
             </g>
         </g>
@@ -221,25 +220,25 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_BUSCO_95_INTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_0_95_FictitiousBus_95_368340e1_45_464b_45_814b_45_9bac_45_9b70b93dde72_45_368340e1_45_464b_45_814b_45_9bac_45_9b70b93dde72" transform="translate(151.0,444.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-0" id="id368340e1_45_464b_45_814b_45_9bac_45_9b70b93dde72" transform="translate(145.0,398.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-0" id="id368340e1_45_464b_45_814b_45_9bac_45_9b70b93dde72" transform="translate(145.0,398.0)" iri="urn:uuid:368340e1-464b-814b-9bac-9b70b93dde72">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-0" id="idINTERNAL_95_1f4fabd4_45_8c57_45_c245_45_b107_45_4e64c9007ae3_95_4d89c650_45_5698_45_2e43_45_849b_45_ff65a7251f9c_95_ONE" transform="translate(151.0,364.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="id4d89c650_45_5698_45_2e43_45_849b_45_ff65a7251f9c_95_ONE" transform="translate(155.0,306.0)">
+            <g class="sld-top-feeder" id="id4d89c650_45_5698_45_2e43_45_849b_45_ff65a7251f9c_95_ONE" transform="translate(155.0,306.0)" iri="urn:uuid:4d89c650-5698-2e43-849b-ff65a7251f9c">
                 <text class="sld-label" id="4d89c650-5698-2e43-849b-ff65a7251f9c_ONE_N_LABEL" x="-5.0" y="-5.0">420ARENDAL-SANDEFJORD</text>
             </g>
         </g>
         <g id="LABEL_VL_f1769672-9aeb-11e5-91da-b8763fd99c5f">
             <text class="sld-graph-label" x="270.0" y="150.0">ARENDAL 300</text>
         </g>
-        <g class="sld-busbar-section sld-vl300to500-1" id="id2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(282.5,478.0)">
+        <g class="sld-busbar-section sld-vl300to500-1" id="id2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(282.5,478.0)" iri="urn:uuid:2dd9019d-bdfb-11e5-94fa-c8f73332c8f4">
             <line x1="0" x2="375.0" y1="0" y2="0"/>
             <text class="sld-label" id="2dd9019d-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL" x="-5.0" y="-5.0">ARENDAL 300 A</text>
         </g>
-        <g class="sld-busbar-section sld-disconnected sld-bus-disconnected" id="idb8666715_45_5047_45_5d4d_45_a882_45_85fcf5c727b5" transform="translate(282.5,503.0)">
+        <g class="sld-busbar-section sld-disconnected sld-bus-disconnected" id="idb8666715_45_5047_45_5d4d_45_a882_45_85fcf5c727b5" transform="translate(282.5,503.0)" iri="urn:uuid:b8666715-5047-5d4d-a882-85fcf5c727b5">
             <line x1="0" x2="375.0" y1="0" y2="0"/>
             <text class="sld-label" id="b8666715-5047-5d4d-a882-85fcf5c727b5_NW_LABEL" x="-5.0" y="-5.0">ARENDAL 300 B</text>
         </g>
@@ -302,38 +301,38 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_22e5ddcf_45_ac23_45_b449_45_bc4f_45_83336535f7c2_45_22e5ddcf_45_ac23_45_b449_45_bc4f_45_83336535f7c2" transform="translate(391.0,529.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id22e5ddcf_45_ac23_45_b449_45_bc4f_45_83336535f7c2" transform="translate(385.0,586.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id22e5ddcf_45_ac23_45_b449_45_bc4f_45_83336535f7c2" transform="translate(385.0,586.0)" iri="urn:uuid:22e5ddcf-ac23-b449-bc4f-83336535f7c2">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="id4e7aa43e_45_f1a3_45_0046_45_8cbb_45_19f29bfdeab6" transform="translate(391.0,655.0)">
+            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="id4e7aa43e_45_f1a3_45_0046_45_8cbb_45_19f29bfdeab6" transform="translate(391.0,655.0)" iri="urn:uuid:4e7aa43e-f1a3-0046-8cbb-19f29bfdeab6">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2" transform="translate(416.0,718.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id8a0babd6_45_6d6f_45_854b_45_b65f_45_4245e65c9e9c_95_SW_95_fict" transform="translate(435.0,685.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id8a0babd6_45_6d6f_45_854b_45_b65f_45_4245e65c9e9c_95_SW_95_fict" transform="translate(435.0,685.0)" iri="urn:uuid:8a0babd6-6d6f-854b-b65f-4245e65c9e9c_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-open sld-disconnected" id="id6d9f92ea_45_354f_45_9f40_45_9fc2_45_33367292f12c" transform="translate(441.0,664.0)">
+            <g class="sld-disconnector sld-open sld-disconnected" id="id6d9f92ea_45_354f_45_9f40_45_9fc2_45_33367292f12c" transform="translate(441.0,664.0)" iri="urn:uuid:6d9f92ea-354f-9f40-9fc2-33367292f12c">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="ida533d3fd_45_822f_45_3b40_45_9030_45_e18b571cd1ea_95_SW_95_fict" transform="translate(435.0,631.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="ida533d3fd_45_822f_45_3b40_45_9030_45_e18b571cd1ea_95_SW_95_fict" transform="translate(435.0,631.0)" iri="urn:uuid:a533d3fd-822f-3b40-9030-e18b571cd1ea_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idbff806b2_45_7825_45_af4c_45_a34b_45_be542dbe5ae6_95_SW_95_fict" transform="translate(435.0,604.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idbff806b2_45_7825_45_af4c_45_a34b_45_be542dbe5ae6_95_SW_95_fict" transform="translate(435.0,604.0)" iri="urn:uuid:bff806b2-7825-af4c-a34b-be542dbe5ae6_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-disconnected" id="id0a46da9f_45_1326_45_254e_45_8a3b_45_649a431f6625" transform="translate(435.0,577.0)">
+            <g class="sld-breaker sld-open sld-disconnected" id="id0a46da9f_45_1326_45_254e_45_8a3b_45_649a431f6625" transform="translate(435.0,577.0)" iri="urn:uuid:0a46da9f-1326-254e-8a3b-649a431f6625">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idee4223ab_45_0538_45_dc4a_45_9b79_45_d463c048bb08_95_SW_95_fict" transform="translate(435.0,550.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idee4223ab_45_0538_45_dc4a_45_9b79_45_d463c048bb08_95_SW_95_fict" transform="translate(435.0,550.0)" iri="urn:uuid:ee4223ab-0538-dc4a-9b79-d463c048bb08_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
@@ -346,7 +345,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(416.0,745.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(420.0,811.0)">
+            <g class="sld-bottom-feeder" id="idf1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(420.0,811.0)" iri="urn:uuid:f1769cb6-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769cb6-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL" x="-5.0" y="5.0">300ASKER-ARENDAL</text>
             </g>
         </g>
@@ -409,38 +408,38 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f56758a8_45_12a0_45_7648_45_b04b_45_f32ec3247e3b_45_f56758a8_45_12a0_45_7648_45_b04b_45_f32ec3247e3b" transform="translate(291.0,444.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-1" id="idf56758a8_45_12a0_45_7648_45_b04b_45_f32ec3247e3b" transform="translate(285.0,375.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-1" id="idf56758a8_45_12a0_45_7648_45_b04b_45_f32ec3247e3b" transform="translate(285.0,375.0)" iri="urn:uuid:f56758a8-12a0-7648-b04b-f32ec3247e3b">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="ide3672ff8_45_a637_45_5046_45_a7f7_45_cd1760746ed4" transform="translate(291.0,318.0)">
+            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="ide3672ff8_45_a637_45_5046_45_a7f7_45_cd1760746ed4" transform="translate(291.0,318.0)" iri="urn:uuid:e3672ff8-a637-5046-a7f7-cd1760746ed4">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_8" transform="translate(316.0,255.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id9acd76b4_45_8d78_45_2b4b_45_81d5_45_e404e244997d_95_SW_95_fict" transform="translate(335.0,276.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id9acd76b4_45_8d78_45_2b4b_45_81d5_45_e404e244997d_95_SW_95_fict" transform="translate(335.0,276.0)" iri="urn:uuid:9acd76b4-8d78-2b4b-81d5-e404e244997d_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-open sld-disconnected" id="idb36c1e1d_45_ec67_45_7b48_45_9a2f_45_ecbf617ae59f" transform="translate(341.0,309.0)">
+            <g class="sld-disconnector sld-open sld-disconnected" id="idb36c1e1d_45_ec67_45_7b48_45_9a2f_45_ecbf617ae59f" transform="translate(341.0,309.0)" iri="urn:uuid:b36c1e1d-ec67-7b48-9a2f-ecbf617ae59f">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id076da31b_45_080d_45_c742_45_9cb1_45_134a6ba5b1ed_95_SW_95_fict" transform="translate(335.0,330.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id076da31b_45_080d_45_c742_45_9cb1_45_134a6ba5b1ed_95_SW_95_fict" transform="translate(335.0,330.0)" iri="urn:uuid:076da31b-080d-c742-9cb1-134a6ba5b1ed_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id1ef7a41b_45_2cff_45_6046_45_b48f_45_c60a16fd20b0_95_SW_95_fict" transform="translate(335.0,357.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id1ef7a41b_45_2cff_45_6046_45_b48f_45_c60a16fd20b0_95_SW_95_fict" transform="translate(335.0,357.0)" iri="urn:uuid:1ef7a41b-2cff-6046-b48f-c60a16fd20b0_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-disconnected" id="id7113e099_45_7f24_45_6a47_45_9fa2_45_94a2d57d6c9b" transform="translate(335.0,384.0)">
+            <g class="sld-breaker sld-open sld-disconnected" id="id7113e099_45_7f24_45_6a47_45_9fa2_45_94a2d57d6c9b" transform="translate(335.0,384.0)" iri="urn:uuid:7113e099-7f24-6a47-9fa2-94a2d57d6c9b">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idd288bd96_45_ae6e_45_cf46_45_9775_45_f38e2699f1ce_95_SW_95_fict" transform="translate(335.0,411.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idd288bd96_45_ae6e_45_cf46_45_9775_45_f38e2699f1ce_95_SW_95_fict" transform="translate(335.0,411.0)" iri="urn:uuid:d288bd96-ae6e-cf46-9775-f38e2699f1ce_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
@@ -453,7 +452,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cd4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(316.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769cd4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(320.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769cd4_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(320.0,170.0)" iri="urn:uuid:f1769cd4-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769cd4-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">300KRISTIAN-ARENDAL</text>
             </g>
         </g>
@@ -516,38 +515,38 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_dd8be3ea_45_8ad3_45_f148_45_898c_45_5509662d5159_45_dd8be3ea_45_8ad3_45_f148_45_898c_45_5509662d5159" transform="translate(491.0,444.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-1" id="iddd8be3ea_45_8ad3_45_f148_45_898c_45_5509662d5159" transform="translate(485.0,375.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-1" id="iddd8be3ea_45_8ad3_45_f148_45_898c_45_5509662d5159" transform="translate(485.0,375.0)" iri="urn:uuid:dd8be3ea-8ad3-f148-898c-5509662d5159">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="id674b85b4_45_1a1f_45_2341_45_94bf_45_7e8f93392a7a" transform="translate(491.0,318.0)">
+            <g class="sld-disconnector sld-closed sld-vl300to500-1" id="id674b85b4_45_1a1f_45_2341_45_94bf_45_7e8f93392a7a" transform="translate(491.0,318.0)" iri="urn:uuid:674b85b4-1a1f-2341-94bf-7e8f93392a7a">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_9" transform="translate(516.0,255.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id22c3512a_45_fdf2_45_464c_45_b1f4_45_85d173fa2d18_95_SW_95_fict" transform="translate(535.0,276.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id22c3512a_45_fdf2_45_464c_45_b1f4_45_85d173fa2d18_95_SW_95_fict" transform="translate(535.0,276.0)" iri="urn:uuid:22c3512a-fdf2-464c-b1f4-85d173fa2d18_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-disconnector sld-open sld-disconnected" id="id4ba4e1a4_45_7265_45_d74f_45_8d46_45_8a4db7da37d1" transform="translate(541.0,309.0)">
+            <g class="sld-disconnector sld-open sld-disconnected" id="id4ba4e1a4_45_7265_45_d74f_45_8d46_45_8a4db7da37d1" transform="translate(541.0,309.0)" iri="urn:uuid:4ba4e1a4-7265-d74f-8d46-8a4db7da37d1">
                 <path class="sld-sw-closed" d="M0,0 8,8 M8,0 0,8"/>
                 <path class="sld-sw-open" d="M8,0 0,8"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idab88a3a2_45_a572_45_3440_45_be06_45_757e0225ea42_95_SW_95_fict" transform="translate(535.0,330.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idab88a3a2_45_a572_45_3440_45_be06_45_757e0225ea42_95_SW_95_fict" transform="translate(535.0,330.0)" iri="urn:uuid:ab88a3a2-a572-3440-be06-757e0225ea42_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id3916ae31_45_9f3d_45_af4e_45_8d87_45_87d373d8200a_95_SW_95_fict" transform="translate(535.0,357.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="id3916ae31_45_9f3d_45_af4e_45_8d87_45_87d373d8200a_95_SW_95_fict" transform="translate(535.0,357.0)" iri="urn:uuid:3916ae31-9f3d-af4e-8d87-87d373d8200a_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-disconnected" id="idcbd34307_45_2d45_45_ae47_45_872a_45_516888952750" transform="translate(535.0,384.0)">
+            <g class="sld-breaker sld-open sld-disconnected" id="idcbd34307_45_2d45_45_ae47_45_872a_45_516888952750" transform="translate(535.0,384.0)" iri="urn:uuid:cbd34307-2d45-ae47-872a-516888952750">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
-            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idb77c60e8_45_fe4f_45_9149_45_9bc6_45_c3eb8f899de2_95_SW_95_fict" transform="translate(535.0,411.0)">
+            <g class="sld-breaker sld-open sld-fictitious sld-disconnected" id="idb77c60e8_45_fe4f_45_9149_45_9bc6_45_c3eb8f899de2_95_SW_95_fict" transform="translate(535.0,411.0)" iri="urn:uuid:b77c60e8-fe4f-9149-9bc6-c3eb8f899de2_SW_fict">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
@@ -560,7 +559,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cf8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(516.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769cf8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(520.0,170.0)">
+            <g class="sld-top-feeder" id="idf1769cf8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(520.0,170.0)" iri="urn:uuid:f1769cf8-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769cf8-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL" x="-5.0" y="-5.0">300ARENDAL-KRISTA_HVDC</text>
             </g>
         </g>
@@ -593,14 +592,14 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_3dd4a1cf_45_86dc_45_9649_45_8120_45_e519d7986be9_45_3dd4a1cf_45_86dc_45_9649_45_8120_45_e519d7986be9" transform="translate(591.0,529.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id3dd4a1cf_45_86dc_45_9649_45_8120_45_e519d7986be9" transform="translate(585.0,631.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id3dd4a1cf_45_86dc_45_9649_45_8120_45_e519d7986be9" transform="translate(585.0,631.0)" iri="urn:uuid:3dd4a1cf-86dc-9649-8120-e519d7986be9">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd90408_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(591.0,745.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-inductor sld-bottom-feeder sld-vl300to500-1" id="id2dd90408_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(587.5,806.5)">
+            <g class="sld-inductor sld-bottom-feeder sld-vl300to500-1" id="id2dd90408_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(587.5,806.5)" iri="urn:uuid:2dd90408-bdfb-11e5-94fa-c8f73332c8f4">
                 <path d="M5,5 A 5 20 0 0 0 0,5"/>
                 <path d="M10,5 A 5 20 0 0 0 5,5"/>
                 <path d="M15,5 A 5 20 0 0 0 10,5"/>
@@ -636,14 +635,14 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd9019d_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_5ae8b25f_45_24cc_45_e34b_45_b238_45_2aea59d516c5_45_5ae8b25f_45_24cc_45_e34b_45_b238_45_2aea59d516c5" transform="translate(641.0,444.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id5ae8b25f_45_24cc_45_e34b_45_b238_45_2aea59d516c5" transform="translate(635.0,330.0)">
+            <g class="sld-breaker sld-closed sld-vl300to500-1" id="id5ae8b25f_45_24cc_45_e34b_45_b238_45_2aea59d516c5" transform="translate(635.0,330.0)" iri="urn:uuid:5ae8b25f-24cc-e34b-b238-2aea59d516c5">
                 <path class="sld-sw-closed" d="M1,1 V19 H19 V1z M10,5 V15"/>
                 <path class="sld-sw-open" d="M1,1 V19 H19 V1z M5,10 H15"/>
             </g>
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-1" id="idINTERNAL_95_f1769672_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(641.0,228.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder sld-vl300to500-1" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(645.0,170.0)">
+            <g class="sld-top-feeder sld-vl300to500-1" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(645.0,170.0)" iri="urn:uuid:f1769e1e-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769e1e-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">ARENDAL T1</text>
             </g>
         </g>
@@ -653,14 +652,14 @@
         <g class="sld-wire sld-vl300to500-1" id="idEDGE_95_f1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO">
             <polyline points="645.0,170.0,645.0,110.0,250.0,110.0,250.0,482.5"/>
         </g>
-        <g class="sld-two-wt sld-fictitious" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(245.0,483.0)">
+        <g class="sld-two-wt sld-fictitious" id="idf1769e1e_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(245.0,483.0)" iri="urn:uuid:f1769e1e-9aeb-11e5-91da-b8763fd99c5f">
             <circle class="sld-vl300to500-0 sld-winding" cx="5" cy="10" r="5"/>
             <circle class="sld-vl300to500-1 sld-winding" cx="5" cy="5" r="5"/>
         </g>
         <g id="LABEL_VL_f1769656-9aeb-11e5-91da-b8763fd99c5f">
             <text class="sld-graph-label" x="800.0" y="298.0">SKIEN   420</text>
         </g>
-        <g class="sld-busbar-section sld-vl300to500-2" id="id2dd90193_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(812.5,490.0)">
+        <g class="sld-busbar-section sld-vl300to500-2" id="id2dd90193_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(812.5,490.0)" iri="urn:uuid:2dd90193-bdfb-11e5-94fa-c8f73332c8f4">
             <line x1="0" x2="175.0" y1="0" y2="0"/>
             <text class="sld-label" id="2dd90193-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL" x="-5.0" y="-5.0">SKIEN   420 A</text>
         </g>
@@ -693,7 +692,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-2" id="idINTERNAL_95_f1769656_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903c0_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(821.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-capacitor sld-top-feeder sld-vl300to500-2" id="id2dd903c0_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(819.0,312.0)">
+            <g class="sld-capacitor sld-top-feeder sld-vl300to500-2" id="id2dd903c0_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(819.0,312.0)" iri="urn:uuid:2dd903c0-bdfb-11e5-94fa-c8f73332c8f4">
                 <line x1="6" x2="6" y1="0" y2="4.5"/>
                 <line x1="0" x2="12" y1="4.5" y2="4.5"/>
                 <line x1="0" x2="12" y1="7.5" y2="7.5"/>
@@ -730,7 +729,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-2" id="idINTERNAL_95_f1769656_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bcc_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(871.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769bcc_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(875.0,662.0)">
+            <g class="sld-bottom-feeder" id="idf1769bcc_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(875.0,662.0)" iri="urn:uuid:f1769bcc-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769bcc-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL" x="-5.0" y="5.0">420HALDEN-SKIEN</text>
             </g>
         </g>
@@ -763,7 +762,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-2" id="idINTERNAL_95_f1769656_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c80_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(921.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769c80_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(925.0,318.0)">
+            <g class="sld-top-feeder" id="idf1769c80_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(925.0,318.0)" iri="urn:uuid:f1769c80-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769c80-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">420SYLLING-SKIEN</text>
             </g>
         </g>
@@ -796,14 +795,14 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-2" id="idINTERNAL_95_f1769656_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(971.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder sld-vl300to500-2" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(975.0,662.0)">
+            <g class="sld-bottom-feeder sld-vl300to500-2" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(975.0,662.0)" iri="urn:uuid:f1769dfa-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769dfa-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">ASKER   T1</text>
             </g>
         </g>
         <g id="LABEL_VL_f1769650-9aeb-11e5-91da-b8763fd99c5f">
             <text class="sld-graph-label" x="1040.0" y="298.0">ASKER   300</text>
         </g>
-        <g class="sld-busbar-section sld-vl300to500-3" id="id2dd90191_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1052.5,490.0)">
+        <g class="sld-busbar-section sld-vl300to500-3" id="id2dd90191_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1052.5,490.0)" iri="urn:uuid:2dd90191-bdfb-11e5-94fa-c8f73332c8f4">
             <line x1="0" x2="425.0" y1="0" y2="0"/>
             <text class="sld-label" id="2dd90191-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL" x="-5.0" y="-5.0">ASKER   300 A</text>
         </g>
@@ -836,7 +835,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769746_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1111.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-bottom-feeder sld-vl300to500-3" id="idf1769746_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1107.0,657.5)">
+            <g class="sld-load sld-bottom-feeder sld-vl300to500-3" id="idf1769746_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1107.0,657.5)" iri="urn:uuid:f1769746-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -872,7 +871,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176974c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1161.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-load sld-top-feeder sld-vl300to500-3" id="idf176974c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1157.0,313.5)">
+            <g class="sld-load sld-top-feeder sld-vl300to500-3" id="idf176974c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1157.0,313.5)" iri="urn:uuid:f176974c-9aeb-11e5-91da-b8763fd99c5f">
                 <rect height="9" width="16"/>
                 <line x1="0" x2="16" y1="0" y2="9"/>
                 <line x1="16" x2="0" y1="0" y2="9"/>
@@ -908,7 +907,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd90405_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1061.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-capacitor sld-top-feeder sld-vl300to500-3" id="id2dd90405_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1059.0,312.0)">
+            <g class="sld-capacitor sld-top-feeder sld-vl300to500-3" id="id2dd90405_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4" transform="translate(1059.0,312.0)" iri="urn:uuid:2dd90405-bdfb-11e5-94fa-c8f73332c8f4">
                 <line x1="6" x2="6" y1="0" y2="4.5"/>
                 <line x1="0" x2="12" y1="4.5" y2="4.5"/>
                 <line x1="0" x2="12" y1="7.5" y2="7.5"/>
@@ -945,7 +944,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769919_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1211.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-bottom-feeder sld-vl300to500-3" id="idf1769919_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1209.0,656.0)">
+            <g class="sld-generator sld-bottom-feeder sld-vl300to500-3" id="idf1769919_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1209.0,656.0)" iri="urn:uuid:f1769919-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -981,7 +980,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769920_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1261.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-generator sld-top-feeder sld-vl300to500-3" id="idf1769920_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1259.0,312.0)">
+            <g class="sld-generator sld-top-feeder sld-vl300to500-3" id="idf1769920_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1259.0,312.0)" iri="urn:uuid:f1769920-9aeb-11e5-91da-b8763fd99c5f">
                 <circle cx="6" cy="6" r="6"/>
                 <path d="M6,6 A 6 40 0 0 0 2,6"/>
                 <path d="M6,6 A 6 40 0 0 0 10,6"/>
@@ -1017,7 +1016,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1411.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1415.0,662.0)">
+            <g class="sld-bottom-feeder" id="idf1769cb6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE" transform="translate(1415.0,662.0)" iri="urn:uuid:f1769cb6-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769cb6-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL" x="-5.0" y="5.0">300ASKER-ARENDAL</text>
             </g>
         </g>
@@ -1050,7 +1049,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c68_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1361.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder" id="idf1769c68_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1365.0,318.0)">
+            <g class="sld-top-feeder" id="idf1769c68_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1365.0,318.0)" iri="urn:uuid:f1769c68-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769c68-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">300OSLO-ASKER</text>
             </g>
         </g>
@@ -1083,7 +1082,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769b9c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1311.0,596.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-bottom-feeder" id="idf1769b9c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1315.0,662.0)">
+            <g class="sld-bottom-feeder" id="idf1769b9c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1315.0,662.0)" iri="urn:uuid:f1769b9c-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769b9c-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL" x="-5.0" y="5.0">300TRETTEN-ASKER</text>
             </g>
         </g>
@@ -1116,7 +1115,7 @@
             <g class="sld-node sld-hidden-node sld-fictitious sld-vl300to500-3" id="idINTERNAL_95_f1769650_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1461.0,376.0)">
                 <circle cx="4" cy="4" r="4"/>
             </g>
-            <g class="sld-top-feeder sld-vl300to500-3" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1465.0,318.0)">
+            <g class="sld-top-feeder sld-vl300to500-3" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO" transform="translate(1465.0,318.0)" iri="urn:uuid:f1769dfa-9aeb-11e5-91da-b8763fd99c5f">
                 <text class="sld-label" id="f1769dfa-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL" x="-5.0" y="-5.0">ASKER   T1</text>
             </g>
         </g>
@@ -1126,7 +1125,7 @@
         <g class="sld-wire sld-vl300to500-3" id="idEDGE_95_f1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO">
             <polyline points="1465.0,318.0,1465.0,258.0,1020.0,258.0,1020.0,482.0"/>
         </g>
-        <g class="sld-two-wt sld-fictitious" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1015.0,482.5)">
+        <g class="sld-two-wt sld-fictitious" id="idf1769dfa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f" transform="translate(1015.0,482.5)" iri="urn:uuid:f1769dfa-9aeb-11e5-91da-b8763fd99c5f">
             <circle class="sld-vl300to500-2 sld-winding" cx="5" cy="10" r="5"/>
             <circle class="sld-vl300to500-3 sld-winding" cx="5" cy="5" r="5"/>
         </g>
