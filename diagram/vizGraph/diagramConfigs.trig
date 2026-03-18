@@ -73,7 +73,7 @@ PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
                 true;
         cimd:DiagramConfiguration.link  "graphs-visualizations?config=7166ff4a5a414f36a7e8a33fd4f42444";
         cim:IdentifiedObject.description
-                "Exposes the immediate context of a node in the CIM knowledge graph. Can be used with any node. Is the default graph viz for displaying instance data";
+                "Exposes the immediate context of a node in the CIM knowledge graph. Can be used with any node. IMPORTANT: This is the default config for displaying instance data and should be used whenever the user does not specify another config";
         cim:IdentifiedObject.name       "CIM (VizGraph config)" .
 
 }

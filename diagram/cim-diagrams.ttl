@@ -60,6 +60,7 @@ cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind;
   rdfs:label "PowSyBl-NetworkAreaDiagram";
   rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
 Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""";
+  cimd:DiagramKind.isClickable true ;
   cims:stereotype "enum" ;
   rdfs:isDefinedBy cimd: .
 
