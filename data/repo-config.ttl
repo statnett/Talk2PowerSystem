@@ -33,7 +33,7 @@
 
             # Queries and Updates
             graphdb:query-timeout "60" ;
-            graphdb:throw-QueryEvaluationException-on-timeout "false" ;
+            graphdb:throw-QueryEvaluationException-on-timeout "true" ;
             graphdb:query-limit-results "0" ;
 
             # Settable in the file but otherwise hidden in the UI and in the RDF4J console
