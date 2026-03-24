@@ -115,7 +115,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--prefix",
-        default="",
+        default="urn:uuid:",
         help="Namespace prefix to prepend to each mRID (e.g. 'urn:uuid:')",
     )
     parser.add_argument(
