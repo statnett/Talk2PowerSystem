@@ -29,6 +29,12 @@ from lxml import etree
 
 
 _BUS_INDEX_SUFFIX = re.compile(r'_\d+$')
+_SW_FICT_SUFFIX = re.compile(r'_SW_fict$')
+
+
+def _normalize_mrid(mrid: str) -> str:
+    """Remove _SW_fict suffix from mrids (fictitious switches)."""
+    return _SW_FICT_SUFFIX.sub("", mrid)
 
 
 def build_mapping_nad(meta: dict) -> dict[str, str]:
@@ -47,6 +53,7 @@ def build_mapping_nad(meta: dict) -> dict[str, str]:
                 mrid = item["equipmentId"]
                 if section == "busNodes":
                     mrid = _BUS_INDEX_SUFFIX.sub("", mrid)
+                mrid = _normalize_mrid(mrid)
                 mapping[item["svgId"]] = mrid
     return mapping
 
@@ -60,7 +67,7 @@ def build_mapping_sld(meta: dict) -> dict[str, str]:
     mapping: dict[str, str] = {}
     for item in meta.get("nodes", []):
         if "equipmentId" in item:
-            mapping[item["id"]] = item["equipmentId"]
+            mapping[item["id"]] = _normalize_mrid(item["equipmentId"])
     return mapping
 
 
