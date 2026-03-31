@@ -145,24 +145,6 @@
       "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "id2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUSBAR_SECTION",
-    "open" : false,
-    "vlabel" : false,
-    "equipmentId" : "2dd90199-bdfb-11e5-94fa-c8f73332c8f4",
-    "labels" : [ {
-      "id" : "2dd90199-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL",
-      "positionName" : "NW_LABEL"
-    } ]
-  }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idf1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "GENERATOR",
@@ -175,18 +157,14 @@
       "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUSBAR_SECTION",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
-    "equipmentId" : "2dd901a5-bdfb-11e5-94fa-c8f73332c8f4",
-    "labels" : [ {
-      "id" : "2dd901a5-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL",
-      "positionName" : "NW_LABEL"
-    } ]
+    "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
@@ -198,12 +176,12 @@
     "nextVId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "LINE",
     "open" : false,
-    "direction" : "BOTTOM",
+    "direction" : "TOP",
     "vlabel" : false,
     "equipmentId" : "f1769c44-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769c44-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL",
-      "positionName" : "S_LABEL"
+      "id" : "f1769c44-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL",
+      "positionName" : "N_LABEL"
     } ]
   }, {
     "id" : "idf1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
@@ -218,46 +196,18 @@
       "positionName" : "S_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idf1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "nextVId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "TWO_WINDINGS_TRANSFORMER_LEG",
     "open" : false,
-    "direction" : "TOP",
+    "direction" : "BOTTOM",
     "vlabel" : false,
     "equipmentId" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL",
-      "positionName" : "N_LABEL"
+      "id" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL",
+      "positionName" : "S_LABEL"
     } ]
-  }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
   }, {
     "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
@@ -266,35 +216,35 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
   }, {
     "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
@@ -313,23 +263,16 @@
       "positionName" : "S_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -341,16 +284,48 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUSBAR_SECTION",
+    "open" : false,
+    "vlabel" : false,
+    "equipmentId" : "f1769683-9aeb-11e5-91da-b8763fd99c5f",
+    "labels" : [ {
+      "id" : "f1769683-9aeb-11e5-91da-b8763fd99c5f_NW_LABEL",
+      "positionName" : "NW_LABEL"
+    } ]
+  }, {
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -376,13 +351,6 @@
       "positionName" : "S_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idf1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "nextVId" : "f1769644-9aeb-11e5-91da-b8763fd99c5f",
@@ -403,9 +371,16 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
+    "id" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -417,8 +392,8 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
@@ -431,15 +406,8 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
@@ -450,20 +418,13 @@
     "nextVId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "LINE",
     "open" : false,
-    "direction" : "TOP",
+    "direction" : "BOTTOM",
     "vlabel" : false,
     "equipmentId" : "f1769d04-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769d04-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL",
-      "positionName" : "N_LABEL"
+      "id" : "f1769d04-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL",
+      "positionName" : "S_LABEL"
     } ]
-  }, {
-    "id" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
   }, {
     "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
@@ -485,18 +446,14 @@
     "vlabel" : true,
     "labels" : [ ]
   }, {
-    "id" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUSBAR_SECTION",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
-    "equipmentId" : "2dd901a3-bdfb-11e5-94fa-c8f73332c8f4",
-    "labels" : [ {
-      "id" : "2dd901a3-bdfb-11e5-94fa-c8f73332c8f4_NW_LABEL",
-      "positionName" : "NW_LABEL"
-    } ]
+    "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
@@ -515,21 +472,7 @@
       "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
@@ -558,9 +501,20 @@
     "equipmentId" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUSBAR_SECTION",
+    "open" : false,
+    "vlabel" : false,
+    "equipmentId" : "f1769689-9aeb-11e5-91da-b8763fd99c5f",
+    "labels" : [ {
+      "id" : "f1769689-9aeb-11e5-91da-b8763fd99c5f_NW_LABEL",
+      "positionName" : "NW_LABEL"
+    } ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
+    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -570,24 +524,38 @@
     "nextVId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "TWO_WINDINGS_TRANSFORMER_LEG",
     "open" : false,
-    "direction" : "BOTTOM",
+    "direction" : "TOP",
     "vlabel" : false,
     "equipmentId" : "f1769e30-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769e30-9aeb-11e5-91da-b8763fd99c5f_ONE_S_LABEL",
-      "positionName" : "S_LABEL"
+      "id" : "f1769e30-9aeb-11e5-91da-b8763fd99c5f_ONE_N_LABEL",
+      "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -611,8 +579,29 @@
     "vlabel" : true,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
@@ -623,22 +612,15 @@
     "nextVId" : "f1769660-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "LINE",
     "open" : false,
-    "direction" : "BOTTOM",
+    "direction" : "TOP",
     "vlabel" : false,
     "equipmentId" : "f1769cec-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769cec-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL",
-      "positionName" : "S_LABEL"
+      "id" : "f1769cec-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL",
+      "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
@@ -652,8 +634,15 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
@@ -666,8 +655,15 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
@@ -678,20 +674,13 @@
     "nextVId" : "f176961a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "LINE",
     "open" : false,
-    "direction" : "TOP",
+    "direction" : "BOTTOM",
     "vlabel" : false,
     "equipmentId" : "f1769bf6-9aeb-11e5-91da-b8763fd99c5f",
     "labels" : [ {
-      "id" : "f1769bf6-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL",
-      "positionName" : "N_LABEL"
+      "id" : "f1769bf6-9aeb-11e5-91da-b8763fd99c5f_TWO_S_LABEL",
+      "positionName" : "S_LABEL"
     } ]
-  }, {
-    "id" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
   }, {
     "id" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
@@ -700,9 +689,30 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "NODE",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -718,6 +728,17 @@
     "labels" : [ {
       "id" : "f1769c74-9aeb-11e5-91da-b8763fd99c5f_TWO_N_LABEL",
       "positionName" : "N_LABEL"
+    } ]
+  }, {
+    "id" : "idf1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "vid" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUSBAR_SECTION",
+    "open" : false,
+    "vlabel" : false,
+    "equipmentId" : "f1769665-9aeb-11e5-91da-b8763fd99c5f",
+    "labels" : [ {
+      "id" : "f1769665-9aeb-11e5-91da-b8763fd99c5f_NW_LABEL",
+      "positionName" : "NW_LABEL"
     } ]
   }, {
     "id" : "id2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
@@ -758,37 +779,9 @@
       "positionName" : "N_LABEL"
     } ]
   }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
     "id" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "NODE",
-    "open" : false,
-    "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "vid" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
@@ -805,6 +798,13 @@
     "open" : false,
     "vlabel" : false,
     "labels" : [ ]
+  }, {
+    "id" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "vid" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "componentType" : "BUS_CONNECTION",
+    "open" : false,
+    "vlabel" : false,
+    "labels" : [ ]
   } ],
   "wires" : [ {
     "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
@@ -813,27 +813,15 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -843,51 +831,45 @@
     "straight" : false,
     "snakeLine" : false
   }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
     "id" : "idEDGE_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId1" : "idf1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId2" : "idf1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : true
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
     "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "nodeId2" : "idf1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -903,39 +885,39 @@
     "straight" : false,
     "snakeLine" : true
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -945,45 +927,63 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -993,57 +993,39 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1053,21 +1035,27 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1077,27 +1065,33 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
     "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId2" : "idf1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769947_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769959_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c74_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1107,9 +1101,9 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1119,21 +1113,9 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769bf6_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1143,27 +1125,15 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1173,21 +1143,39 @@
     "straight" : false,
     "snakeLine" : false
   }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769953_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cec_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
     "id" : "idEDGE_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId1" : "idf1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId2" : "idf1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : true
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId2" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769d04_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1197,27 +1185,27 @@
     "straight" : false,
     "snakeLine" : false
   }, {
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
     "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId1" : "idINTERNAL_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "nodeId2" : "idf1769cc8_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903fc_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE_45_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId1" : "idINTERNAL_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_45_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
-    "nodeId2" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f176994d_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769665_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
@@ -1227,27 +1215,39 @@
     "straight" : false,
     "snakeLine" : false
   }, {
-    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "idBUSCO_95_2dd901a5_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769caa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
-    "id" : "_95_f1769666_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e0c_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd90199_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "straight" : false,
-    "snakeLine" : false
-  }, {
     "id" : "idEDGE_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "nodeId1" : "idf1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
     "nodeId2" : "idf1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "straight" : false,
     "snakeLine" : true
   }, {
-    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
-    "nodeId1" : "idBUSCO_95_2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
-    "nodeId2" : "id2dd901a3_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4_45_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_2dd903cf_45_bdfb_45_11e5_45_94fa_45_c8f73332c8f4",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f1769684_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769683_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769e30_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ONE",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_INTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_45_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId2" : "idINTERNAL_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c98_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "straight" : false,
+    "snakeLine" : false
+  }, {
+    "id" : "_95_f176968a_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_BUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
+    "nodeId1" : "idf1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
+    "nodeId2" : "idBUSCO_95_f1769689_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_f1769c44_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO",
     "straight" : false,
     "snakeLine" : false
   }, {
