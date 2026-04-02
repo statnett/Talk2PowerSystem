@@ -117,6 +117,13 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
+    "unescapedId" : "LABEL_VL_681a1e3e-5a55-11eb-a658-74e5f963e191",
+    "id" : "idLABEL_95_VL_95_681a1e3e_45_5a55_45_11eb_45_a658_45_74e5f963e191",
+    "vid" : "681a1e3e-5a55-11eb-a658-74e5f963e191",
+    "open" : false,
+    "vlabel" : true,
+    "labels" : [ ]
+  }, {
     "id" : "idINTERNAL_95_681a1e3e_45_5a55_45_11eb_45_a658_45_74e5f963e191_95_BUSCO_95_734aa247_45_9549_45_11ec_45_b226_45_48ba4eadba68_95_92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_45_92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO",
     "vid" : "681a1e3e-5a55-11eb-a658-74e5f963e191",
     "componentType" : "NODE",
@@ -136,12 +143,6 @@
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
-    "labels" : [ ]
-  }, {
-    "id" : "LABEL_VL_681a1e3e-5a55-11eb-a658-74e5f963e191",
-    "vid" : "681a1e3e-5a55-11eb-a658-74e5f963e191",
-    "open" : false,
-    "vlabel" : true,
     "labels" : [ ]
   } ],
   "wires" : [ {
@@ -195,27 +196,26 @@
   } ],
   "lines" : [ ],
   "feederInfos" : [ {
-    "id" : "id92d33b99_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_ARROW_REACTIVE",
-    "equipmentId" : "92d33b99-7034-11eb-a65a-74e5f963e191",
-    "side" : "TWO",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "id92d33b99_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_ARROW_ACTIVE",
-    "equipmentId" : "92d33b99-7034-11eb-a65a-74e5f963e191",
+    "id" : "id92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_95_ARROW_95_ACTIVE",
+    "equipmentId" : "92d33bcc-7034-11eb-a65a-74e5f963e191",
     "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "id92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_ARROW_REACTIVE",
+    "id" : "id92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "92d33bcc-7034-11eb-a65a-74e5f963e191",
     "side" : "TWO",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id92d33bcc_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_ARROW_ACTIVE",
-    "equipmentId" : "92d33bcc-7034-11eb-a65a-74e5f963e191",
+    "id" : "id92d33b99_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_95_ARROW_95_REACTIVE",
+    "equipmentId" : "92d33b99-7034-11eb-a65a-74e5f963e191",
+    "side" : "TWO",
+    "componentType" : "ARROW_REACTIVE"
+  }, {
+    "id" : "id92d33b99_45_7034_45_11eb_45_a65a_45_74e5f963e191_95_TWO_95_ARROW_95_ACTIVE",
+    "equipmentId" : "92d33b99-7034-11eb-a65a-74e5f963e191",
     "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   } ],
-  "busLegendInfos" : [ ],
   "busInfos" : [ ],
   "layoutParams" : {
     "verticalSpaceBus" : 25.0,
@@ -259,6 +259,7 @@
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
+    "percentageValuePrecision" : 0,
     "activePowerUnit" : "",
     "reactivePowerUnit" : "",
     "currentUnit" : "",
@@ -279,7 +280,6 @@
     "drawStraightWires" : false,
     "showGrid" : false,
     "showInternalNodes" : false,
-    "displayCurrentFeederInfo" : false,
     "displayEquipmentNodesLabel" : false,
     "displayConnectivityNodesId" : false,
     "unifyVoltageLevelColors" : false

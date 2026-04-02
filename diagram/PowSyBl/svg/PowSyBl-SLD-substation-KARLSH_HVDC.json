@@ -129,7 +129,8 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "LABEL_VL_f17696dc-9aeb-11e5-91da-b8763fd99c5f",
+    "unescapedId" : "LABEL_VL_f17696dc-9aeb-11e5-91da-b8763fd99c5f",
+    "id" : "idLABEL_95_VL_95_f17696dc_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f",
     "vid" : "f17696dc-9aeb-11e5-91da-b8763fd99c5f",
     "open" : false,
     "vlabel" : true,
@@ -210,25 +211,24 @@
   } ],
   "lines" : [ ],
   "feederInfos" : [ {
-    "id" : "idf17697fa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_ARROW_REACTIVE",
+    "id" : "idf17697fa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ARROW_95_REACTIVE",
     "equipmentId" : "f17697fa-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "idf1769d70_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_ARROW_ACTIVE",
+    "id" : "idf1769d70_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "f1769d70-9aeb-11e5-91da-b8763fd99c5f",
     "side" : "TWO",
+    "componentType" : "ARROW_REACTIVE"
+  }, {
+    "id" : "idf17697fa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_ARROW_95_ACTIVE",
+    "equipmentId" : "f17697fa-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "idf1769d70_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_ARROW_REACTIVE",
+    "id" : "idf1769d70_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_95_TWO_95_ARROW_95_ACTIVE",
     "equipmentId" : "f1769d70-9aeb-11e5-91da-b8763fd99c5f",
     "side" : "TWO",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "idf17697fa_45_9aeb_45_11e5_45_91da_45_b8763fd99c5f_ARROW_ACTIVE",
-    "equipmentId" : "f17697fa-9aeb-11e5-91da-b8763fd99c5f",
     "componentType" : "ARROW_ACTIVE"
   } ],
-  "busLegendInfos" : [ ],
   "busInfos" : [ ],
   "layoutParams" : {
     "verticalSpaceBus" : 25.0,
@@ -272,6 +272,7 @@
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
+    "percentageValuePrecision" : 0,
     "activePowerUnit" : "",
     "reactivePowerUnit" : "",
     "currentUnit" : "",
@@ -292,7 +293,6 @@
     "drawStraightWires" : false,
     "showGrid" : false,
     "showInternalNodes" : false,
-    "displayCurrentFeederInfo" : false,
     "displayEquipmentNodesLabel" : false,
     "displayConnectivityNodesId" : false,
     "unifyVoltageLevelColors" : false

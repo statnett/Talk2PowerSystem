@@ -354,12 +354,6 @@
     "vlabel" : false,
     "labels" : [ ]
   }, {
-    "id" : "LABEL_VL_791059a4-3f6e-4242-a478-1fbbf1abc328",
-    "vid" : "791059a4-3f6e-4242-a478-1fbbf1abc328",
-    "open" : false,
-    "vlabel" : true,
-    "labels" : [ ]
-  }, {
     "id" : "id81f3131f_45_baed_45_442d_45_bf7a_45_3606832fc3e0",
     "vid" : "791059a4-3f6e-4242-a478-1fbbf1abc328",
     "componentType" : "BREAKER",
@@ -448,6 +442,13 @@
     "componentType" : "BUS_CONNECTION",
     "open" : false,
     "vlabel" : false,
+    "labels" : [ ]
+  }, {
+    "unescapedId" : "LABEL_VL_791059a4-3f6e-4242-a478-1fbbf1abc328",
+    "id" : "idLABEL_95_VL_95_791059a4_45_3f6e_45_4242_45_a478_45_1fbbf1abc328",
+    "vid" : "791059a4-3f6e-4242-a478-1fbbf1abc328",
+    "open" : false,
+    "vlabel" : true,
     "labels" : [ ]
   }, {
     "id" : "id5394fd91_45_851b_45_406a_45_ab9c_45_ecbe7a411c17",
@@ -748,93 +749,92 @@
   } ],
   "lines" : [ ],
   "feederInfos" : [ {
-    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_ONE_ARROW_REACTIVE",
+    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
-    "side" : "ONE",
+    "side" : "TWO",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id5394fd91_45_851b_45_406a_45_ab9c_45_ecbe7a411c17_ARROW_ACTIVE",
-    "equipmentId" : "5394fd91-851b-406a-ab9c-ecbe7a411c17",
-    "componentType" : "ARROW_ACTIVE"
-  }, {
-    "id" : "ide0e00668_45_9e76_45_461f_45_b310_45_8c84afb9ffe6_95_TWO_ARROW_REACTIVE",
+    "id" : "ide0e00668_45_9e76_45_461f_45_b310_45_8c84afb9ffe6_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "e0e00668-9e76-461f-b310-8c84afb9ffe6",
     "side" : "TWO",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id1ab052d3_45_e055_45_4dfe_45_9e47_45_8af771bd652a_ARROW_REACTIVE",
-    "equipmentId" : "1ab052d3-e055-4dfe-9e47-8af771bd652a",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_ONE_ARROW_REACTIVE",
-    "equipmentId" : "8dcf0a96-206b-4da2-814d-4030ac0dfaec",
-    "side" : "ONE",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "id1ab052d3_45_e055_45_4dfe_45_9e47_45_8af771bd652a_ARROW_ACTIVE",
-    "equipmentId" : "1ab052d3-e055-4dfe-9e47-8af771bd652a",
+    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_TWO_95_ARROW_95_ACTIVE",
+    "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
+    "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "id320b9701_45_cae3_45_478e_45_a70b_45_03d1736ed4e3_95_TWO_ARROW_REACTIVE",
+    "id" : "id320b9701_45_cae3_45_478e_45_a70b_45_03d1736ed4e3_95_TWO_95_ARROW_95_ACTIVE",
+    "equipmentId" : "320b9701-cae3-478e-a70b-03d1736ed4e3",
+    "side" : "TWO",
+    "componentType" : "ARROW_ACTIVE"
+  }, {
+    "id" : "id320b9701_45_cae3_45_478e_45_a70b_45_03d1736ed4e3_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "320b9701-cae3-478e-a70b-03d1736ed4e3",
     "side" : "TWO",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_TWO_ARROW_REACTIVE",
+    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_ONE_95_ARROW_95_REACTIVE",
+    "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
+    "side" : "ONE",
+    "componentType" : "ARROW_REACTIVE"
+  }, {
+    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_TWO_95_ARROW_95_REACTIVE",
     "equipmentId" : "8dcf0a96-206b-4da2-814d-4030ac0dfaec",
     "side" : "TWO",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_ONE_ARROW_ACTIVE",
+    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_ONE_95_ARROW_95_ACTIVE",
+    "equipmentId" : "8dcf0a96-206b-4da2-814d-4030ac0dfaec",
+    "side" : "ONE",
+    "componentType" : "ARROW_ACTIVE"
+  }, {
+    "id" : "id1ab052d3_45_e055_45_4dfe_45_9e47_45_8af771bd652a_95_ARROW_95_ACTIVE",
+    "equipmentId" : "1ab052d3-e055-4dfe-9e47-8af771bd652a",
+    "componentType" : "ARROW_ACTIVE"
+  }, {
+    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_ONE_95_ARROW_95_ACTIVE",
     "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
     "side" : "ONE",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "ide0e00668_45_9e76_45_461f_45_b310_45_8c84afb9ffe6_95_TWO_ARROW_ACTIVE",
+    "id" : "id5394fd91_45_851b_45_406a_45_ab9c_45_ecbe7a411c17_95_ARROW_95_ACTIVE",
+    "equipmentId" : "5394fd91-851b-406a-ab9c-ecbe7a411c17",
+    "componentType" : "ARROW_ACTIVE"
+  }, {
+    "id" : "idead7f7fd_45_d132_45_43b5_45_b561_45_1b0e65b0a562_95_TWO_95_ARROW_95_REACTIVE",
+    "equipmentId" : "ead7f7fd-d132-43b5-b561-1b0e65b0a562",
+    "side" : "TWO",
+    "componentType" : "ARROW_REACTIVE"
+  }, {
+    "id" : "id1ab052d3_45_e055_45_4dfe_45_9e47_45_8af771bd652a_95_ARROW_95_REACTIVE",
+    "equipmentId" : "1ab052d3-e055-4dfe-9e47-8af771bd652a",
+    "componentType" : "ARROW_REACTIVE"
+  }, {
+    "id" : "ide0e00668_45_9e76_45_461f_45_b310_45_8c84afb9ffe6_95_TWO_95_ARROW_95_ACTIVE",
     "equipmentId" : "e0e00668-9e76-461f-b310-8c84afb9ffe6",
     "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_TWO_ARROW_ACTIVE",
+    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_TWO_95_ARROW_95_ACTIVE",
     "equipmentId" : "8dcf0a96-206b-4da2-814d-4030ac0dfaec",
     "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   }, {
-    "id" : "id5394fd91_45_851b_45_406a_45_ab9c_45_ecbe7a411c17_ARROW_REACTIVE",
+    "id" : "id5394fd91_45_851b_45_406a_45_ab9c_45_ecbe7a411c17_95_ARROW_95_REACTIVE",
     "equipmentId" : "5394fd91-851b-406a-ab9c-ecbe7a411c17",
     "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "idead7f7fd_45_d132_45_43b5_45_b561_45_1b0e65b0a562_95_TWO_ARROW_ACTIVE",
-    "equipmentId" : "ead7f7fd-d132-43b5-b561-1b0e65b0a562",
-    "side" : "TWO",
-    "componentType" : "ARROW_ACTIVE"
-  }, {
-    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_TWO_ARROW_ACTIVE",
-    "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
-    "side" : "TWO",
-    "componentType" : "ARROW_ACTIVE"
-  }, {
-    "id" : "idead7f7fd_45_d132_45_43b5_45_b561_45_1b0e65b0a562_95_TWO_ARROW_REACTIVE",
-    "equipmentId" : "ead7f7fd-d132-43b5-b561-1b0e65b0a562",
-    "side" : "TWO",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "id797fe5ce_45_1857_45_4bea_45_8a0f_45_728a4b4c30ed_95_TWO_ARROW_REACTIVE",
-    "equipmentId" : "797fe5ce-1857-4bea-8a0f-728a4b4c30ed",
-    "side" : "TWO",
-    "componentType" : "ARROW_REACTIVE"
-  }, {
-    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_ONE_ARROW_ACTIVE",
+    "id" : "id8dcf0a96_45_206b_45_4da2_45_814d_45_4030ac0dfaec_95_ONE_95_ARROW_95_REACTIVE",
     "equipmentId" : "8dcf0a96-206b-4da2-814d-4030ac0dfaec",
     "side" : "ONE",
-    "componentType" : "ARROW_ACTIVE"
+    "componentType" : "ARROW_REACTIVE"
   }, {
-    "id" : "id320b9701_45_cae3_45_478e_45_a70b_45_03d1736ed4e3_95_TWO_ARROW_ACTIVE",
-    "equipmentId" : "320b9701-cae3-478e-a70b-03d1736ed4e3",
+    "id" : "idead7f7fd_45_d132_45_43b5_45_b561_45_1b0e65b0a562_95_TWO_95_ARROW_95_ACTIVE",
+    "equipmentId" : "ead7f7fd-d132-43b5-b561-1b0e65b0a562",
     "side" : "TWO",
     "componentType" : "ARROW_ACTIVE"
   } ],
-  "busLegendInfos" : [ ],
   "busInfos" : [ ],
   "layoutParams" : {
     "verticalSpaceBus" : 25.0,
@@ -878,6 +878,7 @@
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
+    "percentageValuePrecision" : 0,
     "activePowerUnit" : "",
     "reactivePowerUnit" : "",
     "currentUnit" : "",
@@ -898,7 +899,6 @@
     "drawStraightWires" : false,
     "showGrid" : false,
     "showInternalNodes" : false,
-    "displayCurrentFeederInfo" : false,
     "displayEquipmentNodesLabel" : false,
     "displayConnectivityNodesId" : false,
     "unifyVoltageLevelColors" : false

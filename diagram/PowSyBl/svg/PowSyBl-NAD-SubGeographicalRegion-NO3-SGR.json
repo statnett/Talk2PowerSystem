@@ -1,13 +1,14 @@
 {
   "layoutParameters" : {
     "textNodesForceLayout" : false,
-    "springRepulsionFactorForceLayout" : 0.0,
     "textNodeFixedShift" : {
       "x" : 100.0,
       "y" : -40.0
     },
     "maxSteps" : 1000,
-    "textNodeEdgeConnectionYShift" : 25.0
+    "timeoutSeconds" : 15.0,
+    "textNodeEdgeConnectionYShift" : 25.0,
+    "injectionsAdded" : false
   },
   "svgParameters" : {
     "diagramPadding" : {
@@ -38,105 +39,177 @@
     "loopEdgesAperture" : 60.0,
     "loopControlDistance" : 40.0,
     "edgeInfoAlongEdge" : true,
-    "edgeNameDisplayed" : false,
     "interAnnulusSpace" : 5.0,
     "svgPrefix" : "",
-    "idDisplayed" : false,
-    "substationDescriptionDisplayed" : false,
-    "arrowHeight" : 10.0,
-    "busLegend" : true,
-    "voltageLevelDetails" : false,
+    "arrowPathIn" : "M-10 -10 H10 L0 10z",
+    "arrowPathOut" : "M-10 10 H10 L0 -10z",
     "languageTag" : "en",
     "voltageValuePrecision" : 1,
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
-    "edgeInfoDisplayed" : "ACTIVE_POWER",
+    "percentageValuePrecision" : 0,
     "pstArrowHeadSize" : 8.0,
     "undefinedValueSymbol" : "",
-    "highlightGraph" : false
+    "highlightGraph" : false,
+    "injectionAperture" : 10.0,
+    "injectionEdgeLength" : 145.0,
+    "injectionCircleRadius" : 25.0,
+    "voltageLevelLegendsIncluded" : true,
+    "edgeInfosIncluded" : true
   },
   "busNodes" : [ {
-    "svgId" : "1",
+    "svgId" : "3",
     "equipmentId" : "f176969a-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "0"
+    "vlNode" : "0",
+    "legend" : "300.0 kV / 1.4°"
   }, {
-    "svgId" : "3",
+    "svgId" : "7",
     "equipmentId" : "f17695da-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "2"
+    "vlNode" : "4",
+    "legend" : "300.3 kV / -0.5°"
   }, {
-    "svgId" : "5",
+    "svgId" : "11",
     "equipmentId" : "f176960a-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "4"
+    "vlNode" : "8",
+    "legend" : "300.0 kV / -40.2°"
   }, {
-    "svgId" : "7",
+    "svgId" : "15",
     "equipmentId" : "f17696a4-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "6"
+    "vlNode" : "12",
+    "legend" : "306.0 kV / -15.7°"
   } ],
   "nodes" : [ {
     "svgId" : "0",
     "equipmentId" : "f176969a-9aeb-11e5-91da-b8763fd99c5f",
     "x" : -47.81,
-    "y" : -141.03
-  }, {
-    "svgId" : "2",
-    "equipmentId" : "f17695da-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -424.64,
-    "y" : -16.91
+    "y" : -141.03,
+    "legendSvgId" : "1",
+    "legendEdgeSvgId" : "2",
+    "legendHeader" : [ "TRONDHEI300" ]
   }, {
     "svgId" : "4",
+    "equipmentId" : "f17695da-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -424.64,
+    "y" : -16.91,
+    "invisible" : true,
+    "legendSvgId" : "5",
+    "legendEdgeSvgId" : "6",
+    "legendHeader" : [ "HOGASEN 300" ]
+  }, {
+    "svgId" : "8",
     "equipmentId" : "f176960a-9aeb-11e5-91da-b8763fd99c5f",
     "x" : 113.46,
-    "y" : 208.66
+    "y" : 208.66,
+    "invisible" : true,
+    "legendSvgId" : "9",
+    "legendEdgeSvgId" : "10",
+    "legendHeader" : [ "TRETTEN 300" ]
   }, {
-    "svgId" : "6",
+    "svgId" : "12",
     "equipmentId" : "f17696a4-9aeb-11e5-91da-b8763fd99c5f",
     "x" : 222.16,
-    "y" : -434.55
+    "y" : -434.55,
+    "invisible" : true,
+    "legendSvgId" : "13",
+    "legendEdgeSvgId" : "14",
+    "legendHeader" : [ "MO      300" ]
   } ],
   "edges" : [ {
-    "svgId" : "8",
+    "svgId" : "16",
     "equipmentId" : "f1769b30-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "2",
-    "node2" : "0",
-    "busNode1" : "3",
-    "busNode2" : "1",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "9",
-    "equipmentId" : "f1769ba8-9aeb-11e5-91da-b8763fd99c5f",
     "node1" : "4",
     "node2" : "0",
-    "busNode1" : "5",
-    "busNode2" : "1",
-    "type" : "LineEdge"
+    "busNode1" : "7",
+    "busNode2" : "3",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "17",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-160"
+    },
+    "edgeInfo2" : {
+      "svgId" : "18",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "161"
+    }
   }, {
-    "svgId" : "10",
+    "svgId" : "19",
+    "equipmentId" : "f1769ba8-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "8",
+    "node2" : "0",
+    "busNode1" : "11",
+    "busNode2" : "3",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "20",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-706"
+    },
+    "edgeInfo2" : {
+      "svgId" : "21",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "755"
+    }
+  }, {
+    "svgId" : "22",
     "equipmentId" : "f1769d10-9aeb-11e5-91da-b8763fd99c5f",
     "node1" : "0",
-    "node2" : "6",
-    "busNode1" : "1",
-    "busNode2" : "7",
-    "type" : "LineEdge"
+    "node2" : "12",
+    "busNode1" : "3",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "23",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "166"
+    },
+    "edgeInfo2" : {
+      "svgId" : "24",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-161"
+    }
   }, {
-    "svgId" : "11",
+    "svgId" : "25",
     "equipmentId" : "f1769d1c-9aeb-11e5-91da-b8763fd99c5f",
     "node1" : "0",
-    "node2" : "6",
-    "busNode1" : "1",
-    "busNode2" : "7",
-    "type" : "LineEdge"
+    "node2" : "12",
+    "busNode1" : "3",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "26",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "230"
+    },
+    "edgeInfo2" : {
+      "svgId" : "27",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-225"
+    }
   } ],
   "textNodes" : [ {
-    "svgId" : "0-textnode",
+    "svgId" : "1",
     "equipmentId" : "f176969a-9aeb-11e5-91da-b8763fd99c5f",
     "vlNode" : "0",
     "shiftX" : 100.0,
