@@ -1,13 +1,14 @@
 {
   "layoutParameters" : {
     "textNodesForceLayout" : false,
-    "springRepulsionFactorForceLayout" : 0.0,
     "textNodeFixedShift" : {
       "x" : 100.0,
       "y" : -40.0
     },
     "maxSteps" : 1000,
-    "textNodeEdgeConnectionYShift" : 25.0
+    "timeoutSeconds" : 15.0,
+    "textNodeEdgeConnectionYShift" : 25.0,
+    "injectionsAdded" : false
   },
   "svgParameters" : {
     "diagramPadding" : {
@@ -38,78 +39,119 @@
     "loopEdgesAperture" : 60.0,
     "loopControlDistance" : 40.0,
     "edgeInfoAlongEdge" : true,
-    "edgeNameDisplayed" : false,
     "interAnnulusSpace" : 5.0,
     "svgPrefix" : "",
-    "idDisplayed" : false,
-    "substationDescriptionDisplayed" : false,
-    "arrowHeight" : 10.0,
-    "busLegend" : true,
-    "voltageLevelDetails" : false,
+    "arrowPathIn" : "M-10 -10 H10 L0 10z",
+    "arrowPathOut" : "M-10 10 H10 L0 -10z",
     "languageTag" : "en",
     "voltageValuePrecision" : 1,
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
-    "edgeInfoDisplayed" : "ACTIVE_POWER",
+    "percentageValuePrecision" : 0,
     "pstArrowHeadSize" : 8.0,
     "undefinedValueSymbol" : "",
-    "highlightGraph" : false
+    "highlightGraph" : false,
+    "injectionAperture" : 10.0,
+    "injectionEdgeLength" : 145.0,
+    "injectionCircleRadius" : 25.0,
+    "voltageLevelLegendsIncluded" : true,
+    "edgeInfosIncluded" : true
   },
   "busNodes" : [ {
-    "svgId" : "1",
+    "svgId" : "3",
     "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "0"
+    "vlNode" : "0",
+    "legend" : "300.0 kV / -54.3°"
   }, {
-    "svgId" : "3",
+    "svgId" : "7",
     "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "2"
+    "vlNode" : "4",
+    "legend" : "429.6 kV / -51.0°"
   }, {
-    "svgId" : "5",
+    "svgId" : "11",
     "equipmentId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "4"
+    "vlNode" : "8",
+    "legend" : "300.0 kV / -38.7°"
   } ],
   "nodes" : [ {
     "svgId" : "0",
     "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f",
     "x" : -94.84,
-    "y" : -119.74
-  }, {
-    "svgId" : "2",
-    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -432.32,
-    "y" : 17.46
+    "y" : -119.74,
+    "legendSvgId" : "1",
+    "legendEdgeSvgId" : "2",
+    "legendHeader" : [ "SIMA    300" ]
   }, {
     "svgId" : "4",
+    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -432.32,
+    "y" : 17.46,
+    "invisible" : true,
+    "legendSvgId" : "5",
+    "legendEdgeSvgId" : "6",
+    "legendHeader" : [ "AURLAND 420" ]
+  }, {
+    "svgId" : "8",
     "equipmentId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f",
     "x" : 194.24,
-    "y" : 101.91
+    "y" : 101.91,
+    "invisible" : true,
+    "legendSvgId" : "9",
+    "legendEdgeSvgId" : "10",
+    "legendHeader" : [ "BLAFALLI300" ]
   } ],
   "edges" : [ {
-    "svgId" : "6",
+    "svgId" : "12",
     "equipmentId" : "f1769c20-9aeb-11e5-91da-b8763fd99c5f",
     "node1" : "0",
-    "node2" : "4",
-    "busNode1" : "1",
-    "busNode2" : "5",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "7",
-    "equipmentId" : "f1769dc4-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "2",
-    "node2" : "0",
+    "node2" : "8",
     "busNode1" : "3",
-    "busNode2" : "1",
-    "type" : "TwoWtEdge"
+    "busNode2" : "11",
+    "type" : "LineEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "13",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-1,197"
+    },
+    "edgeInfo2" : {
+      "svgId" : "14",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "1,229"
+    }
+  }, {
+    "svgId" : "15",
+    "equipmentId" : "f1769dc4-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "4",
+    "node2" : "0",
+    "busNode1" : "7",
+    "busNode2" : "3",
+    "type" : "TwoWtEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "16",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "1,000"
+    },
+    "edgeInfo2" : {
+      "svgId" : "17",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-998"
+    }
   } ],
   "textNodes" : [ {
-    "svgId" : "0-textnode",
+    "svgId" : "1",
     "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f",
     "vlNode" : "0",
     "shiftX" : 100.0,

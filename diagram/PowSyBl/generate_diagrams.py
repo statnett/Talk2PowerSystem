@@ -139,7 +139,8 @@ def generate_diagrams(network_path: str, tsv_path: str, output_dir: str, verbose
     # Load the network
     if verbose:
         print(f"Loading network from {network_path}...")
-    network = pn.load(network_path)
+    import_params = {"iidm.import.cgmes.cgm-with-subnetworks": "false"}
+    network = pn.load(network_path, parameters=import_params)
     if verbose:
         print("Network loaded successfully.")
     

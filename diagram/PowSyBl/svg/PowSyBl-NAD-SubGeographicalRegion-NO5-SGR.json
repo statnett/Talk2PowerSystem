@@ -1,13 +1,14 @@
 {
   "layoutParameters" : {
     "textNodesForceLayout" : false,
-    "springRepulsionFactorForceLayout" : 0.0,
     "textNodeFixedShift" : {
       "x" : 100.0,
       "y" : -40.0
     },
     "maxSteps" : 1000,
-    "textNodeEdgeConnectionYShift" : 25.0
+    "timeoutSeconds" : 15.0,
+    "textNodeEdgeConnectionYShift" : 25.0,
+    "injectionsAdded" : false
   },
   "svgParameters" : {
     "diagramPadding" : {
@@ -38,308 +39,581 @@
     "loopEdgesAperture" : 60.0,
     "loopControlDistance" : 40.0,
     "edgeInfoAlongEdge" : true,
-    "edgeNameDisplayed" : false,
     "interAnnulusSpace" : 5.0,
     "svgPrefix" : "",
-    "idDisplayed" : false,
-    "substationDescriptionDisplayed" : false,
-    "arrowHeight" : 10.0,
-    "busLegend" : true,
-    "voltageLevelDetails" : false,
+    "arrowPathIn" : "M-10 -10 H10 L0 10z",
+    "arrowPathOut" : "M-10 10 H10 L0 -10z",
     "languageTag" : "en",
     "voltageValuePrecision" : 1,
     "powerValuePrecision" : 0,
     "angleValuePrecision" : 1,
     "currentValuePrecision" : 0,
-    "edgeInfoDisplayed" : "ACTIVE_POWER",
+    "percentageValuePrecision" : 0,
     "pstArrowHeadSize" : 8.0,
     "undefinedValueSymbol" : "",
-    "highlightGraph" : false
+    "highlightGraph" : false,
+    "injectionAperture" : 10.0,
+    "injectionEdgeLength" : 145.0,
+    "injectionCircleRadius" : 25.0,
+    "voltageLevelLegendsIncluded" : true,
+    "edgeInfosIncluded" : true
   },
   "busNodes" : [ {
-    "svgId" : "1",
+    "svgId" : "3",
     "equipmentId" : "f176961a-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "0"
+    "vlNode" : "0",
+    "legend" : "427.8 kV / -43.6°"
   }, {
-    "svgId" : "3",
+    "svgId" : "7",
     "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "2"
+    "vlNode" : "4",
+    "legend" : "300.0 kV / -54.3°"
   }, {
-    "svgId" : "5",
+    "svgId" : "11",
     "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "4"
+    "vlNode" : "8",
+    "legend" : "429.6 kV / -51.0°"
   }, {
-    "svgId" : "7",
+    "svgId" : "15",
     "equipmentId" : "f1769632-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "6"
+    "vlNode" : "12",
+    "legend" : "432.3 kV / -47.3°"
   }, {
-    "svgId" : "9",
+    "svgId" : "19",
     "equipmentId" : "f1769638-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "8"
+    "vlNode" : "16",
+    "legend" : "430.6 kV / -47.8°"
   }, {
-    "svgId" : "11",
+    "svgId" : "23",
     "equipmentId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "10"
+    "vlNode" : "20",
+    "legend" : "422.9 kV / -49.0°"
   }, {
-    "svgId" : "13",
+    "svgId" : "27",
     "equipmentId" : "f1769610-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "12"
+    "vlNode" : "24",
+    "legend" : "420.9 kV / -40.2°"
   }, {
-    "svgId" : "15",
+    "svgId" : "31",
     "equipmentId" : "f1769620-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "14"
+    "vlNode" : "28",
+    "legend" : "428.5 kV / -43.9°"
   }, {
-    "svgId" : "17",
+    "svgId" : "35",
     "equipmentId" : "f1769644-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "16"
+    "vlNode" : "32",
+    "legend" : "420.5 kV / -50.7°"
   }, {
-    "svgId" : "19",
+    "svgId" : "39",
     "equipmentId" : "f176964a-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "18"
+    "vlNode" : "36",
+    "legend" : "423.0 kV / -48.7°"
   }, {
-    "svgId" : "21",
+    "svgId" : "43",
     "equipmentId" : "f1769666-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "20"
+    "vlNode" : "40",
+    "legend" : "302.0 kV / -49.2°"
   }, {
-    "svgId" : "23",
+    "svgId" : "47",
     "equipmentId" : "f1769684-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "22"
+    "vlNode" : "44",
+    "legend" : "301.5 kV / -48.5°"
   }, {
-    "svgId" : "25",
+    "svgId" : "51",
     "equipmentId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f_0",
     "nbNeighbours" : 0,
     "index" : 0,
-    "vlNode" : "24"
+    "vlNode" : "48",
+    "legend" : "300.0 kV / -38.7°"
   } ],
   "nodes" : [ {
     "svgId" : "0",
     "equipmentId" : "f176961a-9aeb-11e5-91da-b8763fd99c5f",
     "x" : 369.52,
-    "y" : -349.26
-  }, {
-    "svgId" : "2",
-    "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 73.55,
-    "y" : 698.12
+    "y" : -349.26,
+    "legendSvgId" : "1",
+    "legendEdgeSvgId" : "2",
+    "legendHeader" : [ "DAGALI  420" ]
   }, {
     "svgId" : "4",
-    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 176.18,
-    "y" : 225.39
-  }, {
-    "svgId" : "6",
-    "equipmentId" : "f1769632-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 519.85,
-    "y" : -50.5
+    "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 73.55,
+    "y" : 698.12,
+    "legendSvgId" : "5",
+    "legendEdgeSvgId" : "6",
+    "legendHeader" : [ "SIMA    300" ]
   }, {
     "svgId" : "8",
-    "equipmentId" : "f1769638-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 578.19,
-    "y" : 326.03
-  }, {
-    "svgId" : "10",
-    "equipmentId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -227.86,
-    "y" : -206.93
+    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 176.18,
+    "y" : 225.39,
+    "legendSvgId" : "9",
+    "legendEdgeSvgId" : "10",
+    "legendHeader" : [ "AURLAND 420" ]
   }, {
     "svgId" : "12",
-    "equipmentId" : "f1769610-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 942.87,
-    "y" : -356.76
-  }, {
-    "svgId" : "14",
-    "equipmentId" : "f1769620-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 610.19,
-    "y" : -541.11
+    "equipmentId" : "f1769632-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 519.85,
+    "y" : -50.5,
+    "legendSvgId" : "13",
+    "legendEdgeSvgId" : "14",
+    "legendHeader" : [ "GEILO   420" ]
   }, {
     "svgId" : "16",
-    "equipmentId" : "f1769644-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -164.68,
-    "y" : -669.07
-  }, {
-    "svgId" : "18",
-    "equipmentId" : "f176964a-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -578.99,
-    "y" : -541.86
+    "equipmentId" : "f1769638-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 578.19,
+    "y" : 326.03,
+    "legendSvgId" : "17",
+    "legendEdgeSvgId" : "18",
+    "legendHeader" : [ "EIDFJORD420" ]
   }, {
     "svgId" : "20",
-    "equipmentId" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -735.25,
-    "y" : -138.57
-  }, {
-    "svgId" : "22",
-    "equipmentId" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : -471.29,
-    "y" : 198.37
+    "equipmentId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -227.86,
+    "y" : -206.93,
+    "legendSvgId" : "21",
+    "legendEdgeSvgId" : "22",
+    "legendHeader" : [ "HAGAFOSS420" ]
   }, {
     "svgId" : "24",
-    "equipmentId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f",
-    "x" : 51.07,
-    "y" : 1083.95
-  } ],
-  "edges" : [ {
-    "svgId" : "26",
-    "equipmentId" : "f1769bea-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "0",
-    "node2" : "6",
-    "busNode1" : "1",
-    "busNode2" : "7",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "27",
-    "equipmentId" : "f1769bf6-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "0",
-    "node2" : "10",
-    "busNode1" : "1",
-    "busNode2" : "11",
-    "type" : "LineEdge"
+    "equipmentId" : "f1769610-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 942.87,
+    "y" : -356.76,
+    "invisible" : true,
+    "legendSvgId" : "25",
+    "legendEdgeSvgId" : "26",
+    "legendHeader" : [ "HALDEN  420" ]
   }, {
     "svgId" : "28",
-    "equipmentId" : "f1769bde-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "0",
-    "node2" : "14",
-    "busNode1" : "1",
-    "busNode2" : "15",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "29",
-    "equipmentId" : "f1769bb4-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "12",
-    "node2" : "0",
-    "busNode1" : "13",
-    "busNode2" : "1",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "30",
-    "equipmentId" : "f1769c20-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "2",
-    "node2" : "24",
-    "busNode1" : "3",
-    "busNode2" : "25",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "31",
-    "equipmentId" : "f1769dc4-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "4",
-    "node2" : "2",
-    "busNode1" : "5",
-    "busNode2" : "3",
-    "type" : "TwoWtEdge"
+    "equipmentId" : "f1769620-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 610.19,
+    "y" : -541.11,
+    "invisible" : true,
+    "legendSvgId" : "29",
+    "legendEdgeSvgId" : "30",
+    "legendHeader" : [ "KONGSBER420" ]
   }, {
     "svgId" : "32",
-    "equipmentId" : "f1769c38-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "4",
-    "node2" : "8",
-    "busNode1" : "5",
-    "busNode2" : "9",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "33",
-    "equipmentId" : "f1769c2c-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "4",
-    "node2" : "6",
-    "busNode1" : "5",
-    "busNode2" : "7",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "34",
-    "equipmentId" : "f1769c44-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "4",
-    "node2" : "10",
-    "busNode1" : "5",
-    "busNode2" : "11",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "35",
-    "equipmentId" : "f1769c50-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "6",
-    "node2" : "8",
-    "busNode1" : "7",
-    "busNode2" : "9",
-    "type" : "LineEdge"
+    "equipmentId" : "f1769644-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -164.68,
+    "y" : -669.07,
+    "invisible" : true,
+    "legendSvgId" : "33",
+    "legendEdgeSvgId" : "34",
+    "legendHeader" : [ "SYLLING 420" ]
   }, {
     "svgId" : "36",
-    "equipmentId" : "f1769c5c-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "6",
-    "node2" : "8",
-    "busNode1" : "7",
-    "busNode2" : "9",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "37",
-    "equipmentId" : "f1769c08-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "14",
-    "node2" : "6",
-    "busNode1" : "15",
-    "busNode2" : "7",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "38",
-    "equipmentId" : "f1769c14-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "14",
-    "node2" : "6",
-    "busNode1" : "15",
-    "busNode2" : "7",
-    "type" : "LineEdge"
-  }, {
-    "svgId" : "39",
-    "equipmentId" : "f1769c98-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "16",
-    "node2" : "10",
-    "busNode1" : "17",
-    "busNode2" : "11",
-    "type" : "LineEdge"
+    "equipmentId" : "f176964a-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -578.99,
+    "y" : -541.86,
+    "invisible" : true,
+    "legendSvgId" : "37",
+    "legendEdgeSvgId" : "38",
+    "legendHeader" : [ "SYSLE   420" ]
   }, {
     "svgId" : "40",
-    "equipmentId" : "f1769caa-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "18",
-    "node2" : "10",
-    "busNode1" : "19",
-    "busNode2" : "11",
-    "type" : "LineEdge"
+    "equipmentId" : "f1769666-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -735.25,
+    "y" : -138.57,
+    "invisible" : true,
+    "legendSvgId" : "41",
+    "legendEdgeSvgId" : "42",
+    "legendHeader" : [ "STAVANGE300" ]
   }, {
-    "svgId" : "41",
-    "equipmentId" : "f1769e30-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "10",
-    "node2" : "22",
-    "busNode1" : "11",
+    "svgId" : "44",
+    "equipmentId" : "f1769684-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : -471.29,
+    "y" : 198.37,
+    "invisible" : true,
+    "legendSvgId" : "45",
+    "legendEdgeSvgId" : "46",
+    "legendHeader" : [ "KVILLDAL300" ]
+  }, {
+    "svgId" : "48",
+    "equipmentId" : "f1769690-9aeb-11e5-91da-b8763fd99c5f",
+    "x" : 51.07,
+    "y" : 1083.95,
+    "invisible" : true,
+    "legendSvgId" : "49",
+    "legendEdgeSvgId" : "50",
+    "legendHeader" : [ "BLAFALLI300" ]
+  } ],
+  "edges" : [ {
+    "svgId" : "52",
+    "equipmentId" : "f1769bb4-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "24",
+    "node2" : "0",
+    "busNode1" : "27",
+    "busNode2" : "3",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "53",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "584"
+    },
+    "edgeInfo2" : {
+      "svgId" : "54",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-581"
+    }
+  }, {
+    "svgId" : "55",
+    "equipmentId" : "f1769bde-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "0",
+    "node2" : "28",
+    "busNode1" : "3",
+    "busNode2" : "31",
+    "type" : "LineEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "56",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "90"
+    },
+    "edgeInfo2" : {
+      "svgId" : "57",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-90"
+    }
+  }, {
+    "svgId" : "58",
+    "equipmentId" : "f1769bea-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "0",
+    "node2" : "12",
+    "busNode1" : "3",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "59",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "281"
+    },
+    "edgeInfo2" : {
+      "svgId" : "60",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-280"
+    }
+  }, {
+    "svgId" : "61",
+    "equipmentId" : "f1769bf6-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "0",
+    "node2" : "20",
+    "busNode1" : "3",
     "busNode2" : "23",
-    "type" : "TwoWtEdge"
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "62",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "210"
+    },
+    "edgeInfo2" : {
+      "svgId" : "63",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-209"
+    }
   }, {
-    "svgId" : "42",
-    "equipmentId" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f",
-    "node1" : "10",
+    "svgId" : "64",
+    "equipmentId" : "f1769c20-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "4",
+    "node2" : "48",
+    "busNode1" : "7",
+    "busNode2" : "51",
+    "type" : "LineEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "65",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-1,197"
+    },
+    "edgeInfo2" : {
+      "svgId" : "66",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "1,229"
+    }
+  }, {
+    "svgId" : "67",
+    "equipmentId" : "f1769dc4-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "8",
+    "node2" : "4",
+    "busNode1" : "11",
+    "busNode2" : "7",
+    "type" : "TwoWtEdge",
+    "edgeInfo1" : {
+      "svgId" : "68",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "1,000"
+    },
+    "edgeInfo2" : {
+      "svgId" : "69",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-998"
+    }
+  }, {
+    "svgId" : "70",
+    "equipmentId" : "f1769c2c-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "8",
+    "node2" : "12",
+    "busNode1" : "11",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "71",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-336"
+    },
+    "edgeInfo2" : {
+      "svgId" : "72",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "337"
+    }
+  }, {
+    "svgId" : "73",
+    "equipmentId" : "f1769c38-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "8",
+    "node2" : "16",
+    "busNode1" : "11",
+    "busNode2" : "19",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "74",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-487"
+    },
+    "edgeInfo2" : {
+      "svgId" : "75",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "489"
+    }
+  }, {
+    "svgId" : "76",
+    "equipmentId" : "f1769c44-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "8",
     "node2" : "20",
     "busNode1" : "11",
-    "busNode2" : "21",
-    "type" : "TwoWtEdge"
+    "busNode2" : "23",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "77",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-176"
+    },
+    "edgeInfo2" : {
+      "svgId" : "78",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "177"
+    }
+  }, {
+    "svgId" : "79",
+    "equipmentId" : "f1769c08-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "28",
+    "node2" : "12",
+    "busNode1" : "31",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "80",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "244"
+    },
+    "edgeInfo2" : {
+      "svgId" : "81",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-243"
+    }
+  }, {
+    "svgId" : "82",
+    "equipmentId" : "f1769c14-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "28",
+    "node2" : "12",
+    "busNode1" : "31",
+    "busNode2" : "15",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "83",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "307"
+    },
+    "edgeInfo2" : {
+      "svgId" : "84",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-305"
+    }
+  }, {
+    "svgId" : "85",
+    "equipmentId" : "f1769c50-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "12",
+    "node2" : "16",
+    "busNode1" : "15",
+    "busNode2" : "19",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "86",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "58"
+    },
+    "edgeInfo2" : {
+      "svgId" : "87",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-58"
+    }
+  }, {
+    "svgId" : "88",
+    "equipmentId" : "f1769c5c-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "12",
+    "node2" : "16",
+    "busNode1" : "15",
+    "busNode2" : "19",
+    "type" : "LineEdge",
+    "edgeInfo1" : {
+      "svgId" : "89",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "433"
+    },
+    "edgeInfo2" : {
+      "svgId" : "90",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-431"
+    }
+  }, {
+    "svgId" : "91",
+    "equipmentId" : "f1769c98-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "32",
+    "node2" : "20",
+    "busNode1" : "35",
+    "busNode2" : "23",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "92",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-313"
+    },
+    "edgeInfo2" : {
+      "svgId" : "93",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "314"
+    }
+  }, {
+    "svgId" : "94",
+    "equipmentId" : "f1769caa-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "36",
+    "node2" : "20",
+    "busNode1" : "39",
+    "busNode2" : "23",
+    "type" : "LineEdge",
+    "invisible1" : true,
+    "edgeInfo1" : {
+      "svgId" : "95",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "401"
+    },
+    "edgeInfo2" : {
+      "svgId" : "96",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-401"
+    }
+  }, {
+    "svgId" : "97",
+    "equipmentId" : "f1769e0c-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "20",
+    "node2" : "40",
+    "busNode1" : "23",
+    "busNode2" : "43",
+    "type" : "TwoWtEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "98",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "660"
+    },
+    "edgeInfo2" : {
+      "svgId" : "99",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-659"
+    }
+  }, {
+    "svgId" : "100",
+    "equipmentId" : "f1769e30-9aeb-11e5-91da-b8763fd99c5f",
+    "node1" : "20",
+    "node2" : "44",
+    "busNode1" : "23",
+    "busNode2" : "47",
+    "type" : "TwoWtEdge",
+    "invisible2" : true,
+    "edgeInfo1" : {
+      "svgId" : "101",
+      "infoTypeB" : "ActivePower",
+      "direction" : "IN",
+      "labelB" : "-541"
+    },
+    "edgeInfo2" : {
+      "svgId" : "102",
+      "infoTypeB" : "ActivePower",
+      "direction" : "OUT",
+      "labelB" : "541"
+    }
   } ],
   "textNodes" : [ {
-    "svgId" : "0-textnode",
+    "svgId" : "1",
     "equipmentId" : "f176961a-9aeb-11e5-91da-b8763fd99c5f",
     "vlNode" : "0",
     "shiftX" : 100.0,
@@ -347,41 +621,41 @@
     "connectionShiftX" : 100.0,
     "connectionShiftY" : -15.0
   }, {
-    "svgId" : "2-textnode",
+    "svgId" : "5",
     "equipmentId" : "f1769626-9aeb-11e5-91da-b8763fd99c5f",
-    "vlNode" : "2",
-    "shiftX" : 100.0,
-    "shiftY" : -40.0,
-    "connectionShiftX" : 100.0,
-    "connectionShiftY" : -15.0
-  }, {
-    "svgId" : "4-textnode",
-    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
     "vlNode" : "4",
     "shiftX" : 100.0,
     "shiftY" : -40.0,
     "connectionShiftX" : 100.0,
     "connectionShiftY" : -15.0
   }, {
-    "svgId" : "6-textnode",
-    "equipmentId" : "f1769632-9aeb-11e5-91da-b8763fd99c5f",
-    "vlNode" : "6",
-    "shiftX" : 100.0,
-    "shiftY" : -40.0,
-    "connectionShiftX" : 100.0,
-    "connectionShiftY" : -15.0
-  }, {
-    "svgId" : "8-textnode",
-    "equipmentId" : "f1769638-9aeb-11e5-91da-b8763fd99c5f",
+    "svgId" : "9",
+    "equipmentId" : "f176962c-9aeb-11e5-91da-b8763fd99c5f",
     "vlNode" : "8",
     "shiftX" : 100.0,
     "shiftY" : -40.0,
     "connectionShiftX" : 100.0,
     "connectionShiftY" : -15.0
   }, {
-    "svgId" : "10-textnode",
+    "svgId" : "13",
+    "equipmentId" : "f1769632-9aeb-11e5-91da-b8763fd99c5f",
+    "vlNode" : "12",
+    "shiftX" : 100.0,
+    "shiftY" : -40.0,
+    "connectionShiftX" : 100.0,
+    "connectionShiftY" : -15.0
+  }, {
+    "svgId" : "17",
+    "equipmentId" : "f1769638-9aeb-11e5-91da-b8763fd99c5f",
+    "vlNode" : "16",
+    "shiftX" : 100.0,
+    "shiftY" : -40.0,
+    "connectionShiftX" : 100.0,
+    "connectionShiftY" : -15.0
+  }, {
+    "svgId" : "21",
     "equipmentId" : "f176968a-9aeb-11e5-91da-b8763fd99c5f",
-    "vlNode" : "10",
+    "vlNode" : "20",
     "shiftX" : 100.0,
     "shiftY" : -40.0,
     "connectionShiftX" : 100.0,

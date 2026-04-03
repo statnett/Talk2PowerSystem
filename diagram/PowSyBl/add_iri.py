@@ -28,50 +28,60 @@ import sys
 from lxml import etree
 
 
-_BUS_INDEX_SUFFIX = re.compile(r'_\d+$')
-_SW_FICT_SUFFIX = re.compile(r'_SW_fict$')
+_UUID_RE = re.compile(
+    r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
+    re.IGNORECASE,
+)
 
 
-def _normalize_mrid(mrid: str) -> str:
-    """Remove _SW_fict suffix from mrids (fictitious switches)."""
-    return _SW_FICT_SUFFIX.sub("", mrid)
+def extract_mrids(raw_id: str) -> list[str]:
+    """
+    Extract all unique UUID mRIDs from an SVG element ID or equipment ID.
+
+    Algorithm (from svg-click/README.md):
+    1. Decode SVG ID encoding: _45_ -> dash, _95_ -> underscore
+    2. Find all UUIDs in the string, deduplicate preserving order
+    Handles both simple IDs (one UUID) and compound IDs (multiple UUIDs).
+    """
+    s = raw_id.replace('_45_', '-').replace('_95_', '_')
+    return list(dict.fromkeys(_UUID_RE.findall(s)))
 
 
-def build_mapping_nad(meta: dict) -> dict[str, str]:
+def build_mapping_nad(meta: dict) -> dict[str, list[str]]:
     """
     NAD JSON: entries in nodes/busNodes/edges/textNodes each have
     'svgId' (the SVG element id) and 'equipmentId' (the mRID).
 
-    PowSyBl appends '_<index>' to the base mRID for busNodes (e.g.
-    'abc123_0' for bus bar 0 of voltage level 'abc123').  That suffix
-    is stripped here so the IRI always points to the real equipment mRID.
+    Uses extract_mrid() to generically obtain the UUID from the
+    equipmentId, stripping any PowSyBl-added suffixes.
+    A single svgId may map to several distinct mRIDs.
     """
-    mapping: dict[str, str] = {}
+    mapping: dict[str, list[str]] = {}
     for section in ("nodes", "busNodes", "edges", "textNodes"):
         for item in meta.get(section, []):
             if "equipmentId" in item:
-                mrid = item["equipmentId"]
-                if section == "busNodes":
-                    mrid = _BUS_INDEX_SUFFIX.sub("", mrid)
-                mrid = _normalize_mrid(mrid)
-                mapping[item["svgId"]] = mrid
+                for mrid in extract_mrids(item["equipmentId"]):
+                    if mrid not in mapping.setdefault(item["svgId"], []):
+                        mapping[item["svgId"]].append(mrid)
     return mapping
 
 
-def build_mapping_sld(meta: dict) -> dict[str, str]:
+def build_mapping_sld(meta: dict) -> dict[str, list[str]]:
     """
     SLD JSON: entries in nodes have 'id' (= the SVG element id, hex-encoded)
     and 'equipmentId' (the mRID).  Only entries that have an equipmentId are
     real network elements; NODE / BUS_CONNECTION topology nodes have none.
     """
-    mapping: dict[str, str] = {}
+    mapping: dict[str, list[str]] = {}
     for item in meta.get("nodes", []):
         if "equipmentId" in item:
-            mapping[item["id"]] = _normalize_mrid(item["equipmentId"])
+            for mrid in extract_mrids(item["equipmentId"]):
+                if mrid not in mapping.setdefault(item["id"], []):
+                    mapping[item["id"]].append(mrid)
     return mapping
 
 
-def detect_and_build_mapping(meta: dict) -> dict[str, str]:
+def detect_and_build_mapping(meta: dict) -> dict[str, list[str]]:
     """Auto-detect NAD vs SLD by inspecting the first node entry."""
     nodes = meta.get("nodes", [])
     if nodes and "svgId" in nodes[0]:
@@ -94,8 +104,11 @@ def annotate_svg(svg_path: str, json_path: str, prefix: str, out_path: str) -> i
     count = 0
     for el in root.iter():
         eid = el.get("id")
-        if eid and eid in mapping:
-            el.set("iri", prefix + mapping[eid])
+        if not eid:
+            continue
+        mrids = mapping.get(eid) or extract_mrids(eid)
+        if mrids:
+            el.set("iri", ">".join(prefix + m for m in mrids))
             count += 1
 
     tree.write(out_path, xml_declaration=False, encoding="utf-8", pretty_print=False)
