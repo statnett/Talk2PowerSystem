@@ -7,10 +7,10 @@ Relevant task [#18](https://github.com/statnett/Talk2PowerSystem_PM/issues/18)
 
 - Creates a repository from [repo-config.ttl](../data/repo-config.ttl)
 - Downloads and loads all files from [ontologies.txt](ontologies.txt) in `https://cim.ucaiug.io/ns#graph`
-- Downloads and loads all instance data from list of files in [instances.txt](instances.txt]) in the graph specified in the `.trig` files.
-- Loads custom inference rules from [cim_owl2-rl-optimized.pie](../data/cim_owl2-rl-optimized.pie). (see the [wiki](https://github.com/statnett/Talk2PowerSystem/wiki/Inference) for details)
+- Downloads and loads all instance data from list of files in [instances.txt](instances.txt) in the graph specified in the `.trig` files.
+- Loads custom inference rules from [cim.pie](../data/cim.pie). (see the [wiki](https://github.com/statnett/Talk2PowerSystem/wiki/Inference) for details)
 - Executes post-loading SPARQL [queries](../data/queries/) in order w.r.t the filename.
-- Enables [autocomplete](https://graphdb.ontotext.com/documentation/11.1/autocomplete-index.html) for the labels specified in [autocomplete-labels.txt](autocomplete-labels.txt)
+- Enables [autocomplete](https://graphdb.ontotext.com/documentation/11.1/autocomplete-index.html) for the labels specified in [10-add-autocomplete-labels.ru](../data/queries/10-add-autocomplete-labels.ru)
 
 ## Prerequisites
 
@@ -22,10 +22,11 @@ Relevant task [#18](https://github.com/statnett/Talk2PowerSystem_PM/issues/18)
 
 1. Create and activate a virtual environment:
 ```bash
-./setup_venv.sh
+python -m venv venv
 source venv/bin/activate  # On Unix/macOS
 # or
 .\venv\Scripts\activate  # On Windows
+pip install -r requirements.txt
 ```
 
 2. Set up credentials (optional):
@@ -48,8 +49,8 @@ python load.py --help
 
 Available options:
 - `-u, --url`: GraphDB server URL (default: http://localhost:7200)
-- `-r, --repository`: Repository name (default: nordic44, should be aligned with contets of config file)
-- `-c, --config`: Repository configuration file (default: resources/nordic44-repo-config.ttl)
+- `-r, --repository`: Repository name (default: cim, should be aligned with contents of config file)
+- `-c, --config`: Repository configuration file (default: ../data/repo-config.ttl)
 - `-g, --graph`: Named graph containing ontologies (default: https://cim.ucaiug.io/ns#graph)
 - `-l, --list`: List of ontology files (default: ontologies.txt)
 - `-i, --instances`: List of instance files (default: instances.txt)
@@ -74,8 +75,14 @@ python load.py --no-auth
 - `instances.txt`: List of instance files to load
 - `../data`: Directory containing configuration, rule files and queries
   - `repo-config.ttl`: Repository configuration
-  - `cim_owl2-rl-optimized.pie`: Custom inference rules
+  - `cim.pie`: Custom inference rules
   - `queries/`: Directory containing SPARQL update queries
     - `01-add-inference.ru`: Sets up inference rules and triggers reinference
     - `02-add-mridSignificantPart.ru`: Adds significant part annotations
     - `03-add-missing-mrid.ru`: Adds missing mRID identifiers
+    - `04-add-WKT.ru`: Generates WKT geometries from CIM position points
+    - `05-delete-redundant-geo.ru`: Removes redundant position points and GML/GeoJSON representations
+    - `07-enable-geosparql.ru`: Enables the GeoSPARQL plugin
+    - `08-add-qudt-terms.ru`: Fetches and loads QUDT unit definitions
+    - `09-clean-up-crap.ru`: Cleans up unwanted metadata and non-en/no labels
+    - `10-add-autocomplete-labels.ru`: Configures autocomplete label properties
