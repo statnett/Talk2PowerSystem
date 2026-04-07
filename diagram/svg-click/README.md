@@ -1,3 +1,9 @@
+**Note**: This is a historical analysis of SVG ID encoding. The conclusions about NAD clickability below are outdated --
+both SLD and NAD diagrams are now clickable after post-processing with `add_iri.py`.
+See the [Electrical Diagrams wiki page](https://github.com/statnett/Talk2PowerSystem/wiki/Electrical-Diagrams#svg-clickability) for current documentation.
+
+---
+
 This is some simple analysis of what SVG IDs are used by PowSyBl in order to enable interaction on click
 (task https://github.com/powsybl/powsybl-diagram/issues/754)
 
@@ -123,13 +129,16 @@ Here is an original SLD diagram:
 
 ![svg-color-SLD.png](svg-color-SLD.png)
 
-### NAD Diagrams: Not Clickable
-Here is an original NAD (Network-Area-Diagrams):
+### NAD Diagrams: Now Clickable
+**Update**: NAD diagrams originally had only sequential-number identifiers with no mRIDs.
+After post-processing with [`add_iri.py`](../PowSyBl/add_iri.py), NAD elements now carry proper `urn:uuid:` IRIs
+and are clickable. The `cimd:DiagramKind.isClickable` flag is set to `true` for `NetworkAreaDiagram`.
+
+Here is an original NAD (Network-Area-Diagrams) before post-processing:
 
 ![svg-orig-NAD.png](svg-orig-NAD.png)
 
-Unfortunately NADs don't have any mRIDs: all identifiers are sequential numbers. 
-Therefore no NAD elements are clickable, as you can see here: [svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html):
+[svg-color-NAD.html](https://raw.githack.com/statnett/Talk2PowerSystem/main/diagram/svg-click/svg-color-NAD.html) shows the pre-processing state where no elements were clickable:
 
 ![svg-color-NAD.png](svg-color-NAD.png)
 
