@@ -12,6 +12,7 @@
 
 <urn:uuid:9bb00faf-0f2f-831a-e040-1e828c94e833> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:697bcbb6-d367-4c5c-be7b-13a91cf36d53> ;
   cim:IdentifiedObject.mRID "9bb00faf-0f2f-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO3-NO4 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
@@ -34,6 +35,7 @@
 
 <urn:uuid:62cef574-c2e3-428e-9cf7-469e572d524e> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:b56a8421-25e2-47c2-bf0d-58432c58bfcc> ;
   cim:IdentifiedObject.mRID "62cef574-c2e3-428e-9cf7-469e572d524e";
   cim:IdentifiedObject.name "Elspot NO4-FIN MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
@@ -45,6 +47,7 @@
 
 <urn:uuid:7996c33e-b0e7-4c7a-b845-1af3ba25accc> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:4f1743b1-da1c-4087-9055-291f7955ec8f> ;
   cim:IdentifiedObject.mRID "7996c33e-b0e7-4c7a-b845-1af3ba25accc";
   cim:IdentifiedObject.name "Elspot NO4-SE1 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
@@ -89,10 +92,11 @@
 
 <urn:uuid:badff250-1f7c-4804-a902-51e6fcf52d41> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:9ed72c3e-5849-4ff6-aea0-e9fbe9ee9bbf> ;
   cim:IdentifiedObject.mRID "badff250-1f7c-4804-a902-51e6fcf52d41";
   cim:IdentifiedObject.name "Elspot NO3-SE2 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
+  cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
   cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
@@ -100,10 +104,11 @@
 
 <urn:uuid:292350c3-1edf-8b57-e050-1e828c94898c> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:3f43657a-d46a-4247-85d8-55027c0adaf7> ;
   cim:IdentifiedObject.mRID "292350c3-1edf-8b57-e050-1e828c94898c";
   cim:IdentifiedObject.name "Elspot NO3-NO5 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
+  cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
   cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
@@ -111,10 +116,11 @@
 
 <urn:uuid:9bb00fb1-7bb9-831a-e040-1e828c94e833> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:fdc34686-71ab-4fc4-8975-271a1bbe0acb> ;
   cim:IdentifiedObject.mRID "9bb00fb1-7bb9-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO5 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
+  cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
   cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
@@ -144,10 +150,11 @@
 
 <urn:uuid:9bb00fb1-7bc7-831a-e040-1e828c94e833> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:8a2653a0-7f76-4f64-a346-9ae318f219dc> ;
   cim:IdentifiedObject.mRID "9bb00fb1-7bc7-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO2-NO5 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
+  cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
   cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
@@ -177,6 +184,7 @@
 
 <urn:uuid:9bb00fae-11ed-831a-e040-1e828c94e833> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:2e7b7ea0-39a6-46ed-80a1-e887ce4c45cd> ;
   cim:IdentifiedObject.mRID "9bb00fae-11ed-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO2 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
@@ -188,10 +196,11 @@
 
 <urn:uuid:ca978e25-50fd-d5ce-e040-1e828c94bc3a> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:f87c7026-ffd9-4c9e-b2ad-5311ea79e5f2> ;
   cim:IdentifiedObject.mRID "ca978e25-50fd-d5ce-e040-1e828c94bc3a";
   cim:IdentifiedObject.name "Elspot NO1-SE3 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
+  cim:Analog.positiveFlowIn false;
   cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
   cim:Measurement.unitSymbol cim:UnitSymbol.W;
   cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
@@ -221,6 +230,7 @@
 
 <urn:uuid:9bb00fb1-4e7f-831a-e040-1e828c94e833> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:852b95c0-4c49-4ded-85b2-a8f2b610db30> ;
   cim:IdentifiedObject.mRID "9bb00fb1-4e7f-831a-e040-1e828c94e833";
   cim:IdentifiedObject.name "Elspot NO1-NO3 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
@@ -232,6 +242,7 @@
 
 <urn:uuid:ca978e25-6023-d5ce-e040-1e828c94bc3a> a cim:Analog;
   cimr:Measurement.isInCognite true;
+  cim:Measurement.PowerSystemResource <urn:uuid:4308fd4e-591d-4db9-966c-417402c99601> ;
   cim:IdentifiedObject.mRID "ca978e25-6023-d5ce-e040-1e828c94bc3a";
   cim:IdentifiedObject.name "Elspot NO4-SE2 MW_agg_value";
   cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
