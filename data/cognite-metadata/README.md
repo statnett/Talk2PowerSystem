@@ -1,7 +1,8 @@
 # RDF-ization of cognite metadata
 
-Tasks: [#105](https://github.com/statnett/Talk2PowerSystem_PM/issues/105) and
-[#112](https://github.com/statnett/Talk2PowerSystem_PM/issues/112)
+Tasks:
+- [#105](https://github.com/statnett/Talk2PowerSystem_PM/issues/105) 
+- [#112](https://github.com/statnett/Talk2PowerSystem_PM/issues/112)
 
 Added to graph [cim:Measurement.isInCognite.graph](https://cim.ontotext.com/graphdb/resource?uri=https:%2F%2Fcim.ucaiug.io%2Fns%23Measurement.isInCognite.graph&role=context)
 
@@ -108,7 +109,7 @@ We propose to map it to:
   qudt:hasUnit qudt:MegaW.
 ```
 Notes:
-- @olavalstad needs to add the pure mRID as second value of `external_id` in Cognite (we'll give a mapping table)
+- Statnett needs to add the pure mRID as second value of `external_id` in Cognite (we'll give a mapping table)
 - We add a second `Measurement.PowerSystemResource2` to express the target zone.
   Such doesn't exist in the CIM, so we need to add its definition to `cimr.ttl (new name of `cimex.ttl`) but will use the `cim:` namespace: (cc @Sveino)
   https://github.com/Sveino/Inst4CIM-KG/issues/169
@@ -157,24 +158,24 @@ We propose to map it to something like this:
 ```
 
 Notes:
-- a new mRID is generated. @olavalstad needs to add it as second value of `external_id` in Cognite (we'll give a mapping table)
+- A new mRID is generated. @olavalstad needs to add it as second value of `external_id` in Cognite (we'll give a mapping table)
 - https://github.com/Sveino/Inst4CIM-KG/issues/168 for `cim:UnitSymbol.NOKperEUR`, which doesn't exist in CIM
-- ignored fields: `ENDRET_AV, table, is_string, is_step, created_time, last_updated_time`
-    - `"measurementType": "Price"` is wrong because an exchange rate is not really a price
-    - `timeseriesType`: "value" means Actual, which we've mixed into `measurementType`
-    - `PRIS_VALUTA` is rolled into unitSymbol
-    - `id, asset_id, data_set_id` because these are internal Cognite ids
+- Ignored fields: `ENDRET_AV, table, is_string, is_step, created_time, last_updated_time`
+  - `"measurementType": "Price"` is wrong because an exchange rate is not really a price
+  - `timeseriesType`: "value" means Actual, which we've mixed into `measurementType`
+  - `PRIS_VALUTA` is rolled into unitSymbol
+  - `id, asset_id, data_set_id` because these are internal Cognite ids
 
 # JSON remarks
 
-* exists both `metadata.measuerment_type` and `metadata.measurementType`
+* Exists both `metadata.measuerment_type` and `metadata.measurementType`
  
 # CIM remarks
 
-ordering consistantly the elements in the labels of `nc:BiddingZoneBorder` will make for easier reconciliation 
+Ordering consistantly the elements in the labels of `nc:BiddingZoneBorder` will make for easier reconciliation 
 `NO5 - NO1` --> `NO1 - NO5`
 
-```spaqrl
+```sparql
 PREFIX cim: <https://cim.ucaiug.io/ns#>
 PREFIX nc: <https://cim4.eu/ns/nc#>
 select * where {
