@@ -1,308 +1,409 @@
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix cim: <https://cim.ucaiug.io/ns#> .
-@prefix cimr: <https://cim.ucaiug.io/rules#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
-@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+PREFIX cim:    <https://cim.ucaiug.io/ns#>
+PREFIX cimr:   <https://cim.ucaiug.io/rules#>
+PREFIX fn:     <http://www.w3.org/2005/xpath-functions#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX qudt:   <http://qudt.org/schema/qudt/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdf4j:  <http://rdf4j.org/schema/rdf4j#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sesame: <http://www.openrdf.org/schema/sesame#>
+PREFIX unit:   <http://qudt.org/vocab/unit/>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 
-<urn:uuid:9bb00faf-0f2f-831a-e040-1e828c94e833> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:697bcbb6-d367-4c5c-be7b-13a91cf36d53> ;
-  cim:IdentifiedObject.mRID "9bb00faf-0f2f-831a-e040-1e828c94e833";
-  cim:IdentifiedObject.name "Elspot NO3-NO4 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:74b573fc-373a-4b43-a18a-9e5ecc4f0c58>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "74b573fc-373a-4b43-a18a-9e5ecc4f0c58";
+        cim:IdentifiedObject.name       "Elspot NO4-RU MW_agg_value";
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:26f9ac44-045b-451f-ab21-6e8e78b2b15b> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "26f9ac44-045b-451f-ab21-6e8e78b2b15b";
-  cim:IdentifiedObject.name "Kraftpriser_DK1";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde DK1";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:31a8b14b-e41f-4c0b-b21b-0be308770228>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde NO2";
+        cim:IdentifiedObject.mRID     "31a8b14b-e41f-4c0b-b21b-0be308770228";
+        cim:IdentifiedObject.name     "Kraftpriser_NO2";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:63b13e2e-8d0a-47d0-8de8-fb686decbae4>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:62cef574-c2e3-428e-9cf7-469e572d524e> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:b56a8421-25e2-47c2-bf0d-58432c58bfcc> ;
-  cim:IdentifiedObject.mRID "62cef574-c2e3-428e-9cf7-469e572d524e";
-  cim:IdentifiedObject.name "Elspot NO4-FIN MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:c6e21885-4b36-458d-a8e5-1cb94e3a0f19>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde DK2";
+        cim:IdentifiedObject.mRID     "c6e21885-4b36-458d-a8e5-1cb94e3a0f19";
+        cim:IdentifiedObject.name     "Kraftpriser_DK2";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:0c1bc7f4-7404-4a4d-9d6b-d9edc0944a54>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:7996c33e-b0e7-4c7a-b845-1af3ba25accc> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:4f1743b1-da1c-4087-9055-291f7955ec8f> ;
-  cim:IdentifiedObject.mRID "7996c33e-b0e7-4c7a-b845-1af3ba25accc";
-  cim:IdentifiedObject.name "Elspot NO4-SE1 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:057de70f-c679-4a76-bf64-c36adf45ede3>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde NO4";
+        cim:IdentifiedObject.mRID     "057de70f-c679-4a76-bf64-c36adf45ede3";
+        cim:IdentifiedObject.name     "Kraftpriser_NO4";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:b64efd13-92fe-4786-87ef-731d1e2cce0e>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:b4e3cb44-dd09-4c06-b7bc-21411872bca4> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "b4e3cb44-dd09-4c06-b7bc-21411872bca4";
-  cim:IdentifiedObject.name "Kraftpriser_SE3";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde SE3";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:00cc6a04-2dab-4bfe-b2e7-50d4da1198e2>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde FI";
+        cim:IdentifiedObject.mRID     "00cc6a04-2dab-4bfe-b2e7-50d4da1198e2";
+        cim:IdentifiedObject.name     "Kraftpriser_FI";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:6eaaae78-21f1-41c7-81a4-2b0fe15cdbfc>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:7d90224c-ab77-4786-8e08-7f9b275c46da> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "7d90224c-ab77-4786-8e08-7f9b275c46da";
-  cim:IdentifiedObject.name "Kraftpriser_NO1";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde NO1";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:ca978e25-6023-d5ce-e040-1e828c94bc3a>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "ca978e25-6023-d5ce-e040-1e828c94bc3a";
+        cim:IdentifiedObject.name       "Elspot NO4-SE2 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:4308fd4e-591d-4db9-966c-417402c99601>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:b27b8d6b-832c-4a33-bbd5-4f2da41760d9> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "b27b8d6b-832c-4a33-bbd5-4f2da41760d9";
-  cim:IdentifiedObject.name "Kraftpriser_NO3";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde NO3";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:9bb00fb1-4e7f-831a-e040-1e828c94e833>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "9bb00fb1-4e7f-831a-e040-1e828c94e833";
+        cim:IdentifiedObject.name       "Elspot NO1-NO3 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:852b95c0-4c49-4ded-85b2-a8f2b610db30>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:badff250-1f7c-4804-a902-51e6fcf52d41> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:9ed72c3e-5849-4ff6-aea0-e9fbe9ee9bbf> ;
-  cim:IdentifiedObject.mRID "badff250-1f7c-4804-a902-51e6fcf52d41";
-  cim:IdentifiedObject.name "Elspot NO3-SE2 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn false;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:a6437ea1-25cb-4958-867d-3a62f189034b>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde SE1";
+        cim:IdentifiedObject.mRID     "a6437ea1-25cb-4958-867d-3a62f189034b";
+        cim:IdentifiedObject.name     "Kraftpriser_SE1";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:b478a210-4550-4986-9e47-47912ff06d61>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:292350c3-1edf-8b57-e050-1e828c94898c> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:3f43657a-d46a-4247-85d8-55027c0adaf7> ;
-  cim:IdentifiedObject.mRID "292350c3-1edf-8b57-e050-1e828c94898c";
-  cim:IdentifiedObject.name "Elspot NO3-NO5 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn false;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:de509a35-5427-4ae1-8e2b-9c6925d17999>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde SE2";
+        cim:IdentifiedObject.mRID     "de509a35-5427-4ae1-8e2b-9c6925d17999";
+        cim:IdentifiedObject.name     "Kraftpriser_SE2";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:781f385c-f3a1-4691-843d-eab2ed919a1b>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:9bb00fb1-7bb9-831a-e040-1e828c94e833> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:fdc34686-71ab-4fc4-8975-271a1bbe0acb> ;
-  cim:IdentifiedObject.mRID "9bb00fb1-7bb9-831a-e040-1e828c94e833";
-  cim:IdentifiedObject.name "Elspot NO1-NO5 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn false;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:ca978e25-50fd-d5ce-e040-1e828c94bc3a>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       false;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "ca978e25-50fd-d5ce-e040-1e828c94bc3a";
+        cim:IdentifiedObject.name       "Elspot NO1-SE3 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:f87c7026-ffd9-4c9e-b2ad-5311ea79e5f2>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:b3463067-1513-4014-88e8-c49f672b0f40> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "b3463067-1513-4014-88e8-c49f672b0f40";
-  cim:IdentifiedObject.name "Kraftpriser_SE4";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde SE4";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:9bb00fae-11ed-831a-e040-1e828c94e833>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "9bb00fae-11ed-831a-e040-1e828c94e833";
+        cim:IdentifiedObject.name       "Elspot NO1-NO2 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:2e7b7ea0-39a6-46ed-80a1-e887ce4c45cd>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:1d9d34e6-a31f-4b95-9e67-ce127dd26c84> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "1d9d34e6-a31f-4b95-9e67-ce127dd26c84";
-  cim:IdentifiedObject.name "Kraftpriser_EE";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde EE";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:aa44db41-319d-4420-a382-38540257062d>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde NO5";
+        cim:IdentifiedObject.mRID     "aa44db41-319d-4420-a382-38540257062d";
+        cim:IdentifiedObject.name     "Kraftpriser_NO5";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:dc281688-8b45-4ce7-b2e8-6c524a5afece>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:9bb00fb1-7bc7-831a-e040-1e828c94e833> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:8a2653a0-7f76-4f64-a346-9ae318f219dc> ;
-  cim:IdentifiedObject.mRID "9bb00fb1-7bc7-831a-e040-1e828c94e833";
-  cim:IdentifiedObject.name "Elspot NO2-NO5 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn false;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:cca9abf0-819a-4ea1-8c25-7bbd58b5ed49>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde DE";
+        cim:IdentifiedObject.mRID     "cca9abf0-819a-4ea1-8c25-7bbd58b5ed49";
+        cim:IdentifiedObject.name     "Kraftpriser_DE";
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:cca9abf0-819a-4ea1-8c25-7bbd58b5ed49> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "cca9abf0-819a-4ea1-8c25-7bbd58b5ed49";
-  cim:IdentifiedObject.name "Kraftpriser_DE";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde DE";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:9bb00fb1-7bc7-831a-e040-1e828c94e833>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       false;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "9bb00fb1-7bc7-831a-e040-1e828c94e833";
+        cim:IdentifiedObject.name       "Elspot NO2-NO5 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:8a2653a0-7f76-4f64-a346-9ae318f219dc>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:aa44db41-319d-4420-a382-38540257062d> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "aa44db41-319d-4420-a382-38540257062d";
-  cim:IdentifiedObject.name "Kraftpriser_NO5";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde NO5";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:1d9d34e6-a31f-4b95-9e67-ce127dd26c84>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde EE";
+        cim:IdentifiedObject.mRID     "1d9d34e6-a31f-4b95-9e67-ce127dd26c84";
+        cim:IdentifiedObject.name     "Kraftpriser_EE";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:2bd7a8ab-18d1-42c6-8454-c2c8ff4dbebd>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:9bb00fae-11ed-831a-e040-1e828c94e833> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:2e7b7ea0-39a6-46ed-80a1-e887ce4c45cd> ;
-  cim:IdentifiedObject.mRID "9bb00fae-11ed-831a-e040-1e828c94e833";
-  cim:IdentifiedObject.name "Elspot NO1-NO2 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:b3463067-1513-4014-88e8-c49f672b0f40>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde SE4";
+        cim:IdentifiedObject.mRID     "b3463067-1513-4014-88e8-c49f672b0f40";
+        cim:IdentifiedObject.name     "Kraftpriser_SE4";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:2119a5e9-fa38-4fe8-a8e9-2a2cc6f73bad>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:ca978e25-50fd-d5ce-e040-1e828c94bc3a> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f87c7026-ffd9-4c9e-b2ad-5311ea79e5f2> ;
-  cim:IdentifiedObject.mRID "ca978e25-50fd-d5ce-e040-1e828c94bc3a";
-  cim:IdentifiedObject.name "Elspot NO1-SE3 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn false;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:9bb00fb1-7bb9-831a-e040-1e828c94e833>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       false;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "9bb00fb1-7bb9-831a-e040-1e828c94e833";
+        cim:IdentifiedObject.name       "Elspot NO1-NO5 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:fdc34686-71ab-4fc4-8975-271a1bbe0acb>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:de509a35-5427-4ae1-8e2b-9c6925d17999> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "de509a35-5427-4ae1-8e2b-9c6925d17999";
-  cim:IdentifiedObject.name "Kraftpriser_SE2";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde SE2";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:292350c3-1edf-8b57-e050-1e828c94898c>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       false;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "292350c3-1edf-8b57-e050-1e828c94898c";
+        cim:IdentifiedObject.name       "Elspot NO3-NO5 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:3f43657a-d46a-4247-85d8-55027c0adaf7>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:a6437ea1-25cb-4958-867d-3a62f189034b> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "a6437ea1-25cb-4958-867d-3a62f189034b";
-  cim:IdentifiedObject.name "Kraftpriser_SE1";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde SE1";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:badff250-1f7c-4804-a902-51e6fcf52d41>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       false;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "badff250-1f7c-4804-a902-51e6fcf52d41";
+        cim:IdentifiedObject.name       "Elspot NO3-SE2 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:9ed72c3e-5849-4ff6-aea0-e9fbe9ee9bbf>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:9bb00fb1-4e7f-831a-e040-1e828c94e833> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:852b95c0-4c49-4ded-85b2-a8f2b610db30> ;
-  cim:IdentifiedObject.mRID "9bb00fb1-4e7f-831a-e040-1e828c94e833";
-  cim:IdentifiedObject.name "Elspot NO1-NO3 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:b27b8d6b-832c-4a33-bbd5-4f2da41760d9>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde NO3";
+        cim:IdentifiedObject.mRID     "b27b8d6b-832c-4a33-bbd5-4f2da41760d9";
+        cim:IdentifiedObject.name     "Kraftpriser_NO3";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:0f094148-164b-427a-a8e8-0c5f334688ae>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:ca978e25-6023-d5ce-e040-1e828c94bc3a> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:4308fd4e-591d-4db9-966c-417402c99601> ;
-  cim:IdentifiedObject.mRID "ca978e25-6023-d5ce-e040-1e828c94bc3a";
-  cim:IdentifiedObject.name "Elspot NO4-SE2 MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:7d90224c-ab77-4786-8e08-7f9b275c46da>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde NO1";
+        cim:IdentifiedObject.mRID     "7d90224c-ab77-4786-8e08-7f9b275c46da";
+        cim:IdentifiedObject.name     "Kraftpriser_NO1";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:83aa03e5-5fd0-431c-b8dd-acc08c21ed6a>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:00cc6a04-2dab-4bfe-b2e7-50d4da1198e2> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "00cc6a04-2dab-4bfe-b2e7-50d4da1198e2";
-  cim:IdentifiedObject.name "Kraftpriser_FI";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde FI";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:b4e3cb44-dd09-4c06-b7bc-21411872bca4>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde SE3";
+        cim:IdentifiedObject.mRID     "b4e3cb44-dd09-4c06-b7bc-21411872bca4";
+        cim:IdentifiedObject.name     "Kraftpriser_SE3";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:30e6709e-510c-49b9-92ec-e2aebdc1050e>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:057de70f-c679-4a76-bf64-c36adf45ede3> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "057de70f-c679-4a76-bf64-c36adf45ede3";
-  cim:IdentifiedObject.name "Kraftpriser_NO4";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde NO4";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:7996c33e-b0e7-4c7a-b845-1af3ba25accc>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "7996c33e-b0e7-4c7a-b845-1af3ba25accc";
+        cim:IdentifiedObject.name       "Elspot NO4-SE1 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:4f1743b1-da1c-4087-9055-291f7955ec8f>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:c6e21885-4b36-458d-a8e5-1cb94e3a0f19> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "c6e21885-4b36-458d-a8e5-1cb94e3a0f19";
-  cim:IdentifiedObject.name "Kraftpriser_DK2";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde DK2";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:62cef574-c2e3-428e-9cf7-469e572d524e>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "62cef574-c2e3-428e-9cf7-469e572d524e";
+        cim:IdentifiedObject.name       "Elspot NO4-FIN MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:b56a8421-25e2-47c2-bf0d-58432c58bfcc>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
 
-<urn:uuid:31a8b14b-e41f-4c0b-b21b-0be308770228> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:Measurement.PowerSystemResource <urn:uuid:f0a0d421-7010-423b-805a-73a99393f1d6>;
-  cim:IdentifiedObject.mRID "31a8b14b-e41f-4c0b-b21b-0be308770228";
-  cim:IdentifiedObject.name "Kraftpriser_NO2";
-  cim:IdentifiedObject.description "Kraftpriser for prisområde NO2";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "Price-Actual";
-  cim:Measurement.unitSymbol cim:UnitSymbol.EURperMWh;
-  qudt:hasUnit unit:CCY_EUR-PER-MegaW-HR .
+<urn:uuid:26f9ac44-045b-451f-ab21-6e8e78b2b15b>
+        rdf:type                      cim:Analog;
+        qudt:hasUnit                  unit:CCY_EUR-PER-MegaW-HR;
+        cim:Analog.positiveFlowIn     true;
+        cim:IdentifiedObject.description
+                "Kraftpriser for prisområde DK1";
+        cim:IdentifiedObject.mRID     "26f9ac44-045b-451f-ab21-6e8e78b2b15b";
+        cim:IdentifiedObject.name     "Kraftpriser_DK1";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:e7e780b2-3a74-4453-8e4d-f10a397abf5d>;
+        cim:Measurement.measurementType
+                "Price-Actual";
+        cim:Measurement.unitSymbol    cim:UnitSymbol.EURperMWh;
+        cimr:Measurement.isInCognite  true .
 
-<urn:uuid:74b573fc-373a-4b43-a18a-9e5ecc4f0c58> a cim:Analog;
-  cimr:Measurement.isInCognite true;
-  cim:IdentifiedObject.mRID "74b573fc-373a-4b43-a18a-9e5ecc4f0c58";
-  cim:IdentifiedObject.name "Elspot NO4-RU MW_agg_value";
-  cim:IdentifiedObject.description "Aggregated flow per corridor/line in Norway over 10 seconds";
-  cim:Analog.positiveFlowIn true;
-  cim:Measurement.measurementType "ThreePhaseActivePower-Flow-Estimated";
-  cim:Measurement.unitSymbol cim:UnitSymbol.W;
-  cim:Measurement.unitMultiplier cim:UnitMultiplier.M;
-  qudt:hasUnit unit:MegaW .
+<urn:uuid:9bb00faf-0f2f-831a-e040-1e828c94e833>
+        rdf:type                        cim:Analog;
+        qudt:hasUnit                    unit:MegaW;
+        cim:Analog.positiveFlowIn       true;
+        cim:IdentifiedObject.description
+                "Aggregated flow per corridor/line in Norway over 10 seconds";
+        cim:IdentifiedObject.mRID       "9bb00faf-0f2f-831a-e040-1e828c94e833";
+        cim:IdentifiedObject.name       "Elspot NO3-NO4 MW_agg_value";
+        cim:Measurement.PowerSystemResource
+                <urn:uuid:697bcbb6-d367-4c5c-be7b-13a91cf36d53>;
+        cim:Measurement.measurementType
+                "ThreePhaseActivePower-Flow-Estimated";
+        cim:Measurement.unitMultiplier  cim:UnitMultiplier.M;
+        cim:Measurement.unitSymbol      cim:UnitSymbol.W;
+        cimr:Measurement.isInCognite    true .
