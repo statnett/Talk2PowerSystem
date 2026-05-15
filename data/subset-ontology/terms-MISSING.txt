@@ -1,8 +1,3 @@
-<http://cim4.eu/ns/nc#Name.NameType> a cims:MISSING .
-<http://cim4.eu/ns/nc#Name.mRID> a cims:MISSING .
-<http://cim4.eu/ns/nc#NameType.NameTypeAuthority> a cims:MISSING .
-<http://cim4.eu/ns/nc#NameType.mRID> a cims:MISSING .
-<http://cim4.eu/ns/nc#NameTypeAuthority.mRID> a cims:MISSING .
 <http://purl.org/vocab/vann/preferredNamespacePrefix> a cims:MISSING .
 <http://purl.org/vocab/vann/preferredNamespaceUri> a cims:MISSING .
 <http://schema.org/domainIncludes> a cims:MISSING .
@@ -162,8 +157,11 @@ cims:multiplicity a cims:MISSING .
 cims:stereotype a cims:MISSING .
 dc:source a cims:MISSING .
 dcat:Distribution a cims:MISSING .
+dcat:accessURL a cims:MISSING .
 dcat:distribution a cims:MISSING .
+dcat:isDistributionOf a cims:MISSING .
 dcat:landingPage a cims:MISSING .
+dcat:mediaType a cims:MISSING .
 dcat:theme a cims:MISSING .
 dct:PeriodOfTime a cims:MISSING .
 dct:created a cims:MISSING .
@@ -225,6 +223,8 @@ nc:IdentifiedObject.name a cims:MISSING .
 nc:LogicOperatorsKind.greaterThan a cims:MISSING .
 nc:LogicOperatorsKind.lessThan a cims:MISSING .
 nc:LogicOperatorsKind.lessThanOrEquals a cims:MISSING .
+nc:NameType.NameTypeAuthority a cims:MISSING .
+nc:NameTypeAuthority.mRID a cims:MISSING .
 prov:wasDerivedFrom a cims:MISSING .
 prov:wasInfluencedBy a cims:MISSING .
 qudt:AbstractQuantityKind a cims:MISSING .
@@ -250,6 +250,7 @@ qudt:currencyNumber a cims:MISSING .
 qudt:dbpediaMatch a cims:MISSING .
 qudt:definedUnitOfSystem a cims:MISSING .
 qudt:deprecated a cims:MISSING .
+qudt:deprecatedInVersion a cims:MISSING .
 qudt:derivedCoherentUnitOfSystem a cims:MISSING .
 qudt:dimensionExponentForAmountOfSubstance a cims:MISSING .
 qudt:dimensionExponentForElectricCurrent a cims:MISSING .

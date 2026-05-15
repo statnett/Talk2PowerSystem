@@ -885,6 +885,11 @@ cimr:EquipmentOrContainer a owl:Class ;
   rdfs:comment "Union (superclass) of Equipment and ConnectivityNodeContainer" ;
   rdfs:subClassOf cim:PowerSystemResource .
 
+dcat:Catalog a owl:Class ;
+  rdfs:label "Catalog"@en ;
+  rdfs:comment "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)."@en ;
+  rdfs:subClassOf dcat:Dataset .
+
 dcat:Dataset a owl:Class ;
   rdfs:label "Dataset" ;
   rdfs:comment "A collection of data, published or curated by a single source, and available for access or download in one or more representations."@en .
@@ -2574,6 +2579,18 @@ cimr:isPartTransitive a owl:ObjectProperty ;
   rdfs:domain cimr:EquipmentOrContainer ;
   rdfs:range cimr:EquipmentOrContainer .
 
+dcat:catalog a owl:ObjectProperty ;
+  rdfs:label "catalog"@en ;
+  rdfs:comment "A catalog whose contents are of interest in the context of this catalog."@en ;
+  rdfs:domain dcat:Catalog ;
+  rdfs:range dcat:Catalog .
+
+dcat:dataset a owl:ObjectProperty ;
+  rdfs:label "dataset"@en ;
+  rdfs:comment "A collection of data that is listed in the catalog."@en ;
+  rdfs:domain dcat:Catalog ;
+  rdfs:range dcat:Dataset .
+
 dcat:hasVersion a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "hasVersion" ;
   rdfs:comment """This resource is a version of a non-versioned or abstract resource.\r
@@ -2930,6 +2947,22 @@ nc:LoadAction.EnergyConsumer a owl:ObjectProperty, owl:FunctionalProperty ;
   owl:inverseOf nc:EnergyConsumer.LoadAction ;
   rdfs:domain nc:LoadAction ;
   rdfs:range cim:EnergyConsumer .
+
+nc:Name.NameType a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "NameType" ;
+  rdfs:comment "Type of this name."@en ;
+  cims:multiplicity cims:M:0..1 ;
+  owl:inverseOf nc:NameType.Name ;
+  rdfs:domain cim:Name ;
+  rdfs:range cim:NameType .
+
+nc:NameType.Name a owl:ObjectProperty, owl:InverseFunctionalProperty ;
+  rdfs:label "Name" ;
+  rdfs:comment "All names of this type."@en ;
+  cims:multiplicity cims:M:0..n ;
+  owl:inverseOf nc:Name.NameType ;
+  rdfs:domain cim:NameType ;
+  rdfs:range cim:Name .
 
 nc:OperationalLimit.PinOperationallLimit a owl:ObjectProperty, owl:InverseFunctionalProperty ;
   rdfs:label "PinOperationallLimit" ;
@@ -4960,6 +4993,22 @@ nc:GridStateAlteration.normalEnabled a owl:DatatypeProperty, owl:FunctionalPrope
   rdfs:domain nc:GridStateAlteration ;
   rdfs:range xsd:boolean .
 
+nc:Name.mRID a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "mRID" ;
+  rdfs:comment """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en ;
+  cims:multiplicity cims:M:0..1 ;
+  rdfs:domain cim:Name ;
+  rdfs:range xsd:string .
+
+nc:NameType.mRID a owl:DatatypeProperty, owl:FunctionalProperty ;
+  rdfs:label "mRID" ;
+  rdfs:comment """Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."""@en ;
+  cims:multiplicity cims:M:1..1 ;
+  rdfs:domain cim:NameType ;
+  rdfs:range xsd:string .
+
 nc:PowerTransferCorridor.enabled a owl:DatatypeProperty, owl:FunctionalProperty ;
   rdfs:label "enabled" ;
   rdfs:comment "It enables/disables the monitoring/assessment of a power transfer corridor. True means that the monitoring of the power transfer corridor is assessed. False means the power transfer corridor is not assessed."@en ;
@@ -5094,21 +5143,6 @@ cim:ControlAreaTypeKind.Interchange a cim:ControlAreaTypeKind ;
   rdfs:label "Interchange" ;
   rdfs:comment "Used for interchange specification or control."@en .
 
-cim:CurrencyExchangeRate.DKKperEUR a cim:CurrencyExchangeRate ;
-  rdfs:label "DKKperEUR" ;
-  rdfs:comment "Exchange rate of Danish kroner to Euro"@en ;
-  skos:exactMatch unit:CCY_DKK-PER-CCY_EUR .
-
-cim:CurrencyExchangeRate.NOKperEUR a cim:CurrencyExchangeRate ;
-  rdfs:label "NOKperEUR" ;
-  rdfs:comment "Exchange rate of Norwegian kroner to Euro"@en ;
-  skos:exactMatch unit:CCY_NOK-PER-CCY_EUR .
-
-cim:CurrencyExchangeRate.SEKperEUR a cim:CurrencyExchangeRate ;
-  rdfs:label "SEKperEUR" ;
-  rdfs:comment "Exchange rate of Swedish kroner to Euro"@en ;
-  skos:exactMatch unit:CCY_SEK-PER-CCY_EUR .
-
 cim:InUseStateKind.inUse a cim:InUseStateKind ;
   rdfs:label "inUse" ;
   rdfs:comment "Asset is deployed (in use) or is being put into use."@en .
@@ -5208,11 +5242,6 @@ cim:UnitSymbol.EURperMWh a cim:UnitSymbol ;
   rdfs:comment "Energy price in Euro per Mega-watt hour."@en ;
   skos:exactMatch unit:CCY_EUR-PER-MegaW-HR .
 
-cim:UnitSymbol.NOKperMWh a cim:UnitSymbol ;
-  rdfs:label "NOKperMWh" ;
-  rdfs:comment "Energy price in Norwegian Krone per Mega-watt hour."@en ;
-  skos:exactMatch unit:CCY_NOK-PER-MegaW-HR .
-
 cim:UnitSymbol.V a cim:UnitSymbol ;
   rdfs:label "V" ;
   rdfs:comment "Electric potential in volts (W/A)."@en ;
@@ -5295,7 +5324,8 @@ cimd:DiagramKind.GraphDB-VizGraph a cimd:DiagramKind ;
 cimd:DiagramKind.PowSyBl-NetworkAreaDiagram a cimd:DiagramKind ;
   rdfs:label "PowSyBl-NetworkAreaDiagram" ;
   rdfs:comment """PowSyBl Network-Area-Diagram. Shows voltage levels as nodes, and the lines and transformers between voltage levels as edges.
-Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""" .
+Can display the whole grid, one or several voltage levels, and the neighborhood of one or several voltage levels up to a given depth""" ;
+  cimd:DiagramKind.isClickable true .
 
 cimd:DiagramKind.PowSyBl-SingleLineDiagram a cimd:DiagramKind ;
   rdfs:label "PowSyBl-SingleLineDiagram" ;
