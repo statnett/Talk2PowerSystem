@@ -18,6 +18,23 @@ dct:requires a owl:ObjectProperty ;
   schema:domainIncludes dcat:Dataset ;
   schema:domainIncludes dcat:Dataset .
 
+dcat:Catalog a owl:Class ;
+  rdfs:label "Catalog"@en ;
+  rdfs:comment "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)."@en ;
+  rdfs:subClassOf dcat:Dataset .
+
+dcat:catalog a owl:ObjectProperty ;
+  rdfs:label "catalog"@en ;
+  rdfs:comment "A catalog whose contents are of interest in the context of this catalog."@en ;
+  rdfs:domain dcat:Catalog ;
+  rdfs:range dcat:Catalog .
+
+dcat:dataset a owl:ObjectProperty ;
+  rdfs:label "dataset"@en ;
+  rdfs:comment "A collection of data that is listed in the catalog."@en ;
+  rdfs:domain dcat:Catalog ;
+  rdfs:range dcat:Dataset .
+
 geo:Feature
 	a owl:Class ;
 	owl:disjointWith geo:Geometry ;
